@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Vulnerabilities in H.323 Message Processing</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20040113-h323</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.4</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2004-01-13T12:00:00</Date>
+        <Description>Added a Bug ID to the Details section for the Cisco ATA18x Series
+			 Analog Telephony Devices description. Changed the software version in the
+			 Software Versions and Fixes section for the Cisco ATA18x Series Analog
+			 Telephony Devices description.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2004-01-13T12:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2004-01-13T12:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20040113-h323</URL>
+      <Description>Vulnerabilities in H.323 Message Processing</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-44762">Cisco TANDBERG Codec B8 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44763">Cisco TANDBERG Codec E3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44416">Cisco ATA Series Analog Telephone Adaptor 186 2.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-44417">Cisco ATA Series Analog Telephone Adaptor 186 2.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-37616">Cisco ATA Series Analog Telephone Adaptor 186 2.14</FullProductName>
+    <FullProductName ProductID="CVRFPID-44418">Cisco ATA Series Analog Telephone Adaptor 186 2.15</FullProductName>
+    <FullProductName ProductID="CVRFPID-44419">Cisco ATA Series Analog Telephone Adaptor 186 2.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-44415">Cisco ATA Series Analog Telephone Adaptor 188 2.15</FullProductName>
+    <FullProductName ProductID="CVRFPID-44420">Cisco ATA Series Analog Telephone Adaptor 188 2.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-43547">Cisco BTS 10200 Softswitch 2.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43548">Cisco BTS 10200 Softswitch 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43544">Cisco BTS 10200 Softswitch 3.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43545">Cisco BTS 10200 Softswitch 3.5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43546">Cisco BTS 10200 Softswitch 3.5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-42736">Cisco Conference Connection 1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34979">Cisco Unified Communications Manager 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34741">Cisco Unified Communications Manager 3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-40531">Cisco Unified Communications Manager 3.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44411">Cisco Internet Service Node (ISN) 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44412">Cisco Internet Service Node (ISN) 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44413">Cisco Internet Service Node (ISN) 2.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44414">Cisco IP phone 7905 1.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>H.323 Protocol Message and Multimedia Processing Vulnerability</Title>
+    <CVE>CVE-2003-0819</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-37616</ProductID>
+        <ProductID>CVRFPID-44415</ProductID>
+        <ProductID>CVRFPID-44416</ProductID>
+        <ProductID>CVRFPID-44417</ProductID>
+        <ProductID>CVRFPID-44418</ProductID>
+        <ProductID>CVRFPID-44419</ProductID>
+        <ProductID>CVRFPID-44420</ProductID>
+        <ProductID>CVRFPID-43544</ProductID>
+        <ProductID>CVRFPID-43545</ProductID>
+        <ProductID>CVRFPID-43546</ProductID>
+        <ProductID>CVRFPID-43547</ProductID>
+        <ProductID>CVRFPID-43548</ProductID>
+        <ProductID>CVRFPID-34741</ProductID>
+        <ProductID>CVRFPID-34979</ProductID>
+        <ProductID>CVRFPID-40531</ProductID>
+        <ProductID>CVRFPID-42736</ProductID>
+        <ProductID>CVRFPID-44411</ProductID>
+        <ProductID>CVRFPID-44412</ProductID>
+        <ProductID>CVRFPID-44413</ProductID>
+        <ProductID>CVRFPID-44414</ProductID>
+        <ProductID>CVRFPID-44762</ProductID>
+        <ProductID>CVRFPID-44763</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20040113-h323</URL>
+        <Description>Vulnerabilities in H.323 Message Processing</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

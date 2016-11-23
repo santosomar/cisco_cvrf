@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in Cisco PIX and Cisco ASA</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20080604-asa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2008-06-04T16:00:00</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2008-06-04T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2008-06-04T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080604-asa</URL>
+      <Description>Multiple Vulnerabilities in Cisco PIX and Cisco ASA</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080604-asa</URL>
+      <Description>Identifying and Mitigating Exploitation of the Multiple Vulnerabilities in Cisco PIX and Cisco ASA</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080604-asa</URL>
+      <Description>Identifying and Mitigating Exploitation of the Multiple Vulnerabilities in Cisco PIX and Cisco ASA</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-58085">Cisco PIX/ASA 7.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58086">Cisco PIX/ASA 7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-61404">Cisco PIX/ASA 7.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-69408">Cisco PIX/ASA 7.1.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-69409">Cisco PIX/ASA 7.1.2.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-61405">Cisco PIX/ASA 7.1.2.26</FullProductName>
+    <FullProductName ProductID="CVRFPID-66332">Cisco PIX/ASA 7.1.2.27</FullProductName>
+    <FullProductName ProductID="CVRFPID-69410">Cisco PIX/ASA 7.1.2.28</FullProductName>
+    <FullProductName ProductID="CVRFPID-61406">Cisco PIX/ASA 7.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-69413">Cisco PIX/ASA 7.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-69412">Cisco PIX/ASA 7.2.1.18</FullProductName>
+    <FullProductName ProductID="CVRFPID-69414">Cisco PIX/ASA 7.2.1.21</FullProductName>
+    <FullProductName ProductID="CVRFPID-66333">Cisco PIX/ASA 7.2.1.22</FullProductName>
+    <FullProductName ProductID="CVRFPID-63410">Cisco PIX/ASA 7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-69411">Cisco PIX/ASA 7.2.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-75303">Cisco PIX/ASA 7.2.2.19</FullProductName>
+    <FullProductName ProductID="CVRFPID-75304">Cisco PIX/ASA 7.2.2.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-71126">Cisco PIX/ASA 7.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-75301">Cisco PIX/ASA 7.2.3.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-71091">Cisco PIX/ASA 8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66334">Cisco PIX/ASA 8.0.0.96</FullProductName>
+    <FullProductName ProductID="CVRFPID-71090">Cisco PIX/ASA 8.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-75305">Cisco PIX/ASA 8.0.2.19</FullProductName>
+    <FullProductName ProductID="CVRFPID-75302">Cisco PIX/ASA 8.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-80374">Cisco PIX/ASA 8.0.3.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-75307">Cisco PIX/ASA 8.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75308">Cisco PIX/ASA 8.1.0.79</FullProductName>
+    <FullProductName ProductID="CVRFPID-80372">Cisco PIX/ASA 8.1.1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX and Adaptive Security Appliance TLS Packet Denial of Service Vulnerability</Title>
+    <CVE>CVE-2008-2056</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-66334</ProductID>
+        <ProductID>CVRFPID-71090</ProductID>
+        <ProductID>CVRFPID-71091</ProductID>
+        <ProductID>CVRFPID-75302</ProductID>
+        <ProductID>CVRFPID-75305</ProductID>
+        <ProductID>CVRFPID-75307</ProductID>
+        <ProductID>CVRFPID-75308</ProductID>
+        <ProductID>CVRFPID-80372</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080604-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco PIX and Cisco ASA</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX/ASA TCP ACK Packet Processing Denial of Service Vulnerability</Title>
+    <CVE>CVE-2008-2055</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-58085</ProductID>
+        <ProductID>CVRFPID-58086</ProductID>
+        <ProductID>CVRFPID-61404</ProductID>
+        <ProductID>CVRFPID-61405</ProductID>
+        <ProductID>CVRFPID-61406</ProductID>
+        <ProductID>CVRFPID-63410</ProductID>
+        <ProductID>CVRFPID-66332</ProductID>
+        <ProductID>CVRFPID-66333</ProductID>
+        <ProductID>CVRFPID-66334</ProductID>
+        <ProductID>CVRFPID-69408</ProductID>
+        <ProductID>CVRFPID-69409</ProductID>
+        <ProductID>CVRFPID-69410</ProductID>
+        <ProductID>CVRFPID-69411</ProductID>
+        <ProductID>CVRFPID-69412</ProductID>
+        <ProductID>CVRFPID-69413</ProductID>
+        <ProductID>CVRFPID-69414</ProductID>
+        <ProductID>CVRFPID-71090</ProductID>
+        <ProductID>CVRFPID-71091</ProductID>
+        <ProductID>CVRFPID-71126</ProductID>
+        <ProductID>CVRFPID-75301</ProductID>
+        <ProductID>CVRFPID-75302</ProductID>
+        <ProductID>CVRFPID-75303</ProductID>
+        <ProductID>CVRFPID-75304</ProductID>
+        <ProductID>CVRFPID-75305</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080604-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco PIX and Cisco ASA</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX and Adaptive Security Appliance Port Scan Denial of Service Vulnerability</Title>
+    <CVE>CVE-2008-2058</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61406</ProductID>
+        <ProductID>CVRFPID-63410</ProductID>
+        <ProductID>CVRFPID-66333</ProductID>
+        <ProductID>CVRFPID-66334</ProductID>
+        <ProductID>CVRFPID-69411</ProductID>
+        <ProductID>CVRFPID-69412</ProductID>
+        <ProductID>CVRFPID-69413</ProductID>
+        <ProductID>CVRFPID-69414</ProductID>
+        <ProductID>CVRFPID-71090</ProductID>
+        <ProductID>CVRFPID-71091</ProductID>
+        <ProductID>CVRFPID-71126</ProductID>
+        <ProductID>CVRFPID-75303</ProductID>
+        <ProductID>CVRFPID-75304</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080604-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco PIX and Cisco ASA</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX and Cisco ASA Instant Messenger Inspection Action Denial of Service Vulnerability</Title>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080604-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco PIX and Cisco ASA</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX/ASA Software Improperly Implemented Control-plane ACL Vulnerability</Title>
+    <CVE>CVE-2008-2059</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-71090</ProductID>
+        <ProductID>CVRFPID-75302</ProductID>
+        <ProductID>CVRFPID-75305</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:N/A:N/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080604-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco PIX and Cisco ASA</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="6" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX/ASA Instant Messenger Inspection Action Denial of Service Vulnerability</Title>
+    <CVE>CVE-2008-2057</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61406</ProductID>
+        <ProductID>CVRFPID-63410</ProductID>
+        <ProductID>CVRFPID-66333</ProductID>
+        <ProductID>CVRFPID-66334</ProductID>
+        <ProductID>CVRFPID-69411</ProductID>
+        <ProductID>CVRFPID-69412</ProductID>
+        <ProductID>CVRFPID-69413</ProductID>
+        <ProductID>CVRFPID-69414</ProductID>
+        <ProductID>CVRFPID-71090</ProductID>
+        <ProductID>CVRFPID-71091</ProductID>
+        <ProductID>CVRFPID-71126</ProductID>
+        <ProductID>CVRFPID-75301</ProductID>
+        <ProductID>CVRFPID-75302</ProductID>
+        <ProductID>CVRFPID-75303</ProductID>
+        <ProductID>CVRFPID-75304</ProductID>
+        <ProductID>CVRFPID-75305</ProductID>
+        <ProductID>CVRFPID-75307</ProductID>
+        <ProductID>CVRFPID-75308</ProductID>
+        <ProductID>CVRFPID-80372</ProductID>
+        <ProductID>CVRFPID-80374</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080604-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco PIX and Cisco ASA</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

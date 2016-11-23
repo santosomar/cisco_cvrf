@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS HTTP Server Query Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20001025-ios-http-server-query</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.6</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2000-10-25T16:00:00</Date>
+        <Description>Changed 12.XC to 12.1XC in the "Software versions and fixes"
+				section; updated Final status text.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2000-10-25T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2000-10-25T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20001025-ios-http-server-query</URL>
+      <Description>Cisco IOS HTTP Server Query Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS HTTP Server Query Vulnerability</Title>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20001025-ios-http-server-query</URL>
+        <Description>Cisco IOS HTTP Server Query Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

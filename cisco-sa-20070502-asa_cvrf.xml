@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>LDAP and VPN Vulnerabilities in PIX and ASA Appliances</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20070502-asa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2007-05-02T16:00:00</Date>
+        <Description>Updated links to the CVSS scoring for
+			 CSCsh81111
+			 and
+			 CSCsi16248.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-05-02T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-05-02T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070502-asa</URL>
+      <Description>LDAP and VPN Vulnerabilities in PIX and ASA Appliances</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20070502-asa</URL>
+      <Description>Identifying and Mitigating Exploitation of the LDAP and VPN Vulnerabilities in PIX and ASA Appliances</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20070502-asa</URL>
+      <Description>Identifying and Mitigating Exploitation of the LDAP and VPN Vulnerabilities in PIX and ASA Appliances</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-58085">Cisco PIX/ASA 7.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58086">Cisco PIX/ASA 7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-61404">Cisco PIX/ASA 7.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-61406">Cisco PIX/ASA 7.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-63410">Cisco PIX/ASA 7.2.2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX/ASA VPN Password Expiry Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-2464</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-58085</ProductID>
+        <ProductID>CVRFPID-58086</ProductID>
+        <ProductID>CVRFPID-61404</ProductID>
+        <ProductID>CVRFPID-61406</ProductID>
+        <ProductID>CVRFPID-63410</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.3</BaseScore>
+        <TemporalScore>2.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:N/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070502-asa</URL>
+        <Description>LDAP and VPN Vulnerabilities in PIX and ASA Appliances</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX/ASA WebVPN SSL Processing Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-2463</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-58085</ProductID>
+        <ProductID>CVRFPID-58086</ProductID>
+        <ProductID>CVRFPID-61404</ProductID>
+        <ProductID>CVRFPID-61406</ProductID>
+        <ProductID>CVRFPID-63410</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.3</BaseScore>
+        <TemporalScore>2.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:N/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070502-asa</URL>
+        <Description>LDAP and VPN Vulnerabilities in PIX and ASA Appliances</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX/ASA Lightweight Directory Access Protocol Authentication Bypass Vulnerability</Title>
+    <CVE>CVE-2007-2462</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61406</ProductID>
+        <ProductID>CVRFPID-63410</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>8.0</BaseScore>
+        <TemporalScore>6.6</TemporalScore>
+        <Vector>AV:R/AC:H/Au:NR/C:C/I:C/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070502-asa</URL>
+        <Description>LDAP and VPN Vulnerabilities in PIX and ASA Appliances</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

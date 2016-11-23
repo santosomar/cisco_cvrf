@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco VPN 3000 Concentrator Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20030507-vpn3k</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2003-05-07T16:00:00</Date>
+        <Description>Corrected the link in the Obtaining Fixed Software
+			 section.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2003-05-07T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2003-05-07T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20030507-vpn3k</URL>
+      <Description>Cisco VPN 3000 Concentrator Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-36021">Cisco VPN 3000 Series Concentrator Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41440">Cisco VPN 3002 Hardware Client 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41441">Cisco VPN 3002 Hardware Client 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41442">Cisco VPN 3002 Hardware Client 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41443">Cisco VPN 3002 Hardware Client 3.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41444">Cisco VPN 3002 Hardware Client 3.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41445">Cisco VPN 3002 Hardware Client 3.6.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41446">Cisco VPN 3002 Hardware Client 3.6.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41447">Cisco VPN 3002 Hardware Client 3.6.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41448">Cisco VPN 3002 Hardware Client 3.6.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41449">Cisco VPN 3002 Hardware Client 3.6.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41450">Cisco VPN 3002 Hardware Client 3.6.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41451">Cisco VPN 3002 Hardware Client 3.6.7 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-41452">Cisco VPN 3002 Hardware Client 3.6.7 A</FullProductName>
+    <FullProductName ProductID="CVRFPID-41453">Cisco VPN 3002 Hardware Client 3.6.7 B</FullProductName>
+    <FullProductName ProductID="CVRFPID-41454">Cisco VPN 3002 Hardware Client 3.6.7 C</FullProductName>
+    <FullProductName ProductID="CVRFPID-41455">Cisco VPN 3002 Hardware Client 3.6.7 D</FullProductName>
+    <FullProductName ProductID="CVRFPID-41456">Cisco VPN 3002 Hardware Client 3.6.7 E</FullProductName>
+    <FullProductName ProductID="CVRFPID-41458">Cisco VPN 3002 Hardware Client 4.0 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco VPN 3000 Concentrator Multiple Vulnerabilities</Title>
+    <CVE>CVE-2003-0258</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-36021</ProductID>
+        <ProductID>CVRFPID-41440</ProductID>
+        <ProductID>CVRFPID-41441</ProductID>
+        <ProductID>CVRFPID-41442</ProductID>
+        <ProductID>CVRFPID-41443</ProductID>
+        <ProductID>CVRFPID-41444</ProductID>
+        <ProductID>CVRFPID-41445</ProductID>
+        <ProductID>CVRFPID-41446</ProductID>
+        <ProductID>CVRFPID-41447</ProductID>
+        <ProductID>CVRFPID-41448</ProductID>
+        <ProductID>CVRFPID-41449</ProductID>
+        <ProductID>CVRFPID-41450</ProductID>
+        <ProductID>CVRFPID-41451</ProductID>
+        <ProductID>CVRFPID-41452</ProductID>
+        <ProductID>CVRFPID-41453</ProductID>
+        <ProductID>CVRFPID-41454</ProductID>
+        <ProductID>CVRFPID-41455</ProductID>
+        <ProductID>CVRFPID-41456</ProductID>
+        <ProductID>CVRFPID-41458</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20030507-vpn3k</URL>
+        <Description>Cisco VPN 3000 Concentrator Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Wide Area Application Service CIFS Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160127-waascifs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-01-27T15:20:54</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-01-27T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-01-27T15:20:54</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Common Internet File System (CIFS) optimization feature of the Cisco Wide Area Application Service (WAAS) device could allow an unauthenticated, remote attacker to perform a resource consumption attack which, could result in a complete denial of service (DoS) condition.
+
+ 
+
+The vulnerability is due to insufficient flow handling of incoming CIFS traffic. An attacker could exploit this vulnerability by sending malicious traffic designed to trigger the vulnerability. An exploit could allow the attacker to cause a DoS condition by exhausting system buffering resources, resulting in a reload of the affected device.
+
+
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-waascifs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-waascifs"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-waascifs</URL>
+      <Description>Cisco Wide Area Application Service CIFS Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-192299">Cisco Wide Area Application Services (WAAS) 5.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-192300">Cisco Wide Area Application Services (WAAS) 5.1.1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-192301">Cisco Wide Area Application Services (WAAS) 5.1.1b</FullProductName>
+    <FullProductName ProductID="CVRFPID-192302">Cisco Wide Area Application Services (WAAS) 5.1.1c</FullProductName>
+    <FullProductName ProductID="CVRFPID-199523">Cisco Wide Area Application Services (WAAS) 5.1.1d</FullProductName>
+    <FullProductName ProductID="CVRFPID-192293">Cisco Wide Area Application Services (WAAS) 5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-192303">Cisco Wide Area Application Services (WAAS) 5.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-199519">Cisco Wide Area Application Services (WAAS) 5.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-199520">Cisco Wide Area Application Services (WAAS) 5.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-199521">Cisco Wide Area Application Services (WAAS) 5.3.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-199522">Cisco Wide Area Application Services (WAAS) 5.3.5a</FullProductName>
+    <FullProductName ProductID="CVRFPID-202808">Cisco Wide Area Application Services (WAAS) 5.3.5b</FullProductName>
+    <FullProductName ProductID="CVRFPID-212229">Cisco Wide Area Application Services (WAAS) 5.3.5c</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wide Area Application Service CIFS DoS Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCus85330</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Common Internet File System (CIFS) optimization feature of the Cisco Wide Area Application Service (WAAS) device could allow an unauthenticated, remote attacker to perform a resource consumption attack which, could result in a complete denial of service (DoS) condition.
+
+ 
+
+The vulnerability is due to insufficient flow handling of incoming CIFS traffic. An attacker could exploit this vulnerability by sending malicious traffic designed to trigger the vulnerability. An exploit could allow the attacker to cause a DoS condition by exhausting system buffering resources, resulting in a reload of the affected device.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCus85330</Note>
+    </Notes>
+    <CVE>CVE-2015-6421</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-192293</ProductID>
+        <ProductID>CVRFPID-192299</ProductID>
+        <ProductID>CVRFPID-192300</ProductID>
+        <ProductID>CVRFPID-192301</ProductID>
+        <ProductID>CVRFPID-192302</ProductID>
+        <ProductID>CVRFPID-192303</ProductID>
+        <ProductID>CVRFPID-199519</ProductID>
+        <ProductID>CVRFPID-199520</ProductID>
+        <ProductID>CVRFPID-199521</ProductID>
+        <ProductID>CVRFPID-199522</ProductID>
+        <ProductID>CVRFPID-199523</ProductID>
+        <ProductID>CVRFPID-202808</ProductID>
+        <ProductID>CVRFPID-212229</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>The workaround for this vulnerability is to configure the following command at the WAAS CLI:
+
+
+# accelerator cifs expert RxCIFS IOCTLHandling true
+
+
+This command disables part of the cifs-ao optimization process. The workaround causes some requests to be sent without being locally processed, which may cause a minor performance impact in the optimization of CIFS traffic.
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-waascifs</URL>
+        <Description>Cisco Wide Area Application Service CIFS Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

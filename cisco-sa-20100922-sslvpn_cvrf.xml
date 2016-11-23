@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS SSL VPN Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20100922-sslvpn</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2010-09-22T16:00:00</Date>
+        <Description>No Description Available</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2010-09-22T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2010-09-22T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Cisco IOS® Software contains a vulnerability when the Cisco IOS SSL VPN
+feature is configured with an HTTP redirect. Exploitation could allow a remote,
+unauthenticated user to cause a memory leak on the affected devices, that could
+result in a memory exhaustion condition that may cause device reloads, the
+inability to service new TCP connections, and other denial of service (DoS)
+conditions.
+
+Cisco has released software updates that address this vulnerability. There is a workaround to mitigate this vulnerability.
+
+This advisory is posted at
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100922-sslvpn["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100922-sslvpn"].
+
+
+
+Note: The September 22, 2010, Cisco IOS Software Security Advisory bundled
+publication includes six Cisco Security Advisories. Five of the advisories
+address vulnerabilities in Cisco IOS Software, and one advisory addresses
+vulnerabilities in Cisco Unified Communications Manager. Each advisory lists
+the releases that correct the vulnerability or vulnerabilities detailed in the
+advisory. The table at the following URL lists releases that correct all Cisco
+IOS Software vulnerabilities that have been published on September 22, 2010, or
+earlier: 
+
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100922-bundle["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100922-bundle"]
+
+
+ Individual publication links are in "Cisco Event Response:
+Semiannual Cisco IOS Software Security Advisory Bundled Publication" at the
+following link: 
+
+
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep10.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep10.html"]
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100922-sslvpn</URL>
+      <Description>Cisco IOS SSL VPN Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20100922-bundle</URL>
+      <Description>Summary of Cisco IOS Software Bundled Advisories, September 22, 2010</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20100922-bundle</URL>
+      <Description>Summary of Cisco IOS Software Bundled Advisories, September 22, 2010</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-106499">Cisco IOS 15.0(1)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-99645">Cisco IOS 15.0(1)M1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107433">Cisco IOS 15.1(1)T</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software Secure Sockets Layer Virtual Private Network Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtg21685</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCtg21685</Note>
+    </Notes>
+    <CVE>CVE-2010-2836</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-99645</ProductID>
+        <ProductID>CVRFPID-106499</ProductID>
+        <ProductID>CVRFPID-107433</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Disabling HTTP redirection for SSL VPN connections can be used as a
+workaround for this vulnerability. HTTP redirection for SSL VPN connections is
+disabled by executing the command no http-redirect
+port in webvpn gateway configuration
+mode. 
+
+In addition, manually clearing the hung TCBs with the command
+clear tcp tcb * will transition the TCBs into a CLOSED state.
+After a time they will clear the CLOSED state and the memory will be
+released.
+
+
+Note:  Clearing the TCB will clear both legitimate and hung connections,
+including remote connections to the device such as Telnet and SSH
+connections.
+
+The Cisco Applied Mitigation Bulletin (AMB) "Identifying and Mitigating
+Exploitation of the TCP State Manipulation Denial of Service Vulnerabilities in
+Multiple Cisco Products", available at
+http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090908-tcp24["http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090908-tcp24"],
+contains two mitigations (EEM scripts and SNMP) that can be used to detect and
+clear hung TCP connections.
+
+Embedded Event Manager (EEM)
+A Cisco IOS Embedded Event Manager (EEM) policy that is based on Tool
+Command Language (Tcl) can be used on vulnerable Cisco IOS devices to identify
+and detect a hung, extended, or indefinite TCP connection that is caused by
+this vulnerability. The policy allows administrators to monitor TCP connections
+on a Cisco IOS device. When Cisco IOS EEM detects potential exploitation of
+this vulnerability, the policy can trigger a response by sending a syslog
+message or a Simple Network Management Protocol (SNMP) trap to clear the TCP
+connection. The example policy provided in this document is based on a Tcl
+script that monitors and parses the output from two commands at defined
+intervals, produces a syslog message when the monitor threshold reaches its
+configured value, and can reset the TCP connection.
+
+The Tcl script is available for download at the "Cisco Beyond: Embedded
+Event Manager (EEM) Scripting Community" at the following link:
+http://forums.cisco.com/eforum/servlet/EEM?page=eem&amp;fn=script&amp;scriptId=2041["http://forums.cisco.com/eforum/servlet/EEM?page=eem&amp;fn=script&amp;scriptId=2041"].
+A sample device configuration is provided below.
+
+
+    
+!
+    !-- Location where the Tcl script will be stored
+    !
+
+
+    event manager directory user policy disk0:/eem
+
+    
+!
+    !-- Define variable and set the monitoring interval
+    !-- as an integer (expressed in seconds)
+    !
+
+
+    event manager environment EEM_MONITOR_INTERVAL 60
+
+    
+!
+    !-- Define variable and set the threshold value as
+    !-- an integer for the number of retransmissions
+    !-- that determine if the TCP connection is hung
+    !-- (a recommended value to use is 15)
+    !
+
+
+    event manager environment EEM_MONITOR_THRESHOLD 15
+
+    
+!
+    !-- Define variable and set the value to "yes" to
+    !-- enable the clearing of hung TCP connections
+    !
+
+
+    event manager environment EEM_MONITOR_CLEAR yes
+
+    
+!
+    !-- Define variable and set to the TCP connection
+    !-- state or states that script will monitor, which
+    !-- can be a single state or a space-separated list
+    !-- of states
+    !
+
+
+    event manager environment EEM_MONITOR_STATES CLOSEWAIT
+
+    
+!
+    !-- Register the script as a Cisco EEM policy
+    !
+
+
+    event manager policy monitor-sockets.tcl
+
+    !
+
+For more details, refer to the sections "EEM Detecting And Clearing
+Hung TCP Connection" and "Identification: Detecting and Clearing Hung TCP
+Connection Using SNMP" of this AMB at the following link:
+http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090908-tcp24["http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090908-tcp24"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100922-sslvpn</URL>
+        <Description>Cisco IOS SSL VPN Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

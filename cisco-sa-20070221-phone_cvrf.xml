@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified IP Conference Station and IP Phone Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20070221-phone</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2007-02-21T16:00:00</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-02-21T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-02-21T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070221-phone</URL>
+      <Description>Cisco Unified IP Conference Station and IP Phone Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20070221-phone</URL>
+      <Description>Identifying and Mitigating Exploitation of Cisco Unified IP Conference Station and IP Phone Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20070221-phone</URL>
+      <Description>Identifying and Mitigating Exploitation of Cisco Unified IP Conference Station and IP Phone Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-63592">Cisco Unified IP Conference Station 7935 3.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63591">Cisco Unified IP Conference Station 7935 3.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63590">Cisco Unified IP Conference Station 7935 3.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63589">Cisco Unified IP Conference Station 7935 3.1(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63588">Cisco Unified IP Conference Station 7935 3.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63587">Cisco Unified IP Conference Station 7935 3.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63586">Cisco Unified IP Conference Station 7935 3.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63585">Cisco Unified IP Conference Station 7935 3.2(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63584">Cisco Unified IP Conference Station 7935 3.2(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63583">Cisco Unified IP Conference Station 7935 3.2(6a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63582">Cisco Unified IP Conference Station 7935 3.2(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63581">Cisco Unified IP Conference Station 7935 3.2(8)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63580">Cisco Unified IP Conference Station 7935 3.2(9)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63579">Cisco Unified IP Conference Station 7935 3.2(10)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63578">Cisco Unified IP Conference Station 7935 3.2(11)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63577">Cisco Unified IP Conference Station 7935 3.2(12)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63576">Cisco Unified IP Conference Station 7935 3.2(13)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63575">Cisco Unified IP Conference Station 7935 3.2(14)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63574">Cisco Unified IP Conference Station 7935 3.2(15)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63594">Cisco Unified IP Conference Station 7936 3.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63593">Cisco Unified IP Conference Station 7936 3.3(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63572">Cisco Unified IP Conference Station 7936 3.3(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63571">Cisco Unified IP Conference Station 7936 3.3(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63570">Cisco Unified IP Conference Station 7936 3.3(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63569">Cisco Unified IP Conference Station 7936 3.3(8)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63568">Cisco Unified IP Conference Station 7936 3.3(9)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63567">Cisco Unified IP Conference Station 7936 3.3(10)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63566">Cisco Unified IP Conference Station 7936 3.3(11)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63565">Cisco Unified IP Conference Station 7936 3.3(12)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63608">Cisco Unified IP Phone 7906G 7.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63609">Cisco Unified IP Phone 7906G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63607">Cisco Unified IP Phone 7906G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63617">Cisco Unified IP Phone 7911G 7.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63616">Cisco Unified IP Phone 7911G 7.2(2)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-63613">Cisco Unified IP Phone 7911G 7.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63615">Cisco Unified IP Phone 7911G 8.0(2)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-63614">Cisco Unified IP Phone 7911G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63612">Cisco Unified IP Phone 7911G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63625">Cisco Unified IP Phone 7941G 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63624">Cisco Unified IP Phone 7941G 7.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63623">Cisco Unified IP Phone 7941G 7.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63622">Cisco Unified IP Phone 7941G 8.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63620">Cisco Unified IP Phone 7941G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63619">Cisco Unified IP Phone 7941G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63631">Cisco Unified IP Phone 7961G 7.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63630">Cisco Unified IP Phone 7961G 8.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63628">Cisco Unified IP Phone 7961G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63627">Cisco Unified IP Phone 7961G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63647">Cisco Unified IP Phone 7970G 5.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63646">Cisco Unified IP Phone 7970G 5.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63645">Cisco Unified IP Phone 7970G 6.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63644">Cisco Unified IP Phone 7970G 6.0(1)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63643">Cisco Unified IP Phone 7970G 6.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63642">Cisco Unified IP Phone 7970G 6.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63641">Cisco Unified IP Phone 7970G 6.0(3)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63640">Cisco Unified IP Phone 7970G 7.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63639">Cisco Unified IP Phone 7970G 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63638">Cisco Unified IP Phone 7970G 7.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63637">Cisco Unified IP Phone 7970G 7.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63636">Cisco Unified IP Phone 7970G 8.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63633">Cisco Unified IP Phone 7970G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63634">Cisco Unified IP Phone 7970G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63657">Cisco Unified IP Phone 7971G 6.0(3)SR1 </FullProductName>
+    <FullProductName ProductID="CVRFPID-63656">Cisco Unified IP Phone 7971G 7.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63655">Cisco Unified IP Phone 7971G 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63654">Cisco Unified IP Phone 7971G 7.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63653">Cisco Unified IP Phone 7971G 7.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63652">Cisco Unified IP Phone 7971G 8.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63649">Cisco Unified IP Phone 7971G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63650">Cisco Unified IP Phone 7971G 8.0(4)SR1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>DO NOT PUBLISH Until 02/21 -- Cisco Unified IP Conference Station Administrative Bypass Vulnerability</Title>
+    <CVE>CVE-2007-1062</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-63574</ProductID>
+        <ProductID>CVRFPID-63575</ProductID>
+        <ProductID>CVRFPID-63576</ProductID>
+        <ProductID>CVRFPID-63577</ProductID>
+        <ProductID>CVRFPID-63578</ProductID>
+        <ProductID>CVRFPID-63579</ProductID>
+        <ProductID>CVRFPID-63580</ProductID>
+        <ProductID>CVRFPID-63581</ProductID>
+        <ProductID>CVRFPID-63582</ProductID>
+        <ProductID>CVRFPID-63583</ProductID>
+        <ProductID>CVRFPID-63584</ProductID>
+        <ProductID>CVRFPID-63585</ProductID>
+        <ProductID>CVRFPID-63586</ProductID>
+        <ProductID>CVRFPID-63587</ProductID>
+        <ProductID>CVRFPID-63588</ProductID>
+        <ProductID>CVRFPID-63589</ProductID>
+        <ProductID>CVRFPID-63590</ProductID>
+        <ProductID>CVRFPID-63591</ProductID>
+        <ProductID>CVRFPID-63592</ProductID>
+        <ProductID>CVRFPID-63565</ProductID>
+        <ProductID>CVRFPID-63566</ProductID>
+        <ProductID>CVRFPID-63567</ProductID>
+        <ProductID>CVRFPID-63568</ProductID>
+        <ProductID>CVRFPID-63569</ProductID>
+        <ProductID>CVRFPID-63570</ProductID>
+        <ProductID>CVRFPID-63571</ProductID>
+        <ProductID>CVRFPID-63572</ProductID>
+        <ProductID>CVRFPID-63593</ProductID>
+        <ProductID>CVRFPID-63594</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:C/I:C/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070221-phone</URL>
+        <Description>Cisco Unified IP Conference Station and IP Phone Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified IP Phone Default Account Credentials Vulnerability</Title>
+    <CVE>CVE-2007-1063</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-63607</ProductID>
+        <ProductID>CVRFPID-63608</ProductID>
+        <ProductID>CVRFPID-63609</ProductID>
+        <ProductID>CVRFPID-63612</ProductID>
+        <ProductID>CVRFPID-63613</ProductID>
+        <ProductID>CVRFPID-63614</ProductID>
+        <ProductID>CVRFPID-63615</ProductID>
+        <ProductID>CVRFPID-63616</ProductID>
+        <ProductID>CVRFPID-63617</ProductID>
+        <ProductID>CVRFPID-63619</ProductID>
+        <ProductID>CVRFPID-63620</ProductID>
+        <ProductID>CVRFPID-63622</ProductID>
+        <ProductID>CVRFPID-63623</ProductID>
+        <ProductID>CVRFPID-63624</ProductID>
+        <ProductID>CVRFPID-63625</ProductID>
+        <ProductID>CVRFPID-63627</ProductID>
+        <ProductID>CVRFPID-63628</ProductID>
+        <ProductID>CVRFPID-63630</ProductID>
+        <ProductID>CVRFPID-63631</ProductID>
+        <ProductID>CVRFPID-63633</ProductID>
+        <ProductID>CVRFPID-63634</ProductID>
+        <ProductID>CVRFPID-63636</ProductID>
+        <ProductID>CVRFPID-63637</ProductID>
+        <ProductID>CVRFPID-63638</ProductID>
+        <ProductID>CVRFPID-63639</ProductID>
+        <ProductID>CVRFPID-63640</ProductID>
+        <ProductID>CVRFPID-63641</ProductID>
+        <ProductID>CVRFPID-63642</ProductID>
+        <ProductID>CVRFPID-63643</ProductID>
+        <ProductID>CVRFPID-63644</ProductID>
+        <ProductID>CVRFPID-63645</ProductID>
+        <ProductID>CVRFPID-63646</ProductID>
+        <ProductID>CVRFPID-63647</ProductID>
+        <ProductID>CVRFPID-63649</ProductID>
+        <ProductID>CVRFPID-63650</ProductID>
+        <ProductID>CVRFPID-63652</ProductID>
+        <ProductID>CVRFPID-63653</ProductID>
+        <ProductID>CVRFPID-63654</ProductID>
+        <ProductID>CVRFPID-63655</ProductID>
+        <ProductID>CVRFPID-63656</ProductID>
+        <ProductID>CVRFPID-63657</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:C/I:C/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070221-phone</URL>
+        <Description>Cisco Unified IP Conference Station and IP Phone Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>DO NOT PUBLISH Until 02/21 -- Cisco Unified IP Phone Filesystem Privilege Escalation Vulnerability</Title>
+    <CVE>CVE-2007-1072</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-63607</ProductID>
+        <ProductID>CVRFPID-63608</ProductID>
+        <ProductID>CVRFPID-63609</ProductID>
+        <ProductID>CVRFPID-63612</ProductID>
+        <ProductID>CVRFPID-63613</ProductID>
+        <ProductID>CVRFPID-63614</ProductID>
+        <ProductID>CVRFPID-63615</ProductID>
+        <ProductID>CVRFPID-63616</ProductID>
+        <ProductID>CVRFPID-63617</ProductID>
+        <ProductID>CVRFPID-63619</ProductID>
+        <ProductID>CVRFPID-63620</ProductID>
+        <ProductID>CVRFPID-63622</ProductID>
+        <ProductID>CVRFPID-63623</ProductID>
+        <ProductID>CVRFPID-63624</ProductID>
+        <ProductID>CVRFPID-63625</ProductID>
+        <ProductID>CVRFPID-63627</ProductID>
+        <ProductID>CVRFPID-63628</ProductID>
+        <ProductID>CVRFPID-63630</ProductID>
+        <ProductID>CVRFPID-63631</ProductID>
+        <ProductID>CVRFPID-63633</ProductID>
+        <ProductID>CVRFPID-63634</ProductID>
+        <ProductID>CVRFPID-63636</ProductID>
+        <ProductID>CVRFPID-63637</ProductID>
+        <ProductID>CVRFPID-63638</ProductID>
+        <ProductID>CVRFPID-63639</ProductID>
+        <ProductID>CVRFPID-63640</ProductID>
+        <ProductID>CVRFPID-63641</ProductID>
+        <ProductID>CVRFPID-63642</ProductID>
+        <ProductID>CVRFPID-63643</ProductID>
+        <ProductID>CVRFPID-63644</ProductID>
+        <ProductID>CVRFPID-63645</ProductID>
+        <ProductID>CVRFPID-63646</ProductID>
+        <ProductID>CVRFPID-63647</ProductID>
+        <ProductID>CVRFPID-63649</ProductID>
+        <ProductID>CVRFPID-63650</ProductID>
+        <ProductID>CVRFPID-63652</ProductID>
+        <ProductID>CVRFPID-63653</ProductID>
+        <ProductID>CVRFPID-63654</ProductID>
+        <ProductID>CVRFPID-63655</ProductID>
+        <ProductID>CVRFPID-63656</ProductID>
+        <ProductID>CVRFPID-63657</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.0</BaseScore>
+        <TemporalScore>5.0</TemporalScore>
+        <Vector>AV:R/AC:L/Au:R/C:C/I:C/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070221-phone</URL>
+        <Description>Cisco Unified IP Conference Station and IP Phone Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>DO NOT PUBLISH Until 02/21 -- Cisco Unified IP Phone Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-1072</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-63607</ProductID>
+        <ProductID>CVRFPID-63608</ProductID>
+        <ProductID>CVRFPID-63609</ProductID>
+        <ProductID>CVRFPID-63612</ProductID>
+        <ProductID>CVRFPID-63613</ProductID>
+        <ProductID>CVRFPID-63614</ProductID>
+        <ProductID>CVRFPID-63615</ProductID>
+        <ProductID>CVRFPID-63616</ProductID>
+        <ProductID>CVRFPID-63617</ProductID>
+        <ProductID>CVRFPID-63619</ProductID>
+        <ProductID>CVRFPID-63620</ProductID>
+        <ProductID>CVRFPID-63622</ProductID>
+        <ProductID>CVRFPID-63623</ProductID>
+        <ProductID>CVRFPID-63624</ProductID>
+        <ProductID>CVRFPID-63625</ProductID>
+        <ProductID>CVRFPID-63627</ProductID>
+        <ProductID>CVRFPID-63628</ProductID>
+        <ProductID>CVRFPID-63630</ProductID>
+        <ProductID>CVRFPID-63631</ProductID>
+        <ProductID>CVRFPID-63633</ProductID>
+        <ProductID>CVRFPID-63634</ProductID>
+        <ProductID>CVRFPID-63636</ProductID>
+        <ProductID>CVRFPID-63637</ProductID>
+        <ProductID>CVRFPID-63638</ProductID>
+        <ProductID>CVRFPID-63639</ProductID>
+        <ProductID>CVRFPID-63640</ProductID>
+        <ProductID>CVRFPID-63641</ProductID>
+        <ProductID>CVRFPID-63642</ProductID>
+        <ProductID>CVRFPID-63643</ProductID>
+        <ProductID>CVRFPID-63644</ProductID>
+        <ProductID>CVRFPID-63645</ProductID>
+        <ProductID>CVRFPID-63646</ProductID>
+        <ProductID>CVRFPID-63647</ProductID>
+        <ProductID>CVRFPID-63649</ProductID>
+        <ProductID>CVRFPID-63650</ProductID>
+        <ProductID>CVRFPID-63652</ProductID>
+        <ProductID>CVRFPID-63653</ProductID>
+        <ProductID>CVRFPID-63654</ProductID>
+        <ProductID>CVRFPID-63655</ProductID>
+        <ProductID>CVRFPID-63656</ProductID>
+        <ProductID>CVRFPID-63657</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>2.0</BaseScore>
+        <TemporalScore>1.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:R/C:N/I:N/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070221-phone</URL>
+        <Description>Cisco Unified IP Conference Station and IP Phone Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

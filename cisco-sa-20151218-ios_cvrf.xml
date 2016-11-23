@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS and IOS XE Software IKEv1 State Machine Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151218-ios</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-12-18T15:13:40</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-12-18T08:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-12-18T15:13:40</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Internet Key Exchange (IKEv1) state machine of Cisco IOS and Cisco IOS XE Software could allow an unauthenticated, remote attacker to tear down valid IPsec connections, resulting in a partial denial of service (DoS) condition.
+
+
+
+The vulnerability is due to insufficient condition checks in the IKEv1 state machine. An attacker could exploit this vulnerability by sending a spoofed, specific IKEv1 packet to an endpoint of an IPsec tunnel. A successful exploit could allow the attacker to tear down IPsec tunnels that terminate on the endpoint, causing a partial DoS condition. 
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that mitigate this vulnerability.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151218-ios["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151218-ios"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151218-ios</URL>
+      <Description>Cisco IOS and IOS XE Software IKEv1 State Machine Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-193544">Cisco IOS 15.4(3)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200509">Cisco IOS 15.5(3)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-209360">Cisco IOS 15.5(3)M1</FullProductName>
+    <FullProductName ProductID="CVRFPID-196322">Cisco IOS 15.5(1)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200487">Cisco IOS 15.5(2)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-204901">Cisco IOS 15.5(3)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210129">Cisco IOS 15.5(3)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-197477">Cisco IOS 15.5(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-205517">Cisco IOS 15.5(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-212118">Cisco IOS 15.6(1)T0a</FullProductName>
+    <FullProductName ProductID="CVRFPID-206180">Cisco IOS XE Software 3.15S 3.15.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210079">Cisco IOS XE Software 3.15S 3.15.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-212268">Cisco IOS XE Software 3.15S 3.15.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-212411">Cisco IOS XE Software 3.17S 3.17.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-212412">Cisco IOS XE Software 3.17S 3.17.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210081">Cisco IOS XE Software 3.16S 3.16.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-212408">Cisco IOS XE Software 3.16S 3.16.1S</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS and IOS XE Software IKEv1 State Machine Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuw08236</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Internet Key Exchange (IKEv1) state machine of Cisco IOS and Cisco IOS XE Software could allow an unauthenticated, remote attacker to tear down valid IPsec connections, resulting in a partial denial of service (DoS) condition.
+
+
+
+The vulnerability is due to insufficient condition checks in the IKEv1 state machine. An attacker could exploit this vulnerability by sending a spoofed, specific IKEv1 packet to an endpoint of an IPsec tunnel. A successful exploit could allow the attacker to tear down IPsec tunnels that terminate on the endpoint, causing a partial DoS condition. </Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuw08236</Note>
+    </Notes>
+    <CVE>CVE-2015-6429</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-193544</ProductID>
+        <ProductID>CVRFPID-196322</ProductID>
+        <ProductID>CVRFPID-197477</ProductID>
+        <ProductID>CVRFPID-200487</ProductID>
+        <ProductID>CVRFPID-200509</ProductID>
+        <ProductID>CVRFPID-204901</ProductID>
+        <ProductID>CVRFPID-205517</ProductID>
+        <ProductID>CVRFPID-206180</ProductID>
+        <ProductID>CVRFPID-209360</ProductID>
+        <ProductID>CVRFPID-210079</ProductID>
+        <ProductID>CVRFPID-210081</ProductID>
+        <ProductID>CVRFPID-210129</ProductID>
+        <ProductID>CVRFPID-212118</ProductID>
+        <ProductID>CVRFPID-212268</ProductID>
+        <ProductID>CVRFPID-212408</ProductID>
+        <ProductID>CVRFPID-212411</ProductID>
+        <ProductID>CVRFPID-212412</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151218-ios</URL>
+        <Description>Cisco IOS and IOS XE Software IKEv1 State Machine Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

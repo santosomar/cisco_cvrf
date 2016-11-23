@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco AsyncOS TCP Flood Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151104-aos</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.3</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-11-04T15:05:48</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2015-11-16T15:47:02</Date>
+        <Description>Corrected the version number of the first fixed release for SMA major release 9.1.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2015-11-16T22:15:23</Date>
+        <Description>Added information about CES maintenance and upgrades.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2015-11-20T17:48:47</Date>
+        <Description>Added steps for upgrading a device by using the GUI.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-11-04T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-11-20T17:48:47</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the network stack of Cisco AsyncOS for Cisco Email Security Appliance (ESA), Cisco Content Security Management Appliance (SMA) and Cisco Web Security Appliance (WSA) could allow an unauthenticated, remote attacker to exhaust all available memory, preventing the affected device from accepting new TCP connections.
+
+
+
+The vulnerability is due to improper handling of TCP packets sent at a high rate. An attacker could exploit this vulnerability by sending crafted TCP packets to the affected system.
+
+
+
+Note: A full device reload is needed to recover the system to an operational state.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that mitigate this vulnerability. This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-aos["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-aos"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-aos</URL>
+      <Description>Cisco AsyncOS TCP Flood Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-210997">Cisco Web Security Appliance (WSA) 5.6.0-623</FullProductName>
+    <FullProductName ProductID="CVRFPID-210999">Cisco Web Security Appliance (WSA) 6.0.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-189795">Cisco Web Security Appliance (WSA) 7.5.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211000">Cisco Web Security Appliance (WSA) 7.5.0-825</FullProductName>
+    <FullProductName ProductID="CVRFPID-189956">Cisco Web Security Appliance (WSA) 7.5.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211001">Cisco Web Security Appliance (WSA) 7.5.2-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-189797">Cisco Web Security Appliance (WSA) 7.7.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211002">Cisco Web Security Appliance (WSA) 7.7.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-200673">Cisco Web Security Appliance (WSA) 8.0.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-205814">Cisco Web Security Appliance (WSA) 8.5.0.000</FullProductName>
+    <FullProductName ProductID="CVRFPID-189967">Cisco Email Security Appliance (ESA) 7.6.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211003">Cisco Email Security Appliance (ESA) 7.6.3-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211005">Cisco Email Security Appliance (ESA) 7.7.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211006">Cisco Email Security Appliance (ESA) 7.7.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211007">Cisco Email Security Appliance (ESA) 7.8.0-311</FullProductName>
+    <FullProductName ProductID="CVRFPID-211008">Cisco Email Security Appliance (ESA) 8.5.6-052</FullProductName>
+    <FullProductName ProductID="CVRFPID-211011">Cisco Email Security Appliance (ESA) 8.6.0-011</FullProductName>
+    <FullProductName ProductID="CVRFPID-211014">Cisco Email Security Appliance (ESA) 8.9.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211015">Cisco Email Security Appliance (ESA) 8.9.2-032</FullProductName>
+    <FullProductName ProductID="CVRFPID-211016">Cisco Email Security Appliance (ESA) 9.0.0-212</FullProductName>
+    <FullProductName ProductID="CVRFPID-211017">Cisco Email Security Appliance (ESA) 9.0.5-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211018">Cisco Email Security Appliance (ESA) 9.1.0-011</FullProductName>
+    <FullProductName ProductID="CVRFPID-211021">Cisco Email Security Appliance (ESA) 9.4.4-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-208932">Cisco Email Security Appliance (ESA) 9.5.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211038">Cisco Content Security Management Appliance (SMA) 7.8.0-328</FullProductName>
+    <FullProductName ProductID="CVRFPID-211039">Cisco Content Security Management Appliance (SMA) 7.8.1-001</FullProductName>
+    <FullProductName ProductID="CVRFPID-211040">Cisco Content Security Management Appliance (SMA) 7.9.0-201</FullProductName>
+    <FullProductName ProductID="CVRFPID-211041">Cisco Content Security Management Appliance (SMA) 7.9.2-116</FullProductName>
+    <FullProductName ProductID="CVRFPID-211022">Cisco Content Security Management Appliance (SMA) 8.0.1-031</FullProductName>
+    <FullProductName ProductID="CVRFPID-211023">Cisco Content Security Management Appliance (SMA) 8.1.0-001</FullProductName>
+    <FullProductName ProductID="CVRFPID-211024">Cisco Content Security Management Appliance (SMA) 8.1.1-033</FullProductName>
+    <FullProductName ProductID="CVRFPID-211025">Cisco Content Security Management Appliance (SMA) 8.1.2-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211026">Cisco Content Security Management Appliance (SMA) 8.2.0-238</FullProductName>
+    <FullProductName ProductID="CVRFPID-211027">Cisco Content Security Management Appliance (SMA) 8.3.0-350</FullProductName>
+    <FullProductName ProductID="CVRFPID-211028">Cisco Content Security Management Appliance (SMA) 8.3.5-061</FullProductName>
+    <FullProductName ProductID="CVRFPID-211029">Cisco Content Security Management Appliance (SMA) 8.3.6-014</FullProductName>
+    <FullProductName ProductID="CVRFPID-211030">Cisco Content Security Management Appliance (SMA) 8.3.7-010</FullProductName>
+    <FullProductName ProductID="CVRFPID-211033">Cisco Content Security Management Appliance (SMA) 8.4.0-150</FullProductName>
+    <FullProductName ProductID="CVRFPID-211036">Cisco Content Security Management Appliance (SMA) 9.0.0-073</FullProductName>
+    <FullProductName ProductID="CVRFPID-211037">Cisco Content Security Management Appliance (SMA) 9.1.0-004</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco AsyncOS TCP Flood Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCzv95795</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the network stack of Cisco AsyncOS for Cisco Email Security Appliance (ESA), Cisco Content Security Management Appliance (SMA) and Cisco Web Security Appliance (WSA) could allow an unauthenticated, remote attacker to exhaust all available memory, preventing the affected device from accepting new TCP connections.
+
+
+
+The vulnerability is due to improper handling of TCP packets sent at a high rate. An attacker could exploit this vulnerability by sending crafted TCP packets to the affected system.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCzv95795,CSCus79774,CSCus79777</Note>
+    </Notes>
+    <CVE>CVE-2015-6321</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-189795</ProductID>
+        <ProductID>CVRFPID-189797</ProductID>
+        <ProductID>CVRFPID-189956</ProductID>
+        <ProductID>CVRFPID-200673</ProductID>
+        <ProductID>CVRFPID-205814</ProductID>
+        <ProductID>CVRFPID-210997</ProductID>
+        <ProductID>CVRFPID-210999</ProductID>
+        <ProductID>CVRFPID-211000</ProductID>
+        <ProductID>CVRFPID-211001</ProductID>
+        <ProductID>CVRFPID-211002</ProductID>
+        <ProductID>CVRFPID-189967</ProductID>
+        <ProductID>CVRFPID-208932</ProductID>
+        <ProductID>CVRFPID-211003</ProductID>
+        <ProductID>CVRFPID-211005</ProductID>
+        <ProductID>CVRFPID-211006</ProductID>
+        <ProductID>CVRFPID-211007</ProductID>
+        <ProductID>CVRFPID-211008</ProductID>
+        <ProductID>CVRFPID-211011</ProductID>
+        <ProductID>CVRFPID-211014</ProductID>
+        <ProductID>CVRFPID-211015</ProductID>
+        <ProductID>CVRFPID-211016</ProductID>
+        <ProductID>CVRFPID-211017</ProductID>
+        <ProductID>CVRFPID-211018</ProductID>
+        <ProductID>CVRFPID-211021</ProductID>
+        <ProductID>CVRFPID-211022</ProductID>
+        <ProductID>CVRFPID-211023</ProductID>
+        <ProductID>CVRFPID-211024</ProductID>
+        <ProductID>CVRFPID-211025</ProductID>
+        <ProductID>CVRFPID-211026</ProductID>
+        <ProductID>CVRFPID-211027</ProductID>
+        <ProductID>CVRFPID-211028</ProductID>
+        <ProductID>CVRFPID-211029</ProductID>
+        <ProductID>CVRFPID-211030</ProductID>
+        <ProductID>CVRFPID-211033</ProductID>
+        <ProductID>CVRFPID-211036</ProductID>
+        <ProductID>CVRFPID-211037</ProductID>
+        <ProductID>CVRFPID-211038</ProductID>
+        <ProductID>CVRFPID-211039</ProductID>
+        <ProductID>CVRFPID-211040</ProductID>
+        <ProductID>CVRFPID-211041</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.1</BaseScore>
+        <TemporalScore>5.9</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-aos</URL>
+        <Description>Cisco AsyncOS TCP Flood Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

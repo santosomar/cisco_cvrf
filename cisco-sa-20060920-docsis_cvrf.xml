@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>DOCSIS Read-Write Community String Enabled in Non-DOCSIS Platforms</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20060920-docsis</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2006-09-20T16:00:00</Date>
+        <Description>No Description Available</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2006-09-20T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2006-09-20T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20060920-docsis</URL>
+      <Description>DOCSIS Read-Write Community String Enabled in Non-DOCSIS Platforms</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20060923-docsis</URL>
+      <Description>Identifying and Mitigating Exploitation of the DOCSIS RW Community String Enabled Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20060923-docsis</URL>
+      <Description>Identifying and Mitigating Exploitation of the DOCSIS RW Community String Enabled Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-63490">Cisco IOS 12.2(15)ZJ</FullProductName>
+    <FullProductName ProductID="CVRFPID-104768">Cisco IOS 12.2(15)ZJ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103935">Cisco IOS 12.2(15)ZJ2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106345">Cisco IOS 12.2(15)ZJ3</FullProductName>
+    <FullProductName ProductID="CVRFPID-63498">Cisco IOS 12.3(4)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107131">Cisco IOS 12.3(4)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104996">Cisco IOS 12.3(4)T10</FullProductName>
+    <FullProductName ProductID="CVRFPID-107350">Cisco IOS 12.3(4)T11</FullProductName>
+    <FullProductName ProductID="CVRFPID-105274">Cisco IOS 12.3(4)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106064">Cisco IOS 12.3(4)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104146">Cisco IOS 12.3(4)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-105888">Cisco IOS 12.3(4)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-104486">Cisco IOS 12.3(4)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-107354">Cisco IOS 12.3(4)T8</FullProductName>
+    <FullProductName ProductID="CVRFPID-103893">Cisco IOS 12.3(4)T9</FullProductName>
+    <FullProductName ProductID="CVRFPID-65513">Cisco IOS 12.3(7)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107603">Cisco IOS 12.3(7)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105523">Cisco IOS 12.3(7)T10</FullProductName>
+    <FullProductName ProductID="CVRFPID-104657">Cisco IOS 12.3(7)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104448">Cisco IOS 12.3(7)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105720">Cisco IOS 12.3(7)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107392">Cisco IOS 12.3(7)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-105369">Cisco IOS 12.3(7)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-107066">Cisco IOS 12.3(7)T8</FullProductName>
+    <FullProductName ProductID="CVRFPID-106391">Cisco IOS 12.3(7)T9</FullProductName>
+    <FullProductName ProductID="CVRFPID-63378">Cisco IOS 12.3(8)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107764">Cisco IOS 12.3(8)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104481">Cisco IOS 12.3(8)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104802">Cisco IOS 12.3(8)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107238">Cisco IOS 12.3(8)T5</FullProductName>
+    <FullProductName ProductID="CVRFPID-103777">Cisco IOS 12.3(8)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-104500">Cisco IOS 12.3(8)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-104854">Cisco IOS 12.3(8)T8</FullProductName>
+    <FullProductName ProductID="CVRFPID-103573">Cisco IOS 12.3(8)T9</FullProductName>
+    <FullProductName ProductID="CVRFPID-58331">Cisco IOS 12.3(11)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107382">Cisco IOS 12.3(11)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104980">Cisco IOS 12.3(11)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106304">Cisco IOS 12.3(11)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-104381">Cisco IOS 12.3(11)T5</FullProductName>
+    <FullProductName ProductID="CVRFPID-105748">Cisco IOS 12.3(11)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-63197">Cisco IOS 12.3(14)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107367">Cisco IOS 12.3(14)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105272">Cisco IOS 12.3(14)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-63501">Cisco IOS 12.3(4)XD</FullProductName>
+    <FullProductName ProductID="CVRFPID-103953">Cisco IOS 12.3(4)XD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106716">Cisco IOS 12.3(4)XD2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106469">Cisco IOS 12.3(4)XD3</FullProductName>
+    <FullProductName ProductID="CVRFPID-65434">Cisco IOS 12.3(11)XL</FullProductName>
+    <FullProductName ProductID="CVRFPID-106612">Cisco IOS 12.3(11)XL1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65527">Cisco IOS 12.4(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65528">Cisco IOS 12.4(1a)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Do not publish yet: Cisco IOS DOCSIS Community String Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCsb04965</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCsb04965,CSCsb06658</Note>
+    </Notes>
+    <CVE>CVE-2006-4950</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-58331</ProductID>
+        <ProductID>CVRFPID-63197</ProductID>
+        <ProductID>CVRFPID-63378</ProductID>
+        <ProductID>CVRFPID-63490</ProductID>
+        <ProductID>CVRFPID-63498</ProductID>
+        <ProductID>CVRFPID-63501</ProductID>
+        <ProductID>CVRFPID-65434</ProductID>
+        <ProductID>CVRFPID-65513</ProductID>
+        <ProductID>CVRFPID-65527</ProductID>
+        <ProductID>CVRFPID-65528</ProductID>
+        <ProductID>CVRFPID-103573</ProductID>
+        <ProductID>CVRFPID-103777</ProductID>
+        <ProductID>CVRFPID-103893</ProductID>
+        <ProductID>CVRFPID-103935</ProductID>
+        <ProductID>CVRFPID-103953</ProductID>
+        <ProductID>CVRFPID-104146</ProductID>
+        <ProductID>CVRFPID-104381</ProductID>
+        <ProductID>CVRFPID-104448</ProductID>
+        <ProductID>CVRFPID-104481</ProductID>
+        <ProductID>CVRFPID-104486</ProductID>
+        <ProductID>CVRFPID-104500</ProductID>
+        <ProductID>CVRFPID-104657</ProductID>
+        <ProductID>CVRFPID-104768</ProductID>
+        <ProductID>CVRFPID-104802</ProductID>
+        <ProductID>CVRFPID-104854</ProductID>
+        <ProductID>CVRFPID-104980</ProductID>
+        <ProductID>CVRFPID-104996</ProductID>
+        <ProductID>CVRFPID-105272</ProductID>
+        <ProductID>CVRFPID-105274</ProductID>
+        <ProductID>CVRFPID-105369</ProductID>
+        <ProductID>CVRFPID-105523</ProductID>
+        <ProductID>CVRFPID-105720</ProductID>
+        <ProductID>CVRFPID-105748</ProductID>
+        <ProductID>CVRFPID-105888</ProductID>
+        <ProductID>CVRFPID-106064</ProductID>
+        <ProductID>CVRFPID-106304</ProductID>
+        <ProductID>CVRFPID-106345</ProductID>
+        <ProductID>CVRFPID-106391</ProductID>
+        <ProductID>CVRFPID-106469</ProductID>
+        <ProductID>CVRFPID-106612</ProductID>
+        <ProductID>CVRFPID-106716</ProductID>
+        <ProductID>CVRFPID-107066</ProductID>
+        <ProductID>CVRFPID-107131</ProductID>
+        <ProductID>CVRFPID-107238</ProductID>
+        <ProductID>CVRFPID-107350</ProductID>
+        <ProductID>CVRFPID-107354</ProductID>
+        <ProductID>CVRFPID-107367</ProductID>
+        <ProductID>CVRFPID-107382</ProductID>
+        <ProductID>CVRFPID-107392</ProductID>
+        <ProductID>CVRFPID-107603</ProductID>
+        <ProductID>CVRFPID-107764</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.0</BaseScore>
+        <TemporalScore>4.4</TemporalScore>
+        <Vector>AV:R/AC:L/Au:R/C:C/I:C/A:C/B:N/E:U/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20060920-docsis</URL>
+        <Description>DOCSIS Read-Write Community String Enabled in Non-DOCSIS Platforms</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

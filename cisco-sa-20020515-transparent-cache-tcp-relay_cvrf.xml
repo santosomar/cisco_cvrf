@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Transparent Cache Engine and Content Engine TCP Relay Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20020515-transparent-cache-tcp-relay</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>2.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2002-05-15T18:00:00</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+      <Revision>
+        <Number>2.0</Number>
+        <Date>2002-05-15T18:00:00</Date>
+        <Description>Added the HTTP vulnerability (CSCeb19815). Updated the Summary,
+				Details, Fixed Software and Workarounds sections.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2002-05-15T18:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2002-05-15T18:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20020515-transparent-cache-tcp-relay</URL>
+      <Description>Transparent Cache Engine and Content Engine TCP Relay Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-36231">Cisco Application and Content Networking System (ACNS) Software 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44349">Cisco Application and Content Networking System (ACNS) Software 4.0.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36236">Cisco Application and Content Networking System (ACNS) Software 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-39425">Cisco Application and Content Networking System (ACNS) Software 4.1.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44350">Cisco Application and Content Networking System (ACNS) Software 4.1.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44351">Cisco Application and Content Networking System (ACNS) Software 4.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44352">Cisco Application and Content Networking System (ACNS) Software 4.2.7 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44353">Cisco Application and Content Networking System (ACNS) Software 4.2.9 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43595">Cisco Application and Content Networking System (ACNS) Software 5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43596">Cisco Application and Content Networking System (ACNS) Software 5.0.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43597">Cisco Application and Content Networking System (ACNS) Software 5.0.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43598">Cisco Application and Content Networking System (ACNS) Software 5.0.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44354">Cisco Application and Content Networking System (ACNS) Software 5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35480">Cisco Cache Engine 505 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38643">Cisco Cache Engine 550 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36050">Cisco Cache Engine 570 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36257">Cisco Content Distribution Manager (CDM) 4630 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36260">Cisco Content Distribution Manager (CDM) 4650 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36200">Cisco Content Engine 507 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44343">Cisco Content Engine 510 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36201">Cisco Content Engine 560 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44344">Cisco Content Engine 565 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36207">Cisco Content Engine 590 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36210">Cisco Content Engine 7320 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44345">Cisco Content Engine 7325 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36245">Cisco Content Router 4430 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Cache Engine and Content Engine TCP Relay Vulnerability</Title>
+    <CVE>CVE-2002-0778</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-36231</ProductID>
+        <ProductID>CVRFPID-36236</ProductID>
+        <ProductID>CVRFPID-39425</ProductID>
+        <ProductID>CVRFPID-43595</ProductID>
+        <ProductID>CVRFPID-43596</ProductID>
+        <ProductID>CVRFPID-43597</ProductID>
+        <ProductID>CVRFPID-43598</ProductID>
+        <ProductID>CVRFPID-44349</ProductID>
+        <ProductID>CVRFPID-44350</ProductID>
+        <ProductID>CVRFPID-44351</ProductID>
+        <ProductID>CVRFPID-44352</ProductID>
+        <ProductID>CVRFPID-44353</ProductID>
+        <ProductID>CVRFPID-44354</ProductID>
+        <ProductID>CVRFPID-35480</ProductID>
+        <ProductID>CVRFPID-36050</ProductID>
+        <ProductID>CVRFPID-38643</ProductID>
+        <ProductID>CVRFPID-36257</ProductID>
+        <ProductID>CVRFPID-36260</ProductID>
+        <ProductID>CVRFPID-36200</ProductID>
+        <ProductID>CVRFPID-36201</ProductID>
+        <ProductID>CVRFPID-36207</ProductID>
+        <ProductID>CVRFPID-36210</ProductID>
+        <ProductID>CVRFPID-44343</ProductID>
+        <ProductID>CVRFPID-44344</ProductID>
+        <ProductID>CVRFPID-44345</ProductID>
+        <ProductID>CVRFPID-36245</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20020515-transparent-cache-tcp-relay</URL>
+        <Description>Transparent Cache Engine and Content Engine TCP Relay Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

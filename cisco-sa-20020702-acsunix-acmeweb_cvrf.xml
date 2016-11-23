@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Secure ACS Unix Acme.server Information Disclosure Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20020702-acsunix-acmeweb</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2002-07-02T18:00:00</Date>
+        <Description>Update to Affected Products section</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2002-07-02T18:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2002-07-02T18:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20020702-acsunix-acmeweb</URL>
+      <Description>Cisco Secure ACS Unix Acme.server Information Disclosure Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-35461">Cisco Secure Access Control Server (ACS) for UNIX 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35464">Cisco Secure Access Control Server (ACS) for UNIX 2.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35481">Cisco Secure Access Control Server (ACS) for UNIX 2.1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35235">Cisco Secure Access Control Server (ACS) for UNIX 2.2.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35495">Cisco Secure Access Control Server (ACS) for UNIX 2.2.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-33804">Cisco Secure Access Control Server (ACS) for UNIX 2.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35499">Cisco Secure Access Control Server (ACS) for UNIX 2.3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35516">Cisco Secure Access Control Server (ACS) for UNIX 2.3.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58887">Cisco Secure Access Control Server (ACS) for UNIX 2.3.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35524">Cisco Secure Access Control Server (ACS) for UNIX 2.3.5.1 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>ACME Laboratories Acme.Serve HTTP Server Directory Traversal Vulnerability</Title>
+    <CVE>CVE-2001-0748</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-33804</ProductID>
+        <ProductID>CVRFPID-35235</ProductID>
+        <ProductID>CVRFPID-35461</ProductID>
+        <ProductID>CVRFPID-35464</ProductID>
+        <ProductID>CVRFPID-35481</ProductID>
+        <ProductID>CVRFPID-35495</ProductID>
+        <ProductID>CVRFPID-35499</ProductID>
+        <ProductID>CVRFPID-35516</ProductID>
+        <ProductID>CVRFPID-35524</ProductID>
+        <ProductID>CVRFPID-58887</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.3</BaseScore>
+        <TemporalScore>2.8</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:C/I:N/A:N/B:N/E:F/RL:W/RC:Uc</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20020702-acsunix-acmeweb</URL>
+        <Description>Cisco Secure ACS Unix Acme.server Information Disclosure Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

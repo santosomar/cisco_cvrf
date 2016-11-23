@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Digital Media Player Remote Display Unauthorized Content Injection Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20100303-dmp</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2010-03-03T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2010-03-03T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2010-03-03T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100303-dmp</URL>
+      <Description>Cisco Digital Media Player Remote Display Unauthorized Content Injection Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-88446">Cisco Unified Communications Manager 5.1(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88449">Cisco Unified Communications Manager 5.1(1c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88450">Cisco Unified Communications Manager 5.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88451">Cisco Unified Communications Manager 5.1(2a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88452">Cisco Unified Communications Manager 5.1(2b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88453">Cisco Unified Communications Manager 5.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88454">Cisco Unified Communications Manager 5.1(3a) </FullProductName>
+    <FullProductName ProductID="CVRFPID-88455">Cisco Unified Communications Manager 5.1(3b) </FullProductName>
+    <FullProductName ProductID="CVRFPID-88456">Cisco Unified Communications Manager 5.1(3c) </FullProductName>
+    <FullProductName ProductID="CVRFPID-88457">Cisco Unified Communications Manager 5.1(3d) </FullProductName>
+    <FullProductName ProductID="CVRFPID-88458">Cisco Unified Communications Manager 5.1(3e) </FullProductName>
+    <FullProductName ProductID="CVRFPID-88448">Cisco Unified Communications Manager 6.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88459">Cisco Unified Communications Manager 6.1(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88460">Cisco Unified Communications Manager 6.1(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88461">Cisco Unified Communications Manager 6.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88462">Cisco Unified Communications Manager 6.1(2)SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88463">Cisco Unified Communications Manager 6.1(2)SU1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-88464">Cisco Unified Communications Manager 6.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-97354">Cisco Unified Communications Manager 6.1(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-90269">Cisco Unified Communications Manager 7.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-90270">Cisco Unified Communications Manager 7.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-90271">Cisco Unified Communications Manager 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-93291">Cisco Unified Communications Manager 7.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-96251">Cisco Unified Communications Manager 7.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-96253">Cisco Unified Communications Manager 8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76296">Cisco Unified Communications Manager 4.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58683">Cisco Unified Communications Manager 4.3(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-83448">Cisco Unified Communications Manager 4.1(3)2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67789">Cisco Unified Communications Manager 4.3(1)SR Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-83446">Cisco Unified Communications Manager 4.3(1)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-83452">Cisco Unified Communications Manager 4.3(1)SR1a Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-83450">Cisco Unified Communications Manager 4.3(1)SR1b Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66342">Cisco Unified Communications Manager 4.3(1.57) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-90277">Cisco Unified Communications Manager 4.3(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-90279">Cisco Unified Communications Manager 4.3(2)SR1 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager SCCP StationCapabilitiesRes Message Remote Denial of Service Vulnerability</Title>
+    <CVE>CVE-2010-0587</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-58683</ProductID>
+        <ProductID>CVRFPID-66342</ProductID>
+        <ProductID>CVRFPID-67789</ProductID>
+        <ProductID>CVRFPID-76296</ProductID>
+        <ProductID>CVRFPID-83446</ProductID>
+        <ProductID>CVRFPID-83448</ProductID>
+        <ProductID>CVRFPID-83450</ProductID>
+        <ProductID>CVRFPID-83452</ProductID>
+        <ProductID>CVRFPID-90277</ProductID>
+        <ProductID>CVRFPID-90279</ProductID>
+        <ProductID>CVRFPID-88446</ProductID>
+        <ProductID>CVRFPID-88448</ProductID>
+        <ProductID>CVRFPID-88449</ProductID>
+        <ProductID>CVRFPID-88450</ProductID>
+        <ProductID>CVRFPID-88451</ProductID>
+        <ProductID>CVRFPID-88452</ProductID>
+        <ProductID>CVRFPID-88453</ProductID>
+        <ProductID>CVRFPID-88454</ProductID>
+        <ProductID>CVRFPID-88455</ProductID>
+        <ProductID>CVRFPID-88456</ProductID>
+        <ProductID>CVRFPID-88457</ProductID>
+        <ProductID>CVRFPID-88458</ProductID>
+        <ProductID>CVRFPID-88459</ProductID>
+        <ProductID>CVRFPID-88460</ProductID>
+        <ProductID>CVRFPID-88461</ProductID>
+        <ProductID>CVRFPID-88462</ProductID>
+        <ProductID>CVRFPID-88463</ProductID>
+        <ProductID>CVRFPID-88464</ProductID>
+        <ProductID>CVRFPID-93291</ProductID>
+        <ProductID>CVRFPID-96251</ProductID>
+        <ProductID>CVRFPID-96253</ProductID>
+        <ProductID>CVRFPID-97354</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100303-dmp</URL>
+        <Description>Cisco Digital Media Player Remote Display Unauthorized Content Injection Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager Malformed SIP Register Message Remote Denial of Service Vulnerability</Title>
+    <CVE>CVE-2010-0590</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-93291</ProductID>
+        <ProductID>CVRFPID-96251</ProductID>
+        <ProductID>CVRFPID-96253</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100303-dmp</URL>
+        <Description>Cisco Digital Media Player Remote Display Unauthorized Content Injection Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager Skinny Call Control Protocol Packet Processing Denial of Service Vulnerability</Title>
+    <CVE>CVE-2010-0588</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-88448</ProductID>
+        <ProductID>CVRFPID-88459</ProductID>
+        <ProductID>CVRFPID-88460</ProductID>
+        <ProductID>CVRFPID-88461</ProductID>
+        <ProductID>CVRFPID-88462</ProductID>
+        <ProductID>CVRFPID-88463</ProductID>
+        <ProductID>CVRFPID-88464</ProductID>
+        <ProductID>CVRFPID-93291</ProductID>
+        <ProductID>CVRFPID-96251</ProductID>
+        <ProductID>CVRFPID-96253</ProductID>
+        <ProductID>CVRFPID-97354</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100303-dmp</URL>
+        <Description>Cisco Digital Media Player Remote Display Unauthorized Content Injection Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager Malformed SIP REG Message Remote Denial of Service Vulnerability</Title>
+    <CVE>CVE-2010-0591</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-88446</ProductID>
+        <ProductID>CVRFPID-88448</ProductID>
+        <ProductID>CVRFPID-88449</ProductID>
+        <ProductID>CVRFPID-88450</ProductID>
+        <ProductID>CVRFPID-88451</ProductID>
+        <ProductID>CVRFPID-88452</ProductID>
+        <ProductID>CVRFPID-88453</ProductID>
+        <ProductID>CVRFPID-88454</ProductID>
+        <ProductID>CVRFPID-88455</ProductID>
+        <ProductID>CVRFPID-88456</ProductID>
+        <ProductID>CVRFPID-88457</ProductID>
+        <ProductID>CVRFPID-88458</ProductID>
+        <ProductID>CVRFPID-88459</ProductID>
+        <ProductID>CVRFPID-88460</ProductID>
+        <ProductID>CVRFPID-88461</ProductID>
+        <ProductID>CVRFPID-88462</ProductID>
+        <ProductID>CVRFPID-88463</ProductID>
+        <ProductID>CVRFPID-88464</ProductID>
+        <ProductID>CVRFPID-93291</ProductID>
+        <ProductID>CVRFPID-96251</ProductID>
+        <ProductID>CVRFPID-96253</ProductID>
+        <ProductID>CVRFPID-97354</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100303-dmp</URL>
+        <Description>Cisco Digital Media Player Remote Display Unauthorized Content Injection Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager CTI Manager Request Processing Denial of Service Vulnerability</Title>
+    <CVE>CVE-2010-0592</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-58683</ProductID>
+        <ProductID>CVRFPID-66342</ProductID>
+        <ProductID>CVRFPID-67789</ProductID>
+        <ProductID>CVRFPID-76296</ProductID>
+        <ProductID>CVRFPID-83446</ProductID>
+        <ProductID>CVRFPID-83448</ProductID>
+        <ProductID>CVRFPID-83450</ProductID>
+        <ProductID>CVRFPID-83452</ProductID>
+        <ProductID>CVRFPID-90277</ProductID>
+        <ProductID>CVRFPID-90279</ProductID>
+        <ProductID>CVRFPID-88448</ProductID>
+        <ProductID>CVRFPID-88459</ProductID>
+        <ProductID>CVRFPID-88460</ProductID>
+        <ProductID>CVRFPID-88461</ProductID>
+        <ProductID>CVRFPID-88462</ProductID>
+        <ProductID>CVRFPID-88463</ProductID>
+        <ProductID>CVRFPID-90269</ProductID>
+        <ProductID>CVRFPID-90270</ProductID>
+        <ProductID>CVRFPID-90271</ProductID>
+        <ProductID>CVRFPID-93291</ProductID>
+        <ProductID>CVRFPID-96253</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100303-dmp</URL>
+        <Description>Cisco Digital Media Player Remote Display Unauthorized Content Injection Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

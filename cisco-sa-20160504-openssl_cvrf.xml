@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160504-openssl</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.11</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-05-04T19:31:53</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-05-05T19:48:32</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2016-05-06T19:15:11</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2016-05-09T19:43:29</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2016-05-10T16:57:20</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2016-05-13T15:48:46</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2016-05-17T16:29:15</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.7</Number>
+        <Date>2016-06-01T13:05:10</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.8</Number>
+        <Date>2016-06-22T17:22:16</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2016-06-30T21:46:46</Date>
+        <Description>Updated the list of vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.10</Number>
+        <Date>2016-07-22T18:13:19</Date>
+        <Description>Updated the list of vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.11</Number>
+        <Date>2016-11-08T23:55:14</Date>
+        <Description>Updated the list of vulnerable products and products not vulnerable</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-05-04T19:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-11-08T23:55:14</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">On May 3, 2016, the OpenSSL Software Foundation released a security advisory that included six vulnerabilities. Of the six vulnerabilities disclosed, four of them may cause memory corruption or excessive memory usage, one could allow a padding oracle attack to decrypt traffic when the connection uses an AES CBC cipher and the server supports AES-NI, and, lastly, one is specific to a product performing an operation with Extended Binary Coded Decimal Interchange Code (EBCDIC) encoding.
+
+
+
+Multiple Cisco products incorporate a version of the OpenSSL package affected by one or more vulnerabilities. 
+
+
+
+This advisory will be updated as additional information becomes available.
+
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+      <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL Untrusted ASN.1 Structures Out-of-Bounds Write Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the ASN.1 encoder in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to the way the affected software encodes certain ASN.1 data structures. An attacker could exploit this vulnerability by sending a crafted certificate to the targeted system. An exploit could cause the affected software to crash or allow the attacker to execute arbitrary code with the privileges of a targeted user running an application that is using the OpenSSL library. If the user has elevated privileges, a successful exploit could result in a complete system compromise.</Note>
+    </Notes>
+    <CVE>CVE-2016-2108</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL AES CBC Cipher Man-in-the-Middle Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to decrypt and access sensitive information.
+
+
+
+The vulnerability is due to insufficient padding checks by the affected software. An attacker could exploit this vulnerability by conducting a padding oracle attack if the attacker is in a man-in-the-middle position between a targeted system and a Transport Layer Security/Secure Sockets Layer (TLS/SSL) or Datagram Transport Layer Security (DTLS) server supporting Advanced Encryption Standards New Instructions (AES-NI) and the connection uses an AES Cipher Block Chaining (CBC) cipher. A successful exploit could allow the attacker to decrypt sensitive information in encrypted packets, which could be leveraged to conduct further attacks.</Note>
+    </Notes>
+    <CVE>CVE-2016-2107</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL EVP_EncodeUpdate Function Overflow Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="5">A vulnerability in the EVP_EncodeUpdate() function in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to insufficient bounds checks by the affected software. An attacker could exploit this vulnerability by submitting large amounts of data to an application that uses the OpenSSL library on a targeted system. A successful exploit could trigger an overflow condition that results in heap corruption. The attacker could use the heap corruption to cause the application to crash or to execute arbitrary code in the security context of the user who is running the application. If the user is running the application with elevated privileges, the attacker could execute arbitrary code with those privileges and compromise the system completely.</Note>
+    </Notes>
+    <CVE>CVE-2016-2105</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL EVP_EncryptUpdate Function Overflow Heap Corruption Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="7">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability is due to improper validation of user-supplied input by the affected software. An attacker could exploit this vulnerability by submitting large amounts of specially crafted data to the EVP_EncryptUpdate() function of the affected software. A successful exploit could allow the attacker to execute arbitrary code with the privileges of the user or cause a DoS condition on a targeted system.</Note>
+    </Notes>
+    <CVE>CVE-2016-2106</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL d2i_CMS_bio Function Denial of Service Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="9">A vulnerability in OpenSSL could allow a local attacker to cause a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability is due to memory exhaustion while processing certain data. An attacker could exploit this vulnerability by sending crafted ASN.1 data to a targeted system. An exploit could cause the consumption of excessive memory resources, resulting in a DoS condition.</Note>
+    </Notes>
+    <CVE>CVE-2016-2109</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="6" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL ASN.1 Strings X509_NAME_oneline Function Overread Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="11">A vulnerability in OpenSSL could allow an unauthenticated, remote
+attacker to gain access to sensitive information on a targeted system.
+
+
+
+The vulnerability is due to improper memory processes by the affected software. An attacker could exploit this vulnerability by sending a crafted ASN.1 string greater than 1004 bytes to the X509_NAME_oneline() function of the affected software. A successful exploit could allow an attacker to cause a memory overread condition and gain access to sensitive information on a targeted system.</Note>
+    </Notes>
+    <CVE>CVE-2016-2176</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

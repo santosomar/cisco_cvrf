@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Cloud Services Platform 2100 Remote Command Execution Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160921-csp2100-2</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-09-21T15:02:04</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-09-21T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-09-21T15:02:04</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the web interface of Cisco Cloud Services Platform (CSP) 2100 could allow an unauthenticated, remote attacker to execute arbitrary code on a targeted system.
+
+
+
+The vulnerability is due to insufficient sanitization of specific values received as part of a user-supplied HTTP request. An attacker could exploit this vulnerability by sending a malicious dnslookup request to the affected system. An exploit could allow the attacker to execute arbitrary code with the privileges of the user.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160921-csp2100-2["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160921-csp2100-2"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160921-csp2100-2</URL>
+      <Description>Cisco Cloud Services Platform 2100 Remote Command Execution Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-220305">Cisco Cloud Services Platform 2100  2.0.0 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Cloud Service Platform 2100 Remote Command Execution Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz89093</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web interface of Cisco Cloud Services Platform (CSP) 2100 could allow an unauthenticated, remote attacker to execute arbitrary code on a targeted system.
+
+
+
+The vulnerability is due to insufficient sanitization of specific values received as part of a user-supplied HTTP request. An attacker could exploit this vulnerability by sending a malicious dnslookup request to the affected system. An exploit could allow the attacker to execute arbitrary code with the privileges of the user.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz89093</Note>
+    </Notes>
+    <CVE>CVE-2016-6374</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-220305</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.5</BaseScore>
+        <TemporalScore>6.2</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:P/I:P/A:P/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160921-csp2100-2</URL>
+        <Description>Cisco Cloud Services Platform 2100 Remote Command Execution Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

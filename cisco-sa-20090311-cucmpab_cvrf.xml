@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified Communications Manager IP Phone Personal Address Book Synchronizer Privilege Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20090311-cucmpab</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2009-03-11T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2009-03-11T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2009-03-11T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090311-cucmpab</URL>
+      <Description>Cisco Unified Communications Manager IP Phone Personal Address Book Synchronizer Privilege Escalation Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090311-cucmpab</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Unified Communications Manager IP Phone Personal Address Book Synchronizer Privilege Escalation Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090311-cucmpab</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Unified Communications Manager IP Phone Personal Address Book Synchronizer Privilege Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-88446">Cisco Unified Communications Manager 5.1(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88449">Cisco Unified Communications Manager 5.1(1c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88450">Cisco Unified Communications Manager 5.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88451">Cisco Unified Communications Manager 5.1(2a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88452">Cisco Unified Communications Manager 5.1(2b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88453">Cisco Unified Communications Manager 5.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88454">Cisco Unified Communications Manager 5.1(3a) </FullProductName>
+    <FullProductName ProductID="CVRFPID-88455">Cisco Unified Communications Manager 5.1(3b) </FullProductName>
+    <FullProductName ProductID="CVRFPID-88456">Cisco Unified Communications Manager 5.1(3c) </FullProductName>
+    <FullProductName ProductID="CVRFPID-88457">Cisco Unified Communications Manager 5.1(3d) </FullProductName>
+    <FullProductName ProductID="CVRFPID-88448">Cisco Unified Communications Manager 6.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88459">Cisco Unified Communications Manager 6.1(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88460">Cisco Unified Communications Manager 6.1(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88461">Cisco Unified Communications Manager 6.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88462">Cisco Unified Communications Manager 6.1(2)SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88463">Cisco Unified Communications Manager 6.1(2)SU1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-90269">Cisco Unified Communications Manager 7.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-90270">Cisco Unified Communications Manager 7.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-51459">Cisco Unified Communications Manager 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64533">Cisco Unified Communications Manager 4.1(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52286">Cisco Unified Communications Manager 4.1(2)ES33 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56084">Cisco Unified Communications Manager 4.1(2)ES50 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64534">Cisco Unified Communications Manager 4.1(2)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64519">Cisco Unified Communications Manager 4.1(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66341">Cisco Unified Communications Manager 4.1(3)ES Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52287">Cisco Unified Communications Manager 4.1(3)ES07 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56085">Cisco Unified Communications Manager 4.1(3)ES24 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66340">Cisco Unified Communications Manager 4.1(3)SR Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52288">Cisco Unified Communications Manager 4.1(3)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56081">Cisco Unified Communications Manager 4.1(3)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67786">Cisco Unified Communications Manager 4.1(3)SR3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58738">Cisco Unified Communications Manager 4.1(3)SR3b Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64523">Cisco Unified Communications Manager 4.1(3)SR3c Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58685">Cisco Unified Communications Manager 4.1(3)SR4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64521">Cisco Unified Communications Manager 4.1(3)SR4b  Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64518">Cisco Unified Communications Manager 4.1(3)SR4d Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67787">Cisco Unified Communications Manager 4.1(3)SR5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52289">Cisco Unified Communications Manager 4.1(4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64530">Cisco Unified Communications Manager 4.1(9) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64532">Cisco Unified Communications Manager 4.1(17) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64531">Cisco Unified Communications Manager 4.1(19) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64529">Cisco Unified Communications Manager 4.1(22) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64528">Cisco Unified Communications Manager 4.1(23) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64527">Cisco Unified Communications Manager 4.1(25) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64526">Cisco Unified Communications Manager 4.1(26) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64525">Cisco Unified Communications Manager 4.1(27.7) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64524">Cisco Unified Communications Manager 4.1(28.2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64522">Cisco Unified Communications Manager 4.1(30.4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64520">Cisco Unified Communications Manager 4.1(36) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64517">Cisco Unified Communications Manager 4.1(39) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64535">Cisco Unified Communications Manager 4.2(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64543">Cisco Unified Communications Manager 4.2(1)SR1b Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64545">Cisco Unified Communications Manager 4.2(1.02) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64541">Cisco Unified Communications Manager 4.2(1.05.3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64538">Cisco Unified Communications Manager 4.2(1.06) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64537">Cisco Unified Communications Manager 4.2(1.07) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58684">Cisco Unified Communications Manager 4.2(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64540">Cisco Unified Communications Manager 4.2(3)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67788">Cisco Unified Communications Manager 4.2(3)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-90273">Cisco Unified Communications Manager 4.2(3)SR3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-90275">Cisco Unified Communications Manager 4.2(3)SR4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76296">Cisco Unified Communications Manager 4.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58683">Cisco Unified Communications Manager 4.3(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-83448">Cisco Unified Communications Manager 4.1(3)2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67789">Cisco Unified Communications Manager 4.3(1)SR Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-83446">Cisco Unified Communications Manager 4.3(1)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-83452">Cisco Unified Communications Manager 4.3(1)SR1a Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-83450">Cisco Unified Communications Manager 4.3(1)SR1b Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66342">Cisco Unified Communications Manager 4.3(1.57) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-90277">Cisco Unified Communications Manager 4.3(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-90279">Cisco Unified Communications Manager 4.3(2)SR1 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>PSIRT for March 11: Cisco Unified Communications Manager IP Phone Personal Address Book Synchronizer Privilege Escalation Vulnerability</Title>
+    <CVE>CVE-2009-0632</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-51459</ProductID>
+        <ProductID>CVRFPID-52286</ProductID>
+        <ProductID>CVRFPID-52287</ProductID>
+        <ProductID>CVRFPID-52288</ProductID>
+        <ProductID>CVRFPID-52289</ProductID>
+        <ProductID>CVRFPID-56081</ProductID>
+        <ProductID>CVRFPID-56084</ProductID>
+        <ProductID>CVRFPID-56085</ProductID>
+        <ProductID>CVRFPID-58683</ProductID>
+        <ProductID>CVRFPID-58684</ProductID>
+        <ProductID>CVRFPID-58685</ProductID>
+        <ProductID>CVRFPID-58738</ProductID>
+        <ProductID>CVRFPID-64517</ProductID>
+        <ProductID>CVRFPID-64518</ProductID>
+        <ProductID>CVRFPID-64519</ProductID>
+        <ProductID>CVRFPID-64520</ProductID>
+        <ProductID>CVRFPID-64521</ProductID>
+        <ProductID>CVRFPID-64522</ProductID>
+        <ProductID>CVRFPID-64523</ProductID>
+        <ProductID>CVRFPID-64524</ProductID>
+        <ProductID>CVRFPID-64525</ProductID>
+        <ProductID>CVRFPID-64526</ProductID>
+        <ProductID>CVRFPID-64527</ProductID>
+        <ProductID>CVRFPID-64528</ProductID>
+        <ProductID>CVRFPID-64529</ProductID>
+        <ProductID>CVRFPID-64530</ProductID>
+        <ProductID>CVRFPID-64531</ProductID>
+        <ProductID>CVRFPID-64532</ProductID>
+        <ProductID>CVRFPID-64533</ProductID>
+        <ProductID>CVRFPID-64534</ProductID>
+        <ProductID>CVRFPID-64535</ProductID>
+        <ProductID>CVRFPID-64537</ProductID>
+        <ProductID>CVRFPID-64538</ProductID>
+        <ProductID>CVRFPID-64540</ProductID>
+        <ProductID>CVRFPID-64541</ProductID>
+        <ProductID>CVRFPID-64543</ProductID>
+        <ProductID>CVRFPID-64545</ProductID>
+        <ProductID>CVRFPID-66340</ProductID>
+        <ProductID>CVRFPID-66341</ProductID>
+        <ProductID>CVRFPID-66342</ProductID>
+        <ProductID>CVRFPID-67786</ProductID>
+        <ProductID>CVRFPID-67787</ProductID>
+        <ProductID>CVRFPID-67788</ProductID>
+        <ProductID>CVRFPID-67789</ProductID>
+        <ProductID>CVRFPID-76296</ProductID>
+        <ProductID>CVRFPID-83446</ProductID>
+        <ProductID>CVRFPID-83448</ProductID>
+        <ProductID>CVRFPID-83450</ProductID>
+        <ProductID>CVRFPID-83452</ProductID>
+        <ProductID>CVRFPID-90273</ProductID>
+        <ProductID>CVRFPID-90275</ProductID>
+        <ProductID>CVRFPID-90277</ProductID>
+        <ProductID>CVRFPID-90279</ProductID>
+        <ProductID>CVRFPID-88446</ProductID>
+        <ProductID>CVRFPID-88448</ProductID>
+        <ProductID>CVRFPID-88449</ProductID>
+        <ProductID>CVRFPID-88450</ProductID>
+        <ProductID>CVRFPID-88451</ProductID>
+        <ProductID>CVRFPID-88452</ProductID>
+        <ProductID>CVRFPID-88453</ProductID>
+        <ProductID>CVRFPID-88454</ProductID>
+        <ProductID>CVRFPID-88455</ProductID>
+        <ProductID>CVRFPID-88456</ProductID>
+        <ProductID>CVRFPID-88457</ProductID>
+        <ProductID>CVRFPID-88459</ProductID>
+        <ProductID>CVRFPID-88460</ProductID>
+        <ProductID>CVRFPID-88461</ProductID>
+        <ProductID>CVRFPID-88462</ProductID>
+        <ProductID>CVRFPID-88463</ProductID>
+        <ProductID>CVRFPID-90269</ProductID>
+        <ProductID>CVRFPID-90270</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.0</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090311-cucmpab</URL>
+        <Description>Cisco Unified Communications Manager IP Phone Personal Address Book Synchronizer Privilege Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

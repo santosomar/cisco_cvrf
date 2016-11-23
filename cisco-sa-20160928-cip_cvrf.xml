@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software Common Industrial Protocol Request Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160928-cip</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-09-28T14:30:55</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-09-28T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-09-28T14:30:55</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Common Industrial Protocol (CIP) feature of Cisco IOS Software could allow an unauthenticated, remote attacker to create a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to a failure to properly process an unusual, but valid, set of requests to an affected device. An attacker could exploit this vulnerability by submitting a CIP message request designed to trigger the vulnerability to an affected device. An exploit could cause the switch to stop processing traffic, requiring a restart of the device to regain functionality.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160928-cip["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160928-cip"]
+
+
+
+This advisory is part of the September 28, 2016, release of the Cisco IOS and IOS XE Software Security Advisory Bundled Publication, which includes 10 Cisco Security Advisories that describe 11 vulnerabilities. All the vulnerabilities have a Security Impact Rating of ?High.? For a complete list of the advisories and links to them, see Cisco Event Response: September 2016 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication["http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-56513"].
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160928-cip</URL>
+      <Description>Cisco IOS Software Common Industrial Protocol Request Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20160928-bundle</URL>
+      <Description>Summary of the Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, September 28, 2016</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-56513</URL>
+      <Description>Cisco Event Response: September 2016 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20160928-bundle</URL>
+      <Description>Summary of the Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, September 28, 2016</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-56513</URL>
+      <Description>Cisco Event Response: September 2016 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-104061">Cisco IOS 12.2(44)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-105253">Cisco IOS 12.2(44)EX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103921">Cisco IOS 12.2(46)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-106997">Cisco IOS 12.2(46)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104089">Cisco IOS 12.2(46)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107630">Cisco IOS 12.2(50)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-104342">Cisco IOS 12.2(50)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104101">Cisco IOS 12.2(50)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106016">Cisco IOS 12.2(50)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107209">Cisco IOS 12.2(50)SE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-104855">Cisco IOS 12.2(50)SE5</FullProductName>
+    <FullProductName ProductID="CVRFPID-105973">Cisco IOS 12.2(52)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-106684">Cisco IOS 12.2(52)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103763">Cisco IOS 12.2(55)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-198542">Cisco IOS 12.2(55)SE10</FullProductName>
+    <FullProductName ProductID="CVRFPID-105394">Cisco IOS 12.2(55)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-109439">Cisco IOS 12.2(55)SE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-111674">Cisco IOS 12.2(55)SE5</FullProductName>
+    <FullProductName ProductID="CVRFPID-114665">Cisco IOS 12.2(55)SE6</FullProductName>
+    <FullProductName ProductID="CVRFPID-184125">Cisco IOS 12.2(55)SE7</FullProductName>
+    <FullProductName ProductID="CVRFPID-189187">Cisco IOS 12.2(55)SE8</FullProductName>
+    <FullProductName ProductID="CVRFPID-192911">Cisco IOS 12.2(55)SE9</FullProductName>
+    <FullProductName ProductID="CVRFPID-109808">Cisco IOS 12.2(58)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-117436">Cisco IOS 15.0(2)EB</FullProductName>
+    <FullProductName ProductID="CVRFPID-104376">Cisco IOS 15.0(1)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-115969">Cisco IOS 15.0(1)EY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-187269">Cisco IOS 15.0(1)EY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-187932">Cisco IOS 15.0(2)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-190250">Cisco IOS 15.0(2)EY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-192831">Cisco IOS 15.0(2)EY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195481">Cisco IOS 15.0(2)EY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107852">Cisco IOS 15.0(2)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-115939">Cisco IOS 15.0(2)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-116083">Cisco IOS 15.0(2)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-189455">Cisco IOS 15.0(2)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-190635">Cisco IOS 15.0(2)SE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-192706">Cisco IOS 15.0(2)SE5</FullProductName>
+    <FullProductName ProductID="CVRFPID-195770">Cisco IOS 15.0(2)SE6</FullProductName>
+    <FullProductName ProductID="CVRFPID-204097">Cisco IOS 15.0(2)SE7</FullProductName>
+    <FullProductName ProductID="CVRFPID-209029">Cisco IOS 15.0(2)SE9</FullProductName>
+    <FullProductName ProductID="CVRFPID-187057">Cisco IOS 15.2(2)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-201074">Cisco IOS 15.2(2)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204228">Cisco IOS 15.2(2)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-210766">Cisco IOS 15.2(2)E4</FullProductName>
+    <FullProductName ProductID="CVRFPID-209051">Cisco IOS 15.2(3)EA</FullProductName>
+    <FullProductName ProductID="CVRFPID-191928">Cisco IOS 15.2(1)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-200899">Cisco IOS 15.3(3)JA</FullProductName>
+    <FullProductName ProductID="CVRFPID-204826">Cisco IOS 15.3(3)JA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204813">Cisco IOS 15.3(3)JA1m</FullProductName>
+    <FullProductName ProductID="CVRFPID-204310">Cisco IOS 15.3(3)JA1n</FullProductName>
+    <FullProductName ProductID="CVRFPID-209067">Cisco IOS 15.3(3)JA4</FullProductName>
+    <FullProductName ProductID="CVRFPID-209068">Cisco IOS 15.3(3)JA5</FullProductName>
+    <FullProductName ProductID="CVRFPID-214382">Cisco IOS 15.3(3)JA7</FullProductName>
+    <FullProductName ProductID="CVRFPID-209070">Cisco IOS 15.3(3)JA77</FullProductName>
+    <FullProductName ProductID="CVRFPID-214764">Cisco IOS 15.3(3)JA8</FullProductName>
+    <FullProductName ProductID="CVRFPID-216257">Cisco IOS 15.3(3)JA9</FullProductName>
+    <FullProductName ProductID="CVRFPID-204103">Cisco IOS 15.3(3)JAA</FullProductName>
+    <FullProductName ProductID="CVRFPID-202562">Cisco IOS 15.3(3)JAB</FullProductName>
+    <FullProductName ProductID="CVRFPID-209073">Cisco IOS 15.3(3)JAX</FullProductName>
+    <FullProductName ProductID="CVRFPID-209074">Cisco IOS 15.3(3)JAX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209075">Cisco IOS 15.3(3)JAX2</FullProductName>
+    <FullProductName ProductID="CVRFPID-209077">Cisco IOS 15.3(3)JB</FullProductName>
+    <FullProductName ProductID="CVRFPID-209078">Cisco IOS 15.3(3)JB75</FullProductName>
+    <FullProductName ProductID="CVRFPID-209080">Cisco IOS 15.3(3)JBB</FullProductName>
+    <FullProductName ProductID="CVRFPID-209081">Cisco IOS 15.3(3)JBB1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209419">Cisco IOS 15.3(3)JBB2</FullProductName>
+    <FullProductName ProductID="CVRFPID-210189">Cisco IOS 15.3(3)JBB4</FullProductName>
+    <FullProductName ProductID="CVRFPID-210262">Cisco IOS 15.3(3)JBB5</FullProductName>
+    <FullProductName ProductID="CVRFPID-209082">Cisco IOS 15.3(3)JBB50</FullProductName>
+    <FullProductName ProductID="CVRFPID-210491">Cisco IOS 15.3(3)JBB6</FullProductName>
+    <FullProductName ProductID="CVRFPID-213770">Cisco IOS 15.3(3)JBB6a</FullProductName>
+    <FullProductName ProductID="CVRFPID-212266">Cisco IOS 15.3(3)JBB8</FullProductName>
+    <FullProductName ProductID="CVRFPID-209474">Cisco IOS 15.3(3)JC</FullProductName>
+    <FullProductName ProductID="CVRFPID-209086">Cisco IOS 15.3(3)JN3</FullProductName>
+    <FullProductName ProductID="CVRFPID-209087">Cisco IOS 15.3(3)JN4</FullProductName>
+    <FullProductName ProductID="CVRFPID-209935">Cisco IOS 15.3(3)JN7</FullProductName>
+    <FullProductName ProductID="CVRFPID-210410">Cisco IOS 15.3(3)JN8</FullProductName>
+    <FullProductName ProductID="CVRFPID-205723">Cisco IOS 15.3(3)JNB</FullProductName>
+    <FullProductName ProductID="CVRFPID-209089">Cisco IOS 15.3(3)JNB1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209090">Cisco IOS 15.3(3)JNB2</FullProductName>
+    <FullProductName ProductID="CVRFPID-210411">Cisco IOS 15.3(3)JNB3</FullProductName>
+    <FullProductName ProductID="CVRFPID-210137">Cisco IOS 15.3(3)JNC</FullProductName>
+    <FullProductName ProductID="CVRFPID-212497">Cisco IOS 15.3(3)JNC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-211256">Cisco IOS 15.3(3)JNP</FullProductName>
+    <FullProductName ProductID="CVRFPID-212686">Cisco IOS 15.3(3)JNP1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software Common Industrial Protocol Request Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCur69036</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Common Industrial Protocol (CIP) feature of Cisco IOS Software could allow an unauthenticated, remote attacker to create a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to a failure to properly process an unusual, but valid, set of requests to an affected device. An attacker could exploit this vulnerability by submitting a CIP message request designed to trigger the vulnerability to an affected device. An exploit could cause the switch to stop processing traffic, requiring a restart of the device to regain functionality.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCur69036</Note>
+    </Notes>
+    <CVE>CVE-2016-6391</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-103763</ProductID>
+        <ProductID>CVRFPID-103921</ProductID>
+        <ProductID>CVRFPID-104061</ProductID>
+        <ProductID>CVRFPID-104089</ProductID>
+        <ProductID>CVRFPID-104101</ProductID>
+        <ProductID>CVRFPID-104342</ProductID>
+        <ProductID>CVRFPID-104376</ProductID>
+        <ProductID>CVRFPID-104855</ProductID>
+        <ProductID>CVRFPID-105253</ProductID>
+        <ProductID>CVRFPID-105394</ProductID>
+        <ProductID>CVRFPID-105973</ProductID>
+        <ProductID>CVRFPID-106016</ProductID>
+        <ProductID>CVRFPID-106684</ProductID>
+        <ProductID>CVRFPID-106997</ProductID>
+        <ProductID>CVRFPID-107209</ProductID>
+        <ProductID>CVRFPID-107630</ProductID>
+        <ProductID>CVRFPID-107852</ProductID>
+        <ProductID>CVRFPID-109439</ProductID>
+        <ProductID>CVRFPID-109808</ProductID>
+        <ProductID>CVRFPID-111674</ProductID>
+        <ProductID>CVRFPID-114665</ProductID>
+        <ProductID>CVRFPID-115939</ProductID>
+        <ProductID>CVRFPID-115969</ProductID>
+        <ProductID>CVRFPID-116083</ProductID>
+        <ProductID>CVRFPID-117436</ProductID>
+        <ProductID>CVRFPID-184125</ProductID>
+        <ProductID>CVRFPID-187057</ProductID>
+        <ProductID>CVRFPID-187269</ProductID>
+        <ProductID>CVRFPID-187932</ProductID>
+        <ProductID>CVRFPID-189187</ProductID>
+        <ProductID>CVRFPID-189455</ProductID>
+        <ProductID>CVRFPID-190250</ProductID>
+        <ProductID>CVRFPID-190635</ProductID>
+        <ProductID>CVRFPID-191928</ProductID>
+        <ProductID>CVRFPID-192706</ProductID>
+        <ProductID>CVRFPID-192831</ProductID>
+        <ProductID>CVRFPID-192911</ProductID>
+        <ProductID>CVRFPID-195481</ProductID>
+        <ProductID>CVRFPID-195770</ProductID>
+        <ProductID>CVRFPID-198542</ProductID>
+        <ProductID>CVRFPID-200899</ProductID>
+        <ProductID>CVRFPID-201074</ProductID>
+        <ProductID>CVRFPID-202562</ProductID>
+        <ProductID>CVRFPID-204097</ProductID>
+        <ProductID>CVRFPID-204103</ProductID>
+        <ProductID>CVRFPID-204228</ProductID>
+        <ProductID>CVRFPID-204310</ProductID>
+        <ProductID>CVRFPID-204813</ProductID>
+        <ProductID>CVRFPID-204826</ProductID>
+        <ProductID>CVRFPID-205723</ProductID>
+        <ProductID>CVRFPID-209029</ProductID>
+        <ProductID>CVRFPID-209051</ProductID>
+        <ProductID>CVRFPID-209067</ProductID>
+        <ProductID>CVRFPID-209068</ProductID>
+        <ProductID>CVRFPID-209070</ProductID>
+        <ProductID>CVRFPID-209073</ProductID>
+        <ProductID>CVRFPID-209074</ProductID>
+        <ProductID>CVRFPID-209075</ProductID>
+        <ProductID>CVRFPID-209077</ProductID>
+        <ProductID>CVRFPID-209078</ProductID>
+        <ProductID>CVRFPID-209080</ProductID>
+        <ProductID>CVRFPID-209081</ProductID>
+        <ProductID>CVRFPID-209082</ProductID>
+        <ProductID>CVRFPID-209086</ProductID>
+        <ProductID>CVRFPID-209087</ProductID>
+        <ProductID>CVRFPID-209089</ProductID>
+        <ProductID>CVRFPID-209090</ProductID>
+        <ProductID>CVRFPID-209419</ProductID>
+        <ProductID>CVRFPID-209474</ProductID>
+        <ProductID>CVRFPID-209935</ProductID>
+        <ProductID>CVRFPID-210137</ProductID>
+        <ProductID>CVRFPID-210189</ProductID>
+        <ProductID>CVRFPID-210262</ProductID>
+        <ProductID>CVRFPID-210410</ProductID>
+        <ProductID>CVRFPID-210411</ProductID>
+        <ProductID>CVRFPID-210491</ProductID>
+        <ProductID>CVRFPID-210766</ProductID>
+        <ProductID>CVRFPID-211256</ProductID>
+        <ProductID>CVRFPID-212266</ProductID>
+        <ProductID>CVRFPID-212497</ProductID>
+        <ProductID>CVRFPID-212686</ProductID>
+        <ProductID>CVRFPID-213770</ProductID>
+        <ProductID>CVRFPID-214382</ProductID>
+        <ProductID>CVRFPID-214764</ProductID>
+        <ProductID>CVRFPID-216257</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160928-cip</URL>
+        <Description>Cisco IOS Software Common Industrial Protocol Request Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

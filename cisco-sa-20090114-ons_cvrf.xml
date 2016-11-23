@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco ONS Platform Crafted Packet Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20090114-ons</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2009-01-14T16:00:00</Date>
+        <Description>Replaced software table.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2009-01-14T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2009-01-14T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090114-ons</URL>
+      <Description>Cisco ONS Platform Crafted Packet Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090114-ons</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco ONS Platform Crafted Packet Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090114-ons</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco ONS Platform Crafted Packet Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-87985">Cisco ONS 15310CL System Software 7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-87986">Cisco ONS 15310CL System Software 7.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-87987">Cisco ONS 15310CL System Software 7.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-87988">Cisco ONS 15310CL System Software 7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-87972">Cisco ONS 15310CL System Software 8.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-87990">Cisco ONS 15310CL System Software 8.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-87952">Cisco ONS 15310MA System Software 7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-87953">Cisco ONS 15310MA System Software 7.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-87954">Cisco ONS 15310MA System Software 7.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-87956">Cisco ONS 15310MA System Software 7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-87947">Cisco ONS 15310MA System Software 8.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-87958">Cisco ONS 15310MA System Software 8.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-87902">Cisco ONS 15327 System Software 7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-87903">Cisco ONS 15327 System Software 7.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-87904">Cisco ONS 15327 System Software 7.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-87906">Cisco ONS 15327 System Software 7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-61507">Cisco ONS 15454 System Software 7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-87866">Cisco ONS 15454 System Software 7.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-87867">Cisco ONS 15454 System Software 7.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-87871">Cisco ONS 15454 System Software 7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-87874">Cisco ONS 15454 System Software 8.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-87877">Cisco ONS 15454 System Software 8.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-87878">Cisco ONS 15454 System Software 8.5.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-87930">Cisco ONS 15454SDH System Software 7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-87931">Cisco ONS 15454SDH System Software 7.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-87932">Cisco ONS 15454SDH System Software 7.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-87928">Cisco ONS 15454SDH System Software 7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-87920">Cisco ONS 15454SDH System Software 8.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-87925">Cisco ONS 15454SDH System Software 8.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-87926">Cisco ONS 15454SDH System Software 8.5.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-88008">Cisco ONS 15600 System Software 7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-88009">Cisco ONS 15600 System Software 7.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-88006">Cisco ONS 15600 System Software 7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-88003">Cisco ONS 15600 System Software 8.0.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ONS TCP Packet Denial of Service Vulnerability</Title>
+    <CVE>CVE-2008-3818</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-87972</ProductID>
+        <ProductID>CVRFPID-87985</ProductID>
+        <ProductID>CVRFPID-87986</ProductID>
+        <ProductID>CVRFPID-87987</ProductID>
+        <ProductID>CVRFPID-87988</ProductID>
+        <ProductID>CVRFPID-87990</ProductID>
+        <ProductID>CVRFPID-87947</ProductID>
+        <ProductID>CVRFPID-87952</ProductID>
+        <ProductID>CVRFPID-87953</ProductID>
+        <ProductID>CVRFPID-87954</ProductID>
+        <ProductID>CVRFPID-87956</ProductID>
+        <ProductID>CVRFPID-87958</ProductID>
+        <ProductID>CVRFPID-87902</ProductID>
+        <ProductID>CVRFPID-87903</ProductID>
+        <ProductID>CVRFPID-87904</ProductID>
+        <ProductID>CVRFPID-87906</ProductID>
+        <ProductID>CVRFPID-61507</ProductID>
+        <ProductID>CVRFPID-87866</ProductID>
+        <ProductID>CVRFPID-87867</ProductID>
+        <ProductID>CVRFPID-87871</ProductID>
+        <ProductID>CVRFPID-87874</ProductID>
+        <ProductID>CVRFPID-87877</ProductID>
+        <ProductID>CVRFPID-87878</ProductID>
+        <ProductID>CVRFPID-87920</ProductID>
+        <ProductID>CVRFPID-87925</ProductID>
+        <ProductID>CVRFPID-87926</ProductID>
+        <ProductID>CVRFPID-87928</ProductID>
+        <ProductID>CVRFPID-87930</ProductID>
+        <ProductID>CVRFPID-87931</ProductID>
+        <ProductID>CVRFPID-87932</ProductID>
+        <ProductID>CVRFPID-88003</ProductID>
+        <ProductID>CVRFPID-88006</ProductID>
+        <ProductID>CVRFPID-88008</ProductID>
+        <ProductID>CVRFPID-88009</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090114-ons</URL>
+        <Description>Cisco ONS Platform Crafted Packet Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

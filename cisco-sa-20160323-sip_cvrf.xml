@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS and IOS XE and Cisco Unified Communications Manager Software Session Initiation Protocol Memory Leak Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160323-sip</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-03-23T18:24:24</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-05-09T12:46:51</Date>
+        <Description>Adjusted Cisco Unified Communications Manager Software fix table to include CCO versions of the software.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-03-23T18:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-05-09T12:46:51</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Session Initiation Protocol (SIP) gateway implementation in Cisco IOS, IOS XE, and Cisco Unified Communications Manager Software could allow an unauthenticated, remote attacker to cause a memory leak and eventual reload of an affected device.
+
+
+
+The vulnerability is due to improper processing of malformed SIP messages. An attacker could exploit this vulnerability by sending malformed SIP messages to be processed by an affected device. An exploit could allow the attacker to cause a memory leak and eventual reload of the affected device.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability other than disabling SIP on the vulnerable device.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160323-sip["https://tvce.cisco.com/security/AIMS/http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160323-sip"]
+
+
+
+This advisory is part of the March 23, 2016, release of the Cisco IOS and IOS XE Software Security Advisory Bundled Publication, which includes six Cisco Security Advisories that describe six vulnerabilities. All the vulnerabilities have a Security Impact Rating of "High." For a complete list of advisories and links to them, see Cisco Event Response: Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication["http://www.cisco.com/c/en/us/about/security-center/event-response/cisco-erp-march-2016.html"].
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160323-sip</URL>
+      <Description>Cisco IOS and IOS XE and Cisco Unified Communications Manager Software Session Initiation Protocol Memory Leak Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-51122</URL>
+      <Description>Cisco Event Response: March 2016 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20160323-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, March 23, 2016 </Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-51122</URL>
+      <Description>Cisco Event Response: March 2016 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20160323-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, March 23, 2016 </Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-187412">Cisco IOS 15.3(3)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-193284">Cisco IOS 15.3(3)M1</FullProductName>
+    <FullProductName ProductID="CVRFPID-193315">Cisco IOS 15.3(3)M2</FullProductName>
+    <FullProductName ProductID="CVRFPID-188008">Cisco IOS 15.3(1)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-187962">Cisco IOS 15.3(1)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-190979">Cisco IOS 15.3(2)S0a</FullProductName>
+    <FullProductName ProductID="CVRFPID-191331">Cisco IOS 15.3(2)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-103851">Cisco IOS 15.3(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-187231">Cisco IOS 15.3(1)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-187232">Cisco IOS 15.3(1)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-187425">Cisco IOS 15.3(1)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-189617">Cisco IOS 15.3(1)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-111023">Cisco IOS 15.3(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-190432">Cisco IOS 15.3(2)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-190493">Cisco IOS 15.3(2)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-191942">Cisco IOS 15.3(2)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-194942">Cisco IOS 15.3(2)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195977">Cisco IOS 15.4(1)CG</FullProductName>
+    <FullProductName ProductID="CVRFPID-200499">Cisco IOS 15.4(2)CG</FullProductName>
+    <FullProductName ProductID="CVRFPID-115981">Cisco IOS 15.4(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-196255">Cisco IOS 15.4(1)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191997">Cisco IOS 15.4(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-194735">Cisco IOS XE Software 3.8S 3.8.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194736">Cisco IOS XE Software 3.8S 3.8.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194737">Cisco IOS XE Software 3.8S 3.8.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194843">Cisco IOS XE Software 3.9S 3.9.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213825">Cisco IOS XE Software 3.9S 3.9.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-194842">Cisco IOS XE Software 3.9S 3.9.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213816">Cisco IOS XE Software 3.9S 3.9.1aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-202558">Cisco IOS XE Software 3.9S 3.9.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198123">Cisco IOS XE Software 3.10S 3.10.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198124">Cisco IOS XE Software 3.10S 3.10.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213642">Cisco IOS XE Software 3.10S 3.10.1xbS</FullProductName>
+    <FullProductName ProductID="CVRFPID-198125">Cisco IOS XE Software 3.10S 3.10.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-203353">Cisco IOS XE Software 3.11S 3.11.0S</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS and IOS XE and Cisco Unified Communications Manager Software Session Initiation Protocol Memory Leak Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuj23293</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Session Initiation Protocol (SIP) gateway implementation in Cisco IOS, IOS XE, and Cisco Unified Communications Manager Software could allow an unauthenticated, remote attacker to cause a memory leak and eventual reload of an affected device.
+
+
+
+The vulnerability is due to improper processing of malformed SIP messages. An attacker could exploit this vulnerability by sending malformed SIP messages to be processed by an affected device. An exploit could allow the attacker to cause a memory leak and eventual reload of the affected device.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuj23293,CSCuv39370</Note>
+    </Notes>
+    <CVE>CVE-2016-1350</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-103851</ProductID>
+        <ProductID>CVRFPID-111023</ProductID>
+        <ProductID>CVRFPID-115981</ProductID>
+        <ProductID>CVRFPID-187231</ProductID>
+        <ProductID>CVRFPID-187232</ProductID>
+        <ProductID>CVRFPID-187412</ProductID>
+        <ProductID>CVRFPID-187425</ProductID>
+        <ProductID>CVRFPID-187962</ProductID>
+        <ProductID>CVRFPID-188008</ProductID>
+        <ProductID>CVRFPID-189617</ProductID>
+        <ProductID>CVRFPID-190432</ProductID>
+        <ProductID>CVRFPID-190493</ProductID>
+        <ProductID>CVRFPID-190979</ProductID>
+        <ProductID>CVRFPID-191331</ProductID>
+        <ProductID>CVRFPID-191942</ProductID>
+        <ProductID>CVRFPID-191997</ProductID>
+        <ProductID>CVRFPID-193284</ProductID>
+        <ProductID>CVRFPID-193315</ProductID>
+        <ProductID>CVRFPID-194942</ProductID>
+        <ProductID>CVRFPID-195977</ProductID>
+        <ProductID>CVRFPID-196255</ProductID>
+        <ProductID>CVRFPID-200499</ProductID>
+        <ProductID>CVRFPID-194735</ProductID>
+        <ProductID>CVRFPID-194736</ProductID>
+        <ProductID>CVRFPID-194737</ProductID>
+        <ProductID>CVRFPID-194842</ProductID>
+        <ProductID>CVRFPID-194843</ProductID>
+        <ProductID>CVRFPID-198123</ProductID>
+        <ProductID>CVRFPID-198124</ProductID>
+        <ProductID>CVRFPID-198125</ProductID>
+        <ProductID>CVRFPID-202558</ProductID>
+        <ProductID>CVRFPID-203353</ProductID>
+        <ProductID>CVRFPID-213642</ProductID>
+        <ProductID>CVRFPID-213816</ProductID>
+        <ProductID>CVRFPID-213825</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability other than disabling SIP on the vulnerable device.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160323-sip</URL>
+        <Description>Cisco IOS and IOS XE and Cisco Unified Communications Manager Software Session Initiation Protocol Memory Leak Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

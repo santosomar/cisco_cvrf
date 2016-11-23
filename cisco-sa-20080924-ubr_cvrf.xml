@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco uBR10012 Series Devices SNMP Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20080924-ubr</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2008-09-24T16:00:00</Date>
+        <Description>Removed references to the combined software table, as it is now
+			 outdated.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2008-09-24T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2008-09-24T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080924-ubr</URL>
+      <Description>Cisco uBR10012 Series Devices SNMP Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080924-ipc-and-ubr</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco 10000, uBR10012, and uBR7200 Series Devices IPC Vulnerability and the Cisco uBR10012 Series Devices SNMP Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080924-ipc-and-ubr</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco 10000, uBR10012, and uBR7200 Series Devices IPC Vulnerability and the Cisco uBR10012 Series Devices SNMP Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-105799">Cisco IOS 12.2(4)BC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103709">Cisco IOS 12.2(4)BC1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-107236">Cisco IOS 12.2(4)BC1b</FullProductName>
+    <FullProductName ProductID="CVRFPID-104502">Cisco IOS 12.2(8)BC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104317">Cisco IOS 12.2(8)BC2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106079">Cisco IOS 12.2(8)BC2a</FullProductName>
+    <FullProductName ProductID="CVRFPID-103939">Cisco IOS 12.2(11)BC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107296">Cisco IOS 12.2(11)BC1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-104414">Cisco IOS 12.2(11)BC1b</FullProductName>
+    <FullProductName ProductID="CVRFPID-106350">Cisco IOS 12.2(11)BC2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107107">Cisco IOS 12.2(11)BC2a</FullProductName>
+    <FullProductName ProductID="CVRFPID-107097">Cisco IOS 12.2(11)BC3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104001">Cisco IOS 12.2(11)BC3a</FullProductName>
+    <FullProductName ProductID="CVRFPID-106384">Cisco IOS 12.2(11)BC3b</FullProductName>
+    <FullProductName ProductID="CVRFPID-104087">Cisco IOS 12.2(11)BC3c</FullProductName>
+    <FullProductName ProductID="CVRFPID-106826">Cisco IOS 12.2(11)BC3d</FullProductName>
+    <FullProductName ProductID="CVRFPID-105633">Cisco IOS 12.2(15)BC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103696">Cisco IOS 12.2(15)BC1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-103909">Cisco IOS 12.2(15)BC1b</FullProductName>
+    <FullProductName ProductID="CVRFPID-104741">Cisco IOS 12.2(15)BC1c</FullProductName>
+    <FullProductName ProductID="CVRFPID-104962">Cisco IOS 12.2(15)BC1d</FullProductName>
+    <FullProductName ProductID="CVRFPID-107364">Cisco IOS 12.2(15)BC1e</FullProductName>
+    <FullProductName ProductID="CVRFPID-107610">Cisco IOS 12.2(15)BC1f</FullProductName>
+    <FullProductName ProductID="CVRFPID-104124">Cisco IOS 12.2(15)BC1g</FullProductName>
+    <FullProductName ProductID="CVRFPID-106906">Cisco IOS 12.2(15)BC2</FullProductName>
+    <FullProductName ProductID="CVRFPID-103691">Cisco IOS 12.2(15)BC2a</FullProductName>
+    <FullProductName ProductID="CVRFPID-107717">Cisco IOS 12.2(15)BC2b</FullProductName>
+    <FullProductName ProductID="CVRFPID-104823">Cisco IOS 12.2(15)BC2c</FullProductName>
+    <FullProductName ProductID="CVRFPID-103983">Cisco IOS 12.2(15)BC2d</FullProductName>
+    <FullProductName ProductID="CVRFPID-107232">Cisco IOS 12.2(15)BC2e</FullProductName>
+    <FullProductName ProductID="CVRFPID-104835">Cisco IOS 12.2(15)BC2f</FullProductName>
+    <FullProductName ProductID="CVRFPID-104058">Cisco IOS 12.2(15)BC2g</FullProductName>
+    <FullProductName ProductID="CVRFPID-107538">Cisco IOS 12.2(15)BC2h</FullProductName>
+    <FullProductName ProductID="CVRFPID-104632">Cisco IOS 12.2(15)BC2i</FullProductName>
+    <FullProductName ProductID="CVRFPID-60317">Cisco IOS 12.2(11)CX</FullProductName>
+    <FullProductName ProductID="CVRFPID-69469">Cisco IOS 12.2(15)CX</FullProductName>
+    <FullProductName ProductID="CVRFPID-106045">Cisco IOS 12.2(15)CX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-60318">Cisco IOS 12.2(11)CY</FullProductName>
+    <FullProductName ProductID="CVRFPID-60052">Cisco IOS 12.2(4)XF</FullProductName>
+    <FullProductName ProductID="CVRFPID-107224">Cisco IOS 12.2(4)XF1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65905">Cisco IOS 12.3(9a)BC</FullProductName>
+    <FullProductName ProductID="CVRFPID-104891">Cisco IOS 12.3(9a)BC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104043">Cisco IOS 12.3(9a)BC2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105194">Cisco IOS 12.3(9a)BC3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107000">Cisco IOS 12.3(9a)BC4</FullProductName>
+    <FullProductName ProductID="CVRFPID-105767">Cisco IOS 12.3(9a)BC5</FullProductName>
+    <FullProductName ProductID="CVRFPID-105475">Cisco IOS 12.3(9a)BC6</FullProductName>
+    <FullProductName ProductID="CVRFPID-106811">Cisco IOS 12.3(9a)BC7</FullProductName>
+    <FullProductName ProductID="CVRFPID-106566">Cisco IOS 12.3(9a)BC8</FullProductName>
+    <FullProductName ProductID="CVRFPID-103670">Cisco IOS 12.3(9a)BC9</FullProductName>
+    <FullProductName ProductID="CVRFPID-65450">Cisco IOS 12.3(13a)BC</FullProductName>
+    <FullProductName ProductID="CVRFPID-106167">Cisco IOS 12.3(13a)BC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103842">Cisco IOS 12.3(13a)BC2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105916">Cisco IOS 12.3(13a)BC3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107234">Cisco IOS 12.3(13a)BC4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106972">Cisco IOS 12.3(13a)BC5</FullProductName>
+    <FullProductName ProductID="CVRFPID-62567">Cisco IOS 12.3(13a)BC6</FullProductName>
+    <FullProductName ProductID="CVRFPID-63190">Cisco IOS 12.3(17a)BC</FullProductName>
+    <FullProductName ProductID="CVRFPID-107500">Cisco IOS 12.3(17a)BC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62568">Cisco IOS 12.3(17a)BC2</FullProductName>
+    <FullProductName ProductID="CVRFPID-103970">Cisco IOS 12.3(17b)BC3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107547">Cisco IOS 12.3(17b)BC4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106225">Cisco IOS 12.3(17b)BC5</FullProductName>
+    <FullProductName ProductID="CVRFPID-103743">Cisco IOS 12.3(17b)BC6</FullProductName>
+    <FullProductName ProductID="CVRFPID-107235">Cisco IOS 12.3(17b)BC7</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Linecard Redundancy Unauthorized Access Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCek57932</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCek57932,CSCsg60220</Note>
+    </Notes>
+    <CVE>CVE-2008-3807</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-60052</ProductID>
+        <ProductID>CVRFPID-60317</ProductID>
+        <ProductID>CVRFPID-60318</ProductID>
+        <ProductID>CVRFPID-62567</ProductID>
+        <ProductID>CVRFPID-62568</ProductID>
+        <ProductID>CVRFPID-63190</ProductID>
+        <ProductID>CVRFPID-65450</ProductID>
+        <ProductID>CVRFPID-65905</ProductID>
+        <ProductID>CVRFPID-69469</ProductID>
+        <ProductID>CVRFPID-103670</ProductID>
+        <ProductID>CVRFPID-103691</ProductID>
+        <ProductID>CVRFPID-103696</ProductID>
+        <ProductID>CVRFPID-103709</ProductID>
+        <ProductID>CVRFPID-103743</ProductID>
+        <ProductID>CVRFPID-103842</ProductID>
+        <ProductID>CVRFPID-103909</ProductID>
+        <ProductID>CVRFPID-103939</ProductID>
+        <ProductID>CVRFPID-103970</ProductID>
+        <ProductID>CVRFPID-103983</ProductID>
+        <ProductID>CVRFPID-104001</ProductID>
+        <ProductID>CVRFPID-104043</ProductID>
+        <ProductID>CVRFPID-104058</ProductID>
+        <ProductID>CVRFPID-104087</ProductID>
+        <ProductID>CVRFPID-104124</ProductID>
+        <ProductID>CVRFPID-104317</ProductID>
+        <ProductID>CVRFPID-104414</ProductID>
+        <ProductID>CVRFPID-104502</ProductID>
+        <ProductID>CVRFPID-104632</ProductID>
+        <ProductID>CVRFPID-104741</ProductID>
+        <ProductID>CVRFPID-104823</ProductID>
+        <ProductID>CVRFPID-104835</ProductID>
+        <ProductID>CVRFPID-104891</ProductID>
+        <ProductID>CVRFPID-104962</ProductID>
+        <ProductID>CVRFPID-105194</ProductID>
+        <ProductID>CVRFPID-105475</ProductID>
+        <ProductID>CVRFPID-105633</ProductID>
+        <ProductID>CVRFPID-105767</ProductID>
+        <ProductID>CVRFPID-105799</ProductID>
+        <ProductID>CVRFPID-105916</ProductID>
+        <ProductID>CVRFPID-106045</ProductID>
+        <ProductID>CVRFPID-106079</ProductID>
+        <ProductID>CVRFPID-106167</ProductID>
+        <ProductID>CVRFPID-106225</ProductID>
+        <ProductID>CVRFPID-106350</ProductID>
+        <ProductID>CVRFPID-106384</ProductID>
+        <ProductID>CVRFPID-106566</ProductID>
+        <ProductID>CVRFPID-106811</ProductID>
+        <ProductID>CVRFPID-106826</ProductID>
+        <ProductID>CVRFPID-106906</ProductID>
+        <ProductID>CVRFPID-106972</ProductID>
+        <ProductID>CVRFPID-107000</ProductID>
+        <ProductID>CVRFPID-107097</ProductID>
+        <ProductID>CVRFPID-107107</ProductID>
+        <ProductID>CVRFPID-107224</ProductID>
+        <ProductID>CVRFPID-107232</ProductID>
+        <ProductID>CVRFPID-107234</ProductID>
+        <ProductID>CVRFPID-107235</ProductID>
+        <ProductID>CVRFPID-107236</ProductID>
+        <ProductID>CVRFPID-107296</ProductID>
+        <ProductID>CVRFPID-107364</ProductID>
+        <ProductID>CVRFPID-107500</ProductID>
+        <ProductID>CVRFPID-107538</ProductID>
+        <ProductID>CVRFPID-107547</ProductID>
+        <ProductID>CVRFPID-107610</ProductID>
+        <ProductID>CVRFPID-107717</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080924-ubr</URL>
+        <Description>Cisco uBR10012 Series Devices SNMP Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

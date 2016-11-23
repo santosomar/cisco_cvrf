@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Small Business RV Series and SA500 Series Dual WAN VPN Router Generated Key Pair Information Disclosure Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151210-dwvr</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-12-10T22:55:08</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-12-10T22:54:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-12-10T22:55:08</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the HTTPS session key exchange process of certain Cisco Small Business RV Series Routers and Cisco SA500 Series Security Appliances could allow an unauthenticated, remote attacker to obtain the key pair used in the Transport Layer Security (TLS) session from the affected device.
+
+
+
+The vulnerability is due to insufficient sources of entropy used by the random number generator. An attacker could exploit this vulnerability by gathering large amounts of TLS handshake data to predict the random numbers generated for the key pair. An exploit could allow the attacker to decrypt session data between a host and the affected device.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-dwvr["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-dwvr"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-dwvr</URL>
+      <Description>Cisco Small Business RV Series and SA500 Series Dual WAN VPN Router Generated Key Pair Information Disclosure Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-212232">Cisco Small Business SA 500 Series Security Appliances 2.2.07</FullProductName>
+    <FullProductName ProductID="CVRFPID-212221">Cisco Small Business RV Series Router Firmware 4.0.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-212222">Cisco Small Business RV Series Router Firmware 4.0.0.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-212223">Cisco Small Business RV Series Router Firmware 4.0.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-212226">Cisco Small Business RV Series Router Firmware 4.2.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-212227">Cisco Small Business RV Series Router Firmware 4.2.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-212228">Cisco Small Business RV Series Router Firmware 4.2.2.7</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Small Business RV Series and SA500 Series Dual WAN VPN Router Generated Key Pair Information Disclosure Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCus15224</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the HTTPS session key exchange process of certain Cisco Small Business RV Series Routers and Cisco SA500 Series Security Appliances could allow an unauthenticated, remote attacker to obtain the key pair used in the Transport Layer Security (TLS) session from the affected device.
+
+
+
+The vulnerability is due to insufficient sources of entropy used by the random number generator. An attacker could exploit this vulnerability by gathering large amounts of TLS handshake data to predict the random numbers generated for the key pair. An exploit could allow the attacker to decrypt session data between a host and the affected device.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCus15224,CSCus15238,CSCus15436,CSCus15440,CSCus15446,CSCus15451,CSCus15463</Note>
+    </Notes>
+    <CVE>CVE-2015-6418</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-212221</ProductID>
+        <ProductID>CVRFPID-212222</ProductID>
+        <ProductID>CVRFPID-212223</ProductID>
+        <ProductID>CVRFPID-212226</ProductID>
+        <ProductID>CVRFPID-212227</ProductID>
+        <ProductID>CVRFPID-212228</ProductID>
+        <ProductID>CVRFPID-212232</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>3.6</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:P/I:N/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workarounds are not available.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-dwvr</URL>
+        <Description>Cisco Small Business RV Series and SA500 Series Dual WAN VPN Router Generated Key Pair Information Disclosure Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

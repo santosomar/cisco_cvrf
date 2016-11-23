@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Videoscape Distribution Suite Service Manager Unauthorized Access Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151210-vdssm</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-12-10T15:35:22</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-12-10T00:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-12-10T15:35:22</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the role-based access control (RBAC) for certain users of the Cisco Videoscape Distribution Suite Service Manager (VDS-SM) could allow an authenticated, remote attacker read and write access to an internal database that contains sensitive information.
+
+
+
+The vulnerability is due to lack of implementation of RBAC where authentication of certain user accounts for back-end database access is performed. An attacker could exploit this vulnerability by authenticating to the application, allowing them to access the internal database through the GUI or by crafting an HTTP request. An exploit could allow the attacker to have read and write access to sensitive information in the back-end database, which should be restricted.
+
+
+
+Cisco has not released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-vdssm["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-vdssm"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-vdssm</URL>
+      <Description>Cisco Videoscape Distribution Suite Service Manager Unauthorized Access Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-211750">Cisco Videoscape Distribution Suite Service Manager 3.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-212201">Cisco Videoscape Distribution Suite Service Manager 3.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-212204">Cisco Videoscape Distribution Suite Service Manager 3.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-212207">Cisco Videoscape Distribution Suite Service Manager 3.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-212210">Cisco Videoscape Distribution Suite Service Manager 3.4.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Videoscape Distribution Suite Service Manager Unauthorized Access Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuv87025</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the role-based access control (RBAC) for certain users of the Cisco Videoscape Distribution Suite Service Manager (VDS-SM) could allow an authenticated, remote attacker read and write access to an internal database that contains sensitive information.
+
+
+
+The vulnerability is due to lack of implementation of RBAC where authentication of certain user accounts for back-end database access is performed. An attacker could exploit this vulnerability by authenticating to the application, allowing them to access the internal database through the GUI or by crafting an HTTP request. An exploit could allow the attacker to have read and write access to sensitive information in the back-end database, which should be restricted.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuv87025</Note>
+    </Notes>
+    <CVE>CVE-2015-6417</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-211750</ProductID>
+        <ProductID>CVRFPID-212201</ProductID>
+        <ProductID>CVRFPID-212204</ProductID>
+        <ProductID>CVRFPID-212207</ProductID>
+        <ProductID>CVRFPID-212210</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.5</BaseScore>
+        <TemporalScore>5.2</TemporalScore>
+        <Vector>AV:N/AC:L/Au:S/C:P/I:P/A:N/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>On Cisco VDS-SM remote consoles, access via the web interface can be disabled.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-vdssm</URL>
+        <Description>Cisco Videoscape Distribution Suite Service Manager Unauthorized Access Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

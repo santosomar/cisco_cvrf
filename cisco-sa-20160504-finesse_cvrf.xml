@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Finesse HTTP Request Processing Server-Side Request Forgery Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160504-finesse</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-05-04T19:01:12</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-05-04T19:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-05-04T19:01:12</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the web interface of Cisco Finesse could allow an unauthenticated, remote attacker to trigger the Finesse server to perform an HTTP request to an arbitrary host. This type of attack is commonly referred to as server-side request forgery (SSRF).
+
+
+
+The vulnerability is due to insufficient access controls for the Finesse application programming interface (API) for gadgets integration. An attacker could exploit this vulnerability by submitting a crafted HTTP request to the Finesse server.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-finesse["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-finesse"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-finesse</URL>
+      <Description>Cisco Finesse HTTP Request Processing Server-Side Request Forgery Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-193471">Cisco Finesse 9.0(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-193473">Cisco Finesse 9.1(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214440">Cisco Finesse 9.1(1) SU1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-214441">Cisco Finesse 9.1(1) SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-214442">Cisco Finesse 9.1(1) ES5</FullProductName>
+    <FullProductName ProductID="CVRFPID-214443">Cisco Finesse 9.1(1) ES4</FullProductName>
+    <FullProductName ProductID="CVRFPID-214444">Cisco Finesse 9.1(1) ES3</FullProductName>
+    <FullProductName ProductID="CVRFPID-214445">Cisco Finesse 9.1(1) ES2</FullProductName>
+    <FullProductName ProductID="CVRFPID-214446">Cisco Finesse 9.1(1) ES1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207350">Cisco Finesse 10.0(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214456">Cisco Finesse 10.0(1) SU1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-214457">Cisco Finesse 10.0(1) SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207352">Cisco Finesse 10.5(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214449">Cisco Finesse 10.5(1) SU1.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-214450">Cisco Finesse 10.5(1) SU1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-214451">Cisco Finesse 10.5(1) SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-214452">Cisco Finesse 10.5(1) ES4</FullProductName>
+    <FullProductName ProductID="CVRFPID-214453">Cisco Finesse 10.5(1) ES3</FullProductName>
+    <FullProductName ProductID="CVRFPID-214454">Cisco Finesse 10.5(1) ES2</FullProductName>
+    <FullProductName ProductID="CVRFPID-214455">Cisco Finesse 10.5(1) ES1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207354">Cisco Finesse 10.6(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214447">Cisco Finesse 10.6(1) SU2</FullProductName>
+    <FullProductName ProductID="CVRFPID-214448">Cisco Finesse 10.6(1) SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207356">Cisco Finesse 11.0(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214427">Cisco Finesse 9.0(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214429">Cisco Finesse 8.6(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214431">Cisco Finesse 8.5(5) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214433">Cisco Finesse 8.5(4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214435">Cisco Finesse 8.5(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214437">Cisco Finesse 8.5(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-214439">Cisco Finesse 8.5(1) Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Finesse HTTP Request Processing Server-Side Request Forgery Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuw86623</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web interface of Cisco Finesse could allow an unauthenticated, remote attacker to trigger the Finesse server to perform an HTTP request to an arbitrary host. This type of attack is commonly referred to as server-side request forgery (SSRF).
+
+
+
+The vulnerability is due to insufficient access controls for the Finesse application programming interface (API) for gadgets integration. An attacker could exploit this vulnerability by submitting a crafted HTTP request to the Finesse server.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuw86623</Note>
+    </Notes>
+    <CVE>CVE-2016-1373</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-193471</ProductID>
+        <ProductID>CVRFPID-193473</ProductID>
+        <ProductID>CVRFPID-207350</ProductID>
+        <ProductID>CVRFPID-207352</ProductID>
+        <ProductID>CVRFPID-207354</ProductID>
+        <ProductID>CVRFPID-207356</ProductID>
+        <ProductID>CVRFPID-214427</ProductID>
+        <ProductID>CVRFPID-214429</ProductID>
+        <ProductID>CVRFPID-214431</ProductID>
+        <ProductID>CVRFPID-214433</ProductID>
+        <ProductID>CVRFPID-214435</ProductID>
+        <ProductID>CVRFPID-214437</ProductID>
+        <ProductID>CVRFPID-214439</ProductID>
+        <ProductID>CVRFPID-214440</ProductID>
+        <ProductID>CVRFPID-214441</ProductID>
+        <ProductID>CVRFPID-214442</ProductID>
+        <ProductID>CVRFPID-214443</ProductID>
+        <ProductID>CVRFPID-214444</ProductID>
+        <ProductID>CVRFPID-214445</ProductID>
+        <ProductID>CVRFPID-214446</ProductID>
+        <ProductID>CVRFPID-214447</ProductID>
+        <ProductID>CVRFPID-214448</ProductID>
+        <ProductID>CVRFPID-214449</ProductID>
+        <ProductID>CVRFPID-214450</ProductID>
+        <ProductID>CVRFPID-214451</ProductID>
+        <ProductID>CVRFPID-214452</ProductID>
+        <ProductID>CVRFPID-214453</ProductID>
+        <ProductID>CVRFPID-214454</ProductID>
+        <ProductID>CVRFPID-214455</ProductID>
+        <ProductID>CVRFPID-214456</ProductID>
+        <ProductID>CVRFPID-214457</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:P/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workarounds that address this vulnerability are not available.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-finesse</URL>
+        <Description>Cisco Finesse HTTP Request Processing Server-Side Request Forgery Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

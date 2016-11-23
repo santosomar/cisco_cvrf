@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified Communications Manager Denial of Service Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20071017-cucm</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2007-10-17T16:00:00</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-10-17T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-10-17T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20071017-cucm</URL>
+      <Description>Cisco Unified Communications Manager Denial of Service Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20071017-cucm</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Unified Communications Manager Denial of Service Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20071017-cucm</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Unified Communications Manager Denial of Service Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-59002">Cisco Unified Communications Manager 5.0(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59003">Cisco Unified Communications Manager 5.0(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59006">Cisco Unified Communications Manager 5.0(2a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59016">Cisco Unified Communications Manager 5.0(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59004">Cisco Unified Communications Manager 5.0(3a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59007">Cisco Unified Communications Manager 5.0(3.1101) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59005">Cisco Unified Communications Manager 5.0(4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64558">Cisco Unified Communications Manager 5.0(4a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64561">Cisco Unified Communications Manager 5.0(4a)SU1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66343">Cisco Unified Communications Manager 5.0(4.2136.001) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66344">Cisco Unified Communications Manager 5.0(4.2137.001) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66345">Cisco Unified Communications Manager 5.0(4.2137.002) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-61494">Cisco Unified Communications Manager 5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66351">Cisco Unified Communications Manager 5.1(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66350">Cisco Unified Communications Manager 5.1(1a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66346">Cisco Unified Communications Manager 5.1(1.9131.045) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-68121">Cisco Unified Communications Manager 5.1(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66347">Cisco Unified Communications Manager 6.0(0.9901.169) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66348">Cisco Unified Communications Manager 6.0(0.9901.190) Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager Session Initiation Protocol INVITE Message Handling Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-5537</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-59002</ProductID>
+        <ProductID>CVRFPID-59003</ProductID>
+        <ProductID>CVRFPID-59004</ProductID>
+        <ProductID>CVRFPID-59005</ProductID>
+        <ProductID>CVRFPID-59006</ProductID>
+        <ProductID>CVRFPID-59007</ProductID>
+        <ProductID>CVRFPID-59016</ProductID>
+        <ProductID>CVRFPID-61494</ProductID>
+        <ProductID>CVRFPID-64558</ProductID>
+        <ProductID>CVRFPID-64561</ProductID>
+        <ProductID>CVRFPID-66343</ProductID>
+        <ProductID>CVRFPID-66344</ProductID>
+        <ProductID>CVRFPID-66345</ProductID>
+        <ProductID>CVRFPID-66346</ProductID>
+        <ProductID>CVRFPID-66347</ProductID>
+        <ProductID>CVRFPID-66348</ProductID>
+        <ProductID>CVRFPID-66350</ProductID>
+        <ProductID>CVRFPID-66351</ProductID>
+        <ProductID>CVRFPID-68121</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20071017-cucm</URL>
+        <Description>Cisco Unified Communications Manager Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager Centralized TFTP File Locator Service Buffer Overflow Vulnerability</Title>
+    <CVE>CVE-2007-5538</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-59002</ProductID>
+        <ProductID>CVRFPID-59003</ProductID>
+        <ProductID>CVRFPID-59004</ProductID>
+        <ProductID>CVRFPID-59005</ProductID>
+        <ProductID>CVRFPID-59006</ProductID>
+        <ProductID>CVRFPID-59007</ProductID>
+        <ProductID>CVRFPID-59016</ProductID>
+        <ProductID>CVRFPID-61494</ProductID>
+        <ProductID>CVRFPID-64558</ProductID>
+        <ProductID>CVRFPID-64561</ProductID>
+        <ProductID>CVRFPID-66343</ProductID>
+        <ProductID>CVRFPID-66344</ProductID>
+        <ProductID>CVRFPID-66345</ProductID>
+        <ProductID>CVRFPID-66346</ProductID>
+        <ProductID>CVRFPID-66347</ProductID>
+        <ProductID>CVRFPID-66348</ProductID>
+        <ProductID>CVRFPID-66350</ProductID>
+        <ProductID>CVRFPID-66351</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20071017-cucm</URL>
+        <Description>Cisco Unified Communications Manager Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

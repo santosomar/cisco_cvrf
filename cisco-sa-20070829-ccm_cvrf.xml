@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>XSS and SQL Injection in Cisco CallManager/Unified Communications Manager Logon Page</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20070829-ccm</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2007-08-29T16:00:00</Date>
+        <Description>Updated links to the CVSS scores for
+			 CSCsi10728
+			 and
+			 CSCsi64265.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-08-29T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-08-29T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070829-ccm</URL>
+      <Description>XSS and SQL Injection in Cisco CallManager/Unified Communications Manager Logon Page</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-52283">Cisco Unified Communications Manager 3.3(5) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56082">Cisco Unified Communications Manager 3.3(5)ES24 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66775">Cisco Unified Communications Manager 3.3(5)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56079">Cisco Unified Communications Manager 3.3(5)SR1a Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64511">Cisco Unified Communications Manager 3.3(5)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64505">Cisco Unified Communications Manager 3.3(5)SR2a Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-51459">Cisco Unified Communications Manager 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64533">Cisco Unified Communications Manager 4.1(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64534">Cisco Unified Communications Manager 4.1(2)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64519">Cisco Unified Communications Manager 4.1(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52287">Cisco Unified Communications Manager 4.1(3)ES07 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56085">Cisco Unified Communications Manager 4.1(3)ES24 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66340">Cisco Unified Communications Manager 4.1(3)SR Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52288">Cisco Unified Communications Manager 4.1(3)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56081">Cisco Unified Communications Manager 4.1(3)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67786">Cisco Unified Communications Manager 4.1(3)SR3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58738">Cisco Unified Communications Manager 4.1(3)SR3b Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64523">Cisco Unified Communications Manager 4.1(3)SR3c Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58685">Cisco Unified Communications Manager 4.1(3)SR4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64521">Cisco Unified Communications Manager 4.1(3)SR4b  Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64518">Cisco Unified Communications Manager 4.1(3)SR4d Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52289">Cisco Unified Communications Manager 4.1(4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58684">Cisco Unified Communications Manager 4.2(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64540">Cisco Unified Communications Manager 4.2(3)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58683">Cisco Unified Communications Manager 4.3(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67789">Cisco Unified Communications Manager 4.3(1)SR Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Call Manager Login Page Cross-Site Scripting Vulnerability</Title>
+    <CVE>CVE-2007-4633</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-51459</ProductID>
+        <ProductID>CVRFPID-52283</ProductID>
+        <ProductID>CVRFPID-52287</ProductID>
+        <ProductID>CVRFPID-52288</ProductID>
+        <ProductID>CVRFPID-56079</ProductID>
+        <ProductID>CVRFPID-56081</ProductID>
+        <ProductID>CVRFPID-56082</ProductID>
+        <ProductID>CVRFPID-56085</ProductID>
+        <ProductID>CVRFPID-58683</ProductID>
+        <ProductID>CVRFPID-58684</ProductID>
+        <ProductID>CVRFPID-58685</ProductID>
+        <ProductID>CVRFPID-58738</ProductID>
+        <ProductID>CVRFPID-64505</ProductID>
+        <ProductID>CVRFPID-64511</ProductID>
+        <ProductID>CVRFPID-64518</ProductID>
+        <ProductID>CVRFPID-64519</ProductID>
+        <ProductID>CVRFPID-64521</ProductID>
+        <ProductID>CVRFPID-64523</ProductID>
+        <ProductID>CVRFPID-64533</ProductID>
+        <ProductID>CVRFPID-64534</ProductID>
+        <ProductID>CVRFPID-64540</ProductID>
+        <ProductID>CVRFPID-66340</ProductID>
+        <ProductID>CVRFPID-66775</ProductID>
+        <ProductID>CVRFPID-67786</ProductID>
+        <ProductID>CVRFPID-67789</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>3.6</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:P/I:N/A:N/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070829-ccm</URL>
+        <Description>XSS and SQL Injection in Cisco CallManager/Unified Communications Manager Logon Page</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Call Manager Login and Admin page SQL Injection Vulnerability</Title>
+    <CVE>CVE-2007-4633</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-51459</ProductID>
+        <ProductID>CVRFPID-52283</ProductID>
+        <ProductID>CVRFPID-52287</ProductID>
+        <ProductID>CVRFPID-52288</ProductID>
+        <ProductID>CVRFPID-52289</ProductID>
+        <ProductID>CVRFPID-56079</ProductID>
+        <ProductID>CVRFPID-56082</ProductID>
+        <ProductID>CVRFPID-56085</ProductID>
+        <ProductID>CVRFPID-58683</ProductID>
+        <ProductID>CVRFPID-58684</ProductID>
+        <ProductID>CVRFPID-58685</ProductID>
+        <ProductID>CVRFPID-58738</ProductID>
+        <ProductID>CVRFPID-64505</ProductID>
+        <ProductID>CVRFPID-64511</ProductID>
+        <ProductID>CVRFPID-64518</ProductID>
+        <ProductID>CVRFPID-64519</ProductID>
+        <ProductID>CVRFPID-64521</ProductID>
+        <ProductID>CVRFPID-64523</ProductID>
+        <ProductID>CVRFPID-64540</ProductID>
+        <ProductID>CVRFPID-66340</ProductID>
+        <ProductID>CVRFPID-66775</ProductID>
+        <ProductID>CVRFPID-67789</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:P/I:N/A:N/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070829-ccm</URL>
+        <Description>XSS and SQL Injection in Cisco CallManager/Unified Communications Manager Logon Page</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

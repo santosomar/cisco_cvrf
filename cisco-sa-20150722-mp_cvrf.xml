@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified MeetingPlace Unauthorized Password Change Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150722-mp</ID>
+    </Identification>
+    <Status>Interim</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-07-22T14:17:35</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-07-22T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-07-22T14:17:35</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">The password change functionality in the Cisco Unified MeetingPlace Web Conferencing application could allow an unauthenticated remote, attacker to change the passwords of arbitrary users. The vulnerability is due to the following:
+
+
+    Users are not required to enter the previous password during a password change request. 
+    HTTP session functionality does not validate the session ID in the HTTP request for the password change request.
+
+An attacker could exploit this vulnerability via a crafted HTTP request and change arbitrary user passwords to gain access to the application. A successful exploit could allow the attacker to use the reset credentials to gain full control of the application.
+
+
+
+Cisco has released software updates that address this vulnerability. There is no workaround that mitigates this vulnerability. This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150722-mp["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150722-mp"]
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150722-mp</URL>
+      <Description>Cisco Unified MeetingPlace Unauthorized Password Change Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=39989</URL>
+      <Description>Cisco Unified MeetingPlace Unauthorized Password Change Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=39989</URL>
+      <Description>Cisco Unified MeetingPlace Unauthorized Password Change Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-186596">Cisco Unified MeetingPlace Web Conferencing 6.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-186598">Cisco Unified MeetingPlace Web Conferencing 6.0.417.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-186561">Cisco Unified MeetingPlace Web Conferencing 7.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-186577">Cisco Unified MeetingPlace Web Conferencing 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-186578">Cisco Unified MeetingPlace Web Conferencing 7.0(2)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-186579">Cisco Unified MeetingPlace Web Conferencing 7.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-186559">Cisco Unified MeetingPlace Web Conferencing 7.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-186588">Cisco Unified MeetingPlace Web Conferencing 7.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-186563">Cisco Unified MeetingPlace Web Conferencing 8.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-186573">Cisco Unified MeetingPlace Web Conferencing 8.0(1)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-186574">Cisco Unified MeetingPlace Web Conferencing 8.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-186567">Cisco Unified MeetingPlace Web Conferencing 8.5(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-186568">Cisco Unified MeetingPlace Web Conferencing 8.5(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-186569">Cisco Unified MeetingPlace Web Conferencing 8.5(2)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-186570">Cisco Unified MeetingPlace Web Conferencing 8.5(2)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-186571">Cisco Unified MeetingPlace Web Conferencing 8.5(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-186572">Cisco Unified MeetingPlace Web Conferencing 8.5(4)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified MeetingPlace Unauthorized Password Change Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuu51839</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the password change functionality of the Cisco Unified MeetingPlace Web Conferencing application could allow an unauthenticated, remote attacker to change the passwords of arbitrary users. 
+
+
+
+The vulnerability is due to improper input validation. An attacker could exploit this vulnerability via a crafted HTTP request by changing arbitrary user passwords and gaining access to the application. A successful exploit could allow the attacker to use stolen credentials to gain full control of the application.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuu51839</Note>
+    </Notes>
+    <CVE>CVE-2015-4262</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-186559</ProductID>
+        <ProductID>CVRFPID-186561</ProductID>
+        <ProductID>CVRFPID-186563</ProductID>
+        <ProductID>CVRFPID-186567</ProductID>
+        <ProductID>CVRFPID-186568</ProductID>
+        <ProductID>CVRFPID-186569</ProductID>
+        <ProductID>CVRFPID-186570</ProductID>
+        <ProductID>CVRFPID-186571</ProductID>
+        <ProductID>CVRFPID-186572</ProductID>
+        <ProductID>CVRFPID-186573</ProductID>
+        <ProductID>CVRFPID-186574</ProductID>
+        <ProductID>CVRFPID-186577</ProductID>
+        <ProductID>CVRFPID-186578</ProductID>
+        <ProductID>CVRFPID-186579</ProductID>
+        <ProductID>CVRFPID-186588</ProductID>
+        <ProductID>CVRFPID-186596</ProductID>
+        <ProductID>CVRFPID-186598</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>No workaround is available to mitigate this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150722-mp</URL>
+        <Description>Cisco Unified MeetingPlace Unauthorized Password Change Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

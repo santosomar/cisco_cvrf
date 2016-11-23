@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco ASA-CX and Cisco Prime Security Manager Privilege Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160203-prsm</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-02-03T15:20:52</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-02-03T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-02-03T15:20:52</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the role-based access control of Cisco ASA-CX and Cisco Prime Security Manager (PRSM) could allow an authenticated, remote attacker to change the password of any user on the system.
+
+
+
+The vulnerability exists because the password change request is not fully qualified. An authenticated attacker with a user role other than Administrator could exploit this vulnerability by sending a specially crafted HTTP request to the Cisco PRSM. An exploit could allow the attacker to change the password of any user on the system, including users with the Administrator role.
+
+
+Cisco has released software updates that address this vulnerability. 
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-prsm["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-prsm"]
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-prsm</URL>
+      <Description>Cisco ASA-CX and Cisco Prime Security Manager Privilege Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-184514">Cisco ASA CX Context-Aware Security Software 9.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-184515">Cisco ASA CX Context-Aware Security Software 9.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-184688">Cisco ASA CX Context-Aware Security Software 9.0.1-40</FullProductName>
+    <FullProductName ProductID="CVRFPID-184516">Cisco ASA CX Context-Aware Security Software 9.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-184689">Cisco ASA CX Context-Aware Security Software 9.0.2-68</FullProductName>
+    <FullProductName ProductID="CVRFPID-206507">Cisco ASA CX Context-Aware Security Software 9.1.2-29</FullProductName>
+    <FullProductName ProductID="CVRFPID-206510">Cisco ASA CX Context-Aware Security Software 9.1.2-42</FullProductName>
+    <FullProductName ProductID="CVRFPID-206511">Cisco ASA CX Context-Aware Security Software 9.1.3-8</FullProductName>
+    <FullProductName ProductID="CVRFPID-206512">Cisco ASA CX Context-Aware Security Software 9.1.3-10</FullProductName>
+    <FullProductName ProductID="CVRFPID-206513">Cisco ASA CX Context-Aware Security Software 9.1.3-13</FullProductName>
+    <FullProductName ProductID="CVRFPID-206509">Cisco ASA CX Context-Aware Security Software 9.2.1-1</FullProductName>
+    <FullProductName ProductID="CVRFPID-206514">Cisco ASA CX Context-Aware Security Software 9.2.1-2</FullProductName>
+    <FullProductName ProductID="CVRFPID-206515">Cisco ASA CX Context-Aware Security Software 9.2.1-3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206516">Cisco ASA CX Context-Aware Security Software 9.2.1-4</FullProductName>
+    <FullProductName ProductID="CVRFPID-184692">Cisco Prime Security Manager (PRSM) 9.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-184693">Cisco Prime Security Manager (PRSM) 9.0.1-40</FullProductName>
+    <FullProductName ProductID="CVRFPID-184694">Cisco Prime Security Manager (PRSM) 9.0.2-68</FullProductName>
+    <FullProductName ProductID="CVRFPID-198461">Cisco Prime Security Manager (PRSM) 9.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-198464">Cisco Prime Security Manager (PRSM) 9.1.2-29</FullProductName>
+    <FullProductName ProductID="CVRFPID-198465">Cisco Prime Security Manager (PRSM) 9.1.2-42</FullProductName>
+    <FullProductName ProductID="CVRFPID-198466">Cisco Prime Security Manager (PRSM) 9.1.3-8</FullProductName>
+    <FullProductName ProductID="CVRFPID-198467">Cisco Prime Security Manager (PRSM) 9.1.3-10</FullProductName>
+    <FullProductName ProductID="CVRFPID-198468">Cisco Prime Security Manager (PRSM) 9.1.3-13</FullProductName>
+    <FullProductName ProductID="CVRFPID-198463">Cisco Prime Security Manager (PRSM) 9.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-198469">Cisco Prime Security Manager (PRSM) 9.2.1-1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198470">Cisco Prime Security Manager (PRSM) 9.2.1-2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Prime Security Manager Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuo94842</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the role-based access control of Cisco ASA-CX and Cisco Prime Security Manager (PRSM) could allow an authenticated, remote attacker to change the password of any user on the system.
+
+
+
+The vulnerability exists because the password change request is not fully qualified. An authenticated attacker with a user role other than Administrator could exploit this vulnerability by sending a specially crafted HTTP request to the Cisco PRSM. An exploit could allow the attacker to change the password of any user on the system, including users with the Administrator role.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuo94842</Note>
+    </Notes>
+    <CVE>CVE-2016-1301</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-184692</ProductID>
+        <ProductID>CVRFPID-184693</ProductID>
+        <ProductID>CVRFPID-184694</ProductID>
+        <ProductID>CVRFPID-198461</ProductID>
+        <ProductID>CVRFPID-198463</ProductID>
+        <ProductID>CVRFPID-198464</ProductID>
+        <ProductID>CVRFPID-198465</ProductID>
+        <ProductID>CVRFPID-198466</ProductID>
+        <ProductID>CVRFPID-198467</ProductID>
+        <ProductID>CVRFPID-198468</ProductID>
+        <ProductID>CVRFPID-198469</ProductID>
+        <ProductID>CVRFPID-198470</ProductID>
+        <ProductID>CVRFPID-184514</ProductID>
+        <ProductID>CVRFPID-184515</ProductID>
+        <ProductID>CVRFPID-184516</ProductID>
+        <ProductID>CVRFPID-184688</ProductID>
+        <ProductID>CVRFPID-184689</ProductID>
+        <ProductID>CVRFPID-206507</ProductID>
+        <ProductID>CVRFPID-206509</ProductID>
+        <ProductID>CVRFPID-206510</ProductID>
+        <ProductID>CVRFPID-206511</ProductID>
+        <ProductID>CVRFPID-206512</ProductID>
+        <ProductID>CVRFPID-206513</ProductID>
+        <ProductID>CVRFPID-206514</ProductID>
+        <ProductID>CVRFPID-206515</ProductID>
+        <ProductID>CVRFPID-206516</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>8.5</BaseScore>
+        <TemporalScore>7.0</TemporalScore>
+        <Vector>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-prsm</URL>
+        <Description>Cisco ASA-CX and Cisco Prime Security Manager Privilege Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

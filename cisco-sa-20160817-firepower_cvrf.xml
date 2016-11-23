@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Firepower Management Center Privilege Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160817-firepower</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-08-17T15:12:49</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-08-17T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-08-17T15:12:49</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the web-based GUI of Cisco Firepower Management Center and Cisco Adaptive Security Appliance (ASA) 5500-X Series with FirePOWER Services could allow an authenticated, remote attacker to elevate the privileges of user accounts on the affected device.
+
+
+
+The vulnerability is due to insufficient input validation. An attacker could exploit this vulnerability by sending crafted HTTP requests to the affected device. Successful exploitation could allow an authenticated attacker to elevate the privileges of user accounts configured on the device.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160817-firepower["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160817-firepower"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160817-firepower</URL>
+      <Description>Cisco Firepower Management Center Privilege Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-216736">Cisco Firepower Management Center 4.10.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-216733">Cisco Firepower Management Center 5.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-216729">Cisco Firepower Management Center 5.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-216730">Cisco Firepower Management Center 5.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-213668">Cisco Firepower Management Center 5.4.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Firepower Management Center Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCur25483</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web-based GUI of Cisco Firepower Management Center and Cisco Adaptive Security Appliance (ASA) 5500-X Series with FirePOWER Services could allow an authenticated, remote attacker to elevate the privileges of user accounts on the affected device.
+
+
+
+The vulnerability is due to insufficient input validation. An attacker could exploit this vulnerability by sending crafted HTTP requests to the affected device. Successful exploitation could allow an authenticated attacker to elevate the privileges of user accounts configured on the device.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCur25483</Note>
+    </Notes>
+    <CVE>CVE-2016-1458</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-213668</ProductID>
+        <ProductID>CVRFPID-216729</ProductID>
+        <ProductID>CVRFPID-216730</ProductID>
+        <ProductID>CVRFPID-216733</ProductID>
+        <ProductID>CVRFPID-216736</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.0</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workarounds that address this vulnerability are not available.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160817-firepower</URL>
+        <Description>Cisco Firepower Management Center Privilege Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

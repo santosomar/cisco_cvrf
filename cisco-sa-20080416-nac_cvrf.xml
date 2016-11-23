@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Network Admission Control Shared Secret Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20080416-nac</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2008-04-16T16:00:00</Date>
+        <Description>Updated CVSS link for
+			 CSCsj33976.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2008-04-16T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2008-04-16T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080416-nac</URL>
+      <Description>Cisco Network Admission Control Shared Secret Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-53149">Cisco NAC Appliance Software 3.5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78612">Cisco NAC Appliance Software 3.5.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-53150">Cisco NAC Appliance Software 3.5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53151">Cisco NAC Appliance Software 3.5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78601">Cisco NAC Appliance Software 3.5.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78602">Cisco NAC Appliance Software 3.5.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-53152">Cisco NAC Appliance Software 3.5.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53191">Cisco NAC Appliance Software 3.5.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78600">Cisco NAC Appliance Software 3.5.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-53192">Cisco NAC Appliance Software 3.5.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78599">Cisco NAC Appliance Software 3.5.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-55566">Cisco NAC Appliance Software 3.5.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78598">Cisco NAC Appliance Software 3.5.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78596">Cisco NAC Appliance Software 3.5.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78597">Cisco NAC Appliance Software 3.5.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78594">Cisco NAC Appliance Software 3.5.7 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78592">Cisco NAC Appliance Software 3.5.8 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62184">Cisco NAC Appliance Software 3.5.9 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78609">Cisco NAC Appliance Software 3.5.10 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78604">Cisco NAC Appliance Software 3.5.11 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78605">Cisco NAC Appliance Software 3.5.11.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78611">Cisco NAC Appliance Software 3.5.12 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78607">Cisco NAC Appliance Software 3.5.13 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62190">Cisco NAC Appliance Software 3.6.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62211">Cisco NAC Appliance Software 3.6.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62185">Cisco NAC Appliance Software 3.6.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62186">Cisco NAC Appliance Software 3.6.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62191">Cisco NAC Appliance Software 3.6.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62210">Cisco NAC Appliance Software 3.6.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62209">Cisco NAC Appliance Software 3.6.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-62192">Cisco NAC Appliance Software 3.6.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62208">Cisco NAC Appliance Software 3.6.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62193">Cisco NAC Appliance Software 3.6.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62200">Cisco NAC Appliance Software 3.6.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62201">Cisco NAC Appliance Software 3.6.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-62194">Cisco NAC Appliance Software 4.0.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62207">Cisco NAC Appliance Software 4.0.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62195">Cisco NAC Appliance Software 4.0.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62196">Cisco NAC Appliance Software 4.0.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62206">Cisco NAC Appliance Software 4.0.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78587">Cisco NAC Appliance Software 4.0.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-62197">Cisco NAC Appliance Software 4.0.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62202">Cisco NAC Appliance Software 4.0.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62203">Cisco NAC Appliance Software 4.0.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-62205">Cisco NAC Appliance Software 4.0.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-62198">Cisco NAC Appliance Software 4.0.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78585">Cisco NAC Appliance Software 4.0.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78586">Cisco NAC Appliance Software 4.0.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62199">Cisco NAC Appliance Software 4.1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62204">Cisco NAC Appliance Software 4.1.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78579">Cisco NAC Appliance Software 4.1.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-78574">Cisco NAC Appliance Software 4.1.1 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Network Admission Control Appliance Shared Secret Disclosure Vulnerability</Title>
+    <CVE>CVE-2008-1155</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-53149</ProductID>
+        <ProductID>CVRFPID-53150</ProductID>
+        <ProductID>CVRFPID-53151</ProductID>
+        <ProductID>CVRFPID-53152</ProductID>
+        <ProductID>CVRFPID-53191</ProductID>
+        <ProductID>CVRFPID-53192</ProductID>
+        <ProductID>CVRFPID-55566</ProductID>
+        <ProductID>CVRFPID-62184</ProductID>
+        <ProductID>CVRFPID-62185</ProductID>
+        <ProductID>CVRFPID-62186</ProductID>
+        <ProductID>CVRFPID-62190</ProductID>
+        <ProductID>CVRFPID-62191</ProductID>
+        <ProductID>CVRFPID-62192</ProductID>
+        <ProductID>CVRFPID-62193</ProductID>
+        <ProductID>CVRFPID-62194</ProductID>
+        <ProductID>CVRFPID-62195</ProductID>
+        <ProductID>CVRFPID-62196</ProductID>
+        <ProductID>CVRFPID-62197</ProductID>
+        <ProductID>CVRFPID-62198</ProductID>
+        <ProductID>CVRFPID-62199</ProductID>
+        <ProductID>CVRFPID-62200</ProductID>
+        <ProductID>CVRFPID-62201</ProductID>
+        <ProductID>CVRFPID-62202</ProductID>
+        <ProductID>CVRFPID-62203</ProductID>
+        <ProductID>CVRFPID-62204</ProductID>
+        <ProductID>CVRFPID-62205</ProductID>
+        <ProductID>CVRFPID-62206</ProductID>
+        <ProductID>CVRFPID-62207</ProductID>
+        <ProductID>CVRFPID-62208</ProductID>
+        <ProductID>CVRFPID-62209</ProductID>
+        <ProductID>CVRFPID-62210</ProductID>
+        <ProductID>CVRFPID-62211</ProductID>
+        <ProductID>CVRFPID-78574</ProductID>
+        <ProductID>CVRFPID-78579</ProductID>
+        <ProductID>CVRFPID-78585</ProductID>
+        <ProductID>CVRFPID-78586</ProductID>
+        <ProductID>CVRFPID-78587</ProductID>
+        <ProductID>CVRFPID-78592</ProductID>
+        <ProductID>CVRFPID-78594</ProductID>
+        <ProductID>CVRFPID-78596</ProductID>
+        <ProductID>CVRFPID-78597</ProductID>
+        <ProductID>CVRFPID-78598</ProductID>
+        <ProductID>CVRFPID-78599</ProductID>
+        <ProductID>CVRFPID-78600</ProductID>
+        <ProductID>CVRFPID-78601</ProductID>
+        <ProductID>CVRFPID-78602</ProductID>
+        <ProductID>CVRFPID-78604</ProductID>
+        <ProductID>CVRFPID-78605</ProductID>
+        <ProductID>CVRFPID-78607</ProductID>
+        <ProductID>CVRFPID-78609</ProductID>
+        <ProductID>CVRFPID-78611</ProductID>
+        <ProductID>CVRFPID-78612</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080416-nac</URL>
+        <Description>Cisco Network Admission Control Shared Secret Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

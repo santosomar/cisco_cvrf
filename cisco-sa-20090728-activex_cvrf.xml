@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Active Template Library (ATL) Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20090728-activex</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2009-07-28T18:00:00</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2009-07-28T18:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2009-07-28T18:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090728-activex</URL>
+      <Description>Active Template Library (ATL) Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-40534">Cisco Unity 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66806">Cisco Unity 4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-48772">Cisco Unity 4.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-48773">Cisco Unity 4.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-48774">Cisco Unity 4.0.3b</FullProductName>
+    <FullProductName ProductID="CVRFPID-48775">Cisco Unity 4.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-58741">Cisco Unity 4.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-58740">Cisco Unity 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58746">Cisco Unity 4.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-58742">Cisco Unity 4.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66809">Cisco Unity 4.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66810">Cisco Unity 4.2.1 ES27</FullProductName>
+    <FullProductName ProductID="CVRFPID-83934">Cisco Unity 5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-84459">Cisco Unity 5.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-83936">Cisco Unity 7.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-83937">Cisco Unity 7.0(2)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ATL-based ActiveX Controls Arbitrary Code Execution Vulnerability</Title>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-40534</ProductID>
+        <ProductID>CVRFPID-48772</ProductID>
+        <ProductID>CVRFPID-48773</ProductID>
+        <ProductID>CVRFPID-48774</ProductID>
+        <ProductID>CVRFPID-48775</ProductID>
+        <ProductID>CVRFPID-58740</ProductID>
+        <ProductID>CVRFPID-58741</ProductID>
+        <ProductID>CVRFPID-58742</ProductID>
+        <ProductID>CVRFPID-58746</ProductID>
+        <ProductID>CVRFPID-66806</ProductID>
+        <ProductID>CVRFPID-66809</ProductID>
+        <ProductID>CVRFPID-66810</ProductID>
+        <ProductID>CVRFPID-83934</ProductID>
+        <ProductID>CVRFPID-83936</ProductID>
+        <ProductID>CVRFPID-83937</ProductID>
+        <ProductID>CVRFPID-84459</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.3</BaseScore>
+        <TemporalScore>8.4</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:C/I:C/A:C/E:POC/RL:U/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090728-activex</URL>
+        <Description>Active Template Library (ATL) Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

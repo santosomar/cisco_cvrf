@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Unintentional Password Modification Vulnerability in Cisco Firewall Products</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20060823-firewall</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2006-08-23T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2006-08-23T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2006-08-23T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20060823-firewall</URL>
+      <Description>Unintentional Password Modification Vulnerability in Cisco Firewall Products</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-58083">Cisco Firewall Services Module (FWSM) 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58084">Cisco Firewall Services Module (FWSM) 3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-59741">Cisco Firewall Services Module (FWSM) 3.1.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59744">Cisco Firewall Services Module (FWSM) 3.1.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59739">Cisco Firewall Services Module (FWSM) 3.1.1(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59743">Cisco Firewall Services Module (FWSM) 3.1.1(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59740">Cisco Firewall Services Module (FWSM) 3.1.1(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-55145">Cisco PIX Firewall Software 7.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55257">Cisco PIX Firewall Software 7.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-55258">Cisco PIX Firewall Software 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-55260">Cisco PIX Firewall Software 7.0(2)1</FullProductName>
+    <FullProductName ProductID="CVRFPID-55259">Cisco PIX Firewall Software 7.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-55261">Cisco PIX Firewall Software 7.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-55277">Cisco PIX Firewall Software 7.0(4)2</FullProductName>
+    <FullProductName ProductID="CVRFPID-55675">Cisco PIX/ASA 7.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55878">Cisco PIX/ASA 7.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-55680">Cisco PIX/ASA 7.0.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-58079">Cisco PIX/ASA 7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-58080">Cisco PIX/ASA 7.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-55681">Cisco PIX/ASA 7.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-55682">Cisco PIX/ASA 7.0.4.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-58082">Cisco PIX/ASA 7.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-58085">Cisco PIX/ASA 7.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58086">Cisco PIX/ASA 7.1.1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>DO NOT PUBLISH Until August 23, 2006 -- Cisco Firewall Password Modification Issue</Title>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-58083</ProductID>
+        <ProductID>CVRFPID-58084</ProductID>
+        <ProductID>CVRFPID-59739</ProductID>
+        <ProductID>CVRFPID-59740</ProductID>
+        <ProductID>CVRFPID-59741</ProductID>
+        <ProductID>CVRFPID-59743</ProductID>
+        <ProductID>CVRFPID-59744</ProductID>
+        <ProductID>CVRFPID-55145</ProductID>
+        <ProductID>CVRFPID-55257</ProductID>
+        <ProductID>CVRFPID-55258</ProductID>
+        <ProductID>CVRFPID-55259</ProductID>
+        <ProductID>CVRFPID-55260</ProductID>
+        <ProductID>CVRFPID-55261</ProductID>
+        <ProductID>CVRFPID-55277</ProductID>
+        <ProductID>CVRFPID-55675</ProductID>
+        <ProductID>CVRFPID-55680</ProductID>
+        <ProductID>CVRFPID-55681</ProductID>
+        <ProductID>CVRFPID-55682</ProductID>
+        <ProductID>CVRFPID-55878</ProductID>
+        <ProductID>CVRFPID-58079</ProductID>
+        <ProductID>CVRFPID-58080</ProductID>
+        <ProductID>CVRFPID-58082</ProductID>
+        <ProductID>CVRFPID-58085</ProductID>
+        <ProductID>CVRFPID-58086</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20060823-firewall</URL>
+        <Description>Unintentional Password Modification Vulnerability in Cisco Firewall Products</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

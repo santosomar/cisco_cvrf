@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco UCS B-Series Blade Servers Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151006-ucs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-10-06T21:18:46</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-10-06T21:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-10-06T21:18:46</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Cisco Unified Computing System (UCS) B-Series blade servers could allow an unauthenticated, local attacker to cause the host operating system or Baseboard Management Controller (BMC) to hang.
+
+
+
+The vulnerability is due to how the various components communicate across the Inter-IC (I2C) bus. An attacker could exploit this vulnerability by sending specific I2C packets. An exploit could allow the attacker to cause disruption to the host, resulting in a denial of service (DoS) condition.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are available. This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151006-ucs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151006-ucs"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151006-ucs</URL>
+      <Description>Cisco UCS B-Series Blade Servers Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-208972">Cisco UCS B-Series Blade Server Software 2.2(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208973">Cisco UCS B-Series Blade Server Software 2.2(1c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208974">Cisco UCS B-Series Blade Server Software 2.2(1d)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208975">Cisco UCS B-Series Blade Server Software 2.2(1e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208976">Cisco UCS B-Series Blade Server Software 2.2(1f)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208977">Cisco UCS B-Series Blade Server Software 2.2(1g)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208978">Cisco UCS B-Series Blade Server Software 2.2(1h)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208964">Cisco UCS B-Series Blade Server Software 2.2(2c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208979">Cisco UCS B-Series Blade Server Software 2.2(2d)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208980">Cisco UCS B-Series Blade Server Software 2.2(2e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208981">Cisco UCS B-Series Blade Server Software 2.2(3a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208965">Cisco UCS B-Series Blade Server Software 2.2(3b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208982">Cisco UCS B-Series Blade Server Software 2.2(3c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208983">Cisco UCS B-Series Blade Server Software 2.2(3d)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208984">Cisco UCS B-Series Blade Server Software 2.2(3e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208985">Cisco UCS B-Series Blade Server Software 2.2(3f)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208986">Cisco UCS B-Series Blade Server Software 2.2(3g)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208987">Cisco UCS B-Series Blade Server Software 2.2(4b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208988">Cisco UCS B-Series Blade Server Software 2.2(5a)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco UCS B-Series M3 Blade Servers Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuq77241</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco Unified Computing System (UCS) B-Series blade servers could allow an unauthenticated, local attacker to cause the host operating system or Baseboard Management Controller (BMC) to hang.
+
+
+
+The vulnerability is due to how the various components communicate across the Inter-IC (I2C) bus. An attacker could exploit this vulnerability by sending specific I2C packets. An exploit could allow the attacker to cause disruption to the host, resulting in a denial of service (DoS) condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuq77241</Note>
+    </Notes>
+    <CVE>CVE-2015-4265</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-208964</ProductID>
+        <ProductID>CVRFPID-208965</ProductID>
+        <ProductID>CVRFPID-208972</ProductID>
+        <ProductID>CVRFPID-208973</ProductID>
+        <ProductID>CVRFPID-208974</ProductID>
+        <ProductID>CVRFPID-208975</ProductID>
+        <ProductID>CVRFPID-208976</ProductID>
+        <ProductID>CVRFPID-208977</ProductID>
+        <ProductID>CVRFPID-208978</ProductID>
+        <ProductID>CVRFPID-208979</ProductID>
+        <ProductID>CVRFPID-208980</ProductID>
+        <ProductID>CVRFPID-208981</ProductID>
+        <ProductID>CVRFPID-208982</ProductID>
+        <ProductID>CVRFPID-208983</ProductID>
+        <ProductID>CVRFPID-208984</ProductID>
+        <ProductID>CVRFPID-208985</ProductID>
+        <ProductID>CVRFPID-208986</ProductID>
+        <ProductID>CVRFPID-208987</ProductID>
+        <ProductID>CVRFPID-208988</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.9</BaseScore>
+        <TemporalScore>4.0</TemporalScore>
+        <Vector>AV:L/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>If connection to the Cisco Integrated Management Controller (CIMC) is alive, resetting the blade power will recover the blade. If CIMC is in a unresponsive "hanging" state or resetting blade power does not resolve the issue, resetting the slot will recover the blade.
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151006-ucs</URL>
+        <Description>Cisco UCS B-Series Blade Servers Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

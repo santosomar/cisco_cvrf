@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Malformed SNMP Message-Handling Vulnerabilities for Cisco Non-IOS Products</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20020211-snmp-msgs-non-ios</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>2.6</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2002-02-11T23:00:00</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+      <Revision>
+        <Number>2.6</Number>
+        <Date>2002-02-11T23:00:00</Date>
+        <Description>Updates made to Software Versions and Fixes table Voice Products
+			 section.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2002-02-11T23:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2002-02-11T23:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20020211-snmp-msgs-non-ios</URL>
+      <Description>Malformed SNMP Message-Handling Vulnerabilities for Cisco Non-IOS Products</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-33929">Cisco BTS 10200 Softswitch Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43548">Cisco BTS 10200 Softswitch 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44916">Cisco BTS 10200 Softswitch 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-33654">Cisco Catalyst 3900 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36051">Cisco Catalyst 4000 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38475">Cisco Catalyst 5000 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34114">Cisco Catalyst 6000 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34796">Cisco Intelligent Contact Manager (ICM) Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-40535">Cisco Intelligent Contact Manager (ICM) 5.0(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-35574">Cisco Unified Communications Manager 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34979">Cisco Unified Communications Manager 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34741">Cisco Unified Communications Manager 3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34652">Cisco Content Services Switch (CSS) 11050 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38963">Cisco Content Services Switch (CSS) 11150 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37422">Cisco Content Services Switch (CSS) 11800 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-33012">Cisco ICS-7750 Integrated Communication System 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44911">Cisco ICS-7750 Integrated Communication System 1.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-44909">Cisco ICS-7750 Integrated Communication System 1.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-44912">Cisco ICS-7750 Integrated Communication System 1.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-44910">Cisco ICS-7750 Integrated Communication System 1.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-44907">Cisco ICS-7750 Integrated Communication System 1.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-44908">Cisco ICS-7750 Integrated Communication System 1.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-44913">Cisco ICS-7750 Integrated Communication System 2.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-36898">Cisco SC 2200 Signaling Controller Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44917">Cisco VG248 Analog Phone Gateway 1.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-36911">Cisco Virtual Switch Controller VSC3000 Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34034">CiscoWorks for Windows 5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44914">Cisco Catalyst WS-X6608 3.2 0.142</FullProductName>
+    <FullProductName ProductID="CVRFPID-44915">Cisco Catalyst WS-X6624 3.2 0.142</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>SNMP Security Vulnerabilities</Title>
+    <CVE>CVE-2002-0012</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-33929</ProductID>
+        <ProductID>CVRFPID-43548</ProductID>
+        <ProductID>CVRFPID-44916</ProductID>
+        <ProductID>CVRFPID-33654</ProductID>
+        <ProductID>CVRFPID-34114</ProductID>
+        <ProductID>CVRFPID-36051</ProductID>
+        <ProductID>CVRFPID-38475</ProductID>
+        <ProductID>CVRFPID-34741</ProductID>
+        <ProductID>CVRFPID-34979</ProductID>
+        <ProductID>CVRFPID-35574</ProductID>
+        <ProductID>CVRFPID-34796</ProductID>
+        <ProductID>CVRFPID-40535</ProductID>
+        <ProductID>CVRFPID-34652</ProductID>
+        <ProductID>CVRFPID-37422</ProductID>
+        <ProductID>CVRFPID-38963</ProductID>
+        <ProductID>CVRFPID-33012</ProductID>
+        <ProductID>CVRFPID-44907</ProductID>
+        <ProductID>CVRFPID-44908</ProductID>
+        <ProductID>CVRFPID-44909</ProductID>
+        <ProductID>CVRFPID-44910</ProductID>
+        <ProductID>CVRFPID-44911</ProductID>
+        <ProductID>CVRFPID-44912</ProductID>
+        <ProductID>CVRFPID-44913</ProductID>
+        <ProductID>CVRFPID-36898</ProductID>
+        <ProductID>CVRFPID-44917</ProductID>
+        <ProductID>CVRFPID-36911</ProductID>
+        <ProductID>CVRFPID-34034</ProductID>
+        <ProductID>CVRFPID-44914</ProductID>
+        <ProductID>CVRFPID-44915</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20020211-snmp-msgs-non-ios</URL>
+        <Description>Malformed SNMP Message-Handling Vulnerabilities for Cisco Non-IOS Products</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

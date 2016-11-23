@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco ASR 900 Series Aggregation Services Routers Buffer Overflow Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161102-tl1</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-11-02T15:42:47</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-11-02T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-11-02T15:42:47</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Transaction Language 1 (TL1) code of Cisco ASR 900 Series routers could allow an unauthenticated, remote attacker to cause a reload of, or remotely execute code on, the affected system.
+
+
+
+The vulnerability exists because the affected software performs incomplete bounds checks on input data. An attacker could exploit this vulnerability by sending a malicious request to the TL1 port, which could cause the device to reload. An exploit could allow the attacker to execute arbitrary code and obtain full control of the system or cause a reload of the affected system.
+
+
+
+Cisco has released software updates that address this vulnerability. There are workarounds that address this vulnerability.
+
+ 
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161102-tl1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161102-tl1"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161102-tl1</URL>
+      <Description>Cisco ASR 900 Series Aggregation Services Routers Buffer Overflow Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-217271">Cisco IOS XE Software 3.18S 3.18.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-217272">Cisco IOS XE Software 3.18S 3.18.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-212411">Cisco IOS XE Software 3.17S 3.17.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-217234">Cisco IOS XE Software 3.17S 3.17.2S </FullProductName>
+    <FullProductName ProductID="CVRFPID-212412">Cisco IOS XE Software 3.17S 3.17.1S</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ASR 900 Series Aggregation Services Routers Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy15175</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Transaction Language 1 (TL1) code of Cisco ASR 900 Series routers could allow an unauthenticated, remote attacker to cause a reload of, or remotely execute code on, the affected system.
+
+
+
+The vulnerability exists because the affected software performs incomplete bounds checks on input data. An attacker could exploit this vulnerability by sending a malicious request to the TL1 port, which could cause the device to reload. An exploit could allow the attacker to execute arbitrary code and obtain full control of the system or cause a reload of the affected system.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuy15175</Note>
+    </Notes>
+    <CVE>CVE-2016-6441</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-212411</ProductID>
+        <ProductID>CVRFPID-212412</ProductID>
+        <ProductID>CVRFPID-217234</ProductID>
+        <ProductID>CVRFPID-217271</ProductID>
+        <ProductID>CVRFPID-217272</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are workarounds for this vulnerability. The following mitigation may help protect an infrastructure until an upgrade to a fixed version of Cisco IOS XE software can be scheduled:
+Infrastructure Access Control Lists 
+To protect infrastructure devices and minimize the risk, impact, and effectiveness of direct infrastructure attacks, administrators are advised to deploy infrastructure access control lists (iACLs) to perform policy enforcement of traffic sent to infrastructure equipment. Administrators can construct an iACL by explicitly permitting only authorized traffic sent to infrastructure devices in accordance with existing security policies and configurations. For the maximum protection of infrastructure devices, deployed iACLs should be applied in the ingress direction on all interfaces to which an IP address has been configured. An iACL workaround cannot provide complete protection against this vulnerability when the attack originates from a trusted source address.
+
+
+
+
+The iACL policy denies unauthorized TL1 packets on TCP and UDP ports 3082 and 3083 that are sent to affected devices. In the following example, 192.168.60.0/24 is the IP address space that is used by the affected devices, and the host at 192.168.100.1 is considered a trusted source that requires access to the affected devices. Care should be taken to allow required traffic for routing and administrative access prior to denying all unauthorized traffic. Whenever possible, infrastructure address space should be distinct from the address space used for user and services segments. Using this addressing methodology will assist with the construction and deployment of iACLs.
+
+ip access-list extended Infrastructure-ACL-Policy
+ 
+ remark - permit trusted TL1 traffic - won't prevent exploitation from these hosts.
+ remark - The exploit has only been seen on TCP port 3083, others are included for completeness.
+ remark - Do not use these four lines if not using TL1 feature.
+ permit tcp host 192.168.100.1 192.168.60.0 0.0.0.255 eq 3082
+ permit tcp host 192.168.100.1 192.168.60.0 0.0.0.255 eq 3083
+ permit udp host 192.168.100.1 192.168.60.0 0.0.0.255 eq 3082
+ permit udp host 192.168.100.1 192.168.60.0 0.0.0.255 eq 3083
+
+!-- The following vulnerability-specific access control entry 
+!-- (ACE) can aid in identification of attacks.
+
+ remark deny all other traffic to TL1 port.
+ deny tcp any 192.168.60.0 0.0.0.255 eq 3082 log
+ deny tcp any 192.168.60.0 0.0.0.255 eq 3083 log
+ deny udp any 192.168.60.0 0.0.0.255 eq 3082 log
+ deny udp any 192.168.60.0 0.0.0.255 eq 3083 log
+ 
+!-- Permit or deny all other Layer 3 and Layer 4 traffic in accordance 
+!-- with existing security policies and configurations 
+!-- Apply iACL to interfaces in the ingress direction
+
+ permit ip any any
+
+interface GigabitEthernet0
+ ip access-group Infrastructure-ACL-Policy in
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161102-tl1</URL>
+        <Description>Cisco ASR 900 Series Aggregation Services Routers Buffer Overflow Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

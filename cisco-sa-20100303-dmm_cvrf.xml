@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in Cisco Digital Media Manager</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20100303-dmm</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2010-03-03T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2010-03-03T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2010-03-03T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100303-dmm</URL>
+      <Description>Multiple Vulnerabilities in Cisco Digital Media Manager</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-95923">Cisco Digital Media Manager Software 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-95925">Cisco Digital Media Manager Software 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-95927">Cisco Digital Media Manager Software 5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-95928">Cisco Digital Media Manager Software 5.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-95929">Cisco Digital Media Manager Software 5.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-97388">Cisco Digital Media Manager Software 5.1 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Digital Media Manager User Credential Information Disclosure Vulnerability</Title>
+    <CVE>CVE-2010-0572</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-95923</ProductID>
+        <ProductID>CVRFPID-95925</ProductID>
+        <ProductID>CVRFPID-95927</ProductID>
+        <ProductID>CVRFPID-95928</ProductID>
+        <ProductID>CVRFPID-95929</ProductID>
+        <ProductID>CVRFPID-97388</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.1</BaseScore>
+        <TemporalScore>5.9</TemporalScore>
+        <Vector>AV:N/AC:H/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100303-dmm</URL>
+        <Description>Multiple Vulnerabilities in Cisco Digital Media Manager</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Digital Media Manager Privilege Escalation Vulnerability</Title>
+    <CVE>CVE-2010-0571</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-95927</ProductID>
+        <ProductID>CVRFPID-95928</ProductID>
+        <ProductID>CVRFPID-95929</ProductID>
+        <ProductID>CVRFPID-97388</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>8.5</BaseScore>
+        <TemporalScore>7.0</TemporalScore>
+        <Vector>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100303-dmm</URL>
+        <Description>Multiple Vulnerabilities in Cisco Digital Media Manager</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Digital Media Manager Default Credential Unauthorized Access Vulnerability</Title>
+    <CVE>CVE-2010-0570</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-95927</ProductID>
+        <ProductID>CVRFPID-95928</ProductID>
+        <ProductID>CVRFPID-95929</ProductID>
+        <ProductID>CVRFPID-97388</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.7</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:H/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100303-dmm</URL>
+        <Description>Multiple Vulnerabilities in Cisco Digital Media Manager</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software Session Initiation Protocol Denial of Service Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20100324-sip</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2010-03-24T16:00:00</Date>
+        <Description>Updated First Fixed releases for 12.4T</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2010-03-24T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2010-03-24T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Multiple vulnerabilities exist in the Session Initiation Protocol (SIP)
+implementation in Cisco IOS® Software that could
+allow an unauthenticated, remote attacker to cause a reload of an affected
+device when SIP operation is enabled. Remote code execution may also be
+possible.
+
+Cisco has released software updates that address these vulnerabilities. For devices that must run SIP there are no workarounds;
+however, mitigations are available to limit exposure of the
+vulnerabilities.
+
+This advisory is posted at
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100324-sip["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100324-sip"].
+
+
+
+Note: The March 24, 2010, Cisco IOS Software Security Advisory bundled
+publication includes seven Security Advisories. All the advisories address
+vulnerabilities in Cisco IOS Software. Each advisory lists the releases that
+correct the vulnerability or vulnerabilities detailed in the advisory. The
+table at the following URL lists releases that correct all Cisco IOS Software
+vulnerabilities that have been published on March 24, 2010, or earlier: 
+
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100324-bundle["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100324-bundle"]
+
+
+ Individual publication links are in "Cisco Event Response:
+Semiannual Cisco IOS Software Security Advisory Bundled Publication" at the
+following link: 
+
+
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_mar10.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_mar10.html"]
+
+
+
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100324-sip</URL>
+      <Description>Cisco IOS Software Session Initiation Protocol Denial of Service Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20100324-bundle</URL>
+      <Description>Summary of Cisco IOS Software Bundled Advisories, March 24, 2010</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20100324-bundle</URL>
+      <Description>Summary of Cisco IOS Software Bundled Advisories, March 24, 2010</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-65513">Cisco IOS 12.3(7)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-105808">Cisco IOS 12.3(7)T11</FullProductName>
+    <FullProductName ProductID="CVRFPID-62555">Cisco IOS 12.3(7)T12</FullProductName>
+    <FullProductName ProductID="CVRFPID-104657">Cisco IOS 12.3(7)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104448">Cisco IOS 12.3(7)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107392">Cisco IOS 12.3(7)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-105369">Cisco IOS 12.3(7)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-106391">Cisco IOS 12.3(7)T9</FullProductName>
+    <FullProductName ProductID="CVRFPID-106421">Cisco IOS 12.3(8)T11</FullProductName>
+    <FullProductName ProductID="CVRFPID-104481">Cisco IOS 12.3(8)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-103777">Cisco IOS 12.3(8)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-104500">Cisco IOS 12.3(8)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-103573">Cisco IOS 12.3(8)T9</FullProductName>
+    <FullProductName ProductID="CVRFPID-58331">Cisco IOS 12.3(11)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-62622">Cisco IOS 12.3(11)T10</FullProductName>
+    <FullProductName ProductID="CVRFPID-62570">Cisco IOS 12.3(11)T11</FullProductName>
+    <FullProductName ProductID="CVRFPID-107382">Cisco IOS 12.3(11)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104980">Cisco IOS 12.3(11)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106304">Cisco IOS 12.3(11)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-104381">Cisco IOS 12.3(11)T5</FullProductName>
+    <FullProductName ProductID="CVRFPID-105748">Cisco IOS 12.3(11)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-106983">Cisco IOS 12.3(11)T9</FullProductName>
+    <FullProductName ProductID="CVRFPID-63197">Cisco IOS 12.3(14)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107367">Cisco IOS 12.3(14)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106094">Cisco IOS 12.3(14)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104979">Cisco IOS 12.3(14)T5</FullProductName>
+    <FullProductName ProductID="CVRFPID-62623">Cisco IOS 12.3(14)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-103953">Cisco IOS 12.3(4)XD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106469">Cisco IOS 12.3(4)XD3</FullProductName>
+    <FullProductName ProductID="CVRFPID-65471">Cisco IOS 12.3(2)XF</FullProductName>
+    <FullProductName ProductID="CVRFPID-65490">Cisco IOS 12.3(4)XG</FullProductName>
+    <FullProductName ProductID="CVRFPID-106147">Cisco IOS 12.3(4)XG2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105964">Cisco IOS 12.3(4)XG4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106751">Cisco IOS 12.3(7)XI2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106531">Cisco IOS 12.3(7)XI3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106793">Cisco IOS 12.3(7)XI5</FullProductName>
+    <FullProductName ProductID="CVRFPID-103650">Cisco IOS 12.3(7)XI7</FullProductName>
+    <FullProductName ProductID="CVRFPID-105571">Cisco IOS 12.3(7)XI7a</FullProductName>
+    <FullProductName ProductID="CVRFPID-105830">Cisco IOS 12.3(7)XI7b</FullProductName>
+    <FullProductName ProductID="CVRFPID-62585">Cisco IOS 12.3(7)XI8</FullProductName>
+    <FullProductName ProductID="CVRFPID-65510">Cisco IOS 12.3(7)XJ</FullProductName>
+    <FullProductName ProductID="CVRFPID-104083">Cisco IOS 12.3(7)XJ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104179">Cisco IOS 12.3(7)XJ2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106872">Cisco IOS 12.3(4)XK</FullProductName>
+    <FullProductName ProductID="CVRFPID-104909">Cisco IOS 12.3(4)XK1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103862">Cisco IOS 12.3(4)XK3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106312">Cisco IOS 12.3(4)XK4</FullProductName>
+    <FullProductName ProductID="CVRFPID-65434">Cisco IOS 12.3(11)XL</FullProductName>
+    <FullProductName ProductID="CVRFPID-106612">Cisco IOS 12.3(11)XL1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105585">Cisco IOS 12.3(7)XR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105271">Cisco IOS 12.3(7)XR4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106081">Cisco IOS 12.3(7)XR5</FullProductName>
+    <FullProductName ProductID="CVRFPID-107104">Cisco IOS 12.3(8)XU3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106924">Cisco IOS 12.3(8)XU4</FullProductName>
+    <FullProductName ProductID="CVRFPID-63384">Cisco IOS 12.3(8)XW</FullProductName>
+    <FullProductName ProductID="CVRFPID-104048">Cisco IOS 12.3(8)XW2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104844">Cisco IOS 12.3(8)XW3</FullProductName>
+    <FullProductName ProductID="CVRFPID-63385">Cisco IOS 12.3(8)XX</FullProductName>
+    <FullProductName ProductID="CVRFPID-104533">Cisco IOS 12.3(8)XX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106092">Cisco IOS 12.3(8)XY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104876">Cisco IOS 12.3(8)XY4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106179">Cisco IOS 12.3(8)XY7</FullProductName>
+    <FullProductName ProductID="CVRFPID-103503">Cisco IOS 12.3(11)YF2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106437">Cisco IOS 12.3(11)YF3</FullProductName>
+    <FullProductName ProductID="CVRFPID-63204">Cisco IOS 12.3(8)YG</FullProductName>
+    <FullProductName ProductID="CVRFPID-107099">Cisco IOS 12.3(8)YG2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106324">Cisco IOS 12.3(8)YG3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107559">Cisco IOS 12.3(8)YG4</FullProductName>
+    <FullProductName ProductID="CVRFPID-105174">Cisco IOS 12.3(11)YK2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106461">Cisco IOS 12.3(14)YM10</FullProductName>
+    <FullProductName ProductID="CVRFPID-103907">Cisco IOS 12.3(14)YM3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104116">Cisco IOS 12.3(14)YM7</FullProductName>
+    <FullProductName ProductID="CVRFPID-62617">Cisco IOS 12.3(14)YM8</FullProductName>
+    <FullProductName ProductID="CVRFPID-105179">Cisco IOS 12.3(14)YM9</FullProductName>
+    <FullProductName ProductID="CVRFPID-106385">Cisco IOS 12.3(14)YQ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107136">Cisco IOS 12.3(14)YQ2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106713">Cisco IOS 12.3(14)YQ3</FullProductName>
+    <FullProductName ProductID="CVRFPID-103494">Cisco IOS 12.3(14)YQ5</FullProductName>
+    <FullProductName ProductID="CVRFPID-106433">Cisco IOS 12.3(14)YQ6</FullProductName>
+    <FullProductName ProductID="CVRFPID-104386">Cisco IOS 12.3(14)YQ7</FullProductName>
+    <FullProductName ProductID="CVRFPID-65454">Cisco IOS 12.3(14)YT</FullProductName>
+    <FullProductName ProductID="CVRFPID-104514">Cisco IOS 12.3(14)YT1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104198">Cisco IOS 12.3(14)YU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63194">Cisco IOS 12.3(8)ZA</FullProductName>
+    <FullProductName ProductID="CVRFPID-65528">Cisco IOS 12.4(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65529">Cisco IOS 12.4(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65530">Cisco IOS 12.4(1c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65543">Cisco IOS 12.4(3a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65544">Cisco IOS 12.4(3b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65545">Cisco IOS 12.4(3c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66213">Cisco IOS 12.4(3g)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65552">Cisco IOS 12.4(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65554">Cisco IOS 12.4(5a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-62625">Cisco IOS 12.4(5b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-62626">Cisco IOS 12.4(7a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65559">Cisco IOS 12.4(7c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-69776">Cisco IOS 12.4(7e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-62603">Cisco IOS 12.4(8)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65561">Cisco IOS 12.4(8a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65562">Cisco IOS 12.4(8b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66328">Cisco IOS 12.4(8c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65533">Cisco IOS 12.4(10a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-69755">Cisco IOS 12.4(10b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-69757">Cisco IOS 12.4(12)</FullProductName>
+    <FullProductName ProductID="CVRFPID-69758">Cisco IOS 12.4(12a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-69760">Cisco IOS 12.4(13)</FullProductName>
+    <FullProductName ProductID="CVRFPID-105101">Cisco IOS 12.4(22)GC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105540">Cisco IOS 12.4(24)GC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107316">Cisco IOS 12.4(22)MD</FullProductName>
+    <FullProductName ProductID="CVRFPID-105316">Cisco IOS 12.4(22)MD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106363">Cisco IOS 12.4(22)MDA</FullProductName>
+    <FullProductName ProductID="CVRFPID-106792">Cisco IOS 12.4(22)MDA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65541">Cisco IOS 12.4(2)MR</FullProductName>
+    <FullProductName ProductID="CVRFPID-65548">Cisco IOS 12.4(4)MR</FullProductName>
+    <FullProductName ProductID="CVRFPID-65555">Cisco IOS 12.4(6)MR</FullProductName>
+    <FullProductName ProductID="CVRFPID-62619">Cisco IOS 12.4(6)MR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106553">Cisco IOS 12.4(2)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106835">Cisco IOS 12.4(2)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105532">Cisco IOS 12.4(2)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-59292">Cisco IOS 12.4(4)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-59293">Cisco IOS 12.4(4)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-59294">Cisco IOS 12.4(4)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-59295">Cisco IOS 12.4(4)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107536">Cisco IOS 12.4(4)T5</FullProductName>
+    <FullProductName ProductID="CVRFPID-106428">Cisco IOS 12.4(4)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-59296">Cisco IOS 12.4(6)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-59298">Cisco IOS 12.4(6)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104810">Cisco IOS 12.4(22)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-103595">Cisco IOS 12.4(22)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107524">Cisco IOS 12.4(22)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-92384">Cisco IOS 12.4(24)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-105745">Cisco IOS 12.4(24)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103949">Cisco IOS 12.4(2)XA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65539">Cisco IOS 12.4(2)XB</FullProductName>
+    <FullProductName ProductID="CVRFPID-103843">Cisco IOS 12.4(2)XB1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106250">Cisco IOS 12.4(2)XB2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107329">Cisco IOS 12.4(2)XB4</FullProductName>
+    <FullProductName ProductID="CVRFPID-104006">Cisco IOS 12.4(4)XD4</FullProductName>
+    <FullProductName ProductID="CVRFPID-63196">Cisco IOS 12.4(6)XP</FullProductName>
+    <FullProductName ProductID="CVRFPID-107061">Cisco IOS 12.4(22)XR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105255">Cisco IOS 12.4(22)XR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105454">Cisco IOS 12.4(20)YA</FullProductName>
+    <FullProductName ProductID="CVRFPID-107450">Cisco IOS 12.4(20)YA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105032">Cisco IOS 12.4(20)YA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104250">Cisco IOS 12.4(20)YA3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104586">Cisco IOS 12.4(22)YB</FullProductName>
+    <FullProductName ProductID="CVRFPID-106575">Cisco IOS 12.4(22)YB1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105231">Cisco IOS 12.4(22)YB2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107128">Cisco IOS 12.4(22)YB3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106343">Cisco IOS 12.4(22)YB4</FullProductName>
+    <FullProductName ProductID="CVRFPID-104049">Cisco IOS 12.4(22)YD</FullProductName>
+    <FullProductName ProductID="CVRFPID-105061">Cisco IOS 12.4(22)YD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106197">Cisco IOS 12.4(22)YD2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104527">Cisco IOS 12.4(22)YE</FullProductName>
+    <FullProductName ProductID="CVRFPID-105136">Cisco IOS 12.4(22)YE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107561">Cisco IOS 12.4(24)YG1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software Session Initiation Protocol Message Processing Arbitrary Code Execution Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCsz48680</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCsz48680</Note>
+    </Notes>
+    <CVE>CVE-2010-0580</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-92384</ProductID>
+        <ProductID>CVRFPID-103595</ProductID>
+        <ProductID>CVRFPID-104049</ProductID>
+        <ProductID>CVRFPID-104250</ProductID>
+        <ProductID>CVRFPID-104527</ProductID>
+        <ProductID>CVRFPID-104586</ProductID>
+        <ProductID>CVRFPID-104810</ProductID>
+        <ProductID>CVRFPID-105032</ProductID>
+        <ProductID>CVRFPID-105061</ProductID>
+        <ProductID>CVRFPID-105101</ProductID>
+        <ProductID>CVRFPID-105136</ProductID>
+        <ProductID>CVRFPID-105231</ProductID>
+        <ProductID>CVRFPID-105255</ProductID>
+        <ProductID>CVRFPID-105316</ProductID>
+        <ProductID>CVRFPID-105454</ProductID>
+        <ProductID>CVRFPID-105540</ProductID>
+        <ProductID>CVRFPID-105745</ProductID>
+        <ProductID>CVRFPID-106197</ProductID>
+        <ProductID>CVRFPID-106343</ProductID>
+        <ProductID>CVRFPID-106363</ProductID>
+        <ProductID>CVRFPID-106575</ProductID>
+        <ProductID>CVRFPID-106792</ProductID>
+        <ProductID>CVRFPID-107061</ProductID>
+        <ProductID>CVRFPID-107128</ProductID>
+        <ProductID>CVRFPID-107316</ProductID>
+        <ProductID>CVRFPID-107450</ProductID>
+        <ProductID>CVRFPID-107524</ProductID>
+        <ProductID>CVRFPID-107561</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:U/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>If the affected Cisco IOS device requires SIP for VoIP services, SIP
+cannot be disabled, and no workarounds are available. Users are advised to
+apply mitigation techniques to help limit exposure to the vulnerabilities.
+Mitigation consists of allowing only legitimate devices to connect to affected
+devices. To increase effectiveness, the mitigation must be coupled with
+anti-spoofing measures on the network edge. This action is required because SIP
+can use UDP as the transport protocol.
+
+Additional mitigations that can be deployed on Cisco devices within the
+network are available in the companion document "Cisco Applied Mitigation
+Bulletin: Identifying and Mitigating Exploitation of the Cisco Unified
+Communications Manager Express and Cisco IOS Software H.323 and Session
+Initiation Protocol Denial of Service Vulnerabilities", which is available at
+the following location:
+http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20100324-voice["http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20100324-voice"].
+
+Disable SIP Listening Ports
+For devices that do not require SIP to be enabled, the simplest and
+most effective workaround is to disable SIP processing on the device. Some
+versions of Cisco IOS Software allow administrators to disable SIP with the
+following commands:
+
+
+sip-ua
+ no transport udp
+ no transport tcp
+ no transport tcp tls
+
+
+
+Warning: When applying this workaround to devices that are processing Media
+Gateway Control Protocol (MGCP) or H.323 calls, the device will not stop SIP
+processing while active calls are being processed. Under these circumstances,
+this workaround should be implemented during a maintenance window when active
+calls can be briefly stopped.
+
+The show udp connections, show
+tcp brief all, and show processes | include
+SIP commands can be used to confirm that the SIP UDP and TCP
+ports are closed after applying this workaround.
+
+Depending on the Cisco IOS Software version in use, the output from the
+show ip sockets command may still show the SIP ports
+open, but sending traffic to them will cause the SIP process to emit the
+following message:
+
+
+*Feb  2 11:36:47.691: sip_udp_sock_process_read: SIP UDP Listener is DISABLED
+
+Control Plane Policing
+For devices that need to offer SIP services it is possible to use
+Control Plane Policing (CoPP) to block SIP traffic to the device from untrusted
+sources. Cisco IOS Releases 12.0S, 12.2SX, 12.2S, 12.3T, 12.4, and 12.4T
+support the CoPP feature. CoPP may be configured on a device to protect the
+management and control planes to minimize the risk and effectiveness of direct
+infrastructure attacks by explicitly permitting only authorized traffic sent to
+infrastructure devices in accordance with existing security policies and
+configurations. The following example can be adapted to specific network
+configurations:
+
+
+
+!-- The 192.168.1.0/24 network and the 172.16.1.1 host are trusted.
+!-- Everything else is not trusted. The following access list is used
+!-- to determine what traffic needs to be dropped by a control plane
+!-- policy (the CoPP feature.) If the access list matches (permit)
+!-- then traffic will be dropped and if the access list does not
+!-- match (deny) then traffic will be processed by the router.
+access-list 100 deny udp 192.168.1.0 0.0.0.255 any eq 5060
+access-list 100 deny tcp 192.168.1.0 0.0.0.255 any eq 5060
+access-list 100 deny tcp 192.168.1.0 0.0.0.255 any eq 5061
+access-list 100 deny udp host 172.16.1.1 any eq 5060
+access-list 100 deny tcp host 172.16.1.1 any eq 5060
+access-list 100 deny tcp host 172.16.1.1 any eq 5061
+access-list 100 permit udp any any eq 5060
+access-list 100 permit tcp any any eq 5060
+access-list 100 permit tcp any any eq 5061
+
+
+!-- Permit (Police or Drop)/Deny (Allow) all other Layer3 and Layer4
+!-- traffic in accordance with existing security policies and
+!-- configurations for traffic that is authorized to be sent
+!-- to infrastructure devices.
+!-- Create a Class-Map for traffic to be policed by
+!-- the CoPP feature.
+class-map match-all drop-sip-class
+  match access-group 100
+
+
+!-- Create a Policy-Map that will be applied to the
+!-- Control-Plane of the device.
+policy-map control-plane-policy
+ class drop-sip-class
+  drop
+
+
+!-- Apply the Policy-Map to the Control-Plane of the
+!-- device.
+control-plane
+ service-policy input control-plane-policy
+
+
+
+Warning: Because SIP can use UDP as a transport protocol, it is possible to
+easily spoof the IP address of the sender, which may defeat access control
+lists that permit communication to these ports from trusted IP
+addresses.
+
+In the above CoPP example, the access control entries (ACEs) that match
+the potential exploit packets with the "permit" action result in these packets
+being discarded by the policy-map "drop" function, while packets that match the
+"deny" action (not shown) are not affected by the policy-map drop function.
+Additional information on the configuration and use of the CoPP feature can be
+found at
+http://www.cisco.com/web/about/security/intelligence/coppwp_gs.html["http://www.cisco.com/web/about/security/intelligence/coppwp_gs.html"]
+and
+http://www.cisco.com/en/US/docs/ios/12_3t/12_3t4/feature/guide/gtrtlimt.html["http://www.cisco.com/en/US/docs/ios/12_3t/12_3t4/feature/guide/gtrtlimt.html"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100324-sip</URL>
+        <Description>Cisco IOS Software Session Initiation Protocol Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software SIP Message Handling Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtb93416</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCtb93416</Note>
+    </Notes>
+    <CVE>CVE-2010-0579</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-58331</ProductID>
+        <ProductID>CVRFPID-59292</ProductID>
+        <ProductID>CVRFPID-59293</ProductID>
+        <ProductID>CVRFPID-59294</ProductID>
+        <ProductID>CVRFPID-59295</ProductID>
+        <ProductID>CVRFPID-59296</ProductID>
+        <ProductID>CVRFPID-59298</ProductID>
+        <ProductID>CVRFPID-62555</ProductID>
+        <ProductID>CVRFPID-62570</ProductID>
+        <ProductID>CVRFPID-62585</ProductID>
+        <ProductID>CVRFPID-62603</ProductID>
+        <ProductID>CVRFPID-62617</ProductID>
+        <ProductID>CVRFPID-62619</ProductID>
+        <ProductID>CVRFPID-62622</ProductID>
+        <ProductID>CVRFPID-62623</ProductID>
+        <ProductID>CVRFPID-62625</ProductID>
+        <ProductID>CVRFPID-62626</ProductID>
+        <ProductID>CVRFPID-63194</ProductID>
+        <ProductID>CVRFPID-63196</ProductID>
+        <ProductID>CVRFPID-63197</ProductID>
+        <ProductID>CVRFPID-63204</ProductID>
+        <ProductID>CVRFPID-63384</ProductID>
+        <ProductID>CVRFPID-63385</ProductID>
+        <ProductID>CVRFPID-65434</ProductID>
+        <ProductID>CVRFPID-65454</ProductID>
+        <ProductID>CVRFPID-65471</ProductID>
+        <ProductID>CVRFPID-65490</ProductID>
+        <ProductID>CVRFPID-65510</ProductID>
+        <ProductID>CVRFPID-65513</ProductID>
+        <ProductID>CVRFPID-65528</ProductID>
+        <ProductID>CVRFPID-65529</ProductID>
+        <ProductID>CVRFPID-65530</ProductID>
+        <ProductID>CVRFPID-65533</ProductID>
+        <ProductID>CVRFPID-65539</ProductID>
+        <ProductID>CVRFPID-65541</ProductID>
+        <ProductID>CVRFPID-65543</ProductID>
+        <ProductID>CVRFPID-65544</ProductID>
+        <ProductID>CVRFPID-65545</ProductID>
+        <ProductID>CVRFPID-65548</ProductID>
+        <ProductID>CVRFPID-65552</ProductID>
+        <ProductID>CVRFPID-65554</ProductID>
+        <ProductID>CVRFPID-65555</ProductID>
+        <ProductID>CVRFPID-65559</ProductID>
+        <ProductID>CVRFPID-65561</ProductID>
+        <ProductID>CVRFPID-65562</ProductID>
+        <ProductID>CVRFPID-66213</ProductID>
+        <ProductID>CVRFPID-66328</ProductID>
+        <ProductID>CVRFPID-69755</ProductID>
+        <ProductID>CVRFPID-69757</ProductID>
+        <ProductID>CVRFPID-69758</ProductID>
+        <ProductID>CVRFPID-69760</ProductID>
+        <ProductID>CVRFPID-69776</ProductID>
+        <ProductID>CVRFPID-103494</ProductID>
+        <ProductID>CVRFPID-103503</ProductID>
+        <ProductID>CVRFPID-103573</ProductID>
+        <ProductID>CVRFPID-103650</ProductID>
+        <ProductID>CVRFPID-103777</ProductID>
+        <ProductID>CVRFPID-103843</ProductID>
+        <ProductID>CVRFPID-103862</ProductID>
+        <ProductID>CVRFPID-103907</ProductID>
+        <ProductID>CVRFPID-103949</ProductID>
+        <ProductID>CVRFPID-103953</ProductID>
+        <ProductID>CVRFPID-104006</ProductID>
+        <ProductID>CVRFPID-104048</ProductID>
+        <ProductID>CVRFPID-104083</ProductID>
+        <ProductID>CVRFPID-104116</ProductID>
+        <ProductID>CVRFPID-104179</ProductID>
+        <ProductID>CVRFPID-104198</ProductID>
+        <ProductID>CVRFPID-104381</ProductID>
+        <ProductID>CVRFPID-104386</ProductID>
+        <ProductID>CVRFPID-104448</ProductID>
+        <ProductID>CVRFPID-104481</ProductID>
+        <ProductID>CVRFPID-104500</ProductID>
+        <ProductID>CVRFPID-104514</ProductID>
+        <ProductID>CVRFPID-104533</ProductID>
+        <ProductID>CVRFPID-104657</ProductID>
+        <ProductID>CVRFPID-104844</ProductID>
+        <ProductID>CVRFPID-104876</ProductID>
+        <ProductID>CVRFPID-104909</ProductID>
+        <ProductID>CVRFPID-104979</ProductID>
+        <ProductID>CVRFPID-104980</ProductID>
+        <ProductID>CVRFPID-105174</ProductID>
+        <ProductID>CVRFPID-105179</ProductID>
+        <ProductID>CVRFPID-105271</ProductID>
+        <ProductID>CVRFPID-105369</ProductID>
+        <ProductID>CVRFPID-105532</ProductID>
+        <ProductID>CVRFPID-105571</ProductID>
+        <ProductID>CVRFPID-105585</ProductID>
+        <ProductID>CVRFPID-105748</ProductID>
+        <ProductID>CVRFPID-105808</ProductID>
+        <ProductID>CVRFPID-105830</ProductID>
+        <ProductID>CVRFPID-105964</ProductID>
+        <ProductID>CVRFPID-106081</ProductID>
+        <ProductID>CVRFPID-106092</ProductID>
+        <ProductID>CVRFPID-106094</ProductID>
+        <ProductID>CVRFPID-106147</ProductID>
+        <ProductID>CVRFPID-106179</ProductID>
+        <ProductID>CVRFPID-106250</ProductID>
+        <ProductID>CVRFPID-106304</ProductID>
+        <ProductID>CVRFPID-106312</ProductID>
+        <ProductID>CVRFPID-106324</ProductID>
+        <ProductID>CVRFPID-106385</ProductID>
+        <ProductID>CVRFPID-106391</ProductID>
+        <ProductID>CVRFPID-106421</ProductID>
+        <ProductID>CVRFPID-106428</ProductID>
+        <ProductID>CVRFPID-106433</ProductID>
+        <ProductID>CVRFPID-106437</ProductID>
+        <ProductID>CVRFPID-106461</ProductID>
+        <ProductID>CVRFPID-106469</ProductID>
+        <ProductID>CVRFPID-106531</ProductID>
+        <ProductID>CVRFPID-106553</ProductID>
+        <ProductID>CVRFPID-106612</ProductID>
+        <ProductID>CVRFPID-106713</ProductID>
+        <ProductID>CVRFPID-106751</ProductID>
+        <ProductID>CVRFPID-106793</ProductID>
+        <ProductID>CVRFPID-106835</ProductID>
+        <ProductID>CVRFPID-106872</ProductID>
+        <ProductID>CVRFPID-106924</ProductID>
+        <ProductID>CVRFPID-106983</ProductID>
+        <ProductID>CVRFPID-107099</ProductID>
+        <ProductID>CVRFPID-107104</ProductID>
+        <ProductID>CVRFPID-107136</ProductID>
+        <ProductID>CVRFPID-107329</ProductID>
+        <ProductID>CVRFPID-107367</ProductID>
+        <ProductID>CVRFPID-107382</ProductID>
+        <ProductID>CVRFPID-107392</ProductID>
+        <ProductID>CVRFPID-107536</ProductID>
+        <ProductID>CVRFPID-107559</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>If the affected Cisco IOS device requires SIP for VoIP services, SIP
+cannot be disabled, and no workarounds are available. Users are advised to
+apply mitigation techniques to help limit exposure to the vulnerabilities.
+Mitigation consists of allowing only legitimate devices to connect to affected
+devices. To increase effectiveness, the mitigation must be coupled with
+anti-spoofing measures on the network edge. This action is required because SIP
+can use UDP as the transport protocol.
+
+Additional mitigations that can be deployed on Cisco devices within the
+network are available in the companion document "Cisco Applied Mitigation
+Bulletin: Identifying and Mitigating Exploitation of the Cisco Unified
+Communications Manager Express and Cisco IOS Software H.323 and Session
+Initiation Protocol Denial of Service Vulnerabilities", which is available at
+the following location:
+http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20100324-voice["http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20100324-voice"].
+
+Disable SIP Listening Ports
+For devices that do not require SIP to be enabled, the simplest and
+most effective workaround is to disable SIP processing on the device. Some
+versions of Cisco IOS Software allow administrators to disable SIP with the
+following commands:
+
+
+sip-ua
+ no transport udp
+ no transport tcp
+ no transport tcp tls
+
+
+
+Warning: When applying this workaround to devices that are processing Media
+Gateway Control Protocol (MGCP) or H.323 calls, the device will not stop SIP
+processing while active calls are being processed. Under these circumstances,
+this workaround should be implemented during a maintenance window when active
+calls can be briefly stopped.
+
+The show udp connections, show
+tcp brief all, and show processes | include
+SIP commands can be used to confirm that the SIP UDP and TCP
+ports are closed after applying this workaround.
+
+Depending on the Cisco IOS Software version in use, the output from the
+show ip sockets command may still show the SIP ports
+open, but sending traffic to them will cause the SIP process to emit the
+following message:
+
+
+*Feb  2 11:36:47.691: sip_udp_sock_process_read: SIP UDP Listener is DISABLED
+
+Control Plane Policing
+For devices that need to offer SIP services it is possible to use
+Control Plane Policing (CoPP) to block SIP traffic to the device from untrusted
+sources. Cisco IOS Releases 12.0S, 12.2SX, 12.2S, 12.3T, 12.4, and 12.4T
+support the CoPP feature. CoPP may be configured on a device to protect the
+management and control planes to minimize the risk and effectiveness of direct
+infrastructure attacks by explicitly permitting only authorized traffic sent to
+infrastructure devices in accordance with existing security policies and
+configurations. The following example can be adapted to specific network
+configurations:
+
+
+
+!-- The 192.168.1.0/24 network and the 172.16.1.1 host are trusted.
+!-- Everything else is not trusted. The following access list is used
+!-- to determine what traffic needs to be dropped by a control plane
+!-- policy (the CoPP feature.) If the access list matches (permit)
+!-- then traffic will be dropped and if the access list does not
+!-- match (deny) then traffic will be processed by the router.
+access-list 100 deny udp 192.168.1.0 0.0.0.255 any eq 5060
+access-list 100 deny tcp 192.168.1.0 0.0.0.255 any eq 5060
+access-list 100 deny tcp 192.168.1.0 0.0.0.255 any eq 5061
+access-list 100 deny udp host 172.16.1.1 any eq 5060
+access-list 100 deny tcp host 172.16.1.1 any eq 5060
+access-list 100 deny tcp host 172.16.1.1 any eq 5061
+access-list 100 permit udp any any eq 5060
+access-list 100 permit tcp any any eq 5060
+access-list 100 permit tcp any any eq 5061
+
+
+!-- Permit (Police or Drop)/Deny (Allow) all other Layer3 and Layer4
+!-- traffic in accordance with existing security policies and
+!-- configurations for traffic that is authorized to be sent
+!-- to infrastructure devices.
+!-- Create a Class-Map for traffic to be policed by
+!-- the CoPP feature.
+class-map match-all drop-sip-class
+  match access-group 100
+
+
+!-- Create a Policy-Map that will be applied to the
+!-- Control-Plane of the device.
+policy-map control-plane-policy
+ class drop-sip-class
+  drop
+
+
+!-- Apply the Policy-Map to the Control-Plane of the
+!-- device.
+control-plane
+ service-policy input control-plane-policy
+
+
+
+Warning: Because SIP can use UDP as a transport protocol, it is possible to
+easily spoof the IP address of the sender, which may defeat access control
+lists that permit communication to these ports from trusted IP
+addresses.
+
+In the above CoPP example, the access control entries (ACEs) that match
+the potential exploit packets with the "permit" action result in these packets
+being discarded by the policy-map "drop" function, while packets that match the
+"deny" action (not shown) are not affected by the policy-map drop function.
+Additional information on the configuration and use of the CoPP feature can be
+found at
+http://www.cisco.com/web/about/security/intelligence/coppwp_gs.html["http://www.cisco.com/web/about/security/intelligence/coppwp_gs.html"]
+and
+http://www.cisco.com/en/US/docs/ios/12_3t/12_3t4/feature/guide/gtrtlimt.html["http://www.cisco.com/en/US/docs/ios/12_3t/12_3t4/feature/guide/gtrtlimt.html"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100324-sip</URL>
+        <Description>Cisco IOS Software Session Initiation Protocol Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software Session Initiation Protocol Packet Parsing Arbitrary Code Execution Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCsz89904</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="4">CSCsz89904</Note>
+    </Notes>
+    <CVE>CVE-2010-0581</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-92384</ProductID>
+        <ProductID>CVRFPID-105540</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:U/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>If the affected Cisco IOS device requires SIP for VoIP services, SIP
+cannot be disabled, and no workarounds are available. Users are advised to
+apply mitigation techniques to help limit exposure to the vulnerabilities.
+Mitigation consists of allowing only legitimate devices to connect to affected
+devices. To increase effectiveness, the mitigation must be coupled with
+anti-spoofing measures on the network edge. This action is required because SIP
+can use UDP as the transport protocol.
+
+Additional mitigations that can be deployed on Cisco devices within the
+network are available in the companion document "Cisco Applied Mitigation
+Bulletin: Identifying and Mitigating Exploitation of the Cisco Unified
+Communications Manager Express and Cisco IOS Software H.323 and Session
+Initiation Protocol Denial of Service Vulnerabilities", which is available at
+the following location:
+http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20100324-voice["http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20100324-voice"].
+
+Disable SIP Listening Ports
+For devices that do not require SIP to be enabled, the simplest and
+most effective workaround is to disable SIP processing on the device. Some
+versions of Cisco IOS Software allow administrators to disable SIP with the
+following commands:
+
+
+sip-ua
+ no transport udp
+ no transport tcp
+ no transport tcp tls
+
+
+
+Warning: When applying this workaround to devices that are processing Media
+Gateway Control Protocol (MGCP) or H.323 calls, the device will not stop SIP
+processing while active calls are being processed. Under these circumstances,
+this workaround should be implemented during a maintenance window when active
+calls can be briefly stopped.
+
+The show udp connections, show
+tcp brief all, and show processes | include
+SIP commands can be used to confirm that the SIP UDP and TCP
+ports are closed after applying this workaround.
+
+Depending on the Cisco IOS Software version in use, the output from the
+show ip sockets command may still show the SIP ports
+open, but sending traffic to them will cause the SIP process to emit the
+following message:
+
+
+*Feb  2 11:36:47.691: sip_udp_sock_process_read: SIP UDP Listener is DISABLED
+
+Control Plane Policing
+For devices that need to offer SIP services it is possible to use
+Control Plane Policing (CoPP) to block SIP traffic to the device from untrusted
+sources. Cisco IOS Releases 12.0S, 12.2SX, 12.2S, 12.3T, 12.4, and 12.4T
+support the CoPP feature. CoPP may be configured on a device to protect the
+management and control planes to minimize the risk and effectiveness of direct
+infrastructure attacks by explicitly permitting only authorized traffic sent to
+infrastructure devices in accordance with existing security policies and
+configurations. The following example can be adapted to specific network
+configurations:
+
+
+
+!-- The 192.168.1.0/24 network and the 172.16.1.1 host are trusted.
+!-- Everything else is not trusted. The following access list is used
+!-- to determine what traffic needs to be dropped by a control plane
+!-- policy (the CoPP feature.) If the access list matches (permit)
+!-- then traffic will be dropped and if the access list does not
+!-- match (deny) then traffic will be processed by the router.
+access-list 100 deny udp 192.168.1.0 0.0.0.255 any eq 5060
+access-list 100 deny tcp 192.168.1.0 0.0.0.255 any eq 5060
+access-list 100 deny tcp 192.168.1.0 0.0.0.255 any eq 5061
+access-list 100 deny udp host 172.16.1.1 any eq 5060
+access-list 100 deny tcp host 172.16.1.1 any eq 5060
+access-list 100 deny tcp host 172.16.1.1 any eq 5061
+access-list 100 permit udp any any eq 5060
+access-list 100 permit tcp any any eq 5060
+access-list 100 permit tcp any any eq 5061
+
+
+!-- Permit (Police or Drop)/Deny (Allow) all other Layer3 and Layer4
+!-- traffic in accordance with existing security policies and
+!-- configurations for traffic that is authorized to be sent
+!-- to infrastructure devices.
+!-- Create a Class-Map for traffic to be policed by
+!-- the CoPP feature.
+class-map match-all drop-sip-class
+  match access-group 100
+
+
+!-- Create a Policy-Map that will be applied to the
+!-- Control-Plane of the device.
+policy-map control-plane-policy
+ class drop-sip-class
+  drop
+
+
+!-- Apply the Policy-Map to the Control-Plane of the
+!-- device.
+control-plane
+ service-policy input control-plane-policy
+
+
+
+Warning: Because SIP can use UDP as a transport protocol, it is possible to
+easily spoof the IP address of the sender, which may defeat access control
+lists that permit communication to these ports from trusted IP
+addresses.
+
+In the above CoPP example, the access control entries (ACEs) that match
+the potential exploit packets with the "permit" action result in these packets
+being discarded by the policy-map "drop" function, while packets that match the
+"deny" action (not shown) are not affected by the policy-map drop function.
+Additional information on the configuration and use of the CoPP feature can be
+found at
+http://www.cisco.com/web/about/security/intelligence/coppwp_gs.html["http://www.cisco.com/web/about/security/intelligence/coppwp_gs.html"]
+and
+http://www.cisco.com/en/US/docs/ios/12_3t/12_3t4/feature/guide/gtrtlimt.html["http://www.cisco.com/en/US/docs/ios/12_3t/12_3t4/feature/guide/gtrtlimt.html"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20100324-sip</URL>
+        <Description>Cisco IOS Software Session Initiation Protocol Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

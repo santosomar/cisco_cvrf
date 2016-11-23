@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Cloud Services Router 1000V Command Injection Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151130-csr</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-11-30T22:42:15</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-11-30T22:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-11-30T22:42:15</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the event manager environment and publish-event function of the Cisco Cloud Services Router 1000V Series could allow an authenticated, local attacker to perform a command injection attack with root-level privileges.
+
+
+
+The vulnerability is due to a lack of proper input validation of event manager environment variables that are configured on the affected device. An attacker could exploit this vulnerability by authenticating to the device with administrative privileges, modifying the configuration of the device, and then invoking a crafted event manager script. A successful exploit could allow the attacker to compromise the affected system using commands that are executed with root-level privileges.
+
+
+
+Cisco has not released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are available.
+
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151130-csr["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151130-csr"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151130-csr</URL>
+      <Description>Cisco Cloud Services Router 1000V Command Injection Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-200487">Cisco IOS 15.5(2)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-204901">Cisco IOS 15.5(3)S</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Cloud Services Router 1000V Command Injection Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCux14943</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the event manager environment and publish-event function of the Cisco Cloud Services Router 1000V Series could allow an authenticated, local attacker to perform a command injection attack with root-level privileges.
+
+
+
+The vulnerability is due to a lack of proper input validation of event manager environment variables that are configured on the affected device. An attacker could exploit this vulnerability by authenticating to the device with administrative privileges, modifying the configuration of the device, and then invoking a crafted event manager script. A successful exploit could allow the attacker to compromise the affected system using commands that are executed with root-level privileges.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux14943</Note>
+    </Notes>
+    <CVE>CVE-2015-6385</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-200487</ProductID>
+        <ProductID>CVRFPID-204901</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.8</BaseScore>
+        <TemporalScore>6.5</TemporalScore>
+        <Vector>AV:L/AC:L/Au:S/C:C/I:C/A:C/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>The 'event manager environment' configuration can be removed and the administrative password can be closely monitored.
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151130-csr</URL>
+        <Description>Cisco Cloud Services Router 1000V Command Injection Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

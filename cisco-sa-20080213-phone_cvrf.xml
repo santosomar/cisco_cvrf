@@ -1,0 +1,1259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified IP Phone Overflow and Denial of Service Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20080213-phone</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2008-02-13T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2008-02-13T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2008-02-13T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080213-phone</URL>
+      <Description>Cisco Unified IP Phone Overflow and Denial of Service Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080213-phone</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Unified IP Phone Overflow and DoS Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080213-phone</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Unified IP Phone Overflow and DoS Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-63608">Cisco Unified IP Phone 7906G 7.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63609">Cisco Unified IP Phone 7906G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73425">Cisco Unified IP Phone 7906G 8.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63607">Cisco Unified IP Phone 7906G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63605">Cisco Unified IP Phone 7906G 8.0(4)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-73424">Cisco Unified IP Phone 7906G 8.0(4)SR3A</FullProductName>
+    <FullProductName ProductID="CVRFPID-63606">Cisco Unified IP Phone 7906G 8.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73414">Cisco Unified IP Phone 7906G 8.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73413">Cisco Unified IP Phone 7906G 8.2(2) SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63617">Cisco Unified IP Phone 7911G 7.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63616">Cisco Unified IP Phone 7911G 7.2(2)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-63613">Cisco Unified IP Phone 7911G 7.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75005">Cisco Unified IP Phone 7911G 8.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63615">Cisco Unified IP Phone 7911G 8.0(2)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-63614">Cisco Unified IP Phone 7911G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63612">Cisco Unified IP Phone 7911G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63610">Cisco Unified IP Phone 7911G 8.0(4)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-73410">Cisco Unified IP Phone 7911G 8.0(4)SR3A</FullProductName>
+    <FullProductName ProductID="CVRFPID-63611">Cisco Unified IP Phone 7911G 8.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73409">Cisco Unified IP Phone 7911G 8.2(2) SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-75168">Cisco Unified IP Phone 7940G 3.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75167">Cisco Unified IP Phone 7940G 3.1(11)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75165">Cisco Unified IP Phone 7940G 3.2(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75169">Cisco Unified IP Phone 7940G 3.2(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75170">Cisco Unified IP Phone 7940G 3.2(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75171">Cisco Unified IP Phone 7940G 3.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75163">Cisco Unified IP Phone 7940G 3.3(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75161">Cisco Unified IP Phone 7940G 5.0(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75172">Cisco Unified IP Phone 7940G 5.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75173">Cisco Unified IP Phone 7940G 5.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75174">Cisco Unified IP Phone 7940G 5.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75175">Cisco Unified IP Phone 7940G 5.0(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75159">Cisco Unified IP Phone 7940G 6.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75176">Cisco Unified IP Phone 7940G 6.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75177">Cisco Unified IP Phone 7940G 6.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75157">Cisco Unified IP Phone 7940G 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75155">Cisco Unified IP Phone 7940G 7.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75153">Cisco Unified IP Phone 7940G 7.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75178">Cisco Unified IP Phone 7940G 7.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75179">Cisco Unified IP Phone 7940G 7.2(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75181">Cisco Unified IP Phone 7940G 8.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75151">Cisco Unified IP Phone 7940G 8.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75180">Cisco Unified IP Phone 7940G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75182">Cisco Unified IP Phone 7940G 8.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75183">Cisco Unified IP Phone 7940G 8.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75184">Cisco Unified IP Phone 7940G 8.0(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-76257">Cisco Unified IP Phone 7940G 8.0(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75149">Cisco Unified IP Phone 7940G 8.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75147">Cisco Unified IP Phone 7940G 8.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75145">Cisco Unified IP Phone 7940G 8.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75143">Cisco Unified IP Phone 7940G 8.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75141">Cisco Unified IP Phone 7940G 8.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75139">Cisco Unified IP Phone 7940G 8.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76265">Cisco Unified IP Phone 7940G 8.7 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-63625">Cisco Unified IP Phone 7941G 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63624">Cisco Unified IP Phone 7941G 7.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63623">Cisco Unified IP Phone 7941G 7.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75016">Cisco Unified IP Phone 7941G 8.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63622">Cisco Unified IP Phone 7941G 8.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63620">Cisco Unified IP Phone 7941G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73444">Cisco Unified IP Phone 7941G 8.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63619">Cisco Unified IP Phone 7941G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63618">Cisco Unified IP Phone 7941G 8.0(4)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-73443">Cisco Unified IP Phone 7941G 8.0(4)SR3A</FullProductName>
+    <FullProductName ProductID="CVRFPID-63621">Cisco Unified IP Phone 7941G 8.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73442">Cisco Unified IP Phone 7941G 8.2(2) SR1 </FullProductName>
+    <FullProductName ProductID="CVRFPID-75118">Cisco Unified IP Phone 7960G 3.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75117">Cisco Unified IP Phone 7960G 3.1(11)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75115">Cisco Unified IP Phone 7960G 3.2(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75119">Cisco Unified IP Phone 7960G 3.2(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75120">Cisco Unified IP Phone 7960G 3.2(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75113">Cisco Unified IP Phone 7960G 3.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75121">Cisco Unified IP Phone 7960G 3.3(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75111">Cisco Unified IP Phone 7960G 5.0(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75122">Cisco Unified IP Phone 7960G 5.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75123">Cisco Unified IP Phone 7960G 5.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75124">Cisco Unified IP Phone 7960G 5.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75125">Cisco Unified IP Phone 7960G 5.0(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75109">Cisco Unified IP Phone 7960G 6.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75126">Cisco Unified IP Phone 7960G 6.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75127">Cisco Unified IP Phone 7960G 6.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75107">Cisco Unified IP Phone 7960G 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75105">Cisco Unified IP Phone 7960G 7.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75128">Cisco Unified IP Phone 7960G 7.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75129">Cisco Unified IP Phone 7960G 7.1(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75103">Cisco Unified IP Phone 7960G 7.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75130">Cisco Unified IP Phone 7960G 7.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75131">Cisco Unified IP Phone 7960G 7.2(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75101">Cisco Unified IP Phone 7960G 8.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75132">Cisco Unified IP Phone 7960G 8.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75133">Cisco Unified IP Phone 7960G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75134">Cisco Unified IP Phone 7960G 8.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75135">Cisco Unified IP Phone 7960G 8.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-76272">Cisco Unified IP Phone 7960G 8.0(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75136">Cisco Unified IP Phone 7960G 8.0(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-76256">Cisco Unified IP Phone 7960G 8.0(8)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75099">Cisco Unified IP Phone 7960G 8.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75097">Cisco Unified IP Phone 7960G 8.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75095">Cisco Unified IP Phone 7960G 8.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75093">Cisco Unified IP Phone 7960G 8.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75091">Cisco Unified IP Phone 7960G 8.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76267">Cisco Unified IP Phone 7960G 8.7 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-73457">Cisco Unified IP Phone 7961G 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73456">Cisco Unified IP Phone 7961G 7.0(2) SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63631">Cisco Unified IP Phone 7961G 7.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75017">Cisco Unified IP Phone 7961G 8.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63630">Cisco Unified IP Phone 7961G 8.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63628">Cisco Unified IP Phone 7961G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63627">Cisco Unified IP Phone 7961G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63626">Cisco Unified IP Phone 7961G 8.0(4)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-73455">Cisco Unified IP Phone 7961G 8.0(4)SR3A</FullProductName>
+    <FullProductName ProductID="CVRFPID-63629">Cisco Unified IP Phone 7961G 8.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73454">Cisco Unified IP Phone 7961G 8.2(2) SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63647">Cisco Unified IP Phone 7970G 5.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63646">Cisco Unified IP Phone 7970G 5.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63645">Cisco Unified IP Phone 7970G 6.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63644">Cisco Unified IP Phone 7970G 6.0(1)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63643">Cisco Unified IP Phone 7970G 6.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63642">Cisco Unified IP Phone 7970G 6.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63641">Cisco Unified IP Phone 7970G 6.0(3)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63640">Cisco Unified IP Phone 7970G 7.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63639">Cisco Unified IP Phone 7970G 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63638">Cisco Unified IP Phone 7970G 7.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63637">Cisco Unified IP Phone 7970G 7.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75023">Cisco Unified IP Phone 7970G 8.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63636">Cisco Unified IP Phone 7970G 8.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63633">Cisco Unified IP Phone 7970G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63634">Cisco Unified IP Phone 7970G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63632">Cisco Unified IP Phone 7970G 8.0(4)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-73492">Cisco Unified IP Phone 7970G 8.0(4)SR3A</FullProductName>
+    <FullProductName ProductID="CVRFPID-63635">Cisco Unified IP Phone 7970G 8.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73488">Cisco Unified IP Phone 7970G 8.2(2) SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-75085">Cisco Unified IP Phone 7971G 6.0(2)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-63657">Cisco Unified IP Phone 7971G 6.0(3)SR1 </FullProductName>
+    <FullProductName ProductID="CVRFPID-63656">Cisco Unified IP Phone 7971G 7.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63655">Cisco Unified IP Phone 7971G 7.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63654">Cisco Unified IP Phone 7971G 7.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63653">Cisco Unified IP Phone 7971G 7.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-75084">Cisco Unified IP Phone 7971G 8.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63652">Cisco Unified IP Phone 7971G 8.0(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63649">Cisco Unified IP Phone 7971G 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63650">Cisco Unified IP Phone 7971G 8.0(4)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63648">Cisco Unified IP Phone 7971G 8.0(4)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-73504">Cisco Unified IP Phone 7971G 8.0(4)SR3A</FullProductName>
+    <FullProductName ProductID="CVRFPID-63651">Cisco Unified IP Phone 7971G 8.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73503">Cisco Unified IP Phone 7971G 8.2(2) SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-74680">Cisco IP phone 7935 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76248">Cisco IP phone 7935 3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-60758">Cisco IP phone 7936 3.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60757">Cisco IP phone 7936 3.3(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60756">Cisco IP phone 7936 3.3(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60755">Cisco IP phone 7936 3.3(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60754">Cisco IP phone 7936 3.3(8)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60753">Cisco IP phone 7936 3.3(9)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60752">Cisco IP phone 7936 3.3(10)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60751">Cisco IP phone 7936 3.3(11)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60750">Cisco IP phone 7936 3.3(12)</FullProductName>
+    <FullProductName ProductID="CVRFPID-40735">Cisco IP phone 7940 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-74631">Cisco IP phone 7940 4.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-74629">Cisco IP phone 7940 5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64324">Cisco IP phone 7940 5.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-74630">Cisco IP phone 7940 5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-74628">Cisco IP phone 7940 5.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-74627">Cisco IP phone 7940 5.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-74626">Cisco IP phone 7940 6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-56101">Cisco IP phone 7940 6.0.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-56100">Cisco IP phone 7940 6.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-74625">Cisco IP phone 7940 6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-74624">Cisco IP phone 7940 6.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-74623">Cisco IP phone 7940 6.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-74622">Cisco IP phone 7940 7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-56099">Cisco IP phone 7940 7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-74621">Cisco IP phone 7940 7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-56097">Cisco IP phone 7940 7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-56098">Cisco IP phone 7940 7.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-74620">Cisco IP phone 7940 7.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-64331">Cisco IP phone 7940 7.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64330">Cisco IP phone 7940 7.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64329">Cisco IP phone 7940 7.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64328">Cisco IP phone 7940 7.2(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-74619">Cisco IP phone 7940 7.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-64362">Cisco IP phone 7940 7.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-74618">Cisco IP phone 7940 7.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-64327">Cisco IP phone 7940 8.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64325">Cisco IP phone 7940 8.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64323">Cisco IP phone 7940 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64320">Cisco IP phone 7940 8.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64318">Cisco IP phone 7940 8.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-76252">Cisco IP phone 7940 8.0(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-76251">Cisco IP phone 7940 8.0(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64326">Cisco IP phone 7940 8.2(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64322">Cisco IP phone 7940 8.3(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64321">Cisco IP phone 7940 8.4(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-74617">Cisco IP phone 7940 8.5(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64319">Cisco IP phone 7940 8.6(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-74616">Cisco IP phone 7940 8.7(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-40736">Cisco IP phone 7960 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64356">Cisco IP phone 7960 3.2(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-50229">Cisco IP phone 7960 3.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-64355">Cisco IP phone 7960 3.3(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-50230">Cisco IP phone 7960 4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-50233">Cisco IP phone 7960 5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64354">Cisco IP phone 7960 5.0(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-50231">Cisco IP phone 7960 5.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-64353">Cisco IP phone 7960 5.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64352">Cisco IP phone 7960 5.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64351">Cisco IP phone 7960 5.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64348">Cisco IP phone 7960 5.0.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-50232">Cisco IP phone 7960 5.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-50235">Cisco IP phone 7960 6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-50234">Cisco IP phone 7960 6.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-64350">Cisco IP phone 7960 6.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64349">Cisco IP phone 7960 6.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-56102">Cisco IP phone 7960 6.0.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-64347">Cisco IP phone 7960 6.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-50236">Cisco IP phone 7960 6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-74638">Cisco IP phone 7960 6.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-74637">Cisco IP phone 7960 7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-50237">Cisco IP phone 7960 7.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-64346">Cisco IP phone 7960 7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-50238">Cisco IP phone 7960 7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-50247">Cisco IP phone 7960 7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-64345">Cisco IP phone 7960 7.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-74636">Cisco IP phone 7960 7.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-64344">Cisco IP phone 7960 7.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64343">Cisco IP phone 7960 7.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64342">Cisco IP phone 7960 7.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64341">Cisco IP phone 7960 7.2(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-74635">Cisco IP phone 7960 7.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-50239">Cisco IP phone 7960 7.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-74634">Cisco IP phone 7960 7.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-64340">Cisco IP phone 7960 8.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64338">Cisco IP phone 7960 8.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64337">Cisco IP phone 7960 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64334">Cisco IP phone 7960 8.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64332">Cisco IP phone 7960 8.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-76258">Cisco IP phone 7960 8.0(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-76259">Cisco IP phone 7960 8.0(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-76260">Cisco IP phone 7960 8.0(8)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64339">Cisco IP phone 7960 8.2(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64336">Cisco IP phone 7960 8.3(0) </FullProductName>
+    <FullProductName ProductID="CVRFPID-64335">Cisco IP phone 7960 8.4(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64333">Cisco IP phone 7960 8.6(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-74633">Cisco IP phone 7960 8.7(0)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified IP Phone Skinny Client Control Protocol Denial of Service Vulnerability</Title>
+    <CVE>CVE-2008-0526</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-75151</ProductID>
+        <ProductID>CVRFPID-75153</ProductID>
+        <ProductID>CVRFPID-75155</ProductID>
+        <ProductID>CVRFPID-75157</ProductID>
+        <ProductID>CVRFPID-75159</ProductID>
+        <ProductID>CVRFPID-75161</ProductID>
+        <ProductID>CVRFPID-75163</ProductID>
+        <ProductID>CVRFPID-75165</ProductID>
+        <ProductID>CVRFPID-75167</ProductID>
+        <ProductID>CVRFPID-75168</ProductID>
+        <ProductID>CVRFPID-75169</ProductID>
+        <ProductID>CVRFPID-75170</ProductID>
+        <ProductID>CVRFPID-75171</ProductID>
+        <ProductID>CVRFPID-75172</ProductID>
+        <ProductID>CVRFPID-75173</ProductID>
+        <ProductID>CVRFPID-75174</ProductID>
+        <ProductID>CVRFPID-75175</ProductID>
+        <ProductID>CVRFPID-75176</ProductID>
+        <ProductID>CVRFPID-75177</ProductID>
+        <ProductID>CVRFPID-75178</ProductID>
+        <ProductID>CVRFPID-75179</ProductID>
+        <ProductID>CVRFPID-75180</ProductID>
+        <ProductID>CVRFPID-75181</ProductID>
+        <ProductID>CVRFPID-75182</ProductID>
+        <ProductID>CVRFPID-75183</ProductID>
+        <ProductID>CVRFPID-75101</ProductID>
+        <ProductID>CVRFPID-75103</ProductID>
+        <ProductID>CVRFPID-75105</ProductID>
+        <ProductID>CVRFPID-75107</ProductID>
+        <ProductID>CVRFPID-75109</ProductID>
+        <ProductID>CVRFPID-75111</ProductID>
+        <ProductID>CVRFPID-75113</ProductID>
+        <ProductID>CVRFPID-75115</ProductID>
+        <ProductID>CVRFPID-75117</ProductID>
+        <ProductID>CVRFPID-75118</ProductID>
+        <ProductID>CVRFPID-75119</ProductID>
+        <ProductID>CVRFPID-75120</ProductID>
+        <ProductID>CVRFPID-75121</ProductID>
+        <ProductID>CVRFPID-75122</ProductID>
+        <ProductID>CVRFPID-75123</ProductID>
+        <ProductID>CVRFPID-75124</ProductID>
+        <ProductID>CVRFPID-75125</ProductID>
+        <ProductID>CVRFPID-75126</ProductID>
+        <ProductID>CVRFPID-75127</ProductID>
+        <ProductID>CVRFPID-75128</ProductID>
+        <ProductID>CVRFPID-75129</ProductID>
+        <ProductID>CVRFPID-75130</ProductID>
+        <ProductID>CVRFPID-75131</ProductID>
+        <ProductID>CVRFPID-75132</ProductID>
+        <ProductID>CVRFPID-75133</ProductID>
+        <ProductID>CVRFPID-75134</ProductID>
+        <ProductID>CVRFPID-75135</ProductID>
+        <ProductID>CVRFPID-50229</ProductID>
+        <ProductID>CVRFPID-50230</ProductID>
+        <ProductID>CVRFPID-50231</ProductID>
+        <ProductID>CVRFPID-50232</ProductID>
+        <ProductID>CVRFPID-50233</ProductID>
+        <ProductID>CVRFPID-50234</ProductID>
+        <ProductID>CVRFPID-50235</ProductID>
+        <ProductID>CVRFPID-50236</ProductID>
+        <ProductID>CVRFPID-50237</ProductID>
+        <ProductID>CVRFPID-50238</ProductID>
+        <ProductID>CVRFPID-50239</ProductID>
+        <ProductID>CVRFPID-50247</ProductID>
+        <ProductID>CVRFPID-56097</ProductID>
+        <ProductID>CVRFPID-56098</ProductID>
+        <ProductID>CVRFPID-56099</ProductID>
+        <ProductID>CVRFPID-56100</ProductID>
+        <ProductID>CVRFPID-56101</ProductID>
+        <ProductID>CVRFPID-56102</ProductID>
+        <ProductID>CVRFPID-64318</ProductID>
+        <ProductID>CVRFPID-64320</ProductID>
+        <ProductID>CVRFPID-64323</ProductID>
+        <ProductID>CVRFPID-64324</ProductID>
+        <ProductID>CVRFPID-64325</ProductID>
+        <ProductID>CVRFPID-64327</ProductID>
+        <ProductID>CVRFPID-64328</ProductID>
+        <ProductID>CVRFPID-64329</ProductID>
+        <ProductID>CVRFPID-64330</ProductID>
+        <ProductID>CVRFPID-64331</ProductID>
+        <ProductID>CVRFPID-64332</ProductID>
+        <ProductID>CVRFPID-64334</ProductID>
+        <ProductID>CVRFPID-64337</ProductID>
+        <ProductID>CVRFPID-64338</ProductID>
+        <ProductID>CVRFPID-64340</ProductID>
+        <ProductID>CVRFPID-64341</ProductID>
+        <ProductID>CVRFPID-64342</ProductID>
+        <ProductID>CVRFPID-64343</ProductID>
+        <ProductID>CVRFPID-64344</ProductID>
+        <ProductID>CVRFPID-64345</ProductID>
+        <ProductID>CVRFPID-64346</ProductID>
+        <ProductID>CVRFPID-64347</ProductID>
+        <ProductID>CVRFPID-64348</ProductID>
+        <ProductID>CVRFPID-64349</ProductID>
+        <ProductID>CVRFPID-64350</ProductID>
+        <ProductID>CVRFPID-64351</ProductID>
+        <ProductID>CVRFPID-64352</ProductID>
+        <ProductID>CVRFPID-64353</ProductID>
+        <ProductID>CVRFPID-64354</ProductID>
+        <ProductID>CVRFPID-64355</ProductID>
+        <ProductID>CVRFPID-64356</ProductID>
+        <ProductID>CVRFPID-64362</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080213-phone</URL>
+        <Description>Cisco Unified IP Phone Overflow and Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified IP Phone SCCP Firmware MIME Data Buffer Overflow Vulnerability</Title>
+    <CVE>CVE-2008-0528</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-75139</ProductID>
+        <ProductID>CVRFPID-75141</ProductID>
+        <ProductID>CVRFPID-75143</ProductID>
+        <ProductID>CVRFPID-75145</ProductID>
+        <ProductID>CVRFPID-75147</ProductID>
+        <ProductID>CVRFPID-75149</ProductID>
+        <ProductID>CVRFPID-75151</ProductID>
+        <ProductID>CVRFPID-75153</ProductID>
+        <ProductID>CVRFPID-75155</ProductID>
+        <ProductID>CVRFPID-75157</ProductID>
+        <ProductID>CVRFPID-75159</ProductID>
+        <ProductID>CVRFPID-75161</ProductID>
+        <ProductID>CVRFPID-75163</ProductID>
+        <ProductID>CVRFPID-75165</ProductID>
+        <ProductID>CVRFPID-75167</ProductID>
+        <ProductID>CVRFPID-75168</ProductID>
+        <ProductID>CVRFPID-75169</ProductID>
+        <ProductID>CVRFPID-75170</ProductID>
+        <ProductID>CVRFPID-75171</ProductID>
+        <ProductID>CVRFPID-75172</ProductID>
+        <ProductID>CVRFPID-75173</ProductID>
+        <ProductID>CVRFPID-75174</ProductID>
+        <ProductID>CVRFPID-75175</ProductID>
+        <ProductID>CVRFPID-75176</ProductID>
+        <ProductID>CVRFPID-75177</ProductID>
+        <ProductID>CVRFPID-75178</ProductID>
+        <ProductID>CVRFPID-75179</ProductID>
+        <ProductID>CVRFPID-75180</ProductID>
+        <ProductID>CVRFPID-75181</ProductID>
+        <ProductID>CVRFPID-75182</ProductID>
+        <ProductID>CVRFPID-75183</ProductID>
+        <ProductID>CVRFPID-75184</ProductID>
+        <ProductID>CVRFPID-76257</ProductID>
+        <ProductID>CVRFPID-76265</ProductID>
+        <ProductID>CVRFPID-75091</ProductID>
+        <ProductID>CVRFPID-75093</ProductID>
+        <ProductID>CVRFPID-75095</ProductID>
+        <ProductID>CVRFPID-75097</ProductID>
+        <ProductID>CVRFPID-75099</ProductID>
+        <ProductID>CVRFPID-75101</ProductID>
+        <ProductID>CVRFPID-75103</ProductID>
+        <ProductID>CVRFPID-75105</ProductID>
+        <ProductID>CVRFPID-75107</ProductID>
+        <ProductID>CVRFPID-75109</ProductID>
+        <ProductID>CVRFPID-75111</ProductID>
+        <ProductID>CVRFPID-75113</ProductID>
+        <ProductID>CVRFPID-75115</ProductID>
+        <ProductID>CVRFPID-75117</ProductID>
+        <ProductID>CVRFPID-75118</ProductID>
+        <ProductID>CVRFPID-75119</ProductID>
+        <ProductID>CVRFPID-75120</ProductID>
+        <ProductID>CVRFPID-75121</ProductID>
+        <ProductID>CVRFPID-75122</ProductID>
+        <ProductID>CVRFPID-75123</ProductID>
+        <ProductID>CVRFPID-75124</ProductID>
+        <ProductID>CVRFPID-75125</ProductID>
+        <ProductID>CVRFPID-75126</ProductID>
+        <ProductID>CVRFPID-75127</ProductID>
+        <ProductID>CVRFPID-75128</ProductID>
+        <ProductID>CVRFPID-75129</ProductID>
+        <ProductID>CVRFPID-75130</ProductID>
+        <ProductID>CVRFPID-75131</ProductID>
+        <ProductID>CVRFPID-75132</ProductID>
+        <ProductID>CVRFPID-75133</ProductID>
+        <ProductID>CVRFPID-75134</ProductID>
+        <ProductID>CVRFPID-75135</ProductID>
+        <ProductID>CVRFPID-75136</ProductID>
+        <ProductID>CVRFPID-76256</ProductID>
+        <ProductID>CVRFPID-76267</ProductID>
+        <ProductID>CVRFPID-76272</ProductID>
+        <ProductID>CVRFPID-40735</ProductID>
+        <ProductID>CVRFPID-40736</ProductID>
+        <ProductID>CVRFPID-50229</ProductID>
+        <ProductID>CVRFPID-50230</ProductID>
+        <ProductID>CVRFPID-50231</ProductID>
+        <ProductID>CVRFPID-50232</ProductID>
+        <ProductID>CVRFPID-50233</ProductID>
+        <ProductID>CVRFPID-50234</ProductID>
+        <ProductID>CVRFPID-50235</ProductID>
+        <ProductID>CVRFPID-50236</ProductID>
+        <ProductID>CVRFPID-50237</ProductID>
+        <ProductID>CVRFPID-50238</ProductID>
+        <ProductID>CVRFPID-50239</ProductID>
+        <ProductID>CVRFPID-50247</ProductID>
+        <ProductID>CVRFPID-56097</ProductID>
+        <ProductID>CVRFPID-56098</ProductID>
+        <ProductID>CVRFPID-56099</ProductID>
+        <ProductID>CVRFPID-56100</ProductID>
+        <ProductID>CVRFPID-56101</ProductID>
+        <ProductID>CVRFPID-56102</ProductID>
+        <ProductID>CVRFPID-64318</ProductID>
+        <ProductID>CVRFPID-64319</ProductID>
+        <ProductID>CVRFPID-64320</ProductID>
+        <ProductID>CVRFPID-64321</ProductID>
+        <ProductID>CVRFPID-64322</ProductID>
+        <ProductID>CVRFPID-64323</ProductID>
+        <ProductID>CVRFPID-64324</ProductID>
+        <ProductID>CVRFPID-64325</ProductID>
+        <ProductID>CVRFPID-64326</ProductID>
+        <ProductID>CVRFPID-64327</ProductID>
+        <ProductID>CVRFPID-64328</ProductID>
+        <ProductID>CVRFPID-64329</ProductID>
+        <ProductID>CVRFPID-64330</ProductID>
+        <ProductID>CVRFPID-64331</ProductID>
+        <ProductID>CVRFPID-64332</ProductID>
+        <ProductID>CVRFPID-64333</ProductID>
+        <ProductID>CVRFPID-64334</ProductID>
+        <ProductID>CVRFPID-64335</ProductID>
+        <ProductID>CVRFPID-64336</ProductID>
+        <ProductID>CVRFPID-64337</ProductID>
+        <ProductID>CVRFPID-64338</ProductID>
+        <ProductID>CVRFPID-64339</ProductID>
+        <ProductID>CVRFPID-64340</ProductID>
+        <ProductID>CVRFPID-64341</ProductID>
+        <ProductID>CVRFPID-64342</ProductID>
+        <ProductID>CVRFPID-64343</ProductID>
+        <ProductID>CVRFPID-64344</ProductID>
+        <ProductID>CVRFPID-64345</ProductID>
+        <ProductID>CVRFPID-64346</ProductID>
+        <ProductID>CVRFPID-64347</ProductID>
+        <ProductID>CVRFPID-64348</ProductID>
+        <ProductID>CVRFPID-64349</ProductID>
+        <ProductID>CVRFPID-64350</ProductID>
+        <ProductID>CVRFPID-64351</ProductID>
+        <ProductID>CVRFPID-64352</ProductID>
+        <ProductID>CVRFPID-64353</ProductID>
+        <ProductID>CVRFPID-64354</ProductID>
+        <ProductID>CVRFPID-64355</ProductID>
+        <ProductID>CVRFPID-64356</ProductID>
+        <ProductID>CVRFPID-64362</ProductID>
+        <ProductID>CVRFPID-74616</ProductID>
+        <ProductID>CVRFPID-74617</ProductID>
+        <ProductID>CVRFPID-74618</ProductID>
+        <ProductID>CVRFPID-74619</ProductID>
+        <ProductID>CVRFPID-74620</ProductID>
+        <ProductID>CVRFPID-74621</ProductID>
+        <ProductID>CVRFPID-74622</ProductID>
+        <ProductID>CVRFPID-74623</ProductID>
+        <ProductID>CVRFPID-74624</ProductID>
+        <ProductID>CVRFPID-74625</ProductID>
+        <ProductID>CVRFPID-74626</ProductID>
+        <ProductID>CVRFPID-74627</ProductID>
+        <ProductID>CVRFPID-74628</ProductID>
+        <ProductID>CVRFPID-74629</ProductID>
+        <ProductID>CVRFPID-74630</ProductID>
+        <ProductID>CVRFPID-74631</ProductID>
+        <ProductID>CVRFPID-74633</ProductID>
+        <ProductID>CVRFPID-74634</ProductID>
+        <ProductID>CVRFPID-74635</ProductID>
+        <ProductID>CVRFPID-74636</ProductID>
+        <ProductID>CVRFPID-74637</ProductID>
+        <ProductID>CVRFPID-74638</ProductID>
+        <ProductID>CVRFPID-76251</ProductID>
+        <ProductID>CVRFPID-76252</ProductID>
+        <ProductID>CVRFPID-76258</ProductID>
+        <ProductID>CVRFPID-76259</ProductID>
+        <ProductID>CVRFPID-76260</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080213-phone</URL>
+        <Description>Cisco Unified IP Phone Overflow and Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified IP Phone Telnet Server Buffer Overflow Vulnerability</Title>
+    <CVE>CVE-2008-0529</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-75139</ProductID>
+        <ProductID>CVRFPID-75141</ProductID>
+        <ProductID>CVRFPID-75143</ProductID>
+        <ProductID>CVRFPID-75145</ProductID>
+        <ProductID>CVRFPID-75147</ProductID>
+        <ProductID>CVRFPID-75149</ProductID>
+        <ProductID>CVRFPID-75151</ProductID>
+        <ProductID>CVRFPID-75153</ProductID>
+        <ProductID>CVRFPID-75155</ProductID>
+        <ProductID>CVRFPID-75157</ProductID>
+        <ProductID>CVRFPID-75159</ProductID>
+        <ProductID>CVRFPID-75161</ProductID>
+        <ProductID>CVRFPID-75163</ProductID>
+        <ProductID>CVRFPID-75165</ProductID>
+        <ProductID>CVRFPID-75167</ProductID>
+        <ProductID>CVRFPID-75168</ProductID>
+        <ProductID>CVRFPID-75169</ProductID>
+        <ProductID>CVRFPID-75170</ProductID>
+        <ProductID>CVRFPID-75171</ProductID>
+        <ProductID>CVRFPID-75172</ProductID>
+        <ProductID>CVRFPID-75173</ProductID>
+        <ProductID>CVRFPID-75174</ProductID>
+        <ProductID>CVRFPID-75175</ProductID>
+        <ProductID>CVRFPID-75176</ProductID>
+        <ProductID>CVRFPID-75177</ProductID>
+        <ProductID>CVRFPID-75178</ProductID>
+        <ProductID>CVRFPID-75179</ProductID>
+        <ProductID>CVRFPID-75180</ProductID>
+        <ProductID>CVRFPID-75181</ProductID>
+        <ProductID>CVRFPID-75182</ProductID>
+        <ProductID>CVRFPID-75183</ProductID>
+        <ProductID>CVRFPID-75184</ProductID>
+        <ProductID>CVRFPID-76257</ProductID>
+        <ProductID>CVRFPID-76265</ProductID>
+        <ProductID>CVRFPID-75091</ProductID>
+        <ProductID>CVRFPID-75093</ProductID>
+        <ProductID>CVRFPID-75095</ProductID>
+        <ProductID>CVRFPID-75097</ProductID>
+        <ProductID>CVRFPID-75099</ProductID>
+        <ProductID>CVRFPID-75101</ProductID>
+        <ProductID>CVRFPID-75103</ProductID>
+        <ProductID>CVRFPID-75105</ProductID>
+        <ProductID>CVRFPID-75107</ProductID>
+        <ProductID>CVRFPID-75109</ProductID>
+        <ProductID>CVRFPID-75111</ProductID>
+        <ProductID>CVRFPID-75113</ProductID>
+        <ProductID>CVRFPID-75115</ProductID>
+        <ProductID>CVRFPID-75117</ProductID>
+        <ProductID>CVRFPID-75118</ProductID>
+        <ProductID>CVRFPID-75119</ProductID>
+        <ProductID>CVRFPID-75120</ProductID>
+        <ProductID>CVRFPID-75121</ProductID>
+        <ProductID>CVRFPID-75122</ProductID>
+        <ProductID>CVRFPID-75123</ProductID>
+        <ProductID>CVRFPID-75124</ProductID>
+        <ProductID>CVRFPID-75125</ProductID>
+        <ProductID>CVRFPID-75126</ProductID>
+        <ProductID>CVRFPID-75127</ProductID>
+        <ProductID>CVRFPID-75128</ProductID>
+        <ProductID>CVRFPID-75129</ProductID>
+        <ProductID>CVRFPID-75130</ProductID>
+        <ProductID>CVRFPID-75131</ProductID>
+        <ProductID>CVRFPID-75132</ProductID>
+        <ProductID>CVRFPID-75133</ProductID>
+        <ProductID>CVRFPID-75134</ProductID>
+        <ProductID>CVRFPID-75135</ProductID>
+        <ProductID>CVRFPID-75136</ProductID>
+        <ProductID>CVRFPID-76256</ProductID>
+        <ProductID>CVRFPID-76267</ProductID>
+        <ProductID>CVRFPID-76272</ProductID>
+        <ProductID>CVRFPID-40735</ProductID>
+        <ProductID>CVRFPID-40736</ProductID>
+        <ProductID>CVRFPID-50229</ProductID>
+        <ProductID>CVRFPID-50230</ProductID>
+        <ProductID>CVRFPID-50231</ProductID>
+        <ProductID>CVRFPID-50232</ProductID>
+        <ProductID>CVRFPID-50233</ProductID>
+        <ProductID>CVRFPID-50234</ProductID>
+        <ProductID>CVRFPID-50235</ProductID>
+        <ProductID>CVRFPID-50236</ProductID>
+        <ProductID>CVRFPID-50237</ProductID>
+        <ProductID>CVRFPID-50238</ProductID>
+        <ProductID>CVRFPID-50239</ProductID>
+        <ProductID>CVRFPID-50247</ProductID>
+        <ProductID>CVRFPID-56097</ProductID>
+        <ProductID>CVRFPID-56098</ProductID>
+        <ProductID>CVRFPID-56099</ProductID>
+        <ProductID>CVRFPID-56100</ProductID>
+        <ProductID>CVRFPID-56101</ProductID>
+        <ProductID>CVRFPID-56102</ProductID>
+        <ProductID>CVRFPID-64318</ProductID>
+        <ProductID>CVRFPID-64319</ProductID>
+        <ProductID>CVRFPID-64320</ProductID>
+        <ProductID>CVRFPID-64321</ProductID>
+        <ProductID>CVRFPID-64322</ProductID>
+        <ProductID>CVRFPID-64323</ProductID>
+        <ProductID>CVRFPID-64324</ProductID>
+        <ProductID>CVRFPID-64325</ProductID>
+        <ProductID>CVRFPID-64326</ProductID>
+        <ProductID>CVRFPID-64327</ProductID>
+        <ProductID>CVRFPID-64328</ProductID>
+        <ProductID>CVRFPID-64329</ProductID>
+        <ProductID>CVRFPID-64330</ProductID>
+        <ProductID>CVRFPID-64331</ProductID>
+        <ProductID>CVRFPID-64332</ProductID>
+        <ProductID>CVRFPID-64333</ProductID>
+        <ProductID>CVRFPID-64334</ProductID>
+        <ProductID>CVRFPID-64335</ProductID>
+        <ProductID>CVRFPID-64336</ProductID>
+        <ProductID>CVRFPID-64337</ProductID>
+        <ProductID>CVRFPID-64338</ProductID>
+        <ProductID>CVRFPID-64339</ProductID>
+        <ProductID>CVRFPID-64340</ProductID>
+        <ProductID>CVRFPID-64341</ProductID>
+        <ProductID>CVRFPID-64342</ProductID>
+        <ProductID>CVRFPID-64343</ProductID>
+        <ProductID>CVRFPID-64344</ProductID>
+        <ProductID>CVRFPID-64345</ProductID>
+        <ProductID>CVRFPID-64346</ProductID>
+        <ProductID>CVRFPID-64347</ProductID>
+        <ProductID>CVRFPID-64348</ProductID>
+        <ProductID>CVRFPID-64349</ProductID>
+        <ProductID>CVRFPID-64350</ProductID>
+        <ProductID>CVRFPID-64351</ProductID>
+        <ProductID>CVRFPID-64352</ProductID>
+        <ProductID>CVRFPID-64353</ProductID>
+        <ProductID>CVRFPID-64354</ProductID>
+        <ProductID>CVRFPID-64355</ProductID>
+        <ProductID>CVRFPID-64356</ProductID>
+        <ProductID>CVRFPID-64362</ProductID>
+        <ProductID>CVRFPID-74616</ProductID>
+        <ProductID>CVRFPID-74617</ProductID>
+        <ProductID>CVRFPID-74618</ProductID>
+        <ProductID>CVRFPID-74619</ProductID>
+        <ProductID>CVRFPID-74620</ProductID>
+        <ProductID>CVRFPID-74621</ProductID>
+        <ProductID>CVRFPID-74622</ProductID>
+        <ProductID>CVRFPID-74623</ProductID>
+        <ProductID>CVRFPID-74624</ProductID>
+        <ProductID>CVRFPID-74625</ProductID>
+        <ProductID>CVRFPID-74626</ProductID>
+        <ProductID>CVRFPID-74627</ProductID>
+        <ProductID>CVRFPID-74628</ProductID>
+        <ProductID>CVRFPID-74629</ProductID>
+        <ProductID>CVRFPID-74630</ProductID>
+        <ProductID>CVRFPID-74631</ProductID>
+        <ProductID>CVRFPID-74633</ProductID>
+        <ProductID>CVRFPID-74634</ProductID>
+        <ProductID>CVRFPID-74635</ProductID>
+        <ProductID>CVRFPID-74636</ProductID>
+        <ProductID>CVRFPID-74637</ProductID>
+        <ProductID>CVRFPID-74638</ProductID>
+        <ProductID>CVRFPID-76251</ProductID>
+        <ProductID>CVRFPID-76252</ProductID>
+        <ProductID>CVRFPID-76258</ProductID>
+        <ProductID>CVRFPID-76259</ProductID>
+        <ProductID>CVRFPID-76260</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>8.5</BaseScore>
+        <TemporalScore>7.0</TemporalScore>
+        <Vector>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080213-phone</URL>
+        <Description>Cisco Unified IP Phone Overflow and Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified IP Phone SCCP Firmware Denial of Service Vulnerability</Title>
+    <CVE>CVE-2008-0527</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-60750</ProductID>
+        <ProductID>CVRFPID-60751</ProductID>
+        <ProductID>CVRFPID-60752</ProductID>
+        <ProductID>CVRFPID-60753</ProductID>
+        <ProductID>CVRFPID-60754</ProductID>
+        <ProductID>CVRFPID-60755</ProductID>
+        <ProductID>CVRFPID-60756</ProductID>
+        <ProductID>CVRFPID-60757</ProductID>
+        <ProductID>CVRFPID-60758</ProductID>
+        <ProductID>CVRFPID-74680</ProductID>
+        <ProductID>CVRFPID-76248</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080213-phone</URL>
+        <Description>Cisco Unified IP Phone Overflow and Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified IP Phone DNS Reponse Buffer Overflow Vulnerability</Title>
+    <CVE>CVE-2008-0530</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-75139</ProductID>
+        <ProductID>CVRFPID-75141</ProductID>
+        <ProductID>CVRFPID-75143</ProductID>
+        <ProductID>CVRFPID-75145</ProductID>
+        <ProductID>CVRFPID-75147</ProductID>
+        <ProductID>CVRFPID-75149</ProductID>
+        <ProductID>CVRFPID-75151</ProductID>
+        <ProductID>CVRFPID-75153</ProductID>
+        <ProductID>CVRFPID-75155</ProductID>
+        <ProductID>CVRFPID-75157</ProductID>
+        <ProductID>CVRFPID-75159</ProductID>
+        <ProductID>CVRFPID-75161</ProductID>
+        <ProductID>CVRFPID-75163</ProductID>
+        <ProductID>CVRFPID-75165</ProductID>
+        <ProductID>CVRFPID-75167</ProductID>
+        <ProductID>CVRFPID-75168</ProductID>
+        <ProductID>CVRFPID-75169</ProductID>
+        <ProductID>CVRFPID-75170</ProductID>
+        <ProductID>CVRFPID-75171</ProductID>
+        <ProductID>CVRFPID-75172</ProductID>
+        <ProductID>CVRFPID-75173</ProductID>
+        <ProductID>CVRFPID-75174</ProductID>
+        <ProductID>CVRFPID-75175</ProductID>
+        <ProductID>CVRFPID-75176</ProductID>
+        <ProductID>CVRFPID-75177</ProductID>
+        <ProductID>CVRFPID-75178</ProductID>
+        <ProductID>CVRFPID-75179</ProductID>
+        <ProductID>CVRFPID-75180</ProductID>
+        <ProductID>CVRFPID-75181</ProductID>
+        <ProductID>CVRFPID-75182</ProductID>
+        <ProductID>CVRFPID-75183</ProductID>
+        <ProductID>CVRFPID-75184</ProductID>
+        <ProductID>CVRFPID-76257</ProductID>
+        <ProductID>CVRFPID-76265</ProductID>
+        <ProductID>CVRFPID-75091</ProductID>
+        <ProductID>CVRFPID-75093</ProductID>
+        <ProductID>CVRFPID-75095</ProductID>
+        <ProductID>CVRFPID-75097</ProductID>
+        <ProductID>CVRFPID-75099</ProductID>
+        <ProductID>CVRFPID-75101</ProductID>
+        <ProductID>CVRFPID-75103</ProductID>
+        <ProductID>CVRFPID-75105</ProductID>
+        <ProductID>CVRFPID-75107</ProductID>
+        <ProductID>CVRFPID-75109</ProductID>
+        <ProductID>CVRFPID-75111</ProductID>
+        <ProductID>CVRFPID-75113</ProductID>
+        <ProductID>CVRFPID-75115</ProductID>
+        <ProductID>CVRFPID-75117</ProductID>
+        <ProductID>CVRFPID-75118</ProductID>
+        <ProductID>CVRFPID-75119</ProductID>
+        <ProductID>CVRFPID-75120</ProductID>
+        <ProductID>CVRFPID-75121</ProductID>
+        <ProductID>CVRFPID-75122</ProductID>
+        <ProductID>CVRFPID-75123</ProductID>
+        <ProductID>CVRFPID-75124</ProductID>
+        <ProductID>CVRFPID-75125</ProductID>
+        <ProductID>CVRFPID-75126</ProductID>
+        <ProductID>CVRFPID-75127</ProductID>
+        <ProductID>CVRFPID-75128</ProductID>
+        <ProductID>CVRFPID-75129</ProductID>
+        <ProductID>CVRFPID-75130</ProductID>
+        <ProductID>CVRFPID-75131</ProductID>
+        <ProductID>CVRFPID-75132</ProductID>
+        <ProductID>CVRFPID-75133</ProductID>
+        <ProductID>CVRFPID-75134</ProductID>
+        <ProductID>CVRFPID-75135</ProductID>
+        <ProductID>CVRFPID-75136</ProductID>
+        <ProductID>CVRFPID-76256</ProductID>
+        <ProductID>CVRFPID-76267</ProductID>
+        <ProductID>CVRFPID-76272</ProductID>
+        <ProductID>CVRFPID-40735</ProductID>
+        <ProductID>CVRFPID-40736</ProductID>
+        <ProductID>CVRFPID-50229</ProductID>
+        <ProductID>CVRFPID-50230</ProductID>
+        <ProductID>CVRFPID-50231</ProductID>
+        <ProductID>CVRFPID-50232</ProductID>
+        <ProductID>CVRFPID-50233</ProductID>
+        <ProductID>CVRFPID-50234</ProductID>
+        <ProductID>CVRFPID-50235</ProductID>
+        <ProductID>CVRFPID-50236</ProductID>
+        <ProductID>CVRFPID-50237</ProductID>
+        <ProductID>CVRFPID-50238</ProductID>
+        <ProductID>CVRFPID-50239</ProductID>
+        <ProductID>CVRFPID-50247</ProductID>
+        <ProductID>CVRFPID-56097</ProductID>
+        <ProductID>CVRFPID-56098</ProductID>
+        <ProductID>CVRFPID-56099</ProductID>
+        <ProductID>CVRFPID-56100</ProductID>
+        <ProductID>CVRFPID-56101</ProductID>
+        <ProductID>CVRFPID-56102</ProductID>
+        <ProductID>CVRFPID-64318</ProductID>
+        <ProductID>CVRFPID-64319</ProductID>
+        <ProductID>CVRFPID-64320</ProductID>
+        <ProductID>CVRFPID-64321</ProductID>
+        <ProductID>CVRFPID-64322</ProductID>
+        <ProductID>CVRFPID-64323</ProductID>
+        <ProductID>CVRFPID-64324</ProductID>
+        <ProductID>CVRFPID-64325</ProductID>
+        <ProductID>CVRFPID-64326</ProductID>
+        <ProductID>CVRFPID-64327</ProductID>
+        <ProductID>CVRFPID-64328</ProductID>
+        <ProductID>CVRFPID-64329</ProductID>
+        <ProductID>CVRFPID-64330</ProductID>
+        <ProductID>CVRFPID-64331</ProductID>
+        <ProductID>CVRFPID-64332</ProductID>
+        <ProductID>CVRFPID-64333</ProductID>
+        <ProductID>CVRFPID-64334</ProductID>
+        <ProductID>CVRFPID-64335</ProductID>
+        <ProductID>CVRFPID-64336</ProductID>
+        <ProductID>CVRFPID-64337</ProductID>
+        <ProductID>CVRFPID-64338</ProductID>
+        <ProductID>CVRFPID-64339</ProductID>
+        <ProductID>CVRFPID-64340</ProductID>
+        <ProductID>CVRFPID-64341</ProductID>
+        <ProductID>CVRFPID-64342</ProductID>
+        <ProductID>CVRFPID-64343</ProductID>
+        <ProductID>CVRFPID-64344</ProductID>
+        <ProductID>CVRFPID-64345</ProductID>
+        <ProductID>CVRFPID-64346</ProductID>
+        <ProductID>CVRFPID-64347</ProductID>
+        <ProductID>CVRFPID-64348</ProductID>
+        <ProductID>CVRFPID-64349</ProductID>
+        <ProductID>CVRFPID-64350</ProductID>
+        <ProductID>CVRFPID-64351</ProductID>
+        <ProductID>CVRFPID-64352</ProductID>
+        <ProductID>CVRFPID-64353</ProductID>
+        <ProductID>CVRFPID-64354</ProductID>
+        <ProductID>CVRFPID-64355</ProductID>
+        <ProductID>CVRFPID-64356</ProductID>
+        <ProductID>CVRFPID-64362</ProductID>
+        <ProductID>CVRFPID-74616</ProductID>
+        <ProductID>CVRFPID-74617</ProductID>
+        <ProductID>CVRFPID-74618</ProductID>
+        <ProductID>CVRFPID-74619</ProductID>
+        <ProductID>CVRFPID-74620</ProductID>
+        <ProductID>CVRFPID-74621</ProductID>
+        <ProductID>CVRFPID-74622</ProductID>
+        <ProductID>CVRFPID-74623</ProductID>
+        <ProductID>CVRFPID-74624</ProductID>
+        <ProductID>CVRFPID-74625</ProductID>
+        <ProductID>CVRFPID-74626</ProductID>
+        <ProductID>CVRFPID-74627</ProductID>
+        <ProductID>CVRFPID-74628</ProductID>
+        <ProductID>CVRFPID-74629</ProductID>
+        <ProductID>CVRFPID-74630</ProductID>
+        <ProductID>CVRFPID-74631</ProductID>
+        <ProductID>CVRFPID-74633</ProductID>
+        <ProductID>CVRFPID-74634</ProductID>
+        <ProductID>CVRFPID-74635</ProductID>
+        <ProductID>CVRFPID-74636</ProductID>
+        <ProductID>CVRFPID-74637</ProductID>
+        <ProductID>CVRFPID-74638</ProductID>
+        <ProductID>CVRFPID-76251</ProductID>
+        <ProductID>CVRFPID-76252</ProductID>
+        <ProductID>CVRFPID-76258</ProductID>
+        <ProductID>CVRFPID-76259</ProductID>
+        <ProductID>CVRFPID-76260</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080213-phone</URL>
+        <Description>Cisco Unified IP Phone Overflow and Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="6" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified IP Phone SIP Proxy Response Buffer Overflow Vulnerability</Title>
+    <CVE>CVE-2008-0531</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-75139</ProductID>
+        <ProductID>CVRFPID-75141</ProductID>
+        <ProductID>CVRFPID-75143</ProductID>
+        <ProductID>CVRFPID-75145</ProductID>
+        <ProductID>CVRFPID-75147</ProductID>
+        <ProductID>CVRFPID-75149</ProductID>
+        <ProductID>CVRFPID-75151</ProductID>
+        <ProductID>CVRFPID-75153</ProductID>
+        <ProductID>CVRFPID-75155</ProductID>
+        <ProductID>CVRFPID-75157</ProductID>
+        <ProductID>CVRFPID-75159</ProductID>
+        <ProductID>CVRFPID-75161</ProductID>
+        <ProductID>CVRFPID-75163</ProductID>
+        <ProductID>CVRFPID-75165</ProductID>
+        <ProductID>CVRFPID-75167</ProductID>
+        <ProductID>CVRFPID-75168</ProductID>
+        <ProductID>CVRFPID-75169</ProductID>
+        <ProductID>CVRFPID-75170</ProductID>
+        <ProductID>CVRFPID-75171</ProductID>
+        <ProductID>CVRFPID-75172</ProductID>
+        <ProductID>CVRFPID-75173</ProductID>
+        <ProductID>CVRFPID-75174</ProductID>
+        <ProductID>CVRFPID-75175</ProductID>
+        <ProductID>CVRFPID-75176</ProductID>
+        <ProductID>CVRFPID-75177</ProductID>
+        <ProductID>CVRFPID-75178</ProductID>
+        <ProductID>CVRFPID-75179</ProductID>
+        <ProductID>CVRFPID-75180</ProductID>
+        <ProductID>CVRFPID-75181</ProductID>
+        <ProductID>CVRFPID-75182</ProductID>
+        <ProductID>CVRFPID-75183</ProductID>
+        <ProductID>CVRFPID-75184</ProductID>
+        <ProductID>CVRFPID-76257</ProductID>
+        <ProductID>CVRFPID-76265</ProductID>
+        <ProductID>CVRFPID-75091</ProductID>
+        <ProductID>CVRFPID-75093</ProductID>
+        <ProductID>CVRFPID-75095</ProductID>
+        <ProductID>CVRFPID-75097</ProductID>
+        <ProductID>CVRFPID-75099</ProductID>
+        <ProductID>CVRFPID-75101</ProductID>
+        <ProductID>CVRFPID-75103</ProductID>
+        <ProductID>CVRFPID-75105</ProductID>
+        <ProductID>CVRFPID-75107</ProductID>
+        <ProductID>CVRFPID-75109</ProductID>
+        <ProductID>CVRFPID-75111</ProductID>
+        <ProductID>CVRFPID-75113</ProductID>
+        <ProductID>CVRFPID-75115</ProductID>
+        <ProductID>CVRFPID-75117</ProductID>
+        <ProductID>CVRFPID-75118</ProductID>
+        <ProductID>CVRFPID-75119</ProductID>
+        <ProductID>CVRFPID-75120</ProductID>
+        <ProductID>CVRFPID-75121</ProductID>
+        <ProductID>CVRFPID-75122</ProductID>
+        <ProductID>CVRFPID-75123</ProductID>
+        <ProductID>CVRFPID-75124</ProductID>
+        <ProductID>CVRFPID-75125</ProductID>
+        <ProductID>CVRFPID-75126</ProductID>
+        <ProductID>CVRFPID-75127</ProductID>
+        <ProductID>CVRFPID-75128</ProductID>
+        <ProductID>CVRFPID-75129</ProductID>
+        <ProductID>CVRFPID-75130</ProductID>
+        <ProductID>CVRFPID-75131</ProductID>
+        <ProductID>CVRFPID-75132</ProductID>
+        <ProductID>CVRFPID-75133</ProductID>
+        <ProductID>CVRFPID-75134</ProductID>
+        <ProductID>CVRFPID-75135</ProductID>
+        <ProductID>CVRFPID-75136</ProductID>
+        <ProductID>CVRFPID-76256</ProductID>
+        <ProductID>CVRFPID-76267</ProductID>
+        <ProductID>CVRFPID-76272</ProductID>
+        <ProductID>CVRFPID-40735</ProductID>
+        <ProductID>CVRFPID-40736</ProductID>
+        <ProductID>CVRFPID-50229</ProductID>
+        <ProductID>CVRFPID-50230</ProductID>
+        <ProductID>CVRFPID-50231</ProductID>
+        <ProductID>CVRFPID-50232</ProductID>
+        <ProductID>CVRFPID-50233</ProductID>
+        <ProductID>CVRFPID-50234</ProductID>
+        <ProductID>CVRFPID-50235</ProductID>
+        <ProductID>CVRFPID-50236</ProductID>
+        <ProductID>CVRFPID-50237</ProductID>
+        <ProductID>CVRFPID-50238</ProductID>
+        <ProductID>CVRFPID-50239</ProductID>
+        <ProductID>CVRFPID-50247</ProductID>
+        <ProductID>CVRFPID-56097</ProductID>
+        <ProductID>CVRFPID-56098</ProductID>
+        <ProductID>CVRFPID-56099</ProductID>
+        <ProductID>CVRFPID-56100</ProductID>
+        <ProductID>CVRFPID-56101</ProductID>
+        <ProductID>CVRFPID-56102</ProductID>
+        <ProductID>CVRFPID-64318</ProductID>
+        <ProductID>CVRFPID-64319</ProductID>
+        <ProductID>CVRFPID-64320</ProductID>
+        <ProductID>CVRFPID-64321</ProductID>
+        <ProductID>CVRFPID-64322</ProductID>
+        <ProductID>CVRFPID-64323</ProductID>
+        <ProductID>CVRFPID-64324</ProductID>
+        <ProductID>CVRFPID-64325</ProductID>
+        <ProductID>CVRFPID-64326</ProductID>
+        <ProductID>CVRFPID-64327</ProductID>
+        <ProductID>CVRFPID-64328</ProductID>
+        <ProductID>CVRFPID-64329</ProductID>
+        <ProductID>CVRFPID-64330</ProductID>
+        <ProductID>CVRFPID-64331</ProductID>
+        <ProductID>CVRFPID-64332</ProductID>
+        <ProductID>CVRFPID-64333</ProductID>
+        <ProductID>CVRFPID-64334</ProductID>
+        <ProductID>CVRFPID-64335</ProductID>
+        <ProductID>CVRFPID-64336</ProductID>
+        <ProductID>CVRFPID-64337</ProductID>
+        <ProductID>CVRFPID-64338</ProductID>
+        <ProductID>CVRFPID-64339</ProductID>
+        <ProductID>CVRFPID-64340</ProductID>
+        <ProductID>CVRFPID-64341</ProductID>
+        <ProductID>CVRFPID-64342</ProductID>
+        <ProductID>CVRFPID-64343</ProductID>
+        <ProductID>CVRFPID-64344</ProductID>
+        <ProductID>CVRFPID-64345</ProductID>
+        <ProductID>CVRFPID-64346</ProductID>
+        <ProductID>CVRFPID-64347</ProductID>
+        <ProductID>CVRFPID-64348</ProductID>
+        <ProductID>CVRFPID-64349</ProductID>
+        <ProductID>CVRFPID-64350</ProductID>
+        <ProductID>CVRFPID-64351</ProductID>
+        <ProductID>CVRFPID-64352</ProductID>
+        <ProductID>CVRFPID-64353</ProductID>
+        <ProductID>CVRFPID-64354</ProductID>
+        <ProductID>CVRFPID-64355</ProductID>
+        <ProductID>CVRFPID-64356</ProductID>
+        <ProductID>CVRFPID-64362</ProductID>
+        <ProductID>CVRFPID-74616</ProductID>
+        <ProductID>CVRFPID-74617</ProductID>
+        <ProductID>CVRFPID-74618</ProductID>
+        <ProductID>CVRFPID-74619</ProductID>
+        <ProductID>CVRFPID-74620</ProductID>
+        <ProductID>CVRFPID-74621</ProductID>
+        <ProductID>CVRFPID-74622</ProductID>
+        <ProductID>CVRFPID-74623</ProductID>
+        <ProductID>CVRFPID-74624</ProductID>
+        <ProductID>CVRFPID-74625</ProductID>
+        <ProductID>CVRFPID-74626</ProductID>
+        <ProductID>CVRFPID-74627</ProductID>
+        <ProductID>CVRFPID-74628</ProductID>
+        <ProductID>CVRFPID-74629</ProductID>
+        <ProductID>CVRFPID-74630</ProductID>
+        <ProductID>CVRFPID-74631</ProductID>
+        <ProductID>CVRFPID-74633</ProductID>
+        <ProductID>CVRFPID-74634</ProductID>
+        <ProductID>CVRFPID-74635</ProductID>
+        <ProductID>CVRFPID-74636</ProductID>
+        <ProductID>CVRFPID-74637</ProductID>
+        <ProductID>CVRFPID-74638</ProductID>
+        <ProductID>CVRFPID-76251</ProductID>
+        <ProductID>CVRFPID-76252</ProductID>
+        <ProductID>CVRFPID-76258</ProductID>
+        <ProductID>CVRFPID-76259</ProductID>
+        <ProductID>CVRFPID-76260</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.6</BaseScore>
+        <TemporalScore>6.3</TemporalScore>
+        <Vector>AV:N/AC:H/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080213-phone</URL>
+        <Description>Cisco Unified IP Phone Overflow and Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="7" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Dropbear SSH Server Improperly Freed Variable Code Execution Vulnerability</Title>
+    <CVE>CVE-2004-2486</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-63605</ProductID>
+        <ProductID>CVRFPID-63606</ProductID>
+        <ProductID>CVRFPID-63607</ProductID>
+        <ProductID>CVRFPID-63608</ProductID>
+        <ProductID>CVRFPID-63609</ProductID>
+        <ProductID>CVRFPID-73413</ProductID>
+        <ProductID>CVRFPID-73414</ProductID>
+        <ProductID>CVRFPID-73424</ProductID>
+        <ProductID>CVRFPID-73425</ProductID>
+        <ProductID>CVRFPID-63610</ProductID>
+        <ProductID>CVRFPID-63611</ProductID>
+        <ProductID>CVRFPID-63612</ProductID>
+        <ProductID>CVRFPID-63613</ProductID>
+        <ProductID>CVRFPID-63614</ProductID>
+        <ProductID>CVRFPID-63615</ProductID>
+        <ProductID>CVRFPID-63616</ProductID>
+        <ProductID>CVRFPID-63617</ProductID>
+        <ProductID>CVRFPID-73409</ProductID>
+        <ProductID>CVRFPID-73410</ProductID>
+        <ProductID>CVRFPID-75005</ProductID>
+        <ProductID>CVRFPID-63618</ProductID>
+        <ProductID>CVRFPID-63619</ProductID>
+        <ProductID>CVRFPID-63620</ProductID>
+        <ProductID>CVRFPID-63621</ProductID>
+        <ProductID>CVRFPID-63622</ProductID>
+        <ProductID>CVRFPID-63623</ProductID>
+        <ProductID>CVRFPID-63624</ProductID>
+        <ProductID>CVRFPID-63625</ProductID>
+        <ProductID>CVRFPID-73442</ProductID>
+        <ProductID>CVRFPID-73443</ProductID>
+        <ProductID>CVRFPID-73444</ProductID>
+        <ProductID>CVRFPID-75016</ProductID>
+        <ProductID>CVRFPID-63626</ProductID>
+        <ProductID>CVRFPID-63627</ProductID>
+        <ProductID>CVRFPID-63628</ProductID>
+        <ProductID>CVRFPID-63629</ProductID>
+        <ProductID>CVRFPID-63630</ProductID>
+        <ProductID>CVRFPID-63631</ProductID>
+        <ProductID>CVRFPID-73454</ProductID>
+        <ProductID>CVRFPID-73455</ProductID>
+        <ProductID>CVRFPID-73456</ProductID>
+        <ProductID>CVRFPID-73457</ProductID>
+        <ProductID>CVRFPID-75017</ProductID>
+        <ProductID>CVRFPID-63632</ProductID>
+        <ProductID>CVRFPID-63633</ProductID>
+        <ProductID>CVRFPID-63634</ProductID>
+        <ProductID>CVRFPID-63635</ProductID>
+        <ProductID>CVRFPID-63636</ProductID>
+        <ProductID>CVRFPID-63637</ProductID>
+        <ProductID>CVRFPID-63638</ProductID>
+        <ProductID>CVRFPID-63639</ProductID>
+        <ProductID>CVRFPID-63640</ProductID>
+        <ProductID>CVRFPID-63641</ProductID>
+        <ProductID>CVRFPID-63642</ProductID>
+        <ProductID>CVRFPID-63643</ProductID>
+        <ProductID>CVRFPID-63644</ProductID>
+        <ProductID>CVRFPID-63645</ProductID>
+        <ProductID>CVRFPID-63646</ProductID>
+        <ProductID>CVRFPID-63647</ProductID>
+        <ProductID>CVRFPID-73488</ProductID>
+        <ProductID>CVRFPID-73492</ProductID>
+        <ProductID>CVRFPID-75023</ProductID>
+        <ProductID>CVRFPID-63648</ProductID>
+        <ProductID>CVRFPID-63649</ProductID>
+        <ProductID>CVRFPID-63650</ProductID>
+        <ProductID>CVRFPID-63651</ProductID>
+        <ProductID>CVRFPID-63652</ProductID>
+        <ProductID>CVRFPID-63653</ProductID>
+        <ProductID>CVRFPID-63654</ProductID>
+        <ProductID>CVRFPID-63655</ProductID>
+        <ProductID>CVRFPID-63656</ProductID>
+        <ProductID>CVRFPID-63657</ProductID>
+        <ProductID>CVRFPID-73503</ProductID>
+        <ProductID>CVRFPID-73504</ProductID>
+        <ProductID>CVRFPID-75084</ProductID>
+        <ProductID>CVRFPID-75085</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080213-phone</URL>
+        <Description>Cisco Unified IP Phone Overflow and Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

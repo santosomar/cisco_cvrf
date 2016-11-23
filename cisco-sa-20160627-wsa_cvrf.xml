@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Web Security Appliance Native FTP Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160627-wsa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-06-27T19:01:25</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-06-27T18:40:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-06-27T19:01:25</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the native pass-through FTP functionality of the Cisco Web Security Appliance (WSA) could allow an unauthenticated, remote attacker to cause a partial denial of service (DoS) condition due to high CPU utilization.
+
+ 
+
+The vulnerability is due to how the FTP client terminates the FTP control connection when the data transfer is complete. An attacker could exploit this vulnerability by initiating FTP connections through the WSA. An exploit could allow the attacker to cause high CPU utilization of the Cisco WSA proxy process, causing a partial DoS condition. Successful exploitation depends on the FTP client the attacker uses and how that FTP client closes the FTP control connection.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are not available.
+
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160627-wsa["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160627-wsa"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160627-wsa</URL>
+      <Description>Cisco Web Security Appliance Native FTP Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-210997">Cisco Web Security Appliance (WSA) 5.6.0-623</FullProductName>
+    <FullProductName ProductID="CVRFPID-210999">Cisco Web Security Appliance (WSA) 6.0.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-189793">Cisco Web Security Appliance (WSA) 7.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-189952">Cisco Web Security Appliance (WSA) 7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-189953">Cisco Web Security Appliance (WSA) 7.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-189954">Cisco Web Security Appliance (WSA) 7.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-189955">Cisco Web Security Appliance (WSA) 7.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-189795">Cisco Web Security Appliance (WSA) 7.5.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211000">Cisco Web Security Appliance (WSA) 7.5.0-825</FullProductName>
+    <FullProductName ProductID="CVRFPID-189956">Cisco Web Security Appliance (WSA) 7.5.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211001">Cisco Web Security Appliance (WSA) 7.5.2-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216288">Cisco Web Security Appliance (WSA) 7.5.2-HP2-303</FullProductName>
+    <FullProductName ProductID="CVRFPID-189797">Cisco Web Security Appliance (WSA) 7.7.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216289">Cisco Web Security Appliance (WSA) 7.7.0-608</FullProductName>
+    <FullProductName ProductID="CVRFPID-211002">Cisco Web Security Appliance (WSA) 7.7.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216290">Cisco Web Security Appliance (WSA) 7.7.5-835</FullProductName>
+    <FullProductName ProductID="CVRFPID-200673">Cisco Web Security Appliance (WSA) 8.0.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-200674">Cisco Web Security Appliance (WSA) 8.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-200675">Cisco Web Security Appliance (WSA) 8.0.5 Hot Patch 1</FullProductName>
+    <FullProductName ProductID="CVRFPID-205811">Cisco Web Security Appliance (WSA) 8.0.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-210139">Cisco Web Security Appliance (WSA) 8.0.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-210971">Cisco Web Security Appliance (WSA) 8.0.6-078</FullProductName>
+    <FullProductName ProductID="CVRFPID-210972">Cisco Web Security Appliance (WSA) 8.0.8-MR-113</FullProductName>
+    <FullProductName ProductID="CVRFPID-210973">Cisco Web Security Appliance (WSA) 8.0.7-142</FullProductName>
+    <FullProductName ProductID="CVRFPID-210975">Cisco Web Security Appliance (WSA) 8.0.6-119</FullProductName>
+    <FullProductName ProductID="CVRFPID-205814">Cisco Web Security Appliance (WSA) 8.5.0.000</FullProductName>
+    <FullProductName ProductID="CVRFPID-206867">Cisco Web Security Appliance (WSA) 8.5.0-497</FullProductName>
+    <FullProductName ProductID="CVRFPID-209997">Cisco Web Security Appliance (WSA) 8.5.2-027</FullProductName>
+    <FullProductName ProductID="CVRFPID-210974">Cisco Web Security Appliance (WSA) 8.5.2-024</FullProductName>
+    <FullProductName ProductID="CVRFPID-212008">Cisco Web Security Appliance (WSA) 8.5.1-021</FullProductName>
+    <FullProductName ProductID="CVRFPID-212694">Cisco Web Security Appliance (WSA) 8.5.3-055</FullProductName>
+    <FullProductName ProductID="CVRFPID-216213">Cisco Web Security Appliance (WSA) 8.8.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216214">Cisco Web Security Appliance (WSA) 8.8.0-085</FullProductName>
+    <FullProductName ProductID="CVRFPID-209311">Cisco Web Security Appliance (WSA) 9.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-209312">Cisco Web Security Appliance (WSA) 9.0.0-193</FullProductName>
+    <FullProductName ProductID="CVRFPID-212700">Cisco Web Security Appliance (WSA) 9.1.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216210">Cisco Web Security Appliance (WSA) 9.1.0-070</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Web Security Appliance Native FTP Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy43468</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the native pass-through FTP functionality of the Cisco Web Security Appliance (WSA) could allow an unauthenticated, remote attacker to cause a partial denial of service (DoS) condition due to high CPU utilization.
+
+ 
+
+The vulnerability is due to how the FTP client terminates the FTP control connection when the data transfer is complete. An attacker could exploit this vulnerability by initiating FTP connections through the WSA. An exploit could allow the attacker to cause high CPU utilization of the Cisco WSA proxy process, causing a partial DoS condition. Successful exploitation depends on the FTP client the attacker uses and how that FTP client closes the FTP control connection.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuy43468</Note>
+    </Notes>
+    <CVE>CVE-2016-1440</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-189793</ProductID>
+        <ProductID>CVRFPID-189795</ProductID>
+        <ProductID>CVRFPID-189797</ProductID>
+        <ProductID>CVRFPID-189952</ProductID>
+        <ProductID>CVRFPID-189953</ProductID>
+        <ProductID>CVRFPID-189954</ProductID>
+        <ProductID>CVRFPID-189955</ProductID>
+        <ProductID>CVRFPID-189956</ProductID>
+        <ProductID>CVRFPID-200673</ProductID>
+        <ProductID>CVRFPID-200674</ProductID>
+        <ProductID>CVRFPID-200675</ProductID>
+        <ProductID>CVRFPID-205811</ProductID>
+        <ProductID>CVRFPID-205814</ProductID>
+        <ProductID>CVRFPID-206867</ProductID>
+        <ProductID>CVRFPID-209311</ProductID>
+        <ProductID>CVRFPID-209312</ProductID>
+        <ProductID>CVRFPID-209997</ProductID>
+        <ProductID>CVRFPID-210139</ProductID>
+        <ProductID>CVRFPID-210971</ProductID>
+        <ProductID>CVRFPID-210972</ProductID>
+        <ProductID>CVRFPID-210973</ProductID>
+        <ProductID>CVRFPID-210974</ProductID>
+        <ProductID>CVRFPID-210975</ProductID>
+        <ProductID>CVRFPID-210997</ProductID>
+        <ProductID>CVRFPID-210999</ProductID>
+        <ProductID>CVRFPID-211000</ProductID>
+        <ProductID>CVRFPID-211001</ProductID>
+        <ProductID>CVRFPID-211002</ProductID>
+        <ProductID>CVRFPID-212008</ProductID>
+        <ProductID>CVRFPID-212694</ProductID>
+        <ProductID>CVRFPID-212700</ProductID>
+        <ProductID>CVRFPID-216210</ProductID>
+        <ProductID>CVRFPID-216213</ProductID>
+        <ProductID>CVRFPID-216214</ProductID>
+        <ProductID>CVRFPID-216288</ProductID>
+        <ProductID>CVRFPID-216289</ProductID>
+        <ProductID>CVRFPID-216290</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workarounds that address this vulnerability are not available.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160627-wsa</URL>
+        <Description>Cisco Web Security Appliance Native FTP Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

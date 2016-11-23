@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software Metadata Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20140924-metadata</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2014-09-24T15:48:09</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2014-09-24T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2014-09-24T15:48:09</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Two vulnerabilities in the metadata flow feature of Cisco IOS Software could allow an unauthenticated, remote attacker to reload a vulnerable device.
+
+
+
+The vulnerabilities are due to improper handling of transit RSVP packets that need to be processed by the metadata infrastructure. An attacker could exploit these vulnerabilities by sending malformed RSVP packets to an affected device. A successful exploit could allow the attacker to cause an extended denial of service (DoS) condition.
+
+
+
+Cisco has released software updates that address these vulnerabilities.
+
+
+
+Workarounds that mitigate these vulnerabilities are not available. 
+
+
+
+This advisory is available at the following link: 
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140924-metadata["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140924-metadata"]
+
+
+
+Note: The September 24, 2014, Cisco IOS Software Security Advisory bundled publication includes six Cisco Security Advisories. All advisories address vulnerabilities in Cisco IOS Software. Individual publication links are in Cisco Event Response: Semiannual Cisco IOS Software Security Advisory Bundled Publication at the following link:
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep14.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep14.html"]
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140924-metadata</URL>
+      <Description>Cisco IOS Software Metadata Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20140924-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, September 24, 2014</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20140924-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, September 24, 2014</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=35622</URL>
+      <Description>Cisco IOS Software Metadata Processing Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=35623</URL>
+      <Description>Cisco IOS Software Metadata Handling Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=35622</URL>
+      <Description>Cisco IOS Software Metadata Processing Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=35623</URL>
+      <Description>Cisco IOS Software Metadata Handling Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-112489">Cisco IOS 15.1(1)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-115285">Cisco IOS 15.1(1)SY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191635">Cisco IOS 15.1(1)SY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-194944">Cisco IOS 15.1(1)SY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-184932">Cisco IOS 15.1(2)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-188061">Cisco IOS 15.1(2)SY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-189219">Cisco IOS 15.1(2)SY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-198059">Cisco IOS 15.1(2)SY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107861">Cisco IOS 15.2(2)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-114419">Cisco IOS 15.2(2)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112424">Cisco IOS 15.2(4)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-183813">Cisco IOS 15.2(4)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-183837">Cisco IOS 15.2(4)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-183839">Cisco IOS 15.2(4)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195062">Cisco IOS 15.2(4)S4a</FullProductName>
+    <FullProductName ProductID="CVRFPID-107862">Cisco IOS 15.2(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-193321">Cisco IOS 15.3(3)M3</FullProductName>
+    <FullProductName ProductID="CVRFPID-113970">Cisco IOS 15.3(1)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-188008">Cisco IOS 15.3(1)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-187962">Cisco IOS 15.3(1)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-190979">Cisco IOS 15.3(2)S0a</FullProductName>
+    <FullProductName ProductID="CVRFPID-191336">Cisco IOS 15.3(2)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191331">Cisco IOS 15.3(2)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-193407">Cisco IOS 15.3(3)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-193408">Cisco IOS 15.3(3)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-103851">Cisco IOS 15.3(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-187231">Cisco IOS 15.3(1)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-187232">Cisco IOS 15.3(1)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-196220">Cisco IOS XE Software 3.3XO 3.3.0XO</FullProductName>
+    <FullProductName ProductID="CVRFPID-184475">Cisco IOS XE Software 3.6S 3.6.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184476">Cisco IOS XE Software 3.6S 3.6.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184477">Cisco IOS XE Software 3.6S 3.6.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184480">Cisco IOS XE Software 3.7S 3.7.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184481">Cisco IOS XE Software 3.7S 3.7.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194730">Cisco IOS XE Software 3.7S 3.7.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194731">Cisco IOS XE Software 3.7S 3.7.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194732">Cisco IOS XE Software 3.7S 3.7.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202541">Cisco IOS XE Software 3.7S 3.7.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194735">Cisco IOS XE Software 3.8S 3.8.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194736">Cisco IOS XE Software 3.8S 3.8.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194737">Cisco IOS XE Software 3.8S 3.8.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194843">Cisco IOS XE Software 3.9S 3.9.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194842">Cisco IOS XE Software 3.9S 3.9.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202558">Cisco IOS XE Software 3.9S 3.9.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198123">Cisco IOS XE Software 3.10S 3.10.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198535">Cisco IOS XE Software 3.10S 3.10.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-198124">Cisco IOS XE Software 3.10S 3.10.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198125">Cisco IOS XE Software 3.10S 3.10.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202539">Cisco IOS XE Software 3.10S 3.10.3S</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Metadata DoS Vulnerability (CSCue22753)</Title>
+    <ID SystemName="Cisco Bug ID">CSCue22753</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability exists in the metadata function of Cisco IOS Software that could allow an unauthenticated, remote attacker to reload the vulnerable device.
+
+
+
+The vulnerability is due to improper handling of transit RSVP packets that need to be processed by the metadata infrastructure. An attacker could exploit this vulnerability by sending malformed RSVP packets. An exploit could allow the attacker to cause an extended DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCue22753</Note>
+    </Notes>
+    <CVE>CVE-2014-3356</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-103851</ProductID>
+        <ProductID>CVRFPID-107861</ProductID>
+        <ProductID>CVRFPID-107862</ProductID>
+        <ProductID>CVRFPID-112424</ProductID>
+        <ProductID>CVRFPID-112489</ProductID>
+        <ProductID>CVRFPID-113970</ProductID>
+        <ProductID>CVRFPID-114419</ProductID>
+        <ProductID>CVRFPID-115285</ProductID>
+        <ProductID>CVRFPID-183813</ProductID>
+        <ProductID>CVRFPID-183837</ProductID>
+        <ProductID>CVRFPID-183839</ProductID>
+        <ProductID>CVRFPID-184932</ProductID>
+        <ProductID>CVRFPID-187231</ProductID>
+        <ProductID>CVRFPID-187232</ProductID>
+        <ProductID>CVRFPID-187962</ProductID>
+        <ProductID>CVRFPID-188008</ProductID>
+        <ProductID>CVRFPID-188061</ProductID>
+        <ProductID>CVRFPID-189219</ProductID>
+        <ProductID>CVRFPID-190979</ProductID>
+        <ProductID>CVRFPID-191331</ProductID>
+        <ProductID>CVRFPID-191336</ProductID>
+        <ProductID>CVRFPID-191635</ProductID>
+        <ProductID>CVRFPID-193321</ProductID>
+        <ProductID>CVRFPID-193407</ProductID>
+        <ProductID>CVRFPID-193408</ProductID>
+        <ProductID>CVRFPID-194944</ProductID>
+        <ProductID>CVRFPID-195062</ProductID>
+        <ProductID>CVRFPID-198059</ProductID>
+        <ProductID>CVRFPID-184475</ProductID>
+        <ProductID>CVRFPID-184476</ProductID>
+        <ProductID>CVRFPID-184477</ProductID>
+        <ProductID>CVRFPID-184480</ProductID>
+        <ProductID>CVRFPID-184481</ProductID>
+        <ProductID>CVRFPID-194730</ProductID>
+        <ProductID>CVRFPID-194731</ProductID>
+        <ProductID>CVRFPID-194732</ProductID>
+        <ProductID>CVRFPID-194735</ProductID>
+        <ProductID>CVRFPID-194736</ProductID>
+        <ProductID>CVRFPID-194737</ProductID>
+        <ProductID>CVRFPID-194842</ProductID>
+        <ProductID>CVRFPID-194843</ProductID>
+        <ProductID>CVRFPID-198123</ProductID>
+        <ProductID>CVRFPID-198124</ProductID>
+        <ProductID>CVRFPID-198125</ProductID>
+        <ProductID>CVRFPID-198535</ProductID>
+        <ProductID>CVRFPID-202539</ProductID>
+        <ProductID>CVRFPID-202541</ProductID>
+        <ProductID>CVRFPID-202558</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+        <ProductID>CVRFPID-103851</ProductID>
+        <ProductID>CVRFPID-107861</ProductID>
+        <ProductID>CVRFPID-107862</ProductID>
+        <ProductID>CVRFPID-112424</ProductID>
+        <ProductID>CVRFPID-112489</ProductID>
+        <ProductID>CVRFPID-113970</ProductID>
+        <ProductID>CVRFPID-114419</ProductID>
+        <ProductID>CVRFPID-115285</ProductID>
+        <ProductID>CVRFPID-183813</ProductID>
+        <ProductID>CVRFPID-183837</ProductID>
+        <ProductID>CVRFPID-183839</ProductID>
+        <ProductID>CVRFPID-184932</ProductID>
+        <ProductID>CVRFPID-187231</ProductID>
+        <ProductID>CVRFPID-187232</ProductID>
+        <ProductID>CVRFPID-187962</ProductID>
+        <ProductID>CVRFPID-188008</ProductID>
+        <ProductID>CVRFPID-188061</ProductID>
+        <ProductID>CVRFPID-189219</ProductID>
+        <ProductID>CVRFPID-190979</ProductID>
+        <ProductID>CVRFPID-191331</ProductID>
+        <ProductID>CVRFPID-191336</ProductID>
+        <ProductID>CVRFPID-191635</ProductID>
+        <ProductID>CVRFPID-193321</ProductID>
+        <ProductID>CVRFPID-193407</ProductID>
+        <ProductID>CVRFPID-193408</ProductID>
+        <ProductID>CVRFPID-194944</ProductID>
+        <ProductID>CVRFPID-195062</ProductID>
+        <ProductID>CVRFPID-198059</ProductID>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>No workarounds are available.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140924-metadata</URL>
+        <Description>Cisco IOS Software Metadata Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Metadata DoS Vulnerability (CSCug75942)</Title>
+    <ID SystemName="Cisco Bug ID">CSCug75942</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability exists in the metadata function of Cisco IOS Software that could allow an unauthenticated, remote attacker to reload the vulnerable device.
+
+
+
+The vulnerability is due to improper handling of transit RSVP packets that need to be processed by the metadata infrastructure. An attacker could exploit this vulnerability by sending malformed RSVP packets. An exploit could allow the attacker to cause an extended DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="5">CSCug75942</Note>
+    </Notes>
+    <CVE>CVE-2014-3355</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-103851</ProductID>
+        <ProductID>CVRFPID-107861</ProductID>
+        <ProductID>CVRFPID-107862</ProductID>
+        <ProductID>CVRFPID-112424</ProductID>
+        <ProductID>CVRFPID-112489</ProductID>
+        <ProductID>CVRFPID-113970</ProductID>
+        <ProductID>CVRFPID-114419</ProductID>
+        <ProductID>CVRFPID-115285</ProductID>
+        <ProductID>CVRFPID-183813</ProductID>
+        <ProductID>CVRFPID-183837</ProductID>
+        <ProductID>CVRFPID-183839</ProductID>
+        <ProductID>CVRFPID-187231</ProductID>
+        <ProductID>CVRFPID-187962</ProductID>
+        <ProductID>CVRFPID-188008</ProductID>
+        <ProductID>CVRFPID-191336</ProductID>
+        <ProductID>CVRFPID-195062</ProductID>
+        <ProductID>CVRFPID-184475</ProductID>
+        <ProductID>CVRFPID-184476</ProductID>
+        <ProductID>CVRFPID-184477</ProductID>
+        <ProductID>CVRFPID-184480</ProductID>
+        <ProductID>CVRFPID-184481</ProductID>
+        <ProductID>CVRFPID-194730</ProductID>
+        <ProductID>CVRFPID-194731</ProductID>
+        <ProductID>CVRFPID-194732</ProductID>
+        <ProductID>CVRFPID-194735</ProductID>
+        <ProductID>CVRFPID-194736</ProductID>
+        <ProductID>CVRFPID-194737</ProductID>
+        <ProductID>CVRFPID-194842</ProductID>
+        <ProductID>CVRFPID-194843</ProductID>
+        <ProductID>CVRFPID-196220</ProductID>
+        <ProductID>CVRFPID-198123</ProductID>
+        <ProductID>CVRFPID-198124</ProductID>
+        <ProductID>CVRFPID-198125</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+        <ProductID>CVRFPID-103851</ProductID>
+        <ProductID>CVRFPID-107861</ProductID>
+        <ProductID>CVRFPID-107862</ProductID>
+        <ProductID>CVRFPID-112424</ProductID>
+        <ProductID>CVRFPID-112489</ProductID>
+        <ProductID>CVRFPID-113970</ProductID>
+        <ProductID>CVRFPID-114419</ProductID>
+        <ProductID>CVRFPID-115285</ProductID>
+        <ProductID>CVRFPID-183813</ProductID>
+        <ProductID>CVRFPID-183837</ProductID>
+        <ProductID>CVRFPID-183839</ProductID>
+        <ProductID>CVRFPID-187231</ProductID>
+        <ProductID>CVRFPID-187962</ProductID>
+        <ProductID>CVRFPID-188008</ProductID>
+        <ProductID>CVRFPID-191336</ProductID>
+        <ProductID>CVRFPID-195062</ProductID>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>No workarounds are available.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20140924-metadata</URL>
+        <Description>Cisco IOS Software Metadata Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

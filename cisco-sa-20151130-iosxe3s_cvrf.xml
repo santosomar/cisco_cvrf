@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS XE 3S Platforms Series root Shell License Bypass Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151130-iosxe3s</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>2.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-11-30T20:01:19</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+      <Revision>
+        <Number>2.0</Number>
+        <Date>2015-12-03T13:12:30</Date>
+        <Description>Changed publication title and identifier name. Also clarified the affected products.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.1</Number>
+        <Date>2015-12-03T22:30:59</Date>
+        <Description>Updated Summary. Added a workaround.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.2</Number>
+        <Date>2015-12-14T21:35:54</Date>
+        <Description>Updated the Vulnerable Products and added an example of how to tell if a product is vulnerable.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-11-30T00:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-12-14T21:35:54</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in one of the diagnostic commands in the Cisco IOS XE operating system for Cisco IOS XE 3S platforms could allow an authenticated, privileged, local attacker to gain restricted root shell access. The root shell is provided for advanced troubleshooting with Cisco Technical Assistance Center (TAC) engineers and requires a license. 
+
+
+
+The vulnerability occurs because the parameters to diagnostic commands at the command-line interface (CLI) are not properly validated. An attacker could exploit this vulnerability by authenticating to the affected device at privileged level 15 and providing crafted parameters to the diagnostic commands. An exploit could allow the authenticated, privileged attacker to bypass the license required for root shell access. If the authenticated user obtains root shell access, further compromise may be possible.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151130-iosxe3s["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151130-iosxe3s"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151130-iosxe3s</URL>
+      <Description>Cisco IOS XE 3S Platforms Series root Shell License Bypass Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-111948">Cisco IOS XE Software 3.1S 3.1.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112446">Cisco IOS XE Software 3.1S 3.1.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112447">Cisco IOS XE Software 3.1S 3.1.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112448">Cisco IOS XE Software 3.1S 3.1.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206184">Cisco IOS XE Software 3.1S 3.1.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210067">Cisco IOS XE Software 3.1S 3.1.4aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-206185">Cisco IOS XE Software 3.1S 3.1.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206186">Cisco IOS XE Software 3.1S 3.1.6S</FullProductName>
+    <FullProductName ProductID="CVRFPID-111950">Cisco IOS XE Software 3.2S 3.2.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112449">Cisco IOS XE Software 3.2S 3.2.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112450">Cisco IOS XE Software 3.2S 3.2.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206187">Cisco IOS XE Software 3.2S 3.2.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-111952">Cisco IOS XE Software 3.3S 3.3.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112451">Cisco IOS XE Software 3.3S 3.3.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112452">Cisco IOS XE Software 3.3S 3.3.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-111954">Cisco IOS XE Software 3.4S 3.4.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210069">Cisco IOS XE Software 3.4S 3.4.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-112453">Cisco IOS XE Software 3.4S 3.4.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184469">Cisco IOS XE Software 3.4S 3.4.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184470">Cisco IOS XE Software 3.4S 3.4.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184471">Cisco IOS XE Software 3.4S 3.4.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194728">Cisco IOS XE Software 3.4S 3.4.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194729">Cisco IOS XE Software 3.4S 3.4.6S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184472">Cisco IOS XE Software 3.5S 3.5.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184473">Cisco IOS XE Software 3.5S 3.5.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184474">Cisco IOS XE Software 3.5S 3.5.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184475">Cisco IOS XE Software 3.6S 3.6.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184476">Cisco IOS XE Software 3.6S 3.6.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184477">Cisco IOS XE Software 3.6S 3.6.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184480">Cisco IOS XE Software 3.7S 3.7.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184481">Cisco IOS XE Software 3.7S 3.7.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194730">Cisco IOS XE Software 3.7S 3.7.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194731">Cisco IOS XE Software 3.7S 3.7.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194732">Cisco IOS XE Software 3.7S 3.7.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202541">Cisco IOS XE Software 3.7S 3.7.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202542">Cisco IOS XE Software 3.7S 3.7.6S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206188">Cisco IOS XE Software 3.7S 3.7.7S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194735">Cisco IOS XE Software 3.8S 3.8.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194736">Cisco IOS XE Software 3.8S 3.8.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194737">Cisco IOS XE Software 3.8S 3.8.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194843">Cisco IOS XE Software 3.9S 3.9.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194842">Cisco IOS XE Software 3.9S 3.9.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202558">Cisco IOS XE Software 3.9S 3.9.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198123">Cisco IOS XE Software 3.10S 3.10.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198535">Cisco IOS XE Software 3.10S 3.10.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-198124">Cisco IOS XE Software 3.10S 3.10.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198125">Cisco IOS XE Software 3.10S 3.10.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202539">Cisco IOS XE Software 3.10S 3.10.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202540">Cisco IOS XE Software 3.10S 3.10.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206159">Cisco IOS XE Software 3.10S 3.10.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206189">Cisco IOS XE Software 3.10S 3.10.6S</FullProductName>
+    <FullProductName ProductID="CVRFPID-207269">Cisco IOS XE Software 3.10S 3.10.01S</FullProductName>
+    <FullProductName ProductID="CVRFPID-203353">Cisco IOS XE Software 3.11S 3.11.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200768">Cisco IOS XE Software 3.11S 3.11.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200771">Cisco IOS XE Software 3.11S 3.11.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206160">Cisco IOS XE Software 3.11S 3.11.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206190">Cisco IOS XE Software 3.11S 3.11.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200770">Cisco IOS XE Software 3.12S 3.12.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206161">Cisco IOS XE Software 3.12S 3.12.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206162">Cisco IOS XE Software 3.12S 3.12.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206176">Cisco IOS XE Software 3.12S 3.12.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-201495">Cisco IOS XE Software 3.13S 3.13.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206174">Cisco IOS XE Software 3.13S 3.13.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206175">Cisco IOS XE Software 3.13S 3.13.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210078">Cisco IOS XE Software 3.13S 3.13.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206178">Cisco IOS XE Software 3.14S 3.14.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206181">Cisco IOS XE Software 3.14S 3.14.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206191">Cisco IOS XE Software 3.14S 3.14.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206192">Cisco IOS XE Software 3.14S 3.14.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206193">Cisco IOS XE Software 3.14S 3.14.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206180">Cisco IOS XE Software 3.15S 3.15.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210079">Cisco IOS XE Software 3.15S 3.15.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210081">Cisco IOS XE Software 3.16S 3.16.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-212005">Cisco ASR 1000 Series Aggregation Services Routers 15.4(3)S</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS XE 3S Platforms Series root Shell License Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuv93130</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in one of the diagnostic commands in the Cisco IOS XE operating system for Cisco IOS XE 3S platforms could allow an authenticated, privileged, local attacker to gain restricted root shell access. The root shell is provided for advanced troubleshooting with Cisco Technical Assistance Center (TAC) engineers and requires a license. 
+
+
+
+The vulnerability occurs because the parameters to diagnostic commands at the command-line interface (CLI) are not properly validated. An attacker could exploit this vulnerability by authenticating to the affected device at privileged level 15 and providing crafted parameters to the diagnostic commands. An exploit could allow the authenticated, privileged attacker to bypass the license required for root shell access. If the authenticated user obtains root shell access, further compromise may be possible.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuv93130</Note>
+    </Notes>
+    <CVE>CVE-2015-6383</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-212005</ProductID>
+        <ProductID>CVRFPID-111948</ProductID>
+        <ProductID>CVRFPID-111950</ProductID>
+        <ProductID>CVRFPID-111952</ProductID>
+        <ProductID>CVRFPID-111954</ProductID>
+        <ProductID>CVRFPID-112446</ProductID>
+        <ProductID>CVRFPID-112447</ProductID>
+        <ProductID>CVRFPID-112448</ProductID>
+        <ProductID>CVRFPID-112449</ProductID>
+        <ProductID>CVRFPID-112450</ProductID>
+        <ProductID>CVRFPID-112451</ProductID>
+        <ProductID>CVRFPID-112452</ProductID>
+        <ProductID>CVRFPID-112453</ProductID>
+        <ProductID>CVRFPID-184469</ProductID>
+        <ProductID>CVRFPID-184470</ProductID>
+        <ProductID>CVRFPID-184471</ProductID>
+        <ProductID>CVRFPID-184472</ProductID>
+        <ProductID>CVRFPID-184473</ProductID>
+        <ProductID>CVRFPID-184474</ProductID>
+        <ProductID>CVRFPID-184475</ProductID>
+        <ProductID>CVRFPID-184476</ProductID>
+        <ProductID>CVRFPID-184477</ProductID>
+        <ProductID>CVRFPID-184480</ProductID>
+        <ProductID>CVRFPID-184481</ProductID>
+        <ProductID>CVRFPID-194728</ProductID>
+        <ProductID>CVRFPID-194729</ProductID>
+        <ProductID>CVRFPID-194730</ProductID>
+        <ProductID>CVRFPID-194731</ProductID>
+        <ProductID>CVRFPID-194732</ProductID>
+        <ProductID>CVRFPID-194735</ProductID>
+        <ProductID>CVRFPID-194736</ProductID>
+        <ProductID>CVRFPID-194737</ProductID>
+        <ProductID>CVRFPID-194842</ProductID>
+        <ProductID>CVRFPID-194843</ProductID>
+        <ProductID>CVRFPID-198123</ProductID>
+        <ProductID>CVRFPID-198124</ProductID>
+        <ProductID>CVRFPID-198125</ProductID>
+        <ProductID>CVRFPID-198535</ProductID>
+        <ProductID>CVRFPID-200768</ProductID>
+        <ProductID>CVRFPID-200770</ProductID>
+        <ProductID>CVRFPID-200771</ProductID>
+        <ProductID>CVRFPID-201495</ProductID>
+        <ProductID>CVRFPID-202539</ProductID>
+        <ProductID>CVRFPID-202540</ProductID>
+        <ProductID>CVRFPID-202541</ProductID>
+        <ProductID>CVRFPID-202542</ProductID>
+        <ProductID>CVRFPID-202558</ProductID>
+        <ProductID>CVRFPID-203353</ProductID>
+        <ProductID>CVRFPID-206159</ProductID>
+        <ProductID>CVRFPID-206160</ProductID>
+        <ProductID>CVRFPID-206161</ProductID>
+        <ProductID>CVRFPID-206162</ProductID>
+        <ProductID>CVRFPID-206174</ProductID>
+        <ProductID>CVRFPID-206175</ProductID>
+        <ProductID>CVRFPID-206176</ProductID>
+        <ProductID>CVRFPID-206178</ProductID>
+        <ProductID>CVRFPID-206180</ProductID>
+        <ProductID>CVRFPID-206181</ProductID>
+        <ProductID>CVRFPID-206184</ProductID>
+        <ProductID>CVRFPID-206185</ProductID>
+        <ProductID>CVRFPID-206186</ProductID>
+        <ProductID>CVRFPID-206187</ProductID>
+        <ProductID>CVRFPID-206188</ProductID>
+        <ProductID>CVRFPID-206189</ProductID>
+        <ProductID>CVRFPID-206190</ProductID>
+        <ProductID>CVRFPID-206191</ProductID>
+        <ProductID>CVRFPID-206192</ProductID>
+        <ProductID>CVRFPID-206193</ProductID>
+        <ProductID>CVRFPID-207269</ProductID>
+        <ProductID>CVRFPID-210067</ProductID>
+        <ProductID>CVRFPID-210069</ProductID>
+        <ProductID>CVRFPID-210078</ProductID>
+        <ProductID>CVRFPID-210079</ProductID>
+        <ProductID>CVRFPID-210081</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.8</BaseScore>
+        <TemporalScore>5.6</TemporalScore>
+        <Vector>AV:L/AC:L/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>The diagnostic commands can be blocked at the CLI using TACACS+ command authorization. The list of commands to be blocked and instructions for implementation are at the following link:
+
+
+
+http://www.cisco.com/web/about/security/intelligence/ios-xe-integrity-assurance.html#_Toc392234313["http://www.cisco.com/web/about/security/intelligence/ios-xe-integrity-assurance.html#_Toc392234313"]
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151130-iosxe3s</URL>
+        <Description>Cisco IOS XE 3S Platforms Series root Shell License Bypass Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

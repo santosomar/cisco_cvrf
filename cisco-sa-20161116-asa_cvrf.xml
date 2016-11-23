@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco ASA Input Validation File Injection Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161116-asa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-11-14T16:40:32</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-11-16T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-11-14T16:40:32</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the HTTP web-based management interface of the Cisco Adaptive Security Appliance (ASA) could allow an unauthenticated, remote attacker to inject arbitrary XML commands on the affected system.
+
+
+
+The vulnerability is due to improper user input validation. An attacker could exploit this vulnerability by crafting XML input into the affected fields of the web interface. An exploit could allow the attacker to impact the integrity of the device data.
+
+
+
+There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161116-asa["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161116-asa"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161116-asa</URL>
+      <Description>Cisco ASA Input Validation File Injection Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-211059">Cisco Adaptive Security Appliance (ASA) Software 9.1.6.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-220448">Cisco Adaptive Security Appliance (ASA) Software 9.1.7.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-220996">Cisco Adaptive Security Appliance (ASA) Software 9.1.7.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-220997">Cisco Adaptive Security Appliance (ASA) Software 9.1.7.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-220998">Cisco Adaptive Security Appliance (ASA) Software 9.1.7.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-220999">Cisco Adaptive Security Appliance (ASA) Software 9.1.7.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-221000">Cisco Adaptive Security Appliance (ASA) Software 9.1.7.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-202938">Cisco Adaptive Security Appliance (ASA) Software 9.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202946">Cisco Adaptive Security Appliance (ASA) Software 9.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-202947">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-202948">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-204544">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-202949">Cisco Adaptive Security Appliance (ASA) Software 9.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206489">Cisco Adaptive Security Appliance (ASA) Software 9.2.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206490">Cisco Adaptive Security Appliance (ASA) Software 9.2.3.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-207903">Cisco Adaptive Security Appliance (ASA) Software 9.2(0.0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207904">Cisco Adaptive Security Appliance (ASA) Software 9.2(0.104)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207905">Cisco Adaptive Security Appliance (ASA) Software 9.2(3.1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210984">Cisco Adaptive Security Appliance (ASA) Software 9.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-212707">Cisco Adaptive Security Appliance (ASA) Software 9.2.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-212708">Cisco Adaptive Security Appliance (ASA) Software 9.2.4.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-221001">Cisco Adaptive Security Appliance (ASA) Software 9.2.4.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-221002">Cisco Adaptive Security Appliance (ASA) Software 9.2.4.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-221003">Cisco Adaptive Security Appliance (ASA) Software 9.2.4.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-221004">Cisco Adaptive Security Appliance (ASA) Software 9.2.4.14</FullProductName>
+    <FullProductName ProductID="CVRFPID-221005">Cisco Adaptive Security Appliance (ASA) Software 9.2.4.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-221006">Cisco Adaptive Security Appliance (ASA) Software 9.2.4.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-202940">Cisco Adaptive Security Appliance (ASA) Software 9.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202944">Cisco Adaptive Security Appliance (ASA) Software 9.3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207901">Cisco Adaptive Security Appliance (ASA) Software 9.3(1.105)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209613">Cisco Adaptive Security Appliance (ASA) Software 9.3(1.50)</FullProductName>
+    <FullProductName ProductID="CVRFPID-202945">Cisco Adaptive Security Appliance (ASA) Software 9.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-207902">Cisco Adaptive Security Appliance (ASA) Software 9.3(2.100)</FullProductName>
+    <FullProductName ProductID="CVRFPID-206487">Cisco Adaptive Security Appliance (ASA) Software 9.3.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-208643">Cisco Adaptive Security Appliance (ASA) Software 9.3(2.243)</FullProductName>
+    <FullProductName ProductID="CVRFPID-206488">Cisco Adaptive Security Appliance (ASA) Software 9.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-211050">Cisco Adaptive Security Appliance (ASA) Software 9.3.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-211057">Cisco Adaptive Security Appliance (ASA) Software 9.3.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-211058">Cisco Adaptive Security Appliance (ASA) Software 9.3.3.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-212706">Cisco Adaptive Security Appliance (ASA) Software 9.3.3.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-221007">Cisco Adaptive Security Appliance (ASA) Software 9.3.3.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-221008">Cisco Adaptive Security Appliance (ASA) Software 9.3.3.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-221009">Cisco Adaptive Security Appliance (ASA) Software 9.3.3.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-210985">Cisco Adaptive Security Appliance (ASA) Software 9.3.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-206486">Cisco Adaptive Security Appliance (ASA) Software 9.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207900">Cisco Adaptive Security Appliance (ASA) Software 9.4.0.115</FullProductName>
+    <FullProductName ProductID="CVRFPID-208301">Cisco Adaptive Security Appliance (ASA) Software 9.4.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-211056">Cisco Adaptive Security Appliance (ASA) Software 9.4.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-211055">Cisco Adaptive Security Appliance (ASA) Software 9.4.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-211054">Cisco Adaptive Security Appliance (ASA) Software 9.4.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-210986">Cisco Adaptive Security Appliance (ASA) Software 9.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-212705">Cisco Adaptive Security Appliance (ASA) Software 9.4.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-221010">Cisco Adaptive Security Appliance (ASA) Software 9.4.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-221011">Cisco Adaptive Security Appliance (ASA) Software 9.4.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-221012">Cisco Adaptive Security Appliance (ASA) Software 9.4.3.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-221013">Cisco Adaptive Security Appliance (ASA) Software 9.4.3.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-221014">Cisco Adaptive Security Appliance (ASA) Software 9.4.3.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-221015">Cisco Adaptive Security Appliance (ASA) Software 9.4.3.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-221016">Cisco Adaptive Security Appliance (ASA) Software 9.4.3.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-221017">Cisco Adaptive Security Appliance (ASA) Software 9.4.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-212614">Cisco Adaptive Security Appliance (ASA) Software 9.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-212704">Cisco Adaptive Security Appliance (ASA) Software 9.5.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-221018">Cisco Adaptive Security Appliance (ASA) Software 9.5.2.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-221019">Cisco Adaptive Security Appliance (ASA) Software 9.5.2.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-221020">Cisco Adaptive Security Appliance (ASA) Software 9.5.2.14</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ASA Input Validation File Injection Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCva38556</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the HTTP web-based management interface of the Cisco Adaptive Security Appliance (ASA) could allow an unauthenticated, remote attacker to inject arbitrary XML commands on the affected system.
+
+
+
+The vulnerability is due to improper user input validation. An attacker could exploit this vulnerability by crafting XML input into the affected fields of the web interface. An exploit could allow the attacker to impact the integrity of the device data.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCva38556</Note>
+    </Notes>
+    <CVE>CVE-2016-6461</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-202938</ProductID>
+        <ProductID>CVRFPID-202940</ProductID>
+        <ProductID>CVRFPID-202944</ProductID>
+        <ProductID>CVRFPID-202945</ProductID>
+        <ProductID>CVRFPID-202946</ProductID>
+        <ProductID>CVRFPID-202947</ProductID>
+        <ProductID>CVRFPID-202948</ProductID>
+        <ProductID>CVRFPID-202949</ProductID>
+        <ProductID>CVRFPID-204544</ProductID>
+        <ProductID>CVRFPID-206486</ProductID>
+        <ProductID>CVRFPID-206487</ProductID>
+        <ProductID>CVRFPID-206488</ProductID>
+        <ProductID>CVRFPID-206489</ProductID>
+        <ProductID>CVRFPID-206490</ProductID>
+        <ProductID>CVRFPID-207900</ProductID>
+        <ProductID>CVRFPID-207901</ProductID>
+        <ProductID>CVRFPID-207902</ProductID>
+        <ProductID>CVRFPID-207903</ProductID>
+        <ProductID>CVRFPID-207904</ProductID>
+        <ProductID>CVRFPID-207905</ProductID>
+        <ProductID>CVRFPID-208301</ProductID>
+        <ProductID>CVRFPID-208643</ProductID>
+        <ProductID>CVRFPID-209613</ProductID>
+        <ProductID>CVRFPID-210984</ProductID>
+        <ProductID>CVRFPID-210985</ProductID>
+        <ProductID>CVRFPID-210986</ProductID>
+        <ProductID>CVRFPID-211050</ProductID>
+        <ProductID>CVRFPID-211054</ProductID>
+        <ProductID>CVRFPID-211055</ProductID>
+        <ProductID>CVRFPID-211056</ProductID>
+        <ProductID>CVRFPID-211057</ProductID>
+        <ProductID>CVRFPID-211058</ProductID>
+        <ProductID>CVRFPID-211059</ProductID>
+        <ProductID>CVRFPID-212614</ProductID>
+        <ProductID>CVRFPID-212704</ProductID>
+        <ProductID>CVRFPID-212705</ProductID>
+        <ProductID>CVRFPID-212706</ProductID>
+        <ProductID>CVRFPID-212707</ProductID>
+        <ProductID>CVRFPID-212708</ProductID>
+        <ProductID>CVRFPID-220448</ProductID>
+        <ProductID>CVRFPID-220996</ProductID>
+        <ProductID>CVRFPID-220997</ProductID>
+        <ProductID>CVRFPID-220998</ProductID>
+        <ProductID>CVRFPID-220999</ProductID>
+        <ProductID>CVRFPID-221000</ProductID>
+        <ProductID>CVRFPID-221001</ProductID>
+        <ProductID>CVRFPID-221002</ProductID>
+        <ProductID>CVRFPID-221003</ProductID>
+        <ProductID>CVRFPID-221004</ProductID>
+        <ProductID>CVRFPID-221005</ProductID>
+        <ProductID>CVRFPID-221006</ProductID>
+        <ProductID>CVRFPID-221007</ProductID>
+        <ProductID>CVRFPID-221008</ProductID>
+        <ProductID>CVRFPID-221009</ProductID>
+        <ProductID>CVRFPID-221010</ProductID>
+        <ProductID>CVRFPID-221011</ProductID>
+        <ProductID>CVRFPID-221012</ProductID>
+        <ProductID>CVRFPID-221013</ProductID>
+        <ProductID>CVRFPID-221014</ProductID>
+        <ProductID>CVRFPID-221015</ProductID>
+        <ProductID>CVRFPID-221016</ProductID>
+        <ProductID>CVRFPID-221017</ProductID>
+        <ProductID>CVRFPID-221018</ProductID>
+        <ProductID>CVRFPID-221019</ProductID>
+        <ProductID>CVRFPID-221020</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>3.4</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:P/A:N/E:POC/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161116-asa</URL>
+        <Description>Cisco ASA Input Validation File Injection Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

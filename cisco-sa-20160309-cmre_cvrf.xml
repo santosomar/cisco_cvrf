@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Cable Modem with Digital Voice Remote Code Execution Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160309-cmre</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-03-09T14:02:22</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-03-09T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-03-09T14:02:22</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the web server used in the Cisco Cable Modem with Digital Voice Model DPC2203 could allow an unauthenticated, remote attacker to exploit a buffer overflow and cause arbitrary code execution.
+
+
+
+The vulnerability is due to improper input validation for HTTP requests. An attacker could exploit this vulnerability by sending a crafted HTTP request to the affected device.
+
+
+
+Cisco has released software updates to its service provider customers that address the vulnerability described in this advisory. Prior to contacting Cisco TAC, customers are advised to contact their service providers to confirm the software deployed by the service provider includes the fix that addresses this vulnerability. Workarounds that mitigate this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160309-cmre["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160309-cmre"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160309-cmre</URL>
+      <Description>Cisco Cable Modem with Digital Voice Remote Code Execution Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-213502">Cisco DPC2203 Cable Modem Firmware r1_customer_image Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-213499">Cisco EPC2203 Cable Modem Firmware r1_customer_image Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco DPC2203 Remote Code Execution Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuv05935</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web server used in the Cisco Cable Modem with Digital Voice Model DPC2203 could allow an unauthenticated, remote attacker to exploit a buffer overflow and cause arbitrary code execution.
+
+
+
+The vulnerability is due to improper input validation for HTTP requests. An attacker could exploit this vulnerability by sending a crafted HTTP request to the affected device.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuv05935</Note>
+    </Notes>
+    <CVE>CVE-2016-1327</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-213502</ProductID>
+        <ProductID>CVRFPID-213499</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160309-cmre</URL>
+        <Description>Cisco Cable Modem with Digital Voice Remote Code Execution Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

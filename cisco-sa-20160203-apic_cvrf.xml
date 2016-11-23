@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160203-apic</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-02-03T15:24:28</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-02-03T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-02-03T15:24:28</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the role-based access control (RBAC) of the Cisco Application Policy Infrastructure Controller (APIC) could allow an authenticated remote user to make configuration changes outside of their configured access privileges.  
+
+
+
+The vulnerability is due to eligibility logic in the RBAC processing code. An authenticated user could exploit this vulnerability by sending specially crafted representational state transfer (REST) requests to the APIC. An exploit could allow the authenticated user to make configuration changes to the APIC beyond the configured privilege for their role.
+
+
+
+Cisco has released software updates that address this vulnerability. 
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-apic["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-apic"]
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-apic</URL>
+      <Description>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-202555">Cisco Application Policy Infrastructure Controller (APIC) 1.0(1e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208569">Cisco Application Policy Infrastructure Controller (APIC) 1.0(1h)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208570">Cisco Application Policy Infrastructure Controller (APIC) 1.0(1k)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208571">Cisco Application Policy Infrastructure Controller (APIC) 1.0(1n)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208572">Cisco Application Policy Infrastructure Controller (APIC) 1.0(2j)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208573">Cisco Application Policy Infrastructure Controller (APIC) 1.0(2m)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208574">Cisco Application Policy Infrastructure Controller (APIC) 1.0(3f)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212315">Cisco Application Policy Infrastructure Controller (APIC) 1.1(0.920a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-201603">Cisco NX-OS Software for Nexus 9000 Series Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-202735">Cisco NX-OS Software for Nexus 9000 Series 11.0(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-202736">Cisco NX-OS Software for Nexus 9000 Series 11.0(1c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208584">Cisco NX-OS Software for Nexus 9000 Series 11.0(1d)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208585">Cisco NX-OS Software for Nexus 9000 Series 11.0(1e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208586">Cisco NX-OS Software for Nexus 9000 Series 11.0(2j)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208587">Cisco NX-OS Software for Nexus 9000 Series 11.0(2m)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208588">Cisco NX-OS Software for Nexus 9000 Series 11.0(3f)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCut12998</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the role-based access control (RBAC) of the Cisco Application Policy Infrastructure Controller (APIC) could allow an authenticated remote user to make configuration changes outside of their configured access privileges.  
+
+
+
+The vulnerability is due to eligibility logic in the RBAC processing code. An authenticated user could exploit this vulnerability by sending specially crafted representational state transfer (REST) requests to the APIC. An exploit could allow the authenticated user to make configuration changes to the APIC beyond the configured privilege for their role.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCut12998</Note>
+    </Notes>
+    <CVE>CVE-2016-1302</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-202555</ProductID>
+        <ProductID>CVRFPID-208569</ProductID>
+        <ProductID>CVRFPID-208570</ProductID>
+        <ProductID>CVRFPID-208571</ProductID>
+        <ProductID>CVRFPID-208572</ProductID>
+        <ProductID>CVRFPID-208573</ProductID>
+        <ProductID>CVRFPID-208574</ProductID>
+        <ProductID>CVRFPID-212315</ProductID>
+        <ProductID>CVRFPID-201603</ProductID>
+        <ProductID>CVRFPID-202735</ProductID>
+        <ProductID>CVRFPID-202736</ProductID>
+        <ProductID>CVRFPID-208584</ProductID>
+        <ProductID>CVRFPID-208585</ProductID>
+        <ProductID>CVRFPID-208586</ProductID>
+        <ProductID>CVRFPID-208587</ProductID>
+        <ProductID>CVRFPID-208588</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>8.5</BaseScore>
+        <TemporalScore>7.0</TemporalScore>
+        <Vector>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-apic</URL>
+        <Description>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

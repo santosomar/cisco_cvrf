@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Access Point Memory Exhaustion from ARP Attacks</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20060112-wireless</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2006-01-12T16:00:00</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2006-01-12T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2006-01-12T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20060112-wireless</URL>
+      <Description>Access Point Memory Exhaustion from ARP Attacks</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-37240">Cisco Aironet 350 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56036">Cisco Aironet 1100 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56035">Cisco Aironet 1130AG Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-40536">Cisco Aironet 1200 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56033">Cisco Aironet 1230AG Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56032">Cisco Aironet 1240AG Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56031">Cisco Aironet 1310 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56058">Cisco Aironet 1400 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56037">Cisco IOS 12.3(2)JA</FullProductName>
+    <FullProductName ProductID="CVRFPID-56038">Cisco IOS 12.3(2)JA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-56039">Cisco IOS 12.3(2)JA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-56040">Cisco IOS 12.3(2)JA3</FullProductName>
+    <FullProductName ProductID="CVRFPID-56041">Cisco IOS 12.3(2)JA4</FullProductName>
+    <FullProductName ProductID="CVRFPID-56042">Cisco IOS 12.3(2)JA5</FullProductName>
+    <FullProductName ProductID="CVRFPID-56051">Cisco IOS 12.3(4)JA</FullProductName>
+    <FullProductName ProductID="CVRFPID-56050">Cisco IOS 12.3(4)JA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-56054">Cisco IOS 12.3(7)JA</FullProductName>
+    <FullProductName ProductID="CVRFPID-56053">Cisco IOS 12.3(7)JA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-56043">Cisco IOS 12.3(2)JK</FullProductName>
+    <FullProductName ProductID="CVRFPID-56044">Cisco IOS 12.3(2)JK1</FullProductName>
+    <FullProductName ProductID="CVRFPID-56055">Cisco IOS 12.3(7)JX</FullProductName>
+    <FullProductName ProductID="CVRFPID-56056">Cisco IOS 12.3(7)JX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-56052">Cisco IOS 12.3(7)JX2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Aironet Wireless Access Point ARP Message Denial of Service Issue</Title>
+    <CVE>CVE-2006-0354</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-37240</ProductID>
+        <ProductID>CVRFPID-40536</ProductID>
+        <ProductID>CVRFPID-56031</ProductID>
+        <ProductID>CVRFPID-56032</ProductID>
+        <ProductID>CVRFPID-56033</ProductID>
+        <ProductID>CVRFPID-56035</ProductID>
+        <ProductID>CVRFPID-56036</ProductID>
+        <ProductID>CVRFPID-56058</ProductID>
+        <ProductID>CVRFPID-56037</ProductID>
+        <ProductID>CVRFPID-56038</ProductID>
+        <ProductID>CVRFPID-56039</ProductID>
+        <ProductID>CVRFPID-56040</ProductID>
+        <ProductID>CVRFPID-56041</ProductID>
+        <ProductID>CVRFPID-56042</ProductID>
+        <ProductID>CVRFPID-56043</ProductID>
+        <ProductID>CVRFPID-56044</ProductID>
+        <ProductID>CVRFPID-56050</ProductID>
+        <ProductID>CVRFPID-56051</ProductID>
+        <ProductID>CVRFPID-56052</ProductID>
+        <ProductID>CVRFPID-56053</ProductID>
+        <ProductID>CVRFPID-56054</ProductID>
+        <ProductID>CVRFPID-56055</ProductID>
+        <ProductID>CVRFPID-56056</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20060112-wireless</URL>
+        <Description>Access Point Memory Exhaustion from ARP Attacks</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

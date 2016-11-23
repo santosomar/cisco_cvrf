@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Heap Overflow in Solaris cachefs Daemon</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20020724-solaris-cachefs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2002-07-24T16:00:00</Date>
+        <Description>Update to Details section</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2002-07-24T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2002-07-24T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20020724-solaris-cachefs</URL>
+      <Description>Heap Overflow in Solaris cachefs Daemon</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-36937">Cisco BAMS - Billing and Management Server Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38372">Cisco Cable Manager Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38318">Cisco DSL Manager Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38427">Cisco Element Management Framework (Cisco EMF) Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38343">Cisco Element Manager Software Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-33949">Cisco IP Manager Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38295">Cisco Manager 12000 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38379">Cisco Media Gateway Manager (MGM) Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38409">Cisco Cisco Media Gateway Controller (MGC) Node Manager Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34242">Cisco PGW 2200 Softswitch Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38328">Cisco Router Series Series 7400 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38347">Cisco Router Series Series 7600 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36898">Cisco SC 2200 Signaling Controller Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35532">Cisco Secure Access Control Server (ACS) for UNIX Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35644">Cisco Secure Access Control Server (ACS) for UNIX 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35461">Cisco Secure Access Control Server (ACS) for UNIX 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35464">Cisco Secure Access Control Server (ACS) for UNIX 2.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35481">Cisco Secure Access Control Server (ACS) for UNIX 2.1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35235">Cisco Secure Access Control Server (ACS) for UNIX 2.2.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35495">Cisco Secure Access Control Server (ACS) for UNIX 2.2.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35955">Cisco Secure Access Control Server (ACS) for UNIX 2.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35499">Cisco Secure Access Control Server (ACS) for UNIX 2.3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35516">Cisco Secure Access Control Server (ACS) for UNIX 2.3.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35524">Cisco Secure Access Control Server (ACS) for UNIX 2.3.5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38384">Cisco Universal Gateway Manager 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36911">Cisco Virtual Switch Controller VSC3000 Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37005">Cisco Voice Services Provisioning Tool (VSPT) Original Release Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Sun Solaris cachefsd Multiple Vulnerabilities</Title>
+    <CVE>CVE-2002-0033</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-36937</ProductID>
+        <ProductID>CVRFPID-38372</ProductID>
+        <ProductID>CVRFPID-38318</ProductID>
+        <ProductID>CVRFPID-38427</ProductID>
+        <ProductID>CVRFPID-38343</ProductID>
+        <ProductID>CVRFPID-33949</ProductID>
+        <ProductID>CVRFPID-38295</ProductID>
+        <ProductID>CVRFPID-38379</ProductID>
+        <ProductID>CVRFPID-38409</ProductID>
+        <ProductID>CVRFPID-34242</ProductID>
+        <ProductID>CVRFPID-38328</ProductID>
+        <ProductID>CVRFPID-38347</ProductID>
+        <ProductID>CVRFPID-36898</ProductID>
+        <ProductID>CVRFPID-35235</ProductID>
+        <ProductID>CVRFPID-35461</ProductID>
+        <ProductID>CVRFPID-35464</ProductID>
+        <ProductID>CVRFPID-35481</ProductID>
+        <ProductID>CVRFPID-35495</ProductID>
+        <ProductID>CVRFPID-35499</ProductID>
+        <ProductID>CVRFPID-35516</ProductID>
+        <ProductID>CVRFPID-35524</ProductID>
+        <ProductID>CVRFPID-35532</ProductID>
+        <ProductID>CVRFPID-35644</ProductID>
+        <ProductID>CVRFPID-35955</ProductID>
+        <ProductID>CVRFPID-38384</ProductID>
+        <ProductID>CVRFPID-36911</ProductID>
+        <ProductID>CVRFPID-37005</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20020724-solaris-cachefs</URL>
+        <Description>Heap Overflow in Solaris cachefs Daemon</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

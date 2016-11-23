@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco TelePresence Video Communication Server (VCS) Expressway Privilege Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151006-vcs</ID>
+    </Identification>
+    <Status>Interim</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-10-06T14:53:04</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-10-06T00:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-10-06T14:53:04</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the process management code of the Cisco TelePresence Video Communication Server (VCS) Expressway could allow an authenticated, local attacker to run arbitrary programs with elevated privileges.
+
+
+
+The vulnerability is due to the failure to protect a supervised process. An attacker could exploit this vulnerability by completing a series of steps that ultimately allows a lower-privileged process to be restarted with root privilege. An attacker would need to crash a firestarter.py supervised process before the privilege is escalated after the process is restarted. A successful exploit could allow the attacker to gain elevated privileges on the device, which could result in a complete system compromise.
+
+
+
+Cisco has not released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are not available.
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151006-vcs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151006-vcs"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151006-vcs</URL>
+      <Description>Cisco TelePresence Video Communication Server (VCS) Expressway Privilege Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-209639">Cisco TelePresence Video Communication Server (VCS) Expressway X8.5.2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco TelePresence Video Communication Server (VCS) Expressway Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuv12272</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the process management code of the Cisco TelePresence Video Communication Server (VCS) Expressway could allow an authenticated, local attacker to run arbitrary programs with elevated privileges.
+
+
+
+The vulnerability is due to the failure to protect a supervised process. An attacker could exploit this vulnerability by completing a series of steps that ultimately allows a lower-privileged process to be restarted with root privilege. An attacker would need to crash a firestarter.py supervised process before the privilege is escalated after the process is restarted. A successful exploit could allow the attacker to gain elevated privileges on the device, which could result in a complete system compromise.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuv12272</Note>
+    </Notes>
+    <CVE>CVE-2015-4325</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-209639</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.6</BaseScore>
+        <TemporalScore>5.9</TemporalScore>
+        <Vector>AV:L/AC:M/Au:S/C:C/I:C/A:C/E:POC/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>No workarounds are available.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151006-vcs</URL>
+        <Description>Cisco TelePresence Video Communication Server (VCS) Expressway Privilege Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

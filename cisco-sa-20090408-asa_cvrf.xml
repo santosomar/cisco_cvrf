@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in Cisco ASA Adaptive Security Appliance and Cisco PIX Security Appliances</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20090408-asa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2009-04-08T16:00:00</Date>
+        <Description>Changed recommended release from 8.1(2)16 to 8.1(2)19 in Crafted
+			 HTTP packet DoS Vulnerability section of software table.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2009-04-08T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2009-04-08T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090408-asa</URL>
+      <Description>Multiple Vulnerabilities in Cisco ASA Adaptive Security Appliance and Cisco PIX Security Appliances</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090408-asa</URL>
+      <Description>Identifying and Mitigating Exploitation of the Multiple Vulnerabilities in Cisco ASA Adaptive Security Appliance and Cisco PIX Security Appliances</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090408-asa</URL>
+      <Description>Identifying and Mitigating Exploitation of the Multiple Vulnerabilities in Cisco ASA Adaptive Security Appliance and Cisco PIX Security Appliances</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-54556">Cisco Adaptive Security Appliance (ASA) Software 7.0.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-54555">Cisco Adaptive Security Appliance (ASA) Software 7.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-55255">Cisco Adaptive Security Appliance (ASA) Software 7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-55256">Cisco Adaptive Security Appliance (ASA) Software 7.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-55253">Cisco Adaptive Security Appliance (ASA) Software 7.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-55254">Cisco Adaptive Security Appliance (ASA) Software 7.0.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-91018">Cisco Adaptive Security Appliance (ASA) Software 7.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-91017">Cisco Adaptive Security Appliance (ASA) Software 7.0.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-91016">Cisco Adaptive Security Appliance (ASA) Software 7.0.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-70758">Cisco Adaptive Security Appliance (ASA) Software 7.0.7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-91015">Cisco Adaptive Security Appliance (ASA) Software 7.0.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-91014">Cisco Adaptive Security Appliance (ASA) Software 7.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-70759">Cisco Adaptive Security Appliance (ASA) Software 7.1.2.61</FullProductName>
+    <FullProductName ProductID="CVRFPID-91091">Cisco Adaptive Security Appliance (ASA) Software 7.1.2.81</FullProductName>
+    <FullProductName ProductID="CVRFPID-91013">Cisco Adaptive Security Appliance (ASA) Software 7.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-70764">Cisco Adaptive Security Appliance (ASA) Software 7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-70760">Cisco Adaptive Security Appliance (ASA) Software 7.2.2.34</FullProductName>
+    <FullProductName ProductID="CVRFPID-91012">Cisco Adaptive Security Appliance (ASA) Software 7.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-70763">Cisco Adaptive Security Appliance (ASA) Software 7.2.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-91011">Cisco Adaptive Security Appliance (ASA) Software 7.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-91089">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.27</FullProductName>
+    <FullProductName ProductID="CVRFPID-91006">Cisco Adaptive Security Appliance (ASA) Software 8.0.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-91005">Cisco Adaptive Security Appliance (ASA) Software 8.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-70761">Cisco Adaptive Security Appliance (ASA) Software 8.0.2.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-91004">Cisco Adaptive Security Appliance (ASA) Software 8.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-91003">Cisco Adaptive Security Appliance (ASA) Software 8.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-91021">Cisco Adaptive Security Appliance (ASA) Software 8.0.4.25</FullProductName>
+    <FullProductName ProductID="CVRFPID-91009">Cisco Adaptive Security Appliance (ASA) Software 8.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-91010">Cisco Adaptive Security Appliance (ASA) Software 8.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-91019">Cisco Adaptive Security Appliance (ASA) Software 8.1.2.15</FullProductName>
+    <FullProductName ProductID="CVRFPID-91020">Cisco Adaptive Security Appliance (ASA) Software 8.1.2.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-81211">Cisco PIX Security Appliance Software 7.0(8)</FullProductName>
+    <FullProductName ProductID="CVRFPID-81209">Cisco PIX Security Appliance Software 7.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-91094">Cisco PIX Security Appliance Software 7.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-81206">Cisco PIX Security Appliance Software 7.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-81207">Cisco PIX Security Appliance Software 7.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88050">Cisco PIX Security Appliance Software 7.2(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-81215">Cisco PIX Security Appliance Software 8.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88051">Cisco PIX Security Appliance Software 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-88052">Cisco PIX Security Appliance Software 8.0(4)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ASA and Cisco PIX Security Appliances H.323 Inspection Denial of Service Vulnerability</Title>
+    <CVE>CVE-2009-1158</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-54555</ProductID>
+        <ProductID>CVRFPID-54556</ProductID>
+        <ProductID>CVRFPID-55253</ProductID>
+        <ProductID>CVRFPID-55254</ProductID>
+        <ProductID>CVRFPID-55255</ProductID>
+        <ProductID>CVRFPID-55256</ProductID>
+        <ProductID>CVRFPID-70758</ProductID>
+        <ProductID>CVRFPID-70759</ProductID>
+        <ProductID>CVRFPID-70760</ProductID>
+        <ProductID>CVRFPID-70761</ProductID>
+        <ProductID>CVRFPID-70763</ProductID>
+        <ProductID>CVRFPID-70764</ProductID>
+        <ProductID>CVRFPID-91003</ProductID>
+        <ProductID>CVRFPID-91004</ProductID>
+        <ProductID>CVRFPID-91005</ProductID>
+        <ProductID>CVRFPID-91006</ProductID>
+        <ProductID>CVRFPID-91009</ProductID>
+        <ProductID>CVRFPID-91010</ProductID>
+        <ProductID>CVRFPID-91011</ProductID>
+        <ProductID>CVRFPID-91012</ProductID>
+        <ProductID>CVRFPID-91013</ProductID>
+        <ProductID>CVRFPID-91014</ProductID>
+        <ProductID>CVRFPID-91015</ProductID>
+        <ProductID>CVRFPID-91016</ProductID>
+        <ProductID>CVRFPID-91017</ProductID>
+        <ProductID>CVRFPID-91018</ProductID>
+        <ProductID>CVRFPID-91091</ProductID>
+        <ProductID>CVRFPID-81206</ProductID>
+        <ProductID>CVRFPID-81207</ProductID>
+        <ProductID>CVRFPID-81209</ProductID>
+        <ProductID>CVRFPID-81211</ProductID>
+        <ProductID>CVRFPID-81215</ProductID>
+        <ProductID>CVRFPID-88050</ProductID>
+        <ProductID>CVRFPID-88051</ProductID>
+        <ProductID>CVRFPID-88052</ProductID>
+        <ProductID>CVRFPID-91094</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090408-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco ASA Adaptive Security Appliance and Cisco PIX Security Appliances</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX and Cisco ASA VPN Authentication Bypass Vulnerability</Title>
+    <CVE>CVE-2009-1155</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-70759</ProductID>
+        <ProductID>CVRFPID-70760</ProductID>
+        <ProductID>CVRFPID-70761</ProductID>
+        <ProductID>CVRFPID-70763</ProductID>
+        <ProductID>CVRFPID-70764</ProductID>
+        <ProductID>CVRFPID-91003</ProductID>
+        <ProductID>CVRFPID-91004</ProductID>
+        <ProductID>CVRFPID-91005</ProductID>
+        <ProductID>CVRFPID-91006</ProductID>
+        <ProductID>CVRFPID-91009</ProductID>
+        <ProductID>CVRFPID-91010</ProductID>
+        <ProductID>CVRFPID-91011</ProductID>
+        <ProductID>CVRFPID-91012</ProductID>
+        <ProductID>CVRFPID-91013</ProductID>
+        <ProductID>CVRFPID-91014</ProductID>
+        <ProductID>CVRFPID-91091</ProductID>
+        <ProductID>CVRFPID-81206</ProductID>
+        <ProductID>CVRFPID-81207</ProductID>
+        <ProductID>CVRFPID-81209</ProductID>
+        <ProductID>CVRFPID-81215</ProductID>
+        <ProductID>CVRFPID-88050</ProductID>
+        <ProductID>CVRFPID-88051</ProductID>
+        <ProductID>CVRFPID-88052</ProductID>
+        <ProductID>CVRFPID-91094</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.8</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:N/A:N/E:H/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090408-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco ASA Adaptive Security Appliance and Cisco PIX Security Appliances</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ASA Crafted HTTP Packet DoS Vulnerability</Title>
+    <CVE>CVE-2009-1156</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-70761</ProductID>
+        <ProductID>CVRFPID-91003</ProductID>
+        <ProductID>CVRFPID-91004</ProductID>
+        <ProductID>CVRFPID-91005</ProductID>
+        <ProductID>CVRFPID-91006</ProductID>
+        <ProductID>CVRFPID-91009</ProductID>
+        <ProductID>CVRFPID-91010</ProductID>
+        <ProductID>CVRFPID-91021</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090408-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco ASA Adaptive Security Appliance and Cisco PIX Security Appliances</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX and Cisco ASA TCP Packet Processing Denial Of Service Vulnerability</Title>
+    <CVE>CVE-2009-1157</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-54555</ProductID>
+        <ProductID>CVRFPID-54556</ProductID>
+        <ProductID>CVRFPID-55253</ProductID>
+        <ProductID>CVRFPID-55254</ProductID>
+        <ProductID>CVRFPID-55255</ProductID>
+        <ProductID>CVRFPID-55256</ProductID>
+        <ProductID>CVRFPID-70758</ProductID>
+        <ProductID>CVRFPID-70759</ProductID>
+        <ProductID>CVRFPID-70760</ProductID>
+        <ProductID>CVRFPID-70761</ProductID>
+        <ProductID>CVRFPID-70763</ProductID>
+        <ProductID>CVRFPID-70764</ProductID>
+        <ProductID>CVRFPID-91003</ProductID>
+        <ProductID>CVRFPID-91004</ProductID>
+        <ProductID>CVRFPID-91005</ProductID>
+        <ProductID>CVRFPID-91006</ProductID>
+        <ProductID>CVRFPID-91009</ProductID>
+        <ProductID>CVRFPID-91010</ProductID>
+        <ProductID>CVRFPID-91011</ProductID>
+        <ProductID>CVRFPID-91012</ProductID>
+        <ProductID>CVRFPID-91013</ProductID>
+        <ProductID>CVRFPID-91014</ProductID>
+        <ProductID>CVRFPID-91015</ProductID>
+        <ProductID>CVRFPID-91016</ProductID>
+        <ProductID>CVRFPID-91017</ProductID>
+        <ProductID>CVRFPID-91018</ProductID>
+        <ProductID>CVRFPID-91019</ProductID>
+        <ProductID>CVRFPID-91020</ProductID>
+        <ProductID>CVRFPID-91021</ProductID>
+        <ProductID>CVRFPID-91089</ProductID>
+        <ProductID>CVRFPID-81206</ProductID>
+        <ProductID>CVRFPID-81207</ProductID>
+        <ProductID>CVRFPID-81209</ProductID>
+        <ProductID>CVRFPID-81211</ProductID>
+        <ProductID>CVRFPID-81215</ProductID>
+        <ProductID>CVRFPID-88050</ProductID>
+        <ProductID>CVRFPID-88051</ProductID>
+        <ProductID>CVRFPID-88052</ProductID>
+        <ProductID>CVRFPID-91094</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090408-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco ASA Adaptive Security Appliance and Cisco PIX Security Appliances</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ASA and Cisco PIX Security Appliances SQL*Net Inspection Denial of Service Vulnerability</Title>
+    <CVE>CVE-2009-1159</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-70760</ProductID>
+        <ProductID>CVRFPID-70761</ProductID>
+        <ProductID>CVRFPID-70763</ProductID>
+        <ProductID>CVRFPID-70764</ProductID>
+        <ProductID>CVRFPID-91003</ProductID>
+        <ProductID>CVRFPID-91004</ProductID>
+        <ProductID>CVRFPID-91005</ProductID>
+        <ProductID>CVRFPID-91006</ProductID>
+        <ProductID>CVRFPID-91009</ProductID>
+        <ProductID>CVRFPID-91010</ProductID>
+        <ProductID>CVRFPID-91011</ProductID>
+        <ProductID>CVRFPID-91012</ProductID>
+        <ProductID>CVRFPID-91013</ProductID>
+        <ProductID>CVRFPID-81206</ProductID>
+        <ProductID>CVRFPID-81207</ProductID>
+        <ProductID>CVRFPID-81215</ProductID>
+        <ProductID>CVRFPID-88050</ProductID>
+        <ProductID>CVRFPID-88051</ProductID>
+        <ProductID>CVRFPID-88052</ProductID>
+        <ProductID>CVRFPID-91094</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090408-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco ASA Adaptive Security Appliance and Cisco PIX Security Appliances</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="6" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Adaptive Security Appliances and PIX Security Appliances Application Control Engine Bypass Vulnerability</Title>
+    <CVE>CVE-2009-1160</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-54555</ProductID>
+        <ProductID>CVRFPID-54556</ProductID>
+        <ProductID>CVRFPID-55253</ProductID>
+        <ProductID>CVRFPID-55254</ProductID>
+        <ProductID>CVRFPID-55255</ProductID>
+        <ProductID>CVRFPID-55256</ProductID>
+        <ProductID>CVRFPID-70758</ProductID>
+        <ProductID>CVRFPID-70759</ProductID>
+        <ProductID>CVRFPID-70760</ProductID>
+        <ProductID>CVRFPID-70761</ProductID>
+        <ProductID>CVRFPID-70763</ProductID>
+        <ProductID>CVRFPID-70764</ProductID>
+        <ProductID>CVRFPID-91003</ProductID>
+        <ProductID>CVRFPID-91004</ProductID>
+        <ProductID>CVRFPID-91005</ProductID>
+        <ProductID>CVRFPID-91006</ProductID>
+        <ProductID>CVRFPID-91011</ProductID>
+        <ProductID>CVRFPID-91012</ProductID>
+        <ProductID>CVRFPID-91013</ProductID>
+        <ProductID>CVRFPID-91014</ProductID>
+        <ProductID>CVRFPID-91015</ProductID>
+        <ProductID>CVRFPID-91016</ProductID>
+        <ProductID>CVRFPID-91017</ProductID>
+        <ProductID>CVRFPID-91018</ProductID>
+        <ProductID>CVRFPID-81206</ProductID>
+        <ProductID>CVRFPID-81207</ProductID>
+        <ProductID>CVRFPID-81209</ProductID>
+        <ProductID>CVRFPID-81211</ProductID>
+        <ProductID>CVRFPID-81215</ProductID>
+        <ProductID>CVRFPID-88050</ProductID>
+        <ProductID>CVRFPID-88051</ProductID>
+        <ProductID>CVRFPID-88052</ProductID>
+        <ProductID>CVRFPID-91094</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>3.6</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:P/I:N/A:N/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090408-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco ASA Adaptive Security Appliance and Cisco PIX Security Appliances</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

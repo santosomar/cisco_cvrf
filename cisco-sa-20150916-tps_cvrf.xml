@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco TelePresence Server Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150916-tps</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-09-16T14:23:05</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-09-16T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-09-16T14:23:05</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Cisco TelePresence Server contains a buffer overflow vulnerability in the Conference Control Protocol API that could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition.
+
+
+
+Cisco has released software updates that address this vulnerability. No workarounds that mitigate this vulnerability are available.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150916-tps["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150916-tps"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150916-tps</URL>
+      <Description>Cisco TelePresence Server Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40749</URL>
+      <Description>Cisco TelePresence Server Denial of Service Vulnerability </Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40749</URL>
+      <Description>Cisco TelePresence Server Denial of Service Vulnerability </Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-190451">Cisco TelePresence Server Software 2.3(1.55)</FullProductName>
+    <FullProductName ProductID="CVRFPID-190458">Cisco TelePresence Server Software 2.3(1.57)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209619">Cisco TelePresence Server Software 2.3(1.58)</FullProductName>
+    <FullProductName ProductID="CVRFPID-190453">Cisco TelePresence Server Software 3.0(2.24)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209620">Cisco TelePresence Server Software 3.0(2.46)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209621">Cisco TelePresence Server Software 3.0(2.48)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209622">Cisco TelePresence Server Software 3.0(2.49)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209623">Cisco TelePresence Server Software 3.1(1.80)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209624">Cisco TelePresence Server Software 3.1(1.82)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209625">Cisco TelePresence Server Software 3.1(1.95)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209626">Cisco TelePresence Server Software 3.1(1.96)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209627">Cisco TelePresence Server Software 3.1(1.97)</FullProductName>
+    <FullProductName ProductID="CVRFPID-201358">Cisco TelePresence Server Software 3.1(1.98)</FullProductName>
+    <FullProductName ProductID="CVRFPID-201360">Cisco TelePresence Server Software 4.0(1.57)</FullProductName>
+    <FullProductName ProductID="CVRFPID-201361">Cisco TelePresence Server Software 4.0(2.8)</FullProductName>
+    <FullProductName ProductID="CVRFPID-205951">Cisco TelePresence Server Software 4.1(1.79)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco TelePresence Server Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuu28277</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Conference Control Protocol API of Cisco TelePresence Server could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is likely to result in only a DoS condition due to input sanitization performed on the user-supplied data before it is copied into the affected buffer. An attacker could exploit this vulnerability by providing a crafted URL that is designed to trigger the overflow condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuu28277</Note>
+    </Notes>
+    <CVE>CVE-2015-6284</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-190451</ProductID>
+        <ProductID>CVRFPID-190453</ProductID>
+        <ProductID>CVRFPID-190458</ProductID>
+        <ProductID>CVRFPID-201358</ProductID>
+        <ProductID>CVRFPID-201360</ProductID>
+        <ProductID>CVRFPID-201361</ProductID>
+        <ProductID>CVRFPID-205951</ProductID>
+        <ProductID>CVRFPID-209619</ProductID>
+        <ProductID>CVRFPID-209620</ProductID>
+        <ProductID>CVRFPID-209621</ProductID>
+        <ProductID>CVRFPID-209622</ProductID>
+        <ProductID>CVRFPID-209623</ProductID>
+        <ProductID>CVRFPID-209624</ProductID>
+        <ProductID>CVRFPID-209625</ProductID>
+        <ProductID>CVRFPID-209626</ProductID>
+        <ProductID>CVRFPID-209627</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There is no workaround that mitigates this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150916-tps</URL>
+        <Description>Cisco TelePresence Server Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

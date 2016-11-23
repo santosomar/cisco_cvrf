@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Management Center for Cisco Security Agent Remote Code Execution Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20110216-csa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2011-02-16T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2011-02-16T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2011-02-16T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20110216-csa</URL>
+      <Description>Management Center for Cisco Security Agent Remote Code Execution Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-61116">Cisco Security Agent  5.1.0.74</FullProductName>
+    <FullProductName ProductID="CVRFPID-61117">Cisco Security Agent  5.1.0.79</FullProductName>
+    <FullProductName ProductID="CVRFPID-97239">Cisco Security Agent  5.1.0.69</FullProductName>
+    <FullProductName ProductID="CVRFPID-97240">Cisco Security Agent  5.1.0.88</FullProductName>
+    <FullProductName ProductID="CVRFPID-97241">Cisco Security Agent  5.1.0.91</FullProductName>
+    <FullProductName ProductID="CVRFPID-97242">Cisco Security Agent  5.1.0.100</FullProductName>
+    <FullProductName ProductID="CVRFPID-97243">Cisco Security Agent  5.1.0.103</FullProductName>
+    <FullProductName ProductID="CVRFPID-97244">Cisco Security Agent  5.1.0.106</FullProductName>
+    <FullProductName ProductID="CVRFPID-97245">Cisco Security Agent  5.1.0.108</FullProductName>
+    <FullProductName ProductID="CVRFPID-97246">Cisco Security Agent  5.1.0.115</FullProductName>
+    <FullProductName ProductID="CVRFPID-73607">Cisco Security Agent  5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-97230">Cisco Security Agent  5.2.0.203</FullProductName>
+    <FullProductName ProductID="CVRFPID-97231">Cisco Security Agent  5.2.0.210</FullProductName>
+    <FullProductName ProductID="CVRFPID-97232">Cisco Security Agent  5.2.0.225</FullProductName>
+    <FullProductName ProductID="CVRFPID-97233">Cisco Security Agent  5.2.0.238</FullProductName>
+    <FullProductName ProductID="CVRFPID-97234">Cisco Security Agent  5.2.0.245</FullProductName>
+    <FullProductName ProductID="CVRFPID-97235">Cisco Security Agent  5.2.0.263</FullProductName>
+    <FullProductName ProductID="CVRFPID-97236">Cisco Security Agent  5.2.0.272</FullProductName>
+    <FullProductName ProductID="CVRFPID-97237">Cisco Security Agent  5.2.0.278</FullProductName>
+    <FullProductName ProductID="CVRFPID-97238">Cisco Security Agent  5.2.0.282</FullProductName>
+    <FullProductName ProductID="CVRFPID-97221">Cisco Security Agent  6.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-97222">Cisco Security Agent  6.0.0.201</FullProductName>
+    <FullProductName ProductID="CVRFPID-97223">Cisco Security Agent  6.0.0.205</FullProductName>
+    <FullProductName ProductID="CVRFPID-97224">Cisco Security Agent  6.0.0.209</FullProductName>
+    <FullProductName ProductID="CVRFPID-97225">Cisco Security Agent  6.0.0.214</FullProductName>
+    <FullProductName ProductID="CVRFPID-97226">Cisco Security Agent  6.0.0.220</FullProductName>
+    <FullProductName ProductID="CVRFPID-97227">Cisco Security Agent  6.0.1.98</FullProductName>
+    <FullProductName ProductID="CVRFPID-97228">Cisco Security Agent  6.0.1.106</FullProductName>
+    <FullProductName ProductID="CVRFPID-97229">Cisco Security Agent  6.0.1.117</FullProductName>
+    <FullProductName ProductID="CVRFPID-99199">Cisco Security Agent  6.0.2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Management Center for Cisco Security Agent Remote Code Execution Vulnerability</Title>
+    <CVE>CVE-2011-0364</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61116</ProductID>
+        <ProductID>CVRFPID-61117</ProductID>
+        <ProductID>CVRFPID-73607</ProductID>
+        <ProductID>CVRFPID-97221</ProductID>
+        <ProductID>CVRFPID-97222</ProductID>
+        <ProductID>CVRFPID-97223</ProductID>
+        <ProductID>CVRFPID-97224</ProductID>
+        <ProductID>CVRFPID-97225</ProductID>
+        <ProductID>CVRFPID-97226</ProductID>
+        <ProductID>CVRFPID-97227</ProductID>
+        <ProductID>CVRFPID-97228</ProductID>
+        <ProductID>CVRFPID-97229</ProductID>
+        <ProductID>CVRFPID-97230</ProductID>
+        <ProductID>CVRFPID-97231</ProductID>
+        <ProductID>CVRFPID-97232</ProductID>
+        <ProductID>CVRFPID-97233</ProductID>
+        <ProductID>CVRFPID-97234</ProductID>
+        <ProductID>CVRFPID-97235</ProductID>
+        <ProductID>CVRFPID-97236</ProductID>
+        <ProductID>CVRFPID-97237</ProductID>
+        <ProductID>CVRFPID-97238</ProductID>
+        <ProductID>CVRFPID-97239</ProductID>
+        <ProductID>CVRFPID-97240</ProductID>
+        <ProductID>CVRFPID-97241</ProductID>
+        <ProductID>CVRFPID-97242</ProductID>
+        <ProductID>CVRFPID-97243</ProductID>
+        <ProductID>CVRFPID-97244</ProductID>
+        <ProductID>CVRFPID-97245</ProductID>
+        <ProductID>CVRFPID-97246</ProductID>
+        <ProductID>CVRFPID-99199</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20110216-csa</URL>
+        <Description>Management Center for Cisco Security Agent Remote Code Execution Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

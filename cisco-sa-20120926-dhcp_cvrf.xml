@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software DHCP Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20120926-dhcp</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2012-09-25T21:13:37</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2012-09-26T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2012-09-25T21:13:37</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Cisco IOS Software contains a vulnerability that could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition. An attacker could exploit this vulnerability by sending a single DHCP packet to or through an affected device, causing the device to reload.
+
+
+
+
+Cisco has released software updates that address this vulnerability. A workaround that mitigates this vulnerability is available. This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120926-dhcp["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120926-dhcp"]
+
+
+
+Note: The September 26, 2012, Cisco IOS Software Security Advisory bundled publication includes nine Cisco Security Advisories. Eight of the advisories address vulnerabilities in Cisco IOS Software, and one advisory addresses a vulnerability in Cisco Unified Communications Manager. Each Cisco IOS Software Security Advisory lists the Cisco IOS Software releases that correct the vulnerability or vulnerabilities detailed in the advisory as well as the Cisco IOS Software releases that correct all Cisco IOS Software vulnerabilities in the September 2012 bundled publication. 
+
+Individual publication links are in "Cisco Event Response: Semi-Annual Cisco IOS Software Security Advisory Bundled Publication" at the following link: 
+
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep12.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep12.html"]
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120926-dhcp</URL>
+      <Description>Cisco IOS Software DHCP Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20120926-bundle</URL>
+      <Description>Summary of Semi-Annual Cisco IOS Software Security Advisory Bundled Publication, September 26, 2012</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20120926-bundle</URL>
+      <Description>Summary of Semi-Annual Cisco IOS Software Security Advisory Bundled Publication, September 26, 2012</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-106089">Cisco IOS 15.1(1)SG</FullProductName>
+    <FullProductName ProductID="CVRFPID-107861">Cisco IOS 15.2(2)S</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software DHCP Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCty96049</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">Cisco IOS Software contains a vulnerability that could allow an unauthenticated, remote attacker to cause a DoS condition. An attacker could exploit this vulnerability by sending a single DHCP packet to or through an affected device, causing the device to reload.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCty96049</Note>
+    </Notes>
+    <CVE>CVE-2012-4621</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-106089</ProductID>
+        <ProductID>CVRFPID-107861</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>In affected releases, the Device Sensor feature is enabled by default. It is possible to mitigate the vulnerability in this advisory by applying the global configuration command device-sensor filter-spec dhcp exclude all. This command will filter the Device Sensor feature collection of DHCP packets, and the Device Sensor feature will no longer process or store DHCP information.  
+
+
+
+In the following example, the global configuration command is issued:
+
+
+
+
+Switch# configure terminal
+Switch(config)# device-sensor filter-spec dhcp exclude all
+
+
+
+
+To confirm that the Device Sensor feature is no longer collecting DHCP data, issue the show device-sensor cache all command. No DHCP entries should be present in the table.  
+
+
+
+In the following example, the following table contains only Cisco Discover Protocol data:
+
+
+
+
+Switch# show device-sensor cache all
+Device: 000f.f7a7.234f on port GigabitEthernet2/1
+--------------------------------------------------
+Proto Type:Name Len Value
+cdp 22:mgmt-address-type 8 00 16 00 08 00 00 00 00
+cdp 19:cos-type 5 00 13 00 05 00
+cdp 18:trust-type 5 00 12 00 05 00
+cdp 11:duplex-type 5 00 0B 00 05 01
+cdp 10:native-vlan-type 6 00 0A 00 06 00 01
+cdp 9:vtp-mgmt-domain-type 9 00 09 00 09 63 69 73 63 6F
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120926-dhcp</URL>
+        <Description>Cisco IOS Software DHCP Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

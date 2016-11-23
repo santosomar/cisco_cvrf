@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Fog Director Cross-Site Scripting Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160201-fd</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-02-01T17:07:21</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-02-01T10:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-02-01T17:07:21</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Cisco Fog Director web framework could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the web interface of the affected software.
+
+
+
+The vulnerability is due to insufficient input validation for some of the parameters that are passed to the web server. An attacker could exploit this vulnerability by persuading a user to follow a malicious link or by intercepting and injecting malicious code into a user request. A successful exploit could allow the attacker to execute arbitrary script in the context of the affected site or access sensitive browser-based information.
+
+
+
+Cisco has not released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160201-fd["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160201-fd"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160201-fd</URL>
+      <Description>Cisco Fog Director Cross-Site Scripting Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-213005">Cisco Fog Director 1.0(0)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Fog Director Cross-Site Scripting Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCux80466</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Cisco Fog Director web framework could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the web interface of the affected software.
+
+
+
+The vulnerability is due to insufficient input validation for some of the parameters that are passed to the web server. An attacker could exploit this vulnerability by persuading a user to follow a malicious link or by intercepting and injecting malicious code into a user request. A successful exploit could allow the attacker to execute arbitrary script in the context of the affected site or access sensitive browser-based information.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux80466</Note>
+    </Notes>
+    <CVE>CVE-2016-1306</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-213005</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:P/A:N/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>For additional information about cross-site scripting attacks and the methods used to exploit these vulnerabilities, see the Cisco Applied Mitigation Bulletin Understanding Cross-Site Scripting (XSS) Threat Vectors["http://www.cisco.com/en/US/products/cmb/cisco-amb-20060922-understanding-xss.html"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160201-fd</URL>
+        <Description>Cisco Fog Director Cross-Site Scripting Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

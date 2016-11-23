@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IP 8800 Series Phones btcli Utility Command Injection Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160603-ipp</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-06-03T19:14:53</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-06-03T00:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-06-03T19:14:53</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in a command-line interface (CLI) utility of the Cisco IP 8800 Series Phones could allow an authenticated, local attacker to perform a command injection attack.
+
+
+
+The vulnerability is due to insufficient input validation. An attacker could exploit this vulnerability by sending crafted commands to the affected device. An exploit could allow the attacker to execute operating system commands and escalate privileges to increase the level of access to the targeted system.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160603-ipp["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160603-ipp"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160603-ipp</URL>
+      <Description>Cisco IP 8800 Series Phones btcli Utility Command Injection Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-205464">Cisco IP Phone 8800 Series Software 10.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-205465">Cisco IP Phone 8800 Series Software 10.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-211551">Cisco IP Phone 8800 Series Software 11.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-211553">Cisco IP Phone 8800 Series Software 10.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-211554">Cisco IP Phone 8800 Series Software 10.3(2)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IP 8800 Series Phones btcli Utility Command Injection Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz03005</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in a command-line interface (CLI) utility of the Cisco IP 8800 Series Phones could allow an authenticated, local attacker to perform a command injection attack.
+
+
+
+The vulnerability is due to insufficient input validation. An attacker could exploit this vulnerability by sending crafted commands to the affected device. An exploit could allow the attacker to execute operating system commands and escalate privileges to increase the level of access to the targeted system.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz03005</Note>
+    </Notes>
+    <CVE>CVE-2016-1403</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-205464</ProductID>
+        <ProductID>CVRFPID-205465</ProductID>
+        <ProductID>CVRFPID-211551</ProductID>
+        <ProductID>CVRFPID-211553</ProductID>
+        <ProductID>CVRFPID-211554</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.8</BaseScore>
+        <TemporalScore>5.6</TemporalScore>
+        <Vector>AV:L/AC:L/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160603-ipp</URL>
+        <Description>Cisco IP 8800 Series Phones btcli Utility Command Injection Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

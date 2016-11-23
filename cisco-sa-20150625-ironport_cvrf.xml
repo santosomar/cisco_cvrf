@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Default SSH Keys Vulnerabilities in Cisco Virtual WSA, ESA, and SMA</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150625-ironport</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-06-25T15:32:26</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-06-25T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-06-25T15:32:26</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Cisco Web Security Virtual Appliance (WSAv), Cisco Email Security Virtual Appliance (ESAv), and Cisco Security Management Virtual Appliance (SMAv) are affected by the following vulnerabilities:
+
+
+
+
+    Cisco Virtual WSA, ESA, and SMA Default Authorized SSH Key Vulnerability
+    Cisco Virtual WSA, ESA, and SMA Default SSH Host Keys Vulnerability
+
+
+
+Cisco has released software updates that address these vulnerabilities. 
+
+There are no workarounds for these vulnerabilities.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150625-ironport["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150625-ironport"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150625-ironport</URL>
+      <Description>Multiple Default SSH Keys Vulnerabilities in Cisco Virtual WSA, ESA, and SMA</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=39462</URL>
+      <Description>Cisco Virtual WSA, ESA, and SMA Default Authorized SSH Key Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=39461</URL>
+      <Description>Cisco Virtual WSA, ESA, and SMA Default SSH Host Keys Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=39462</URL>
+      <Description>Cisco Virtual WSA, ESA, and SMA Default Authorized SSH Key Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=39461</URL>
+      <Description>Cisco Virtual WSA, ESA, and SMA Default SSH Host Keys Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/Cisco-SA-20150625-CVE-2015-4217</URL>
+      <Description>Cisco Virtual WSA, ESA, and SMA Default SSH Host Keys Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-208410">Cisco Content Security Management Virtual Appliance 8.4.0.0150</FullProductName>
+    <FullProductName ProductID="CVRFPID-208412">Cisco Content Security Management Virtual Appliance 9.0.0.087</FullProductName>
+    <FullProductName ProductID="CVRFPID-208415">Cisco Email Security Virtual Appliance 8.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-208417">Cisco Email Security Virtual Appliance 8.5.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-208422">Cisco Email Security Virtual Appliance 8.5.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-208419">Cisco Email Security Virtual Appliance 9.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-208421">Cisco Email Security Virtual Appliance 9.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-208425">Cisco Web Security Virtual Appliance 7.7.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-208427">Cisco Web Security Virtual Appliance 8.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-208429">Cisco Web Security Virtual Appliance 8.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-208434">Cisco Web Security Virtual Appliance 8.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-208431">Cisco Web Security Virtual Appliance 8.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-208433">Cisco Web Security Virtual Appliance 8.7.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Virtual WSA, ESA, and SMA Default Authorized SSH Key Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuu95988</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the remote support functionality of Cisco WSAv, Cisco ESAv, and Cisco SMAv Software could allow an unauthenticated, remote attacker to connect to the affected system with the privileges of the root user.
+
+
+
+The vulnerability is due to the presence of a default authorized SSH key that is shared across all the installations of WSAv, ESAv, and SMAv. An attacker could exploit this vulnerability by obtaining the SSH private key and using it to connect to any WSAv, ESAv, or SMAv. An exploit could allow the attacker to access the system with the privileges of the root user.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuu95988,CSCuu95994,CSCuu96630</Note>
+    </Notes>
+    <CVE>CVE-2015-4216</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-208425</ProductID>
+        <ProductID>CVRFPID-208427</ProductID>
+        <ProductID>CVRFPID-208429</ProductID>
+        <ProductID>CVRFPID-208431</ProductID>
+        <ProductID>CVRFPID-208433</ProductID>
+        <ProductID>CVRFPID-208434</ProductID>
+        <ProductID>CVRFPID-208415</ProductID>
+        <ProductID>CVRFPID-208417</ProductID>
+        <ProductID>CVRFPID-208419</ProductID>
+        <ProductID>CVRFPID-208421</ProductID>
+        <ProductID>CVRFPID-208422</ProductID>
+        <ProductID>CVRFPID-208410</ProductID>
+        <ProductID>CVRFPID-208412</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.3</BaseScore>
+        <TemporalScore>7.7</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds for these vulnerabilities.
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150625-ironport</URL>
+        <Description>Multiple Default SSH Keys Vulnerabilities in Cisco Virtual WSA, ESA, and SMA</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Virtual WSA, ESA, and SMA Default SSH Host Keys Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCus29681</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in the remote support functionality of Cisco WSAv, Cisco ESAv, and Cisco SMAv Software could allow an unauthenticated, remote attacker to decrypt and impersonate secure communication between any virtual content security appliances. 
+
+
+
+The vulnerability is due to the presence of default SSH host keys that are shared across all the installations of WSAv, ESAv, and SMAv. An attacker could exploit this vulnerability by obtaining one of the SSH private keys and using it to impersonate or decrypt communication between any WSAv, ESAv, or SMAv. An exploit could allow the attacker to decrypt and impersonate secure communication between any virtual content security appliances.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="5">CSCus29681,CSCuu95676,CSCuu96601</Note>
+    </Notes>
+    <CVE>CVE-2015-4217</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-208425</ProductID>
+        <ProductID>CVRFPID-208427</ProductID>
+        <ProductID>CVRFPID-208429</ProductID>
+        <ProductID>CVRFPID-208431</ProductID>
+        <ProductID>CVRFPID-208433</ProductID>
+        <ProductID>CVRFPID-208434</ProductID>
+        <ProductID>CVRFPID-208415</ProductID>
+        <ProductID>CVRFPID-208417</ProductID>
+        <ProductID>CVRFPID-208419</ProductID>
+        <ProductID>CVRFPID-208421</ProductID>
+        <ProductID>CVRFPID-208422</ProductID>
+        <ProductID>CVRFPID-208410</ProductID>
+        <ProductID>CVRFPID-208412</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.8</BaseScore>
+        <TemporalScore>4.8</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:P/I:P/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds for these vulnerabilities.
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150625-ironport</URL>
+        <Description>Multiple Default SSH Keys Vulnerabilities in Cisco Virtual WSA, ESA, and SMA</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

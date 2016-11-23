@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in the Cisco Wireless Control System</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20070412-wcs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2007-04-12T16:00:00</Date>
+        <Description>Minor grammatical changes.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-04-12T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-04-12T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070412-wcs</URL>
+      <Description>Multiple Vulnerabilities in the Cisco Wireless Control System</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20070412-wcs</URL>
+      <Description>Identifying and Mitigating Exploitation of the Multiple Vulnerabilities in the Cisco Wireless Control System</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20070412-wcs</URL>
+      <Description>Identifying and Mitigating Exploitation of the Multiple Vulnerabilities in the Cisco Wireless Control System</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-55275">Cisco Wireless Control System (WCS) Software 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58726">Cisco Wireless Control System (WCS) Software 2.0 44.14</FullProductName>
+    <FullProductName ProductID="CVRFPID-58727">Cisco Wireless Control System (WCS) Software 2.0 44.24</FullProductName>
+    <FullProductName ProductID="CVRFPID-64977">Cisco Wireless Control System (WCS) Software 2.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64978">Cisco Wireless Control System (WCS) Software 2.2.111.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-55276">Cisco Wireless Control System (WCS) Software 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58725">Cisco Wireless Control System (WCS) Software 3.0.101.0 </FullProductName>
+    <FullProductName ProductID="CVRFPID-58728">Cisco Wireless Control System (WCS) Software 3.0.105.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58729">Cisco Wireless Control System (WCS) Software 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64986">Cisco Wireless Control System (WCS) Software 3.1.20.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58730">Cisco Wireless Control System (WCS) Software 3.1.33.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64979">Cisco Wireless Control System (WCS) Software 3.1.35.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58724">Cisco Wireless Control System (WCS) Software 3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58731">Cisco Wireless Control System (WCS) Software 3.2.23.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58732">Cisco Wireless Control System (WCS) Software 3.2.25.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58721">Cisco Wireless Control System (WCS) Software 3.2.40.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58722">Cisco Wireless Control System (WCS) Software 3.2.51.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64980">Cisco Wireless Control System (WCS) Software 3.2.64.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-55273">Cisco Wireless Control System (WCS) Software 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58723">Cisco Wireless Control System (WCS) Software 4.0.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64985">Cisco Wireless Control System (WCS) Software 4.0.43.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64981">Cisco Wireless Control System (WCS) Software 4.0.66.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Microsoft Windows Vista LLTD Mapper Spoofing Redirect Issue</Title>
+    <CVE>CVE-2007-2035</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-55273</ProductID>
+        <ProductID>CVRFPID-55275</ProductID>
+        <ProductID>CVRFPID-55276</ProductID>
+        <ProductID>CVRFPID-58721</ProductID>
+        <ProductID>CVRFPID-58722</ProductID>
+        <ProductID>CVRFPID-58723</ProductID>
+        <ProductID>CVRFPID-58724</ProductID>
+        <ProductID>CVRFPID-58725</ProductID>
+        <ProductID>CVRFPID-58726</ProductID>
+        <ProductID>CVRFPID-58727</ProductID>
+        <ProductID>CVRFPID-58728</ProductID>
+        <ProductID>CVRFPID-58729</ProductID>
+        <ProductID>CVRFPID-58730</ProductID>
+        <ProductID>CVRFPID-58731</ProductID>
+        <ProductID>CVRFPID-58732</ProductID>
+        <ProductID>CVRFPID-64977</ProductID>
+        <ProductID>CVRFPID-64978</ProductID>
+        <ProductID>CVRFPID-64979</ProductID>
+        <ProductID>CVRFPID-64980</ProductID>
+        <ProductID>CVRFPID-64985</ProductID>
+        <ProductID>CVRFPID-64986</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>2.3</BaseScore>
+        <TemporalScore>1.9</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:P/I:N/A:N/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070412-wcs</URL>
+        <Description>Multiple Vulnerabilities in the Cisco Wireless Control System</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wireless Control System Configuration Page Exposure Vulnerability</Title>
+    <CVE>CVE-2007-2033</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-55273</ProductID>
+        <ProductID>CVRFPID-55275</ProductID>
+        <ProductID>CVRFPID-55276</ProductID>
+        <ProductID>CVRFPID-58721</ProductID>
+        <ProductID>CVRFPID-58722</ProductID>
+        <ProductID>CVRFPID-58723</ProductID>
+        <ProductID>CVRFPID-58724</ProductID>
+        <ProductID>CVRFPID-58725</ProductID>
+        <ProductID>CVRFPID-58726</ProductID>
+        <ProductID>CVRFPID-58727</ProductID>
+        <ProductID>CVRFPID-58728</ProductID>
+        <ProductID>CVRFPID-58729</ProductID>
+        <ProductID>CVRFPID-58730</ProductID>
+        <ProductID>CVRFPID-58731</ProductID>
+        <ProductID>CVRFPID-58732</ProductID>
+        <ProductID>CVRFPID-64977</ProductID>
+        <ProductID>CVRFPID-64978</ProductID>
+        <ProductID>CVRFPID-64979</ProductID>
+        <ProductID>CVRFPID-64980</ProductID>
+        <ProductID>CVRFPID-64981</ProductID>
+        <ProductID>CVRFPID-64985</ProductID>
+        <ProductID>CVRFPID-64986</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>2.8</BaseScore>
+        <TemporalScore>2.3</TemporalScore>
+        <Vector>AV:R/AC:L/Au:R/C:P/I:P/A:N/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070412-wcs</URL>
+        <Description>Multiple Vulnerabilities in the Cisco Wireless Control System</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

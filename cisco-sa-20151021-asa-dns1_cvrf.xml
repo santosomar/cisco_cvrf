@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco ASA Software DNS Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151021-asa-dns1</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-10-21T14:35:51</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2015-11-12T14:15:25</Date>
+        <Description>Corrected recommended release version for Cisco ASA 9.3 train.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-10-21T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-11-12T14:15:25</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the DNS code of Cisco Adaptive Security Appliance (ASA) Software could allow an
+unauthenticated, remote attacker to cause an affected system to reload.
+
+
+
+The vulnerability is due
+to improper processing of DNS packets. An attacker could exploit this vulnerability by
+sending a request to an affected Cisco ASA appliance to cause it to
+generate a DNS request packet. The attacker would need to spoof the reply packet with a crafted DNS response.
+
+
+
+Note: Only traffic directed to the affected device can be used to exploit this vulnerability. This vulnerability affects Cisco ASA Software configured in routed or transparent firewall mode and single or multiple context mode. This vulnerability can be triggered by IPv4 and IPv6 traffic.
+
+
+
+This vulnerability is documented in Cisco bug ID CSCut03495["https://tools.cisco.com/bugsearch/bug/CSCut03495"] (registered["http://tools.cisco.com/RPF/register/register.do"] customers only) and has been assigned Common Vulnerabilities and Exposures (CVE) ID CVE-2015-6325.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are not available.
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-asa-dns1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-asa-dns1"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-asa-dns1</URL>
+      <Description>Cisco ASA Software DNS Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-91013">Cisco Adaptive Security Appliance (ASA) Software 7.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115208">Cisco Adaptive Security Appliance (ASA) Software 7.2.1.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-115209">Cisco Adaptive Security Appliance (ASA) Software 7.2.1.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-115210">Cisco Adaptive Security Appliance (ASA) Software 7.2.1.19</FullProductName>
+    <FullProductName ProductID="CVRFPID-115211">Cisco Adaptive Security Appliance (ASA) Software 7.2.1.24</FullProductName>
+    <FullProductName ProductID="CVRFPID-70764">Cisco Adaptive Security Appliance (ASA) Software 7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-115212">Cisco Adaptive Security Appliance (ASA) Software 7.2.2.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-115213">Cisco Adaptive Security Appliance (ASA) Software 7.2.2.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-115214">Cisco Adaptive Security Appliance (ASA) Software 7.2.2.14</FullProductName>
+    <FullProductName ProductID="CVRFPID-115215">Cisco Adaptive Security Appliance (ASA) Software 7.2.2.18</FullProductName>
+    <FullProductName ProductID="CVRFPID-115216">Cisco Adaptive Security Appliance (ASA) Software 7.2.2.19</FullProductName>
+    <FullProductName ProductID="CVRFPID-115217">Cisco Adaptive Security Appliance (ASA) Software 7.2.2.22</FullProductName>
+    <FullProductName ProductID="CVRFPID-70760">Cisco Adaptive Security Appliance (ASA) Software 7.2.2.34</FullProductName>
+    <FullProductName ProductID="CVRFPID-91012">Cisco Adaptive Security Appliance (ASA) Software 7.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-70763">Cisco Adaptive Security Appliance (ASA) Software 7.2.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115218">Cisco Adaptive Security Appliance (ASA) Software 7.2.3.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-115219">Cisco Adaptive Security Appliance (ASA) Software 7.2.3.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-91011">Cisco Adaptive Security Appliance (ASA) Software 7.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115220">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-115221">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-115222">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.18</FullProductName>
+    <FullProductName ProductID="CVRFPID-115223">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.25</FullProductName>
+    <FullProductName ProductID="CVRFPID-91089">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.27</FullProductName>
+    <FullProductName ProductID="CVRFPID-91090">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.30</FullProductName>
+    <FullProductName ProductID="CVRFPID-111872">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-100027">Cisco Adaptive Security Appliance (ASA) Software 7.2.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-115224">Cisco Adaptive Security Appliance (ASA) Software 7.2.5.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-115225">Cisco Adaptive Security Appliance (ASA) Software 7.2.5.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115257">Cisco Adaptive Security Appliance (ASA) Software 7.2.5.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-185260">Cisco Adaptive Security Appliance (ASA) Software 7.2.5.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-191210">Cisco Adaptive Security Appliance (ASA) Software 7.2.5.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-195009">Cisco Adaptive Security Appliance (ASA) Software 7.2.5.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-206505">Cisco Adaptive Security Appliance (ASA) Software 7.2.5.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-70762">Cisco Adaptive Security Appliance (ASA) Software 8.2.0.45</FullProductName>
+    <FullProductName ProductID="CVRFPID-97260">Cisco Adaptive Security Appliance (ASA) Software 8.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115241">Cisco Adaptive Security Appliance (ASA) Software 8.2.1.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-97261">Cisco Adaptive Security Appliance (ASA) Software 8.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-115242">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-99994">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-115243">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-115244">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-116857">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-108072">Cisco Adaptive Security Appliance (ASA) Software 8.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-108074">Cisco Adaptive Security Appliance (ASA) Software 8.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115245">Cisco Adaptive Security Appliance (ASA) Software 8.2.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115246">Cisco Adaptive Security Appliance (ASA) Software 8.2.4.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115247">Cisco Adaptive Security Appliance (ASA) Software 8.2.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-115248">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-115260">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.22</FullProductName>
+    <FullProductName ProductID="CVRFPID-115261">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.26</FullProductName>
+    <FullProductName ProductID="CVRFPID-185257">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-191207">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.40</FullProductName>
+    <FullProductName ProductID="CVRFPID-191208">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.41</FullProductName>
+    <FullProductName ProductID="CVRFPID-195008">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.46</FullProductName>
+    <FullProductName ProductID="CVRFPID-198566">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.48</FullProductName>
+    <FullProductName ProductID="CVRFPID-202960">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.50</FullProductName>
+    <FullProductName ProductID="CVRFPID-206502">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.52</FullProductName>
+    <FullProductName ProductID="CVRFPID-206503">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.55</FullProductName>
+    <FullProductName ProductID="CVRFPID-206504">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.57</FullProductName>
+    <FullProductName ProductID="CVRFPID-99997">Cisco Adaptive Security Appliance (ASA) Software 8.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-99996">Cisco Adaptive Security Appliance (ASA) Software 8.3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115249">Cisco Adaptive Security Appliance (ASA) Software 8.3.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115250">Cisco Adaptive Security Appliance (ASA) Software 8.3.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-108069">Cisco Adaptive Security Appliance (ASA) Software 8.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-115251">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115252">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-112138">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.23</FullProductName>
+    <FullProductName ProductID="CVRFPID-112800">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.25</FullProductName>
+    <FullProductName ProductID="CVRFPID-115262">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.31</FullProductName>
+    <FullProductName ProductID="CVRFPID-115263">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-185256">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.34</FullProductName>
+    <FullProductName ProductID="CVRFPID-191206">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.37</FullProductName>
+    <FullProductName ProductID="CVRFPID-195007">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.39</FullProductName>
+    <FullProductName ProductID="CVRFPID-198565">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.40</FullProductName>
+    <FullProductName ProductID="CVRFPID-202959">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.41</FullProductName>
+    <FullProductName ProductID="CVRFPID-206501">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.44</FullProductName>
+    <FullProductName ProductID="CVRFPID-108073">Cisco Adaptive Security Appliance (ASA) Software 8.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115253">Cisco Adaptive Security Appliance (ASA) Software 8.4.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-115254">Cisco Adaptive Security Appliance (ASA) Software 8.4.1.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-112139">Cisco Adaptive Security Appliance (ASA) Software 8.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-192947">Cisco Adaptive Security Appliance (ASA) Software 8.4.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115255">Cisco Adaptive Security Appliance (ASA) Software 8.4.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-115256">Cisco Adaptive Security Appliance (ASA) Software 8.4.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-115264">Cisco Adaptive Security Appliance (ASA) Software 8.4.3.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-115265">Cisco Adaptive Security Appliance (ASA) Software 8.4.3.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-115266">Cisco Adaptive Security Appliance (ASA) Software 8.4.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-185251">Cisco Adaptive Security Appliance (ASA) Software 8.4.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-185252">Cisco Adaptive Security Appliance (ASA) Software 8.4.4.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-185253">Cisco Adaptive Security Appliance (ASA) Software 8.4.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-185254">Cisco Adaptive Security Appliance (ASA) Software 8.4.4.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-185255">Cisco Adaptive Security Appliance (ASA) Software 8.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-191204">Cisco Adaptive Security Appliance (ASA) Software 8.4.5.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-191205">Cisco Adaptive Security Appliance (ASA) Software 8.4.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-195006">Cisco Adaptive Security Appliance (ASA) Software 8.4.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-198563">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-198564">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.15</FullProductName>
+    <FullProductName ProductID="CVRFPID-202957">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.22</FullProductName>
+    <FullProductName ProductID="CVRFPID-202958">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.23</FullProductName>
+    <FullProductName ProductID="CVRFPID-206499">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.26</FullProductName>
+    <FullProductName ProductID="CVRFPID-206500">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.28</FullProductName>
+    <FullProductName ProductID="CVRFPID-112136">Cisco Adaptive Security Appliance (ASA) Software 8.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112140">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115269">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-115270">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-185180">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.14</FullProductName>
+    <FullProductName ProductID="CVRFPID-191203">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-195005">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.18</FullProductName>
+    <FullProductName ProductID="CVRFPID-198562">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.19</FullProductName>
+    <FullProductName ProductID="CVRFPID-206498">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.24</FullProductName>
+    <FullProductName ProductID="CVRFPID-202956">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.21</FullProductName>
+    <FullProductName ProductID="CVRFPID-115276">Cisco Adaptive Security Appliance (ASA) Software 8.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115268">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-185176">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-185177">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-191202">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-195004">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-198561">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-206497">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-202955">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.14</FullProductName>
+    <FullProductName ProductID="CVRFPID-185179">Cisco Adaptive Security Appliance (ASA) Software 8.7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191201">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191213">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-191214">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195003">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-198559">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-198560">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-202954">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-206496">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-188865">Cisco Adaptive Security Appliance (ASA) Software 9.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-188866">Cisco Adaptive Security Appliance (ASA) Software 9.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195000">Cisco Adaptive Security Appliance (ASA) Software 9.0.2.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-195001">Cisco Adaptive Security Appliance (ASA) Software 9.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195002">Cisco Adaptive Security Appliance (ASA) Software 9.0.3.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-198555">Cisco Adaptive Security Appliance (ASA) Software 9.0.3.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-198556">Cisco Adaptive Security Appliance (ASA) Software 9.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-198557">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198558">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-202953">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-202950">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-202951">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.20</FullProductName>
+    <FullProductName ProductID="CVRFPID-202952">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.24</FullProductName>
+    <FullProductName ProductID="CVRFPID-206493">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.26</FullProductName>
+    <FullProductName ProductID="CVRFPID-206494">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.29</FullProductName>
+    <FullProductName ProductID="CVRFPID-206495">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-211060">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.35</FullProductName>
+    <FullProductName ProductID="CVRFPID-188867">Cisco Adaptive Security Appliance (ASA) Software 9.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191211">Cisco Adaptive Security Appliance (ASA) Software 9.1.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-191212">Cisco Adaptive Security Appliance (ASA) Software 9.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-194999">Cisco Adaptive Security Appliance (ASA) Software 9.1.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-194998">Cisco Adaptive Security Appliance (ASA) Software 9.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-198551">Cisco Adaptive Security Appliance (ASA) Software 9.1.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-198552">Cisco Adaptive Security Appliance (ASA) Software 9.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-198553">Cisco Adaptive Security Appliance (ASA) Software 9.1.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-198554">Cisco Adaptive Security Appliance (ASA) Software 9.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-202941">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-202942">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-202943">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.15</FullProductName>
+    <FullProductName ProductID="CVRFPID-206491">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.21</FullProductName>
+    <FullProductName ProductID="CVRFPID-206218">Cisco Adaptive Security Appliance (ASA) Software 9.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-206492">Cisco Adaptive Security Appliance (ASA) Software 9.1.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202938">Cisco Adaptive Security Appliance (ASA) Software 9.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202946">Cisco Adaptive Security Appliance (ASA) Software 9.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-202947">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-202948">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-204544">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-202949">Cisco Adaptive Security Appliance (ASA) Software 9.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206489">Cisco Adaptive Security Appliance (ASA) Software 9.2.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206490">Cisco Adaptive Security Appliance (ASA) Software 9.2.3.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-202940">Cisco Adaptive Security Appliance (ASA) Software 9.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202944">Cisco Adaptive Security Appliance (ASA) Software 9.3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202945">Cisco Adaptive Security Appliance (ASA) Software 9.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-206487">Cisco Adaptive Security Appliance (ASA) Software 9.3.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-206488">Cisco Adaptive Security Appliance (ASA) Software 9.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206486">Cisco Adaptive Security Appliance (ASA) Software 9.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207900">Cisco Adaptive Security Appliance (ASA) Software 9.4.0.115</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ASA DNS Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCut03495</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the DNS code of Cisco Adaptive Security Appliance (ASA) Software could allow an
+unauthenticated, remote attacker to cause an affected system to reload.
+
+
+
+The vulnerability is due
+to improper processing of DNS packets. An attacker could exploit this vulnerability by
+sending a request to an affected Cisco ASA appliance to cause it to
+generate a DNS request packet. The attacker would need to spoof the reply packet with a crafted DNS response.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCut03495</Note>
+    </Notes>
+    <CVE>CVE-2015-6325</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-70760</ProductID>
+        <ProductID>CVRFPID-70762</ProductID>
+        <ProductID>CVRFPID-70763</ProductID>
+        <ProductID>CVRFPID-70764</ProductID>
+        <ProductID>CVRFPID-91011</ProductID>
+        <ProductID>CVRFPID-91012</ProductID>
+        <ProductID>CVRFPID-91013</ProductID>
+        <ProductID>CVRFPID-91089</ProductID>
+        <ProductID>CVRFPID-91090</ProductID>
+        <ProductID>CVRFPID-97260</ProductID>
+        <ProductID>CVRFPID-97261</ProductID>
+        <ProductID>CVRFPID-99994</ProductID>
+        <ProductID>CVRFPID-99996</ProductID>
+        <ProductID>CVRFPID-99997</ProductID>
+        <ProductID>CVRFPID-100027</ProductID>
+        <ProductID>CVRFPID-108069</ProductID>
+        <ProductID>CVRFPID-108072</ProductID>
+        <ProductID>CVRFPID-108073</ProductID>
+        <ProductID>CVRFPID-108074</ProductID>
+        <ProductID>CVRFPID-111872</ProductID>
+        <ProductID>CVRFPID-112136</ProductID>
+        <ProductID>CVRFPID-112138</ProductID>
+        <ProductID>CVRFPID-112139</ProductID>
+        <ProductID>CVRFPID-112140</ProductID>
+        <ProductID>CVRFPID-112800</ProductID>
+        <ProductID>CVRFPID-115208</ProductID>
+        <ProductID>CVRFPID-115209</ProductID>
+        <ProductID>CVRFPID-115210</ProductID>
+        <ProductID>CVRFPID-115211</ProductID>
+        <ProductID>CVRFPID-115212</ProductID>
+        <ProductID>CVRFPID-115213</ProductID>
+        <ProductID>CVRFPID-115214</ProductID>
+        <ProductID>CVRFPID-115215</ProductID>
+        <ProductID>CVRFPID-115216</ProductID>
+        <ProductID>CVRFPID-115217</ProductID>
+        <ProductID>CVRFPID-115218</ProductID>
+        <ProductID>CVRFPID-115219</ProductID>
+        <ProductID>CVRFPID-115220</ProductID>
+        <ProductID>CVRFPID-115221</ProductID>
+        <ProductID>CVRFPID-115222</ProductID>
+        <ProductID>CVRFPID-115223</ProductID>
+        <ProductID>CVRFPID-115224</ProductID>
+        <ProductID>CVRFPID-115225</ProductID>
+        <ProductID>CVRFPID-115241</ProductID>
+        <ProductID>CVRFPID-115242</ProductID>
+        <ProductID>CVRFPID-115243</ProductID>
+        <ProductID>CVRFPID-115244</ProductID>
+        <ProductID>CVRFPID-115245</ProductID>
+        <ProductID>CVRFPID-115246</ProductID>
+        <ProductID>CVRFPID-115247</ProductID>
+        <ProductID>CVRFPID-115248</ProductID>
+        <ProductID>CVRFPID-115249</ProductID>
+        <ProductID>CVRFPID-115250</ProductID>
+        <ProductID>CVRFPID-115251</ProductID>
+        <ProductID>CVRFPID-115252</ProductID>
+        <ProductID>CVRFPID-115253</ProductID>
+        <ProductID>CVRFPID-115254</ProductID>
+        <ProductID>CVRFPID-115255</ProductID>
+        <ProductID>CVRFPID-115256</ProductID>
+        <ProductID>CVRFPID-115257</ProductID>
+        <ProductID>CVRFPID-115260</ProductID>
+        <ProductID>CVRFPID-115261</ProductID>
+        <ProductID>CVRFPID-115262</ProductID>
+        <ProductID>CVRFPID-115263</ProductID>
+        <ProductID>CVRFPID-115264</ProductID>
+        <ProductID>CVRFPID-115265</ProductID>
+        <ProductID>CVRFPID-115266</ProductID>
+        <ProductID>CVRFPID-115268</ProductID>
+        <ProductID>CVRFPID-115269</ProductID>
+        <ProductID>CVRFPID-115270</ProductID>
+        <ProductID>CVRFPID-115276</ProductID>
+        <ProductID>CVRFPID-116857</ProductID>
+        <ProductID>CVRFPID-185176</ProductID>
+        <ProductID>CVRFPID-185177</ProductID>
+        <ProductID>CVRFPID-185179</ProductID>
+        <ProductID>CVRFPID-185180</ProductID>
+        <ProductID>CVRFPID-185251</ProductID>
+        <ProductID>CVRFPID-185252</ProductID>
+        <ProductID>CVRFPID-185253</ProductID>
+        <ProductID>CVRFPID-185254</ProductID>
+        <ProductID>CVRFPID-185255</ProductID>
+        <ProductID>CVRFPID-185256</ProductID>
+        <ProductID>CVRFPID-185257</ProductID>
+        <ProductID>CVRFPID-185260</ProductID>
+        <ProductID>CVRFPID-188865</ProductID>
+        <ProductID>CVRFPID-188866</ProductID>
+        <ProductID>CVRFPID-188867</ProductID>
+        <ProductID>CVRFPID-191201</ProductID>
+        <ProductID>CVRFPID-191202</ProductID>
+        <ProductID>CVRFPID-191203</ProductID>
+        <ProductID>CVRFPID-191204</ProductID>
+        <ProductID>CVRFPID-191205</ProductID>
+        <ProductID>CVRFPID-191206</ProductID>
+        <ProductID>CVRFPID-191207</ProductID>
+        <ProductID>CVRFPID-191208</ProductID>
+        <ProductID>CVRFPID-191210</ProductID>
+        <ProductID>CVRFPID-191211</ProductID>
+        <ProductID>CVRFPID-191212</ProductID>
+        <ProductID>CVRFPID-191213</ProductID>
+        <ProductID>CVRFPID-191214</ProductID>
+        <ProductID>CVRFPID-192947</ProductID>
+        <ProductID>CVRFPID-194998</ProductID>
+        <ProductID>CVRFPID-194999</ProductID>
+        <ProductID>CVRFPID-195000</ProductID>
+        <ProductID>CVRFPID-195001</ProductID>
+        <ProductID>CVRFPID-195002</ProductID>
+        <ProductID>CVRFPID-195003</ProductID>
+        <ProductID>CVRFPID-195004</ProductID>
+        <ProductID>CVRFPID-195005</ProductID>
+        <ProductID>CVRFPID-195006</ProductID>
+        <ProductID>CVRFPID-195007</ProductID>
+        <ProductID>CVRFPID-195008</ProductID>
+        <ProductID>CVRFPID-195009</ProductID>
+        <ProductID>CVRFPID-198551</ProductID>
+        <ProductID>CVRFPID-198552</ProductID>
+        <ProductID>CVRFPID-198553</ProductID>
+        <ProductID>CVRFPID-198554</ProductID>
+        <ProductID>CVRFPID-198555</ProductID>
+        <ProductID>CVRFPID-198556</ProductID>
+        <ProductID>CVRFPID-198557</ProductID>
+        <ProductID>CVRFPID-198558</ProductID>
+        <ProductID>CVRFPID-198559</ProductID>
+        <ProductID>CVRFPID-198560</ProductID>
+        <ProductID>CVRFPID-198561</ProductID>
+        <ProductID>CVRFPID-198562</ProductID>
+        <ProductID>CVRFPID-198563</ProductID>
+        <ProductID>CVRFPID-198564</ProductID>
+        <ProductID>CVRFPID-198565</ProductID>
+        <ProductID>CVRFPID-198566</ProductID>
+        <ProductID>CVRFPID-202938</ProductID>
+        <ProductID>CVRFPID-202940</ProductID>
+        <ProductID>CVRFPID-202941</ProductID>
+        <ProductID>CVRFPID-202942</ProductID>
+        <ProductID>CVRFPID-202943</ProductID>
+        <ProductID>CVRFPID-202944</ProductID>
+        <ProductID>CVRFPID-202945</ProductID>
+        <ProductID>CVRFPID-202946</ProductID>
+        <ProductID>CVRFPID-202947</ProductID>
+        <ProductID>CVRFPID-202948</ProductID>
+        <ProductID>CVRFPID-202949</ProductID>
+        <ProductID>CVRFPID-202950</ProductID>
+        <ProductID>CVRFPID-202951</ProductID>
+        <ProductID>CVRFPID-202952</ProductID>
+        <ProductID>CVRFPID-202953</ProductID>
+        <ProductID>CVRFPID-202954</ProductID>
+        <ProductID>CVRFPID-202955</ProductID>
+        <ProductID>CVRFPID-202956</ProductID>
+        <ProductID>CVRFPID-202957</ProductID>
+        <ProductID>CVRFPID-202958</ProductID>
+        <ProductID>CVRFPID-202959</ProductID>
+        <ProductID>CVRFPID-202960</ProductID>
+        <ProductID>CVRFPID-204544</ProductID>
+        <ProductID>CVRFPID-206218</ProductID>
+        <ProductID>CVRFPID-206486</ProductID>
+        <ProductID>CVRFPID-206487</ProductID>
+        <ProductID>CVRFPID-206488</ProductID>
+        <ProductID>CVRFPID-206489</ProductID>
+        <ProductID>CVRFPID-206490</ProductID>
+        <ProductID>CVRFPID-206491</ProductID>
+        <ProductID>CVRFPID-206492</ProductID>
+        <ProductID>CVRFPID-206493</ProductID>
+        <ProductID>CVRFPID-206494</ProductID>
+        <ProductID>CVRFPID-206495</ProductID>
+        <ProductID>CVRFPID-206496</ProductID>
+        <ProductID>CVRFPID-206497</ProductID>
+        <ProductID>CVRFPID-206498</ProductID>
+        <ProductID>CVRFPID-206499</ProductID>
+        <ProductID>CVRFPID-206500</ProductID>
+        <ProductID>CVRFPID-206501</ProductID>
+        <ProductID>CVRFPID-206502</ProductID>
+        <ProductID>CVRFPID-206503</ProductID>
+        <ProductID>CVRFPID-206504</ProductID>
+        <ProductID>CVRFPID-206505</ProductID>
+        <ProductID>CVRFPID-207900</ProductID>
+        <ProductID>CVRFPID-211060</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.1</BaseScore>
+        <TemporalScore>5.9</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate this vulnerability. However, administrators may disable the affected feature.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-asa-dns1</URL>
+        <Description>Cisco ASA Software DNS Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified Communications Manager Web Interface Cross-Site Scripting Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161116-ucm</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-11-15T19:07:58</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-11-16T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-11-15T19:07:58</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in several parameters of the ccmivr page of Cisco Unified Communication Manager (CallManager) could allow an unauthenticated, remote attacker to launch a cross-site scripting (XSS) attack against a user of the web interface on the affected system.
+
+
+
+The vulnerability is due to insufficient input validation of some parameters used by that page. An attacker could exploit this vulnerability by convincing the user of the system to follow an attacker-supplied link. An exploit could allow the attacker to cause arbitrary script or HTML code to be executed on the user's browser within the context of the affected application.
+
+
+
+Cisco has not released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link: 
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161116-ucm["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161116-ucm"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161116-ucm</URL>
+      <Description>Cisco Unified Communications Manager Web Interface Cross-Site Scripting Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-222652">Cisco Unified Communications Manager 11.5(1.2)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager Web Interface Cross-Site Scripting Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvb37121</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in several parameters of the ccmivr page of Cisco Unified Communication Manager (CallManager) could allow an unauthenticated, remote attacker to launch a cross-site scripting (XSS) attack against a user of the web interface on the affected system.
+
+
+
+The vulnerability is due to insufficient input validation of some parameters used by that page. An attacker could exploit this vulnerability by convincing the user of the system to follow an attacker-supplied link. An exploit could allow the attacker to cause arbitrary script or HTML code to be executed on the user's browser within the context of the affected application.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCvb37121</Note>
+    </Notes>
+    <CVE>CVE-2016-6472</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-222652</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:P/A:N/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>For additional information about cross-site scripting attacks and the methods used to exploit these vulnerabilities, see the Cisco Applied Mitigation Bulletin Understanding Cross-Site Scripting (XSS) Threat Vectors["https://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20060922-understanding-xss"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161116-ucm</URL>
+        <Description>Cisco Unified Communications Manager Web Interface Cross-Site Scripting Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

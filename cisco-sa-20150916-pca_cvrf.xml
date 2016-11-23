@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in Cisco Prime Collaboration Assurance</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150916-pca</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-09-16T15:39:15</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-09-16T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-09-16T15:39:15</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Cisco Prime Collaboration Assurance Software contains the following vulnerabilities:
+
+
+    Cisco Prime Collaboration Assurance Web Framework Access Controls Bypass Vulnerability
+    Cisco Prime Collaboration Assurance Information Disclosure Vulnerability
+    Cisco Prime Collaboration Assurance Session ID Privilege Escalation Vulnerability 
+
+
+
+Successful exploitation of the Cisco Prime Collaboration Assurance Web Framework Access Controls Bypass Vulnerability and Cisco Prime Collaboration Assurance Session ID Privilege Escalation Vulnerability could allow an authenticated attacker to perform tasks with the privileges of an administrator for any domain or customer managed by the affected system.
+
+
+
+Successful exploitation of the Cisco Prime Collaboration Assurance Information Disclosure Vulnerability could allow an authenticated attacker to access sensitive information, such as Simple Network Management Protocol (SNMP) community strings and administrative credentials, of any devices imported in the system database.
+
+
+
+Cisco has released software updates that address these vulnerabilities. Workarounds that mitigate these vulnerabilities are not available.
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150916-pca["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150916-pca"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150916-pca</URL>
+      <Description>Multiple Vulnerabilities in Cisco Prime Collaboration Assurance</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40519</URL>
+      <Description>Cisco Prime Collaboration Assurance Web Framework Access Controls Bypass Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40520</URL>
+      <Description>Cisco Prime Collaboration Assurance Information Disclosure Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40521</URL>
+      <Description>Cisco Prime Collaboration Assurance Session ID Privilege Escalation Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40519</URL>
+      <Description>Cisco Prime Collaboration Assurance Web Framework Access Controls Bypass Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40520</URL>
+      <Description>Cisco Prime Collaboration Assurance Information Disclosure Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40521</URL>
+      <Description>Cisco Prime Collaboration Assurance Session ID Privilege Escalation Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/Cisco-SA-20150916-CVE-2015-4305</URL>
+      <Description>Cisco Prime Collaboration Assurance Information Disclosure Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-209585">Cisco Prime Collaboration Assurance 9.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209587">Cisco Prime Collaboration Assurance 9.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209589">Cisco Prime Collaboration Assurance 10.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209591">Cisco Prime Collaboration Assurance 10.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209608">Cisco Prime Collaboration Assurance 10.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209593">Cisco Prime Collaboration Assurance 10.6.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Prime Collaboration Assurance Web Framework Access Controls Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCus62671</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web framework of Cisco Prime Collaboration
+Assurance  could allow an
+authenticated, remote attacker to access higher-privileged functions.
+
+
+
+The
+vulnerability is due to improper implementation of authorization and
+access controls. An attacker could exploit this vulnerability by sending
+a crafted URL to the system. The attacker would need to be logged in to
+the system to exploit this vulnerability.
+
+
+
+An exploit could
+allow the attacker to access functions, some of which should be accessible only
+to users who have administrative privileges.
+Because of this vulnerability, an attacker could create an
+additional administrative user or access information from another domain if the
+system is used in multiple tenants environment.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCus62671,CSCus62652</Note>
+    </Notes>
+    <CVE>CVE-2015-4304</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-209585</ProductID>
+        <ProductID>CVRFPID-209587</ProductID>
+        <ProductID>CVRFPID-209589</ProductID>
+        <ProductID>CVRFPID-209591</ProductID>
+        <ProductID>CVRFPID-209593</ProductID>
+        <ProductID>CVRFPID-209608</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.0</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate these vulnerabilities.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150916-pca</URL>
+        <Description>Multiple Vulnerabilities in Cisco Prime Collaboration Assurance</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Prime Collaboration Assurance Information Disclosure Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCus62656</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in the web framework of Cisco Prime Collaboration
+Assurance   could allow an authenticated, remote attacker to access
+information about any device imported into the system database.
+
+
+
+The
+vulnerability is due to improper implementation of authorization and
+access controls. An attacker could exploit this vulnerability by sending
+crafted URLs to the system. The attacker would need to be logged in to
+the system to exploit this vulnerability. 
+
+
+
+An exploit could
+allow the attacker to access information about devices imported into the
+system database, including devices for other customers or domains.
+The information that an attacker could retrieve includes SNMP
+community strings and devices' administrative credentials. This would allow the attacker to gain administrative access to these devices.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="5">CSCus62656</Note>
+    </Notes>
+    <CVE>CVE-2015-4305</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-209585</ProductID>
+        <ProductID>CVRFPID-209587</ProductID>
+        <ProductID>CVRFPID-209589</ProductID>
+        <ProductID>CVRFPID-209591</ProductID>
+        <ProductID>CVRFPID-209593</ProductID>
+        <ProductID>CVRFPID-209608</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.0</BaseScore>
+        <TemporalScore>3.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:S/C:P/I:N/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate these vulnerabilities.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150916-pca</URL>
+        <Description>Multiple Vulnerabilities in Cisco Prime Collaboration Assurance</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Prime Collaboration Assurance Session ID Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCus88343</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="5">A vulnerability in the web framework of Cisco Prime Collaboration
+Assurance   could allow an authenticated, remote attacker to access
+information about users who are logged in to the system, including users' session identifiers.
+
+
+
+The vulnerability is due to improper
+implementation of authorization and access controls. An attacker could
+exploit this vulnerability by sending crafted URLs to the system. The
+attacker would need to be logged in to the system to exploit
+this vulnerability. 
+
+
+
+An exploit could allow the attacker to access
+information about users who are logged in to the system, including users' session identifiers. Using this identifier, an attacker could
+impersonate any user, including administrative users, for any domain or
+customer if the system is configured for multiple tenants.
+Using this information, an attacker could perform any privileged
+functions during the time the session ID is valid.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="7">CSCus88343,CSCus88334</Note>
+    </Notes>
+    <CVE>CVE-2015-4306</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-209585</ProductID>
+        <ProductID>CVRFPID-209587</ProductID>
+        <ProductID>CVRFPID-209589</ProductID>
+        <ProductID>CVRFPID-209591</ProductID>
+        <ProductID>CVRFPID-209593</ProductID>
+        <ProductID>CVRFPID-209608</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>8.5</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:H/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate these vulnerabilities.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150916-pca</URL>
+        <Description>Multiple Vulnerabilities in Cisco Prime Collaboration Assurance</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

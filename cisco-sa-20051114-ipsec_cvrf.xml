@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities Found by PROTOS IPSec Test Suite</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20051114-ipsec</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.9</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2005-11-14T11:00:00</Date>
+        <Description>Updated the Vulnerable Products section. Updated the Products
+				Confirmed Not Vulnerable section. Add the Additional Details for Cisco Wireless
+				LAN controllers section. Updated the Cisco Bug IDs section. Updated the
+				Software Versions and Fixes section Non-IOS products table.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2005-11-14T11:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2005-11-14T11:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20051114-ipsec</URL>
+      <Description>Multiple Vulnerabilities Found by PROTOS IPSec Test Suite</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-54555">Cisco Adaptive Security Appliance (ASA) Software 7.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-61938">Cisco Wireless LAN Controller (WLC) 3.1.105.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-61937">Cisco Wireless LAN Controller (WLC) 3.2.78.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-50768">Cisco Firewall Services Module (FWSM) 2.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-50767">Cisco Firewall Services Module (FWSM) 2.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-50766">Cisco Firewall Services Module (FWSM) 2.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-54557">Cisco Firewall Services Module (FWSM) 2.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106724">Cisco IOS 12.2(99)SX1003</FullProductName>
+    <FullProductName ProductID="CVRFPID-50442">Cisco IOS 12.2(18)SXD</FullProductName>
+    <FullProductName ProductID="CVRFPID-103778">Cisco IOS 12.2(18)SXD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106715">Cisco IOS 12.2(18)SXD2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106940">Cisco IOS 12.2(18)SXD3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106180">Cisco IOS 12.2(18)SXD4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106010">Cisco IOS 12.2(18)SXD5</FullProductName>
+    <FullProductName ProductID="CVRFPID-105224">Cisco IOS 12.2(18)SXD6</FullProductName>
+    <FullProductName ProductID="CVRFPID-63498">Cisco IOS 12.3(4)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107131">Cisco IOS 12.3(4)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104996">Cisco IOS 12.3(4)T10</FullProductName>
+    <FullProductName ProductID="CVRFPID-107350">Cisco IOS 12.3(4)T11</FullProductName>
+    <FullProductName ProductID="CVRFPID-105274">Cisco IOS 12.3(4)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106064">Cisco IOS 12.3(4)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104146">Cisco IOS 12.3(4)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-105888">Cisco IOS 12.3(4)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-104486">Cisco IOS 12.3(4)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-107354">Cisco IOS 12.3(4)T8</FullProductName>
+    <FullProductName ProductID="CVRFPID-103893">Cisco IOS 12.3(4)T9</FullProductName>
+    <FullProductName ProductID="CVRFPID-65513">Cisco IOS 12.3(7)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107603">Cisco IOS 12.3(7)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105523">Cisco IOS 12.3(7)T10</FullProductName>
+    <FullProductName ProductID="CVRFPID-105808">Cisco IOS 12.3(7)T11</FullProductName>
+    <FullProductName ProductID="CVRFPID-62555">Cisco IOS 12.3(7)T12</FullProductName>
+    <FullProductName ProductID="CVRFPID-104657">Cisco IOS 12.3(7)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104448">Cisco IOS 12.3(7)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105720">Cisco IOS 12.3(7)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107392">Cisco IOS 12.3(7)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-105369">Cisco IOS 12.3(7)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-107066">Cisco IOS 12.3(7)T8</FullProductName>
+    <FullProductName ProductID="CVRFPID-106391">Cisco IOS 12.3(7)T9</FullProductName>
+    <FullProductName ProductID="CVRFPID-63378">Cisco IOS 12.3(8)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107764">Cisco IOS 12.3(8)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105116">Cisco IOS 12.3(8)T10</FullProductName>
+    <FullProductName ProductID="CVRFPID-106421">Cisco IOS 12.3(8)T11</FullProductName>
+    <FullProductName ProductID="CVRFPID-104481">Cisco IOS 12.3(8)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104802">Cisco IOS 12.3(8)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107238">Cisco IOS 12.3(8)T5</FullProductName>
+    <FullProductName ProductID="CVRFPID-103777">Cisco IOS 12.3(8)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-104500">Cisco IOS 12.3(8)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-104854">Cisco IOS 12.3(8)T8</FullProductName>
+    <FullProductName ProductID="CVRFPID-103573">Cisco IOS 12.3(8)T9</FullProductName>
+    <FullProductName ProductID="CVRFPID-58331">Cisco IOS 12.3(11)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107382">Cisco IOS 12.3(11)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104980">Cisco IOS 12.3(11)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106304">Cisco IOS 12.3(11)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-104381">Cisco IOS 12.3(11)T5</FullProductName>
+    <FullProductName ProductID="CVRFPID-105748">Cisco IOS 12.3(11)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-107596">Cisco IOS 12.3(11)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-104612">Cisco IOS 12.3(11)T8</FullProductName>
+    <FullProductName ProductID="CVRFPID-63197">Cisco IOS 12.3(14)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107367">Cisco IOS 12.3(14)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105272">Cisco IOS 12.3(14)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106094">Cisco IOS 12.3(14)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105912">Cisco IOS 12.3(4)TPC11a</FullProductName>
+    <FullProductName ProductID="CVRFPID-63501">Cisco IOS 12.3(4)XD</FullProductName>
+    <FullProductName ProductID="CVRFPID-103953">Cisco IOS 12.3(4)XD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106716">Cisco IOS 12.3(4)XD2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106469">Cisco IOS 12.3(4)XD3</FullProductName>
+    <FullProductName ProductID="CVRFPID-103502">Cisco IOS 12.3(4)XD4</FullProductName>
+    <FullProductName ProductID="CVRFPID-65470">Cisco IOS 12.3(2)XE</FullProductName>
+    <FullProductName ProductID="CVRFPID-105834">Cisco IOS 12.3(2)XE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104989">Cisco IOS 12.3(2)XE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107447">Cisco IOS 12.3(2)XE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106104">Cisco IOS 12.3(2)XE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-65471">Cisco IOS 12.3(2)XF</FullProductName>
+    <FullProductName ProductID="CVRFPID-65490">Cisco IOS 12.3(4)XG</FullProductName>
+    <FullProductName ProductID="CVRFPID-105348">Cisco IOS 12.3(4)XG1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106147">Cisco IOS 12.3(4)XG2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104208">Cisco IOS 12.3(4)XG3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105964">Cisco IOS 12.3(4)XG4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106745">Cisco IOS 12.3(4)XG5</FullProductName>
+    <FullProductName ProductID="CVRFPID-105562">Cisco IOS 12.3(7)XI1b</FullProductName>
+    <FullProductName ProductID="CVRFPID-105857">Cisco IOS 12.3(7)XI1c</FullProductName>
+    <FullProductName ProductID="CVRFPID-106751">Cisco IOS 12.3(7)XI2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105715">Cisco IOS 12.3(7)XI2a</FullProductName>
+    <FullProductName ProductID="CVRFPID-106531">Cisco IOS 12.3(7)XI3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105225">Cisco IOS 12.3(7)XI4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106793">Cisco IOS 12.3(7)XI5</FullProductName>
+    <FullProductName ProductID="CVRFPID-106582">Cisco IOS 12.3(7)XI6</FullProductName>
+    <FullProductName ProductID="CVRFPID-103650">Cisco IOS 12.3(7)XI7</FullProductName>
+    <FullProductName ProductID="CVRFPID-65510">Cisco IOS 12.3(7)XJ</FullProductName>
+    <FullProductName ProductID="CVRFPID-104083">Cisco IOS 12.3(7)XJ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104179">Cisco IOS 12.3(7)XJ2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106872">Cisco IOS 12.3(4)XK</FullProductName>
+    <FullProductName ProductID="CVRFPID-104909">Cisco IOS 12.3(4)XK1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107314">Cisco IOS 12.3(4)XK2</FullProductName>
+    <FullProductName ProductID="CVRFPID-103862">Cisco IOS 12.3(4)XK3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106312">Cisco IOS 12.3(4)XK4</FullProductName>
+    <FullProductName ProductID="CVRFPID-65434">Cisco IOS 12.3(11)XL</FullProductName>
+    <FullProductName ProductID="CVRFPID-106612">Cisco IOS 12.3(11)XL1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63380">Cisco IOS 12.3(4)XQ</FullProductName>
+    <FullProductName ProductID="CVRFPID-105067">Cisco IOS 12.3(4)XQ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63381">Cisco IOS 12.3(7)XR</FullProductName>
+    <FullProductName ProductID="CVRFPID-106853">Cisco IOS 12.3(7)XR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105585">Cisco IOS 12.3(7)XR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105271">Cisco IOS 12.3(7)XR4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106081">Cisco IOS 12.3(7)XR5</FullProductName>
+    <FullProductName ProductID="CVRFPID-106296">Cisco IOS 12.3(7)XR6</FullProductName>
+    <FullProductName ProductID="CVRFPID-63382">Cisco IOS 12.3(7)XS</FullProductName>
+    <FullProductName ProductID="CVRFPID-104577">Cisco IOS 12.3(7)XS1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104319">Cisco IOS 12.3(7)XS2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105797">Cisco IOS 12.3(8)XU2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107104">Cisco IOS 12.3(8)XU3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106924">Cisco IOS 12.3(8)XU4</FullProductName>
+    <FullProductName ProductID="CVRFPID-105503">Cisco IOS 12.3(8)XU5</FullProductName>
+    <FullProductName ProductID="CVRFPID-63384">Cisco IOS 12.3(8)XW</FullProductName>
+    <FullProductName ProductID="CVRFPID-105933">Cisco IOS 12.3(8)XW1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104048">Cisco IOS 12.3(8)XW2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104844">Cisco IOS 12.3(8)XW3</FullProductName>
+    <FullProductName ProductID="CVRFPID-63385">Cisco IOS 12.3(8)XX</FullProductName>
+    <FullProductName ProductID="CVRFPID-104533">Cisco IOS 12.3(8)XX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63387">Cisco IOS 12.3(8)YA</FullProductName>
+    <FullProductName ProductID="CVRFPID-105482">Cisco IOS 12.3(8)YA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65518">Cisco IOS 12.3(8)YD</FullProductName>
+    <FullProductName ProductID="CVRFPID-105256">Cisco IOS 12.3(8)YD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65435">Cisco IOS 12.3(11)YF</FullProductName>
+    <FullProductName ProductID="CVRFPID-107542">Cisco IOS 12.3(11)YF1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103503">Cisco IOS 12.3(11)YF2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106437">Cisco IOS 12.3(11)YF3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106773">Cisco IOS 12.3(11)YF4</FullProductName>
+    <FullProductName ProductID="CVRFPID-63204">Cisco IOS 12.3(8)YG</FullProductName>
+    <FullProductName ProductID="CVRFPID-107335">Cisco IOS 12.3(8)YG1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107099">Cisco IOS 12.3(8)YG2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106324">Cisco IOS 12.3(8)YG3</FullProductName>
+    <FullProductName ProductID="CVRFPID-63388">Cisco IOS 12.3(8)YH</FullProductName>
+    <FullProductName ProductID="CVRFPID-106128">Cisco IOS 12.3(8)YI1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105307">Cisco IOS 12.3(8)YI2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105967">Cisco IOS 12.3(8)YI3</FullProductName>
+    <FullProductName ProductID="CVRFPID-65437">Cisco IOS 12.3(11)YK</FullProductName>
+    <FullProductName ProductID="CVRFPID-105113">Cisco IOS 12.3(11)YK1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105174">Cisco IOS 12.3(11)YK2</FullProductName>
+    <FullProductName ProductID="CVRFPID-65453">Cisco IOS 12.3(14)YQ</FullProductName>
+    <FullProductName ProductID="CVRFPID-106385">Cisco IOS 12.3(14)YQ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107136">Cisco IOS 12.3(14)YQ2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106713">Cisco IOS 12.3(14)YQ3</FullProductName>
+    <FullProductName ProductID="CVRFPID-65900">Cisco IOS 12.3(11)YS</FullProductName>
+    <FullProductName ProductID="CVRFPID-105234">Cisco IOS 12.3(11)YS1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65454">Cisco IOS 12.3(14)YT</FullProductName>
+    <FullProductName ProductID="CVRFPID-104514">Cisco IOS 12.3(14)YT1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65455">Cisco IOS 12.3(14)YU</FullProductName>
+    <FullProductName ProductID="CVRFPID-104198">Cisco IOS 12.3(14)YU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63194">Cisco IOS 12.3(8)ZA</FullProductName>
+    <FullProductName ProductID="CVRFPID-65527">Cisco IOS 12.4(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65528">Cisco IOS 12.4(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65529">Cisco IOS 12.4(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65542">Cisco IOS 12.4(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65543">Cisco IOS 12.4(3a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-63499">Cisco IOS 12.4(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-106553">Cisco IOS 12.4(2)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65538">Cisco IOS 12.4(2)XA</FullProductName>
+    <FullProductName ProductID="CVRFPID-103949">Cisco IOS 12.4(2)XA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106896">Cisco IOS 12.4(2)XA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-45790">Cisco MDS SAN-OS Software 2.0.2b</FullProductName>
+    <FullProductName ProductID="CVRFPID-50215">Cisco MDS SAN-OS Software 2.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-54563">Cisco MDS SAN-OS Software 2.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-61456">Cisco MDS SAN-OS Software 2.1.1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-61455">Cisco MDS SAN-OS Software 2.1.1b</FullProductName>
+    <FullProductName ProductID="CVRFPID-37165">Cisco PIX Firewall Software 6.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-39632">Cisco PIX Firewall Software 6.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-39633">Cisco PIX Firewall Software 6.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-39634">Cisco PIX Firewall Software 6.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-43700">Cisco PIX Firewall Software 6.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-35165">Cisco PIX Firewall Software 6.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-39635">Cisco PIX Firewall Software 6.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-39636">Cisco PIX Firewall Software 6.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-39637">Cisco PIX Firewall Software 6.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-43701">Cisco PIX Firewall Software 6.1(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-35170">Cisco PIX Firewall Software 6.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-39638">Cisco PIX Firewall Software 6.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-39639">Cisco PIX Firewall Software 6.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-44560">Cisco PIX Firewall Software 6.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-50214">Cisco PIX Firewall Software 6.2(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-43578">Cisco PIX Firewall Software 6.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43579">Cisco PIX Firewall Software 6.3(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-43580">Cisco PIX Firewall Software 6.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-43581">Cisco PIX Firewall Software 6.3(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-50120">Cisco PIX Firewall Software 6.3(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-55145">Cisco PIX Firewall Software 7.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55257">Cisco PIX Firewall Software 7.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-47743">Cisco VPN 3000 Series Concentrator 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-47744">Cisco VPN 3000 Series Concentrator 3.0.3.A</FullProductName>
+    <FullProductName ProductID="CVRFPID-47745">Cisco VPN 3000 Series Concentrator 3.0.3.B</FullProductName>
+    <FullProductName ProductID="CVRFPID-47746">Cisco VPN 3000 Series Concentrator 3.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-47737">Cisco VPN 3000 Series Concentrator 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-47747">Cisco VPN 3000 Series Concentrator 3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-47748">Cisco VPN 3000 Series Concentrator 3.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-47738">Cisco VPN 3000 Series Concentrator 3.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-47411">Cisco VPN 3000 Series Concentrator 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-47412">Cisco VPN 3000 Series Concentrator 4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-47413">Cisco VPN 3000 Series Concentrator 4.0.1.B</FullProductName>
+    <FullProductName ProductID="CVRFPID-47414">Cisco VPN 3000 Series Concentrator 4.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-47415">Cisco VPN 3000 Series Concentrator 4.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-47416">Cisco VPN 3000 Series Concentrator 4.0.4.A</FullProductName>
+    <FullProductName ProductID="CVRFPID-47417">Cisco VPN 3000 Series Concentrator 4.0.4.B</FullProductName>
+    <FullProductName ProductID="CVRFPID-47418">Cisco VPN 3000 Series Concentrator 4.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-47419">Cisco VPN 3000 Series Concentrator 4.0.5.A</FullProductName>
+    <FullProductName ProductID="CVRFPID-47420">Cisco VPN 3000 Series Concentrator 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-47421">Cisco VPN 3000 Series Concentrator 4.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-47422">Cisco VPN 3000 Series Concentrator 4.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-47423">Cisco VPN 3000 Series Concentrator 4.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-47424">Cisco VPN 3000 Series Concentrator 4.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-47425">Cisco VPN 3000 Series Concentrator 4.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-47426">Cisco VPN 3000 Series Concentrator 4.1.5.A</FullProductName>
+    <FullProductName ProductID="CVRFPID-51728">Cisco VPN 3000 Series Concentrator 4.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-50084">Cisco VPN 3000 Series Concentrator 4.1.7.A</FullProductName>
+    <FullProductName ProductID="CVRFPID-50081">Cisco VPN 3000 Series Concentrator 4.1.7.B</FullProductName>
+    <FullProductName ProductID="CVRFPID-50082">Cisco VPN 3000 Series Concentrator 4.1.7.C</FullProductName>
+    <FullProductName ProductID="CVRFPID-50083">Cisco VPN 3000 Series Concentrator 4.1.7.D</FullProductName>
+    <FullProductName ProductID="CVRFPID-51726">Cisco VPN 3000 Series Concentrator 4.1.7.E</FullProductName>
+    <FullProductName ProductID="CVRFPID-51727">Cisco VPN 3000 Series Concentrator 4.1.7.F</FullProductName>
+    <FullProductName ProductID="CVRFPID-54560">Cisco VPN 3000 Series Concentrator 4.7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-54561">Cisco VPN 3000 Series Concentrator 4.7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-54562">Cisco VPN 3000 Series Concentrator 4.7.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-56377">Cisco VPN 3000 Series Concentrator 4.7.2.A</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Multiple Vendors ISAKMP/IKE Implementation Multiple Vulnerabilities</Title>
+    <ID SystemName="Cisco Bug ID">CSCed94829</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCed94829</Note>
+    </Notes>
+    <CVE>CVE-2005-3666</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-50442</ProductID>
+        <ProductID>CVRFPID-58331</ProductID>
+        <ProductID>CVRFPID-62555</ProductID>
+        <ProductID>CVRFPID-63194</ProductID>
+        <ProductID>CVRFPID-63197</ProductID>
+        <ProductID>CVRFPID-63204</ProductID>
+        <ProductID>CVRFPID-63378</ProductID>
+        <ProductID>CVRFPID-63380</ProductID>
+        <ProductID>CVRFPID-63381</ProductID>
+        <ProductID>CVRFPID-63382</ProductID>
+        <ProductID>CVRFPID-63384</ProductID>
+        <ProductID>CVRFPID-63385</ProductID>
+        <ProductID>CVRFPID-63387</ProductID>
+        <ProductID>CVRFPID-63388</ProductID>
+        <ProductID>CVRFPID-63498</ProductID>
+        <ProductID>CVRFPID-63499</ProductID>
+        <ProductID>CVRFPID-63501</ProductID>
+        <ProductID>CVRFPID-65434</ProductID>
+        <ProductID>CVRFPID-65435</ProductID>
+        <ProductID>CVRFPID-65437</ProductID>
+        <ProductID>CVRFPID-65453</ProductID>
+        <ProductID>CVRFPID-65454</ProductID>
+        <ProductID>CVRFPID-65455</ProductID>
+        <ProductID>CVRFPID-65470</ProductID>
+        <ProductID>CVRFPID-65471</ProductID>
+        <ProductID>CVRFPID-65490</ProductID>
+        <ProductID>CVRFPID-65510</ProductID>
+        <ProductID>CVRFPID-65513</ProductID>
+        <ProductID>CVRFPID-65518</ProductID>
+        <ProductID>CVRFPID-65527</ProductID>
+        <ProductID>CVRFPID-65528</ProductID>
+        <ProductID>CVRFPID-65529</ProductID>
+        <ProductID>CVRFPID-65538</ProductID>
+        <ProductID>CVRFPID-65542</ProductID>
+        <ProductID>CVRFPID-65543</ProductID>
+        <ProductID>CVRFPID-65900</ProductID>
+        <ProductID>CVRFPID-103502</ProductID>
+        <ProductID>CVRFPID-103503</ProductID>
+        <ProductID>CVRFPID-103573</ProductID>
+        <ProductID>CVRFPID-103650</ProductID>
+        <ProductID>CVRFPID-103777</ProductID>
+        <ProductID>CVRFPID-103778</ProductID>
+        <ProductID>CVRFPID-103862</ProductID>
+        <ProductID>CVRFPID-103893</ProductID>
+        <ProductID>CVRFPID-103949</ProductID>
+        <ProductID>CVRFPID-103953</ProductID>
+        <ProductID>CVRFPID-104048</ProductID>
+        <ProductID>CVRFPID-104083</ProductID>
+        <ProductID>CVRFPID-104146</ProductID>
+        <ProductID>CVRFPID-104179</ProductID>
+        <ProductID>CVRFPID-104198</ProductID>
+        <ProductID>CVRFPID-104208</ProductID>
+        <ProductID>CVRFPID-104319</ProductID>
+        <ProductID>CVRFPID-104381</ProductID>
+        <ProductID>CVRFPID-104448</ProductID>
+        <ProductID>CVRFPID-104481</ProductID>
+        <ProductID>CVRFPID-104486</ProductID>
+        <ProductID>CVRFPID-104500</ProductID>
+        <ProductID>CVRFPID-104514</ProductID>
+        <ProductID>CVRFPID-104533</ProductID>
+        <ProductID>CVRFPID-104577</ProductID>
+        <ProductID>CVRFPID-104612</ProductID>
+        <ProductID>CVRFPID-104657</ProductID>
+        <ProductID>CVRFPID-104802</ProductID>
+        <ProductID>CVRFPID-104844</ProductID>
+        <ProductID>CVRFPID-104854</ProductID>
+        <ProductID>CVRFPID-104909</ProductID>
+        <ProductID>CVRFPID-104980</ProductID>
+        <ProductID>CVRFPID-104989</ProductID>
+        <ProductID>CVRFPID-104996</ProductID>
+        <ProductID>CVRFPID-105067</ProductID>
+        <ProductID>CVRFPID-105113</ProductID>
+        <ProductID>CVRFPID-105116</ProductID>
+        <ProductID>CVRFPID-105174</ProductID>
+        <ProductID>CVRFPID-105224</ProductID>
+        <ProductID>CVRFPID-105225</ProductID>
+        <ProductID>CVRFPID-105234</ProductID>
+        <ProductID>CVRFPID-105256</ProductID>
+        <ProductID>CVRFPID-105271</ProductID>
+        <ProductID>CVRFPID-105272</ProductID>
+        <ProductID>CVRFPID-105274</ProductID>
+        <ProductID>CVRFPID-105307</ProductID>
+        <ProductID>CVRFPID-105348</ProductID>
+        <ProductID>CVRFPID-105369</ProductID>
+        <ProductID>CVRFPID-105482</ProductID>
+        <ProductID>CVRFPID-105503</ProductID>
+        <ProductID>CVRFPID-105523</ProductID>
+        <ProductID>CVRFPID-105562</ProductID>
+        <ProductID>CVRFPID-105585</ProductID>
+        <ProductID>CVRFPID-105715</ProductID>
+        <ProductID>CVRFPID-105720</ProductID>
+        <ProductID>CVRFPID-105748</ProductID>
+        <ProductID>CVRFPID-105797</ProductID>
+        <ProductID>CVRFPID-105808</ProductID>
+        <ProductID>CVRFPID-105834</ProductID>
+        <ProductID>CVRFPID-105857</ProductID>
+        <ProductID>CVRFPID-105888</ProductID>
+        <ProductID>CVRFPID-105912</ProductID>
+        <ProductID>CVRFPID-105933</ProductID>
+        <ProductID>CVRFPID-105964</ProductID>
+        <ProductID>CVRFPID-105967</ProductID>
+        <ProductID>CVRFPID-106010</ProductID>
+        <ProductID>CVRFPID-106064</ProductID>
+        <ProductID>CVRFPID-106081</ProductID>
+        <ProductID>CVRFPID-106094</ProductID>
+        <ProductID>CVRFPID-106104</ProductID>
+        <ProductID>CVRFPID-106128</ProductID>
+        <ProductID>CVRFPID-106147</ProductID>
+        <ProductID>CVRFPID-106180</ProductID>
+        <ProductID>CVRFPID-106296</ProductID>
+        <ProductID>CVRFPID-106304</ProductID>
+        <ProductID>CVRFPID-106312</ProductID>
+        <ProductID>CVRFPID-106324</ProductID>
+        <ProductID>CVRFPID-106385</ProductID>
+        <ProductID>CVRFPID-106391</ProductID>
+        <ProductID>CVRFPID-106421</ProductID>
+        <ProductID>CVRFPID-106437</ProductID>
+        <ProductID>CVRFPID-106469</ProductID>
+        <ProductID>CVRFPID-106531</ProductID>
+        <ProductID>CVRFPID-106553</ProductID>
+        <ProductID>CVRFPID-106582</ProductID>
+        <ProductID>CVRFPID-106612</ProductID>
+        <ProductID>CVRFPID-106713</ProductID>
+        <ProductID>CVRFPID-106715</ProductID>
+        <ProductID>CVRFPID-106716</ProductID>
+        <ProductID>CVRFPID-106724</ProductID>
+        <ProductID>CVRFPID-106745</ProductID>
+        <ProductID>CVRFPID-106751</ProductID>
+        <ProductID>CVRFPID-106773</ProductID>
+        <ProductID>CVRFPID-106793</ProductID>
+        <ProductID>CVRFPID-106853</ProductID>
+        <ProductID>CVRFPID-106872</ProductID>
+        <ProductID>CVRFPID-106896</ProductID>
+        <ProductID>CVRFPID-106924</ProductID>
+        <ProductID>CVRFPID-106940</ProductID>
+        <ProductID>CVRFPID-107066</ProductID>
+        <ProductID>CVRFPID-107099</ProductID>
+        <ProductID>CVRFPID-107104</ProductID>
+        <ProductID>CVRFPID-107131</ProductID>
+        <ProductID>CVRFPID-107136</ProductID>
+        <ProductID>CVRFPID-107238</ProductID>
+        <ProductID>CVRFPID-107314</ProductID>
+        <ProductID>CVRFPID-107335</ProductID>
+        <ProductID>CVRFPID-107350</ProductID>
+        <ProductID>CVRFPID-107354</ProductID>
+        <ProductID>CVRFPID-107367</ProductID>
+        <ProductID>CVRFPID-107382</ProductID>
+        <ProductID>CVRFPID-107392</ProductID>
+        <ProductID>CVRFPID-107447</ProductID>
+        <ProductID>CVRFPID-107542</ProductID>
+        <ProductID>CVRFPID-107596</ProductID>
+        <ProductID>CVRFPID-107603</ProductID>
+        <ProductID>CVRFPID-107764</ProductID>
+        <ProductID>CVRFPID-54555</ProductID>
+        <ProductID>CVRFPID-61937</ProductID>
+        <ProductID>CVRFPID-61938</ProductID>
+        <ProductID>CVRFPID-50766</ProductID>
+        <ProductID>CVRFPID-50767</ProductID>
+        <ProductID>CVRFPID-50768</ProductID>
+        <ProductID>CVRFPID-54557</ProductID>
+        <ProductID>CVRFPID-45790</ProductID>
+        <ProductID>CVRFPID-50215</ProductID>
+        <ProductID>CVRFPID-54563</ProductID>
+        <ProductID>CVRFPID-61455</ProductID>
+        <ProductID>CVRFPID-61456</ProductID>
+        <ProductID>CVRFPID-35165</ProductID>
+        <ProductID>CVRFPID-35170</ProductID>
+        <ProductID>CVRFPID-37165</ProductID>
+        <ProductID>CVRFPID-39632</ProductID>
+        <ProductID>CVRFPID-39633</ProductID>
+        <ProductID>CVRFPID-39634</ProductID>
+        <ProductID>CVRFPID-39635</ProductID>
+        <ProductID>CVRFPID-39636</ProductID>
+        <ProductID>CVRFPID-39637</ProductID>
+        <ProductID>CVRFPID-39638</ProductID>
+        <ProductID>CVRFPID-39639</ProductID>
+        <ProductID>CVRFPID-43578</ProductID>
+        <ProductID>CVRFPID-43579</ProductID>
+        <ProductID>CVRFPID-43580</ProductID>
+        <ProductID>CVRFPID-43581</ProductID>
+        <ProductID>CVRFPID-43700</ProductID>
+        <ProductID>CVRFPID-43701</ProductID>
+        <ProductID>CVRFPID-44560</ProductID>
+        <ProductID>CVRFPID-50120</ProductID>
+        <ProductID>CVRFPID-50214</ProductID>
+        <ProductID>CVRFPID-55145</ProductID>
+        <ProductID>CVRFPID-55257</ProductID>
+        <ProductID>CVRFPID-47411</ProductID>
+        <ProductID>CVRFPID-47412</ProductID>
+        <ProductID>CVRFPID-47413</ProductID>
+        <ProductID>CVRFPID-47414</ProductID>
+        <ProductID>CVRFPID-47415</ProductID>
+        <ProductID>CVRFPID-47416</ProductID>
+        <ProductID>CVRFPID-47417</ProductID>
+        <ProductID>CVRFPID-47418</ProductID>
+        <ProductID>CVRFPID-47419</ProductID>
+        <ProductID>CVRFPID-47420</ProductID>
+        <ProductID>CVRFPID-47421</ProductID>
+        <ProductID>CVRFPID-47422</ProductID>
+        <ProductID>CVRFPID-47423</ProductID>
+        <ProductID>CVRFPID-47424</ProductID>
+        <ProductID>CVRFPID-47425</ProductID>
+        <ProductID>CVRFPID-47426</ProductID>
+        <ProductID>CVRFPID-47737</ProductID>
+        <ProductID>CVRFPID-47738</ProductID>
+        <ProductID>CVRFPID-47743</ProductID>
+        <ProductID>CVRFPID-47744</ProductID>
+        <ProductID>CVRFPID-47745</ProductID>
+        <ProductID>CVRFPID-47746</ProductID>
+        <ProductID>CVRFPID-47747</ProductID>
+        <ProductID>CVRFPID-47748</ProductID>
+        <ProductID>CVRFPID-50081</ProductID>
+        <ProductID>CVRFPID-50082</ProductID>
+        <ProductID>CVRFPID-50083</ProductID>
+        <ProductID>CVRFPID-50084</ProductID>
+        <ProductID>CVRFPID-51726</ProductID>
+        <ProductID>CVRFPID-51727</ProductID>
+        <ProductID>CVRFPID-51728</ProductID>
+        <ProductID>CVRFPID-54560</ProductID>
+        <ProductID>CVRFPID-54561</ProductID>
+        <ProductID>CVRFPID-54562</ProductID>
+        <ProductID>CVRFPID-56377</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20051114-ipsec</URL>
+        <Description>Multiple Vulnerabilities Found by PROTOS IPSec Test Suite</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

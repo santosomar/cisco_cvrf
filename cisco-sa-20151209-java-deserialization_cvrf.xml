@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Vulnerability in Java Deserialization Affecting Cisco Products</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151209-java-deserialization</ID>
+    </Identification>
+    <Status>Interim</Status>
+    <Version>1.10</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-12-09T15:34:34</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2015-12-10T19:45:58</Date>
+        <Description>Assigned a unique CVE ID for Cisco products and updated the affected products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2015-12-15T13:55:39</Date>
+        <Description>Updated the affected products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2015-12-17T13:57:58</Date>
+        <Description>Updated the affected products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2015-12-18T13:26:59</Date>
+        <Description>Updated the affected products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2015-12-22T13:48:53</Date>
+        <Description>Updated the affected products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2015-12-23T21:06:11</Date>
+        <Description>Updated the affected products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.7</Number>
+        <Date>2016-01-05T19:53:06</Date>
+        <Description>Updated the affected products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.8</Number>
+        <Date>2016-01-12T13:51:14</Date>
+        <Description>Updated the affected products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2016-02-02T14:52:21</Date>
+        <Description>Updated the affected products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.10</Number>
+        <Date>2016-02-25T15:11:22</Date>
+        <Description>Updated the affected products.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-12-09T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-02-25T15:11:22</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Java deserialization used by the Apache Commons Collections (ACC) library could allow an unauthenticated, remote attacker to execute arbitrary code.
+
+
+
+The vulnerability is due to insecure deserialization of user-supplied content by the affected software. An attacker could exploit this vulnerability by submitting crafted input to an application on a targeted system that uses the ACC library. After the vulnerable library on the affected system deserializes the content, the attacker could execute arbitrary code on the system, which could be used to conduct further attacks.
+
+
+
+On November 6, 2015, Foxglove Security Group published information about a remote code execution vulnerability that affects multiple releases of the ACC library. The report contains detailed proof-of-concept code for a number of applications, including WebSphere Application Server, JBoss, Jenkins, OpenNMS, and WebLogic. This is a remotely exploitable vulnerability that allows an attacker to inject any malicious code or execute any commands that exist on the server. A wide range of potential impacts includes allowing the attacker to obtain sensitive information.
+
+
+
+Object serialization is a technique that many programming languages use to convert an object into a sequence of bits for transfer purposes. Deserialization is a technique that reassembles those bits back to an object. This vulnerability occurs in Java object serialization for network transport and object deserialization on the receiving side.
+
+
+
+Many applications accept serialized objects from the network without performing input validation checks before deserializing it. Crafted serialized objects can therefore lead to execution of arbitrary attacker code.
+
+
+
+Although the problem itself is in the serialization and deserialization functionality of the Java programming language, the ACC library is known to be affected by this vulnerability. Any application or application framework could be vulnerable if it uses the ACC library and deserializes arbitrary, user-supplied Java serialized data.
+
+
+
+Additional details about the vulnerability are available at the following links:
+
+
+
+
+Official Vulnerability Note from CERT["http://www.kb.cert.org/vuls/id/576313"]
+
+Foxglove Security["http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/"]
+
+Apache Commons Statement["https://blogs.apache.org/foundation/entry/apache_commons_statement_to_widespread"]
+
+Oracle Security Alert["https://blogs.oracle.com/security/entry/security_alert_cve_2015_4852"]
+
+
+
+
+Cisco will release software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-java-deserialization["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-java-deserialization"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-java-deserialization</URL>
+      <Description>Vulnerability in Java Deserialization Affecting Cisco Products</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-75600">Cisco Prime Access Registrar 1.7 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75584">Cisco Prime Access Registrar 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53617">Cisco Prime Access Registrar 3.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53618">Cisco Prime Access Registrar 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-75582">Cisco Prime Access Registrar 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-61497">Cisco Prime Access Registrar 4.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-95920">Cisco Digital Media Manager Software 3.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-95921">Cisco Digital Media Manager Software 3.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-95923">Cisco Digital Media Manager Software 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-95925">Cisco Digital Media Manager Software 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-95927">Cisco Digital Media Manager Software 5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-95928">Cisco Digital Media Manager Software 5.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-95929">Cisco Digital Media Manager Software 5.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-97388">Cisco Digital Media Manager Software 5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-114095">Cisco Digital Media Manager Software 5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-114096">Cisco Digital Media Manager Software 5.2 5.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-114097">Cisco Digital Media Manager Software 5.2 5.2.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-114098">Cisco Digital Media Manager Software 5.2 5.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-114099">Cisco Digital Media Manager Software 5.2 5.2.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-114100">Cisco Digital Media Manager Software 5.2 5.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-114102">Cisco Digital Media Manager Software 5.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53133">Cisco NAC Appliance Software 3.3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53134">Cisco NAC Appliance Software 3.3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53135">Cisco NAC Appliance Software 3.3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53136">Cisco NAC Appliance Software 3.3.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53137">Cisco NAC Appliance Software 3.3.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53138">Cisco NAC Appliance Software 3.3.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53139">Cisco NAC Appliance Software 3.3.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53140">Cisco NAC Appliance Software 3.3.7 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53141">Cisco NAC Appliance Software 3.3.8 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53142">Cisco NAC Appliance Software 3.3.9 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53143">Cisco NAC Appliance Software 3.4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53144">Cisco NAC Appliance Software 3.4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53145">Cisco NAC Appliance Software 3.4.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53146">Cisco NAC Appliance Software 3.4.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53147">Cisco NAC Appliance Software 3.4.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53148">Cisco NAC Appliance Software 3.4.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78613">Cisco NAC Appliance Software 3.4.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-53149">Cisco NAC Appliance Software 3.5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78612">Cisco NAC Appliance Software 3.5.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-53150">Cisco NAC Appliance Software 3.5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53151">Cisco NAC Appliance Software 3.5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78601">Cisco NAC Appliance Software 3.5.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78602">Cisco NAC Appliance Software 3.5.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-53152">Cisco NAC Appliance Software 3.5.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53191">Cisco NAC Appliance Software 3.5.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78600">Cisco NAC Appliance Software 3.5.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-53192">Cisco NAC Appliance Software 3.5.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78599">Cisco NAC Appliance Software 3.5.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-55566">Cisco NAC Appliance Software 3.5.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78598">Cisco NAC Appliance Software 3.5.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78596">Cisco NAC Appliance Software 3.5.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78597">Cisco NAC Appliance Software 3.5.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78594">Cisco NAC Appliance Software 3.5.7 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78592">Cisco NAC Appliance Software 3.5.8 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62184">Cisco NAC Appliance Software 3.5.9 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78609">Cisco NAC Appliance Software 3.5.10 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78604">Cisco NAC Appliance Software 3.5.11 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78605">Cisco NAC Appliance Software 3.5.11.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78611">Cisco NAC Appliance Software 3.5.12 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78607">Cisco NAC Appliance Software 3.5.13 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62190">Cisco NAC Appliance Software 3.6.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62211">Cisco NAC Appliance Software 3.6.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62185">Cisco NAC Appliance Software 3.6.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62186">Cisco NAC Appliance Software 3.6.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62191">Cisco NAC Appliance Software 3.6.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62210">Cisco NAC Appliance Software 3.6.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62209">Cisco NAC Appliance Software 3.6.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-62192">Cisco NAC Appliance Software 3.6.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62208">Cisco NAC Appliance Software 3.6.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62193">Cisco NAC Appliance Software 3.6.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62200">Cisco NAC Appliance Software 3.6.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62201">Cisco NAC Appliance Software 3.6.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-78588">Cisco NAC Appliance Software 3.6.4.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-78590">Cisco NAC Appliance Software 3.6.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62194">Cisco NAC Appliance Software 4.0.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62207">Cisco NAC Appliance Software 4.0.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62195">Cisco NAC Appliance Software 4.0.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62196">Cisco NAC Appliance Software 4.0.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62206">Cisco NAC Appliance Software 4.0.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78587">Cisco NAC Appliance Software 4.0.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-62197">Cisco NAC Appliance Software 4.0.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62202">Cisco NAC Appliance Software 4.0.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62203">Cisco NAC Appliance Software 4.0.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-62205">Cisco NAC Appliance Software 4.0.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-62198">Cisco NAC Appliance Software 4.0.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78585">Cisco NAC Appliance Software 4.0.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78586">Cisco NAC Appliance Software 4.0.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78581">Cisco NAC Appliance Software 4.0.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78582">Cisco NAC Appliance Software 4.0.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78583">Cisco NAC Appliance Software 4.0.6.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-62199">Cisco NAC Appliance Software 4.1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62204">Cisco NAC Appliance Software 4.1.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78579">Cisco NAC Appliance Software 4.1.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-78574">Cisco NAC Appliance Software 4.1.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78572">Cisco NAC Appliance Software 4.1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78578">Cisco NAC Appliance Software 4.1.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78577">Cisco NAC Appliance Software 4.1.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-78570">Cisco NAC Appliance Software 4.1.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78575">Cisco NAC Appliance Software 4.1.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-78576">Cisco NAC Appliance Software 4.1.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-188997">Cisco NAC Appliance Software 4.5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-189305">Cisco NAC Appliance Software 4.6.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-113602">Cisco NAC Appliance Software 4.7.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-189309">Cisco NAC Appliance Software 4.7.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-113604">Cisco NAC Appliance Software 4.7.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-189311">Cisco NAC Appliance Software 4.7.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-189313">Cisco NAC Appliance Software 4.7.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-189317">Cisco NAC Appliance Software 4.7.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-112160">Cisco NAC Appliance Software 4.8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-112162">Cisco NAC Appliance Software 4.8.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-112164">Cisco NAC Appliance Software 4.8.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-189315">Cisco NAC Appliance Software 4.8.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-189301">Cisco NAC Appliance Software 4.9.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-189307">Cisco NAC Appliance Software 4.9.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-189303">Cisco NAC Appliance Software 4.9.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-209597">Cisco Prime Collaboration Provisioning 9.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209599">Cisco Prime Collaboration Provisioning 9.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209601">Cisco Prime Collaboration Provisioning 10.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209603">Cisco Prime Collaboration Provisioning 10.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209609">Cisco Prime Collaboration Provisioning 10.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209605">Cisco Prime Collaboration Provisioning 10.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209607">Cisco Prime Collaboration Provisioning 11.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210613">Cisco Prime Performance Manager 1.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-210626">Cisco Prime Performance Manager 1.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-210615">Cisco Prime Performance Manager 1.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210617">Cisco Prime Performance Manager 1.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210619">Cisco Prime Performance Manager 1.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210621">Cisco Prime Performance Manager 1.4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210623">Cisco Prime Performance Manager 1.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210625">Cisco Prime Performance Manager 1.6.0-SP3</FullProductName>
+    <FullProductName ProductID="CVRFPID-210627">Cisco Prime Performance Manager 1.6.0-SP4</FullProductName>
+    <FullProductName ProductID="CVRFPID-203411">Cisco Prime Provisioning 6.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203418">Cisco Prime Provisioning 6.3.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203419">Cisco Prime Provisioning 6.3.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203420">Cisco Prime Provisioning 6.3.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203421">Cisco Prime Provisioning 6.3.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-203413">Cisco Prime Provisioning 6.4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203422">Cisco Prime Provisioning 6.4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203423">Cisco Prime Provisioning 6.4.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203424">Cisco Prime Provisioning 6.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203425">Cisco Prime Provisioning 6.4.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203426">Cisco Prime Provisioning 6.4.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203427">Cisco Prime Provisioning 6.4.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203428">Cisco Prime Provisioning 6.4.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-203429">Cisco Prime Provisioning 6.4.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-203430">Cisco Prime Provisioning 6.4.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-203415">Cisco Prime Provisioning 6.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203431">Cisco Prime Provisioning 6.5.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203432">Cisco Prime Provisioning 6.5.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203433">Cisco Prime Provisioning 6.5.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203434">Cisco Prime Provisioning 6.5.0.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203435">Cisco Prime Provisioning 6.5.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-203436">Cisco Prime Provisioning 6.5.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-203437">Cisco Prime Provisioning 6.5.0.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-203438">Cisco Prime Provisioning 6.5.0.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-203417">Cisco Prime Provisioning 6.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203439">Cisco Prime Provisioning 6.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203440">Cisco Prime Provisioning 6.6.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203441">Cisco Prime Provisioning 6.6.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-35385">Cisco Secure Access Control System (ACS) Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37907">Cisco Secure Access Control System (ACS) 2.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64191">Cisco Secure Access Control System (ACS) 2.6.3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64188">Cisco Secure Access Control System (ACS) 2.6.4.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55637">Cisco Secure Access Control System (ACS) 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64190">Cisco Secure Access Control System (ACS) 3.0.1.40 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64187">Cisco Secure Access Control System (ACS) 3.0.3.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55638">Cisco Secure Access Control System (ACS) 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64186">Cisco Secure Access Control System (ACS) 3.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-64189">Cisco Secure Access Control System (ACS) 3.1.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55639">Cisco Secure Access Control System (ACS) 3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55641">Cisco Secure Access Control System (ACS) 3.2 (1.20) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55640">Cisco Secure Access Control System (ACS) 3.2 (1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55642">Cisco Secure Access Control System (ACS) 3.2 (2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55643">Cisco Secure Access Control System (ACS) 3.2 (3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-43792">Cisco Secure Access Control System (ACS) 3.2.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55644">Cisco Secure Access Control System (ACS) 3.2.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64185">Cisco Secure Access Control System (ACS) 3.2.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55645">Cisco Secure Access Control System (ACS) 3.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55646">Cisco Secure Access Control System (ACS) 3.3 (1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55647">Cisco Secure Access Control System (ACS) 3.3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64184">Cisco Secure Access Control System (ACS) 3.3.1.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-55648">Cisco Secure Access Control System (ACS) 3.3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-82919">Cisco Secure Access Control System (ACS) 3.3.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-82921">Cisco Secure Access Control System (ACS) 3.3.3.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-61495">Cisco Secure Access Control System (ACS) 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62247">Cisco Secure Access Control System (ACS) 4.0.1.27</FullProductName>
+    <FullProductName ProductID="CVRFPID-82918">Cisco Secure Access Control System (ACS) 4.0.1.42</FullProductName>
+    <FullProductName ProductID="CVRFPID-82917">Cisco Secure Access Control System (ACS) 4.0.1.44</FullProductName>
+    <FullProductName ProductID="CVRFPID-82916">Cisco Secure Access Control System (ACS) 4.0.1.49</FullProductName>
+    <FullProductName ProductID="CVRFPID-61496">Cisco Secure Access Control System (ACS) 4.1.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-82912">Cisco Secure Access Control System (ACS) 4.1.1.23</FullProductName>
+    <FullProductName ProductID="CVRFPID-82915">Cisco Secure Access Control System (ACS) 4.1.1.23.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-82914">Cisco Secure Access Control System (ACS) 4.1.3.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-82910">Cisco Secure Access Control System (ACS) 4.1.4.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-82913">Cisco Secure Access Control System (ACS) 4.1.4.13.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-82911">Cisco Secure Access Control System (ACS) 4.1.4.13.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-82909">Cisco Secure Access Control System (ACS) 4.2.0.124</FullProductName>
+    <FullProductName ProductID="CVRFPID-108578">Cisco Secure Access Control System (ACS) 5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-108579">Cisco Secure Access Control System (ACS) 5.0.0.21</FullProductName>
+    <FullProductName ProductID="CVRFPID-108576">Cisco Secure Access Control System (ACS) 5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-108580">Cisco Secure Access Control System (ACS) 5.1.0.44</FullProductName>
+    <FullProductName ProductID="CVRFPID-108582">Cisco Secure Access Control System (ACS) 5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-108583">Cisco Secure Access Control System (ACS) 5.2.0.26</FullProductName>
+    <FullProductName ProductID="CVRFPID-187091">Cisco Secure Access Control System (ACS) 5.2.0.26.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-187092">Cisco Secure Access Control System (ACS) 5.2.0.26.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-187093">Cisco Secure Access Control System (ACS) 5.2.0.26.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-187094">Cisco Secure Access Control System (ACS) 5.2.0.26.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-187095">Cisco Secure Access Control System (ACS) 5.2.0.26.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-187096">Cisco Secure Access Control System (ACS) 5.2.0.26.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-187097">Cisco Secure Access Control System (ACS) 5.2.0.26.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-187098">Cisco Secure Access Control System (ACS) 5.2.0.26.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-187099">Cisco Secure Access Control System (ACS) 5.2.0.26.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-187100">Cisco Secure Access Control System (ACS) 5.2.0.26.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-187101">Cisco Secure Access Control System (ACS) 5.2.0.26.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-187025">Cisco Secure Access Control System (ACS) 5.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-187026">Cisco Secure Access Control System (ACS) 5.3.0.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-187102">Cisco Secure Access Control System (ACS) 5.3.0.40</FullProductName>
+    <FullProductName ProductID="CVRFPID-187103">Cisco Secure Access Control System (ACS) 5.3.0.40.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-187104">Cisco Secure Access Control System (ACS) 5.3.0.40.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-187105">Cisco Secure Access Control System (ACS) 5.3.0.40.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-187106">Cisco Secure Access Control System (ACS) 5.3.0.40.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-187107">Cisco Secure Access Control System (ACS) 5.3.0.40.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-187108">Cisco Secure Access Control System (ACS) 5.3.0.40.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-187109">Cisco Secure Access Control System (ACS) 5.3.0.40.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-187112">Cisco Secure Access Control System (ACS) 5.4.0.46.0a</FullProductName>
+    <FullProductName ProductID="CVRFPID-192538">Cisco Secure Access Control System (ACS) 5.4.0.46.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-192539">Cisco Secure Access Control System (ACS) 5.4.0.46.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-192540">Cisco Secure Access Control System (ACS) 5.4.0.46.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-204146">Cisco Secure Access Control System (ACS) 5.4.0.46.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-204147">Cisco Secure Access Control System (ACS) 5.4.0.46.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-204148">Cisco Secure Access Control System (ACS) 5.4.0.46.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-204775">Cisco Secure Access Control System (ACS) 5.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-205952">Cisco Secure Access Control System (ACS) 5.5.0.46.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-205953">Cisco Secure Access Control System (ACS) 5.5.0.46.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-205954">Cisco Secure Access Control System (ACS) 5.5.0.46.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-205955">Cisco Secure Access Control System (ACS) 5.5.0.46.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-205956">Cisco Secure Access Control System (ACS) 5.5.0.46.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-205957">Cisco Secure Access Control System (ACS) 5.5.0.46.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-205958">Cisco Secure Access Control System (ACS) 5.5.0.46.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-204777">Cisco Secure Access Control System (ACS) 5.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-79785">Cisco Security Manager  3.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-79790">Cisco Security Manager  3.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-79791">Cisco Security Manager  3.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-79787">Cisco Security Manager  3.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-79792">Cisco Security Manager  3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88530">Cisco Security Manager  3.1.1 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88531">Cisco Security Manager  3.1.1 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-88532">Cisco Security Manager  3.1.1 SP3</FullProductName>
+    <FullProductName ProductID="CVRFPID-79789">Cisco Security Manager  3.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88534">Cisco Security Manager  3.2.0 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88535">Cisco Security Manager  3.2.0 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-88528">Cisco Security Manager  3.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88533">Cisco Security Manager  3.2.1 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88529">Cisco Security Manager  3.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-91845">Cisco Security Manager  3.2.2 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-91846">Cisco Security Manager  3.2.2 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-112412">Cisco Security Manager  3.2.2 SP3</FullProductName>
+    <FullProductName ProductID="CVRFPID-112413">Cisco Security Manager  3.2.2 SP4</FullProductName>
+    <FullProductName ProductID="CVRFPID-112283">Cisco Security Manager  3.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-112414">Cisco Security Manager  3.3 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112415">Cisco Security Manager  3.3 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-112290">Cisco Security Manager  3.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112416">Cisco Security Manager  3.3.1 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112417">Cisco Security Manager  3.3.1 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-112418">Cisco Security Manager  3.3.1 SP3</FullProductName>
+    <FullProductName ProductID="CVRFPID-112285">Cisco Security Manager  4.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-112419">Cisco Security Manager  4.0 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112291">Cisco Security Manager  4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112420">Cisco Security Manager  4.0.1 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112421">Cisco Security Manager  4.0.1 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-112287">Cisco Security Manager  4.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-112289">Cisco Security Manager  4.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-200254">Cisco Security Manager  4.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-200256">Cisco Security Manager  4.4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-200258">Cisco Security Manager  4.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-200260">Cisco Security Manager  4.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203401">Cisco Security Manager  4.7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-207597">Cisco Security Manager  4.7(0)SP1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207913">Cisco Security Manager  4.8(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-203444">Cisco Visual Quality Experience 1.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203446">Cisco Visual Quality Experience 2.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203470">Cisco Visual Quality Experience 2.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203448">Cisco Visual Quality Experience 2.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203471">Cisco Visual Quality Experience 2.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203472">Cisco Visual Quality Experience 2.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203473">Cisco Visual Quality Experience 2.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203450">Cisco Visual Quality Experience 3.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203474">Cisco Visual Quality Experience 3.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203452">Cisco Visual Quality Experience 3.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203475">Cisco Visual Quality Experience 3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203476">Cisco Visual Quality Experience 3.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203454">Cisco Visual Quality Experience 3.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203477">Cisco Visual Quality Experience 3.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203478">Cisco Visual Quality Experience 3.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203456">Cisco Visual Quality Experience 3.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203479">Cisco Visual Quality Experience 3.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203480">Cisco Visual Quality Experience 3.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203458">Cisco Visual Quality Experience 3.4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203481">Cisco Visual Quality Experience 3.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203482">Cisco Visual Quality Experience 3.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203483">Cisco Visual Quality Experience 3.4.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203484">Cisco Visual Quality Experience 3.4.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-203460">Cisco Visual Quality Experience 3.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203485">Cisco Visual Quality Experience 3.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203486">Cisco Visual Quality Experience 3.5.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203487">Cisco Visual Quality Experience 3.5.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203488">Cisco Visual Quality Experience 3.5.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-203489">Cisco Visual Quality Experience 3.5.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-203490">Cisco Visual Quality Experience 3.5.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-203491">Cisco Visual Quality Experience 3.5.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-203492">Cisco Visual Quality Experience 3.5.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-203493">Cisco Visual Quality Experience 3.5.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-203494">Cisco Visual Quality Experience 3.5.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-203495">Cisco Visual Quality Experience 3.5.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-203462">Cisco Visual Quality Experience 3.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203496">Cisco Visual Quality Experience 3.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203497">Cisco Visual Quality Experience 3.6.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203498">Cisco Visual Quality Experience 3.6.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203499">Cisco Visual Quality Experience 3.6.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-203500">Cisco Visual Quality Experience 3.6.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-203501">Cisco Visual Quality Experience 3.6.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-203502">Cisco Visual Quality Experience 3.6.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-203464">Cisco Visual Quality Experience 3.7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203503">Cisco Visual Quality Experience 3.7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203504">Cisco Visual Quality Experience 3.7.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203505">Cisco Visual Quality Experience 3.7.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203506">Cisco Visual Quality Experience 3.7.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-203466">Cisco Visual Quality Experience 3.8.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203507">Cisco Visual Quality Experience 3.8.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203508">Cisco Visual Quality Experience 3.8.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203509">Cisco Visual Quality Experience 3.8.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203468">Cisco Visual Quality Experience 3.9.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203510">Cisco Visual Quality Experience 3.9.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203511">Cisco Visual Quality Experience 3.9.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-184514">Cisco ASA CX Context-Aware Security Software 9.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-184515">Cisco ASA CX Context-Aware Security Software 9.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-184688">Cisco ASA CX Context-Aware Security Software 9.0.1-40</FullProductName>
+    <FullProductName ProductID="CVRFPID-184516">Cisco ASA CX Context-Aware Security Software 9.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-184689">Cisco ASA CX Context-Aware Security Software 9.0.2-68</FullProductName>
+    <FullProductName ProductID="CVRFPID-202755">Cisco ASA CX Context-Aware Security Software 9.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-202756">Cisco ASA CX Context-Aware Security Software 9.3(1.1.112)</FullProductName>
+    <FullProductName ProductID="CVRFPID-206517">Cisco ASA CX Context-Aware Security Software 9.3.1-1</FullProductName>
+    <FullProductName ProductID="CVRFPID-206518">Cisco ASA CX Context-Aware Security Software 9.3.2-1</FullProductName>
+    <FullProductName ProductID="CVRFPID-206519">Cisco ASA CX Context-Aware Security Software 9.3.3.1-13</FullProductName>
+    <FullProductName ProductID="CVRFPID-211417">Cisco ASA CX Context-Aware Security Software 9.3.4.1.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-206507">Cisco ASA CX Context-Aware Security Software 9.1.2-29</FullProductName>
+    <FullProductName ProductID="CVRFPID-206510">Cisco ASA CX Context-Aware Security Software 9.1.2-42</FullProductName>
+    <FullProductName ProductID="CVRFPID-206511">Cisco ASA CX Context-Aware Security Software 9.1.3-8</FullProductName>
+    <FullProductName ProductID="CVRFPID-206512">Cisco ASA CX Context-Aware Security Software 9.1.3-10</FullProductName>
+    <FullProductName ProductID="CVRFPID-206513">Cisco ASA CX Context-Aware Security Software 9.1.3-13</FullProductName>
+    <FullProductName ProductID="CVRFPID-206509">Cisco ASA CX Context-Aware Security Software 9.2.1-1</FullProductName>
+    <FullProductName ProductID="CVRFPID-206514">Cisco ASA CX Context-Aware Security Software 9.2.1-2</FullProductName>
+    <FullProductName ProductID="CVRFPID-206515">Cisco ASA CX Context-Aware Security Software 9.2.1-3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206516">Cisco ASA CX Context-Aware Security Software 9.2.1-4</FullProductName>
+    <FullProductName ProductID="CVRFPID-184692">Cisco Prime Security Manager (PRSM) 9.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-184693">Cisco Prime Security Manager (PRSM) 9.0.1-40</FullProductName>
+    <FullProductName ProductID="CVRFPID-184694">Cisco Prime Security Manager (PRSM) 9.0.2-68</FullProductName>
+    <FullProductName ProductID="CVRFPID-198461">Cisco Prime Security Manager (PRSM) 9.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-198464">Cisco Prime Security Manager (PRSM) 9.1.2-29</FullProductName>
+    <FullProductName ProductID="CVRFPID-198465">Cisco Prime Security Manager (PRSM) 9.1.2-42</FullProductName>
+    <FullProductName ProductID="CVRFPID-198466">Cisco Prime Security Manager (PRSM) 9.1.3-8</FullProductName>
+    <FullProductName ProductID="CVRFPID-198467">Cisco Prime Security Manager (PRSM) 9.1.3-10</FullProductName>
+    <FullProductName ProductID="CVRFPID-198468">Cisco Prime Security Manager (PRSM) 9.1.3-13</FullProductName>
+    <FullProductName ProductID="CVRFPID-198463">Cisco Prime Security Manager (PRSM) 9.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-198469">Cisco Prime Security Manager (PRSM) 9.2.1-1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198470">Cisco Prime Security Manager (PRSM) 9.2.1-2</FullProductName>
+    <FullProductName ProductID="CVRFPID-188428">Cisco Prime LAN Management Solution (LMS) 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-188430">Cisco Prime LAN Management Solution (LMS) 4.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-188431">Cisco Prime LAN Management Solution (LMS) 4.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-188432">Cisco Prime LAN Management Solution (LMS) 4.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-188433">Cisco Prime LAN Management Solution (LMS) 4.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-208312">Cisco Data Center Analytics Framework 1.4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-190704">Cisco WebEx Meetings Server 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-190706">Cisco WebEx Meetings Server 1.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-195866">Cisco WebEx Meetings Server 1.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-195867">Cisco WebEx Meetings Server 1.5.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-195868">Cisco WebEx Meetings Server 1.5.1.131</FullProductName>
+    <FullProductName ProductID="CVRFPID-201138">Cisco WebEx Meetings Server 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-203362">Cisco WebEx Meetings Server 2.0.1.107</FullProductName>
+    <FullProductName ProductID="CVRFPID-201140">Cisco WebEx Meetings Server 2.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-206221">Cisco WebEx Meetings Server 2.5.99.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-208919">Cisco WebEx Meetings Server 2.5 MR1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Vulnerability in Java Deserialization Affecting Cisco Products</Title>
+    <ID SystemName="Cisco Bug ID">CSCux34612</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Java deserialization used by the Apache Commons Collections (ACC) library could allow an unauthenticated, remote attacker to execute arbitrary code.
+
+
+
+The vulnerability is due to insecure deserialization of user-supplied content by the affected software. An attacker could exploit this vulnerability by submitting crafted input to an application on a targeted system that uses the ACC library. After the vulnerable library on the affected system deserializes the content, the attacker could execute arbitrary code on the system, which could be used to conduct further attacks.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux34612,CSCux34725,CSCux34742,CSCux34982,CSCux34781,CSCux34692,CSCux34652,CSCux34669,CSCux34647,CSCux34953,CSCux35084,CSCux34671,CSCux34575</Note>
+    </Notes>
+    <CVE>CVE-2015-6420</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-190704</ProductID>
+        <ProductID>CVRFPID-190706</ProductID>
+        <ProductID>CVRFPID-195866</ProductID>
+        <ProductID>CVRFPID-195867</ProductID>
+        <ProductID>CVRFPID-195868</ProductID>
+        <ProductID>CVRFPID-201138</ProductID>
+        <ProductID>CVRFPID-201140</ProductID>
+        <ProductID>CVRFPID-203362</ProductID>
+        <ProductID>CVRFPID-206221</ProductID>
+        <ProductID>CVRFPID-208919</ProductID>
+        <ProductID>CVRFPID-203444</ProductID>
+        <ProductID>CVRFPID-203446</ProductID>
+        <ProductID>CVRFPID-203448</ProductID>
+        <ProductID>CVRFPID-203450</ProductID>
+        <ProductID>CVRFPID-203452</ProductID>
+        <ProductID>CVRFPID-203454</ProductID>
+        <ProductID>CVRFPID-203456</ProductID>
+        <ProductID>CVRFPID-203458</ProductID>
+        <ProductID>CVRFPID-203460</ProductID>
+        <ProductID>CVRFPID-203462</ProductID>
+        <ProductID>CVRFPID-203464</ProductID>
+        <ProductID>CVRFPID-203466</ProductID>
+        <ProductID>CVRFPID-203468</ProductID>
+        <ProductID>CVRFPID-203470</ProductID>
+        <ProductID>CVRFPID-203471</ProductID>
+        <ProductID>CVRFPID-203472</ProductID>
+        <ProductID>CVRFPID-203473</ProductID>
+        <ProductID>CVRFPID-203474</ProductID>
+        <ProductID>CVRFPID-203475</ProductID>
+        <ProductID>CVRFPID-203476</ProductID>
+        <ProductID>CVRFPID-203477</ProductID>
+        <ProductID>CVRFPID-203478</ProductID>
+        <ProductID>CVRFPID-203479</ProductID>
+        <ProductID>CVRFPID-203480</ProductID>
+        <ProductID>CVRFPID-203481</ProductID>
+        <ProductID>CVRFPID-203482</ProductID>
+        <ProductID>CVRFPID-203483</ProductID>
+        <ProductID>CVRFPID-203484</ProductID>
+        <ProductID>CVRFPID-203485</ProductID>
+        <ProductID>CVRFPID-203486</ProductID>
+        <ProductID>CVRFPID-203487</ProductID>
+        <ProductID>CVRFPID-203488</ProductID>
+        <ProductID>CVRFPID-203489</ProductID>
+        <ProductID>CVRFPID-203490</ProductID>
+        <ProductID>CVRFPID-203491</ProductID>
+        <ProductID>CVRFPID-203492</ProductID>
+        <ProductID>CVRFPID-203493</ProductID>
+        <ProductID>CVRFPID-203494</ProductID>
+        <ProductID>CVRFPID-203495</ProductID>
+        <ProductID>CVRFPID-203496</ProductID>
+        <ProductID>CVRFPID-203497</ProductID>
+        <ProductID>CVRFPID-203498</ProductID>
+        <ProductID>CVRFPID-203499</ProductID>
+        <ProductID>CVRFPID-203500</ProductID>
+        <ProductID>CVRFPID-203501</ProductID>
+        <ProductID>CVRFPID-203502</ProductID>
+        <ProductID>CVRFPID-203503</ProductID>
+        <ProductID>CVRFPID-203504</ProductID>
+        <ProductID>CVRFPID-203505</ProductID>
+        <ProductID>CVRFPID-203506</ProductID>
+        <ProductID>CVRFPID-203507</ProductID>
+        <ProductID>CVRFPID-203508</ProductID>
+        <ProductID>CVRFPID-203509</ProductID>
+        <ProductID>CVRFPID-203510</ProductID>
+        <ProductID>CVRFPID-203511</ProductID>
+        <ProductID>CVRFPID-184514</ProductID>
+        <ProductID>CVRFPID-184515</ProductID>
+        <ProductID>CVRFPID-184516</ProductID>
+        <ProductID>CVRFPID-184688</ProductID>
+        <ProductID>CVRFPID-184689</ProductID>
+        <ProductID>CVRFPID-202755</ProductID>
+        <ProductID>CVRFPID-202756</ProductID>
+        <ProductID>CVRFPID-206507</ProductID>
+        <ProductID>CVRFPID-206509</ProductID>
+        <ProductID>CVRFPID-206510</ProductID>
+        <ProductID>CVRFPID-206511</ProductID>
+        <ProductID>CVRFPID-206512</ProductID>
+        <ProductID>CVRFPID-206513</ProductID>
+        <ProductID>CVRFPID-206514</ProductID>
+        <ProductID>CVRFPID-206515</ProductID>
+        <ProductID>CVRFPID-206516</ProductID>
+        <ProductID>CVRFPID-206517</ProductID>
+        <ProductID>CVRFPID-206518</ProductID>
+        <ProductID>CVRFPID-206519</ProductID>
+        <ProductID>CVRFPID-211417</ProductID>
+        <ProductID>CVRFPID-184692</ProductID>
+        <ProductID>CVRFPID-184693</ProductID>
+        <ProductID>CVRFPID-184694</ProductID>
+        <ProductID>CVRFPID-198461</ProductID>
+        <ProductID>CVRFPID-198463</ProductID>
+        <ProductID>CVRFPID-198464</ProductID>
+        <ProductID>CVRFPID-198465</ProductID>
+        <ProductID>CVRFPID-198466</ProductID>
+        <ProductID>CVRFPID-198467</ProductID>
+        <ProductID>CVRFPID-198468</ProductID>
+        <ProductID>CVRFPID-198469</ProductID>
+        <ProductID>CVRFPID-198470</ProductID>
+        <ProductID>CVRFPID-53133</ProductID>
+        <ProductID>CVRFPID-53134</ProductID>
+        <ProductID>CVRFPID-53135</ProductID>
+        <ProductID>CVRFPID-53136</ProductID>
+        <ProductID>CVRFPID-53137</ProductID>
+        <ProductID>CVRFPID-53138</ProductID>
+        <ProductID>CVRFPID-53139</ProductID>
+        <ProductID>CVRFPID-53140</ProductID>
+        <ProductID>CVRFPID-53141</ProductID>
+        <ProductID>CVRFPID-53142</ProductID>
+        <ProductID>CVRFPID-53143</ProductID>
+        <ProductID>CVRFPID-53144</ProductID>
+        <ProductID>CVRFPID-53145</ProductID>
+        <ProductID>CVRFPID-53146</ProductID>
+        <ProductID>CVRFPID-53147</ProductID>
+        <ProductID>CVRFPID-53148</ProductID>
+        <ProductID>CVRFPID-53149</ProductID>
+        <ProductID>CVRFPID-53150</ProductID>
+        <ProductID>CVRFPID-53151</ProductID>
+        <ProductID>CVRFPID-53152</ProductID>
+        <ProductID>CVRFPID-53191</ProductID>
+        <ProductID>CVRFPID-53192</ProductID>
+        <ProductID>CVRFPID-55566</ProductID>
+        <ProductID>CVRFPID-62184</ProductID>
+        <ProductID>CVRFPID-62185</ProductID>
+        <ProductID>CVRFPID-62186</ProductID>
+        <ProductID>CVRFPID-62190</ProductID>
+        <ProductID>CVRFPID-62191</ProductID>
+        <ProductID>CVRFPID-62192</ProductID>
+        <ProductID>CVRFPID-62193</ProductID>
+        <ProductID>CVRFPID-62194</ProductID>
+        <ProductID>CVRFPID-62195</ProductID>
+        <ProductID>CVRFPID-62196</ProductID>
+        <ProductID>CVRFPID-62197</ProductID>
+        <ProductID>CVRFPID-62198</ProductID>
+        <ProductID>CVRFPID-62199</ProductID>
+        <ProductID>CVRFPID-62200</ProductID>
+        <ProductID>CVRFPID-62201</ProductID>
+        <ProductID>CVRFPID-62202</ProductID>
+        <ProductID>CVRFPID-62203</ProductID>
+        <ProductID>CVRFPID-62204</ProductID>
+        <ProductID>CVRFPID-62205</ProductID>
+        <ProductID>CVRFPID-62206</ProductID>
+        <ProductID>CVRFPID-62207</ProductID>
+        <ProductID>CVRFPID-62208</ProductID>
+        <ProductID>CVRFPID-62209</ProductID>
+        <ProductID>CVRFPID-62210</ProductID>
+        <ProductID>CVRFPID-62211</ProductID>
+        <ProductID>CVRFPID-78570</ProductID>
+        <ProductID>CVRFPID-78572</ProductID>
+        <ProductID>CVRFPID-78574</ProductID>
+        <ProductID>CVRFPID-78575</ProductID>
+        <ProductID>CVRFPID-78576</ProductID>
+        <ProductID>CVRFPID-78577</ProductID>
+        <ProductID>CVRFPID-78578</ProductID>
+        <ProductID>CVRFPID-78579</ProductID>
+        <ProductID>CVRFPID-78581</ProductID>
+        <ProductID>CVRFPID-78582</ProductID>
+        <ProductID>CVRFPID-78583</ProductID>
+        <ProductID>CVRFPID-78585</ProductID>
+        <ProductID>CVRFPID-78586</ProductID>
+        <ProductID>CVRFPID-78587</ProductID>
+        <ProductID>CVRFPID-78588</ProductID>
+        <ProductID>CVRFPID-78590</ProductID>
+        <ProductID>CVRFPID-78592</ProductID>
+        <ProductID>CVRFPID-78594</ProductID>
+        <ProductID>CVRFPID-78596</ProductID>
+        <ProductID>CVRFPID-78597</ProductID>
+        <ProductID>CVRFPID-78598</ProductID>
+        <ProductID>CVRFPID-78599</ProductID>
+        <ProductID>CVRFPID-78600</ProductID>
+        <ProductID>CVRFPID-78601</ProductID>
+        <ProductID>CVRFPID-78602</ProductID>
+        <ProductID>CVRFPID-78604</ProductID>
+        <ProductID>CVRFPID-78605</ProductID>
+        <ProductID>CVRFPID-78607</ProductID>
+        <ProductID>CVRFPID-78609</ProductID>
+        <ProductID>CVRFPID-78611</ProductID>
+        <ProductID>CVRFPID-78612</ProductID>
+        <ProductID>CVRFPID-78613</ProductID>
+        <ProductID>CVRFPID-112160</ProductID>
+        <ProductID>CVRFPID-112162</ProductID>
+        <ProductID>CVRFPID-112164</ProductID>
+        <ProductID>CVRFPID-113602</ProductID>
+        <ProductID>CVRFPID-113604</ProductID>
+        <ProductID>CVRFPID-188997</ProductID>
+        <ProductID>CVRFPID-189301</ProductID>
+        <ProductID>CVRFPID-189303</ProductID>
+        <ProductID>CVRFPID-189305</ProductID>
+        <ProductID>CVRFPID-189307</ProductID>
+        <ProductID>CVRFPID-189309</ProductID>
+        <ProductID>CVRFPID-189311</ProductID>
+        <ProductID>CVRFPID-189313</ProductID>
+        <ProductID>CVRFPID-189315</ProductID>
+        <ProductID>CVRFPID-189317</ProductID>
+        <ProductID>CVRFPID-35385</ProductID>
+        <ProductID>CVRFPID-37907</ProductID>
+        <ProductID>CVRFPID-43792</ProductID>
+        <ProductID>CVRFPID-55637</ProductID>
+        <ProductID>CVRFPID-55638</ProductID>
+        <ProductID>CVRFPID-55639</ProductID>
+        <ProductID>CVRFPID-55640</ProductID>
+        <ProductID>CVRFPID-55641</ProductID>
+        <ProductID>CVRFPID-55642</ProductID>
+        <ProductID>CVRFPID-55643</ProductID>
+        <ProductID>CVRFPID-55644</ProductID>
+        <ProductID>CVRFPID-55645</ProductID>
+        <ProductID>CVRFPID-55646</ProductID>
+        <ProductID>CVRFPID-55647</ProductID>
+        <ProductID>CVRFPID-55648</ProductID>
+        <ProductID>CVRFPID-61495</ProductID>
+        <ProductID>CVRFPID-61496</ProductID>
+        <ProductID>CVRFPID-62247</ProductID>
+        <ProductID>CVRFPID-64184</ProductID>
+        <ProductID>CVRFPID-64185</ProductID>
+        <ProductID>CVRFPID-64186</ProductID>
+        <ProductID>CVRFPID-64187</ProductID>
+        <ProductID>CVRFPID-64188</ProductID>
+        <ProductID>CVRFPID-64189</ProductID>
+        <ProductID>CVRFPID-64190</ProductID>
+        <ProductID>CVRFPID-64191</ProductID>
+        <ProductID>CVRFPID-82909</ProductID>
+        <ProductID>CVRFPID-82910</ProductID>
+        <ProductID>CVRFPID-82911</ProductID>
+        <ProductID>CVRFPID-82912</ProductID>
+        <ProductID>CVRFPID-82913</ProductID>
+        <ProductID>CVRFPID-82914</ProductID>
+        <ProductID>CVRFPID-82915</ProductID>
+        <ProductID>CVRFPID-82916</ProductID>
+        <ProductID>CVRFPID-82917</ProductID>
+        <ProductID>CVRFPID-82918</ProductID>
+        <ProductID>CVRFPID-82919</ProductID>
+        <ProductID>CVRFPID-82921</ProductID>
+        <ProductID>CVRFPID-108576</ProductID>
+        <ProductID>CVRFPID-108578</ProductID>
+        <ProductID>CVRFPID-108579</ProductID>
+        <ProductID>CVRFPID-108580</ProductID>
+        <ProductID>CVRFPID-108582</ProductID>
+        <ProductID>CVRFPID-108583</ProductID>
+        <ProductID>CVRFPID-187025</ProductID>
+        <ProductID>CVRFPID-187026</ProductID>
+        <ProductID>CVRFPID-187091</ProductID>
+        <ProductID>CVRFPID-187092</ProductID>
+        <ProductID>CVRFPID-187093</ProductID>
+        <ProductID>CVRFPID-187094</ProductID>
+        <ProductID>CVRFPID-187095</ProductID>
+        <ProductID>CVRFPID-187096</ProductID>
+        <ProductID>CVRFPID-187097</ProductID>
+        <ProductID>CVRFPID-187098</ProductID>
+        <ProductID>CVRFPID-187099</ProductID>
+        <ProductID>CVRFPID-187100</ProductID>
+        <ProductID>CVRFPID-187101</ProductID>
+        <ProductID>CVRFPID-187102</ProductID>
+        <ProductID>CVRFPID-187103</ProductID>
+        <ProductID>CVRFPID-187104</ProductID>
+        <ProductID>CVRFPID-187105</ProductID>
+        <ProductID>CVRFPID-187106</ProductID>
+        <ProductID>CVRFPID-187107</ProductID>
+        <ProductID>CVRFPID-187108</ProductID>
+        <ProductID>CVRFPID-187109</ProductID>
+        <ProductID>CVRFPID-187112</ProductID>
+        <ProductID>CVRFPID-192538</ProductID>
+        <ProductID>CVRFPID-192539</ProductID>
+        <ProductID>CVRFPID-192540</ProductID>
+        <ProductID>CVRFPID-204146</ProductID>
+        <ProductID>CVRFPID-204147</ProductID>
+        <ProductID>CVRFPID-204148</ProductID>
+        <ProductID>CVRFPID-204775</ProductID>
+        <ProductID>CVRFPID-204777</ProductID>
+        <ProductID>CVRFPID-205952</ProductID>
+        <ProductID>CVRFPID-205953</ProductID>
+        <ProductID>CVRFPID-205954</ProductID>
+        <ProductID>CVRFPID-205955</ProductID>
+        <ProductID>CVRFPID-205956</ProductID>
+        <ProductID>CVRFPID-205957</ProductID>
+        <ProductID>CVRFPID-205958</ProductID>
+        <ProductID>CVRFPID-95920</ProductID>
+        <ProductID>CVRFPID-95921</ProductID>
+        <ProductID>CVRFPID-95923</ProductID>
+        <ProductID>CVRFPID-95925</ProductID>
+        <ProductID>CVRFPID-95927</ProductID>
+        <ProductID>CVRFPID-95928</ProductID>
+        <ProductID>CVRFPID-95929</ProductID>
+        <ProductID>CVRFPID-97388</ProductID>
+        <ProductID>CVRFPID-114095</ProductID>
+        <ProductID>CVRFPID-114096</ProductID>
+        <ProductID>CVRFPID-114097</ProductID>
+        <ProductID>CVRFPID-114098</ProductID>
+        <ProductID>CVRFPID-114099</ProductID>
+        <ProductID>CVRFPID-114100</ProductID>
+        <ProductID>CVRFPID-114102</ProductID>
+        <ProductID>CVRFPID-53617</ProductID>
+        <ProductID>CVRFPID-53618</ProductID>
+        <ProductID>CVRFPID-61497</ProductID>
+        <ProductID>CVRFPID-75582</ProductID>
+        <ProductID>CVRFPID-75584</ProductID>
+        <ProductID>CVRFPID-75600</ProductID>
+        <ProductID>CVRFPID-209597</ProductID>
+        <ProductID>CVRFPID-209599</ProductID>
+        <ProductID>CVRFPID-209601</ProductID>
+        <ProductID>CVRFPID-209603</ProductID>
+        <ProductID>CVRFPID-209605</ProductID>
+        <ProductID>CVRFPID-209607</ProductID>
+        <ProductID>CVRFPID-209609</ProductID>
+        <ProductID>CVRFPID-188428</ProductID>
+        <ProductID>CVRFPID-188430</ProductID>
+        <ProductID>CVRFPID-188431</ProductID>
+        <ProductID>CVRFPID-188432</ProductID>
+        <ProductID>CVRFPID-188433</ProductID>
+        <ProductID>CVRFPID-210613</ProductID>
+        <ProductID>CVRFPID-210615</ProductID>
+        <ProductID>CVRFPID-210617</ProductID>
+        <ProductID>CVRFPID-210619</ProductID>
+        <ProductID>CVRFPID-210621</ProductID>
+        <ProductID>CVRFPID-210623</ProductID>
+        <ProductID>CVRFPID-210625</ProductID>
+        <ProductID>CVRFPID-210626</ProductID>
+        <ProductID>CVRFPID-210627</ProductID>
+        <ProductID>CVRFPID-203411</ProductID>
+        <ProductID>CVRFPID-203413</ProductID>
+        <ProductID>CVRFPID-203415</ProductID>
+        <ProductID>CVRFPID-203417</ProductID>
+        <ProductID>CVRFPID-203418</ProductID>
+        <ProductID>CVRFPID-203419</ProductID>
+        <ProductID>CVRFPID-203420</ProductID>
+        <ProductID>CVRFPID-203421</ProductID>
+        <ProductID>CVRFPID-203422</ProductID>
+        <ProductID>CVRFPID-203423</ProductID>
+        <ProductID>CVRFPID-203424</ProductID>
+        <ProductID>CVRFPID-203425</ProductID>
+        <ProductID>CVRFPID-203426</ProductID>
+        <ProductID>CVRFPID-203427</ProductID>
+        <ProductID>CVRFPID-203428</ProductID>
+        <ProductID>CVRFPID-203429</ProductID>
+        <ProductID>CVRFPID-203430</ProductID>
+        <ProductID>CVRFPID-203431</ProductID>
+        <ProductID>CVRFPID-203432</ProductID>
+        <ProductID>CVRFPID-203433</ProductID>
+        <ProductID>CVRFPID-203434</ProductID>
+        <ProductID>CVRFPID-203435</ProductID>
+        <ProductID>CVRFPID-203436</ProductID>
+        <ProductID>CVRFPID-203437</ProductID>
+        <ProductID>CVRFPID-203438</ProductID>
+        <ProductID>CVRFPID-203439</ProductID>
+        <ProductID>CVRFPID-203440</ProductID>
+        <ProductID>CVRFPID-203441</ProductID>
+        <ProductID>CVRFPID-79785</ProductID>
+        <ProductID>CVRFPID-79787</ProductID>
+        <ProductID>CVRFPID-79789</ProductID>
+        <ProductID>CVRFPID-79790</ProductID>
+        <ProductID>CVRFPID-79791</ProductID>
+        <ProductID>CVRFPID-79792</ProductID>
+        <ProductID>CVRFPID-88528</ProductID>
+        <ProductID>CVRFPID-88529</ProductID>
+        <ProductID>CVRFPID-88530</ProductID>
+        <ProductID>CVRFPID-88531</ProductID>
+        <ProductID>CVRFPID-88532</ProductID>
+        <ProductID>CVRFPID-88533</ProductID>
+        <ProductID>CVRFPID-88534</ProductID>
+        <ProductID>CVRFPID-88535</ProductID>
+        <ProductID>CVRFPID-91845</ProductID>
+        <ProductID>CVRFPID-91846</ProductID>
+        <ProductID>CVRFPID-112283</ProductID>
+        <ProductID>CVRFPID-112285</ProductID>
+        <ProductID>CVRFPID-112287</ProductID>
+        <ProductID>CVRFPID-112289</ProductID>
+        <ProductID>CVRFPID-112290</ProductID>
+        <ProductID>CVRFPID-112291</ProductID>
+        <ProductID>CVRFPID-112412</ProductID>
+        <ProductID>CVRFPID-112413</ProductID>
+        <ProductID>CVRFPID-112414</ProductID>
+        <ProductID>CVRFPID-112415</ProductID>
+        <ProductID>CVRFPID-112416</ProductID>
+        <ProductID>CVRFPID-112417</ProductID>
+        <ProductID>CVRFPID-112418</ProductID>
+        <ProductID>CVRFPID-112419</ProductID>
+        <ProductID>CVRFPID-112420</ProductID>
+        <ProductID>CVRFPID-112421</ProductID>
+        <ProductID>CVRFPID-200254</ProductID>
+        <ProductID>CVRFPID-200256</ProductID>
+        <ProductID>CVRFPID-200258</ProductID>
+        <ProductID>CVRFPID-200260</ProductID>
+        <ProductID>CVRFPID-203401</ProductID>
+        <ProductID>CVRFPID-207597</ProductID>
+        <ProductID>CVRFPID-207913</ProductID>
+        <ProductID>CVRFPID-208312</ProductID>
+      </Status>
+    </ProductStatuses>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-java-deserialization</URL>
+        <Description>Vulnerability in Java Deserialization Affecting Cisco Products</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

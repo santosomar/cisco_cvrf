@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software Queue Wedge Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20130925-wedge</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2013-09-24T16:23:45</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2013-09-25T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2013-09-24T16:23:45</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the T1/E1 driver queue implementation of Cisco IOS Software could allow an unauthenticated, remote attacker to cause an interface wedge condition, which could lead to loss of connectivity, loss of routing protocol adjacency, and could result in a denial of service (DoS) scenario.
+
+
+
+The vulnerability is due to incorrect implementation of the T1/E1 driver queue. An attacker could exploit this vulnerability by sending bursty traffic through the affected interface driver. Repeated exploitation could cause a DoS condition.
+
+
+
+Workarounds to mitigate this vulnerability are available.
+
+
+
+Cisco has released software updates that address this vulnerability. This advisory is available at the following link: 
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130925-wedge["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130925-wedge"]
+
+Note: The September 25, 2013, Cisco IOS Software Security Advisory bundled publication includes eight Cisco Security Advisories. All advisories address vulnerabilities in Cisco IOS Software. Each Cisco IOS Software Security Advisory lists the Cisco IOS Software releases that correct the vulnerability or vulnerabilities detailed in the advisory as well as the Cisco IOS Software releases that correct all Cisco IOS Software vulnerabilities in the September 2013 bundled publication. 
+
+Individual publication links are in "Cisco Event Response: Semiannual Cisco IOS Software Security Advisory Bundled Publication" at the following link: 
+
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep13.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep13.html"]
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130925-wedge</URL>
+      <Description>Cisco IOS Software Queue Wedge Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20130925-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, September 25, 2013</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20130925-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, September 25, 2013</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-214763">Cisco IOS 12.4(25e)JAP8</FullProductName>
+    <FullProductName ProductID="CVRFPID-106499">Cisco IOS 15.0(1)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-99645">Cisco IOS 15.0(1)M1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105005">Cisco IOS 15.0(1)M4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107048">Cisco IOS 15.0(1)XA</FullProductName>
+    <FullProductName ProductID="CVRFPID-104165">Cisco IOS 15.0(1)XA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106740">Cisco IOS 15.0(1)XA3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105426">Cisco IOS 15.0(1)XA4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107191">Cisco IOS 15.0(1)XA5</FullProductName>
+    <FullProductName ProductID="CVRFPID-107856">Cisco IOS 15.1(4)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-107433">Cisco IOS 15.1(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-105178">Cisco IOS 15.1(1)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106988">Cisco IOS 15.1(1)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-100214">Cisco IOS 15.1(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-106078">Cisco IOS 15.1(2)T0a</FullProductName>
+    <FullProductName ProductID="CVRFPID-107691">Cisco IOS 15.1(2)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107626">Cisco IOS 15.1(2)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107123">Cisco IOS 15.1(2)T2a</FullProductName>
+    <FullProductName ProductID="CVRFPID-107057">Cisco IOS 15.1(3)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-214072">Cisco IOS 15.2(4m)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107862">Cisco IOS 15.2(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-214764">Cisco IOS 15.3(3)JA8</FullProductName>
+    <FullProductName ProductID="CVRFPID-103851">Cisco IOS 15.3(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-187231">Cisco IOS 15.3(1)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209115">Cisco IOS 15.6(2)T</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software Queue Wedge Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCub67465</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the T1/E1 driver queue implementation of Cisco IOS Software could allow an unauthenticated, remote attacker to cause an interface wedge condition, which could lead to loss of connectivity, loss of routing protocol adjacency, and could result in a denial of service (DoS) scenario.
+
+
+
+The vulnerability is due to incorrect implementation of the T1/E1 driver queue. An attacker could exploit this vulnerability by sending bursty traffic through the affected interface driver. Repeated exploitation could cause a DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCub67465</Note>
+    </Notes>
+    <CVE>CVE-2013-5477</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-99645</ProductID>
+        <ProductID>CVRFPID-100214</ProductID>
+        <ProductID>CVRFPID-103851</ProductID>
+        <ProductID>CVRFPID-104165</ProductID>
+        <ProductID>CVRFPID-105005</ProductID>
+        <ProductID>CVRFPID-105178</ProductID>
+        <ProductID>CVRFPID-105426</ProductID>
+        <ProductID>CVRFPID-106078</ProductID>
+        <ProductID>CVRFPID-106499</ProductID>
+        <ProductID>CVRFPID-106740</ProductID>
+        <ProductID>CVRFPID-106988</ProductID>
+        <ProductID>CVRFPID-107048</ProductID>
+        <ProductID>CVRFPID-107057</ProductID>
+        <ProductID>CVRFPID-107123</ProductID>
+        <ProductID>CVRFPID-107191</ProductID>
+        <ProductID>CVRFPID-107433</ProductID>
+        <ProductID>CVRFPID-107626</ProductID>
+        <ProductID>CVRFPID-107691</ProductID>
+        <ProductID>CVRFPID-107856</ProductID>
+        <ProductID>CVRFPID-107862</ProductID>
+        <ProductID>CVRFPID-187231</ProductID>
+        <ProductID>CVRFPID-209115</ProductID>
+        <ProductID>CVRFPID-214072</ProductID>
+        <ProductID>CVRFPID-214763</ProductID>
+        <ProductID>CVRFPID-214764</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>If a hardware upgrade is an option, a possible workaround would be to use VWIC3-T1/E1 or HWIC-T1/E1 interface cards instead of the VWIC2 interface card.
+
+Alternatively, if the T1/E1 controller is configured for clock source line, and only a single channel-group is configured under controller, a possible workaround is to configure clock source line independent.
+
+
+
+
+The following identification mechanism exist for this vulnerability.
+
+
+
+Embedded Event Manager (EEM)
+ 
+
+A Cisco IOS Embedded Event Manager (EEM) policy that is based on Tool Command Language (Tcl) can be used on vulnerable Cisco IOS devices to identify and detect an interface queue wedge that is caused by this vulnerability. The policy allows administrators to monitor the interfaces for Cisco IOS devices and detect when the interface input queues are full. When Cisco IOS EEM detects potential exploitation of this vulnerability, the policy can trigger a response by sending an alert to the network administrator, who could then decide to implement an upgrade, implement suitable mitigations or reload the device to clear the input queue.
+
+
+
+The Tcl script is available for download at the "Cisco Beyond: Embedded Event Manager (EEM) Scripting Community" at the following link: https://supportforums.cisco.com/docs/DOC-19337["https://supportforums.cisco.com/docs/DOC-19337"]
+
+
+
+The Cisco Security blog "Cisco IOS Queue Wedges Explained" can be viewed at the following link: http://blogs.cisco.com/security/cisco_ios_queue_wedges_explained/["http://blogs.cisco.com/security/cisco_ios_queue_wedges_explained/"]
+
+
+
+
+
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130925-wedge</URL>
+        <Description>Cisco IOS Software Queue Wedge Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

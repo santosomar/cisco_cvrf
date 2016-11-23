@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unity Express Expired Password Reset Privilege Escalation</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20060501-cue</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2006-05-01T23:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2006-05-01T23:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2006-05-01T23:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20060501-cue</URL>
+      <Description>Cisco Unity Express Expired Password Reset Privilege Escalation</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-51028">Cisco Unity Express 1.0.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-51029">Cisco Unity Express 1.1.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-51025">Cisco Unity Express 1.1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-51027">Cisco Unity Express 2.0.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58037">Cisco Unity Express 2.0.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-51026">Cisco Unity Express 2.1.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58032">Cisco Unity Express 2.1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58036">Cisco Unity Express 2.1.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58033">Cisco Unity Express 2.2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58035">Cisco Unity Express 2.2.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58034">Cisco Unity Express 2.2.2 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unity Express Expired Password Reset Privilege Escalation Vulnerability</Title>
+    <CVE>CVE-2006-2166</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-51025</ProductID>
+        <ProductID>CVRFPID-51026</ProductID>
+        <ProductID>CVRFPID-51027</ProductID>
+        <ProductID>CVRFPID-51028</ProductID>
+        <ProductID>CVRFPID-51029</ProductID>
+        <ProductID>CVRFPID-58032</ProductID>
+        <ProductID>CVRFPID-58033</ProductID>
+        <ProductID>CVRFPID-58034</ProductID>
+        <ProductID>CVRFPID-58035</ProductID>
+        <ProductID>CVRFPID-58036</ProductID>
+        <ProductID>CVRFPID-58037</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20060501-cue</URL>
+        <Description>Cisco Unity Express Expired Password Reset Privilege Escalation</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

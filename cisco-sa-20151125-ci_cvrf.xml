@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Cisco Products Confidential Information Decryption Man-in-the-Middle Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151125-ci</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.4</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-11-25T21:27:58</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2015-11-26T20:48:33</Date>
+        <Description>Updated the Summary, Exploitation and Public Announcements, and Workarounds sections to clarify the details.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2016-09-13T23:29:40</Date>
+        <Description>Updated Fixed Software to include information on new software updates.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2016-09-20T21:24:48</Date>
+        <Description>Updated Fixed Software to include information on an Engineering Special (ES).</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-11-25T21:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-09-20T21:24:48</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the cryptographic implementation of multiple Cisco products could allow an unauthenticated, remote attacker to make use of hard-coded certificate and keys embedded within the firmware of the affected device.
+
+
+
+The vulnerability is due to the lack of unique key and certificate generation within affected appliances. An attacker could exploit this vulnerability by using the static information to conduct man-in-the-middle attacks to decrypt confidential information on user connections.
+
+
+
+This is an attack on the client attempting to access the device and does not compromise the device itself. To exploit the issue, an attacker needs not only the public and private key pair, but also a privileged position in the network that would allow the attacker to monitor the traffic between client and server, intercept the traffic, and modify or inject the attacker's own traffic. There are no workarounds that address this vulnerability. 
+
+
+
+Cisco has not released software updates that address this vulnerability.  
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151125-ci["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151125-ci"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151125-ci</URL>
+      <Description>Multiple Cisco Products Confidential Information Decryption Man-in-the-Middle Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-211733">Cisco WVC2300 Wireless-G Business Internet Video Camera - Audio Firmware 1.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211634">Cisco Small Business SRP500 Series Services Ready Platforms 1.1.18(VP0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-211725">Cisco SPA400 Internet Telephony Gateway with 4FXO Ports 1.1.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-211737">Cisco SRW224P 24-port 10 100 + 2-port Gigabit Switch - WebView PoE 2.0.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-211741">Cisco WRV210 Wireless-G VPN Router with RangeBooster 2.0.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-211654">Cisco Small Business IP Phones 7.6.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-211648">Cisco Small Business Video Surveillance Cameras Firmware 1.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211729">Cisco WRP500 Wireless-AC Broadband Router with 2 Phone Ports 1.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-211626">Cisco Small Business Wireless Access Points Firmware 2.0.5.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-211630">Cisco Small Business Wireless Access Points Firmware 2.0.7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211638">Cisco Small Business Wireless Access Points Firmware 2.0.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211645">Cisco Small Business Wireless Access Points Firmware 2.0.8.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209570">Cisco Small Business RV Series Router Firmware 1.0.4.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-211635">Cisco Small Business RV Series Router Firmware 1.0.5.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-211636">Cisco Small Business RV Series Router Firmware 1.0.5.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-211639">Cisco Small Business RV Series Router Firmware 1.0.39</FullProductName>
+    <FullProductName ProductID="CVRFPID-211637">Cisco Small Business RV Series Router Firmware 1.1.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-211643">Cisco Small Business RV Series Router Firmware 1.1.1.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-211644">Cisco Small Business RV Series Router Firmware 1.2.1.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-211629">Cisco Small Business RV Series Router Firmware 2.0.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-211631">Cisco Small Business RV Series Router Firmware 2.0.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-211642">Cisco Small Business RV Series Router Firmware 1.3.4</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Multiple Products Confidential Information Decryption Man-in-the-Middle Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuw46672</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the cryptographic implementation of multiple Cisco products could allow an unauthenticated, remote attacker to make use of hard-coded certificate and keys embedded within the firmware of the affected device.
+
+
+
+The vulnerability is due to the lack of unique key and certificate generation within affected appliances. An attacker could exploit this vulnerability by using the static information to conduct man-in-the-middle attacks to decrypt confidential information on user connections.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuw46672,CSCuw47040,CSCuw90860,CSCuw46677,CSCuw47061,CSCuw47028,CSCuw47005,CSCuw90881,CSCuw90875,CSCuw46665,CSCuw46637,CSCuw46620,CSCuw46610,CSCuw90899,CSCuw46979,CSCuw46705,CSCuw90913,CSCuw47048,CSCuw46716,CSCuw90869,CSCuw46654,CSCuw46682</Note>
+    </Notes>
+    <CVE>CVE-2015-6358</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-211626</ProductID>
+        <ProductID>CVRFPID-211630</ProductID>
+        <ProductID>CVRFPID-211638</ProductID>
+        <ProductID>CVRFPID-211645</ProductID>
+        <ProductID>CVRFPID-209570</ProductID>
+        <ProductID>CVRFPID-211629</ProductID>
+        <ProductID>CVRFPID-211631</ProductID>
+        <ProductID>CVRFPID-211635</ProductID>
+        <ProductID>CVRFPID-211636</ProductID>
+        <ProductID>CVRFPID-211637</ProductID>
+        <ProductID>CVRFPID-211639</ProductID>
+        <ProductID>CVRFPID-211642</ProductID>
+        <ProductID>CVRFPID-211643</ProductID>
+        <ProductID>CVRFPID-211644</ProductID>
+        <ProductID>CVRFPID-211634</ProductID>
+        <ProductID>CVRFPID-211648</ProductID>
+        <ProductID>CVRFPID-211654</ProductID>
+        <ProductID>CVRFPID-211725</ProductID>
+        <ProductID>CVRFPID-211729</ProductID>
+        <ProductID>CVRFPID-211733</ProductID>
+        <ProductID>CVRFPID-211737</ProductID>
+        <ProductID>CVRFPID-211741</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:P/I:N/A:N/E:F/RL:U/RC:UC</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability. As a mitigation, customers may want to restrict access to the device's administrative interfaces over SSH and HTTPS to a known, trusted subset of IP addresses.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151125-ci</URL>
+        <Description>Multiple Cisco Products Confidential Information Decryption Man-in-the-Middle Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

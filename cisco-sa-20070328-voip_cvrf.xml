@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Cisco Unified CallManager and Presence Server Denial of Service Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20070328-voip</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2007-03-28T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-03-28T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-03-28T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070328-voip</URL>
+      <Description>Multiple Cisco Unified CallManager and Presence Server Denial of Service Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-60980">Cisco Unified CallManager 5.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60979">Cisco Unified CallManager 5.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60977">Cisco Unified CallManager 5.0(2a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64556">Cisco Unified CallManager 5.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60978">Cisco Unified CallManager 5.0(3a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60976">Cisco Unified CallManager 5.0(3.1101)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60975">Cisco Unified CallManager 5.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60974">Cisco Unified CallManager 5.0(4a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-40531">Cisco Unified Communications Manager 3.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52281">Cisco Unified Communications Manager 3.3(3)ES61 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52282">Cisco Unified Communications Manager 3.3(4)ES25 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52283">Cisco Unified Communications Manager 3.3(5) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56079">Cisco Unified Communications Manager 3.3(5)SR1a Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64511">Cisco Unified Communications Manager 3.3(5)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-51459">Cisco Unified Communications Manager 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64533">Cisco Unified Communications Manager 4.1(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52286">Cisco Unified Communications Manager 4.1(2)ES33 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56084">Cisco Unified Communications Manager 4.1(2)ES50 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64534">Cisco Unified Communications Manager 4.1(2)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64519">Cisco Unified Communications Manager 4.1(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52288">Cisco Unified Communications Manager 4.1(3)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56081">Cisco Unified Communications Manager 4.1(3)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58738">Cisco Unified Communications Manager 4.1(3)SR3b Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64523">Cisco Unified Communications Manager 4.1(3)SR3c Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64535">Cisco Unified Communications Manager 4.2(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64543">Cisco Unified Communications Manager 4.2(1)SR1b Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64545">Cisco Unified Communications Manager 4.2(1.02) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64541">Cisco Unified Communications Manager 4.2(1.05.3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64538">Cisco Unified Communications Manager 4.2(1.06) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64537">Cisco Unified Communications Manager 4.2(1.07) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58684">Cisco Unified Communications Manager 4.2(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64539">Cisco Unified Communications Manager 4.2(3.08) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64542">Cisco Unified Communications Manager 4.2(3.2.3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64544">Cisco Unified Communications Manager 4.2(3.3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64536">Cisco Unified Communications Manager 4.2(3.13) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59002">Cisco Unified Communications Manager 5.0(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59003">Cisco Unified Communications Manager 5.0(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59006">Cisco Unified Communications Manager 5.0(2a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59016">Cisco Unified Communications Manager 5.0(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59004">Cisco Unified Communications Manager 5.0(3a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59007">Cisco Unified Communications Manager 5.0(3.1101) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59005">Cisco Unified Communications Manager 5.0(4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64558">Cisco Unified Communications Manager 5.0(4a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64547">Cisco Unified Presence Server  1.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-60981">Cisco Unified Presence Server  1.0.2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified CallManager Skinny Call Control Protocol Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-1833</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-40531</ProductID>
+        <ProductID>CVRFPID-51459</ProductID>
+        <ProductID>CVRFPID-52281</ProductID>
+        <ProductID>CVRFPID-52282</ProductID>
+        <ProductID>CVRFPID-52283</ProductID>
+        <ProductID>CVRFPID-52286</ProductID>
+        <ProductID>CVRFPID-52288</ProductID>
+        <ProductID>CVRFPID-56079</ProductID>
+        <ProductID>CVRFPID-56081</ProductID>
+        <ProductID>CVRFPID-56084</ProductID>
+        <ProductID>CVRFPID-58684</ProductID>
+        <ProductID>CVRFPID-58738</ProductID>
+        <ProductID>CVRFPID-59002</ProductID>
+        <ProductID>CVRFPID-59003</ProductID>
+        <ProductID>CVRFPID-59004</ProductID>
+        <ProductID>CVRFPID-59005</ProductID>
+        <ProductID>CVRFPID-59006</ProductID>
+        <ProductID>CVRFPID-59007</ProductID>
+        <ProductID>CVRFPID-59016</ProductID>
+        <ProductID>CVRFPID-64511</ProductID>
+        <ProductID>CVRFPID-64519</ProductID>
+        <ProductID>CVRFPID-64523</ProductID>
+        <ProductID>CVRFPID-64533</ProductID>
+        <ProductID>CVRFPID-64534</ProductID>
+        <ProductID>CVRFPID-64535</ProductID>
+        <ProductID>CVRFPID-64536</ProductID>
+        <ProductID>CVRFPID-64537</ProductID>
+        <ProductID>CVRFPID-64538</ProductID>
+        <ProductID>CVRFPID-64539</ProductID>
+        <ProductID>CVRFPID-64541</ProductID>
+        <ProductID>CVRFPID-64542</ProductID>
+        <ProductID>CVRFPID-64543</ProductID>
+        <ProductID>CVRFPID-64544</ProductID>
+        <ProductID>CVRFPID-64545</ProductID>
+        <ProductID>CVRFPID-64558</ProductID>
+        <ProductID>CVRFPID-60974</ProductID>
+        <ProductID>CVRFPID-60975</ProductID>
+        <ProductID>CVRFPID-60976</ProductID>
+        <ProductID>CVRFPID-60977</ProductID>
+        <ProductID>CVRFPID-60978</ProductID>
+        <ProductID>CVRFPID-60979</ProductID>
+        <ProductID>CVRFPID-60980</ProductID>
+        <ProductID>CVRFPID-64556</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.3</BaseScore>
+        <TemporalScore>2.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:N/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070328-voip</URL>
+        <Description>Multiple Cisco Unified CallManager and Presence Server Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Call Manager and Unified Presence Server IPSec Manager Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-1826</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-59002</ProductID>
+        <ProductID>CVRFPID-59003</ProductID>
+        <ProductID>CVRFPID-59004</ProductID>
+        <ProductID>CVRFPID-59005</ProductID>
+        <ProductID>CVRFPID-59006</ProductID>
+        <ProductID>CVRFPID-59007</ProductID>
+        <ProductID>CVRFPID-59016</ProductID>
+        <ProductID>CVRFPID-64558</ProductID>
+        <ProductID>CVRFPID-60974</ProductID>
+        <ProductID>CVRFPID-60975</ProductID>
+        <ProductID>CVRFPID-60976</ProductID>
+        <ProductID>CVRFPID-60977</ProductID>
+        <ProductID>CVRFPID-60978</ProductID>
+        <ProductID>CVRFPID-60979</ProductID>
+        <ProductID>CVRFPID-60980</ProductID>
+        <ProductID>CVRFPID-64556</ProductID>
+        <ProductID>CVRFPID-60981</ProductID>
+        <ProductID>CVRFPID-64547</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.7</BaseScore>
+        <TemporalScore>3.9</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:P/A:P/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070328-voip</URL>
+        <Description>Multiple Cisco Unified CallManager and Presence Server Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

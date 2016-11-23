@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in 802.1X Supplicant</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20070221-supplicant</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2007-02-21T16:00:00</Date>
+        <Description>Updated Cisco Security Agent (CSA) bundle versions 5.0 and 5.1
+			 information in the Summary and Affected Products sections.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-02-21T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-02-21T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070221-supplicant</URL>
+      <Description>Multiple Vulnerabilities in 802.1X Supplicant</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-63701">Cisco Meetinghouse AEGIS SecureConnect 4.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-63691">Cisco Secure Services Client 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-63695">Cisco Secure Services Client 4.0.0.3398</FullProductName>
+    <FullProductName ProductID="CVRFPID-63694">Cisco Secure Services Client 4.0.2.4423</FullProductName>
+    <FullProductName ProductID="CVRFPID-63692">Cisco Secure Services Client 4.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-63696">Cisco Secure Services Client 4.0.5.4692</FullProductName>
+    <FullProductName ProductID="CVRFPID-63697">Cisco Secure Services Client 4.0.5.5009</FullProductName>
+    <FullProductName ProductID="CVRFPID-61127">Cisco Security Agent  5.0.0.179</FullProductName>
+    <FullProductName ProductID="CVRFPID-61126">Cisco Security Agent  5.0.0.181</FullProductName>
+    <FullProductName ProductID="CVRFPID-61124">Cisco Security Agent  5.0.0.183</FullProductName>
+    <FullProductName ProductID="CVRFPID-61121">Cisco Security Agent  5.0.0.186</FullProductName>
+    <FullProductName ProductID="CVRFPID-61122">Cisco Security Agent  5.0.0.187</FullProductName>
+    <FullProductName ProductID="CVRFPID-61118">Cisco Security Agent  5.0.0.194</FullProductName>
+    <FullProductName ProductID="CVRFPID-61116">Cisco Security Agent  5.1.0.74</FullProductName>
+    <FullProductName ProductID="CVRFPID-61117">Cisco Security Agent  5.1.0.79</FullProductName>
+    <FullProductName ProductID="CVRFPID-63690">Cisco Trust Agent 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-63687">Cisco Trust Agent 2.0.0.30</FullProductName>
+    <FullProductName ProductID="CVRFPID-63688">Cisco Trust Agent 2.0.1.14</FullProductName>
+    <FullProductName ProductID="CVRFPID-63698">Cisco Trust Agent 2.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-63689">Cisco Trust Agent 2.1.0.10</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>DO NOT PUBLISH UNTIL PUBLIC...Cisco Secure Services Client and Trust Agent Help Facility 802.1x Supplicant Privilege Escalation Issue</Title>
+    <CVE>CVE-2007-1064</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-63701</ProductID>
+        <ProductID>CVRFPID-63691</ProductID>
+        <ProductID>CVRFPID-63692</ProductID>
+        <ProductID>CVRFPID-63694</ProductID>
+        <ProductID>CVRFPID-63695</ProductID>
+        <ProductID>CVRFPID-63696</ProductID>
+        <ProductID>CVRFPID-63697</ProductID>
+        <ProductID>CVRFPID-61116</ProductID>
+        <ProductID>CVRFPID-61117</ProductID>
+        <ProductID>CVRFPID-61118</ProductID>
+        <ProductID>CVRFPID-61121</ProductID>
+        <ProductID>CVRFPID-61122</ProductID>
+        <ProductID>CVRFPID-61124</ProductID>
+        <ProductID>CVRFPID-61126</ProductID>
+        <ProductID>CVRFPID-61127</ProductID>
+        <ProductID>CVRFPID-63687</ProductID>
+        <ProductID>CVRFPID-63688</ProductID>
+        <ProductID>CVRFPID-63689</ProductID>
+        <ProductID>CVRFPID-63690</ProductID>
+        <ProductID>CVRFPID-63698</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.6</BaseScore>
+        <TemporalScore>4.6</TemporalScore>
+        <Vector>AV:L/AC:H/Au:NR/C:C/I:C/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070221-supplicant</URL>
+        <Description>Multiple Vulnerabilities in 802.1X Supplicant</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>DO NOT PUBISH UNTIL PUBLIC...Cisco Secure Services Client and Trust Agent 802.1x Supplicant Privilege Escalation Issue</Title>
+    <CVE>CVE-2007-1065</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-63691</ProductID>
+        <ProductID>CVRFPID-63692</ProductID>
+        <ProductID>CVRFPID-63694</ProductID>
+        <ProductID>CVRFPID-63695</ProductID>
+        <ProductID>CVRFPID-63696</ProductID>
+        <ProductID>CVRFPID-63697</ProductID>
+        <ProductID>CVRFPID-61116</ProductID>
+        <ProductID>CVRFPID-61117</ProductID>
+        <ProductID>CVRFPID-61118</ProductID>
+        <ProductID>CVRFPID-61121</ProductID>
+        <ProductID>CVRFPID-61122</ProductID>
+        <ProductID>CVRFPID-61124</ProductID>
+        <ProductID>CVRFPID-61126</ProductID>
+        <ProductID>CVRFPID-61127</ProductID>
+        <ProductID>CVRFPID-63687</ProductID>
+        <ProductID>CVRFPID-63688</ProductID>
+        <ProductID>CVRFPID-63689</ProductID>
+        <ProductID>CVRFPID-63690</ProductID>
+        <ProductID>CVRFPID-63698</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.0</BaseScore>
+        <TemporalScore>5.8</TemporalScore>
+        <Vector>AV:L/AC:L/Au:NR/C:C/I:C/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070221-supplicant</URL>
+        <Description>Multiple Vulnerabilities in 802.1X Supplicant</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Secure Services Client and Cisco Trust Agent Insecure DACLs Privilege Escalation Vulnerability</Title>
+    <CVE>CVE-2007-1066</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-63701</ProductID>
+        <ProductID>CVRFPID-63691</ProductID>
+        <ProductID>CVRFPID-63692</ProductID>
+        <ProductID>CVRFPID-63694</ProductID>
+        <ProductID>CVRFPID-63695</ProductID>
+        <ProductID>CVRFPID-63696</ProductID>
+        <ProductID>CVRFPID-61116</ProductID>
+        <ProductID>CVRFPID-61117</ProductID>
+        <ProductID>CVRFPID-61118</ProductID>
+        <ProductID>CVRFPID-61121</ProductID>
+        <ProductID>CVRFPID-61122</ProductID>
+        <ProductID>CVRFPID-61124</ProductID>
+        <ProductID>CVRFPID-61126</ProductID>
+        <ProductID>CVRFPID-61127</ProductID>
+        <ProductID>CVRFPID-63687</ProductID>
+        <ProductID>CVRFPID-63688</ProductID>
+        <ProductID>CVRFPID-63689</ProductID>
+        <ProductID>CVRFPID-63690</ProductID>
+        <ProductID>CVRFPID-63698</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.0</BaseScore>
+        <TemporalScore>5.8</TemporalScore>
+        <Vector>AV:L/AC:L/Au:NR/C:C/I:C/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070221-supplicant</URL>
+        <Description>Multiple Vulnerabilities in 802.1X Supplicant</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Secure Services Client and Cisco Trust Agent Clear Text Password Issue</Title>
+    <CVE>CVE-2007-1068</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-63701</ProductID>
+        <ProductID>CVRFPID-63691</ProductID>
+        <ProductID>CVRFPID-63692</ProductID>
+        <ProductID>CVRFPID-63694</ProductID>
+        <ProductID>CVRFPID-63695</ProductID>
+        <ProductID>CVRFPID-63696</ProductID>
+        <ProductID>CVRFPID-61116</ProductID>
+        <ProductID>CVRFPID-61117</ProductID>
+        <ProductID>CVRFPID-61118</ProductID>
+        <ProductID>CVRFPID-61121</ProductID>
+        <ProductID>CVRFPID-61122</ProductID>
+        <ProductID>CVRFPID-61124</ProductID>
+        <ProductID>CVRFPID-61126</ProductID>
+        <ProductID>CVRFPID-61127</ProductID>
+        <ProductID>CVRFPID-63687</ProductID>
+        <ProductID>CVRFPID-63688</ProductID>
+        <ProductID>CVRFPID-63689</ProductID>
+        <ProductID>CVRFPID-63690</ProductID>
+        <ProductID>CVRFPID-63698</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>1.6</BaseScore>
+        <TemporalScore>1.3</TemporalScore>
+        <Vector>AV:L/AC:L/Au:NR/C:P/I:N/A:N/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070221-supplicant</URL>
+        <Description>Multiple Vulnerabilities in 802.1X Supplicant</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

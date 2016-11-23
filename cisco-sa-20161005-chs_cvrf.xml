@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Host Scan Package Cross-Site Scripting Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161005-chs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-10-03T15:46:02</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-10-05T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-10-03T15:46:02</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Cisco Host Scan package could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of a Cisco Adaptive Security Appliance (ASA) Web VPN deployment.
+
+
+
+The vulnerability is due to insufficient input validation of a user-supplied value. An attacker could exploit this vulnerability by persuading a user to click a specific link.
+
+
+
+For additional information about cross-site scripting attacks and the methods used to exploit these vulnerabilities, see the following resources:
+
+
+    Cisco Applied Mitigation Bulletin: Understanding Cross-Site Scripting (XSS) Threat Vectors["https://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20060922-understanding-xss"] 
+    OWASP reference page: Cross-Site Scripting_(XSS)["https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)"]
+
+Cisco has not released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-chs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-chs"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-chs</URL>
+      <Description>Cisco Host Scan Package Cross-Site Scripting Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-204862">Cisco HostScan Engine 3.0.08062</FullProductName>
+    <FullProductName ProductID="CVRFPID-204865">Cisco HostScan Engine 3.0.08066</FullProductName>
+    <FullProductName ProductID="CVRFPID-204864">Cisco HostScan Engine 3.1.01065</FullProductName>
+    <FullProductName ProductID="CVRFPID-204869">Cisco HostScan Engine 3.1.02016</FullProductName>
+    <FullProductName ProductID="CVRFPID-204870">Cisco HostScan Engine 3.1.02026</FullProductName>
+    <FullProductName ProductID="CVRFPID-204871">Cisco HostScan Engine 3.1.02040</FullProductName>
+    <FullProductName ProductID="CVRFPID-204872">Cisco HostScan Engine 3.1.02043</FullProductName>
+    <FullProductName ProductID="CVRFPID-204873">Cisco HostScan Engine 3.1.03103</FullProductName>
+    <FullProductName ProductID="CVRFPID-204874">Cisco HostScan Engine 3.1.03104</FullProductName>
+    <FullProductName ProductID="CVRFPID-204875">Cisco HostScan Engine 3.1.04060</FullProductName>
+    <FullProductName ProductID="CVRFPID-204876">Cisco HostScan Engine 3.1.04063</FullProductName>
+    <FullProductName ProductID="CVRFPID-204877">Cisco HostScan Engine 3.1.04075</FullProductName>
+    <FullProductName ProductID="CVRFPID-204878">Cisco HostScan Engine 3.1.04082</FullProductName>
+    <FullProductName ProductID="CVRFPID-204879">Cisco HostScan Engine 3.1.05152</FullProductName>
+    <FullProductName ProductID="CVRFPID-204880">Cisco HostScan Engine 3.1.05160</FullProductName>
+    <FullProductName ProductID="CVRFPID-204881">Cisco HostScan Engine 3.1.05163</FullProductName>
+    <FullProductName ProductID="CVRFPID-204882">Cisco HostScan Engine 3.1.05170</FullProductName>
+    <FullProductName ProductID="CVRFPID-204883">Cisco HostScan Engine 3.1.05178</FullProductName>
+    <FullProductName ProductID="CVRFPID-204884">Cisco HostScan Engine 3.1.05182</FullProductName>
+    <FullProductName ProductID="CVRFPID-204885">Cisco HostScan Engine 3.1.05183</FullProductName>
+    <FullProductName ProductID="CVRFPID-204886">Cisco HostScan Engine 3.1.06073</FullProductName>
+    <FullProductName ProductID="CVRFPID-220884">Cisco HostScan Engine 3.1.14018</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Host Scan Package Cross-Site Scripting Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz14682</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Cisco Host Scan package could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of a Cisco Adaptive Security Appliance (ASA) Web VPN deployment.
+
+
+
+The vulnerability is due to insufficient input validation of a user-supplied value. An attacker could exploit this vulnerability by persuading a user to click a specific link.
+
+
+
+For additional information about cross-site scripting attacks and the methods used to exploit these vulnerabilities, see the following resources:
+
+
+    Cisco Applied Mitigation Bulletin: Understanding Cross-Site Scripting (XSS) Threat Vectors["https://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20060922-understanding-xss"] 
+    OWASP reference page: Cross-Site Scripting_(XSS)["https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)"]
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz14682</Note>
+    </Notes>
+    <CVE>CVE-2016-6436</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-204862</ProductID>
+        <ProductID>CVRFPID-204864</ProductID>
+        <ProductID>CVRFPID-204865</ProductID>
+        <ProductID>CVRFPID-204869</ProductID>
+        <ProductID>CVRFPID-204870</ProductID>
+        <ProductID>CVRFPID-204871</ProductID>
+        <ProductID>CVRFPID-204872</ProductID>
+        <ProductID>CVRFPID-204873</ProductID>
+        <ProductID>CVRFPID-204874</ProductID>
+        <ProductID>CVRFPID-204875</ProductID>
+        <ProductID>CVRFPID-204876</ProductID>
+        <ProductID>CVRFPID-204877</ProductID>
+        <ProductID>CVRFPID-204878</ProductID>
+        <ProductID>CVRFPID-204879</ProductID>
+        <ProductID>CVRFPID-204880</ProductID>
+        <ProductID>CVRFPID-204881</ProductID>
+        <ProductID>CVRFPID-204882</ProductID>
+        <ProductID>CVRFPID-204883</ProductID>
+        <ProductID>CVRFPID-204884</ProductID>
+        <ProductID>CVRFPID-204885</ProductID>
+        <ProductID>CVRFPID-204886</ProductID>
+        <ProductID>CVRFPID-220884</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:P/A:N/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-chs</URL>
+        <Description>Cisco Host Scan Package Cross-Site Scripting Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

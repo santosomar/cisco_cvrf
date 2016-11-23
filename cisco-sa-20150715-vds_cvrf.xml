@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Videoscape Delivery System Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150715-vds</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-07-15T15:41:30</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-07-15T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-07-15T15:41:30</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the HTTP processing module of the Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) and Cisco Videoscape Distribution Suite Service Broker (VDS-SB) could allow an unauthenticated, remote attacker to cause a reload of the affected device.
+
+
+
+The vulnerability is due to improper input validation. An attacker could exploit this vulnerability by sending a crafted HTTP request to a vulnerable device. An exploit could allow the attacker to cause a denial of service (DoS) condition.
+
+
+
+There is no workaround that mitigates this vulnerability.
+
+
+
+Cisco has released software updates that address this vulnerability for Cisco VDS-IS.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150715-vds["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150715-vds"]
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150715-vds</URL>
+      <Description>Cisco Videoscape Delivery System Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=39040</URL>
+      <Description>Cisco Videoscape Delivery System Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=39040</URL>
+      <Description>Cisco Videoscape Delivery System Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-193238">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-193239">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207826">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.2.0 b26</FullProductName>
+    <FullProductName ProductID="CVRFPID-207827">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.2.1 b9</FullProductName>
+    <FullProductName ProductID="CVRFPID-207828">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.2.1 b15</FullProductName>
+    <FullProductName ProductID="CVRFPID-207829">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.2.1 b20</FullProductName>
+    <FullProductName ProductID="CVRFPID-207560">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 4.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-207838">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 4.0.0 r1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207839">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 4.0.0 r2</FullProductName>
+    <FullProductName ProductID="CVRFPID-207840">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 4.0.0 r3</FullProductName>
+    <FullProductName ProductID="CVRFPID-207562">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-207563">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207830">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.3.0 r1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207831">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.3.1 r1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207832">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.3.1 r2</FullProductName>
+    <FullProductName ProductID="CVRFPID-207833">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.3.1 r3</FullProductName>
+    <FullProductName ProductID="CVRFPID-207834">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.3.1 r4</FullProductName>
+    <FullProductName ProductID="CVRFPID-207835">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.3.1 r5</FullProductName>
+    <FullProductName ProductID="CVRFPID-207836">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.3.1 r6</FullProductName>
+    <FullProductName ProductID="CVRFPID-207792">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 1.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-207794">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207795">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207797">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207799">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.4(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207800">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.4(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207801">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.4(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207803">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.5(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207804">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.5(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207805">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.5(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207806">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.5(9)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207807">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.5(11)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207809">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.6(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207810">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.6(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207811">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.6(3) b26</FullProductName>
+    <FullProductName ProductID="CVRFPID-207812">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.6(3) b35</FullProductName>
+    <FullProductName ProductID="CVRFPID-207813">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.6(3) b39</FullProductName>
+    <FullProductName ProductID="CVRFPID-207814">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.6(3) b45</FullProductName>
+    <FullProductName ProductID="CVRFPID-207815">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.6(3) b47</FullProductName>
+    <FullProductName ProductID="CVRFPID-207816">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 2.6(3) b50</FullProductName>
+    <FullProductName ProductID="CVRFPID-207818">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-207820">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-207821">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.1.2 b17</FullProductName>
+    <FullProductName ProductID="CVRFPID-207822">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.1.2 b26</FullProductName>
+    <FullProductName ProductID="CVRFPID-207823">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.1.2 b34</FullProductName>
+    <FullProductName ProductID="CVRFPID-207824">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.1.2 b54</FullProductName>
+    <FullProductName ProductID="CVRFPID-207825">Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) 3.1.2 b60</FullProductName>
+    <FullProductName ProductID="CVRFPID-193213">Cisco Videoscape Distribution Suite Service Broker 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-193216">Cisco Videoscape Distribution Suite Service Broker 1.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-193215">Cisco Videoscape Distribution Suite Service Broker 1.1 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Videoscape Delivery System Internet Streamer Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCus79834</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the HTTP processing module of the Cisco Videoscape Distribution Suite for Internet Streaming (VDS-IS) and Cisco Videoscape Distribution Suite Service Broker (VDS-SB) could allow an unauthenticated, remote attacker to cause a reload of the affected device.
+
+
+
+The vulnerability is due to improper input validation. An attacker could exploit this vulnerability by sending a crafted HTTP request. An exploit could allow the attacker to cause a denial of service (DoS) condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCus79834,CSCuu63409</Note>
+    </Notes>
+    <CVE>CVE-2015-0725</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-193238</ProductID>
+        <ProductID>CVRFPID-193239</ProductID>
+        <ProductID>CVRFPID-207560</ProductID>
+        <ProductID>CVRFPID-207562</ProductID>
+        <ProductID>CVRFPID-207563</ProductID>
+        <ProductID>CVRFPID-207792</ProductID>
+        <ProductID>CVRFPID-207794</ProductID>
+        <ProductID>CVRFPID-207795</ProductID>
+        <ProductID>CVRFPID-207797</ProductID>
+        <ProductID>CVRFPID-207799</ProductID>
+        <ProductID>CVRFPID-207800</ProductID>
+        <ProductID>CVRFPID-207801</ProductID>
+        <ProductID>CVRFPID-207803</ProductID>
+        <ProductID>CVRFPID-207804</ProductID>
+        <ProductID>CVRFPID-207805</ProductID>
+        <ProductID>CVRFPID-207806</ProductID>
+        <ProductID>CVRFPID-207807</ProductID>
+        <ProductID>CVRFPID-207809</ProductID>
+        <ProductID>CVRFPID-207810</ProductID>
+        <ProductID>CVRFPID-207811</ProductID>
+        <ProductID>CVRFPID-207812</ProductID>
+        <ProductID>CVRFPID-207813</ProductID>
+        <ProductID>CVRFPID-207814</ProductID>
+        <ProductID>CVRFPID-207815</ProductID>
+        <ProductID>CVRFPID-207816</ProductID>
+        <ProductID>CVRFPID-207818</ProductID>
+        <ProductID>CVRFPID-207820</ProductID>
+        <ProductID>CVRFPID-207821</ProductID>
+        <ProductID>CVRFPID-207822</ProductID>
+        <ProductID>CVRFPID-207823</ProductID>
+        <ProductID>CVRFPID-207824</ProductID>
+        <ProductID>CVRFPID-207825</ProductID>
+        <ProductID>CVRFPID-207826</ProductID>
+        <ProductID>CVRFPID-207827</ProductID>
+        <ProductID>CVRFPID-207828</ProductID>
+        <ProductID>CVRFPID-207829</ProductID>
+        <ProductID>CVRFPID-207830</ProductID>
+        <ProductID>CVRFPID-207831</ProductID>
+        <ProductID>CVRFPID-207832</ProductID>
+        <ProductID>CVRFPID-207833</ProductID>
+        <ProductID>CVRFPID-207834</ProductID>
+        <ProductID>CVRFPID-207835</ProductID>
+        <ProductID>CVRFPID-207836</ProductID>
+        <ProductID>CVRFPID-207838</ProductID>
+        <ProductID>CVRFPID-207839</ProductID>
+        <ProductID>CVRFPID-207840</ProductID>
+        <ProductID>CVRFPID-193213</ProductID>
+        <ProductID>CVRFPID-193215</ProductID>
+        <ProductID>CVRFPID-193216</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+        <ProductID>CVRFPID-193238</ProductID>
+        <ProductID>CVRFPID-193239</ProductID>
+        <ProductID>CVRFPID-207560</ProductID>
+        <ProductID>CVRFPID-207562</ProductID>
+        <ProductID>CVRFPID-207563</ProductID>
+        <ProductID>CVRFPID-207792</ProductID>
+        <ProductID>CVRFPID-207794</ProductID>
+        <ProductID>CVRFPID-207795</ProductID>
+        <ProductID>CVRFPID-207797</ProductID>
+        <ProductID>CVRFPID-207799</ProductID>
+        <ProductID>CVRFPID-207800</ProductID>
+        <ProductID>CVRFPID-207801</ProductID>
+        <ProductID>CVRFPID-207803</ProductID>
+        <ProductID>CVRFPID-207804</ProductID>
+        <ProductID>CVRFPID-207805</ProductID>
+        <ProductID>CVRFPID-207806</ProductID>
+        <ProductID>CVRFPID-207807</ProductID>
+        <ProductID>CVRFPID-207809</ProductID>
+        <ProductID>CVRFPID-207810</ProductID>
+        <ProductID>CVRFPID-207811</ProductID>
+        <ProductID>CVRFPID-207812</ProductID>
+        <ProductID>CVRFPID-207813</ProductID>
+        <ProductID>CVRFPID-207814</ProductID>
+        <ProductID>CVRFPID-207815</ProductID>
+        <ProductID>CVRFPID-207816</ProductID>
+        <ProductID>CVRFPID-207818</ProductID>
+        <ProductID>CVRFPID-207820</ProductID>
+        <ProductID>CVRFPID-207821</ProductID>
+        <ProductID>CVRFPID-207822</ProductID>
+        <ProductID>CVRFPID-207823</ProductID>
+        <ProductID>CVRFPID-207824</ProductID>
+        <ProductID>CVRFPID-207825</ProductID>
+        <ProductID>CVRFPID-207826</ProductID>
+        <ProductID>CVRFPID-207827</ProductID>
+        <ProductID>CVRFPID-207828</ProductID>
+        <ProductID>CVRFPID-207829</ProductID>
+        <ProductID>CVRFPID-207830</ProductID>
+        <ProductID>CVRFPID-207831</ProductID>
+        <ProductID>CVRFPID-207832</ProductID>
+        <ProductID>CVRFPID-207833</ProductID>
+        <ProductID>CVRFPID-207834</ProductID>
+        <ProductID>CVRFPID-207835</ProductID>
+        <ProductID>CVRFPID-207836</ProductID>
+        <ProductID>CVRFPID-207838</ProductID>
+        <ProductID>CVRFPID-207839</ProductID>
+        <ProductID>CVRFPID-207840</ProductID>
+      </ScoreSet>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:U/RC:C</Vector>
+        <ProductID>CVRFPID-193213</ProductID>
+        <ProductID>CVRFPID-193215</ProductID>
+        <ProductID>CVRFPID-193216</ProductID>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no known workarounds for this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150715-vds</URL>
+        <Description>Cisco Videoscape Delivery System Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

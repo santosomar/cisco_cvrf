@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco ASR 5000 Series Packet Data Network Gateway Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160621-asr</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-06-21T17:42:38</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-06-21T11:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-06-21T17:42:38</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the implementation of General Packet Radio Switching Tunneling Protocol Version 1 (GTPv1) in Cisco ASR 5000 Series Packet Data Network Gateways  could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition due to an unexpected restart of the Session Manager process for the device.
+
+
+
+The vulnerability is due to improper input validation of GTPv1 packet headers. An attacker could exploit this vulnerability by sending a crafted GTPv1 packet to a targeted device. A successful exploit could allow the attacker to cause the Session Manager process for the device to restart unexpectedly, resulting in a DoS condition.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160621-asr["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160621-asr"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160621-asr</URL>
+      <Description>Cisco ASR 5000 Series Packet Data Network Gateway Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-201739">Cisco ASR 5000 Series Software 17.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-208361">Cisco ASR 5000 Series Software 17.2.0.59184</FullProductName>
+    <FullProductName ProductID="CVRFPID-213602">Cisco ASR 5000 Series Software 17.7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-208360">Cisco ASR 5000 Series Software 18.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-208362">Cisco ASR 5000 Series Software 18.0.L0.59219</FullProductName>
+    <FullProductName ProductID="CVRFPID-211207">Cisco ASR 5000 Series Software 18.0.0.57828</FullProductName>
+    <FullProductName ProductID="CVRFPID-208886">Cisco ASR 5000 Series Software 18.0.0.59167</FullProductName>
+    <FullProductName ProductID="CVRFPID-208887">Cisco ASR 5000 Series Software 18.0.0.59211</FullProductName>
+    <FullProductName ProductID="CVRFPID-207271">Cisco ASR 5000 Series Software 18.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-207272">Cisco ASR 5000 Series Software 18.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-207273">Cisco ASR 5000 Series Software 18.1.0.59776</FullProductName>
+    <FullProductName ProductID="CVRFPID-209815">Cisco ASR 5000 Series Software 18.1.0.59780</FullProductName>
+    <FullProductName ProductID="CVRFPID-213604">Cisco ASR 5000 Series Software 18.4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-213605">Cisco ASR 5000 Series Software 19.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209814">Cisco ASR 5000 Series Software 19.0.M0.60737</FullProductName>
+    <FullProductName ProductID="CVRFPID-209816">Cisco ASR 5000 Series Software 19.0.M0.60828</FullProductName>
+    <FullProductName ProductID="CVRFPID-211208">Cisco ASR 5000 Series Software 19.0.M0.61045</FullProductName>
+    <FullProductName ProductID="CVRFPID-211422">Cisco ASR 5000 Series Software 19.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211425">Cisco ASR 5000 Series Software 19.1.0.61559</FullProductName>
+    <FullProductName ProductID="CVRFPID-211424">Cisco ASR 5000 Series Software 19.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-213607">Cisco ASR 5000 Series Software 19.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-216758">Cisco ASR 5000 Series Software 17.3.1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ASR 5000 Series Packet Data Network Gateway Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz46198</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the implementation of General Packet Radio Switching Tunneling Protocol Version 1 (GTPv1) in Cisco ASR 5000 Series Packet Data Network Gateways  could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition due to an unexpected restart of the Session Manager process for the device.
+
+
+
+The vulnerability is due to improper input validation of GTPv1 packet headers. An attacker could exploit this vulnerability by sending a crafted GTPv1 packet to a targeted device. A successful exploit could allow the attacker to cause the Session Manager process for the device to restart unexpectedly, resulting in a DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz46198</Note>
+    </Notes>
+    <CVE>CVE-2016-1436</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-201739</ProductID>
+        <ProductID>CVRFPID-207271</ProductID>
+        <ProductID>CVRFPID-207272</ProductID>
+        <ProductID>CVRFPID-207273</ProductID>
+        <ProductID>CVRFPID-208360</ProductID>
+        <ProductID>CVRFPID-208361</ProductID>
+        <ProductID>CVRFPID-208362</ProductID>
+        <ProductID>CVRFPID-208886</ProductID>
+        <ProductID>CVRFPID-208887</ProductID>
+        <ProductID>CVRFPID-209814</ProductID>
+        <ProductID>CVRFPID-209815</ProductID>
+        <ProductID>CVRFPID-209816</ProductID>
+        <ProductID>CVRFPID-211207</ProductID>
+        <ProductID>CVRFPID-211208</ProductID>
+        <ProductID>CVRFPID-211422</ProductID>
+        <ProductID>CVRFPID-211424</ProductID>
+        <ProductID>CVRFPID-211425</ProductID>
+        <ProductID>CVRFPID-213602</ProductID>
+        <ProductID>CVRFPID-213604</ProductID>
+        <ProductID>CVRFPID-213605</ProductID>
+        <ProductID>CVRFPID-213607</ProductID>
+        <ProductID>CVRFPID-216758</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160621-asr</URL>
+        <Description>Cisco ASR 5000 Series Packet Data Network Gateway Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

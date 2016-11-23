@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified Contact Center Express Directory Traversal Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20111026-uccx</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2011-10-26T15:43:49</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2011-10-26T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2011-10-26T15:43:49</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111026-uccx</URL>
+      <Description>Cisco Unified Contact Center Express Directory Traversal Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20111026-cucm-uccx</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Unified Communications Manager and Cisco Unified Contact Center Express Directory Traversal Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20111026-cucm-uccx</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Unified Communications Manager and Cisco Unified Contact Center Express Directory Traversal Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-88444">Cisco Unified Communications Manager</FullProductName>
+    <FullProductName ProductID="CVRFPID-88447">Cisco Unified Communications Manager 6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-90268">Cisco Unified Communications Manager 7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-93290">Cisco Unified Communications Manager 7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-96252">Cisco Unified Communications Manager 8.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-101645">Cisco Unified Communications Manager 8.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-101511">Cisco Unified Communications Manager 8.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-92631">Cisco Unified Contact Center Express</FullProductName>
+    <FullProductName ProductID="CVRFPID-92636">Cisco Unified Contact Center Express 6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-92638">Cisco Unified Contact Center Express 7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-112277">Cisco Unified Contact Center Express 8.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-112279">Cisco Unified Contact Center Express 8.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-92647">Cisco Unified IP Interactive Voice Response 6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-92649">Cisco Unified IP Interactive Voice Response 7.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager and Cisco Unified Contact Center Express Directory Traversal Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCth09343</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">Cisco Unified Communications Manager, Cisco Unified Contact Center Express and Cisco Unified IP Interactive Voice Response contain a directory traversal vulnerability that may allow an unauthenticated, remote attacker to retrieve arbitrary files from the filesystem. 
+
+
+
+["https://tools.cisco.com/bugsearch/bug/CSCth09343"]</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCth09343,CSCts44049</Note>
+    </Notes>
+    <CVE>CVE-2011-3315</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-88444</ProductID>
+        <ProductID>CVRFPID-88447</ProductID>
+        <ProductID>CVRFPID-90268</ProductID>
+        <ProductID>CVRFPID-93290</ProductID>
+        <ProductID>CVRFPID-96252</ProductID>
+        <ProductID>CVRFPID-101511</ProductID>
+        <ProductID>CVRFPID-101645</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+        <ProductID>CVRFPID-92636</ProductID>
+        <ProductID>CVRFPID-92638</ProductID>
+        <ProductID>CVRFPID-92647</ProductID>
+        <ProductID>CVRFPID-92649</ProductID>
+        <ProductID>CVRFPID-112277</ProductID>
+        <ProductID>CVRFPID-112279</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:N/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111026-uccx</URL>
+        <Description>Cisco Unified Contact Center Express Directory Traversal Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

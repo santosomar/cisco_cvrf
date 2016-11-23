@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Vulnerabilities in Cisco IOS Secure Shell Server</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20050406-ssh</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2005-04-06T16:00:00</Date>
+        <Description>- Clarify that 12.3 does support SSH, but it is not vulnerable.
+			  
+		   - Updated table of fixed software.  
+		   - 12.1AZ migrates to 12.1(22)EA1, not 12.2(22)EA1.  
+		   - Correct the Access Control List entries of the Control Plane
+			 Policing example.  
+		   - Clarify that the SSH version 2 vulnerability (CSCed65778
+           (
+registered customers only)
+        ) affects devices using authentication
+			 methods other than TACACS+ (RADIUS and local user database, for example.)</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2005-04-06T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2005-04-06T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">
+ 
+   Certain release trains of Cisco Internetwork Operating System
+	 (IOS)®, when configured to use the IOS Secure Shell
+	 (SSH) server in combination with Terminal Access Controller Access Control
+	 System Plus (TACACS+) as a means to perform remote management tasks on IOS
+	 devices, may contain two vulnerabilities that can potentially cause IOS devices
+	 to exhaust resources and reload. Repeated exploitation of these vulnerabilities
+	 can result in a Denial of Service (DoS) condition. Use of SSH with other
+	 authentication methods like Remote Authentication Dial In User Service (RADIUS)
+	 and the local user database may also be affected. 
+ 
+   Cisco has made free software available to address these
+	 vulnerabilities for all affected customers. There are workarounds available to
+	 mitigate the effects of the vulnerability (see the Workarounds["#workarounds"] section.) 
+ 
+   This advisory will be posted at
+	 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20050406-ssh["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20050406-ssh"].
+
+  
+  
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20050406-ssh</URL>
+      <Description>Vulnerabilities in Cisco IOS Secure Shell Server</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-60230">Cisco IOS 12.1(19)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-106831">Cisco IOS 12.1(19)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106365">Cisco IOS 12.1(19)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105007">Cisco IOS 12.1(19)E3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107372">Cisco IOS 12.1(19)E4</FullProductName>
+    <FullProductName ProductID="CVRFPID-103613">Cisco IOS 12.1(19)E6</FullProductName>
+    <FullProductName ProductID="CVRFPID-106538">Cisco IOS 12.1(19)E7</FullProductName>
+    <FullProductName ProductID="CVRFPID-50425">Cisco IOS 12.1(20)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-105698">Cisco IOS 12.1(20)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105405">Cisco IOS 12.1(20)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107110">Cisco IOS 12.1(19)EA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106377">Cisco IOS 12.1(19)EA1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-103905">Cisco IOS 12.1(19)EA1b</FullProductName>
+    <FullProductName ProductID="CVRFPID-107396">Cisco IOS 12.1(19)EA1c</FullProductName>
+    <FullProductName ProductID="CVRFPID-106549">Cisco IOS 12.1(19)EA1d</FullProductName>
+    <FullProductName ProductID="CVRFPID-106120">Cisco IOS 12.1(20)EA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105379">Cisco IOS 12.1(20)EA1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-104170">Cisco IOS 12.1(20)EA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-60229">Cisco IOS 12.1(19)EB</FullProductName>
+    <FullProductName ProductID="CVRFPID-60238">Cisco IOS 12.1(20)EB</FullProductName>
+    <FullProductName ProductID="CVRFPID-60231">Cisco IOS 12.1(19)EC</FullProductName>
+    <FullProductName ProductID="CVRFPID-104826">Cisco IOS 12.1(19)EC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-60234">Cisco IOS 12.1(20)EC</FullProductName>
+    <FullProductName ProductID="CVRFPID-105251">Cisco IOS 12.1(20)EC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103877">Cisco IOS 12.1(20)EC2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104209">Cisco IOS 12.1(20)EC3</FullProductName>
+    <FullProductName ProductID="CVRFPID-60227">Cisco IOS 12.1(19)EW</FullProductName>
+    <FullProductName ProductID="CVRFPID-105891">Cisco IOS 12.1(19)EW1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104389">Cisco IOS 12.1(19)EW2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104222">Cisco IOS 12.1(19)EW3</FullProductName>
+    <FullProductName ProductID="CVRFPID-60235">Cisco IOS 12.1(20)EW</FullProductName>
+    <FullProductName ProductID="CVRFPID-104336">Cisco IOS 12.1(20)EW1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104156">Cisco IOS 12.1(20)EW2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107032">Cisco IOS 12.1(20)EW3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107398">Cisco IOS 12.1(20)EW4</FullProductName>
+    <FullProductName ProductID="CVRFPID-60363">Cisco IOS 12.2(18)EW</FullProductName>
+    <FullProductName ProductID="CVRFPID-63905">Cisco IOS 12.2(20)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-50447">Cisco IOS 12.2(22)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-107282">Cisco IOS 12.2(22)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63898">Cisco IOS 12.2(18)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-106163">Cisco IOS 12.2(18)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63903">Cisco IOS 12.2(20)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-106232">Cisco IOS 12.2(20)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107002">Cisco IOS 12.2(20)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104706">Cisco IOS 12.2(20)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-63180">Cisco IOS 12.2(23)SW</FullProductName>
+    <FullProductName ProductID="CVRFPID-105957">Cisco IOS 12.2(23)SW1</FullProductName>
+    <FullProductName ProductID="CVRFPID-50445">Cisco IOS 12.2(17a)SX</FullProductName>
+    <FullProductName ProductID="CVRFPID-104832">Cisco IOS 12.2(17a)SX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105055">Cisco IOS 12.2(17a)SX2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107469">Cisco IOS 12.2(17a)SX3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106080">Cisco IOS 12.2(17a)SX4</FullProductName>
+    <FullProductName ProductID="CVRFPID-50444">Cisco IOS 12.2(17b)SXA</FullProductName>
+    <FullProductName ProductID="CVRFPID-105932">Cisco IOS 12.2(17b)SXA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-63498">Cisco IOS 12.3(4)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107131">Cisco IOS 12.3(4)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105274">Cisco IOS 12.3(4)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106064">Cisco IOS 12.3(4)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104146">Cisco IOS 12.3(4)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-105888">Cisco IOS 12.3(4)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-104486">Cisco IOS 12.3(4)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-107354">Cisco IOS 12.3(4)T8</FullProductName>
+    <FullProductName ProductID="CVRFPID-103893">Cisco IOS 12.3(4)T9</FullProductName>
+    <FullProductName ProductID="CVRFPID-65513">Cisco IOS 12.3(7)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107603">Cisco IOS 12.3(7)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104657">Cisco IOS 12.3(7)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104448">Cisco IOS 12.3(7)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105720">Cisco IOS 12.3(7)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107392">Cisco IOS 12.3(7)T6</FullProductName>
+    <FullProductName ProductID="CVRFPID-63501">Cisco IOS 12.3(4)XD</FullProductName>
+    <FullProductName ProductID="CVRFPID-103953">Cisco IOS 12.3(4)XD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106716">Cisco IOS 12.3(4)XD2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106469">Cisco IOS 12.3(4)XD3</FullProductName>
+    <FullProductName ProductID="CVRFPID-103502">Cisco IOS 12.3(4)XD4</FullProductName>
+    <FullProductName ProductID="CVRFPID-65470">Cisco IOS 12.3(2)XE</FullProductName>
+    <FullProductName ProductID="CVRFPID-105834">Cisco IOS 12.3(2)XE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104989">Cisco IOS 12.3(2)XE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107447">Cisco IOS 12.3(2)XE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-65471">Cisco IOS 12.3(2)XF</FullProductName>
+    <FullProductName ProductID="CVRFPID-65490">Cisco IOS 12.3(4)XG</FullProductName>
+    <FullProductName ProductID="CVRFPID-105348">Cisco IOS 12.3(4)XG1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106147">Cisco IOS 12.3(4)XG2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104208">Cisco IOS 12.3(4)XG3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105964">Cisco IOS 12.3(4)XG4</FullProductName>
+    <FullProductName ProductID="CVRFPID-105562">Cisco IOS 12.3(7)XI1b</FullProductName>
+    <FullProductName ProductID="CVRFPID-105857">Cisco IOS 12.3(7)XI1c</FullProductName>
+    <FullProductName ProductID="CVRFPID-106751">Cisco IOS 12.3(7)XI2</FullProductName>
+    <FullProductName ProductID="CVRFPID-65510">Cisco IOS 12.3(7)XJ</FullProductName>
+    <FullProductName ProductID="CVRFPID-104083">Cisco IOS 12.3(7)XJ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104179">Cisco IOS 12.3(7)XJ2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106872">Cisco IOS 12.3(4)XK</FullProductName>
+    <FullProductName ProductID="CVRFPID-104909">Cisco IOS 12.3(4)XK1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107314">Cisco IOS 12.3(4)XK2</FullProductName>
+    <FullProductName ProductID="CVRFPID-103862">Cisco IOS 12.3(4)XK3</FullProductName>
+    <FullProductName ProductID="CVRFPID-63380">Cisco IOS 12.3(4)XQ</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS SSH Denial of Service Vulnerabilities</Title>
+    <ID SystemName="Cisco Bug ID">CSCed65285</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCed65285,CSCed65778</Note>
+    </Notes>
+    <CVE>CVE-2005-1020</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-50425</ProductID>
+        <ProductID>CVRFPID-50444</ProductID>
+        <ProductID>CVRFPID-50445</ProductID>
+        <ProductID>CVRFPID-50447</ProductID>
+        <ProductID>CVRFPID-60227</ProductID>
+        <ProductID>CVRFPID-60229</ProductID>
+        <ProductID>CVRFPID-60230</ProductID>
+        <ProductID>CVRFPID-60231</ProductID>
+        <ProductID>CVRFPID-60234</ProductID>
+        <ProductID>CVRFPID-60235</ProductID>
+        <ProductID>CVRFPID-60238</ProductID>
+        <ProductID>CVRFPID-60363</ProductID>
+        <ProductID>CVRFPID-63180</ProductID>
+        <ProductID>CVRFPID-63380</ProductID>
+        <ProductID>CVRFPID-63498</ProductID>
+        <ProductID>CVRFPID-63501</ProductID>
+        <ProductID>CVRFPID-63898</ProductID>
+        <ProductID>CVRFPID-63903</ProductID>
+        <ProductID>CVRFPID-63905</ProductID>
+        <ProductID>CVRFPID-65470</ProductID>
+        <ProductID>CVRFPID-65471</ProductID>
+        <ProductID>CVRFPID-65490</ProductID>
+        <ProductID>CVRFPID-65510</ProductID>
+        <ProductID>CVRFPID-65513</ProductID>
+        <ProductID>CVRFPID-103502</ProductID>
+        <ProductID>CVRFPID-103613</ProductID>
+        <ProductID>CVRFPID-103862</ProductID>
+        <ProductID>CVRFPID-103877</ProductID>
+        <ProductID>CVRFPID-103893</ProductID>
+        <ProductID>CVRFPID-103905</ProductID>
+        <ProductID>CVRFPID-103953</ProductID>
+        <ProductID>CVRFPID-104083</ProductID>
+        <ProductID>CVRFPID-104146</ProductID>
+        <ProductID>CVRFPID-104156</ProductID>
+        <ProductID>CVRFPID-104170</ProductID>
+        <ProductID>CVRFPID-104179</ProductID>
+        <ProductID>CVRFPID-104208</ProductID>
+        <ProductID>CVRFPID-104209</ProductID>
+        <ProductID>CVRFPID-104222</ProductID>
+        <ProductID>CVRFPID-104336</ProductID>
+        <ProductID>CVRFPID-104389</ProductID>
+        <ProductID>CVRFPID-104448</ProductID>
+        <ProductID>CVRFPID-104486</ProductID>
+        <ProductID>CVRFPID-104657</ProductID>
+        <ProductID>CVRFPID-104706</ProductID>
+        <ProductID>CVRFPID-104826</ProductID>
+        <ProductID>CVRFPID-104832</ProductID>
+        <ProductID>CVRFPID-104909</ProductID>
+        <ProductID>CVRFPID-104989</ProductID>
+        <ProductID>CVRFPID-105007</ProductID>
+        <ProductID>CVRFPID-105055</ProductID>
+        <ProductID>CVRFPID-105251</ProductID>
+        <ProductID>CVRFPID-105274</ProductID>
+        <ProductID>CVRFPID-105348</ProductID>
+        <ProductID>CVRFPID-105379</ProductID>
+        <ProductID>CVRFPID-105405</ProductID>
+        <ProductID>CVRFPID-105562</ProductID>
+        <ProductID>CVRFPID-105698</ProductID>
+        <ProductID>CVRFPID-105720</ProductID>
+        <ProductID>CVRFPID-105834</ProductID>
+        <ProductID>CVRFPID-105857</ProductID>
+        <ProductID>CVRFPID-105888</ProductID>
+        <ProductID>CVRFPID-105891</ProductID>
+        <ProductID>CVRFPID-105932</ProductID>
+        <ProductID>CVRFPID-105957</ProductID>
+        <ProductID>CVRFPID-105964</ProductID>
+        <ProductID>CVRFPID-106064</ProductID>
+        <ProductID>CVRFPID-106080</ProductID>
+        <ProductID>CVRFPID-106120</ProductID>
+        <ProductID>CVRFPID-106147</ProductID>
+        <ProductID>CVRFPID-106163</ProductID>
+        <ProductID>CVRFPID-106232</ProductID>
+        <ProductID>CVRFPID-106365</ProductID>
+        <ProductID>CVRFPID-106377</ProductID>
+        <ProductID>CVRFPID-106469</ProductID>
+        <ProductID>CVRFPID-106538</ProductID>
+        <ProductID>CVRFPID-106549</ProductID>
+        <ProductID>CVRFPID-106716</ProductID>
+        <ProductID>CVRFPID-106751</ProductID>
+        <ProductID>CVRFPID-106831</ProductID>
+        <ProductID>CVRFPID-106872</ProductID>
+        <ProductID>CVRFPID-107002</ProductID>
+        <ProductID>CVRFPID-107032</ProductID>
+        <ProductID>CVRFPID-107110</ProductID>
+        <ProductID>CVRFPID-107131</ProductID>
+        <ProductID>CVRFPID-107282</ProductID>
+        <ProductID>CVRFPID-107314</ProductID>
+        <ProductID>CVRFPID-107354</ProductID>
+        <ProductID>CVRFPID-107372</ProductID>
+        <ProductID>CVRFPID-107392</ProductID>
+        <ProductID>CVRFPID-107396</ProductID>
+        <ProductID>CVRFPID-107398</ProductID>
+        <ProductID>CVRFPID-107447</ProductID>
+        <ProductID>CVRFPID-107469</ProductID>
+        <ProductID>CVRFPID-107603</ProductID>
+      </Status>
+    </ProductStatuses>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>
+
+
+
+ 
+ 
+   The effectiveness of any workaround is dependent on specific customer
+	 situations such as product mix, network topology, traffic behavior, and
+	 organizational mission. Due to the variety of affected products and releases,
+	 customers should consult with their service provider or support organization to
+	 ensure any applied workaround is the most appropriate for use in the intended
+	 network before it is deployed. 
+ 
+  
+Mitigation Strategies 
+   Not all of the mitigation strategies listed will work for all
+	 customers. Some of the workarounds listed are dependent on which versions and
+	 feature-sets of IOS you have in your network. 
+ 
+ 
+Configuring a VTY Access Class 
+   It is possible to limit the exposure of the Cisco device by applying a
+	 VTY access class to permit only known, trusted hosts to connect to the device
+	 via SSH. 
+ 
+   For more information on restricting traffic to VTYs, please consult:
+	 
+ 
+  
+	 http://www.cisco.com/en/US/docs/ios/12_2/ipaddr/command/reference/1rfip1.html#wp1017389["http://www.cisco.com/en/US/docs/ios/12_2/ipaddr/command/reference/1rfip1.html#wp1017389"].
+	 
+ 
+   The following example permits access to VTYs from the 192.168.1.0/24
+	 netblock and the single IP address 172.16.1.2 while denying access from
+	 anywhere else: 
+ 
+  
+
+Router(config)# access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)# access-list 1 permit host 172.16.1.2
+Router(config)# line vty 0 4
+Router(config-line)# access-class 1 in
+ 
+   Different Cisco platforms support different numbers of terminal lines.
+	 Check your device's configuration to determine the correct number of terminal
+	 lines for your platform. 
+ 
+ 
+Configuring Access Lists (ACLs) 
+   In addition to configuring a VTY Access Class, it may be desirable to
+	 block all SSH traffic destined to your network infrastructure. 
+ 
+   Telnet and reverse telnet should be blocked as part of a Transit ACL
+	 controlling all access to the trusted network. Transit ACLs are considered a
+	 network security best practice and should be considered as a long-term addition
+	 to good network security, as well as a workaround for this specific
+	 vulnerability. The white paper entitled "Transit Access Control Lists:
+	 Filtering at Your Edge" presents guidelines and recommended deployment
+	 techniques for transit ACLs: 
+ 
+  
+	 http://www.cisco.com/en/US/tech/tk648/tk361/technologies_white_paper09186a00801afc76.shtml["http://www.cisco.com/en/US/tech/tk648/tk361/technologies_white_paper09186a00801afc76.shtml"]
+	 
+ 
+ 
+Configuring Infrastructure Access Lists  (iACLs) 
+   Although it is often difficult to block traffic transiting your
+	 network, it is possible to identify traffic which should never be allowed to
+	 target your infrastructure devices and block that traffic at the border of your
+	 network. Infrastructure ACLs are considered a network security best practice
+	 and should be considered as a long-term addition to good network security as
+	 well as a workaround for this specific vulnerability. The white paper entitled
+	 "Protecting Your Core: Infrastructure Protection Access Control Lists" presents
+	 guidelines and recommended deployment techniques for infrastructure protection
+	 ACLs: 
+ 
+  
+	 http://www.cisco.com/en/US/tech/tk648/tk361/technologies_white_paper09186a00801a1a55.shtml["http://www.cisco.com/en/US/tech/tk648/tk361/technologies_white_paper09186a00801a1a55.shtml"]
+	 
+ 
+ 
+Configuring Receive Access Lists (rACLs) 
+   For distributed platforms, rACLs may be an option starting in Cisco
+	 IOS Software Versions 12.0(21)S2 for the 12000 series GSR and 12.0(24)S for the
+	 7500 series. The receive access lists protect the device from harmful traffic
+	 before the traffic can impact the route processor. Receive path ACLs are
+	 considered a network security best practice, and should be considered as a
+	 long-term addition to good network security, as well as a workaround for this
+	 specific vulnerability. The CPU load is distributed to the line card processors
+	 and helps mitigate load on the main route processor. The white paper entitled
+	 "GSR: Receive Access Control Lists" will help identify and allow legitimate
+	 traffic to your device and deny all unwanted packets: 
+ 
+  
+	 http://www.cisco.com/en/US/tech/tk648/tk361/technologies_white_paper09186a00801a0a5e.shtml["http://www.cisco.com/en/US/tech/tk648/tk361/technologies_white_paper09186a00801a0a5e.shtml"]
+	 
+ 
+ 
+Control Plane Policing 
+   The Control Plane Policy (CoPP) feature may be used to mitigate this
+	 vulnerability, as in the following example: 
+ 
+  
+
+! Do not police SSH traffic from trusted hosts
+access-list 140 deny   tcp host  any eq 22
+access-list 140 deny   tcp host  any eq 22
+[...]
+access-list 140 deny   tcp host  any eq 22
+! Trust an entire network if desired
+access-list 140 deny   tcp   any eq 22
+! Police SSH traffic from untrusted hosts
+access-list 140 permit tcp any any eq 22
+! Do not police any other type of traffic going to the router
+access-list 140 deny   ip  any any
+!
+class-map match-all ssh-class
+  match access-group 140
+!
+policy-map control-plane-policy
+  ! Drop all traffic that matches the class "ssh-class"
+  class ssh-class
+     drop
+!
+control-plane
+  service-policy input control-plane-policy
+ 
+   
+	 
+Note: CoPP is available only in IOS release trains 12.0S, 12.2S and 12.3T.
+		Additional information on the configuration and use of the CoPP feature can be
+		found at the following URL:
+		http://www.cisco.com/en/US/prod/collateral/iosswrel/ps6537/ps6586/ps6642/prod_white_paper0900aecd804fa16a.html["http://www.cisco.com/en/US/prod/collateral/iosswrel/ps6537/ps6586/ps6642/prod_white_paper0900aecd804fa16a.html"]
+		
+ 
+   
+  
+
+
+
+
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20050406-ssh</URL>
+        <Description>Vulnerabilities in Cisco IOS Secure Shell Server</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

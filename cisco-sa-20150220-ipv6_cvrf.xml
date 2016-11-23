@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS XR Software IPv6 Malformed Packet Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150220-ipv6</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-02-20T16:30:18</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2015-02-24T01:19:14</Date>
+        <Description>Software Versions and Fixes updated</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-02-20T16:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-02-24T01:19:14</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the parsing of malformed IP version 6 (IPv6) packets in Cisco IOS XR Software for Cisco Network Convergence System 6000 (NCS 6000) and Cisco Carrier Routing System (CRS-X) could allow an unauthenticated, remote attacker to cause a reload of a line card that is processing traffic.
+
+
+
+The vulnerability is due to improper processing of malformed IPv6 packets carrying extension headers. An attacker could exploit this vulnerability by sending a malformed IPv6 packet, carrying extension headers, through an affected Cisco IOS XR device line card. An exploit could allow the attacker to cause a reload of the line card on the affected Cisco IOS XR device.
+
+
+
+
+Cisco has released software updates that address this vulnerability. 
+
+
+
+There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150220-ipv6["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150220-ipv6"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150220-ipv6</URL>
+      <Description>Cisco IOS XR Software IPv6 Malformed Packet Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37432</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco IOS XR Software IPv6 Malformed Packet Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=37510</URL>
+      <Description>Cisco IOS XR Software IPv6 Malformed Packet Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37432</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco IOS XR Software IPv6 Malformed Packet Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=37510</URL>
+      <Description>Cisco IOS XR Software IPv6 Malformed Packet Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-195582">Cisco IOS XR Software 5.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-201994">Cisco IOS XR Software for Cisco Network Convergence System 6000 Series Routers 5.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-201995">Cisco IOS XR Software for Cisco Network Convergence System 6000 Series Routers 5.0.1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS XR Software IPv6 Malformed Packet Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuq95241</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the parsing of malformed IP version 6 (IPv6) packets in Cisco IOS XR Software for Cisco Network Convergence System 6000 (NCS 6000) and Cisco Carrier Routing System (CRS-X) could allow an unauthenticated, remote attacker to cause a reload of a line card that is processing traffic.
+
+
+
+The vulnerability is due to improper processing of malformed IPv6 packets carrying extension headers. An attacker could exploit this vulnerability by sending a malformed IPv6 packet, carrying extension headers, through an affected Cisco IOS XR device line card. An exploit could allow the attacker to cause a reload of the line card on the affected Cisco IOS XR device.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuq95241</Note>
+    </Notes>
+    <CVE>CVE-2015-0618</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-195582</ProductID>
+        <ProductID>CVRFPID-201994</ProductID>
+        <ProductID>CVRFPID-201995</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.1</BaseScore>
+        <TemporalScore>5.9</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150220-ipv6</URL>
+        <Description>Cisco IOS XR Software IPv6 Malformed Packet Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco ASR 5500 SAE Gateway BGP Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151028-asr</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-10-28T21:08:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-10-28T20:58:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-10-28T21:08:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Border Gateway Protocol (BGP) input packet handler in the Cisco ASR 5500 System Architecture Evolution (SAE) Gateway could allow an unauthenticated, remote attacker to cause a partial denial of service (DoS) condition because the BGP process restarts unexpectedly.
+
+
+
+The vulnerability is due to lack of proper input validation of the BGP packet header. An attacker could exploit this vulnerability by sending a crafted BGP packet to the affected device. An exploit could allow the attacker to cause a partial DoS condition because the BGP process restarts unexpectedly.
+
+
+
+Cisco has released software updates that address this vulnerability. 
+
+
+
+Workarounds that mitigate this vulnerability are available.
+
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151028-asr["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151028-asr"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151028-asr</URL>
+      <Description>Cisco ASR 5500 SAE Gateway BGP Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-211425">Cisco ASR 5000 Series Software 19.1.0.61559</FullProductName>
+    <FullProductName ProductID="CVRFPID-211424">Cisco ASR 5000 Series Software 19.2.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ASR 5500 SAE Gateway BGP Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuw65781</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Border Gateway Protocol (BGP) input packet handler in the Cisco ASR 5500 System Architecture Evolution (SAE) Gateway could allow an unauthenticated, remote attacker to cause a partial denial of service (DoS) condition because the BGP process restarts unexpectedly.
+
+
+
+The vulnerability is due to lack of proper input validation of the BGP packet header. An attacker could exploit this vulnerability by sending a crafted BGP packet to the affected device. An exploit could allow the attacker to cause a partial DoS condition because the BGP process restarts unexpectedly.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuw65781</Note>
+    </Notes>
+    <CVE>CVE-2015-6351</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-211424</ProductID>
+        <ProductID>CVRFPID-211425</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Administrators may consider removing the BGP configuration from affected devices.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151028-asr</URL>
+        <Description>Cisco ASR 5500 SAE Gateway BGP Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

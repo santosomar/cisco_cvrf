@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco ASA 5500 Series Adaptive Security Appliance Clientless VPN ActiveX Control Remote Code Execution Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20120314-asaclient</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2012-03-14T15:52:16</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2012-05-15T14:43:56</Date>
+        <Description>Added information about the Microsoft Global Kill Bit update release on May 8th, 2012</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2012-03-14T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2012-05-15T14:43:56</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120314-asaclient</URL>
+      <Description>Cisco ASA 5500 Series Adaptive Security Appliance Clientless VPN ActiveX Control Remote Code Execution Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20120314-asaclient</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco ASA 5500 Series Adaptive Security Appliance Clientless VPN ActiveX Control Remote Code Execution Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20120314-asaclient</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco ASA 5500 Series Adaptive Security Appliance Clientless VPN ActiveX Control Remote Code Execution Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-6588">Cisco Adaptive Security Appliance (ASA) Software</FullProductName>
+    <FullProductName ProductID="CVRFPID-32570">Cisco Adaptive Security Appliance (ASA) Software 7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-32571">Cisco Adaptive Security Appliance (ASA) Software 7.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-32572">Cisco Adaptive Security Appliance (ASA) Software 8.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-91007">Cisco Adaptive Security Appliance (ASA) Software 8.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-32573">Cisco Adaptive Security Appliance (ASA) Software 8.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-99995">Cisco Adaptive Security Appliance (ASA) Software 8.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-108070">Cisco Adaptive Security Appliance (ASA) Software 8.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115267">Cisco Adaptive Security Appliance (ASA) Software 8.6</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Clientless VPN Port Forwarder ActiveX Control Remote Code Execution Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtr00165</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">The Cisco Clientless VPN solution as deployed by Cisco ASA 5500 Series Adaptive Security Appliances (Cisco ASA) uses an ActiveX control on client systems to perform port forwarding operations. Microsoft Windows-based systems that are running Internet Explorer or another browser that supports Microsoft ActiveX technology may be affected if the system has ever connected to a device that is running the Cisco Clientless VPN solution. A remote, unauthenticated attacker who could convince a user to connect to a malicious web page could exploit this issue to execute arbitrary code on the affected machine with the privileges of the web browser.
+
+
+
+The affected ActiveX control is distributed to endpoint systems by Cisco ASA.  However, the impact of successful exploitation of this vulnerability is to the endpoint system only and does not compromise Cisco ASA devices.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCtr00165</Note>
+    </Notes>
+    <CVE>CVE-2012-0358</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-6588</ProductID>
+        <ProductID>CVRFPID-32570</ProductID>
+        <ProductID>CVRFPID-32571</ProductID>
+        <ProductID>CVRFPID-32572</ProductID>
+        <ProductID>CVRFPID-32573</ProductID>
+        <ProductID>CVRFPID-91007</ProductID>
+        <ProductID>CVRFPID-99995</ProductID>
+        <ProductID>CVRFPID-108070</ProductID>
+        <ProductID>CVRFPID-115267</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.3</BaseScore>
+        <TemporalScore>7.7</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120314-asaclient</URL>
+        <Description>Cisco ASA 5500 Series Adaptive Security Appliance Clientless VPN ActiveX Control Remote Code Execution Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

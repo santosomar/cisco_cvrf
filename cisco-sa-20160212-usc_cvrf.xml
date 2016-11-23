@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Universal Small Cell Devices Unauthorized Firmware Retrieval Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160212-usc</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-02-12T20:54:04</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-02-12T20:50:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-02-12T20:54:04</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Cisco Universal Small Cell devices could allow an unauthenticated, remote attacker to retrieve firmware from a Cisco-hosted binary server. 
+
+
+
+The vulnerability is due to insufficient enforcement of the two-way certificate validation process by the Cisco-hosted binary server to ensure that only Cisco Universal Small Cell devices are able to download the firmware images and service provider configuration hints file.
+
+
+
+The hints file contains IP addresses of the device's provisioned service provider Cisco Universal Small Cell RAN Management System. The binary images retrieved from the image distribution service could be decrypted by an attacker who has previously retrieved a valid key from the flash of a Cisco Universal Small Cell device.
+
+
+
+Workarounds that address this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160212-usc["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160212-usc"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160212-usc</URL>
+      <Description>Cisco Universal Small Cell Devices Unauthorized Firmware Retrieval Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-201023">Cisco Universal Small Cell Series Firmware R2.12 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-201025">Cisco Universal Small Cell Series Firmware R2.13 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-201027">Cisco Universal Small Cell Series Firmware R2.14 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-201029">Cisco Universal Small Cell Series Firmware R2.15 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-201031">Cisco Universal Small Cell Series Firmware R2.16 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-201033">Cisco Universal Small Cell Series Firmware R2.17 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-201035">Cisco Universal Small Cell Series Firmware R3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-201037">Cisco Universal Small Cell Series Firmware R3.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-201039">Cisco Universal Small Cell Series Firmware R3.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-203367">Cisco Universal Small Cell Series Firmware R3.4 1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203368">Cisco Universal Small Cell Series Firmware R3.4 2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203369">Cisco Universal Small Cell Series Firmware R3.4 2.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-201041">Cisco Universal Small Cell Series Firmware R3.5 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Universal Small Cell Devices Unauthorized Firmware Retrieval Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCut98082</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco Universal Small Cell devices could allow an unauthenticated, remote attacker to retrieve firmware from a Cisco-hosted binary server. 
+
+
+
+The vulnerability is due to insufficient enforcement of the two-way certificate validation process by the Cisco-hosted binary server to ensure that only Cisco Universal Small Cell devices are able to download the firmware images and service provider configuration hints file.
+
+
+
+The hints file contains IP addresses of the device's provisioned service provider Cisco Universal Small Cell RAN Management System. The binary images retrieved from the image distribution service could be decrypted by an attacker who has previously retrieved a valid key from the flash of a Cisco Universal Small Cell device.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCut98082</Note>
+    </Notes>
+    <CVE>CVE-2016-1321</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-201023</ProductID>
+        <ProductID>CVRFPID-201025</ProductID>
+        <ProductID>CVRFPID-201027</ProductID>
+        <ProductID>CVRFPID-201029</ProductID>
+        <ProductID>CVRFPID-201031</ProductID>
+        <ProductID>CVRFPID-201033</ProductID>
+        <ProductID>CVRFPID-201035</ProductID>
+        <ProductID>CVRFPID-201037</ProductID>
+        <ProductID>CVRFPID-201039</ProductID>
+        <ProductID>CVRFPID-201041</ProductID>
+        <ProductID>CVRFPID-203367</ProductID>
+        <ProductID>CVRFPID-203368</ProductID>
+        <ProductID>CVRFPID-203369</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:P/I:N/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workarounds are not available.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160212-usc</URL>
+        <Description>Cisco Universal Small Cell Devices Unauthorized Firmware Retrieval Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software and IOS XE Software mDNS Gateway Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150325-mdns</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.4</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-03-25T15:42:47</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2015-03-25T21:26:59</Date>
+        <Description>Updated the First Fixed Release for All Advisories in the March 2015 Cisco IOS Software Security Advisory Bundled Publication table.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2015-03-26T20:49:58</Date>
+        <Description>Updated Workarounds Section</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2015-09-28T14:09:22</Date>
+        <Description>Added Cisco IOS XE 3.6.0E as an affected release.  Added 3.6.2E as a first fixed for bundle wide for 3.6E since it became available after the bundle was published.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2016-01-14T17:04:07</Date>
+        <Description>Updated Cisco IOS Checker Software Checker form to query all previously published Cisco IOS Software Security Advisories.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-03-25T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-01-14T17:22:43</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the multicast DNS (mDNS) gateway function of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, remote attacker to reload the vulnerable device.
+
+
+
+The vulnerability is due to improper validation of mDNS packets. An attacker could exploit this vulnerability by sending malformed IP version 4 (IPv4) or IP version 6 (IPv6) packets on UDP port 5353. An exploit could allow the attacker to cause a denial of service (DoS) condition.
+
+
+
+Cisco has released software updates that address this vulnerability. This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150325-mdns["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150325-mdns"]wo
+
+
+
+Note: The March 25, 2015, Cisco IOS &amp; XE Software Security Advisory bundled publication includes seven Cisco Security Advisories. The advisories address vulnerabilities in Cisco IOS Software and Cisco IOS XE Software. Individual publication links are in Cisco Event Response: Semiannual Cisco IOS &amp; XE Software Security Advisory Bundled Publication at the following link:
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_mar15.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_mar15.html"]
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150325-mdns</URL>
+      <Description>Cisco IOS Software and IOS XE Software mDNS Gateway Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37485</URL>
+      <Description>Identifying and Mitigating the Cisco IOS Software and IOS XE Software mDNS Gateway Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-43609</URL>
+      <Description>Cisco Event Response: March 2015 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication </Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20150325-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, March 25, 2015</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37485</URL>
+      <Description>Identifying and Mitigating the Cisco IOS Software and IOS XE Software mDNS Gateway Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-43609</URL>
+      <Description>Cisco Event Response: March 2015 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication </Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20150325-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, March 25, 2015</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=37820</URL>
+      <Description>Cisco IOS Software and IOS XE Software mDNS Gateway Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=37820</URL>
+      <Description>Cisco IOS Software and IOS XE Software mDNS Gateway Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-108951">Cisco IOS 12.2(33)IRD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-108032">Cisco IOS 12.2(33)IRE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107034">Cisco IOS 12.2(44)SQ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-108055">Cisco IOS 12.2(33)SXI4b</FullProductName>
+    <FullProductName ProductID="CVRFPID-190283">Cisco IOS 12.4(25e)JAM1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204819">Cisco IOS 12.4(25e)JAP1m</FullProductName>
+    <FullProductName ProductID="CVRFPID-189224">Cisco IOS 12.4(25e)JAZ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-194436">Cisco IOS 15.0(2)ED1</FullProductName>
+    <FullProductName ProductID="CVRFPID-184932">Cisco IOS 15.1(2)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-188061">Cisco IOS 15.1(2)SY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-189219">Cisco IOS 15.1(2)SY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-198059">Cisco IOS 15.1(2)SY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-183811">Cisco IOS 15.2(1)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-195469">Cisco IOS 15.2(1)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198060">Cisco IOS 15.2(1)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-200488">Cisco IOS 15.2(1)E3</FullProductName>
+    <FullProductName ProductID="CVRFPID-187057">Cisco IOS 15.2(2)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-204310">Cisco IOS 15.3(3)JA1n</FullProductName>
+    <FullProductName ProductID="CVRFPID-202561">Cisco IOS 15.3(3)JAB1</FullProductName>
+    <FullProductName ProductID="CVRFPID-205723">Cisco IOS 15.3(3)JNB</FullProductName>
+    <FullProductName ProductID="CVRFPID-191331">Cisco IOS 15.3(2)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-117783">Cisco IOS 15.3(3)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-193406">Cisco IOS 15.3(3)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-197457">Cisco IOS 15.3(3)S1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-193407">Cisco IOS 15.3(3)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-193408">Cisco IOS 15.3(3)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-193350">Cisco IOS 15.4(3)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-201713">Cisco IOS 15.4(3)M1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204104">Cisco IOS 15.4(3)M2</FullProductName>
+    <FullProductName ProductID="CVRFPID-187147">Cisco IOS 15.4(1)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-197474">Cisco IOS 15.4(1)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198067">Cisco IOS 15.4(1)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-190980">Cisco IOS 15.4(2)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200485">Cisco IOS 15.4(2)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-193544">Cisco IOS 15.4(3)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-115981">Cisco IOS 15.4(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-196255">Cisco IOS 15.4(1)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-196114">Cisco IOS 15.4(1)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-191997">Cisco IOS 15.4(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-201189">Cisco IOS 15.4(2)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-196218">Cisco IOS XE Software 3.3SE 3.3.0SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196925">Cisco IOS XE Software 3.3SE 3.3.1SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-197145">Cisco IOS XE Software 3.5E 3.5.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206168">Cisco IOS XE Software 3.5E 3.5.1E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206169">Cisco IOS XE Software 3.5E 3.5.2E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206170">Cisco IOS XE Software 3.5E 3.5.3E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206172">Cisco IOS XE Software 3.6E 3.6.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-198123">Cisco IOS XE Software 3.10S 3.10.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198535">Cisco IOS XE Software 3.10S 3.10.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-198124">Cisco IOS XE Software 3.10S 3.10.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213642">Cisco IOS XE Software 3.10S 3.10.1xbS</FullProductName>
+    <FullProductName ProductID="CVRFPID-198125">Cisco IOS XE Software 3.10S 3.10.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202539">Cisco IOS XE Software 3.10S 3.10.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-203353">Cisco IOS XE Software 3.11S 3.11.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200768">Cisco IOS XE Software 3.11S 3.11.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200771">Cisco IOS XE Software 3.11S 3.11.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200770">Cisco IOS XE Software 3.12S 3.12.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206161">Cisco IOS XE Software 3.12S 3.12.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-201495">Cisco IOS XE Software 3.13S 3.13.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213781">Cisco IOS XE Software 3.13S 3.13.0aS</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software and IOS XE Software mDNS Gateway Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCup70579</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the multicast DNS (mDNS) gateway function of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, remote attacker to reload the vulnerable device.
+
+
+
+The vulnerability is due to improper validation of mDNS packets. An attacker could exploit this vulnerability by sending malformed IP version 4 (IPv4) or IP version 6 (IPv6) packets on UDP port 5353. An exploit could allow the attacker to cause a denial of service (DoS) condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCup70579</Note>
+    </Notes>
+    <CVE>CVE-2015-0650</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-107034</ProductID>
+        <ProductID>CVRFPID-108032</ProductID>
+        <ProductID>CVRFPID-108055</ProductID>
+        <ProductID>CVRFPID-108951</ProductID>
+        <ProductID>CVRFPID-115981</ProductID>
+        <ProductID>CVRFPID-117783</ProductID>
+        <ProductID>CVRFPID-183811</ProductID>
+        <ProductID>CVRFPID-184932</ProductID>
+        <ProductID>CVRFPID-187057</ProductID>
+        <ProductID>CVRFPID-187147</ProductID>
+        <ProductID>CVRFPID-188061</ProductID>
+        <ProductID>CVRFPID-189219</ProductID>
+        <ProductID>CVRFPID-189224</ProductID>
+        <ProductID>CVRFPID-190283</ProductID>
+        <ProductID>CVRFPID-190980</ProductID>
+        <ProductID>CVRFPID-191331</ProductID>
+        <ProductID>CVRFPID-191997</ProductID>
+        <ProductID>CVRFPID-193350</ProductID>
+        <ProductID>CVRFPID-193406</ProductID>
+        <ProductID>CVRFPID-193407</ProductID>
+        <ProductID>CVRFPID-193408</ProductID>
+        <ProductID>CVRFPID-193544</ProductID>
+        <ProductID>CVRFPID-194436</ProductID>
+        <ProductID>CVRFPID-195469</ProductID>
+        <ProductID>CVRFPID-196114</ProductID>
+        <ProductID>CVRFPID-196255</ProductID>
+        <ProductID>CVRFPID-197457</ProductID>
+        <ProductID>CVRFPID-197474</ProductID>
+        <ProductID>CVRFPID-198059</ProductID>
+        <ProductID>CVRFPID-198060</ProductID>
+        <ProductID>CVRFPID-198067</ProductID>
+        <ProductID>CVRFPID-200485</ProductID>
+        <ProductID>CVRFPID-200488</ProductID>
+        <ProductID>CVRFPID-201189</ProductID>
+        <ProductID>CVRFPID-201713</ProductID>
+        <ProductID>CVRFPID-202561</ProductID>
+        <ProductID>CVRFPID-204104</ProductID>
+        <ProductID>CVRFPID-204310</ProductID>
+        <ProductID>CVRFPID-204819</ProductID>
+        <ProductID>CVRFPID-205723</ProductID>
+        <ProductID>CVRFPID-196218</ProductID>
+        <ProductID>CVRFPID-196925</ProductID>
+        <ProductID>CVRFPID-197145</ProductID>
+        <ProductID>CVRFPID-198123</ProductID>
+        <ProductID>CVRFPID-198124</ProductID>
+        <ProductID>CVRFPID-198125</ProductID>
+        <ProductID>CVRFPID-198535</ProductID>
+        <ProductID>CVRFPID-200768</ProductID>
+        <ProductID>CVRFPID-200770</ProductID>
+        <ProductID>CVRFPID-200771</ProductID>
+        <ProductID>CVRFPID-201495</ProductID>
+        <ProductID>CVRFPID-202539</ProductID>
+        <ProductID>CVRFPID-203353</ProductID>
+        <ProductID>CVRFPID-206161</ProductID>
+        <ProductID>CVRFPID-206168</ProductID>
+        <ProductID>CVRFPID-206169</ProductID>
+        <ProductID>CVRFPID-206170</ProductID>
+        <ProductID>CVRFPID-206172</ProductID>
+        <ProductID>CVRFPID-213642</ProductID>
+        <ProductID>CVRFPID-213781</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Access Control Lists
+
+
+
+On Cisco IOS Software and Cisco IOS XE Software releases that do not have a fix for Cisco bug ID CSCum51028, there is currently no way to manually close the port or disable the service.
+
+
+
+On those releases, a possible workaround consists of configuring an extended access control list (ACL) that can be created and applied to an interface to block traffic destined to UDP port 5353.
+
+
+
+Because the mDNS feature in this vulnerability uses UDP as a transport, it is possible to spoof the sender's IP address, which may defeat ACLs that permit communication to these ports from trusted IP addresses. In addition to ACLs, administrators should enable uRPF, a security feature of Cisco IOS Software that verifies the reachability of the source address in packets being forwarded. The combination of these two technologies offers a stronger workaround than ACLs alone.
+
+
+
+The following ACL example should be included as part of the deployed interface access list, which will help protect the device from traffic destined to UDP port 5353:
+
+!---
+!--- Deny IPv4 mDNS traffic to a device
+!--- 
+
+access-list 150 deny udp any any eq 5353  
+
+!--- Permit/deny all other Layer 3 and Layer 4 IPv4 traffic in 
+!--- accordance with existing security policies and 
+!--- configurations. Permit all other traffic to transit the
+!--- device.  
+
+access-list 150 permit ip any any  
+
+!---
+!--- Deny IPv6 mDNS traffic to a device
+!--- 
+
+ipv6 access-list v6_list
+  deny udp any any eq 5353  
+
+!--- Permit/deny all other Layer 3 and Layer 4 IPv6 traffic in 
+!--- accordance with existing security policies and 
+!--- configurations. Permit all other traffic to transit the
+!--- device.  
+
+permit ipv6 any any  
+
+!--- Apply access list to all interfaces (only one example
+!--- shown)  
+
+interface fastEthernet 2/0 
+ip access-group 150 in
+  ipv6 traffic-filter v6_list in
+
+
+
+
+Control Plane Policing
+
+
+
+Control Plane Policing (CoPP) can be used to block untrusted UDP traffic to the device. Cisco IOS Software releases 12.0S, 12.2SX, 12.2S, 12.3T, 12.4, and 12.4T support the CoPP feature. CoPP can be configured on a device to help protect the management and control planes and minimize the risk and effectiveness of direct infrastructure attacks by explicitly permitting only authorized traffic that is sent to infrastructure devices in accordance with existing security policies and configurations.
+
+
+
+The following CoPP example should be included as part of the deployed CoPP, which will help protect the device from traffic destined to UDP port 5353:
+
+!---
+!--- Match IPv4 mDNS traffic with permit statement
+!--- 
+
+access-list 150 permit udp any any eq 5353  
+
+!--- Permit (police or drop)/Deny (allow) all other Layer 3 and 
+!--- Layer 4 IPv4 traffic in accordance with existing security policies 
+!--- and configurations for traffic that is authorized to be sent 
+!--- to infrastructure devices 
+!--- 
+
+access-list 150 deny ip any any  
+
+!--- Create a Class-Map for traffic to be policed by
+!--- the CoPP feature
+!---
+
+class-map match-all drop-udp-class 
+match access-group 150
+
+!--- Create a policy map that will be applied to the 
+!--- control plane of the device.  
+
+policy-map drop-udp-traffic class drop-udp-class drop  
+
+!--- Apply the policy map to the 
+!--- control plane of the device  
+
+control-plane service-policy 
+input drop-udp-traffic
+
+
+
+In the preceding CoPP example, the access control list entries (ACE) that match the potential exploit packets with the permit action cause these packets to be discarded by the policy map drop function, while packets that match the deny action (not shown) are not affected by the policy map drop function. Note that the policy map syntax is different in the 12.2S and 12.0S Cisco IOS software trains:
+
+policy-map drop-udp-traffic 
+  class drop-udp-class 
+  police 32000 1500 1500 conform-action drop exceed-action drop
+
+
+
+Additional information about the configuration and use of the CoPP feature is in Control Plane Policing Implementation Best Practices and Control Plane Policing.
+
+
+
+On Cisco IOS Software and Cisco IOS XE Software releases that contain a fix for Cisco bug ID CSCum51028, mDNS Gateway functionality can be disabled by configuring the no service-routing mdns-sd CLI global configuration command.
+
+
+
+Additional mitigations that can be deployed on Cisco devices within the network are available in the Cisco Applied Mitigation Bulletin companion document for this advisory, which is available at the following link:
+
+http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37485["http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37485"]</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150325-mdns</URL>
+        <Description>Cisco IOS Software and IOS XE Software mDNS Gateway Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

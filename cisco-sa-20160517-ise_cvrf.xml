@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Identity Services Engine Active Directory Integration Component Remote Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160517-ise</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-05-17T21:14:48</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-05-17T00:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-05-17T21:14:48</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Active Directory integration component of Cisco Identity Service Engine (ISE) could allow an unauthenticated, remote attacker to perform a denial of service attack.
+
+
+
+The vulnerability is due to improper handling of password authentication protocol (PAP) authentication requests when ISE is configured with an authorization policy based on Active Directory group membership. An attacker could exploit this vulnerability by crafting a special but formally correct PAP authentication request that will trigger the issue. An exploit could allow the attacker to cause the failures of all subsequent authentication requests for the same Active Directory domain. 
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160517-ise["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160517-ise"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160517-ise</URL>
+      <Description>Cisco Identity Services Engine Active Directory Integration Component Remote Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-216177">Cisco Identity Services Engine Software 1.2 0.899 patch 6</FullProductName>
+    <FullProductName ProductID="CVRFPID-216178">Cisco Identity Services Engine Software 1.2 0.899 patch 5</FullProductName>
+    <FullProductName ProductID="CVRFPID-216179">Cisco Identity Services Engine Software 1.2 0.899 patch 4</FullProductName>
+    <FullProductName ProductID="CVRFPID-216180">Cisco Identity Services Engine Software 1.2 0.899 patch 3</FullProductName>
+    <FullProductName ProductID="CVRFPID-216181">Cisco Identity Services Engine Software 1.2 0.899 patch 2</FullProductName>
+    <FullProductName ProductID="CVRFPID-216182">Cisco Identity Services Engine Software 1.2 0.899 patch 1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Identity Services Engine Active Directory Integration Component Remote Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCun25815</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Active Directory integration component of Cisco Identity Service Engine (ISE) could allow an unauthenticated, remote attacker to perform a denial of service attack.
+
+
+
+The vulnerability is due to improper handling of password authentication protocol (PAP) authentication requests when ISE is configured with an authorization policy based on Active Directory group membership. An attacker could exploit this vulnerability by crafting a special but formally correct PAP authentication request that will trigger the issue. An exploit could allow the attacker to cause the failures of all subsequent authentication requests for the same Active Directory domain. </Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCun25815</Note>
+    </Notes>
+    <CVE>CVE-2016-1402</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-216177</ProductID>
+        <ProductID>CVRFPID-216178</ProductID>
+        <ProductID>CVRFPID-216179</ProductID>
+        <ProductID>CVRFPID-216180</ProductID>
+        <ProductID>CVRFPID-216181</ProductID>
+        <ProductID>CVRFPID-216182</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>The following workaround is available: 
+
+
+
+
+    Access the command-line interface (CLI) of the affected ISE Policy Services Node (PSN)
+    
+
+    Enter the following command into the CLI: 
+
+    application configure ise
+    
+    Use option [5] Clear Active Directory Trusts Cache and restart/apply Active Directory setting
+    
+
+    Reboot the PSN
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160517-ise</URL>
+        <Description>Cisco Identity Services Engine Active Directory Integration Component Remote Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

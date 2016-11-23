@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco 10000, uBR10012, uBR7200 Series Devices IPC Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20080924-ipc</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2008-09-24T16:00:00</Date>
+        <Description>Removed references to the combined software table, as it is now
+			 outdated</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2008-09-24T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2008-09-24T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080924-ipc</URL>
+      <Description>Cisco 10000, uBR10012, uBR7200 Series Devices IPC Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080924-ipc-and-ubr</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco 10000, uBR10012, and uBR7200 Series Devices IPC Vulnerability and the Cisco uBR10012 Series Devices SNMP Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080924-ipc-and-ubr</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco 10000, uBR10012, and uBR7200 Series Devices IPC Vulnerability and the Cisco uBR10012 Series Devices SNMP Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-104308">Cisco IOS 12.0(27)S5</FullProductName>
+    <FullProductName ProductID="CVRFPID-106542">Cisco IOS 12.0(28)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104644">Cisco IOS 12.0(28)S4</FullProductName>
+    <FullProductName ProductID="CVRFPID-103758">Cisco IOS 12.0(28)S5</FullProductName>
+    <FullProductName ProductID="CVRFPID-106165">Cisco IOS 12.0(28)S6</FullProductName>
+    <FullProductName ProductID="CVRFPID-106613">Cisco IOS 12.0(30)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106827">Cisco IOS 12.0(30)S4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106440">Cisco IOS 12.0(30)S5</FullProductName>
+    <FullProductName ProductID="CVRFPID-60172">Cisco IOS 12.0(31)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-104443">Cisco IOS 12.0(31)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-63926">Cisco IOS 12.2(28)SB</FullProductName>
+    <FullProductName ProductID="CVRFPID-62598">Cisco IOS 12.2(28)SB2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104285">Cisco IOS 12.2(28)SB3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105803">Cisco IOS 12.2(28)SB4</FullProductName>
+    <FullProductName ProductID="CVRFPID-104436">Cisco IOS 12.2(28)SB5</FullProductName>
+    <FullProductName ProductID="CVRFPID-105297">Cisco IOS 12.2(28)SB6</FullProductName>
+    <FullProductName ProductID="CVRFPID-106911">Cisco IOS 12.2(31)SB2</FullProductName>
+    <FullProductName ProductID="CVRFPID-63930">Cisco IOS 12.2(28)ZX</FullProductName>
+    <FullProductName ProductID="CVRFPID-63197">Cisco IOS 12.3(14)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107367">Cisco IOS 12.3(14)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105272">Cisco IOS 12.3(14)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105753">Cisco IOS 12.3(7)XI10</FullProductName>
+    <FullProductName ProductID="CVRFPID-103650">Cisco IOS 12.3(7)XI7</FullProductName>
+    <FullProductName ProductID="CVRFPID-105571">Cisco IOS 12.3(7)XI7a</FullProductName>
+    <FullProductName ProductID="CVRFPID-105830">Cisco IOS 12.3(7)XI7b</FullProductName>
+    <FullProductName ProductID="CVRFPID-62585">Cisco IOS 12.3(7)XI8</FullProductName>
+    <FullProductName ProductID="CVRFPID-104540">Cisco IOS 12.3(7)XI8a</FullProductName>
+    <FullProductName ProductID="CVRFPID-106650">Cisco IOS 12.3(7)XI8c</FullProductName>
+    <FullProductName ProductID="CVRFPID-103692">Cisco IOS 12.3(7)XI8d</FullProductName>
+    <FullProductName ProductID="CVRFPID-106380">Cisco IOS 12.3(7)XI9</FullProductName>
+    <FullProductName ProductID="CVRFPID-65527">Cisco IOS 12.4(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65528">Cisco IOS 12.4(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65529">Cisco IOS 12.4(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65530">Cisco IOS 12.4(1c)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS IPC Message Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCsh29217</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCsh29217,CSCsg15342</Note>
+    </Notes>
+    <CVE>CVE-2008-3805</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-60172</ProductID>
+        <ProductID>CVRFPID-62585</ProductID>
+        <ProductID>CVRFPID-62598</ProductID>
+        <ProductID>CVRFPID-63197</ProductID>
+        <ProductID>CVRFPID-63926</ProductID>
+        <ProductID>CVRFPID-63930</ProductID>
+        <ProductID>CVRFPID-65527</ProductID>
+        <ProductID>CVRFPID-65528</ProductID>
+        <ProductID>CVRFPID-65529</ProductID>
+        <ProductID>CVRFPID-65530</ProductID>
+        <ProductID>CVRFPID-103650</ProductID>
+        <ProductID>CVRFPID-103692</ProductID>
+        <ProductID>CVRFPID-103758</ProductID>
+        <ProductID>CVRFPID-104285</ProductID>
+        <ProductID>CVRFPID-104308</ProductID>
+        <ProductID>CVRFPID-104436</ProductID>
+        <ProductID>CVRFPID-104443</ProductID>
+        <ProductID>CVRFPID-104540</ProductID>
+        <ProductID>CVRFPID-104644</ProductID>
+        <ProductID>CVRFPID-105272</ProductID>
+        <ProductID>CVRFPID-105297</ProductID>
+        <ProductID>CVRFPID-105571</ProductID>
+        <ProductID>CVRFPID-105753</ProductID>
+        <ProductID>CVRFPID-105803</ProductID>
+        <ProductID>CVRFPID-105830</ProductID>
+        <ProductID>CVRFPID-106165</ProductID>
+        <ProductID>CVRFPID-106380</ProductID>
+        <ProductID>CVRFPID-106440</ProductID>
+        <ProductID>CVRFPID-106542</ProductID>
+        <ProductID>CVRFPID-106613</ProductID>
+        <ProductID>CVRFPID-106650</ProductID>
+        <ProductID>CVRFPID-106827</ProductID>
+        <ProductID>CVRFPID-106911</ProductID>
+        <ProductID>CVRFPID-107367</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>8.5</BaseScore>
+        <TemporalScore>7.0</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:P/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080924-ipc</URL>
+        <Description>Cisco 10000, uBR10012, uBR7200 Series Devices IPC Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

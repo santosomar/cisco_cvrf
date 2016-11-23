@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Content Services Switch Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20010131-arrowpoint-cli-fs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2001-01-31T16:00:00</Date>
+        <Description>The Software Versions and Fixes section was changed from :
+				"CSCdt08730 is resolved in revision 4.01(12s), and revision 3.10 (71s) of Cisco
+				WebNS software. The file system information disclosure vulnerabilities are
+				scheduled to be fixed, but are currently unresolved. Workarounds are
+				recommended in the interim. This notice will be updated when the
+				vulnerabilities are resolved, or monthly until the vulnerabilities are
+				resolved."  
+			 to:  
+			 "CSCdt08730 is resolved in revision 4.01(12s), and revision
+				3.10 (71s) of Cisco WebNS software. The file system information disclosure
+				vulnerabilities are resolved in revision 4.01(23s) and revision 4.10(13s)."
+				 
+			 The status of this notice was changed from INTERIM to FINAL,
+				and the wording under the Status of This Notice section was changed from: "This
+				is an interim notice. Although Cisco cannot guarantee the accuracy of all
+				statements in this notice, all of the facts have been checked to the best of
+				our ability. Cisco anticipates issuing updated versions of this notice as the
+				software is updated. Cisco will update this notice by 2001-MAR-01."  
+			 to:  
+			 "This is an final notice. Although Cisco cannot guarantee the
+				accuracy of all statements in this notice, all of the facts have been checked
+				to the best of our ability. Cisco does not anticipate issuing updated versions
+				of this notice unless there is some material change in the facts. Should there
+				be a significant change in the facts, Cisco may update this notice."</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2001-01-31T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2001-01-31T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20010131-arrowpoint-cli-fs</URL>
+      <Description>Cisco Content Services Switch Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Content Services Switch Contains Multiple Vulnerabilities</Title>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20010131-arrowpoint-cli-fs</URL>
+        <Description>Cisco Content Services Switch Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

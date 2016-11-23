@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Directory Traversal Vulnerability in Cisco Network Admission Control Manager</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20111005-nac</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2011-10-05T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2012-07-14T11:05:54</Date>
+        <Description>Updated meta-tags for Affected Products.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2011-10-05T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2012-07-14T11:05:54</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">
+Cisco Network Admission Control (NAC) Manager contains a directory
+traversal vulnerability that may allow an unauthenticated attacker to obtain
+system information. 
+
+ There are no workarounds to mitigate this
+vulnerability.
+
+ Cisco has released software updates that address this vulnerability. 
+
+
+This advisory is posted at http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-nac["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-nac"].</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-nac</URL>
+      <Description>Directory Traversal Vulnerability in Cisco Network Admission Control Manager</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20111005-nac</URL>
+      <Description>Identifying and Mitigating Exploitation of the Directory Traversal Vulnerability in Cisco Network Admission Control Manager</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20111005-nac</URL>
+      <Description>Identifying and Mitigating Exploitation of the Directory Traversal Vulnerability in Cisco Network Admission Control Manager</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-112160">Cisco NAC Appliance Software 4.8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-112162">Cisco NAC Appliance Software 4.8.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-112164">Cisco NAC Appliance Software 4.8.2 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Network Admission Control Manager Directory Traversal Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtq10755</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCtq10755</Note>
+    </Notes>
+    <CVE>CVE-2011-3305</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-112160</ProductID>
+        <ProductID>CVRFPID-112162</ProductID>
+        <ProductID>CVRFPID-112164</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:C/A:N/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>
+There are no workarounds to mitigate this vulnerability.
+
+Additional mitigation techniques that can be deployed on Cisco devices
+within the network are available in the Cisco Applied Mitigation Bulletin
+companion document for this advisory:
+http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20111005-nac["http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20111005-nac"].
+
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-nac</URL>
+        <Description>Directory Traversal Vulnerability in Cisco Network Admission Control Manager</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

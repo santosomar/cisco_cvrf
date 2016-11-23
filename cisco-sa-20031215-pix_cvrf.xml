@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco PIX Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20031215-pix</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2003-12-15T16:00:00</Date>
+        <Description>Removed reference to CSCea28896, as it did not affect any
+				released software. Added elaborative text to the SNMPv3 workaround
+				section.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2003-12-15T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2003-12-15T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20031215-pix</URL>
+      <Description>Cisco PIX Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-44207">Cisco Firewall Services Module (FWSM) 1.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-35610">Cisco PIX Firewall Software 4.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37659">Cisco PIX Firewall Software 4.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34194">Cisco PIX Firewall Software 5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35025">Cisco PIX Firewall Software 5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34171">Cisco PIX Firewall Software 5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-39624">Cisco PIX Firewall Software 5.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-39625">Cisco PIX Firewall Software 5.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-39626">Cisco PIX Firewall Software 5.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-39627">Cisco PIX Firewall Software 5.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-39628">Cisco PIX Firewall Software 5.2.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-39629">Cisco PIX Firewall Software 5.2.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-39630">Cisco PIX Firewall Software 5.2.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-39631">Cisco PIX Firewall Software 5.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-34177">Cisco PIX Firewall Software 5.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-39635">Cisco PIX Firewall Software 6.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-39636">Cisco PIX Firewall Software 6.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-39637">Cisco PIX Firewall Software 6.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-43701">Cisco PIX Firewall Software 6.1(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-39638">Cisco PIX Firewall Software 6.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-39639">Cisco PIX Firewall Software 6.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-44560">Cisco PIX Firewall Software 6.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-43579">Cisco PIX Firewall Software 6.3(1)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PIX Firewall and Firewall Services Module Denial of Service Vulnerabilities</Title>
+    <CVE>CVE-2003-1001</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-44207</ProductID>
+        <ProductID>CVRFPID-34171</ProductID>
+        <ProductID>CVRFPID-34177</ProductID>
+        <ProductID>CVRFPID-34194</ProductID>
+        <ProductID>CVRFPID-35025</ProductID>
+        <ProductID>CVRFPID-35610</ProductID>
+        <ProductID>CVRFPID-37659</ProductID>
+        <ProductID>CVRFPID-39624</ProductID>
+        <ProductID>CVRFPID-39625</ProductID>
+        <ProductID>CVRFPID-39626</ProductID>
+        <ProductID>CVRFPID-39627</ProductID>
+        <ProductID>CVRFPID-39628</ProductID>
+        <ProductID>CVRFPID-39629</ProductID>
+        <ProductID>CVRFPID-39630</ProductID>
+        <ProductID>CVRFPID-39631</ProductID>
+        <ProductID>CVRFPID-39635</ProductID>
+        <ProductID>CVRFPID-39636</ProductID>
+        <ProductID>CVRFPID-39637</ProductID>
+        <ProductID>CVRFPID-39638</ProductID>
+        <ProductID>CVRFPID-39639</ProductID>
+        <ProductID>CVRFPID-43579</ProductID>
+        <ProductID>CVRFPID-43701</ProductID>
+        <ProductID>CVRFPID-44560</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20031215-pix</URL>
+        <Description>Cisco PIX Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

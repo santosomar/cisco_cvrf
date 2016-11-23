@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Cisco WebEx Player Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20110201-webex</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2011-02-01T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2011-02-01T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2011-02-01T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20110201-webex</URL>
+      <Description>Multiple Cisco WebEx Player Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-96068">Cisco WebEx WRF Player T26 SP49 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-96070">Cisco WebEx WRF Player T27 SP10 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-96066">Cisco WebEx WRF Player T27 SP11 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-100452">Cisco WebEx WRF Player T27 SP12 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-100454">Cisco WebEx WRF Player T27 SP13 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-100457">Cisco WebEx ARF Player 27.13 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco WebEx Player Multiple Buffer Overflow Vulnerabilities</Title>
+    <CVE>CVE-2010-3269</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-100457</ProductID>
+        <ProductID>CVRFPID-96066</ProductID>
+        <ProductID>CVRFPID-96068</ProductID>
+        <ProductID>CVRFPID-96070</ProductID>
+        <ProductID>CVRFPID-100452</ProductID>
+        <ProductID>CVRFPID-100454</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.3</BaseScore>
+        <TemporalScore>7.7</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20110201-webex</URL>
+        <Description>Multiple Cisco WebEx Player Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

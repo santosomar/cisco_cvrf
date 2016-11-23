@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco FireSIGHT Management Center Stored Cross-Site Scripting Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160115-FireSIGHT</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-01-15T18:24:52</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-01-15T11:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-01-15T18:24:52</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Multiple vulnerabilities in the web framework of Cisco FireSIGHT Management Center could allow an unauthenticated, remote attacker to execute a stored cross-site scripting (XSS) attack against a user of the Cisco FireSIGHT Management Center web interface.
+
+ 
+
+The vulnerabilities are due to improper sanitization of parameter values. An attacker could exploit these vulnerabilities by injecting malicious code into an affected parameter and persuading a user to access a web page that requires reading or executing the parameter.
+
+
+
+Cisco released software updates that address these vulnerabilities. There are no workarounds that mitigate these vulnerabilities.
+
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160115-FireSIGHT["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160115-FireSIGHT"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160115-FireSIGHT</URL>
+      <Description>Cisco FireSIGHT Management Center Stored Cross-Site Scripting Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-207165">Cisco FireSIGHT System Software 6.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211732">Cisco FireSIGHT System Software 6.0.1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco FireSIGHT Management Center Multiple Stored Cross-Site Scripting Vulnerabilities</Title>
+    <ID SystemName="Cisco Bug ID">CSCux40414</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">Multiple vulnerabilities in the web framework of Cisco FireSIGHT Management Center could allow an unauthenticated, remote attacker to execute a stored cross-site scripting (XSS) attack against a user of the Cisco FireSIGHT Management Center web interface.
+
+ 
+
+The vulnerabilities are due to improper sanitization of parameter values. An attacker could exploit these vulnerabilities by injecting malicious code into an affected parameter and persuading a user to access a web page that requires reading or executing the parameter.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux40414,CSCux40464,CSCux40508,CSCux40619,CSCux40639,CSCux40654,CSCux40714,CSCux40731,CSCuw89080,CSCuw89129</Note>
+    </Notes>
+    <CVE>CVE-2016-1293</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-207165</ProductID>
+        <ProductID>CVRFPID-211732</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>3.6</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:P/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>For additional information about cross-site scripting attacks and the methods used to exploit these vulnerabilities, see the Cisco Applied Mitigation Bulletin Understanding Cross-Site Scripting (XSS) Threat Vectors["http://www.cisco.com/en/US/products/cmb/cisco-amb-20060922-understanding-xss.html"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160115-FireSIGHT</URL>
+        <Description>Cisco FireSIGHT Management Center Stored Cross-Site Scripting Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

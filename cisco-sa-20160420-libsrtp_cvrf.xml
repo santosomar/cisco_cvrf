@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Cisco Products libSRTP Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160420-libsrtp</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-04-20T14:40:09</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-05-10T17:14:03</Date>
+        <Description>Updated fixed versions table.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-04-20T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-05-10T17:14:03</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Cisco released version 1.5.3 of the Secure Real-Time Transport Protocol (SRTP) library (libSRTP), which addresses a denial of service (DoS) vulnerability. Multiple Cisco products incorporate a vulnerable version of the libSRTP library.
+
+
+
+The vulnerability is in the encryption processing subsystem of libSRTP and could allow an unauthenticated, remote attacker to trigger a DoS condition. The vulnerability is due to improper input validation of certain fields of SRTP packets. An attacker could exploit this vulnerability by sending a crafted SRTP packet designed to trigger the issue to an affected device.
+
+
+
+The impact of this vulnerability on Cisco products may vary depending on the affected product. Details about the impact on each product are outlined in the "Conditions" section of each Cisco bug for this vulnerability. The bug IDs are listed at the top of this advisory and in the table in "Vulnerable Products."
+
+
+
+This advisory is available at the following link: 
+
+
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160420-libsrtp["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160420-libsrtp"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160420-libsrtp</URL>
+      <Description>Multiple Cisco Products libSRTP Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-211528">Cisco Adaptive Security Appliance (ASA) Software 8.1.0.104</FullProductName>
+    <FullProductName ProductID="CVRFPID-70762">Cisco Adaptive Security Appliance (ASA) Software 8.2.0.45</FullProductName>
+    <FullProductName ProductID="CVRFPID-97260">Cisco Adaptive Security Appliance (ASA) Software 8.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115241">Cisco Adaptive Security Appliance (ASA) Software 8.2.1.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-97261">Cisco Adaptive Security Appliance (ASA) Software 8.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-115242">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-99994">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-115243">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-115244">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-116857">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-108072">Cisco Adaptive Security Appliance (ASA) Software 8.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-108074">Cisco Adaptive Security Appliance (ASA) Software 8.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115245">Cisco Adaptive Security Appliance (ASA) Software 8.2.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115246">Cisco Adaptive Security Appliance (ASA) Software 8.2.4.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115247">Cisco Adaptive Security Appliance (ASA) Software 8.2.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-115248">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-115260">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.22</FullProductName>
+    <FullProductName ProductID="CVRFPID-115261">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.26</FullProductName>
+    <FullProductName ProductID="CVRFPID-185257">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-191207">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.40</FullProductName>
+    <FullProductName ProductID="CVRFPID-191208">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.41</FullProductName>
+    <FullProductName ProductID="CVRFPID-195008">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.46</FullProductName>
+    <FullProductName ProductID="CVRFPID-198566">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.48</FullProductName>
+    <FullProductName ProductID="CVRFPID-202960">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.50</FullProductName>
+    <FullProductName ProductID="CVRFPID-206502">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.52</FullProductName>
+    <FullProductName ProductID="CVRFPID-206503">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.55</FullProductName>
+    <FullProductName ProductID="CVRFPID-206504">Cisco Adaptive Security Appliance (ASA) Software 8.2.5.57</FullProductName>
+    <FullProductName ProductID="CVRFPID-99997">Cisco Adaptive Security Appliance (ASA) Software 8.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-99996">Cisco Adaptive Security Appliance (ASA) Software 8.3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115249">Cisco Adaptive Security Appliance (ASA) Software 8.3.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115250">Cisco Adaptive Security Appliance (ASA) Software 8.3.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-108069">Cisco Adaptive Security Appliance (ASA) Software 8.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-115251">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-115252">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-112138">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.23</FullProductName>
+    <FullProductName ProductID="CVRFPID-112800">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.25</FullProductName>
+    <FullProductName ProductID="CVRFPID-115262">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.31</FullProductName>
+    <FullProductName ProductID="CVRFPID-115263">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-185256">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.34</FullProductName>
+    <FullProductName ProductID="CVRFPID-191206">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.37</FullProductName>
+    <FullProductName ProductID="CVRFPID-195007">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.39</FullProductName>
+    <FullProductName ProductID="CVRFPID-198565">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.40</FullProductName>
+    <FullProductName ProductID="CVRFPID-202959">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.41</FullProductName>
+    <FullProductName ProductID="CVRFPID-206501">Cisco Adaptive Security Appliance (ASA) Software 8.3.2.44</FullProductName>
+    <FullProductName ProductID="CVRFPID-108073">Cisco Adaptive Security Appliance (ASA) Software 8.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115253">Cisco Adaptive Security Appliance (ASA) Software 8.4.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-115254">Cisco Adaptive Security Appliance (ASA) Software 8.4.1.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-112139">Cisco Adaptive Security Appliance (ASA) Software 8.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-192947">Cisco Adaptive Security Appliance (ASA) Software 8.4.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115255">Cisco Adaptive Security Appliance (ASA) Software 8.4.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-115256">Cisco Adaptive Security Appliance (ASA) Software 8.4.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-115264">Cisco Adaptive Security Appliance (ASA) Software 8.4.3.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-115265">Cisco Adaptive Security Appliance (ASA) Software 8.4.3.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-115266">Cisco Adaptive Security Appliance (ASA) Software 8.4.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-185251">Cisco Adaptive Security Appliance (ASA) Software 8.4.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-185252">Cisco Adaptive Security Appliance (ASA) Software 8.4.4.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-185253">Cisco Adaptive Security Appliance (ASA) Software 8.4.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-185254">Cisco Adaptive Security Appliance (ASA) Software 8.4.4.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-185255">Cisco Adaptive Security Appliance (ASA) Software 8.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-191204">Cisco Adaptive Security Appliance (ASA) Software 8.4.5.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-191205">Cisco Adaptive Security Appliance (ASA) Software 8.4.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-195006">Cisco Adaptive Security Appliance (ASA) Software 8.4.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-198563">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-198564">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.15</FullProductName>
+    <FullProductName ProductID="CVRFPID-202957">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.22</FullProductName>
+    <FullProductName ProductID="CVRFPID-202958">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.23</FullProductName>
+    <FullProductName ProductID="CVRFPID-206499">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.26</FullProductName>
+    <FullProductName ProductID="CVRFPID-206500">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.28</FullProductName>
+    <FullProductName ProductID="CVRFPID-211964">Cisco Adaptive Security Appliance (ASA) Software 8.4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211053">Cisco Adaptive Security Appliance (ASA) Software 8.4.7.29</FullProductName>
+    <FullProductName ProductID="CVRFPID-112136">Cisco Adaptive Security Appliance (ASA) Software 8.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112140">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115269">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-115270">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-185180">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.14</FullProductName>
+    <FullProductName ProductID="CVRFPID-191203">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-195005">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.18</FullProductName>
+    <FullProductName ProductID="CVRFPID-198562">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.19</FullProductName>
+    <FullProductName ProductID="CVRFPID-206498">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.24</FullProductName>
+    <FullProductName ProductID="CVRFPID-202956">Cisco Adaptive Security Appliance (ASA) Software 8.5.1.21</FullProductName>
+    <FullProductName ProductID="CVRFPID-115276">Cisco Adaptive Security Appliance (ASA) Software 8.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115268">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-185176">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-185177">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-191202">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-195004">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-198561">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-206497">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-202955">Cisco Adaptive Security Appliance (ASA) Software 8.6.1.14</FullProductName>
+    <FullProductName ProductID="CVRFPID-185179">Cisco Adaptive Security Appliance (ASA) Software 8.7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191201">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191213">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-191214">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195003">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-198559">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-198560">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-202954">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.13</FullProductName>
+    <FullProductName ProductID="CVRFPID-206496">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-211052">Cisco Adaptive Security Appliance (ASA) Software 8.7.1.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-188865">Cisco Adaptive Security Appliance (ASA) Software 9.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-188866">Cisco Adaptive Security Appliance (ASA) Software 9.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195000">Cisco Adaptive Security Appliance (ASA) Software 9.0.2.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-195001">Cisco Adaptive Security Appliance (ASA) Software 9.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195002">Cisco Adaptive Security Appliance (ASA) Software 9.0.3.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-198555">Cisco Adaptive Security Appliance (ASA) Software 9.0.3.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-198556">Cisco Adaptive Security Appliance (ASA) Software 9.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-198557">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198558">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-202953">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-202950">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-202951">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.20</FullProductName>
+    <FullProductName ProductID="CVRFPID-202952">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.24</FullProductName>
+    <FullProductName ProductID="CVRFPID-206493">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.26</FullProductName>
+    <FullProductName ProductID="CVRFPID-206494">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.29</FullProductName>
+    <FullProductName ProductID="CVRFPID-206495">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-211060">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.35</FullProductName>
+    <FullProductName ProductID="CVRFPID-210982">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.37</FullProductName>
+    <FullProductName ProductID="CVRFPID-188867">Cisco Adaptive Security Appliance (ASA) Software 9.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191211">Cisco Adaptive Security Appliance (ASA) Software 9.1.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-191212">Cisco Adaptive Security Appliance (ASA) Software 9.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-194999">Cisco Adaptive Security Appliance (ASA) Software 9.1.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-194998">Cisco Adaptive Security Appliance (ASA) Software 9.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-198551">Cisco Adaptive Security Appliance (ASA) Software 9.1.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-198552">Cisco Adaptive Security Appliance (ASA) Software 9.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-198553">Cisco Adaptive Security Appliance (ASA) Software 9.1.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-198554">Cisco Adaptive Security Appliance (ASA) Software 9.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-202941">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-202942">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-202943">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.15</FullProductName>
+    <FullProductName ProductID="CVRFPID-206491">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.21</FullProductName>
+    <FullProductName ProductID="CVRFPID-206218">Cisco Adaptive Security Appliance (ASA) Software 9.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-206492">Cisco Adaptive Security Appliance (ASA) Software 9.1.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-210988">Cisco Adaptive Security Appliance (ASA) Software 9.1.6.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-210983">Cisco Adaptive Security Appliance (ASA) Software 9.1.6.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-211051">Cisco Adaptive Security Appliance (ASA) Software 9.1.6.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-211059">Cisco Adaptive Security Appliance (ASA) Software 9.1.6.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-202938">Cisco Adaptive Security Appliance (ASA) Software 9.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202946">Cisco Adaptive Security Appliance (ASA) Software 9.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-202947">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-202948">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-204544">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-202949">Cisco Adaptive Security Appliance (ASA) Software 9.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206489">Cisco Adaptive Security Appliance (ASA) Software 9.2.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206490">Cisco Adaptive Security Appliance (ASA) Software 9.2.3.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-207903">Cisco Adaptive Security Appliance (ASA) Software 9.2(0.0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207904">Cisco Adaptive Security Appliance (ASA) Software 9.2(0.104)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207905">Cisco Adaptive Security Appliance (ASA) Software 9.2(3.1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210984">Cisco Adaptive Security Appliance (ASA) Software 9.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-202940">Cisco Adaptive Security Appliance (ASA) Software 9.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202944">Cisco Adaptive Security Appliance (ASA) Software 9.3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202945">Cisco Adaptive Security Appliance (ASA) Software 9.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-206487">Cisco Adaptive Security Appliance (ASA) Software 9.3.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-206488">Cisco Adaptive Security Appliance (ASA) Software 9.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-211050">Cisco Adaptive Security Appliance (ASA) Software 9.3.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-211057">Cisco Adaptive Security Appliance (ASA) Software 9.3.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-211058">Cisco Adaptive Security Appliance (ASA) Software 9.3.3.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-207901">Cisco Adaptive Security Appliance (ASA) Software 9.3(1.105)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207902">Cisco Adaptive Security Appliance (ASA) Software 9.3(2.100)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208643">Cisco Adaptive Security Appliance (ASA) Software 9.3(2.243)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209613">Cisco Adaptive Security Appliance (ASA) Software 9.3(1.50)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210985">Cisco Adaptive Security Appliance (ASA) Software 9.3.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-54674">Cisco Unified Wireless IP Phone 7920 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-54677">Cisco Unified Wireless IP Phone 7920 1.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-54676">Cisco Unified Wireless IP Phone 7920 1.0(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-54679">Cisco Unified Wireless IP Phone 7920 1.0(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-54675">Cisco Unified Wireless IP Phone 7920 1.0(8)</FullProductName>
+    <FullProductName ProductID="CVRFPID-54678">Cisco Unified Wireless IP Phone 7920 1.0(9)</FullProductName>
+    <FullProductName ProductID="CVRFPID-54673">Cisco Unified Wireless IP Phone 7920 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-211534">Cisco DX Series IP Phones 9.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-211544">Cisco IP Phone 7800 Series 10.3(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-211551">Cisco IP Phone 8800 Series Software 11.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-211554">Cisco IP Phone 8800 Series Software 10.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-211560">Cisco Unified Communications Manager 9.9(9)ST1.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-211566">Cisco Unified IP Phone 6900 Series 9.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-211547">Cisco Unified IP Phone 7900 Series 9.9 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-211548">Cisco Unified IP Phone 7900 Series 9.9(9.99001.1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73610">Cisco Unity Connection 1.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73614">Cisco Unity Connection 1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-73612">Cisco Unity Connection 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-78006">Cisco Unity Connection 2.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-114986">Cisco Unity Connection 2.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-114976">Cisco Unity Connection 7.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-114978">Cisco Unity Connection 7.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-116904">Cisco Unity Connection 7.1.5ES33.32900-33</FullProductName>
+    <FullProductName ProductID="CVRFPID-195411">Cisco Unity Connection 7.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195412">Cisco Unity Connection 7.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195413">Cisco Unity Connection 7.1(2a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195414">Cisco Unity Connection 7.1(2a)SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195415">Cisco Unity Connection 7.1(2b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195416">Cisco Unity Connection 7.1(2b)SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195417">Cisco Unity Connection 7.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195418">Cisco Unity Connection 7.1(3a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195419">Cisco Unity Connection 7.1(3a)SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195420">Cisco Unity Connection 7.1(3a)SU1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-195421">Cisco Unity Connection 7.1(3b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195422">Cisco Unity Connection 7.1(3b)SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195423">Cisco Unity Connection 7.1(3b)SU2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195424">Cisco Unity Connection 7.1(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195425">Cisco Unity Connection 7.1(5)SU1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-195426">Cisco Unity Connection 7.1(5a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195427">Cisco Unity Connection 7.1(5b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195428">Cisco Unity Connection 7.1(5b)SU2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195429">Cisco Unity Connection 7.1(5b)SU3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195430">Cisco Unity Connection 7.1(5b)SU4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195431">Cisco Unity Connection 7.1(5b)SU5</FullProductName>
+    <FullProductName ProductID="CVRFPID-195432">Cisco Unity Connection 7.1(5b)SU6</FullProductName>
+    <FullProductName ProductID="CVRFPID-195433">Cisco Unity Connection 7.1(5b)SU6a</FullProductName>
+    <FullProductName ProductID="CVRFPID-114980">Cisco Unity Connection 8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-114982">Cisco Unity Connection 8.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-195404">Cisco Unity Connection 8.5(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195405">Cisco Unity Connection 8.5(1)SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195406">Cisco Unity Connection 8.5(1)SU2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195407">Cisco Unity Connection 8.5(1)SU3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195408">Cisco Unity Connection 8.5(1)SU4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195409">Cisco Unity Connection 8.5(1)SU5</FullProductName>
+    <FullProductName ProductID="CVRFPID-195410">Cisco Unity Connection 8.5(1)SU6</FullProductName>
+    <FullProductName ProductID="CVRFPID-114984">Cisco Unity Connection 8.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-195397">Cisco Unity Connection 8.6(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195398">Cisco Unity Connection 8.6(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195399">Cisco Unity Connection 8.6(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195400">Cisco Unity Connection 8.6(2a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195401">Cisco Unity Connection 8.6(2a)SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195402">Cisco Unity Connection 8.6(2a)SU2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195403">Cisco Unity Connection 8.6(2a)SU3</FullProductName>
+    <FullProductName ProductID="CVRFPID-189499">Cisco Unity Connection 9.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-189501">Cisco Unity Connection 9.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195396">Cisco Unity Connection 9.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212023">Cisco Unity Connection 9.1(1.10)</FullProductName>
+    <FullProductName ProductID="CVRFPID-203402">Cisco Unity Connection 10.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203375">Cisco Unity Connection 10.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-203997">Cisco Unity Connection 10.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-212941">Cisco Unity Connection 10.5(2.3009)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213310">Cisco Unity Connection 10.5(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207405">Cisco Unity Connection 11.0(0.98000.225)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207406">Cisco Unity Connection 11.0(0.98000.332)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212024">Cisco Unity Connection 11.0 0</FullProductName>
+    <FullProductName ProductID="CVRFPID-212166">Cisco Unity Connection 11.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-212167">Cisco Unity Connection 11.5(0.98)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213058">Cisco Unity Connection 11.5(0.199)</FullProductName>
+    <FullProductName ProductID="CVRFPID-217259">Cisco IOS XE Software 16.5 16.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-97153">Cisco WebEx Meeting Center Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-210538">Cisco Jabber Software Development Kit 8.6(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210540">Cisco Jabber Software Development Kit 9.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210542">Cisco Jabber Software Development Kit 9.2(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210545">Cisco Jabber Software Development Kit 9.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210546">Cisco Jabber Software Development Kit 9.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210547">Cisco Jabber Software Development Kit 9.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210548">Cisco Jabber Software Development Kit 9.2(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210549">Cisco Jabber Software Development Kit 9.2(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210550">Cisco Jabber Software Development Kit 9.2(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210551">Cisco Jabber Software Development Kit 9.2(7)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210544">Cisco Jabber Software Development Kit 9.3(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210552">Cisco Jabber Software Development Kit 9.3(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210553">Cisco Jabber Software Development Kit 9.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204061">Cisco Unified IP Phone 8900 Series 9.0(1)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204070">Cisco Unified IP Phone 8900 Series 9.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204071">Cisco Unified IP Phone 8900 Series 9.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204063">Cisco Unified IP Phone 8900 Series 9.1(1)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204072">Cisco Unified IP Phone 8900 Series 9.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204065">Cisco Unified IP Phone 8900 Series 9.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204073">Cisco Unified IP Phone 8900 Series 9.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204074">Cisco Unified IP Phone 8900 Series 9.2(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204075">Cisco Unified IP Phone 8900 Series 9.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204076">Cisco Unified IP Phone 8900 Series 9.2(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204067">Cisco Unified IP Phone 8900 Series 9.3(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204077">Cisco Unified IP Phone 8900 Series 9.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204078">Cisco Unified IP Phone 8900 Series 9.3(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204079">Cisco Unified IP Phone 8900 Series 9.3(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204069">Cisco Unified IP Phone 8900 Series 9.4(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-204080">Cisco Unified IP Phone 8900 Series 9.4(1)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204081">Cisco Unified IP Phone 8900 Series 9.4(2)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Multiple Cisco Products libSRTP Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCux00686</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">Cisco released version 1.5.3 of the Secure Real-Time Transport Protocol (SRTP) library (libSRTP), which addresses a denial of service (DoS) vulnerability. Multiple Cisco products incorporate a vulnerable version of the libSRTP library.
+
+
+
+The vulnerability is in the encryption processing subsystem of libSRTP and could allow an unauthenticated, remote attacker to trigger a DoS condition. The vulnerability is due to improper input validation of certain fields of SRTP packets. An attacker could exploit this vulnerability by sending a crafted SRTP packet designed to trigger the issue to an affected device.
+
+
+
+The impact of this vulnerability on Cisco products may vary depending on the affected product. Details about the impact on each product are outlined in the "Conditions" section of each Cisco bug for this vulnerability. The bug IDs are listed at the top of this advisory and in the table in "Vulnerable Products."</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux00686,CSCux00697,CSCux00742,CSCux00748,CSCux00708,CSCux00716,CSCux00729,CSCux01782,CSCux04317,CSCux00711,CSCux00707,CSCux01786,CSCux00745,CSCux37802,CSCux35568</Note>
+    </Notes>
+    <CVE>CVE-2015-6360</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-70762</ProductID>
+        <ProductID>CVRFPID-97260</ProductID>
+        <ProductID>CVRFPID-97261</ProductID>
+        <ProductID>CVRFPID-99994</ProductID>
+        <ProductID>CVRFPID-99996</ProductID>
+        <ProductID>CVRFPID-99997</ProductID>
+        <ProductID>CVRFPID-108069</ProductID>
+        <ProductID>CVRFPID-108072</ProductID>
+        <ProductID>CVRFPID-108073</ProductID>
+        <ProductID>CVRFPID-108074</ProductID>
+        <ProductID>CVRFPID-112136</ProductID>
+        <ProductID>CVRFPID-112138</ProductID>
+        <ProductID>CVRFPID-112139</ProductID>
+        <ProductID>CVRFPID-112140</ProductID>
+        <ProductID>CVRFPID-112800</ProductID>
+        <ProductID>CVRFPID-115241</ProductID>
+        <ProductID>CVRFPID-115242</ProductID>
+        <ProductID>CVRFPID-115243</ProductID>
+        <ProductID>CVRFPID-115244</ProductID>
+        <ProductID>CVRFPID-115245</ProductID>
+        <ProductID>CVRFPID-115246</ProductID>
+        <ProductID>CVRFPID-115247</ProductID>
+        <ProductID>CVRFPID-115248</ProductID>
+        <ProductID>CVRFPID-115249</ProductID>
+        <ProductID>CVRFPID-115250</ProductID>
+        <ProductID>CVRFPID-115251</ProductID>
+        <ProductID>CVRFPID-115252</ProductID>
+        <ProductID>CVRFPID-115253</ProductID>
+        <ProductID>CVRFPID-115254</ProductID>
+        <ProductID>CVRFPID-115255</ProductID>
+        <ProductID>CVRFPID-115256</ProductID>
+        <ProductID>CVRFPID-115260</ProductID>
+        <ProductID>CVRFPID-115261</ProductID>
+        <ProductID>CVRFPID-115262</ProductID>
+        <ProductID>CVRFPID-115263</ProductID>
+        <ProductID>CVRFPID-115264</ProductID>
+        <ProductID>CVRFPID-115265</ProductID>
+        <ProductID>CVRFPID-115266</ProductID>
+        <ProductID>CVRFPID-115268</ProductID>
+        <ProductID>CVRFPID-115269</ProductID>
+        <ProductID>CVRFPID-115270</ProductID>
+        <ProductID>CVRFPID-115276</ProductID>
+        <ProductID>CVRFPID-116857</ProductID>
+        <ProductID>CVRFPID-185176</ProductID>
+        <ProductID>CVRFPID-185177</ProductID>
+        <ProductID>CVRFPID-185179</ProductID>
+        <ProductID>CVRFPID-185180</ProductID>
+        <ProductID>CVRFPID-185251</ProductID>
+        <ProductID>CVRFPID-185252</ProductID>
+        <ProductID>CVRFPID-185253</ProductID>
+        <ProductID>CVRFPID-185254</ProductID>
+        <ProductID>CVRFPID-185255</ProductID>
+        <ProductID>CVRFPID-185256</ProductID>
+        <ProductID>CVRFPID-185257</ProductID>
+        <ProductID>CVRFPID-188865</ProductID>
+        <ProductID>CVRFPID-188866</ProductID>
+        <ProductID>CVRFPID-188867</ProductID>
+        <ProductID>CVRFPID-191201</ProductID>
+        <ProductID>CVRFPID-191202</ProductID>
+        <ProductID>CVRFPID-191203</ProductID>
+        <ProductID>CVRFPID-191204</ProductID>
+        <ProductID>CVRFPID-191205</ProductID>
+        <ProductID>CVRFPID-191206</ProductID>
+        <ProductID>CVRFPID-191207</ProductID>
+        <ProductID>CVRFPID-191208</ProductID>
+        <ProductID>CVRFPID-191211</ProductID>
+        <ProductID>CVRFPID-191212</ProductID>
+        <ProductID>CVRFPID-191213</ProductID>
+        <ProductID>CVRFPID-191214</ProductID>
+        <ProductID>CVRFPID-192947</ProductID>
+        <ProductID>CVRFPID-194998</ProductID>
+        <ProductID>CVRFPID-194999</ProductID>
+        <ProductID>CVRFPID-195000</ProductID>
+        <ProductID>CVRFPID-195001</ProductID>
+        <ProductID>CVRFPID-195002</ProductID>
+        <ProductID>CVRFPID-195003</ProductID>
+        <ProductID>CVRFPID-195004</ProductID>
+        <ProductID>CVRFPID-195005</ProductID>
+        <ProductID>CVRFPID-195006</ProductID>
+        <ProductID>CVRFPID-195007</ProductID>
+        <ProductID>CVRFPID-195008</ProductID>
+        <ProductID>CVRFPID-198551</ProductID>
+        <ProductID>CVRFPID-198552</ProductID>
+        <ProductID>CVRFPID-198553</ProductID>
+        <ProductID>CVRFPID-198554</ProductID>
+        <ProductID>CVRFPID-198555</ProductID>
+        <ProductID>CVRFPID-198556</ProductID>
+        <ProductID>CVRFPID-198557</ProductID>
+        <ProductID>CVRFPID-198558</ProductID>
+        <ProductID>CVRFPID-198559</ProductID>
+        <ProductID>CVRFPID-198560</ProductID>
+        <ProductID>CVRFPID-198561</ProductID>
+        <ProductID>CVRFPID-198562</ProductID>
+        <ProductID>CVRFPID-198563</ProductID>
+        <ProductID>CVRFPID-198564</ProductID>
+        <ProductID>CVRFPID-198565</ProductID>
+        <ProductID>CVRFPID-198566</ProductID>
+        <ProductID>CVRFPID-202938</ProductID>
+        <ProductID>CVRFPID-202940</ProductID>
+        <ProductID>CVRFPID-202941</ProductID>
+        <ProductID>CVRFPID-202942</ProductID>
+        <ProductID>CVRFPID-202943</ProductID>
+        <ProductID>CVRFPID-202944</ProductID>
+        <ProductID>CVRFPID-202945</ProductID>
+        <ProductID>CVRFPID-202946</ProductID>
+        <ProductID>CVRFPID-202947</ProductID>
+        <ProductID>CVRFPID-202948</ProductID>
+        <ProductID>CVRFPID-202949</ProductID>
+        <ProductID>CVRFPID-202950</ProductID>
+        <ProductID>CVRFPID-202951</ProductID>
+        <ProductID>CVRFPID-202952</ProductID>
+        <ProductID>CVRFPID-202953</ProductID>
+        <ProductID>CVRFPID-202954</ProductID>
+        <ProductID>CVRFPID-202955</ProductID>
+        <ProductID>CVRFPID-202956</ProductID>
+        <ProductID>CVRFPID-202957</ProductID>
+        <ProductID>CVRFPID-202958</ProductID>
+        <ProductID>CVRFPID-202959</ProductID>
+        <ProductID>CVRFPID-202960</ProductID>
+        <ProductID>CVRFPID-204544</ProductID>
+        <ProductID>CVRFPID-206218</ProductID>
+        <ProductID>CVRFPID-206487</ProductID>
+        <ProductID>CVRFPID-206488</ProductID>
+        <ProductID>CVRFPID-206489</ProductID>
+        <ProductID>CVRFPID-206490</ProductID>
+        <ProductID>CVRFPID-206491</ProductID>
+        <ProductID>CVRFPID-206492</ProductID>
+        <ProductID>CVRFPID-206493</ProductID>
+        <ProductID>CVRFPID-206494</ProductID>
+        <ProductID>CVRFPID-206495</ProductID>
+        <ProductID>CVRFPID-206496</ProductID>
+        <ProductID>CVRFPID-206497</ProductID>
+        <ProductID>CVRFPID-206498</ProductID>
+        <ProductID>CVRFPID-206499</ProductID>
+        <ProductID>CVRFPID-206500</ProductID>
+        <ProductID>CVRFPID-206501</ProductID>
+        <ProductID>CVRFPID-206502</ProductID>
+        <ProductID>CVRFPID-206503</ProductID>
+        <ProductID>CVRFPID-206504</ProductID>
+        <ProductID>CVRFPID-207901</ProductID>
+        <ProductID>CVRFPID-207902</ProductID>
+        <ProductID>CVRFPID-207903</ProductID>
+        <ProductID>CVRFPID-207904</ProductID>
+        <ProductID>CVRFPID-207905</ProductID>
+        <ProductID>CVRFPID-208643</ProductID>
+        <ProductID>CVRFPID-209613</ProductID>
+        <ProductID>CVRFPID-210982</ProductID>
+        <ProductID>CVRFPID-210983</ProductID>
+        <ProductID>CVRFPID-210984</ProductID>
+        <ProductID>CVRFPID-210985</ProductID>
+        <ProductID>CVRFPID-210988</ProductID>
+        <ProductID>CVRFPID-211050</ProductID>
+        <ProductID>CVRFPID-211051</ProductID>
+        <ProductID>CVRFPID-211052</ProductID>
+        <ProductID>CVRFPID-211053</ProductID>
+        <ProductID>CVRFPID-211057</ProductID>
+        <ProductID>CVRFPID-211058</ProductID>
+        <ProductID>CVRFPID-211059</ProductID>
+        <ProductID>CVRFPID-211060</ProductID>
+        <ProductID>CVRFPID-211528</ProductID>
+        <ProductID>CVRFPID-211964</ProductID>
+        <ProductID>CVRFPID-211534</ProductID>
+        <ProductID>CVRFPID-211544</ProductID>
+        <ProductID>CVRFPID-211551</ProductID>
+        <ProductID>CVRFPID-211554</ProductID>
+        <ProductID>CVRFPID-211560</ProductID>
+        <ProductID>CVRFPID-97153</ProductID>
+        <ProductID>CVRFPID-211566</ProductID>
+        <ProductID>CVRFPID-217259</ProductID>
+        <ProductID>CVRFPID-210538</ProductID>
+        <ProductID>CVRFPID-210540</ProductID>
+        <ProductID>CVRFPID-210542</ProductID>
+        <ProductID>CVRFPID-210544</ProductID>
+        <ProductID>CVRFPID-210545</ProductID>
+        <ProductID>CVRFPID-210546</ProductID>
+        <ProductID>CVRFPID-210547</ProductID>
+        <ProductID>CVRFPID-210548</ProductID>
+        <ProductID>CVRFPID-210549</ProductID>
+        <ProductID>CVRFPID-210550</ProductID>
+        <ProductID>CVRFPID-210551</ProductID>
+        <ProductID>CVRFPID-210552</ProductID>
+        <ProductID>CVRFPID-210553</ProductID>
+        <ProductID>CVRFPID-204061</ProductID>
+        <ProductID>CVRFPID-204063</ProductID>
+        <ProductID>CVRFPID-204065</ProductID>
+        <ProductID>CVRFPID-204067</ProductID>
+        <ProductID>CVRFPID-204069</ProductID>
+        <ProductID>CVRFPID-204070</ProductID>
+        <ProductID>CVRFPID-204071</ProductID>
+        <ProductID>CVRFPID-204072</ProductID>
+        <ProductID>CVRFPID-204073</ProductID>
+        <ProductID>CVRFPID-204074</ProductID>
+        <ProductID>CVRFPID-204075</ProductID>
+        <ProductID>CVRFPID-204076</ProductID>
+        <ProductID>CVRFPID-204077</ProductID>
+        <ProductID>CVRFPID-204078</ProductID>
+        <ProductID>CVRFPID-204079</ProductID>
+        <ProductID>CVRFPID-204080</ProductID>
+        <ProductID>CVRFPID-204081</ProductID>
+        <ProductID>CVRFPID-211547</ProductID>
+        <ProductID>CVRFPID-211548</ProductID>
+        <ProductID>CVRFPID-54673</ProductID>
+        <ProductID>CVRFPID-54674</ProductID>
+        <ProductID>CVRFPID-54675</ProductID>
+        <ProductID>CVRFPID-54676</ProductID>
+        <ProductID>CVRFPID-54677</ProductID>
+        <ProductID>CVRFPID-54678</ProductID>
+        <ProductID>CVRFPID-54679</ProductID>
+        <ProductID>CVRFPID-73610</ProductID>
+        <ProductID>CVRFPID-73612</ProductID>
+        <ProductID>CVRFPID-73614</ProductID>
+        <ProductID>CVRFPID-78006</ProductID>
+        <ProductID>CVRFPID-114976</ProductID>
+        <ProductID>CVRFPID-114978</ProductID>
+        <ProductID>CVRFPID-114980</ProductID>
+        <ProductID>CVRFPID-114982</ProductID>
+        <ProductID>CVRFPID-114984</ProductID>
+        <ProductID>CVRFPID-114986</ProductID>
+        <ProductID>CVRFPID-116904</ProductID>
+        <ProductID>CVRFPID-189499</ProductID>
+        <ProductID>CVRFPID-189501</ProductID>
+        <ProductID>CVRFPID-195396</ProductID>
+        <ProductID>CVRFPID-195397</ProductID>
+        <ProductID>CVRFPID-195398</ProductID>
+        <ProductID>CVRFPID-195399</ProductID>
+        <ProductID>CVRFPID-195400</ProductID>
+        <ProductID>CVRFPID-195401</ProductID>
+        <ProductID>CVRFPID-195402</ProductID>
+        <ProductID>CVRFPID-195403</ProductID>
+        <ProductID>CVRFPID-195404</ProductID>
+        <ProductID>CVRFPID-195405</ProductID>
+        <ProductID>CVRFPID-195406</ProductID>
+        <ProductID>CVRFPID-195407</ProductID>
+        <ProductID>CVRFPID-195408</ProductID>
+        <ProductID>CVRFPID-195409</ProductID>
+        <ProductID>CVRFPID-195410</ProductID>
+        <ProductID>CVRFPID-195411</ProductID>
+        <ProductID>CVRFPID-195412</ProductID>
+        <ProductID>CVRFPID-195413</ProductID>
+        <ProductID>CVRFPID-195414</ProductID>
+        <ProductID>CVRFPID-195415</ProductID>
+        <ProductID>CVRFPID-195416</ProductID>
+        <ProductID>CVRFPID-195417</ProductID>
+        <ProductID>CVRFPID-195418</ProductID>
+        <ProductID>CVRFPID-195419</ProductID>
+        <ProductID>CVRFPID-195420</ProductID>
+        <ProductID>CVRFPID-195421</ProductID>
+        <ProductID>CVRFPID-195422</ProductID>
+        <ProductID>CVRFPID-195423</ProductID>
+        <ProductID>CVRFPID-195424</ProductID>
+        <ProductID>CVRFPID-195425</ProductID>
+        <ProductID>CVRFPID-195426</ProductID>
+        <ProductID>CVRFPID-195427</ProductID>
+        <ProductID>CVRFPID-195428</ProductID>
+        <ProductID>CVRFPID-195429</ProductID>
+        <ProductID>CVRFPID-195430</ProductID>
+        <ProductID>CVRFPID-195431</ProductID>
+        <ProductID>CVRFPID-195432</ProductID>
+        <ProductID>CVRFPID-195433</ProductID>
+        <ProductID>CVRFPID-203375</ProductID>
+        <ProductID>CVRFPID-203402</ProductID>
+        <ProductID>CVRFPID-203997</ProductID>
+        <ProductID>CVRFPID-207405</ProductID>
+        <ProductID>CVRFPID-207406</ProductID>
+        <ProductID>CVRFPID-212023</ProductID>
+        <ProductID>CVRFPID-212024</ProductID>
+        <ProductID>CVRFPID-212166</ProductID>
+        <ProductID>CVRFPID-212167</ProductID>
+        <ProductID>CVRFPID-212941</ProductID>
+        <ProductID>CVRFPID-213058</ProductID>
+        <ProductID>CVRFPID-213310</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:U/RC:C</Vector>
+        <ProductID>CVRFPID-70762</ProductID>
+        <ProductID>CVRFPID-97260</ProductID>
+        <ProductID>CVRFPID-97261</ProductID>
+        <ProductID>CVRFPID-99994</ProductID>
+        <ProductID>CVRFPID-99996</ProductID>
+        <ProductID>CVRFPID-99997</ProductID>
+        <ProductID>CVRFPID-108069</ProductID>
+        <ProductID>CVRFPID-108072</ProductID>
+        <ProductID>CVRFPID-108073</ProductID>
+        <ProductID>CVRFPID-108074</ProductID>
+        <ProductID>CVRFPID-112136</ProductID>
+        <ProductID>CVRFPID-112138</ProductID>
+        <ProductID>CVRFPID-112139</ProductID>
+        <ProductID>CVRFPID-112140</ProductID>
+        <ProductID>CVRFPID-112800</ProductID>
+        <ProductID>CVRFPID-115241</ProductID>
+        <ProductID>CVRFPID-115242</ProductID>
+        <ProductID>CVRFPID-115243</ProductID>
+        <ProductID>CVRFPID-115244</ProductID>
+        <ProductID>CVRFPID-115245</ProductID>
+        <ProductID>CVRFPID-115246</ProductID>
+        <ProductID>CVRFPID-115247</ProductID>
+        <ProductID>CVRFPID-115248</ProductID>
+        <ProductID>CVRFPID-115249</ProductID>
+        <ProductID>CVRFPID-115250</ProductID>
+        <ProductID>CVRFPID-115251</ProductID>
+        <ProductID>CVRFPID-115252</ProductID>
+        <ProductID>CVRFPID-115253</ProductID>
+        <ProductID>CVRFPID-115254</ProductID>
+        <ProductID>CVRFPID-115255</ProductID>
+        <ProductID>CVRFPID-115256</ProductID>
+        <ProductID>CVRFPID-115260</ProductID>
+        <ProductID>CVRFPID-115261</ProductID>
+        <ProductID>CVRFPID-115262</ProductID>
+        <ProductID>CVRFPID-115263</ProductID>
+        <ProductID>CVRFPID-115264</ProductID>
+        <ProductID>CVRFPID-115265</ProductID>
+        <ProductID>CVRFPID-115266</ProductID>
+        <ProductID>CVRFPID-115268</ProductID>
+        <ProductID>CVRFPID-115269</ProductID>
+        <ProductID>CVRFPID-115270</ProductID>
+        <ProductID>CVRFPID-115276</ProductID>
+        <ProductID>CVRFPID-116857</ProductID>
+        <ProductID>CVRFPID-185176</ProductID>
+        <ProductID>CVRFPID-185177</ProductID>
+        <ProductID>CVRFPID-185179</ProductID>
+        <ProductID>CVRFPID-185180</ProductID>
+        <ProductID>CVRFPID-185251</ProductID>
+        <ProductID>CVRFPID-185252</ProductID>
+        <ProductID>CVRFPID-185253</ProductID>
+        <ProductID>CVRFPID-185254</ProductID>
+        <ProductID>CVRFPID-185255</ProductID>
+        <ProductID>CVRFPID-185256</ProductID>
+        <ProductID>CVRFPID-185257</ProductID>
+        <ProductID>CVRFPID-188865</ProductID>
+        <ProductID>CVRFPID-188866</ProductID>
+        <ProductID>CVRFPID-188867</ProductID>
+        <ProductID>CVRFPID-191201</ProductID>
+        <ProductID>CVRFPID-191202</ProductID>
+        <ProductID>CVRFPID-191203</ProductID>
+        <ProductID>CVRFPID-191204</ProductID>
+        <ProductID>CVRFPID-191205</ProductID>
+        <ProductID>CVRFPID-191206</ProductID>
+        <ProductID>CVRFPID-191207</ProductID>
+        <ProductID>CVRFPID-191208</ProductID>
+        <ProductID>CVRFPID-191211</ProductID>
+        <ProductID>CVRFPID-191212</ProductID>
+        <ProductID>CVRFPID-191213</ProductID>
+        <ProductID>CVRFPID-191214</ProductID>
+        <ProductID>CVRFPID-192947</ProductID>
+        <ProductID>CVRFPID-194998</ProductID>
+        <ProductID>CVRFPID-194999</ProductID>
+        <ProductID>CVRFPID-195000</ProductID>
+        <ProductID>CVRFPID-195001</ProductID>
+        <ProductID>CVRFPID-195002</ProductID>
+        <ProductID>CVRFPID-195003</ProductID>
+        <ProductID>CVRFPID-195004</ProductID>
+        <ProductID>CVRFPID-195005</ProductID>
+        <ProductID>CVRFPID-195006</ProductID>
+        <ProductID>CVRFPID-195007</ProductID>
+        <ProductID>CVRFPID-195008</ProductID>
+        <ProductID>CVRFPID-198551</ProductID>
+        <ProductID>CVRFPID-198552</ProductID>
+        <ProductID>CVRFPID-198553</ProductID>
+        <ProductID>CVRFPID-198554</ProductID>
+        <ProductID>CVRFPID-198555</ProductID>
+        <ProductID>CVRFPID-198556</ProductID>
+        <ProductID>CVRFPID-198557</ProductID>
+        <ProductID>CVRFPID-198558</ProductID>
+        <ProductID>CVRFPID-198559</ProductID>
+        <ProductID>CVRFPID-198560</ProductID>
+        <ProductID>CVRFPID-198561</ProductID>
+        <ProductID>CVRFPID-198562</ProductID>
+        <ProductID>CVRFPID-198563</ProductID>
+        <ProductID>CVRFPID-198564</ProductID>
+        <ProductID>CVRFPID-198565</ProductID>
+        <ProductID>CVRFPID-198566</ProductID>
+        <ProductID>CVRFPID-202938</ProductID>
+        <ProductID>CVRFPID-202940</ProductID>
+        <ProductID>CVRFPID-202941</ProductID>
+        <ProductID>CVRFPID-202942</ProductID>
+        <ProductID>CVRFPID-202943</ProductID>
+        <ProductID>CVRFPID-202944</ProductID>
+        <ProductID>CVRFPID-202945</ProductID>
+        <ProductID>CVRFPID-202946</ProductID>
+        <ProductID>CVRFPID-202947</ProductID>
+        <ProductID>CVRFPID-202948</ProductID>
+        <ProductID>CVRFPID-202949</ProductID>
+        <ProductID>CVRFPID-202950</ProductID>
+        <ProductID>CVRFPID-202951</ProductID>
+        <ProductID>CVRFPID-202952</ProductID>
+        <ProductID>CVRFPID-202953</ProductID>
+        <ProductID>CVRFPID-202954</ProductID>
+        <ProductID>CVRFPID-202955</ProductID>
+        <ProductID>CVRFPID-202956</ProductID>
+        <ProductID>CVRFPID-202957</ProductID>
+        <ProductID>CVRFPID-202958</ProductID>
+        <ProductID>CVRFPID-202959</ProductID>
+        <ProductID>CVRFPID-202960</ProductID>
+        <ProductID>CVRFPID-204544</ProductID>
+        <ProductID>CVRFPID-206218</ProductID>
+        <ProductID>CVRFPID-206487</ProductID>
+        <ProductID>CVRFPID-206488</ProductID>
+        <ProductID>CVRFPID-206489</ProductID>
+        <ProductID>CVRFPID-206490</ProductID>
+        <ProductID>CVRFPID-206491</ProductID>
+        <ProductID>CVRFPID-206492</ProductID>
+        <ProductID>CVRFPID-206493</ProductID>
+        <ProductID>CVRFPID-206494</ProductID>
+        <ProductID>CVRFPID-206495</ProductID>
+        <ProductID>CVRFPID-206496</ProductID>
+        <ProductID>CVRFPID-206497</ProductID>
+        <ProductID>CVRFPID-206498</ProductID>
+        <ProductID>CVRFPID-206499</ProductID>
+        <ProductID>CVRFPID-206500</ProductID>
+        <ProductID>CVRFPID-206501</ProductID>
+        <ProductID>CVRFPID-206502</ProductID>
+        <ProductID>CVRFPID-206503</ProductID>
+        <ProductID>CVRFPID-206504</ProductID>
+        <ProductID>CVRFPID-207901</ProductID>
+        <ProductID>CVRFPID-207902</ProductID>
+        <ProductID>CVRFPID-207903</ProductID>
+        <ProductID>CVRFPID-207904</ProductID>
+        <ProductID>CVRFPID-207905</ProductID>
+        <ProductID>CVRFPID-208643</ProductID>
+        <ProductID>CVRFPID-209613</ProductID>
+        <ProductID>CVRFPID-210982</ProductID>
+        <ProductID>CVRFPID-210983</ProductID>
+        <ProductID>CVRFPID-210984</ProductID>
+        <ProductID>CVRFPID-210985</ProductID>
+        <ProductID>CVRFPID-210988</ProductID>
+        <ProductID>CVRFPID-211050</ProductID>
+        <ProductID>CVRFPID-211051</ProductID>
+        <ProductID>CVRFPID-211052</ProductID>
+        <ProductID>CVRFPID-211053</ProductID>
+        <ProductID>CVRFPID-211057</ProductID>
+        <ProductID>CVRFPID-211058</ProductID>
+        <ProductID>CVRFPID-211059</ProductID>
+        <ProductID>CVRFPID-211060</ProductID>
+        <ProductID>CVRFPID-211528</ProductID>
+        <ProductID>CVRFPID-211964</ProductID>
+        <ProductID>CVRFPID-217259</ProductID>
+      </ScoreSet>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
+        <ProductID>CVRFPID-211534</ProductID>
+        <ProductID>CVRFPID-211544</ProductID>
+        <ProductID>CVRFPID-211551</ProductID>
+        <ProductID>CVRFPID-211554</ProductID>
+        <ProductID>CVRFPID-97153</ProductID>
+        <ProductID>CVRFPID-210538</ProductID>
+        <ProductID>CVRFPID-210540</ProductID>
+        <ProductID>CVRFPID-210542</ProductID>
+        <ProductID>CVRFPID-210544</ProductID>
+        <ProductID>CVRFPID-210545</ProductID>
+        <ProductID>CVRFPID-210546</ProductID>
+        <ProductID>CVRFPID-210547</ProductID>
+        <ProductID>CVRFPID-210548</ProductID>
+        <ProductID>CVRFPID-210549</ProductID>
+        <ProductID>CVRFPID-210550</ProductID>
+        <ProductID>CVRFPID-210551</ProductID>
+        <ProductID>CVRFPID-210552</ProductID>
+        <ProductID>CVRFPID-210553</ProductID>
+        <ProductID>CVRFPID-211547</ProductID>
+        <ProductID>CVRFPID-211548</ProductID>
+        <ProductID>CVRFPID-54673</ProductID>
+        <ProductID>CVRFPID-54674</ProductID>
+        <ProductID>CVRFPID-54675</ProductID>
+        <ProductID>CVRFPID-54676</ProductID>
+        <ProductID>CVRFPID-54677</ProductID>
+        <ProductID>CVRFPID-54678</ProductID>
+        <ProductID>CVRFPID-54679</ProductID>
+        <ProductID>CVRFPID-73610</ProductID>
+        <ProductID>CVRFPID-73612</ProductID>
+        <ProductID>CVRFPID-73614</ProductID>
+        <ProductID>CVRFPID-78006</ProductID>
+        <ProductID>CVRFPID-114976</ProductID>
+        <ProductID>CVRFPID-114978</ProductID>
+        <ProductID>CVRFPID-114980</ProductID>
+        <ProductID>CVRFPID-114982</ProductID>
+        <ProductID>CVRFPID-114984</ProductID>
+        <ProductID>CVRFPID-114986</ProductID>
+        <ProductID>CVRFPID-116904</ProductID>
+        <ProductID>CVRFPID-189499</ProductID>
+        <ProductID>CVRFPID-189501</ProductID>
+        <ProductID>CVRFPID-195396</ProductID>
+        <ProductID>CVRFPID-195397</ProductID>
+        <ProductID>CVRFPID-195398</ProductID>
+        <ProductID>CVRFPID-195399</ProductID>
+        <ProductID>CVRFPID-195400</ProductID>
+        <ProductID>CVRFPID-195401</ProductID>
+        <ProductID>CVRFPID-195402</ProductID>
+        <ProductID>CVRFPID-195403</ProductID>
+        <ProductID>CVRFPID-195404</ProductID>
+        <ProductID>CVRFPID-195405</ProductID>
+        <ProductID>CVRFPID-195406</ProductID>
+        <ProductID>CVRFPID-195407</ProductID>
+        <ProductID>CVRFPID-195408</ProductID>
+        <ProductID>CVRFPID-195409</ProductID>
+        <ProductID>CVRFPID-195410</ProductID>
+        <ProductID>CVRFPID-195411</ProductID>
+        <ProductID>CVRFPID-195412</ProductID>
+        <ProductID>CVRFPID-195413</ProductID>
+        <ProductID>CVRFPID-195414</ProductID>
+        <ProductID>CVRFPID-195415</ProductID>
+        <ProductID>CVRFPID-195416</ProductID>
+        <ProductID>CVRFPID-195417</ProductID>
+        <ProductID>CVRFPID-195418</ProductID>
+        <ProductID>CVRFPID-195419</ProductID>
+        <ProductID>CVRFPID-195420</ProductID>
+        <ProductID>CVRFPID-195421</ProductID>
+        <ProductID>CVRFPID-195422</ProductID>
+        <ProductID>CVRFPID-195423</ProductID>
+        <ProductID>CVRFPID-195424</ProductID>
+        <ProductID>CVRFPID-195425</ProductID>
+        <ProductID>CVRFPID-195426</ProductID>
+        <ProductID>CVRFPID-195427</ProductID>
+        <ProductID>CVRFPID-195428</ProductID>
+        <ProductID>CVRFPID-195429</ProductID>
+        <ProductID>CVRFPID-195430</ProductID>
+        <ProductID>CVRFPID-195431</ProductID>
+        <ProductID>CVRFPID-195432</ProductID>
+        <ProductID>CVRFPID-195433</ProductID>
+        <ProductID>CVRFPID-203375</ProductID>
+        <ProductID>CVRFPID-203402</ProductID>
+        <ProductID>CVRFPID-203997</ProductID>
+        <ProductID>CVRFPID-207405</ProductID>
+        <ProductID>CVRFPID-207406</ProductID>
+        <ProductID>CVRFPID-212023</ProductID>
+        <ProductID>CVRFPID-212024</ProductID>
+        <ProductID>CVRFPID-212166</ProductID>
+        <ProductID>CVRFPID-212167</ProductID>
+        <ProductID>CVRFPID-212941</ProductID>
+        <ProductID>CVRFPID-213058</ProductID>
+        <ProductID>CVRFPID-213310</ProductID>
+      </ScoreSet>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.8</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:U/RC:C</Vector>
+        <ProductID>CVRFPID-211560</ProductID>
+        <ProductID>CVRFPID-211566</ProductID>
+        <ProductID>CVRFPID-204061</ProductID>
+        <ProductID>CVRFPID-204063</ProductID>
+        <ProductID>CVRFPID-204065</ProductID>
+        <ProductID>CVRFPID-204067</ProductID>
+        <ProductID>CVRFPID-204069</ProductID>
+        <ProductID>CVRFPID-204070</ProductID>
+        <ProductID>CVRFPID-204071</ProductID>
+        <ProductID>CVRFPID-204072</ProductID>
+        <ProductID>CVRFPID-204073</ProductID>
+        <ProductID>CVRFPID-204074</ProductID>
+        <ProductID>CVRFPID-204075</ProductID>
+        <ProductID>CVRFPID-204076</ProductID>
+        <ProductID>CVRFPID-204077</ProductID>
+        <ProductID>CVRFPID-204078</ProductID>
+        <ProductID>CVRFPID-204079</ProductID>
+        <ProductID>CVRFPID-204080</ProductID>
+        <ProductID>CVRFPID-204081</ProductID>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160420-libsrtp</URL>
+        <Description>Multiple Cisco Products libSRTP Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

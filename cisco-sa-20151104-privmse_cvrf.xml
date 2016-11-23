@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Mobility Services Engine Privilege Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151104-privmse</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-11-04T15:08:54</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-11-04T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-11-19T19:50:31</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the installation procedure of the Cisco Mobility Services Engine (MSE) appliance could allow an authenticated, local attacker to escalate to the root level.
+
+
+
+The vulnerability is due to incorrect installation and permissions settings on binary files during the MSE physical or virtual appliance install procedure. An attacker could exploit this vulnerability by logging into the device and escalating their privileges. A successful exploit could allow the attacker to acquire root-level privileges and take full control of the device.
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that mitigate this vulnerability. 
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-privmse["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-privmse"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-privmse</URL>
+      <Description>Cisco Mobility Services Engine Privilege Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-111805">Cisco Mobility Services Engine 5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-111807">Cisco Mobility Services Engine 5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-111809">Cisco Mobility Services Engine 6.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-111811">Cisco Mobility Services Engine 7.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-201392">Cisco Mobility Services Engine 7.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-201393">Cisco Mobility Services Engine 7.4.100.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-201394">Cisco Mobility Services Engine 7.4.110.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-201395">Cisco Mobility Services Engine 7.4.121.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203364">Cisco Mobility Services Engine 7.5.102.101</FullProductName>
+    <FullProductName ProductID="CVRFPID-203366">Cisco Mobility Services Engine 7.6.100.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203370">Cisco Mobility Services Engine 7.6.120.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203371">Cisco Mobility Services Engine 7.6.132.0 </FullProductName>
+    <FullProductName ProductID="CVRFPID-203373">Cisco Mobility Services Engine 8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-206295">Cisco Mobility Services Engine 8.0(110.0)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Mobility Services Engine Privilege Escalation Vulnerability </Title>
+    <ID SystemName="Cisco Bug ID">CSCuv40504</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the installation procedure of the Cisco Mobility Services Engine (MSE) appliance could allow an authenticated, local attacker to escalate to the root level.
+
+
+
+The vulnerability is due to incorrect installation and permissions settings on binary files during the MSE physical or virtual appliance install procedure. An attacker could exploit this vulnerability by logging into the device and escalating their privileges. A successful exploit could allow the attacker to acquire root-level privileges and take full control of the device.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuv40504</Note>
+    </Notes>
+    <CVE>CVE-2015-4282</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111805</ProductID>
+        <ProductID>CVRFPID-111807</ProductID>
+        <ProductID>CVRFPID-111809</ProductID>
+        <ProductID>CVRFPID-111811</ProductID>
+        <ProductID>CVRFPID-201392</ProductID>
+        <ProductID>CVRFPID-201393</ProductID>
+        <ProductID>CVRFPID-201394</ProductID>
+        <ProductID>CVRFPID-201395</ProductID>
+        <ProductID>CVRFPID-203364</ProductID>
+        <ProductID>CVRFPID-203366</ProductID>
+        <ProductID>CVRFPID-203370</ProductID>
+        <ProductID>CVRFPID-203371</ProductID>
+        <ProductID>CVRFPID-203373</ProductID>
+        <ProductID>CVRFPID-206295</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.8</BaseScore>
+        <TemporalScore>6.5</TemporalScore>
+        <Vector>AV:L/AC:L/Au:S/C:C/I:C/A:C/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-privmse</URL>
+        <Description>Cisco Mobility Services Engine Privilege Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

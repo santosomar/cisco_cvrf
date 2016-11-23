@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Email and Web Security Appliance MIME Header Bypass Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161026-esawsa2</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-10-26T13:11:13</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-10-31T14:16:34</Date>
+        <Description>Updated the Summary and Vulnerable Products descriptions.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-10-26T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-10-31T14:16:34</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the email filtering for malformed Multipurpose Internet Mail Extensions (MIME) headers of Cisco AsyncOS Software for Cisco Email Security Appliances (ESA) and Web Security Appliances (WSA) could allow an unauthenticated, remote attacker to bypass the filtering functionality of the targeted device. Emails that should have been quarantined could instead be processed.
+
+
+
+The vulnerability is due to improper error handling when malformed MIME headers are present in the email attachment. An attacker could exploit this vulnerability by sending an email with a crafted attachment encoded with MIME. A successful exploit could allow the attacker to bypass the configured ESA email message and content filtering or WSA service scanning content for web access.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are not available.
+
+
+
+
+This advisory is available at the following link:
+
+
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esawsa2["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esawsa2"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esawsa2</URL>
+      <Description>Cisco Email and Web Security Appliance MIME Header Bypass Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-210997">Cisco Web Security Appliance (WSA) 5.6.0-623</FullProductName>
+    <FullProductName ProductID="CVRFPID-210999">Cisco Web Security Appliance (WSA) 6.0.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-189793">Cisco Web Security Appliance (WSA) 7.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-189952">Cisco Web Security Appliance (WSA) 7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-189953">Cisco Web Security Appliance (WSA) 7.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-189954">Cisco Web Security Appliance (WSA) 7.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-189955">Cisco Web Security Appliance (WSA) 7.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-189795">Cisco Web Security Appliance (WSA) 7.5.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211000">Cisco Web Security Appliance (WSA) 7.5.0-825</FullProductName>
+    <FullProductName ProductID="CVRFPID-189956">Cisco Web Security Appliance (WSA) 7.5.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211001">Cisco Web Security Appliance (WSA) 7.5.2-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216288">Cisco Web Security Appliance (WSA) 7.5.2-HP2-303</FullProductName>
+    <FullProductName ProductID="CVRFPID-189797">Cisco Web Security Appliance (WSA) 7.7.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216289">Cisco Web Security Appliance (WSA) 7.7.0-608</FullProductName>
+    <FullProductName ProductID="CVRFPID-211002">Cisco Web Security Appliance (WSA) 7.7.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216290">Cisco Web Security Appliance (WSA) 7.7.5-835</FullProductName>
+    <FullProductName ProductID="CVRFPID-200673">Cisco Web Security Appliance (WSA) 8.0.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-200674">Cisco Web Security Appliance (WSA) 8.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-200675">Cisco Web Security Appliance (WSA) 8.0.5 Hot Patch 1</FullProductName>
+    <FullProductName ProductID="CVRFPID-205811">Cisco Web Security Appliance (WSA) 8.0.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-210139">Cisco Web Security Appliance (WSA) 8.0.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-210971">Cisco Web Security Appliance (WSA) 8.0.6-078</FullProductName>
+    <FullProductName ProductID="CVRFPID-210972">Cisco Web Security Appliance (WSA) 8.0.8-MR-113</FullProductName>
+    <FullProductName ProductID="CVRFPID-210973">Cisco Web Security Appliance (WSA) 8.0.7-142</FullProductName>
+    <FullProductName ProductID="CVRFPID-210975">Cisco Web Security Appliance (WSA) 8.0.6-119</FullProductName>
+    <FullProductName ProductID="CVRFPID-205814">Cisco Web Security Appliance (WSA) 8.5.0.000</FullProductName>
+    <FullProductName ProductID="CVRFPID-206867">Cisco Web Security Appliance (WSA) 8.5.0-497</FullProductName>
+    <FullProductName ProductID="CVRFPID-209997">Cisco Web Security Appliance (WSA) 8.5.2-027</FullProductName>
+    <FullProductName ProductID="CVRFPID-210974">Cisco Web Security Appliance (WSA) 8.5.2-024</FullProductName>
+    <FullProductName ProductID="CVRFPID-212008">Cisco Web Security Appliance (WSA) 8.5.1-021</FullProductName>
+    <FullProductName ProductID="CVRFPID-212694">Cisco Web Security Appliance (WSA) 8.5.3-055</FullProductName>
+    <FullProductName ProductID="CVRFPID-216213">Cisco Web Security Appliance (WSA) 8.8.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216214">Cisco Web Security Appliance (WSA) 8.8.0-085</FullProductName>
+    <FullProductName ProductID="CVRFPID-209311">Cisco Web Security Appliance (WSA) 9.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-209312">Cisco Web Security Appliance (WSA) 9.0.0-193</FullProductName>
+    <FullProductName ProductID="CVRFPID-212699">Cisco Web Security Appliance (WSA) 9.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-212700">Cisco Web Security Appliance (WSA) 9.1.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216210">Cisco Web Security Appliance (WSA) 9.1.0-070</FullProductName>
+    <FullProductName ProductID="CVRFPID-212696">Cisco Web Security Appliance (WSA) 9.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-212697">Cisco Web Security Appliance (WSA) 9.5.0-235</FullProductName>
+    <FullProductName ProductID="CVRFPID-216211">Cisco Web Security Appliance (WSA) 9.5.0-284</FullProductName>
+    <FullProductName ProductID="CVRFPID-219000">Cisco Web Security Appliance (WSA) 9.5.0-444</FullProductName>
+    <FullProductName ProductID="CVRFPID-189809">Cisco Email Security Appliance (ESA) 8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-216286">Cisco Email Security Appliance (ESA) 8.0.1-023</FullProductName>
+    <FullProductName ProductID="CVRFPID-198224">Cisco Email Security Appliance (ESA) 8.5.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216287">Cisco Email Security Appliance (ESA) 8.5.0-ER1-198</FullProductName>
+    <FullProductName ProductID="CVRFPID-211008">Cisco Email Security Appliance (ESA) 8.5.6-052</FullProductName>
+    <FullProductName ProductID="CVRFPID-208798">Cisco Email Security Appliance (ESA) 8.5.6-073</FullProductName>
+    <FullProductName ProductID="CVRFPID-208217">Cisco Email Security Appliance (ESA) 8.5.6-074</FullProductName>
+    <FullProductName ProductID="CVRFPID-207644">Cisco Email Security Appliance (ESA) 8.5.6-106</FullProductName>
+    <FullProductName ProductID="CVRFPID-209313">Cisco Email Security Appliance (ESA) 8.5.6-113</FullProductName>
+    <FullProductName ProductID="CVRFPID-209264">Cisco Email Security Appliance (ESA) 8.5.7-042</FullProductName>
+    <FullProductName ProductID="CVRFPID-211010">Cisco Email Security Appliance (ESA) 8.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211011">Cisco Email Security Appliance (ESA) 8.6.0-011</FullProductName>
+    <FullProductName ProductID="CVRFPID-211013">Cisco Email Security Appliance (ESA) 8.9.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211014">Cisco Email Security Appliance (ESA) 8.9.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211015">Cisco Email Security Appliance (ESA) 8.9.2-032</FullProductName>
+    <FullProductName ProductID="CVRFPID-208800">Cisco Email Security Appliance (ESA) 9.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211016">Cisco Email Security Appliance (ESA) 9.0.0-212</FullProductName>
+    <FullProductName ProductID="CVRFPID-208801">Cisco Email Security Appliance (ESA) 9.0.0-461</FullProductName>
+    <FullProductName ProductID="CVRFPID-211017">Cisco Email Security Appliance (ESA) 9.0.5-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-209298">Cisco Email Security Appliance (ESA) 9.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211018">Cisco Email Security Appliance (ESA) 9.1.0-011</FullProductName>
+    <FullProductName ProductID="CVRFPID-209299">Cisco Email Security Appliance (ESA) 9.1.0-101</FullProductName>
+    <FullProductName ProductID="CVRFPID-209314">Cisco Email Security Appliance (ESA) 9.1.0-032</FullProductName>
+    <FullProductName ProductID="CVRFPID-209315">Cisco Email Security Appliance (ESA) 9.1.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211020">Cisco Email Security Appliance (ESA) 9.4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211021">Cisco Email Security Appliance (ESA) 9.4.4-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-208932">Cisco Email Security Appliance (ESA) 9.5.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-208933">Cisco Email Security Appliance (ESA) 9.5.0-201</FullProductName>
+    <FullProductName ProductID="CVRFPID-209301">Cisco Email Security Appliance (ESA) 9.6.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-209302">Cisco Email Security Appliance (ESA) 9.6.0-042</FullProductName>
+    <FullProductName ProductID="CVRFPID-213464">Cisco Email Security Appliance (ESA) 9.6.0-051</FullProductName>
+    <FullProductName ProductID="CVRFPID-218977">Cisco Email Security Appliance (ESA) 9.9 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-218978">Cisco Email Security Appliance (ESA) 9.9.6-026</FullProductName>
+    <FullProductName ProductID="CVRFPID-213466">Cisco Email Security Appliance (ESA) 9.7.0-125</FullProductName>
+    <FullProductName ProductID="CVRFPID-218949">Cisco Email Security Appliance (ESA) 9.7.1-066</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Email and Web Security Appliance MIME Header Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy54740</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the email filtering for malformed Multipurpose Internet Mail Extensions (MIME) headers of Cisco AsyncOS Software for Cisco Email Security Appliances (ESA) and Web Security Appliances (WSA) could allow an unauthenticated, remote attacker to bypass the filtering functionality of the targeted device. Emails that should have been quarantined could instead be processed.
+
+
+
+The vulnerability is due to improper error handling when malformed MIME headers are present in the email attachment. An attacker could exploit this vulnerability by sending an email with a crafted attachment encoded with MIME. A successful exploit could allow the attacker to bypass the configured ESA email message and content filtering or WSA service scanning content for web access.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuy54740,CSCuy75174</Note>
+    </Notes>
+    <CVE>CVE-2016-6372</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-189809</ProductID>
+        <ProductID>CVRFPID-198224</ProductID>
+        <ProductID>CVRFPID-207644</ProductID>
+        <ProductID>CVRFPID-208217</ProductID>
+        <ProductID>CVRFPID-208798</ProductID>
+        <ProductID>CVRFPID-208800</ProductID>
+        <ProductID>CVRFPID-208801</ProductID>
+        <ProductID>CVRFPID-208932</ProductID>
+        <ProductID>CVRFPID-208933</ProductID>
+        <ProductID>CVRFPID-209264</ProductID>
+        <ProductID>CVRFPID-209298</ProductID>
+        <ProductID>CVRFPID-209299</ProductID>
+        <ProductID>CVRFPID-209301</ProductID>
+        <ProductID>CVRFPID-209302</ProductID>
+        <ProductID>CVRFPID-209313</ProductID>
+        <ProductID>CVRFPID-209314</ProductID>
+        <ProductID>CVRFPID-209315</ProductID>
+        <ProductID>CVRFPID-211008</ProductID>
+        <ProductID>CVRFPID-211010</ProductID>
+        <ProductID>CVRFPID-211011</ProductID>
+        <ProductID>CVRFPID-211013</ProductID>
+        <ProductID>CVRFPID-211014</ProductID>
+        <ProductID>CVRFPID-211015</ProductID>
+        <ProductID>CVRFPID-211016</ProductID>
+        <ProductID>CVRFPID-211017</ProductID>
+        <ProductID>CVRFPID-211018</ProductID>
+        <ProductID>CVRFPID-211020</ProductID>
+        <ProductID>CVRFPID-211021</ProductID>
+        <ProductID>CVRFPID-213464</ProductID>
+        <ProductID>CVRFPID-213466</ProductID>
+        <ProductID>CVRFPID-216286</ProductID>
+        <ProductID>CVRFPID-216287</ProductID>
+        <ProductID>CVRFPID-218949</ProductID>
+        <ProductID>CVRFPID-218977</ProductID>
+        <ProductID>CVRFPID-218978</ProductID>
+        <ProductID>CVRFPID-189793</ProductID>
+        <ProductID>CVRFPID-189795</ProductID>
+        <ProductID>CVRFPID-189797</ProductID>
+        <ProductID>CVRFPID-189952</ProductID>
+        <ProductID>CVRFPID-189953</ProductID>
+        <ProductID>CVRFPID-189954</ProductID>
+        <ProductID>CVRFPID-189955</ProductID>
+        <ProductID>CVRFPID-189956</ProductID>
+        <ProductID>CVRFPID-200673</ProductID>
+        <ProductID>CVRFPID-200674</ProductID>
+        <ProductID>CVRFPID-200675</ProductID>
+        <ProductID>CVRFPID-205811</ProductID>
+        <ProductID>CVRFPID-205814</ProductID>
+        <ProductID>CVRFPID-206867</ProductID>
+        <ProductID>CVRFPID-209311</ProductID>
+        <ProductID>CVRFPID-209312</ProductID>
+        <ProductID>CVRFPID-209997</ProductID>
+        <ProductID>CVRFPID-210139</ProductID>
+        <ProductID>CVRFPID-210971</ProductID>
+        <ProductID>CVRFPID-210972</ProductID>
+        <ProductID>CVRFPID-210973</ProductID>
+        <ProductID>CVRFPID-210974</ProductID>
+        <ProductID>CVRFPID-210975</ProductID>
+        <ProductID>CVRFPID-210997</ProductID>
+        <ProductID>CVRFPID-210999</ProductID>
+        <ProductID>CVRFPID-211000</ProductID>
+        <ProductID>CVRFPID-211001</ProductID>
+        <ProductID>CVRFPID-211002</ProductID>
+        <ProductID>CVRFPID-212008</ProductID>
+        <ProductID>CVRFPID-212694</ProductID>
+        <ProductID>CVRFPID-212696</ProductID>
+        <ProductID>CVRFPID-212697</ProductID>
+        <ProductID>CVRFPID-212699</ProductID>
+        <ProductID>CVRFPID-212700</ProductID>
+        <ProductID>CVRFPID-216210</ProductID>
+        <ProductID>CVRFPID-216211</ProductID>
+        <ProductID>CVRFPID-216213</ProductID>
+        <ProductID>CVRFPID-216214</ProductID>
+        <ProductID>CVRFPID-216288</ProductID>
+        <ProductID>CVRFPID-216289</ProductID>
+        <ProductID>CVRFPID-216290</ProductID>
+        <ProductID>CVRFPID-219000</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:P/I:N/A:N/E:F/RL:OF/RC:C</Vector>
+        <ProductID>CVRFPID-189809</ProductID>
+        <ProductID>CVRFPID-198224</ProductID>
+        <ProductID>CVRFPID-207644</ProductID>
+        <ProductID>CVRFPID-208217</ProductID>
+        <ProductID>CVRFPID-208798</ProductID>
+        <ProductID>CVRFPID-208800</ProductID>
+        <ProductID>CVRFPID-208801</ProductID>
+        <ProductID>CVRFPID-208932</ProductID>
+        <ProductID>CVRFPID-208933</ProductID>
+        <ProductID>CVRFPID-209264</ProductID>
+        <ProductID>CVRFPID-209298</ProductID>
+        <ProductID>CVRFPID-209299</ProductID>
+        <ProductID>CVRFPID-209301</ProductID>
+        <ProductID>CVRFPID-209302</ProductID>
+        <ProductID>CVRFPID-209313</ProductID>
+        <ProductID>CVRFPID-209314</ProductID>
+        <ProductID>CVRFPID-209315</ProductID>
+        <ProductID>CVRFPID-211008</ProductID>
+        <ProductID>CVRFPID-211010</ProductID>
+        <ProductID>CVRFPID-211011</ProductID>
+        <ProductID>CVRFPID-211013</ProductID>
+        <ProductID>CVRFPID-211014</ProductID>
+        <ProductID>CVRFPID-211015</ProductID>
+        <ProductID>CVRFPID-211016</ProductID>
+        <ProductID>CVRFPID-211017</ProductID>
+        <ProductID>CVRFPID-211018</ProductID>
+        <ProductID>CVRFPID-211020</ProductID>
+        <ProductID>CVRFPID-211021</ProductID>
+        <ProductID>CVRFPID-213464</ProductID>
+        <ProductID>CVRFPID-213466</ProductID>
+        <ProductID>CVRFPID-216286</ProductID>
+        <ProductID>CVRFPID-216287</ProductID>
+        <ProductID>CVRFPID-218949</ProductID>
+        <ProductID>CVRFPID-218977</ProductID>
+        <ProductID>CVRFPID-218978</ProductID>
+      </ScoreSet>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.8</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:P/I:N/A:N/E:F/RL:U/RC:C</Vector>
+        <ProductID>CVRFPID-189793</ProductID>
+        <ProductID>CVRFPID-189795</ProductID>
+        <ProductID>CVRFPID-189797</ProductID>
+        <ProductID>CVRFPID-189952</ProductID>
+        <ProductID>CVRFPID-189953</ProductID>
+        <ProductID>CVRFPID-189954</ProductID>
+        <ProductID>CVRFPID-189955</ProductID>
+        <ProductID>CVRFPID-189956</ProductID>
+        <ProductID>CVRFPID-200673</ProductID>
+        <ProductID>CVRFPID-200674</ProductID>
+        <ProductID>CVRFPID-200675</ProductID>
+        <ProductID>CVRFPID-205811</ProductID>
+        <ProductID>CVRFPID-205814</ProductID>
+        <ProductID>CVRFPID-206867</ProductID>
+        <ProductID>CVRFPID-209311</ProductID>
+        <ProductID>CVRFPID-209312</ProductID>
+        <ProductID>CVRFPID-209997</ProductID>
+        <ProductID>CVRFPID-210139</ProductID>
+        <ProductID>CVRFPID-210971</ProductID>
+        <ProductID>CVRFPID-210972</ProductID>
+        <ProductID>CVRFPID-210973</ProductID>
+        <ProductID>CVRFPID-210974</ProductID>
+        <ProductID>CVRFPID-210975</ProductID>
+        <ProductID>CVRFPID-210997</ProductID>
+        <ProductID>CVRFPID-210999</ProductID>
+        <ProductID>CVRFPID-211000</ProductID>
+        <ProductID>CVRFPID-211001</ProductID>
+        <ProductID>CVRFPID-211002</ProductID>
+        <ProductID>CVRFPID-212008</ProductID>
+        <ProductID>CVRFPID-212694</ProductID>
+        <ProductID>CVRFPID-212696</ProductID>
+        <ProductID>CVRFPID-212697</ProductID>
+        <ProductID>CVRFPID-212699</ProductID>
+        <ProductID>CVRFPID-212700</ProductID>
+        <ProductID>CVRFPID-216210</ProductID>
+        <ProductID>CVRFPID-216211</ProductID>
+        <ProductID>CVRFPID-216213</ProductID>
+        <ProductID>CVRFPID-216214</ProductID>
+        <ProductID>CVRFPID-216288</ProductID>
+        <ProductID>CVRFPID-216289</ProductID>
+        <ProductID>CVRFPID-216290</ProductID>
+        <ProductID>CVRFPID-219000</ProductID>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workarounds that address this vulnerability are not available.
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esawsa2</URL>
+        <Description>Cisco Email and Web Security Appliance MIME Header Bypass Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

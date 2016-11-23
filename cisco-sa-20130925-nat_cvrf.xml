@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software Network Address Translation Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20130925-nat</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2013-09-24T16:23:44</Date>
+        <Description>Initial release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2013-09-25T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2013-09-24T16:23:44</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">&lt;!--- NAT   010-summary 0.2 ---&gt;
+The Cisco IOS Software implementation of the network address translation (NAT) feature contains three vulnerabilities when translating IP packets that could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition. 
+
+Cisco has released software updates that address these vulnerabilities. Workarounds that mitigate these vulnerabilities are not available. 
+
+This advisory is available at the following link: 
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130925-nat["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130925-nat"] 
+
+Note: The September 25, 2013, Cisco IOS Software Security Advisory bundled publication includes eight Cisco Security Advisories. All advisories address vulnerabilities in Cisco IOS Software. Each Cisco IOS Software Security Advisory lists the Cisco IOS Software releases that correct the vulnerability or vulnerabilities detailed in the advisory as well as the Cisco IOS Software releases that correct all Cisco IOS Software vulnerabilities in the September 2013 bundled publication. 
+
+Individual publication links are in "Cisco Event Response: Semiannual Cisco IOS Software Security Advisory Bundled Publication" at the following link: 
+
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep13.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep13.html"]
+ 
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130925-nat</URL>
+      <Description>Cisco IOS Software Network Address Translation Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20130925-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, September 25, 2013</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20130925-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, September 25, 2013</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-107614">Cisco IOS 12.2(33)SXI7</FullProductName>
+    <FullProductName ProductID="CVRFPID-107834">Cisco IOS 12.2(33)SXJ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-116841">Cisco IOS 12.2(50)SY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-185005">Cisco IOS 12.2(50)SY4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106044">Cisco IOS 15.0(1)M6</FullProductName>
+    <FullProductName ProductID="CVRFPID-108464">Cisco IOS 15.0(1)M7</FullProductName>
+    <FullProductName ProductID="CVRFPID-105790">Cisco IOS 15.0(1)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-107856">Cisco IOS 15.1(4)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-107857">Cisco IOS 15.1(4)M1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106454">Cisco IOS 15.1(2)T4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107057">Cisco IOS 15.1(3)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-214072">Cisco IOS 15.2(4m)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-109702">Cisco IOS 15.2(1)GC</FullProductName>
+    <FullProductName ProductID="CVRFPID-113019">Cisco IOS 15.2(1)GC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-113967">Cisco IOS 15.2(1)GC2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104566">Cisco IOS 15.2(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-111004">Cisco IOS 15.2(1)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-111009">Cisco IOS 15.2(1)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107862">Cisco IOS 15.2(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-214764">Cisco IOS 15.3(3)JA8</FullProductName>
+    <FullProductName ProductID="CVRFPID-103851">Cisco IOS 15.3(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-187231">Cisco IOS 15.3(1)T1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software NAT PPTP Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtq14817</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability
+exists in
+Cisco IOS Software  that could allow an  unauthenticated, remote  attacker to
+reload the vulnerable device.
+The vulnerability is due to improper handling of
+PPTP  packets that need to be translated across a  NAT boundary.
+An attacker could exploit this vulnerability by repeatedly
+sending certain valid PPTP packets.
+An exploit could allow the attacker to cause an extended DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCtq14817</Note>
+    </Notes>
+    <CVE>CVE-2013-5481</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-104566</ProductID>
+        <ProductID>CVRFPID-105790</ProductID>
+        <ProductID>CVRFPID-106044</ProductID>
+        <ProductID>CVRFPID-106454</ProductID>
+        <ProductID>CVRFPID-107614</ProductID>
+        <ProductID>CVRFPID-107834</ProductID>
+        <ProductID>CVRFPID-107857</ProductID>
+        <ProductID>CVRFPID-108464</ProductID>
+        <ProductID>CVRFPID-109702</ProductID>
+        <ProductID>CVRFPID-111004</ProductID>
+        <ProductID>CVRFPID-111009</ProductID>
+        <ProductID>CVRFPID-113019</ProductID>
+        <ProductID>CVRFPID-113967</ProductID>
+        <ProductID>CVRFPID-116841</ProductID>
+        <ProductID>CVRFPID-185005</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.1</BaseScore>
+        <TemporalScore>5.9</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>&lt;!---  nat-090  WORKAROUNDS    0.1 a  ---&gt;There are no workarounds for these vulnerabilities.
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130925-nat</URL>
+        <Description>Cisco IOS Software Network Address Translation Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software NAT DNS Vulnerability (CSCuf28733)</Title>
+    <ID SystemName="Cisco Bug ID">CSCuf28733</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability
+exists in
+Cisco IOS Software
+that could allow an  unauthenticated, remote  attacker to
+reload the vulnerable device.
+
+
+
+The vulnerability is due to improper handling of DNS  packets
+that need to be translated across a  NAT boundary.
+An attacker could exploit this vulnerability by sending certain DNS packets.
+An exploit could allow the attacker to cause an extended DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="5">CSCuf28733</Note>
+    </Notes>
+    <CVE>CVE-2013-5480</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-103851</ProductID>
+        <ProductID>CVRFPID-107057</ProductID>
+        <ProductID>CVRFPID-107856</ProductID>
+        <ProductID>CVRFPID-107862</ProductID>
+        <ProductID>CVRFPID-187231</ProductID>
+        <ProductID>CVRFPID-214072</ProductID>
+        <ProductID>CVRFPID-214764</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.1</BaseScore>
+        <TemporalScore>5.9</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>&lt;!---  nat-090  WORKAROUNDS    0.1 a  ---&gt;There are no workarounds for these vulnerabilities.
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130925-nat</URL>
+        <Description>Cisco IOS Software Network Address Translation Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software NAT DNS Vulnerability (CSCtn53730)</Title>
+    <ID SystemName="Cisco Bug ID">CSCtn53730</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="5">A vulnerability
+exists in
+Cisco IOS Software that could allow an unauthenticated, remote attacker to
+reload the vulnerable device.
+The vulnerability is due to improper handling of DNS packets that need to be translated across a NAT boundary.
+An attacker could exploit this vulnerability by repeatedly sending certain DNS packets. An exploit could allow the attacker to cause an extended DoS.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="7">CSCtn53730</Note>
+    </Notes>
+    <CVE>CVE-2013-5479</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-107057</ProductID>
+        <ProductID>CVRFPID-107856</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>&lt;!---  nat-090  WORKAROUNDS    0.1 a  ---&gt;There are no workarounds for these vulnerabilities.
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130925-nat</URL>
+        <Description>Cisco IOS Software Network Address Translation Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software Intrusion Prevention System Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20120926-ios-ips</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2012-09-25T21:13:36</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2012-09-26T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2012-09-25T21:13:36</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Cisco IOS Software contains a vulnerability in the Intrusion Prevention System (IPS) feature that could allow an unauthenticated, remote attacker to cause a reload of an affected device if specific Cisco IOS IPS configurations exist.
+
+
+
+Cisco has released software updates that address this vulnerability. 
+
+
+
+Workarounds that mitigate this vulnerability are available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120926-ios-ips["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120926-ios-ips"]
+
+Note: The September 26, 2012, Cisco IOS Software Security Advisory bundled publication includes nine Cisco Security Advisories. Eight of the advisories address vulnerabilities in Cisco IOS Software, and one advisory addresses a vulnerability in Cisco Unified Communications Manager. Each Cisco IOS Software Security Advisory lists the Cisco IOS Software releases that correct the vulnerability or vulnerabilities detailed in the advisory as well as the Cisco IOS Software releases that correct all Cisco IOS Software vulnerabilities in the September 2012 bundled publication. 
+
+Individual publication links are in "Cisco Event Response: Semi-Annual Cisco IOS Software Security Advisory Bundled Publication" at the following link: 
+
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep12.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep12.html"]
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120926-ios-ips</URL>
+      <Description>Cisco IOS Software Intrusion Prevention System Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20120926-bundle</URL>
+      <Description>Summary of Semi-Annual Cisco IOS Software Security Advisory Bundled Publication, September 26, 2012</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20120926-bundle</URL>
+      <Description>Summary of Semi-Annual Cisco IOS Software Security Advisory Bundled Publication, September 26, 2012</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-105540">Cisco IOS 12.4(24)GC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106046">Cisco IOS 12.4(24)GC3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106662">Cisco IOS 12.4(24)GC3a</FullProductName>
+    <FullProductName ProductID="CVRFPID-66054">Cisco IOS 12.4(11)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-106630">Cisco IOS 12.4(11)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106839">Cisco IOS 12.4(15)T7</FullProductName>
+    <FullProductName ProductID="CVRFPID-92384">Cisco IOS 12.4(24)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-106499">Cisco IOS 15.0(1)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-99645">Cisco IOS 15.0(1)M1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105005">Cisco IOS 15.0(1)M4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107048">Cisco IOS 15.0(1)XA</FullProductName>
+    <FullProductName ProductID="CVRFPID-104165">Cisco IOS 15.0(1)XA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106740">Cisco IOS 15.0(1)XA3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105426">Cisco IOS 15.0(1)XA4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107191">Cisco IOS 15.0(1)XA5</FullProductName>
+    <FullProductName ProductID="CVRFPID-107856">Cisco IOS 15.1(4)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-107433">Cisco IOS 15.1(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-105178">Cisco IOS 15.1(1)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106988">Cisco IOS 15.1(1)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-100214">Cisco IOS 15.1(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-106078">Cisco IOS 15.1(2)T0a</FullProductName>
+    <FullProductName ProductID="CVRFPID-107691">Cisco IOS 15.1(2)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107626">Cisco IOS 15.1(2)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107123">Cisco IOS 15.1(2)T2a</FullProductName>
+    <FullProductName ProductID="CVRFPID-107057">Cisco IOS 15.1(3)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107862">Cisco IOS 15.2(2)T</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software Intrusion Prevention System Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtw55976</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">Cisco IOS Software contains a denial of service vulnerability that could allow an unauthenticated, remote attacker to cause an affected device to reload.
+
+ 
+
+An attacker could exploit this vulnerability by sending legitimate DNS packets through a device with an affected Cisco IOS IPS configuration. An exploit could allow the attacker to cause a reload of the affected device. 
+
+["http://cdetsweb-prd.cisco.com/apps/dumpcr?identifier=CSCtw55976"]
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCtw55976</Note>
+    </Notes>
+    <CVE>CVE-2012-3950</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-66054</ProductID>
+        <ProductID>CVRFPID-92384</ProductID>
+        <ProductID>CVRFPID-99645</ProductID>
+        <ProductID>CVRFPID-100214</ProductID>
+        <ProductID>CVRFPID-104165</ProductID>
+        <ProductID>CVRFPID-105005</ProductID>
+        <ProductID>CVRFPID-105178</ProductID>
+        <ProductID>CVRFPID-105426</ProductID>
+        <ProductID>CVRFPID-105540</ProductID>
+        <ProductID>CVRFPID-106046</ProductID>
+        <ProductID>CVRFPID-106078</ProductID>
+        <ProductID>CVRFPID-106499</ProductID>
+        <ProductID>CVRFPID-106630</ProductID>
+        <ProductID>CVRFPID-106662</ProductID>
+        <ProductID>CVRFPID-106740</ProductID>
+        <ProductID>CVRFPID-106839</ProductID>
+        <ProductID>CVRFPID-106988</ProductID>
+        <ProductID>CVRFPID-107048</ProductID>
+        <ProductID>CVRFPID-107057</ProductID>
+        <ProductID>CVRFPID-107123</ProductID>
+        <ProductID>CVRFPID-107191</ProductID>
+        <ProductID>CVRFPID-107433</ProductID>
+        <ProductID>CVRFPID-107626</ProductID>
+        <ProductID>CVRFPID-107691</ProductID>
+        <ProductID>CVRFPID-107856</ProductID>
+        <ProductID>CVRFPID-107862</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Either of the following two mitigations will prevent exploitation of the vulnerability against the device: 
+
+
+
+Enable DNS Version Request (6054/0 and 6054/1) and DNS Authors Request (6062/0 and 6062/1) signatures on the device
+
+
+
+Enabling any of the 6054 or 6062 signatures will prevent exploitation.  The following example shows all four signatures enabled:
+
+
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip ips signature-definition
+Router(config-sigdef)#signature 6054 0
+Router(config-sigdef-sig)#status
+Router(config-sigdef-sig-status)#enabled true
+Router(config-sigdef-sig-status)#retired false
+Router(config-sigdef-sig-status)#signature 6054 1
+Router(config-sigdef-sig)#status
+Router(config-sigdef-sig-status)#enabled true
+Router(config-sigdef-sig-status)#retired false
+Router(config-sigdef-sig-status)#signature 6062 0
+Router(config-sigdef-sig)#status
+Router(config-sigdef-sig-status)#enabled true
+Router(config-sigdef-sig-status)#retired false
+Router(config-sigdef-sig-status)#signature 6062 1
+Router(config-sigdef-sig)#status
+Router(config-sigdef-sig-status)#enabled true
+Router(config-sigdef-sig-status)#retired false
+Router(config-sigdef-sig-status)#end
+Do you want to accept these changes? [confirm]
+
+Disable DNS inspection for Cisco IOS IPS
+
+
+
+To configure a Cisco IOS IPS device not to inspect DNS traffic, attach an access list to the IPS name which denies DNS traffic.  The following example shows an ACL attached to the IPS name, which instructs Cisco IOS IPS not to examine DNS packets:
+
+
+Router#show running-config
+&lt;! output removed for brevity !&gt;
+!
+ip ips name iosips list dont_inspect_dns
+!
+ip access-list extended dont_inspect_dns
+ deny   udp any any eq domain
+ deny   tcp any any eq domain
+ remark &lt;! Include other protocols that are not required to be inspected here !&gt;
+ permit ip any any
+Additional information about Tuning, Deploying and Updating Cisco IOS IPS Signature Sets For Multiple-Device Deployments is available at the following link http://www.cisco.com/en/US/prod/collateral/iosswrel/ps6537/ps6586/ps6634/white_paper_c11_549300.html["http://www.cisco.com/en/US/prod/collateral/iosswrel/ps6537/ps6586/ps6634/white_paper_c11_549300.html"]</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120926-ios-ips</URL>
+        <Description>Cisco IOS Software Intrusion Prevention System Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

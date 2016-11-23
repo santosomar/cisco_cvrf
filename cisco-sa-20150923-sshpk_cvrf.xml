@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS and IOS XE Software SSH Version 2 RSA-Based User Authentication Bypass Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150923-sshpk</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-09-23T13:07:08</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-01-14T16:56:43</Date>
+        <Description>Updated Cisco IOS Software Checker form to query all previously published Cisco IOS Software Security Advisories.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-09-23T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-01-14T16:56:43</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the SSH version 2 (SSHv2) protocol implementation  of Cisco IOS and IOS XE Software could allow an
+unauthenticated, remote attacker to bypass user authentication. 
+
+
+
+Successful exploitation could allow the attacker to log in with the privileges of the user or the privileges configured for the Virtual Teletype (VTY) line. Depending on the configuration of the user and of the vty line, the attacker may obtain administrative privileges on the system. The attacker cannot use this vulnerability to elevate privileges.
+
+
+
+The attacker must know a valid username configured for Rivest, Shamir, and Adleman (RSA)-based user authentication and the public key configured for that user to exploit this vulnerability. This vulnerability
+affects only devices configured for public key authentication method, also known as an RSA-based user authentication feature. 
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds for this vulnerability are not available; however administrators could temporarily disable RSA-based user authentication to avoid exploitation. This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150923-sshpk["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150923-sshpk"]
+
+
+
+Note: The September 23, 2015, release of the Cisco IOS and IOS XE Software Security Advisory bundled publication includes three Cisco Security Advisories. All the advisories address vulnerabilities in Cisco IOS Software and Cisco IOS XE Software. Individual publication links are in Cisco Event Response: September 2015 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication at the following link:
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep15.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep15.html"]
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150923-sshpk</URL>
+      <Description>Cisco IOS and IOS XE Software SSH Version 2 RSA-Based User Authentication Bypass Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20150923-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, September 23, 2015</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40938</URL>
+      <Description>Cisco IOS and IOS XE Software SSH Version 2 RSA-Based User Authentication Bypass Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20150923-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, September 23, 2015</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40938</URL>
+      <Description>Cisco IOS and IOS XE Software SSH Version 2 RSA-Based User Authentication Bypass Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-187057">Cisco IOS 15.2(2)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-201074">Cisco IOS 15.2(2)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204228">Cisco IOS 15.2(2)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-204818">Cisco IOS 15.2(2a)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209045">Cisco IOS 15.2(2a)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-197483">Cisco IOS 15.2(3)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-209047">Cisco IOS 15.2(3a)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-209049">Cisco IOS 15.2(2)EA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209051">Cisco IOS 15.2(3)EA</FullProductName>
+    <FullProductName ProductID="CVRFPID-192726">Cisco IOS 15.2(1)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-209063">Cisco IOS 15.2(1)SY0a</FullProductName>
+    <FullProductName ProductID="CVRFPID-193284">Cisco IOS 15.3(3)M1</FullProductName>
+    <FullProductName ProductID="CVRFPID-193315">Cisco IOS 15.3(3)M2</FullProductName>
+    <FullProductName ProductID="CVRFPID-193321">Cisco IOS 15.3(3)M3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195024">Cisco IOS 15.3(3)M4</FullProductName>
+    <FullProductName ProductID="CVRFPID-193347">Cisco IOS 15.3(3)M5</FullProductName>
+    <FullProductName ProductID="CVRFPID-117783">Cisco IOS 15.3(3)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-193406">Cisco IOS 15.3(3)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-197457">Cisco IOS 15.3(3)S1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-193407">Cisco IOS 15.3(3)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-193408">Cisco IOS 15.3(3)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-194877">Cisco IOS 15.3(3)S4</FullProductName>
+    <FullProductName ProductID="CVRFPID-197469">Cisco IOS 15.3(3)S5</FullProductName>
+    <FullProductName ProductID="CVRFPID-195977">Cisco IOS 15.4(1)CG</FullProductName>
+    <FullProductName ProductID="CVRFPID-200495">Cisco IOS 15.4(1)CG1</FullProductName>
+    <FullProductName ProductID="CVRFPID-200499">Cisco IOS 15.4(2)CG</FullProductName>
+    <FullProductName ProductID="CVRFPID-193350">Cisco IOS 15.4(3)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-201713">Cisco IOS 15.4(3)M1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204104">Cisco IOS 15.4(3)M2</FullProductName>
+    <FullProductName ProductID="CVRFPID-187147">Cisco IOS 15.4(1)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-197474">Cisco IOS 15.4(1)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198067">Cisco IOS 15.4(1)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-201259">Cisco IOS 15.4(1)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-190980">Cisco IOS 15.4(2)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200485">Cisco IOS 15.4(2)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204105">Cisco IOS 15.4(2)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-193544">Cisco IOS 15.4(3)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-201595">Cisco IOS 15.4(3)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204106">Cisco IOS 15.4(3)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-115981">Cisco IOS 15.4(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-196255">Cisco IOS 15.4(1)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-196114">Cisco IOS 15.4(1)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-196256">Cisco IOS 15.4(1)T3</FullProductName>
+    <FullProductName ProductID="CVRFPID-191997">Cisco IOS 15.4(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-201189">Cisco IOS 15.4(2)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204095">Cisco IOS 15.4(2)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-196322">Cisco IOS 15.5(1)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-197477">Cisco IOS 15.5(1)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-206172">Cisco IOS XE Software 3.6E 3.6.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206173">Cisco IOS XE Software 3.6E 3.6.1E</FullProductName>
+    <FullProductName ProductID="CVRFPID-210075">Cisco IOS XE Software 3.6E 3.6.2aE</FullProductName>
+    <FullProductName ProductID="CVRFPID-210264">Cisco IOS XE Software 3.6E 3.6.2E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206211">Cisco IOS XE Software 3.7E 3.7.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-198123">Cisco IOS XE Software 3.10S 3.10.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198535">Cisco IOS XE Software 3.10S 3.10.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-198124">Cisco IOS XE Software 3.10S 3.10.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213642">Cisco IOS XE Software 3.10S 3.10.1xbS</FullProductName>
+    <FullProductName ProductID="CVRFPID-198125">Cisco IOS XE Software 3.10S 3.10.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202539">Cisco IOS XE Software 3.10S 3.10.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202540">Cisco IOS XE Software 3.10S 3.10.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206159">Cisco IOS XE Software 3.10S 3.10.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-207269">Cisco IOS XE Software 3.10S 3.10.01S</FullProductName>
+    <FullProductName ProductID="CVRFPID-203353">Cisco IOS XE Software 3.11S 3.11.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200768">Cisco IOS XE Software 3.11S 3.11.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200771">Cisco IOS XE Software 3.11S 3.11.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206160">Cisco IOS XE Software 3.11S 3.11.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200770">Cisco IOS XE Software 3.12S 3.12.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206161">Cisco IOS XE Software 3.12S 3.12.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206162">Cisco IOS XE Software 3.12S 3.12.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-201495">Cisco IOS XE Software 3.13S 3.13.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213781">Cisco IOS XE Software 3.13S 3.13.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-206174">Cisco IOS XE Software 3.13S 3.13.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206175">Cisco IOS XE Software 3.13S 3.13.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206178">Cisco IOS XE Software 3.14S 3.14.0S</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS and IOS-XE SSHv2 RSA-Based User Authentication By-Pass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCus73013</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the SSH version 2 (SSHv2) implementation of the public key authentication method of Cisco IOS and IOS XE Software could allow an
+unauthenticated, remote attacker to bypass user authentication.
+
+
+The
+vulnerability is due to a flaw in the implementation of the SSHv2 public key authentication method, also known as Rivest, Shamir, and Adleman (RSA)-based user authentication. An attacker could exploit this
+vulnerability by authenticating to an affected system configured
+for SSHv2 RSA-based user authentication using a crafted private key. The attacker must know a valid username configured for RSA-based user
+authentication and the public key configured for that user to exploit
+this vulnerability.
+
+
+
+A successful exploit could
+allow the attacker to bypass user authentication and log in with the privileges of the user or with the privileges configured for the virtual teletype (VTY) line. Depending on the configuration of the user and of the VTY line, the
+attacker may obtain administrative privileges on the system. The
+attacker cannot use this vulnerability to elevate privileges. 
+
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCus73013</Note>
+    </Notes>
+    <CVE>CVE-2015-6280</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-115981</ProductID>
+        <ProductID>CVRFPID-117783</ProductID>
+        <ProductID>CVRFPID-187057</ProductID>
+        <ProductID>CVRFPID-187147</ProductID>
+        <ProductID>CVRFPID-190980</ProductID>
+        <ProductID>CVRFPID-191997</ProductID>
+        <ProductID>CVRFPID-192726</ProductID>
+        <ProductID>CVRFPID-193284</ProductID>
+        <ProductID>CVRFPID-193315</ProductID>
+        <ProductID>CVRFPID-193321</ProductID>
+        <ProductID>CVRFPID-193347</ProductID>
+        <ProductID>CVRFPID-193350</ProductID>
+        <ProductID>CVRFPID-193406</ProductID>
+        <ProductID>CVRFPID-193407</ProductID>
+        <ProductID>CVRFPID-193408</ProductID>
+        <ProductID>CVRFPID-193544</ProductID>
+        <ProductID>CVRFPID-194877</ProductID>
+        <ProductID>CVRFPID-195024</ProductID>
+        <ProductID>CVRFPID-195977</ProductID>
+        <ProductID>CVRFPID-196114</ProductID>
+        <ProductID>CVRFPID-196255</ProductID>
+        <ProductID>CVRFPID-196256</ProductID>
+        <ProductID>CVRFPID-196322</ProductID>
+        <ProductID>CVRFPID-197457</ProductID>
+        <ProductID>CVRFPID-197469</ProductID>
+        <ProductID>CVRFPID-197474</ProductID>
+        <ProductID>CVRFPID-197477</ProductID>
+        <ProductID>CVRFPID-197483</ProductID>
+        <ProductID>CVRFPID-198067</ProductID>
+        <ProductID>CVRFPID-200485</ProductID>
+        <ProductID>CVRFPID-200495</ProductID>
+        <ProductID>CVRFPID-200499</ProductID>
+        <ProductID>CVRFPID-201074</ProductID>
+        <ProductID>CVRFPID-201189</ProductID>
+        <ProductID>CVRFPID-201259</ProductID>
+        <ProductID>CVRFPID-201595</ProductID>
+        <ProductID>CVRFPID-201713</ProductID>
+        <ProductID>CVRFPID-204095</ProductID>
+        <ProductID>CVRFPID-204104</ProductID>
+        <ProductID>CVRFPID-204105</ProductID>
+        <ProductID>CVRFPID-204106</ProductID>
+        <ProductID>CVRFPID-204228</ProductID>
+        <ProductID>CVRFPID-204818</ProductID>
+        <ProductID>CVRFPID-209045</ProductID>
+        <ProductID>CVRFPID-209047</ProductID>
+        <ProductID>CVRFPID-209049</ProductID>
+        <ProductID>CVRFPID-209051</ProductID>
+        <ProductID>CVRFPID-209063</ProductID>
+        <ProductID>CVRFPID-198123</ProductID>
+        <ProductID>CVRFPID-198124</ProductID>
+        <ProductID>CVRFPID-198125</ProductID>
+        <ProductID>CVRFPID-198535</ProductID>
+        <ProductID>CVRFPID-200768</ProductID>
+        <ProductID>CVRFPID-200770</ProductID>
+        <ProductID>CVRFPID-200771</ProductID>
+        <ProductID>CVRFPID-201495</ProductID>
+        <ProductID>CVRFPID-202539</ProductID>
+        <ProductID>CVRFPID-202540</ProductID>
+        <ProductID>CVRFPID-203353</ProductID>
+        <ProductID>CVRFPID-206159</ProductID>
+        <ProductID>CVRFPID-206160</ProductID>
+        <ProductID>CVRFPID-206161</ProductID>
+        <ProductID>CVRFPID-206162</ProductID>
+        <ProductID>CVRFPID-206172</ProductID>
+        <ProductID>CVRFPID-206173</ProductID>
+        <ProductID>CVRFPID-206174</ProductID>
+        <ProductID>CVRFPID-206175</ProductID>
+        <ProductID>CVRFPID-206178</ProductID>
+        <ProductID>CVRFPID-206211</ProductID>
+        <ProductID>CVRFPID-207269</ProductID>
+        <ProductID>CVRFPID-210075</ProductID>
+        <ProductID>CVRFPID-210264</ProductID>
+        <ProductID>CVRFPID-213642</ProductID>
+        <ProductID>CVRFPID-213781</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.3</BaseScore>
+        <TemporalScore>7.7</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds for this vulnerability. Administrators could temporarily disable the SSHv2 RSA-based user authentication until the affected system is upgraded to a nonvulnerable release.
+
+To disable SSHv2 RSA-based user authentication use the no ip ssh server authenticate user publickey command. Use the show running-config | include ip ssh server command to verify that the mitigation is applied. 
+
+
+
+When this mitigation is applied, the system will proceed to the next authentication method. By default this is keyboard-interactive.
+
+
+
+The following example shows a Cisco IOS device with SSHv2 RSA-based user authentication disabled:
+
+
+
+
+router#show running-config | include ip ssh server
+no ip ssh server authenticate user publickey
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150923-sshpk</URL>
+        <Description>Cisco IOS and IOS XE Software SSH Version 2 RSA-Based User Authentication Bypass Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

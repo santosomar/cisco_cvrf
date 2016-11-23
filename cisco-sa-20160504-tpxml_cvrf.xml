@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco TelePresence XML Application Programming Interface Authentication Bypass Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160504-tpxml</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-05-04T13:31:23</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-05-04T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-05-04T13:31:23</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the XML application programming interface (API) of Cisco TelePresence Codec (TC) and Collaboration Endpoint (CE) Software could allow an unauthenticated, remote attacker to bypass authentication and access a targeted system through the API.
+
+
+
+The vulnerability is due to improper implementation of authentication mechanisms for the XML API of the affected software. An attacker could exploit this vulnerability by sending a crafted HTTP request to the XML API. A successful exploit could allow the attacker to perform unauthorized configuration changes or issue control commands to the affected system by using the API.
+
+
+
+Cisco has released software updates that address this vulnerability. There is a workaround that addresses this vulnerability.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-tpxml["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-tpxml"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-tpxml</URL>
+      <Description>Cisco TelePresence XML Application Programming Interface Authentication Bypass Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-202760">Cisco TelePresence TC Software 7.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-207532">Cisco TelePresence TC Software 7.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207529">Cisco TelePresence TC Software 7.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-207530">Cisco TelePresence TC Software 7.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-207531">Cisco TelePresence TC Software 7.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-208863">Cisco TelePresence TC Software 7.3.3</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco TelePresence XML Application Programming Interface Authentication Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz26935</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the XML application programming interface (API) of Cisco TelePresence Codec (TC) and Collaboration Endpoint (CE) Software could allow an unauthenticated, remote attacker to bypass authentication and access a targeted system through the API.
+
+
+
+The vulnerability is due to improper implementation of authentication mechanisms for the XML API of the affected software. An attacker could exploit this vulnerability by sending a crafted HTTP request to the XML API. A successful exploit could allow the attacker to perform unauthorized configuration changes or issue control commands to the affected system by using the API.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz26935</Note>
+    </Notes>
+    <CVE>CVE-2016-1387</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-202760</ProductID>
+        <ProductID>CVRFPID-207529</ProductID>
+        <ProductID>CVRFPID-207530</ProductID>
+        <ProductID>CVRFPID-207531</ProductID>
+        <ProductID>CVRFPID-207532</ProductID>
+        <ProductID>CVRFPID-208863</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.0</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:P/I:P/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>To work around this vulnerability, administrators can disable the XML API on an affected system. However, this API is used by the Cisco TelePresence Management Suite (TMS), which means that administrators will not be able to manage the system by using TMS if they disable the API.
+
+
+
+To disable the XML API, do the following in the web interface of the software:
+
+
+
+
+    Navigate to xConfig &gt; NetworkServices &gt; XMLAPI &gt; Mode.
+    Change the Mode setting to Off.
+
+
+
+Reboot the main device for the new configuration to take effect. The device can be rebooted from the local touch control device or the IR remote controller.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-tpxml</URL>
+        <Description>Cisco TelePresence XML Application Programming Interface Authentication Bypass Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

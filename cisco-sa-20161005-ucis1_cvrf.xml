@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified Intelligence Center (CUIC) Software Cross-Site Scripting Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161005-ucis1</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-10-03T21:56:17</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-10-05T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-10-03T21:56:17</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the HTTP web-based management interface of Cisco Unified Intelligence Center (CUIC) Software could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the web interface of the affected system.
+
+
+
+The vulnerability is due to insufficient input validation of a user-supplied value. An attacker could exploit this vulnerability by convincing a user to click a specific link. A successful exploit could allow the attacker to submit arbitrary requests to the affected system via a web browser with the privileges of the user.
+
+
+
+Additional information about XSS attacks and potential mitigations can be found at:
+
+
+
+http://www.cisco.com/en/US/products/cmb/cisco-amb-20060922-understanding-xss.html["http://www.cisco.com/en/US/products/cmb/cisco-amb-20060922-understanding-xss.html"]
+
+
+
+https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)["https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)"]
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-ucis1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-ucis1"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-ucis1</URL>
+      <Description>Cisco Unified Intelligence Center (CUIC) Software Cross-Site Scripting Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-197797">Cisco Unified Contact Center Express 10.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212845">Cisco Unified Contact Center Express 10.5(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212847">Cisco Unified Contact Center Express 10.6(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212849">Cisco Unified Contact Center Express 11.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-198415">Cisco Unified Intelligence Center 8.5.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-198416">Cisco Unified Intelligence Center 9.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-198403">Cisco Unified Intelligence Center 9.1(1)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Intelligence Center (CUIC) Software Cross-Site Scripting Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy81652</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the HTTP web-based management interface of Cisco Unified Intelligence Center (CUIC) Software could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the web interface of the affected system.
+
+
+
+The vulnerability is due to insufficient input validation of a user-supplied value. An attacker could exploit this vulnerability by convincing a user to click a specific link. A successful exploit could allow the attacker to submit arbitrary requests to the affected system via a web browser with the privileges of the user.
+
+
+
+Additional information about XSS attacks and potential mitigations can be found at:
+
+
+
+http://www.cisco.com/en/US/products/cmb/cisco-amb-20060922-understanding-xss.html["http://www.cisco.com/en/US/products/cmb/cisco-amb-20060922-understanding-xss.html"]
+
+
+
+https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)["https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)"]</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuy81652,CSCuy75020</Note>
+    </Notes>
+    <CVE>CVE-2016-6425</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-197797</ProductID>
+        <ProductID>CVRFPID-212845</ProductID>
+        <ProductID>CVRFPID-212847</ProductID>
+        <ProductID>CVRFPID-212849</ProductID>
+        <ProductID>CVRFPID-198403</ProductID>
+        <ProductID>CVRFPID-198415</ProductID>
+        <ProductID>CVRFPID-198416</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>3.6</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:P/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-ucis1</URL>
+        <Description>Cisco Unified Intelligence Center (CUIC) Software Cross-Site Scripting Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

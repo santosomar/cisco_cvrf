@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Intrusion Prevention System Jumbo Frame Denial of Service</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20080618-ips</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2008-06-18T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2008-06-18T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2008-06-18T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080618-ips</URL>
+      <Description>Cisco Intrusion Prevention System Jumbo Frame Denial of Service</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-53266">Cisco Intrusion Prevention System (IPS) 5.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-53267">Cisco Intrusion Prevention System (IPS) 5.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-53268">Cisco Intrusion Prevention System (IPS) 5.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60463">Cisco Intrusion Prevention System (IPS) 5.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60464">Cisco Intrusion Prevention System (IPS) 5.0(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60465">Cisco Intrusion Prevention System (IPS) 5.0(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59013">Cisco Intrusion Prevention System (IPS) 5.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59008">Cisco Intrusion Prevention System (IPS) 5.1(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59009">Cisco Intrusion Prevention System (IPS) 5.1(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59010">Cisco Intrusion Prevention System (IPS) 5.1(1c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59011">Cisco Intrusion Prevention System (IPS) 5.1(1d)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59012">Cisco Intrusion Prevention System (IPS) 5.1(1e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-59025">Cisco Intrusion Prevention System (IPS) 5.1(p1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60466">Cisco Intrusion Prevention System (IPS) 5.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66050">Cisco Intrusion Prevention System (IPS) 5.1(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66051">Cisco Intrusion Prevention System (IPS) 5.1(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65005">Cisco Intrusion Prevention System (IPS) 6.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66052">Cisco Intrusion Prevention System (IPS) 6.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66053">Cisco Intrusion Prevention System (IPS) 6.0(3)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Intrusion Prevention System Jumbo Ethernet Frame Handling Denial of Service Vulnerability</Title>
+    <CVE>CVE-2008-2060</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-53266</ProductID>
+        <ProductID>CVRFPID-53267</ProductID>
+        <ProductID>CVRFPID-53268</ProductID>
+        <ProductID>CVRFPID-59008</ProductID>
+        <ProductID>CVRFPID-59009</ProductID>
+        <ProductID>CVRFPID-59010</ProductID>
+        <ProductID>CVRFPID-59011</ProductID>
+        <ProductID>CVRFPID-59012</ProductID>
+        <ProductID>CVRFPID-59013</ProductID>
+        <ProductID>CVRFPID-59025</ProductID>
+        <ProductID>CVRFPID-60463</ProductID>
+        <ProductID>CVRFPID-60464</ProductID>
+        <ProductID>CVRFPID-60465</ProductID>
+        <ProductID>CVRFPID-60466</ProductID>
+        <ProductID>CVRFPID-65005</ProductID>
+        <ProductID>CVRFPID-66050</ProductID>
+        <ProductID>CVRFPID-66051</ProductID>
+        <ProductID>CVRFPID-66052</ProductID>
+        <ProductID>CVRFPID-66053</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:P/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080618-ips</URL>
+        <Description>Cisco Intrusion Prevention System Jumbo Frame Denial of Service</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

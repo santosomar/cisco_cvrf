@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco cBR-8 Converged Broadband Router vty Integrity Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161012-cbr-8</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-10-05T14:43:34</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-10-12T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-10-05T14:43:34</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Cisco IOS XE Software running on Cisco cBR-8 Converged Broadband Routers could allow an unauthenticated, remote attacker to cause a configuration integrity change to the vty line configuration on an affected device.
+
+
+
+The vulnerability is due to a logic processing error that exists if an affected device is configured with the Downstream Resiliency and Downstream Resiliency Bonding Group features. An attacker could exploit this vulnerability by continuously trying to establish Telnet or SSH connections to a targeted device. A successful exploit could allow the attacker to trigger an integrity issue with the vty line configuration.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161012-cbr-8["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161012-cbr-8"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161012-cbr-8</URL>
+      <Description>Cisco cBR-8 Converged Broadband Router vty Integrity Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-217271">Cisco IOS XE Software 3.18S 3.18.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-217272">Cisco IOS XE Software 3.18S 3.18.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-217276">Cisco IOS XE Software 3.18SP 3.18.0SP</FullProductName>
+    <FullProductName ProductID="CVRFPID-217268">Cisco IOS XE Software 3.17S 3.17.1aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-212411">Cisco IOS XE Software 3.17S 3.17.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-217234">Cisco IOS XE Software 3.17S 3.17.2S </FullProductName>
+    <FullProductName ProductID="CVRFPID-212412">Cisco IOS XE Software 3.17S 3.17.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-217265">Cisco IOS XE Software 3.16S 3.16.2bS</FullProductName>
+    <FullProductName ProductID="CVRFPID-217266">Cisco IOS XE Software 3.16S 3.16.3aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-213779">Cisco IOS XE Software 3.16S 3.16.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-217267">Cisco IOS XE Software 3.16S 3.16.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210081">Cisco IOS XE Software 3.16S 3.16.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213778">Cisco IOS XE Software 3.16S 3.16.0cS</FullProductName>
+    <FullProductName ProductID="CVRFPID-212408">Cisco IOS XE Software 3.16S 3.16.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213477">Cisco IOS XE Software 3.16S 3.16.1aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-213478">Cisco IOS XE Software 3.16S 3.16.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213635">Cisco IOS XE Software 3.16S 3.16.2aS</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco cBR-8 Converged Broadband Router vty Integrity Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz62815</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco IOS XE Software running on Cisco cBR-8 Converged Broadband Routers could allow an unauthenticated, remote attacker to cause a configuration integrity change to the vty line configuration on an affected device.
+
+
+
+The vulnerability is due to a logic processing error that exists if an affected device is configured with the Downstream Resiliency and Downstream Resiliency Bonding Group features. An attacker could exploit this vulnerability by continuously trying to establish Telnet or SSH connections to a targeted device. A successful exploit could allow the attacker to trigger an integrity issue with the vty line configuration.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz62815</Note>
+    </Notes>
+    <CVE>CVE-2016-6438</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-210081</ProductID>
+        <ProductID>CVRFPID-212408</ProductID>
+        <ProductID>CVRFPID-212411</ProductID>
+        <ProductID>CVRFPID-212412</ProductID>
+        <ProductID>CVRFPID-213477</ProductID>
+        <ProductID>CVRFPID-213478</ProductID>
+        <ProductID>CVRFPID-213635</ProductID>
+        <ProductID>CVRFPID-213778</ProductID>
+        <ProductID>CVRFPID-213779</ProductID>
+        <ProductID>CVRFPID-217234</ProductID>
+        <ProductID>CVRFPID-217265</ProductID>
+        <ProductID>CVRFPID-217266</ProductID>
+        <ProductID>CVRFPID-217267</ProductID>
+        <ProductID>CVRFPID-217268</ProductID>
+        <ProductID>CVRFPID-217271</ProductID>
+        <ProductID>CVRFPID-217272</ProductID>
+        <ProductID>CVRFPID-217276</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>3.4</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:P/A:N/E:POC/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161012-cbr-8</URL>
+        <Description>Cisco cBR-8 Converged Broadband Router vty Integrity Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

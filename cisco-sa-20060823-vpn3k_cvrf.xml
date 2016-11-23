@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco VPN 3000 Concentrator FTP Management Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20060823-vpn3k</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2006-08-23T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2006-08-23T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2006-08-23T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20060823-vpn3k</URL>
+      <Description>Cisco VPN 3000 Concentrator FTP Management Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-47411">Cisco VPN 3000 Series Concentrator 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-47412">Cisco VPN 3000 Series Concentrator 4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-47413">Cisco VPN 3000 Series Concentrator 4.0.1.B</FullProductName>
+    <FullProductName ProductID="CVRFPID-47414">Cisco VPN 3000 Series Concentrator 4.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-47415">Cisco VPN 3000 Series Concentrator 4.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-47416">Cisco VPN 3000 Series Concentrator 4.0.4.A</FullProductName>
+    <FullProductName ProductID="CVRFPID-47417">Cisco VPN 3000 Series Concentrator 4.0.4.B</FullProductName>
+    <FullProductName ProductID="CVRFPID-47418">Cisco VPN 3000 Series Concentrator 4.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-47419">Cisco VPN 3000 Series Concentrator 4.0.5.A</FullProductName>
+    <FullProductName ProductID="CVRFPID-47420">Cisco VPN 3000 Series Concentrator 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-47421">Cisco VPN 3000 Series Concentrator 4.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-47422">Cisco VPN 3000 Series Concentrator 4.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-47423">Cisco VPN 3000 Series Concentrator 4.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-47424">Cisco VPN 3000 Series Concentrator 4.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-47425">Cisco VPN 3000 Series Concentrator 4.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-47426">Cisco VPN 3000 Series Concentrator 4.1.5.A</FullProductName>
+    <FullProductName ProductID="CVRFPID-51728">Cisco VPN 3000 Series Concentrator 4.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-50084">Cisco VPN 3000 Series Concentrator 4.1.7.A</FullProductName>
+    <FullProductName ProductID="CVRFPID-50081">Cisco VPN 3000 Series Concentrator 4.1.7.B</FullProductName>
+    <FullProductName ProductID="CVRFPID-50082">Cisco VPN 3000 Series Concentrator 4.1.7.C</FullProductName>
+    <FullProductName ProductID="CVRFPID-50083">Cisco VPN 3000 Series Concentrator 4.1.7.D</FullProductName>
+    <FullProductName ProductID="CVRFPID-51726">Cisco VPN 3000 Series Concentrator 4.1.7.E</FullProductName>
+    <FullProductName ProductID="CVRFPID-51727">Cisco VPN 3000 Series Concentrator 4.1.7.F</FullProductName>
+    <FullProductName ProductID="CVRFPID-54559">Cisco VPN 3000 Series Concentrator 4.1.7.H</FullProductName>
+    <FullProductName ProductID="CVRFPID-58604">Cisco VPN 3000 Series Concentrator 4.1.7.M</FullProductName>
+    <FullProductName ProductID="CVRFPID-58609">Cisco VPN 3000 Series Concentrator 4.1.7.L</FullProductName>
+    <FullProductName ProductID="CVRFPID-54560">Cisco VPN 3000 Series Concentrator 4.7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-54561">Cisco VPN 3000 Series Concentrator 4.7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-54562">Cisco VPN 3000 Series Concentrator 4.7.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-56377">Cisco VPN 3000 Series Concentrator 4.7.2.A</FullProductName>
+    <FullProductName ProductID="CVRFPID-56378">Cisco VPN 3000 Series Concentrator 4.7.2.B</FullProductName>
+    <FullProductName ProductID="CVRFPID-58608">Cisco VPN 3000 Series Concentrator 4.7.2.C</FullProductName>
+    <FullProductName ProductID="CVRFPID-58606">Cisco VPN 3000 Series Concentrator 4.7.2.D</FullProductName>
+    <FullProductName ProductID="CVRFPID-58607">Cisco VPN 3000 Series Concentrator 4.7.2.E</FullProductName>
+    <FullProductName ProductID="CVRFPID-58605">Cisco VPN 3000 Series Concentrator 4.7.2.F</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>DO NOT PUBLISH Until August 23, 2006 -- Cisco VPN Concentrator 3000 Pre-Authentication FTP Command Execution Vulnerability</Title>
+    <CVE>CVE-2006-4313</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-47411</ProductID>
+        <ProductID>CVRFPID-47412</ProductID>
+        <ProductID>CVRFPID-47413</ProductID>
+        <ProductID>CVRFPID-47414</ProductID>
+        <ProductID>CVRFPID-47415</ProductID>
+        <ProductID>CVRFPID-47416</ProductID>
+        <ProductID>CVRFPID-47417</ProductID>
+        <ProductID>CVRFPID-47418</ProductID>
+        <ProductID>CVRFPID-47419</ProductID>
+        <ProductID>CVRFPID-47420</ProductID>
+        <ProductID>CVRFPID-47421</ProductID>
+        <ProductID>CVRFPID-47422</ProductID>
+        <ProductID>CVRFPID-47423</ProductID>
+        <ProductID>CVRFPID-47424</ProductID>
+        <ProductID>CVRFPID-47425</ProductID>
+        <ProductID>CVRFPID-47426</ProductID>
+        <ProductID>CVRFPID-50081</ProductID>
+        <ProductID>CVRFPID-50082</ProductID>
+        <ProductID>CVRFPID-50083</ProductID>
+        <ProductID>CVRFPID-50084</ProductID>
+        <ProductID>CVRFPID-51726</ProductID>
+        <ProductID>CVRFPID-51727</ProductID>
+        <ProductID>CVRFPID-51728</ProductID>
+        <ProductID>CVRFPID-54559</ProductID>
+        <ProductID>CVRFPID-54560</ProductID>
+        <ProductID>CVRFPID-54561</ProductID>
+        <ProductID>CVRFPID-54562</ProductID>
+        <ProductID>CVRFPID-56377</ProductID>
+        <ProductID>CVRFPID-56378</ProductID>
+        <ProductID>CVRFPID-58604</ProductID>
+        <ProductID>CVRFPID-58605</ProductID>
+        <ProductID>CVRFPID-58606</ProductID>
+        <ProductID>CVRFPID-58607</ProductID>
+        <ProductID>CVRFPID-58608</ProductID>
+        <ProductID>CVRFPID-58609</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.0</BaseScore>
+        <TemporalScore>5.8</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:P/I:P/A:P/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20060823-vpn3k</URL>
+        <Description>Cisco VPN 3000 Concentrator FTP Management Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

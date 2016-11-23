@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Prime Network Analysis Module Unauthenticated Remote Code Execution Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160601-prime</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-06-01T15:24:01</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-06-01T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-06-01T15:24:01</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the web interface of Cisco Network Analysis Modules could allow an unauthenticated, remote attacker to execute arbitrary commands on the underlying operating system of the affected device with the privileges of the web server.
+
+
+
+The vulnerability is due to a failure to properly sanitize user input prior to executing an external command derived from the input. An attacker could exploit the vulnerability by submitting a crafted HTTP request to the affected device. A successful exploit could allow the attacker to execute arbitrary commands or code on the underlying operating system with the reduced privileges of the web server.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160601-prime["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160601-prime"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160601-prime</URL>
+      <Description>Cisco Prime Network Analysis Module Unauthenticated Remote Code Execution Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-214903">Cisco Prime Network Analysis Module Software 5.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-214912">Cisco Prime Network Analysis Module Software 5.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-214913">Cisco Prime Network Analysis Module Software 5.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-214905">Cisco Prime Network Analysis Module Software 5.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-214914">Cisco Prime Network Analysis Module Software 5.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-214907">Cisco Prime Network Analysis Module Software 6.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-214909">Cisco Prime Network Analysis Module Software 6.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-214916">Cisco Prime Network Analysis Module Software 6.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-214911">Cisco Prime Network Analysis Module Software 6.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-214919">Cisco Prime Virtual Network Analysis Module 6.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-214921">Cisco Prime Virtual Network Analysis Module 6.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-214923">Cisco Prime Virtual Network Analysis Module 6.2.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco PRIME vNAM Remote Unauthenticated Remote Code Execution</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy21882</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web interface of Cisco Network Analysis Modules could allow an unauthenticated, remote attacker to execute arbitrary commands on the underlying operating system of the affected device with the privileges of the web server.
+
+
+
+The vulnerability is due to a failure to properly sanitize user input prior to executing an external command derived from the input. An attacker could exploit the vulnerability by submitting a crafted HTTP request to the affected device. A successful exploit could allow the attacker to execute arbitrary commands or code on the underlying operating system with the reduced privileges of the web server.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuy21882</Note>
+    </Notes>
+    <CVE>CVE-2016-1388</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-214903</ProductID>
+        <ProductID>CVRFPID-214905</ProductID>
+        <ProductID>CVRFPID-214907</ProductID>
+        <ProductID>CVRFPID-214909</ProductID>
+        <ProductID>CVRFPID-214911</ProductID>
+        <ProductID>CVRFPID-214912</ProductID>
+        <ProductID>CVRFPID-214913</ProductID>
+        <ProductID>CVRFPID-214914</ProductID>
+        <ProductID>CVRFPID-214916</ProductID>
+        <ProductID>CVRFPID-214919</ProductID>
+        <ProductID>CVRFPID-214921</ProductID>
+        <ProductID>CVRFPID-214923</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.5</BaseScore>
+        <TemporalScore>6.2</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:P/I:P/A:P/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160601-prime</URL>
+        <Description>Cisco Prime Network Analysis Module Unauthenticated Remote Code Execution Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

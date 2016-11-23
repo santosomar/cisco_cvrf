@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco ASA Software DHCPv6 Relay Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151021-asa-dhcp1</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-10-21T14:40:37</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2015-11-12T14:15:43</Date>
+        <Description>First fixed and recommended release has been changed for the Cisco ASA 9.3 train.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-10-21T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-11-12T14:15:43</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the DHCPv6 relay feature of Cisco
+Adaptive Security Appliance (ASA) software could allow an
+unauthenticated, remote attacker to cause an affected
+device to reload.
+
+
+
+The vulnerability is due to insufficient validation of DHCPv6
+packets. Cisco ASA Software is affected by this vulnerability only if the software is configured with the DHCPv6 relay feature. An attacker could exploit this
+vulnerability by sending crafted DHCPv6 packets to an
+affected device.
+
+
+
+
+Note: Only DHCPv6 packets directed to the Cisco ASA
+interface where the DHCPv6 relay is enabled can be used to trigger this
+vulnerability. This vulnerability affects
+systems configured in routed or transparent firewall mode and in single
+or multiple
+context mode. This vulnerability can be triggered only by IPv6 traffic. 
+
+
+
+This vulnerability is documented in Cisco bug IDs CSCus56252["https://tools.cisco.com/bugsearch/bug/CSCus56252"] (registered["http://tools.cisco.com/RPF/register/register.do"] customers only) and CSCus57142["https://tools.cisco.com/bugsearch/bug/CSCus57142"] (registered["http://tools.cisco.com/RPF/register/register.do"] customers only) and have been assigned CVE ID
+CVE-2015-6324.
+
+
+
+Cisco has released software updates that address this vulnerability.
+Workarounds that mitigate this vulnerability are not available. This
+advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-asa-dhcp1["http://tvce-stg.cisco.com/security/AIMS/http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-asa-dhcp1"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-asa-dhcp1</URL>
+      <Description>Cisco ASA Software DHCPv6 Relay Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-188865">Cisco Adaptive Security Appliance (ASA) Software 9.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-188866">Cisco Adaptive Security Appliance (ASA) Software 9.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195000">Cisco Adaptive Security Appliance (ASA) Software 9.0.2.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-195001">Cisco Adaptive Security Appliance (ASA) Software 9.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195002">Cisco Adaptive Security Appliance (ASA) Software 9.0.3.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-198555">Cisco Adaptive Security Appliance (ASA) Software 9.0.3.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-198556">Cisco Adaptive Security Appliance (ASA) Software 9.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-198557">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198558">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-202953">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-202950">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.17</FullProductName>
+    <FullProductName ProductID="CVRFPID-202951">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.20</FullProductName>
+    <FullProductName ProductID="CVRFPID-202952">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.24</FullProductName>
+    <FullProductName ProductID="CVRFPID-206493">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.26</FullProductName>
+    <FullProductName ProductID="CVRFPID-206494">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.29</FullProductName>
+    <FullProductName ProductID="CVRFPID-206495">Cisco Adaptive Security Appliance (ASA) Software 9.0.4.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-188867">Cisco Adaptive Security Appliance (ASA) Software 9.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191211">Cisco Adaptive Security Appliance (ASA) Software 9.1.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-191212">Cisco Adaptive Security Appliance (ASA) Software 9.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-194999">Cisco Adaptive Security Appliance (ASA) Software 9.1.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-194998">Cisco Adaptive Security Appliance (ASA) Software 9.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-198551">Cisco Adaptive Security Appliance (ASA) Software 9.1.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-198552">Cisco Adaptive Security Appliance (ASA) Software 9.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-198553">Cisco Adaptive Security Appliance (ASA) Software 9.1.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-198554">Cisco Adaptive Security Appliance (ASA) Software 9.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-202941">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-202942">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.12</FullProductName>
+    <FullProductName ProductID="CVRFPID-202943">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.15</FullProductName>
+    <FullProductName ProductID="CVRFPID-206491">Cisco Adaptive Security Appliance (ASA) Software 9.1.5.21</FullProductName>
+    <FullProductName ProductID="CVRFPID-206218">Cisco Adaptive Security Appliance (ASA) Software 9.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-206492">Cisco Adaptive Security Appliance (ASA) Software 9.1.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-210988">Cisco Adaptive Security Appliance (ASA) Software 9.1.6.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-202938">Cisco Adaptive Security Appliance (ASA) Software 9.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202946">Cisco Adaptive Security Appliance (ASA) Software 9.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-202947">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-202948">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-204544">Cisco Adaptive Security Appliance (ASA) Software 9.2.2.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-202949">Cisco Adaptive Security Appliance (ASA) Software 9.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206489">Cisco Adaptive Security Appliance (ASA) Software 9.2.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206490">Cisco Adaptive Security Appliance (ASA) Software 9.2.3.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-202940">Cisco Adaptive Security Appliance (ASA) Software 9.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202944">Cisco Adaptive Security Appliance (ASA) Software 9.3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202945">Cisco Adaptive Security Appliance (ASA) Software 9.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-206487">Cisco Adaptive Security Appliance (ASA) Software 9.3.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-206488">Cisco Adaptive Security Appliance (ASA) Software 9.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-206486">Cisco Adaptive Security Appliance (ASA) Software 9.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-208301">Cisco Adaptive Security Appliance (ASA) Software 9.4.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-211056">Cisco Adaptive Security Appliance (ASA) Software 9.4.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-211055">Cisco Adaptive Security Appliance (ASA) Software 9.4.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-211054">Cisco Adaptive Security Appliance (ASA) Software 9.4.1.5</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ASA DHCPv6 Relay Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCus56252</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the DHCPv6 relay feature of Cisco
+Adaptive Security Appliance (ASA) software could allow an
+unauthenticated, remote attacker to cause an affected
+device to reload.
+
+
+
+The vulnerability is due to insufficient validation of DHCPv6
+packets. Cisco ASA Software is affected by this vulnerability only if the software is configured with the DHCPv6 relay feature. An attacker could exploit this
+vulnerability by sending crafted DHCPv6 packets to an
+affected device.
+
+
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCus56252,CSCus57142</Note>
+    </Notes>
+    <CVE>CVE-2015-6324</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-188865</ProductID>
+        <ProductID>CVRFPID-188866</ProductID>
+        <ProductID>CVRFPID-188867</ProductID>
+        <ProductID>CVRFPID-191211</ProductID>
+        <ProductID>CVRFPID-191212</ProductID>
+        <ProductID>CVRFPID-194998</ProductID>
+        <ProductID>CVRFPID-194999</ProductID>
+        <ProductID>CVRFPID-195000</ProductID>
+        <ProductID>CVRFPID-195001</ProductID>
+        <ProductID>CVRFPID-195002</ProductID>
+        <ProductID>CVRFPID-198551</ProductID>
+        <ProductID>CVRFPID-198552</ProductID>
+        <ProductID>CVRFPID-198553</ProductID>
+        <ProductID>CVRFPID-198554</ProductID>
+        <ProductID>CVRFPID-198555</ProductID>
+        <ProductID>CVRFPID-198556</ProductID>
+        <ProductID>CVRFPID-198557</ProductID>
+        <ProductID>CVRFPID-198558</ProductID>
+        <ProductID>CVRFPID-202938</ProductID>
+        <ProductID>CVRFPID-202940</ProductID>
+        <ProductID>CVRFPID-202941</ProductID>
+        <ProductID>CVRFPID-202942</ProductID>
+        <ProductID>CVRFPID-202943</ProductID>
+        <ProductID>CVRFPID-202944</ProductID>
+        <ProductID>CVRFPID-202945</ProductID>
+        <ProductID>CVRFPID-202946</ProductID>
+        <ProductID>CVRFPID-202947</ProductID>
+        <ProductID>CVRFPID-202948</ProductID>
+        <ProductID>CVRFPID-202949</ProductID>
+        <ProductID>CVRFPID-202950</ProductID>
+        <ProductID>CVRFPID-202951</ProductID>
+        <ProductID>CVRFPID-202952</ProductID>
+        <ProductID>CVRFPID-202953</ProductID>
+        <ProductID>CVRFPID-204544</ProductID>
+        <ProductID>CVRFPID-206218</ProductID>
+        <ProductID>CVRFPID-206486</ProductID>
+        <ProductID>CVRFPID-206487</ProductID>
+        <ProductID>CVRFPID-206488</ProductID>
+        <ProductID>CVRFPID-206489</ProductID>
+        <ProductID>CVRFPID-206490</ProductID>
+        <ProductID>CVRFPID-206491</ProductID>
+        <ProductID>CVRFPID-206492</ProductID>
+        <ProductID>CVRFPID-206493</ProductID>
+        <ProductID>CVRFPID-206494</ProductID>
+        <ProductID>CVRFPID-206495</ProductID>
+        <ProductID>CVRFPID-208301</ProductID>
+        <ProductID>CVRFPID-210988</ProductID>
+        <ProductID>CVRFPID-211054</ProductID>
+        <ProductID>CVRFPID-211055</ProductID>
+        <ProductID>CVRFPID-211056</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.1</BaseScore>
+        <TemporalScore>5.9</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate this vulnerability. However, administrators may disable the affected feature.
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-asa-dhcp1</URL>
+        <Description>Cisco ASA Software DHCPv6 Relay Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS and IOS XE Software Smart Install Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160323-smi</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-03-23T15:00:09</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-03-23T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-03-23T15:00:09</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">The Smart Install client feature in Cisco IOS and IOS XE Software contains a vulnerability that could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.
+
+
+
+The vulnerability is due to incorrect handling of image list parameters. An attacker could exploit this vulnerability by sending crafted Smart Install packets to TCP port 4786. A successful exploit could cause a Cisco Catalyst switch to reload, resulting in a DoS condition.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability other than disabling Smart Install functionality on the vulnerable device.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160323-smi["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160323-smi"]
+
+
+
+This advisory is part of the March 23, 2016, release of the Cisco IOS and IOS XE Software Security Advisory Bundled Publication, which includes six Cisco Security Advisories that describe six vulnerabilities. All the vulnerabilities have a Security Impact Rating of "High." For a complete list of advisories and links to them, see Cisco Event Response: Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication["http://www.cisco.com/c/en/us/about/security-center/event-response/cisco-erp-march-2016.html"].
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160323-smi</URL>
+      <Description>Cisco IOS and IOS XE Software Smart Install Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-51122</URL>
+      <Description>Cisco Event Response: March 2016 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20160323-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, March 23, 2016 </Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-51122</URL>
+      <Description>Cisco Event Response: March 2016 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20160323-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, March 23, 2016 </Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-69478">Cisco IOS 12.2(35)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-105706">Cisco IOS 12.2(35)EX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104368">Cisco IOS 12.2(35)EX2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105082">Cisco IOS 12.2(37)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-104662">Cisco IOS 12.2(40)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-106564">Cisco IOS 12.2(40)EX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106449">Cisco IOS 12.2(40)EX2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104578">Cisco IOS 12.2(40)EX3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104061">Cisco IOS 12.2(44)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-105253">Cisco IOS 12.2(44)EX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106733">Cisco IOS 12.2(46)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-105183">Cisco IOS 12.2(52)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-107664">Cisco IOS 12.2(52)EX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104831">Cisco IOS 12.2(53)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-106674">Cisco IOS 12.2(55)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-108306">Cisco IOS 12.2(55)EX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-109760">Cisco IOS 12.2(55)EX2</FullProductName>
+    <FullProductName ProductID="CVRFPID-111019">Cisco IOS 12.2(55)EX3</FullProductName>
+    <FullProductName ProductID="CVRFPID-113948">Cisco IOS 12.2(58)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-106059">Cisco IOS 12.2(37)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-105145">Cisco IOS 12.2(44)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-103473">Cisco IOS 12.2(46)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-105299">Cisco IOS 12.2(53)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-103559">Cisco IOS 12.2(55)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-109659">Cisco IOS 12.2(58)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-111031">Cisco IOS 12.2(58)EY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-113073">Cisco IOS 12.2(58)EY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105444">Cisco IOS 12.2(53)EZ</FullProductName>
+    <FullProductName ProductID="CVRFPID-107283">Cisco IOS 12.2(55)EZ</FullProductName>
+    <FullProductName ProductID="CVRFPID-104806">Cisco IOS 12.2(58)EZ</FullProductName>
+    <FullProductName ProductID="CVRFPID-189613">Cisco IOS 12.2(60)EZ</FullProductName>
+    <FullProductName ProductID="CVRFPID-191842">Cisco IOS 12.2(60)EZ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-194466">Cisco IOS 12.2(60)EZ2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195490">Cisco IOS 12.2(60)EZ3</FullProductName>
+    <FullProductName ProductID="CVRFPID-197480">Cisco IOS 12.2(60)EZ4</FullProductName>
+    <FullProductName ProductID="CVRFPID-204099">Cisco IOS 12.2(60)EZ5</FullProductName>
+    <FullProductName ProductID="CVRFPID-204209">Cisco IOS 12.2(60)EZ6</FullProductName>
+    <FullProductName ProductID="CVRFPID-209005">Cisco IOS 12.2(60)EZ7</FullProductName>
+    <FullProductName ProductID="CVRFPID-209006">Cisco IOS 12.2(60)EZ8</FullProductName>
+    <FullProductName ProductID="CVRFPID-60368">Cisco IOS 12.2(25)FZ</FullProductName>
+    <FullProductName ProductID="CVRFPID-62600">Cisco IOS 12.2(35)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-104815">Cisco IOS 12.2(35)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106071">Cisco IOS 12.2(35)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105186">Cisco IOS 12.2(35)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104966">Cisco IOS 12.2(35)SE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-104191">Cisco IOS 12.2(35)SE5</FullProductName>
+    <FullProductName ProductID="CVRFPID-69801">Cisco IOS 12.2(37)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-105043">Cisco IOS 12.2(37)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105780">Cisco IOS 12.2(40)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-106203">Cisco IOS 12.2(40)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103840">Cisco IOS 12.2(40)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105881">Cisco IOS 12.2(44)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-104970">Cisco IOS 12.2(44)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104630">Cisco IOS 12.2(44)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106526">Cisco IOS 12.2(44)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105285">Cisco IOS 12.2(44)SE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107142">Cisco IOS 12.2(44)SE5</FullProductName>
+    <FullProductName ProductID="CVRFPID-106323">Cisco IOS 12.2(44)SE6</FullProductName>
+    <FullProductName ProductID="CVRFPID-103921">Cisco IOS 12.2(46)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-106997">Cisco IOS 12.2(46)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104089">Cisco IOS 12.2(46)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107630">Cisco IOS 12.2(50)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-104342">Cisco IOS 12.2(50)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104101">Cisco IOS 12.2(50)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106016">Cisco IOS 12.2(50)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107209">Cisco IOS 12.2(50)SE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-104855">Cisco IOS 12.2(50)SE5</FullProductName>
+    <FullProductName ProductID="CVRFPID-105973">Cisco IOS 12.2(52)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-106684">Cisco IOS 12.2(52)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104972">Cisco IOS 12.2(53)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-103648">Cisco IOS 12.2(53)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106606">Cisco IOS 12.2(53)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107135">Cisco IOS 12.2(54)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-103763">Cisco IOS 12.2(55)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-106029">Cisco IOS 12.2(55)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198542">Cisco IOS 12.2(55)SE10</FullProductName>
+    <FullProductName ProductID="CVRFPID-105689">Cisco IOS 12.2(55)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105394">Cisco IOS 12.2(55)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-109439">Cisco IOS 12.2(55)SE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-111674">Cisco IOS 12.2(55)SE5</FullProductName>
+    <FullProductName ProductID="CVRFPID-114665">Cisco IOS 12.2(55)SE6</FullProductName>
+    <FullProductName ProductID="CVRFPID-184125">Cisco IOS 12.2(55)SE7</FullProductName>
+    <FullProductName ProductID="CVRFPID-189187">Cisco IOS 12.2(55)SE8</FullProductName>
+    <FullProductName ProductID="CVRFPID-192911">Cisco IOS 12.2(55)SE9</FullProductName>
+    <FullProductName ProductID="CVRFPID-105987">Cisco IOS 12.2(58)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-109098">Cisco IOS 12.2(58)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-109808">Cisco IOS 12.2(58)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-63920">Cisco IOS 12.2(25)SED</FullProductName>
+    <FullProductName ProductID="CVRFPID-107476">Cisco IOS 12.2(25)SED1</FullProductName>
+    <FullProductName ProductID="CVRFPID-60351">Cisco IOS 12.2(25)SEE</FullProductName>
+    <FullProductName ProductID="CVRFPID-62587">Cisco IOS 12.2(25)SEE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105965">Cisco IOS 12.2(25)SEE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-95363">Cisco IOS 12.2(25)SEE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104355">Cisco IOS 12.2(25)SEE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-62601">Cisco IOS 12.2(25)SEF1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103684">Cisco IOS 12.2(25)SEF2</FullProductName>
+    <FullProductName ProductID="CVRFPID-103801">Cisco IOS 12.2(25)SEF3</FullProductName>
+    <FullProductName ProductID="CVRFPID-60358">Cisco IOS 12.2(25)SEG</FullProductName>
+    <FullProductName ProductID="CVRFPID-106247">Cisco IOS 12.2(25)SEG1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104947">Cisco IOS 12.2(25)SEG2</FullProductName>
+    <FullProductName ProductID="CVRFPID-107325">Cisco IOS 12.2(25)SEG3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105928">Cisco IOS 12.2(25)SEG4</FullProductName>
+    <FullProductName ProductID="CVRFPID-104011">Cisco IOS 12.2(25)SEG5</FullProductName>
+    <FullProductName ProductID="CVRFPID-107563">Cisco IOS 12.2(25)SEG6</FullProductName>
+    <FullProductName ProductID="CVRFPID-117436">Cisco IOS 15.0(2)EB</FullProductName>
+    <FullProductName ProductID="CVRFPID-117406">Cisco IOS 15.0(2)EC</FullProductName>
+    <FullProductName ProductID="CVRFPID-185412">Cisco IOS 15.0(2)ED</FullProductName>
+    <FullProductName ProductID="CVRFPID-194436">Cisco IOS 15.0(2)ED1</FullProductName>
+    <FullProductName ProductID="CVRFPID-192000">Cisco IOS 15.0(2)EH</FullProductName>
+    <FullProductName ProductID="CVRFPID-191948">Cisco IOS 15.0(2)EJ</FullProductName>
+    <FullProductName ProductID="CVRFPID-197471">Cisco IOS 15.0(2)EJ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195544">Cisco IOS 15.0(2)EK</FullProductName>
+    <FullProductName ProductID="CVRFPID-197468">Cisco IOS 15.0(2)EK1</FullProductName>
+    <FullProductName ProductID="CVRFPID-109442">Cisco IOS 15.0(1)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-189064">Cisco IOS 15.0(2)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-189115">Cisco IOS 15.0(2)EX1</FullProductName>
+    <FullProductName ProductID="CVRFPID-211570">Cisco IOS 15.0(2)EX10</FullProductName>
+    <FullProductName ProductID="CVRFPID-192910">Cisco IOS 15.0(2)EX2</FullProductName>
+    <FullProductName ProductID="CVRFPID-194540">Cisco IOS 15.0(2)EX3</FullProductName>
+    <FullProductName ProductID="CVRFPID-194913">Cisco IOS 15.0(2)EX4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195943">Cisco IOS 15.0(2)EX5</FullProductName>
+    <FullProductName ProductID="CVRFPID-204831">Cisco IOS 15.0(2)EX8</FullProductName>
+    <FullProductName ProductID="CVRFPID-205064">Cisco IOS 15.0(2a)EX5</FullProductName>
+    <FullProductName ProductID="CVRFPID-104376">Cisco IOS 15.0(1)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-115969">Cisco IOS 15.0(1)EY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-187269">Cisco IOS 15.0(1)EY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-187932">Cisco IOS 15.0(2)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-190250">Cisco IOS 15.0(2)EY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-192831">Cisco IOS 15.0(2)EY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195481">Cisco IOS 15.0(2)EY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-190637">Cisco IOS 15.0(2)EZ</FullProductName>
+    <FullProductName ProductID="CVRFPID-105660">Cisco IOS 15.0(1)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-111010">Cisco IOS 15.0(1)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-113961">Cisco IOS 15.0(1)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-115832">Cisco IOS 15.0(1)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-107852">Cisco IOS 15.0(2)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-115939">Cisco IOS 15.0(2)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-116083">Cisco IOS 15.0(2)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-189455">Cisco IOS 15.0(2)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-190635">Cisco IOS 15.0(2)SE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-192706">Cisco IOS 15.0(2)SE5</FullProductName>
+    <FullProductName ProductID="CVRFPID-195770">Cisco IOS 15.0(2)SE6</FullProductName>
+    <FullProductName ProductID="CVRFPID-204097">Cisco IOS 15.0(2)SE7</FullProductName>
+    <FullProductName ProductID="CVRFPID-183811">Cisco IOS 15.2(1)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-195469">Cisco IOS 15.2(1)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198060">Cisco IOS 15.2(1)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-200488">Cisco IOS 15.2(1)E3</FullProductName>
+    <FullProductName ProductID="CVRFPID-187057">Cisco IOS 15.2(2)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-201074">Cisco IOS 15.2(2)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204228">Cisco IOS 15.2(2)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-205672">Cisco IOS 15.2(2)E3</FullProductName>
+    <FullProductName ProductID="CVRFPID-204818">Cisco IOS 15.2(2a)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209045">Cisco IOS 15.2(2a)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-197483">Cisco IOS 15.2(3)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-204186">Cisco IOS 15.2(3)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209046">Cisco IOS 15.2(3)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-209047">Cisco IOS 15.2(3a)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-209359">Cisco IOS 15.2(3m)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-209913">Cisco IOS 15.2(3m)E3</FullProductName>
+    <FullProductName ProductID="CVRFPID-197462">Cisco IOS 15.2(2)EB</FullProductName>
+    <FullProductName ProductID="CVRFPID-209839">Cisco IOS 15.2(2)EB1</FullProductName>
+    <FullProductName ProductID="CVRFPID-214218">Cisco IOS 15.2(2)EB2</FullProductName>
+    <FullProductName ProductID="CVRFPID-209049">Cisco IOS 15.2(2)EA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209050">Cisco IOS 15.2(2)EA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-209051">Cisco IOS 15.2(3)EA</FullProductName>
+    <FullProductName ProductID="CVRFPID-191928">Cisco IOS 15.2(1)EY</FullProductName>
+    <FullProductName ProductID="CVRFPID-213783">Cisco IOS XE Software 3.2JA 3.2.0JA</FullProductName>
+    <FullProductName ProductID="CVRFPID-196216">Cisco IOS XE Software 3.2SE 3.2.0SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196221">Cisco IOS XE Software 3.2SE 3.2.1SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196222">Cisco IOS XE Software 3.2SE 3.2.2SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196223">Cisco IOS XE Software 3.2SE 3.2.3SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196218">Cisco IOS XE Software 3.3SE 3.3.0SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196925">Cisco IOS XE Software 3.3SE 3.3.1SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-206200">Cisco IOS XE Software 3.3SE 3.3.2SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-206201">Cisco IOS XE Software 3.3SE 3.3.3SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-206202">Cisco IOS XE Software 3.3SE 3.3.4SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-206203">Cisco IOS XE Software 3.3SE 3.3.5SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-197145">Cisco IOS XE Software 3.5E 3.5.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206168">Cisco IOS XE Software 3.5E 3.5.1E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206169">Cisco IOS XE Software 3.5E 3.5.2E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206170">Cisco IOS XE Software 3.5E 3.5.3E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206172">Cisco IOS XE Software 3.6E 3.6.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206173">Cisco IOS XE Software 3.6E 3.6.1E</FullProductName>
+    <FullProductName ProductID="CVRFPID-210075">Cisco IOS XE Software 3.6E 3.6.2aE</FullProductName>
+    <FullProductName ProductID="CVRFPID-210264">Cisco IOS XE Software 3.6E 3.6.2E</FullProductName>
+    <FullProductName ProductID="CVRFPID-212674">Cisco IOS XE Software 3.6E 3.6.3E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206211">Cisco IOS XE Software 3.7E 3.7.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-210076">Cisco IOS XE Software 3.7E 3.7.1E</FullProductName>
+    <FullProductName ProductID="CVRFPID-210077">Cisco IOS XE Software 3.7E 3.7.2E</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS and IOS XE Software Smart Install Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuv45410</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">The Smart Install client feature in Cisco IOS and IOS XE Software contains a vulnerability that could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.
+
+
+
+The vulnerability is due to incorrect handling of image list parameters. An attacker could exploit this vulnerability by sending crafted Smart Install packets to TCP port 4786. A successful exploit could cause a Cisco Catalyst switch to reload, resulting in a DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuv45410</Note>
+    </Notes>
+    <CVE>CVE-2016-1349</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-60351</ProductID>
+        <ProductID>CVRFPID-60358</ProductID>
+        <ProductID>CVRFPID-60368</ProductID>
+        <ProductID>CVRFPID-62587</ProductID>
+        <ProductID>CVRFPID-62600</ProductID>
+        <ProductID>CVRFPID-62601</ProductID>
+        <ProductID>CVRFPID-63920</ProductID>
+        <ProductID>CVRFPID-69478</ProductID>
+        <ProductID>CVRFPID-69801</ProductID>
+        <ProductID>CVRFPID-95363</ProductID>
+        <ProductID>CVRFPID-103473</ProductID>
+        <ProductID>CVRFPID-103559</ProductID>
+        <ProductID>CVRFPID-103648</ProductID>
+        <ProductID>CVRFPID-103684</ProductID>
+        <ProductID>CVRFPID-103763</ProductID>
+        <ProductID>CVRFPID-103801</ProductID>
+        <ProductID>CVRFPID-103840</ProductID>
+        <ProductID>CVRFPID-103921</ProductID>
+        <ProductID>CVRFPID-104011</ProductID>
+        <ProductID>CVRFPID-104061</ProductID>
+        <ProductID>CVRFPID-104089</ProductID>
+        <ProductID>CVRFPID-104101</ProductID>
+        <ProductID>CVRFPID-104191</ProductID>
+        <ProductID>CVRFPID-104342</ProductID>
+        <ProductID>CVRFPID-104355</ProductID>
+        <ProductID>CVRFPID-104368</ProductID>
+        <ProductID>CVRFPID-104376</ProductID>
+        <ProductID>CVRFPID-104578</ProductID>
+        <ProductID>CVRFPID-104630</ProductID>
+        <ProductID>CVRFPID-104662</ProductID>
+        <ProductID>CVRFPID-104806</ProductID>
+        <ProductID>CVRFPID-104815</ProductID>
+        <ProductID>CVRFPID-104831</ProductID>
+        <ProductID>CVRFPID-104855</ProductID>
+        <ProductID>CVRFPID-104947</ProductID>
+        <ProductID>CVRFPID-104966</ProductID>
+        <ProductID>CVRFPID-104970</ProductID>
+        <ProductID>CVRFPID-104972</ProductID>
+        <ProductID>CVRFPID-105043</ProductID>
+        <ProductID>CVRFPID-105082</ProductID>
+        <ProductID>CVRFPID-105145</ProductID>
+        <ProductID>CVRFPID-105183</ProductID>
+        <ProductID>CVRFPID-105186</ProductID>
+        <ProductID>CVRFPID-105253</ProductID>
+        <ProductID>CVRFPID-105285</ProductID>
+        <ProductID>CVRFPID-105299</ProductID>
+        <ProductID>CVRFPID-105394</ProductID>
+        <ProductID>CVRFPID-105444</ProductID>
+        <ProductID>CVRFPID-105660</ProductID>
+        <ProductID>CVRFPID-105689</ProductID>
+        <ProductID>CVRFPID-105706</ProductID>
+        <ProductID>CVRFPID-105780</ProductID>
+        <ProductID>CVRFPID-105881</ProductID>
+        <ProductID>CVRFPID-105928</ProductID>
+        <ProductID>CVRFPID-105965</ProductID>
+        <ProductID>CVRFPID-105973</ProductID>
+        <ProductID>CVRFPID-105987</ProductID>
+        <ProductID>CVRFPID-106016</ProductID>
+        <ProductID>CVRFPID-106029</ProductID>
+        <ProductID>CVRFPID-106059</ProductID>
+        <ProductID>CVRFPID-106071</ProductID>
+        <ProductID>CVRFPID-106203</ProductID>
+        <ProductID>CVRFPID-106247</ProductID>
+        <ProductID>CVRFPID-106323</ProductID>
+        <ProductID>CVRFPID-106449</ProductID>
+        <ProductID>CVRFPID-106526</ProductID>
+        <ProductID>CVRFPID-106564</ProductID>
+        <ProductID>CVRFPID-106606</ProductID>
+        <ProductID>CVRFPID-106674</ProductID>
+        <ProductID>CVRFPID-106684</ProductID>
+        <ProductID>CVRFPID-106733</ProductID>
+        <ProductID>CVRFPID-106997</ProductID>
+        <ProductID>CVRFPID-107135</ProductID>
+        <ProductID>CVRFPID-107142</ProductID>
+        <ProductID>CVRFPID-107209</ProductID>
+        <ProductID>CVRFPID-107283</ProductID>
+        <ProductID>CVRFPID-107325</ProductID>
+        <ProductID>CVRFPID-107476</ProductID>
+        <ProductID>CVRFPID-107563</ProductID>
+        <ProductID>CVRFPID-107630</ProductID>
+        <ProductID>CVRFPID-107664</ProductID>
+        <ProductID>CVRFPID-107852</ProductID>
+        <ProductID>CVRFPID-108306</ProductID>
+        <ProductID>CVRFPID-109098</ProductID>
+        <ProductID>CVRFPID-109439</ProductID>
+        <ProductID>CVRFPID-109442</ProductID>
+        <ProductID>CVRFPID-109659</ProductID>
+        <ProductID>CVRFPID-109760</ProductID>
+        <ProductID>CVRFPID-109808</ProductID>
+        <ProductID>CVRFPID-111010</ProductID>
+        <ProductID>CVRFPID-111019</ProductID>
+        <ProductID>CVRFPID-111031</ProductID>
+        <ProductID>CVRFPID-111674</ProductID>
+        <ProductID>CVRFPID-113073</ProductID>
+        <ProductID>CVRFPID-113948</ProductID>
+        <ProductID>CVRFPID-113961</ProductID>
+        <ProductID>CVRFPID-114665</ProductID>
+        <ProductID>CVRFPID-115832</ProductID>
+        <ProductID>CVRFPID-115939</ProductID>
+        <ProductID>CVRFPID-115969</ProductID>
+        <ProductID>CVRFPID-116083</ProductID>
+        <ProductID>CVRFPID-117406</ProductID>
+        <ProductID>CVRFPID-117436</ProductID>
+        <ProductID>CVRFPID-183811</ProductID>
+        <ProductID>CVRFPID-184125</ProductID>
+        <ProductID>CVRFPID-185412</ProductID>
+        <ProductID>CVRFPID-187057</ProductID>
+        <ProductID>CVRFPID-187269</ProductID>
+        <ProductID>CVRFPID-187932</ProductID>
+        <ProductID>CVRFPID-189064</ProductID>
+        <ProductID>CVRFPID-189115</ProductID>
+        <ProductID>CVRFPID-189187</ProductID>
+        <ProductID>CVRFPID-189455</ProductID>
+        <ProductID>CVRFPID-189613</ProductID>
+        <ProductID>CVRFPID-190250</ProductID>
+        <ProductID>CVRFPID-190635</ProductID>
+        <ProductID>CVRFPID-190637</ProductID>
+        <ProductID>CVRFPID-191842</ProductID>
+        <ProductID>CVRFPID-191928</ProductID>
+        <ProductID>CVRFPID-191948</ProductID>
+        <ProductID>CVRFPID-192000</ProductID>
+        <ProductID>CVRFPID-192706</ProductID>
+        <ProductID>CVRFPID-192831</ProductID>
+        <ProductID>CVRFPID-192910</ProductID>
+        <ProductID>CVRFPID-192911</ProductID>
+        <ProductID>CVRFPID-194436</ProductID>
+        <ProductID>CVRFPID-194466</ProductID>
+        <ProductID>CVRFPID-194540</ProductID>
+        <ProductID>CVRFPID-194913</ProductID>
+        <ProductID>CVRFPID-195469</ProductID>
+        <ProductID>CVRFPID-195481</ProductID>
+        <ProductID>CVRFPID-195490</ProductID>
+        <ProductID>CVRFPID-195544</ProductID>
+        <ProductID>CVRFPID-195770</ProductID>
+        <ProductID>CVRFPID-195943</ProductID>
+        <ProductID>CVRFPID-197462</ProductID>
+        <ProductID>CVRFPID-197468</ProductID>
+        <ProductID>CVRFPID-197471</ProductID>
+        <ProductID>CVRFPID-197480</ProductID>
+        <ProductID>CVRFPID-197483</ProductID>
+        <ProductID>CVRFPID-198060</ProductID>
+        <ProductID>CVRFPID-198542</ProductID>
+        <ProductID>CVRFPID-200488</ProductID>
+        <ProductID>CVRFPID-201074</ProductID>
+        <ProductID>CVRFPID-204097</ProductID>
+        <ProductID>CVRFPID-204099</ProductID>
+        <ProductID>CVRFPID-204186</ProductID>
+        <ProductID>CVRFPID-204209</ProductID>
+        <ProductID>CVRFPID-204228</ProductID>
+        <ProductID>CVRFPID-204818</ProductID>
+        <ProductID>CVRFPID-204831</ProductID>
+        <ProductID>CVRFPID-205064</ProductID>
+        <ProductID>CVRFPID-205672</ProductID>
+        <ProductID>CVRFPID-209005</ProductID>
+        <ProductID>CVRFPID-209006</ProductID>
+        <ProductID>CVRFPID-209045</ProductID>
+        <ProductID>CVRFPID-209046</ProductID>
+        <ProductID>CVRFPID-209047</ProductID>
+        <ProductID>CVRFPID-209049</ProductID>
+        <ProductID>CVRFPID-209050</ProductID>
+        <ProductID>CVRFPID-209051</ProductID>
+        <ProductID>CVRFPID-209359</ProductID>
+        <ProductID>CVRFPID-209839</ProductID>
+        <ProductID>CVRFPID-209913</ProductID>
+        <ProductID>CVRFPID-211570</ProductID>
+        <ProductID>CVRFPID-214218</ProductID>
+        <ProductID>CVRFPID-196216</ProductID>
+        <ProductID>CVRFPID-196218</ProductID>
+        <ProductID>CVRFPID-196221</ProductID>
+        <ProductID>CVRFPID-196222</ProductID>
+        <ProductID>CVRFPID-196223</ProductID>
+        <ProductID>CVRFPID-196925</ProductID>
+        <ProductID>CVRFPID-197145</ProductID>
+        <ProductID>CVRFPID-206168</ProductID>
+        <ProductID>CVRFPID-206169</ProductID>
+        <ProductID>CVRFPID-206170</ProductID>
+        <ProductID>CVRFPID-206172</ProductID>
+        <ProductID>CVRFPID-206173</ProductID>
+        <ProductID>CVRFPID-206200</ProductID>
+        <ProductID>CVRFPID-206201</ProductID>
+        <ProductID>CVRFPID-206202</ProductID>
+        <ProductID>CVRFPID-206203</ProductID>
+        <ProductID>CVRFPID-206211</ProductID>
+        <ProductID>CVRFPID-210075</ProductID>
+        <ProductID>CVRFPID-210076</ProductID>
+        <ProductID>CVRFPID-210077</ProductID>
+        <ProductID>CVRFPID-210264</ProductID>
+        <ProductID>CVRFPID-212674</ProductID>
+        <ProductID>CVRFPID-213783</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds available that address this vulnerability other than disabling the Smart Install feature. The Smart Install Feature is enabled by default on client switches. No configuration is needed in the client switches.
+
+
+
+In certain releases of Cisco IOS and IOS XE Software, the Smart Install client feature can be disabled with the global configuration command no vstack. In certain releases of Cisco IOS and IOS XE Software where the command is available, the vulnerability can be addressed by disabling the Smart Install client feature.
+
+
+
+The following example shows the output of the show vstack config command in a Cisco Catalyst Switch with the Smart Install client feature disabled:
+
+
+
+
+switch#show vstack config  
+ Role: Client (SmartInstall disabled)  
+Vstack Director IP address: 10.1.1.100
+
+
+
+
+Note: The no vstack global configuration command to disable the Smart Install client feature was introduced with the fix for Cisco bug CSCtj75729["https://tools.cisco.com/bugsearch/bug/CSCtj75729"] (Ability to shut Smart Install default service on TCP port 4786). If a Cisco IOS or IOS XE Software release supports the Smart Install client feature but the no vstack command does not exist, the release does not contain the fix for Cisco bug CSCtj75729["https://tools.cisco.com/bugsearch/bug/CSCtj75729"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160323-smi</URL>
+        <Description>Cisco IOS and IOS XE Software Smart Install Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

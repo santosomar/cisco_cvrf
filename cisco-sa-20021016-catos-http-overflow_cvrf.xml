@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco CatOS Embedded HTTP Server Buffer Overflow</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20021016-catos-http-overflow</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2002-10-16T16:00:00</Date>
+        <Description>No Description Available</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2002-10-16T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2002-10-16T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20021016-catos-http-overflow</URL>
+      <Description>Cisco CatOS Embedded HTTP Server Buffer Overflow</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-37092">Cisco Catalyst Operating System (CatOS) Software 5.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37137">Cisco Catalyst Operating System (CatOS) Software 5.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34256">Cisco Catalyst Operating System (CatOS) Software 5.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34268">Cisco Catalyst Operating System (CatOS) Software 6.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34278">Cisco Catalyst Operating System (CatOS) Software 6.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34282">Cisco Catalyst Operating System (CatOS) Software 6.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37262">Cisco Catalyst Operating System (CatOS) Software 6.1(2.13) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37271">Cisco Catalyst Operating System (CatOS) Software 6.2(0.111) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37276">Cisco Catalyst Operating System (CatOS) Software 6.2(0.110) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37285">Cisco Catalyst Operating System (CatOS) Software 6.3(0.7) PAN Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37291">Cisco Catalyst Operating System (CatOS) Software 6.1(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37294">Cisco Catalyst Operating System (CatOS) Software 6.1(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37300">Cisco Catalyst Operating System (CatOS) Software 6.1(1c) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37303">Cisco Catalyst Operating System (CatOS) Software 6.1(1b) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37306">Cisco Catalyst Operating System (CatOS) Software 6.1(1a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37307">Cisco Catalyst Operating System (CatOS) Software 6.1(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37315">Cisco Catalyst Operating System (CatOS) Software 7.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34289">Cisco Catalyst Operating System (CatOS) Software 7.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34293">Cisco Catalyst Operating System (CatOS) Software 7.3 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco CatOS HTTP Server Buffer Overflow Vulnerability</Title>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-34256</ProductID>
+        <ProductID>CVRFPID-34268</ProductID>
+        <ProductID>CVRFPID-34278</ProductID>
+        <ProductID>CVRFPID-34282</ProductID>
+        <ProductID>CVRFPID-34289</ProductID>
+        <ProductID>CVRFPID-34293</ProductID>
+        <ProductID>CVRFPID-37092</ProductID>
+        <ProductID>CVRFPID-37137</ProductID>
+        <ProductID>CVRFPID-37262</ProductID>
+        <ProductID>CVRFPID-37271</ProductID>
+        <ProductID>CVRFPID-37276</ProductID>
+        <ProductID>CVRFPID-37285</ProductID>
+        <ProductID>CVRFPID-37291</ProductID>
+        <ProductID>CVRFPID-37294</ProductID>
+        <ProductID>CVRFPID-37300</ProductID>
+        <ProductID>CVRFPID-37303</ProductID>
+        <ProductID>CVRFPID-37306</ProductID>
+        <ProductID>CVRFPID-37307</ProductID>
+        <ProductID>CVRFPID-37315</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20021016-catos-http-overflow</URL>
+        <Description>Cisco CatOS Embedded HTTP Server Buffer Overflow</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

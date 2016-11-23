@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Wireless Control System Tomcat mod_jk.so Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20080130-wcs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2008-01-30T16:00:00</Date>
+        <Description>Updated CVSS link for
+			 CSCsk18191.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2008-01-30T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2008-01-30T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080130-wcs</URL>
+      <Description>Cisco Wireless Control System Tomcat mod_jk.so Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080130-wcs</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Wireless Control System Tomcat mod_jk.so Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20080130-wcs</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Wireless Control System Tomcat mod_jk.so Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-55276">Cisco Wireless Control System (WCS) Software 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58725">Cisco Wireless Control System (WCS) Software 3.0.101.0 </FullProductName>
+    <FullProductName ProductID="CVRFPID-58728">Cisco Wireless Control System (WCS) Software 3.0.105.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58729">Cisco Wireless Control System (WCS) Software 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64986">Cisco Wireless Control System (WCS) Software 3.1.20.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58730">Cisco Wireless Control System (WCS) Software 3.1.33.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64979">Cisco Wireless Control System (WCS) Software 3.1.35.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58724">Cisco Wireless Control System (WCS) Software 3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58731">Cisco Wireless Control System (WCS) Software 3.2.23.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58732">Cisco Wireless Control System (WCS) Software 3.2.25.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58721">Cisco Wireless Control System (WCS) Software 3.2.40.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-58722">Cisco Wireless Control System (WCS) Software 3.2.51.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64980">Cisco Wireless Control System (WCS) Software 3.2.64.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-55273">Cisco Wireless Control System (WCS) Software 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58723">Cisco Wireless Control System (WCS) Software 4.0.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64985">Cisco Wireless Control System (WCS) Software 4.0.43.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64981">Cisco Wireless Control System (WCS) Software 4.0.66.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64982">Cisco Wireless Control System (WCS) Software 4.0.81.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64983">Cisco Wireless Control System (WCS) Software 4.0.87.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64984">Cisco Wireless Control System (WCS) Software 4.0.96.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-67084">Cisco Wireless Control System (WCS) Software 4.0.97.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-67082">Cisco Wireless Control System (WCS) Software 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67083">Cisco Wireless Control System (WCS) Software 4.1.83.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-71119">Cisco Wireless Control System (WCS) Software 4.1.91.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-75804">Cisco Wireless Control System (WCS) Software 4.2 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Apache Tomcat JK Web Server Connector Buffer Overflow Vulnerability</Title>
+    <CVE>CVE-2007-0774</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-55273</ProductID>
+        <ProductID>CVRFPID-55276</ProductID>
+        <ProductID>CVRFPID-58721</ProductID>
+        <ProductID>CVRFPID-58722</ProductID>
+        <ProductID>CVRFPID-58723</ProductID>
+        <ProductID>CVRFPID-58724</ProductID>
+        <ProductID>CVRFPID-58725</ProductID>
+        <ProductID>CVRFPID-58728</ProductID>
+        <ProductID>CVRFPID-58729</ProductID>
+        <ProductID>CVRFPID-58730</ProductID>
+        <ProductID>CVRFPID-58731</ProductID>
+        <ProductID>CVRFPID-58732</ProductID>
+        <ProductID>CVRFPID-64979</ProductID>
+        <ProductID>CVRFPID-64980</ProductID>
+        <ProductID>CVRFPID-64981</ProductID>
+        <ProductID>CVRFPID-64982</ProductID>
+        <ProductID>CVRFPID-64983</ProductID>
+        <ProductID>CVRFPID-64984</ProductID>
+        <ProductID>CVRFPID-64985</ProductID>
+        <ProductID>CVRFPID-64986</ProductID>
+        <ProductID>CVRFPID-67082</ProductID>
+        <ProductID>CVRFPID-67083</ProductID>
+        <ProductID>CVRFPID-67084</ProductID>
+        <ProductID>CVRFPID-71119</ProductID>
+        <ProductID>CVRFPID-75804</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.5</BaseScore>
+        <TemporalScore>5.9</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:P/I:P/A:P/E:POC/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080130-wcs</URL>
+        <Description>Cisco Wireless Control System Tomcat mod_jk.so Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

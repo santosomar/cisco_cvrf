@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Email Security Appliance Anti-Spam Scanner Bypass Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150612-esa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>2.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-06-12T19:19:45</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.0</Number>
+        <Date>2015-11-04T16:00:47</Date>
+        <Description>Updated to High Security Impact Rating.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.1</Number>
+        <Date>2015-11-16T22:15:20</Date>
+        <Description>Added information about CES maintenance and upgrades.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.2</Number>
+        <Date>2015-11-20T17:48:43</Date>
+        <Description>Added steps for upgrading a device by using the GUI.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-06-12T19:19:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-11-20T17:48:43</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the anti-spam scanner of Cisco AsyncOS for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to bypass the anti-spam functionality of the ESA.
+
+
+
+The vulnerability is due to improper error handling of a malformed packet in the anti-spam scanner. An attacker could exploit this vulnerability by sending a crafted DNS Sender Policy Framework (SPF) text record. A successful exploit could allow the attacker to bypass the anti-spam scanner and generate a malformed packet alert.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that mitigate this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150612-esa["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150612-esa"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150612-esa</URL>
+      <Description>Cisco Email Security Appliance Anti-Spam Scanner Bypass Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-211005">Cisco Email Security Appliance (ESA) 7.7.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211006">Cisco Email Security Appliance (ESA) 7.7.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-189809">Cisco Email Security Appliance (ESA) 8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-208217">Cisco Email Security Appliance (ESA) 8.5.6-074</FullProductName>
+    <FullProductName ProductID="CVRFPID-208800">Cisco Email Security Appliance (ESA) 9.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211016">Cisco Email Security Appliance (ESA) 9.0.0-212</FullProductName>
+    <FullProductName ProductID="CVRFPID-208801">Cisco Email Security Appliance (ESA) 9.0.0-461</FullProductName>
+    <FullProductName ProductID="CVRFPID-211017">Cisco Email Security Appliance (ESA) 9.0.5-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-209298">Cisco Email Security Appliance (ESA) 9.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211018">Cisco Email Security Appliance (ESA) 9.1.0-011</FullProductName>
+    <FullProductName ProductID="CVRFPID-209299">Cisco Email Security Appliance (ESA) 9.1.0-101</FullProductName>
+    <FullProductName ProductID="CVRFPID-209314">Cisco Email Security Appliance (ESA) 9.1.0-032</FullProductName>
+    <FullProductName ProductID="CVRFPID-209315">Cisco Email Security Appliance (ESA) 9.1.1-000</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Email Security Appliance Anti-Spam Scanner Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuu35853</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the anti-spam scanner of Cisco AsyncOS for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to bypass the anti-spam functionality of the ESA.
+
+
+
+The vulnerability is due to improper error handling of a malformed packet in the anti-spam scanner. An attacker could exploit this vulnerability by sending a crafted DNS Sender Policy Framework (SPF) text record. A successful exploit could allow the attacker to bypass the anti-spam scanner and generate a malformed packet alert.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuu35853,CSCuu37733</Note>
+    </Notes>
+    <CVE>CVE-2015-4184</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-189809</ProductID>
+        <ProductID>CVRFPID-208217</ProductID>
+        <ProductID>CVRFPID-208800</ProductID>
+        <ProductID>CVRFPID-208801</ProductID>
+        <ProductID>CVRFPID-209298</ProductID>
+        <ProductID>CVRFPID-209299</ProductID>
+        <ProductID>CVRFPID-209314</ProductID>
+        <ProductID>CVRFPID-209315</ProductID>
+        <ProductID>CVRFPID-211005</ProductID>
+        <ProductID>CVRFPID-211006</ProductID>
+        <ProductID>CVRFPID-211016</ProductID>
+        <ProductID>CVRFPID-211017</ProductID>
+        <ProductID>CVRFPID-211018</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:P/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150612-esa</URL>
+        <Description>Cisco Email Security Appliance Anti-Spam Scanner Bypass Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

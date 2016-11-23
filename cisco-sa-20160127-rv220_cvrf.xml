@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco RV220W Management Authentication Bypass Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160127-rv220</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-01-27T15:25:16</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-01-27T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-01-27T15:25:16</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the web-based management interface of Cisco RV220W Wireless Network Security Firewall devices could allow an unauthenticated, remote attacker to bypass authentication and gain administrative privileges on a targeted device.
+
+
+
+The vulnerability is due to insufficient input validation of HTTP request headers that are sent to the web-based management interface of an affected device. An unauthenticated, remote attacker could exploit this vulnerability by sending a crafted HTTP request that contains malicious SQL statements to the management interface of a targeted device. Depending on whether remote management is configured for the device, the management interface may use the SQL code in the HTTP request header to determine user privileges for the device. A successful exploit could allow the attacker to bypass authentication on the management interface and gain administrative privileges on the device.
+
+Cisco released a firmware update that addresses this vulnerability. There are workarounds that address this vulnerability.
+
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-rv220["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-rv220"]
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-rv220</URL>
+      <Description>Cisco RV220W Management Authentication Bypass Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-183632">Cisco Small Business RV Series Router Firmware 1.0 0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-198685">Cisco Small Business RV Series Router Firmware 1.0.0.30</FullProductName>
+    <FullProductName ProductID="CVRFPID-198686">Cisco Small Business RV Series Router Firmware 1.0.1.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-198687">Cisco Small Business RV Series Router Firmware 1.0.2.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-198688">Cisco Small Business RV Series Router Firmware 1.0.3.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-209570">Cisco Small Business RV Series Router Firmware 1.0.4.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-198689">Cisco Small Business RV Series Router Firmware 1.0.4.14</FullProductName>
+    <FullProductName ProductID="CVRFPID-209572">Cisco Small Business RV Series Router Firmware 1.0.5.4(GD)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209571">Cisco Small Business RV Series Router Firmware 1.0.5.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-209573">Cisco Small Business RV Series Router Firmware 1.0.5.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-209574">Cisco Small Business RV Series Router Firmware 1.0.6.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-183634">Cisco Small Business RV Series Router Firmware 1.1.0.9</FullProductName>
+    <FullProductName ProductID="CVRFPID-183636">Cisco Small Business RV Series Router Firmware 1.2.0.2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco RV220W Management Authentication Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuv29574</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web-based management interface of Cisco RV220W Wireless Network Security Firewall devices could allow an unauthenticated, remote attacker to bypass authentication and gain administrative privileges on a targeted device.
+
+
+
+The vulnerability is due to insufficient input validation of HTTP request headers that are sent to the web-based management interface of an affected device. An unauthenticated, remote attacker could exploit this vulnerability by sending a crafted HTTP request that contains malicious SQL statements to the management interface of a targeted device. Depending on whether remote management is configured for the device, the management interface may use the SQL code in the HTTP request header to determine user privileges for the device. A successful exploit could allow the attacker to bypass authentication on the management interface and gain administrative privileges on the device.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuv29574</Note>
+    </Notes>
+    <CVE>CVE-2015-6319</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-183632</ProductID>
+        <ProductID>CVRFPID-183634</ProductID>
+        <ProductID>CVRFPID-183636</ProductID>
+        <ProductID>CVRFPID-198685</ProductID>
+        <ProductID>CVRFPID-198686</ProductID>
+        <ProductID>CVRFPID-198687</ProductID>
+        <ProductID>CVRFPID-198688</ProductID>
+        <ProductID>CVRFPID-198689</ProductID>
+        <ProductID>CVRFPID-209570</ProductID>
+        <ProductID>CVRFPID-209571</ProductID>
+        <ProductID>CVRFPID-209572</ProductID>
+        <ProductID>CVRFPID-209573</ProductID>
+        <ProductID>CVRFPID-209574</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>To work around this vulnerability, administrators can disable or restrict access to remote management functionality for an affected device.
+
+
+
+Disable Remote Management 
+Caution: If a WAN connection must be used to manage a device, do not disable remote management functionality for the device. Disabling this functionality will result in the loss of all remote management connectivity for the device and prevent use of Cisco QuickVPN to access the device.
+
+By disabling remote management functionality, administrators help ensure that only users on the same LAN as the device can access configuration and other settings for the device. This access requirement may reduce the likelihood of an attempted or successful exploit. Remote management is disabled by default.
+
+If remote management is enabled, administrators can disable it by doing the following in the management interface:
+
+
+    
+    In the navigation tree, choose Administration &gt; Management Interface &gt; Web Access.
+    Next to Remote Management, check the Disable check box.
+    Click Save.
+
+Restrict Access to Remote Management
+
+If remote management functionality is required, administrators can restrict access to this functionality by allowing only specific IP addresses to access configuration and other settings for the device. Note that this workaround does not prevent an attacker from spoofing an IP address that is configured on the device. By default, access from any IP address is supported.
+
+To restrict access to remote management, administrators can do the following in the management interface:
+
+
+    In the navigation tree, choose Administration &gt; Management Interface &gt; Web Access.
+    Use the remote management IP address settings to specify which IP addresses can access device settings.
+    Click Save.
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-rv220</URL>
+        <Description>Cisco RV220W Management Authentication Bypass Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

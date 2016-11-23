@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco RV180 VPN and RV180W Wireless-N Multifunction VPN Routers Unauthorized Access Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160803-rv180_1</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-08-03T14:51:58</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-08-03T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-08-03T14:51:58</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the web interface of the Cisco RV180 VPN Router and Cisco RV180W Wireless-N Multifunction VPN Router could allow an unauthenticated, remote attacker to access arbitrary files on the system. This vulnerability allows the attacker to perform directory traversal.
+
+
+
+The vulnerability is due to lack of proper input verification and sanitization of the user input directory path. An attacker could exploit this vulnerability by sending a crafted HTTP request to the affected device. An exploit could allow the attacker to read arbitrary files on the system that should be restricted.
+
+
+
+Cisco has not released and will not release a firmware update to address this vulnerability. Mitigations for this vulnerability are available. 
+
+
+
+This advisory is available at the following link:
+
+
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160803-rv180_1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160803-rv180_1"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160803-rv180_1</URL>
+      <Description>Cisco RV180 VPN and RV180W Wireless-N Multifunction VPN Routers Unauthorized Access Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-216719">Cisco RV180 VPN Router 1.0.5.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-216720">Cisco RV180 VPN Router 1.0.5.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-212157">Cisco RV180W Wireless-N Multifunction VPN Router Firmware 1.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-212158">Cisco RV180W Wireless-N Multifunction VPN Router Firmware 1.0.2.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-216716">Cisco RV180W Wireless-N Multifunction VPN Router Firmware 1.0.5.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-216717">Cisco RV180W Wireless-N Multifunction VPN Router Firmware 1.0.5.5</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco RV180 VPN and RV180W Wireless-N Multifunction VPN Routers Unauthorized Access Vulneralbility</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz43023</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web interface of the Cisco RV180 VPN Router and Cisco RV180W Wireless-N Multifunction VPN Router could allow an unauthenticated, remote attacker to access arbitrary files on the system. This vulnerability allows the attacker to perform directory traversal.
+
+
+
+The vulnerability is due to lack of proper input verification and sanitization of the user input directory path. An attacker could exploit this vulnerability by sending a crafted HTTP request to the affected device. An exploit could allow the attacker to read arbitrary files on the system that should be restricted.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz43023</Note>
+    </Notes>
+    <CVE>CVE-2016-1429</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-216719</ProductID>
+        <ProductID>CVRFPID-216720</ProductID>
+        <ProductID>CVRFPID-212157</ProductID>
+        <ProductID>CVRFPID-212158</ProductID>
+        <ProductID>CVRFPID-216716</ProductID>
+        <ProductID>CVRFPID-216717</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.1</BaseScore>
+        <TemporalScore>6.7</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:C/I:N/A:N/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability. The following two mitigations may help limit exposure to this vulnerability:
+
+
+
+
+Disable Remote Management 
+
+
+
+
+Caution: Do not disable remote management if the device is managed via the WAN connection. This will result in loss of management connectivity to the device. Disabling this feature prevents Cisco QuickVPN access.
+
+
+
+Remote Management is disabled by default. If it is enabled, administrators can disable it using the Web Access screen: Administration &gt; Management Interface &gt; Web Access. Check the box for Disabled in the Remote Management field.
+
+
+
+Disabling remote management helps ensure that only users on the LAN could attempt to exploit the vulnerabilities. Remote management is not enabled by default on the device.
+
+
+
+
+Limit Remote Management Access to Specific IP Addresses
+
+
+
+If remote management is required, harden the device so that it can be accessed only by certain IP addresses, rather than the default setting of any. By accessing the configuration screen (Administration &gt; Management Interface &gt; Web Access), an administrator can change the Remote IP address field to ensure only devices with specified IP addresses can access the device.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160803-rv180_1</URL>
+        <Description>Cisco RV180 VPN and RV180W Wireless-N Multifunction VPN Routers Unauthorized Access Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

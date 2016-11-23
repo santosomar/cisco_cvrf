@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in Cisco TelePresence Video Communication Server, Cisco Expressway, and Cisco TelePresence Conductor</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150311-vcs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-03-11T14:57:48</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-03-11T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-03-11T15:40:27</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">
+
+Cisco TelePresence Video Communication Server (VCS), Cisco Expressway and Cisco TelePresence Conductor contain the following vulnerabilities:
+
+
+    
+    SDP Media Description Denial of Service Vulnerability
+    Authentication Bypass Vulnerability
+
+Successful exploitation of the SDP Media Description Denial of Service Vulnerability may
+cause the affected system to reload.
+
+Successful exploitation of the Authentication Bypass Vulnerability may allow an attacker to
+bypass authentication and log in to the system with the privileges of an administrator.
+
+
+
+Cisco has released software updates that address these vulnerabilities. Workarounds that mitigate these vulnerabilities are not available.
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150311-vcs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150311-vcs"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150311-vcs</URL>
+      <Description>Multiple Vulnerabilities in Cisco TelePresence Video Communication Server, Cisco Expressway, and Cisco TelePresence Conductor</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37541</URL>
+      <Description>Identifying and Mitigating Multiple Vulnerabilities in Cisco TelePresence Video Communication Server, Cisco Expressway, and Cisco TelePresence Conductor</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=37728</URL>
+      <Description>Multiple Cisco Products SDP Media Description Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=37729</URL>
+      <Description>Multiple Cisco Products Authentication Bypass Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37541</URL>
+      <Description>Identifying and Mitigating Multiple Vulnerabilities in Cisco TelePresence Video Communication Server, Cisco Expressway, and Cisco TelePresence Conductor</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=37728</URL>
+      <Description>Multiple Cisco Products SDP Media Description Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=37729</URL>
+      <Description>Multiple Cisco Products Authentication Bypass Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-202685">Cisco Expressway X8.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-202689">Cisco Expressway X8.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202687">Cisco Expressway X8.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-202690">Cisco Expressway X8.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112252">Cisco TelePresence Video Communication Server (VCS) X5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-112254">Cisco TelePresence Video Communication Server (VCS) X6.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-112256">Cisco TelePresence Video Communication Server (VCS) X6.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-115037">Cisco TelePresence Video Communication Server (VCS) X7.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-115038">Cisco TelePresence Video Communication Server (VCS) X7.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115039">Cisco TelePresence Video Communication Server (VCS) X7.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-115040">Cisco TelePresence Video Communication Server (VCS) X7.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-197127">Cisco TelePresence Video Communication Server (VCS) X7.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-197129">Cisco TelePresence Video Communication Server (VCS) X7.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-197132">Cisco TelePresence Video Communication Server (VCS) X7.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-197133">Cisco TelePresence Video Communication Server (VCS) X7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-197131">Cisco TelePresence Video Communication Server (VCS) X8.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-202676">Cisco TelePresence Video Communication Server (VCS) X8.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-202678">Cisco TelePresence Video Communication Server (VCS) X8.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-202679">Cisco TelePresence Video Communication Server (VCS) X8.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203757">Cisco Telepresence Conductor XC1 XC1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203760">Cisco Telepresence Conductor XC1 XC1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203761">Cisco Telepresence Conductor XC1 XC1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203759">Cisco Telepresence Conductor XC2.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-203762">Cisco Telepresence Conductor XC2.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203763">Cisco Telepresence Conductor XC2.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-203764">Cisco Telepresence Conductor XC2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-203765">Cisco Telepresence Conductor XC2.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-203766">Cisco Telepresence Conductor XC2.4</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>SDP Media Description Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCun73192</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the  Session Description Protocol (SDP) packet handler
+function  could allow an unauthenticated, remote attacker to trigger a
+reload of the affected system.
+
+
+
+The vulnerability is due to
+improper handling of an exception when receiving crafted SDP packets. An
+attacker could exploit this vulnerability by sending crafted SDP
+packets to the affected system.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCun73192,CSCus96593</Note>
+    </Notes>
+    <CVE>CVE-2015-0652</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-203757</ProductID>
+        <ProductID>CVRFPID-203759</ProductID>
+        <ProductID>CVRFPID-203760</ProductID>
+        <ProductID>CVRFPID-203761</ProductID>
+        <ProductID>CVRFPID-203762</ProductID>
+        <ProductID>CVRFPID-203763</ProductID>
+        <ProductID>CVRFPID-203764</ProductID>
+        <ProductID>CVRFPID-203765</ProductID>
+        <ProductID>CVRFPID-112252</ProductID>
+        <ProductID>CVRFPID-112254</ProductID>
+        <ProductID>CVRFPID-112256</ProductID>
+        <ProductID>CVRFPID-115037</ProductID>
+        <ProductID>CVRFPID-115038</ProductID>
+        <ProductID>CVRFPID-115039</ProductID>
+        <ProductID>CVRFPID-115040</ProductID>
+        <ProductID>CVRFPID-197127</ProductID>
+        <ProductID>CVRFPID-197129</ProductID>
+        <ProductID>CVRFPID-197131</ProductID>
+        <ProductID>CVRFPID-197132</ProductID>
+        <ProductID>CVRFPID-197133</ProductID>
+        <ProductID>CVRFPID-202676</ProductID>
+        <ProductID>CVRFPID-202685</ProductID>
+        <ProductID>CVRFPID-202689</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate the vulnerabilities described in this advisory.
+
+
+
+Additional mitigations that can be deployed on Cisco devices within the
+network are available in the Cisco Applied Intelligence companion
+document for this advisory: 
+
+
+http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37541[" http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37541"]
+
+["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130109-uipphone#workarounds"]
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150311-vcs</URL>
+        <Description>Multiple Vulnerabilities in Cisco TelePresence Video Communication Server, Cisco Expressway, and Cisco TelePresence Conductor</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Authentication Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCur02680</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in the authentication
+code  could allow an unauthenticated, remote attacker to bypass the system
+login and successfully authenticate to the system.
+
+The
+vulnerability is due to insufficient validation of parameters passed
+during the login process. An attacker could exploit this vulnerability
+by sending a crafted request to the system. An exploit could allow the attacker to bypass the authentication
+controls and successfully log in to the system. An attacker would need to
+have knowledge of a valid username. The attacker will receive the privilege of that user after logging in. This vulnerability could give the attacker administrative access to the affected system.
+
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="5">CSCur02680,CSCur05556</Note>
+    </Notes>
+    <CVE>CVE-2015-0653</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-202685</ProductID>
+        <ProductID>CVRFPID-202687</ProductID>
+        <ProductID>CVRFPID-202689</ProductID>
+        <ProductID>CVRFPID-202690</ProductID>
+        <ProductID>CVRFPID-112252</ProductID>
+        <ProductID>CVRFPID-112254</ProductID>
+        <ProductID>CVRFPID-112256</ProductID>
+        <ProductID>CVRFPID-115037</ProductID>
+        <ProductID>CVRFPID-115038</ProductID>
+        <ProductID>CVRFPID-115039</ProductID>
+        <ProductID>CVRFPID-115040</ProductID>
+        <ProductID>CVRFPID-197127</ProductID>
+        <ProductID>CVRFPID-197129</ProductID>
+        <ProductID>CVRFPID-197131</ProductID>
+        <ProductID>CVRFPID-197132</ProductID>
+        <ProductID>CVRFPID-197133</ProductID>
+        <ProductID>CVRFPID-202676</ProductID>
+        <ProductID>CVRFPID-202678</ProductID>
+        <ProductID>CVRFPID-202679</ProductID>
+        <ProductID>CVRFPID-203757</ProductID>
+        <ProductID>CVRFPID-203759</ProductID>
+        <ProductID>CVRFPID-203760</ProductID>
+        <ProductID>CVRFPID-203761</ProductID>
+        <ProductID>CVRFPID-203762</ProductID>
+        <ProductID>CVRFPID-203763</ProductID>
+        <ProductID>CVRFPID-203764</ProductID>
+        <ProductID>CVRFPID-203766</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate the vulnerabilities described in this advisory.
+
+
+
+Additional mitigations that can be deployed on Cisco devices within the
+network are available in the Cisco Applied Intelligence companion
+document for this advisory: 
+
+
+http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37541[" http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=37541"]
+
+["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130109-uipphone#workarounds"]
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150311-vcs</URL>
+        <Description>Multiple Vulnerabilities in Cisco TelePresence Video Communication Server, Cisco Expressway, and Cisco TelePresence Conductor</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

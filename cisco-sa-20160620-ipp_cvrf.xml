@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco 8800 Series IP Phone Filesystem Permission Enforcement Unauthorized Access Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160620-ipp</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-06-20T20:43:11</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-06-20T14:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-06-20T20:43:11</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the mounted filesystem of Cisco 8800 Series IP Phones could allow an authenticated, remote attacker to access any file, including the right to change the file mode, on a targeted device.
+
+
+
+The vulnerability is due to insufficient enforcement of filesystem permissions. An attacker could exploit this vulnerability by leveraging another exploit that allows the attacker to gain access to an unprivileged shell. A successful exploit could allow the attacker to modify or replace existing system files with malicious files.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160620-ipp["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160620-ipp"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160620-ipp</URL>
+      <Description>Cisco 8800 Series IP Phone Filesystem Permission Enforcement Unauthorized Access Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-211551">Cisco IP Phone 8800 Series Software 11.0(1)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco 8800 Series IP Phone Filesystem Permission Enforcement Unauthorized Access Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz03014</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the mounted filesystem of Cisco 8800 Series IP Phones could allow an authenticated, remote attacker to access any file, including the right to change the file mode, on a targeted device.
+
+
+
+The vulnerability is due to insufficient enforcement of filesystem permissions. An attacker could exploit this vulnerability by leveraging another exploit that allows the attacker to gain access to an unprivileged shell. A successful exploit could allow the attacker to modify or replace existing system files with malicious files.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz03014</Note>
+    </Notes>
+    <CVE>CVE-2016-1435</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-211551</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.0</BaseScore>
+        <TemporalScore>5.0</TemporalScore>
+        <Vector>AV:L/AC:H/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160620-ipp</URL>
+        <Description>Cisco 8800 Series IP Phone Filesystem Permission Enforcement Unauthorized Access Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

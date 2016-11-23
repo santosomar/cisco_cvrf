@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>SQL injection in Cisco Unified Communications Manager</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20080213-cucmsql</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2008-02-13T16:00:00</Date>
+        <Description>Updated URL of CVSS
+			 CSCsk64286.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2008-02-13T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2008-02-13T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080213-cucmsql</URL>
+      <Description>SQL injection in Cisco Unified Communications Manager</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-60980">Cisco Unified CallManager 5.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60979">Cisco Unified CallManager 5.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60977">Cisco Unified CallManager 5.0(2a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64556">Cisco Unified CallManager 5.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60978">Cisco Unified CallManager 5.0(3a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60976">Cisco Unified CallManager 5.0(3.1101)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60975">Cisco Unified CallManager 5.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60974">Cisco Unified CallManager 5.0(4a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64562">Cisco Unified CallManager 5.0(4a)SU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-64557">Cisco Unified CallManager 5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59002">Cisco Unified Communications Manager 5.0(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59003">Cisco Unified Communications Manager 5.0(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59006">Cisco Unified Communications Manager 5.0(2a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59016">Cisco Unified Communications Manager 5.0(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59004">Cisco Unified Communications Manager 5.0(3a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59007">Cisco Unified Communications Manager 5.0(3.1101) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59005">Cisco Unified Communications Manager 5.0(4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64558">Cisco Unified Communications Manager 5.0(4a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64561">Cisco Unified Communications Manager 5.0(4a)SU1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76294">Cisco Unified Communications Manager 5.0(4c)  Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66343">Cisco Unified Communications Manager 5.0(4.2136.001) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66344">Cisco Unified Communications Manager 5.0(4.2137.001) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66345">Cisco Unified Communications Manager 5.0(4.2137.002) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-61494">Cisco Unified Communications Manager 5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66351">Cisco Unified Communications Manager 5.1(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66350">Cisco Unified Communications Manager 5.1(1a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76290">Cisco Unified Communications Manager 5.1(1b) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76292">Cisco Unified Communications Manager 5.1(1c)  Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66346">Cisco Unified Communications Manager 5.1(1.9131.045) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-68121">Cisco Unified Communications Manager 5.1(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76288">Cisco Unified Communications Manager 5.1(2a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76286">Cisco Unified Communications Manager 5.1(2b) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76284">Cisco Unified Communications Manager 5.1(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76282">Cisco Unified Communications Manager 5.1(3a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66347">Cisco Unified Communications Manager 6.0(0.9901.169) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66348">Cisco Unified Communications Manager 6.0(0.9901.190) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76274">Cisco Unified Communications Manager 6.0(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76271">Cisco Unified Communications Manager 6.0(1a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76276">Cisco Unified Communications Manager 6.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76280">Cisco Unified Communications Manager 6.1(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-76278">Cisco Unified Communications Manager 6.1(1a) Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager SQL Injection Vulnerability</Title>
+    <CVE>CVE-2008-0026</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-59002</ProductID>
+        <ProductID>CVRFPID-59003</ProductID>
+        <ProductID>CVRFPID-59004</ProductID>
+        <ProductID>CVRFPID-59005</ProductID>
+        <ProductID>CVRFPID-59006</ProductID>
+        <ProductID>CVRFPID-59007</ProductID>
+        <ProductID>CVRFPID-59016</ProductID>
+        <ProductID>CVRFPID-61494</ProductID>
+        <ProductID>CVRFPID-64558</ProductID>
+        <ProductID>CVRFPID-64561</ProductID>
+        <ProductID>CVRFPID-66343</ProductID>
+        <ProductID>CVRFPID-66344</ProductID>
+        <ProductID>CVRFPID-66345</ProductID>
+        <ProductID>CVRFPID-66346</ProductID>
+        <ProductID>CVRFPID-66347</ProductID>
+        <ProductID>CVRFPID-66348</ProductID>
+        <ProductID>CVRFPID-66350</ProductID>
+        <ProductID>CVRFPID-66351</ProductID>
+        <ProductID>CVRFPID-68121</ProductID>
+        <ProductID>CVRFPID-76271</ProductID>
+        <ProductID>CVRFPID-76274</ProductID>
+        <ProductID>CVRFPID-76276</ProductID>
+        <ProductID>CVRFPID-76278</ProductID>
+        <ProductID>CVRFPID-76280</ProductID>
+        <ProductID>CVRFPID-76282</ProductID>
+        <ProductID>CVRFPID-76284</ProductID>
+        <ProductID>CVRFPID-76286</ProductID>
+        <ProductID>CVRFPID-76288</ProductID>
+        <ProductID>CVRFPID-76290</ProductID>
+        <ProductID>CVRFPID-76292</ProductID>
+        <ProductID>CVRFPID-76294</ProductID>
+        <ProductID>CVRFPID-60974</ProductID>
+        <ProductID>CVRFPID-60975</ProductID>
+        <ProductID>CVRFPID-60976</ProductID>
+        <ProductID>CVRFPID-60977</ProductID>
+        <ProductID>CVRFPID-60978</ProductID>
+        <ProductID>CVRFPID-60979</ProductID>
+        <ProductID>CVRFPID-60980</ProductID>
+        <ProductID>CVRFPID-64556</ProductID>
+        <ProductID>CVRFPID-64557</ProductID>
+        <ProductID>CVRFPID-64562</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.0</BaseScore>
+        <TemporalScore>3.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:S/C:P/I:N/A:N/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080213-cucmsql</URL>
+        <Description>SQL injection in Cisco Unified Communications Manager</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

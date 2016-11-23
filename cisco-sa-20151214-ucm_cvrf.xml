@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified Communications Manager Web Management Interface Cross-Site Scripting Filter Bypass Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151214-ucm</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-12-14T18:54:27</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-12-14T00:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-12-14T18:54:27</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A cross-site scripting (XSS) filter bypass vulnerability in the web management interface of Cisco Unified Communications Manager (UCM) versions 8.0 through 8.6 could allow an unauthenticated, remote attacker to mount XSS attacks against a user of an affected device.
+
+ 
+
+The vulnerability is due to a failure to properly call XSS filter subsystems when a URL contains a certain parameter. An attacker that can convince an authenticated user of an affected device to follow an attacker-provided link or visit an attacker-controlled website could exploit this vulnerability to execute arbitrary code in the context of the affected site on the user's browser.
+
+
+
+Cisco has not released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151214-ucm["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151214-ucm"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151214-ucm</URL>
+      <Description>Cisco Unified Communications Manager Web Management Interface Cross-Site Scripting Filter Bypass Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-96253">Cisco Unified Communications Manager 8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-100444">Cisco Unified Communications Manager 8.0(2c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-100445">Cisco Unified Communications Manager 8.0(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-101646">Cisco Unified Communications Manager 8.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-195138">Cisco Unified Communications Manager 8.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-101512">Cisco Unified Communications Manager 8.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-195139">Cisco Unified Communications Manager 8.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195140">Cisco Unified Communications Manager 8.6.2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager Web Management Interface Cross-Site Scripting Filter Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuu15266</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A cross-site scripting (XSS) filter bypass vulnerability in the web management interface of Cisco Unified Communications Manager (UCM) versions 8.0 through 8.6 could allow an unauthenticated, remote attacker to mount XSS attacks against a user of an affected device.
+
+ 
+
+The vulnerability is due to a failure to properly call XSS filter subsystems when a URL contains a certain parameter. An attacker that can convince an authenticated user of an affected device to follow an attacker-provided link or visit an attacker-controlled website could exploit this vulnerability to execute arbitrary code in the context of the affected site on the user's browser.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuu15266</Note>
+    </Notes>
+    <CVE>CVE-2015-4206</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-96253</ProductID>
+        <ProductID>CVRFPID-100444</ProductID>
+        <ProductID>CVRFPID-100445</ProductID>
+        <ProductID>CVRFPID-101512</ProductID>
+        <ProductID>CVRFPID-101646</ProductID>
+        <ProductID>CVRFPID-195138</ProductID>
+        <ProductID>CVRFPID-195139</ProductID>
+        <ProductID>CVRFPID-195140</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.0</BaseScore>
+        <TemporalScore>3.8</TemporalScore>
+        <Vector>AV:N/AC:L/Au:S/C:P/I:N/A:N/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151214-ucm</URL>
+        <Description>Cisco Unified Communications Manager Web Management Interface Cross-Site Scripting Filter Bypass Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

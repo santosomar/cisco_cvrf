@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Wireless LAN Controller TSM SNMP Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160831-wlc-1</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-08-26T22:09:07</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-09-02T13:57:57</Date>
+        <Description>Updated the impact to be more accurate.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2016-09-06T14:43:48</Date>
+        <Description>Added information about which releases are vulnerable.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-08-31T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-09-06T14:43:48</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the traffic stream metrics (TSM) implemented with the Inter-Access Point Protocol (IAPP) of the Cisco Wireless LAN Controller (WLC) could allow an unauthenticated, adjacent attacker to cause a denial of service (DoS) condition because the process on the WLC unexpectedly restarts. The DoS condition could occur when a subsequent Simple Network Management Protocol (SNMP) request is received for TSM information.
+
+
+
+The device reloads when an SNMP request for TSM information is received. An attacker could exploit this vulnerability by sending crafted IAPP packets followed by an SNMP request for TSM information to the targeted device. An exploit could allow the attacker to cause a DoS condition when the WLC unexpectedly restarts.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160831-wlc-1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160831-wlc-1"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160831-wlc-1</URL>
+      <Description>Cisco Wireless LAN Controller TSM SNMP Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-69373">Cisco Wireless LAN Controller (WLC) 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64997">Cisco Wireless LAN Controller (WLC) 3.1.59.24</FullProductName>
+    <FullProductName ProductID="CVRFPID-61938">Cisco Wireless LAN Controller (WLC) 3.1.105.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64998">Cisco Wireless LAN Controller (WLC) 3.1.111.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-61937">Cisco Wireless LAN Controller (WLC) 3.2.78.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64992">Cisco Wireless LAN Controller (WLC) 3.2.116.21</FullProductName>
+    <FullProductName ProductID="CVRFPID-64993">Cisco Wireless LAN Controller (WLC) 3.2.150.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-64994">Cisco Wireless LAN Controller (WLC) 3.2.150.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-64995">Cisco Wireless LAN Controller (WLC) 3.2.171.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-64996">Cisco Wireless LAN Controller (WLC) 3.2.171.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-65080">Cisco Wireless LAN Controller (WLC) 3.2.185.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-69372">Cisco Wireless LAN Controller (WLC) 3.2.193.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-69371">Cisco Wireless LAN Controller (WLC) 3.2.195.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-203011">Cisco Wireless LAN Controller (WLC) 3.6.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-64988">Cisco Wireless LAN Controller (WLC) 4.0.108</FullProductName>
+    <FullProductName ProductID="CVRFPID-65081">Cisco Wireless LAN Controller (WLC) 4.0.155.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64989">Cisco Wireless LAN Controller (WLC) 4.0.155.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-64990">Cisco Wireless LAN Controller (WLC) 4.0.179.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-64991">Cisco Wireless LAN Controller (WLC) 4.0.179.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-61493">Cisco Wireless LAN Controller (WLC) 4.0.196</FullProductName>
+    <FullProductName ProductID="CVRFPID-65082">Cisco Wireless LAN Controller (WLC) 4.0.206.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-69370">Cisco Wireless LAN Controller (WLC) 4.0.217.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-82268">Cisco Wireless LAN Controller (WLC) 4.0.219.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-69367">Cisco Wireless LAN Controller (WLC) 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-69369">Cisco Wireless LAN Controller (WLC) 4.1.171.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-69368">Cisco Wireless LAN Controller (WLC) 4.1.181.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-82267">Cisco Wireless LAN Controller (WLC) 4.1.185.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-82270">Cisco Wireless LAN Controller (WLC) 4.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-82271">Cisco Wireless LAN Controller (WLC) 4.2.61.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-82272">Cisco Wireless LAN Controller (WLC) 4.2.99.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-82273">Cisco Wireless LAN Controller (WLC) 4.2.112.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88663">Cisco Wireless LAN Controller (WLC) 4.2.117.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-82274">Cisco Wireless LAN Controller (WLC) 4.2.130.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88664">Cisco Wireless LAN Controller (WLC) 4.2.173.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88665">Cisco Wireless LAN Controller (WLC) 4.2.174.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88666">Cisco Wireless LAN Controller (WLC) 4.2.176.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88667">Cisco Wireless LAN Controller (WLC) 4.2.182.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-82276">Cisco Wireless LAN Controller (WLC) 5.0.148.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-82277">Cisco Wireless LAN Controller (WLC) 5.0.148.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-82279">Cisco Wireless LAN Controller (WLC) 5.1.151.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88661">Cisco Wireless LAN Controller (WLC) 5.1.152.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88662">Cisco Wireless LAN Controller (WLC) 5.1.160.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88659">Cisco Wireless LAN Controller (WLC) 5.2.157.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88660">Cisco Wireless LAN Controller (WLC) 5.2.169.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-100594">Cisco Wireless LAN Controller (WLC) 6.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-100595">Cisco Wireless LAN Controller (WLC) 6.0 182.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-109053">Cisco Wireless LAN Controller (WLC) 6.0 188.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-109054">Cisco Wireless LAN Controller (WLC) 6.0 196.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-109055">Cisco Wireless LAN Controller (WLC) 6.0 199.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-109056">Cisco Wireless LAN Controller (WLC) 6.0 202.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-109058">Cisco Wireless LAN Controller (WLC) 7.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-109059">Cisco Wireless LAN Controller (WLC) 7.0 98.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-109061">Cisco Wireless LAN Controller (WLC) 7.0 98.218</FullProductName>
+    <FullProductName ProductID="CVRFPID-109060">Cisco Wireless LAN Controller (WLC) 7.0 116.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-114903">Cisco Wireless LAN Controller (WLC) 7.0 220.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-208536">Cisco Wireless LAN Controller (WLC) 7.0 240.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210367">Cisco Wireless LAN Controller (WLC) 7.0 250.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210368">Cisco Wireless LAN Controller (WLC) 7.0 252.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-114900">Cisco Wireless LAN Controller (WLC) 7.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-114904">Cisco Wireless LAN Controller (WLC) 7.1 91.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-114902">Cisco Wireless LAN Controller (WLC) 7.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-114905">Cisco Wireless LAN Controller (WLC) 7.2 103.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-188675">Cisco Wireless LAN Controller (WLC) 7.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-188676">Cisco Wireless LAN Controller (WLC) 7.3.101.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-194380">Cisco Wireless LAN Controller (WLC) 7.3.112</FullProductName>
+    <FullProductName ProductID="CVRFPID-206305">Cisco Wireless LAN Controller (WLC) 7.3.103.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-188109">Cisco Wireless LAN Controller (WLC) 7.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-188110">Cisco Wireless LAN Controller (WLC) 7.4 1.54</FullProductName>
+    <FullProductName ProductID="CVRFPID-194377">Cisco Wireless LAN Controller (WLC) 7.4.100</FullProductName>
+    <FullProductName ProductID="CVRFPID-194378">Cisco Wireless LAN Controller (WLC) 7.4.100.60</FullProductName>
+    <FullProductName ProductID="CVRFPID-194379">Cisco Wireless LAN Controller (WLC) 7.4.110.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-202724">Cisco Wireless LAN Controller (WLC) 7.4.121.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-207968">Cisco Wireless LAN Controller (WLC) 7.4.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-210809">Cisco Wireless LAN Controller (WLC) 7.4 1.19</FullProductName>
+    <FullProductName ProductID="CVRFPID-211322">Cisco Wireless LAN Controller (WLC) 7.4 140.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-194375">Cisco Wireless LAN Controller (WLC) 7.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-194376">Cisco Wireless LAN Controller (WLC) 7.5.102.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-207506">Cisco Wireless LAN Controller (WLC) 7.5.102.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-200677">Cisco Wireless LAN Controller (WLC) 7.6.100.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-200772">Cisco Wireless LAN Controller (WLC) 7.6.110.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-200678">Cisco Wireless LAN Controller (WLC) 7.6.120.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-202725">Cisco Wireless LAN Controller (WLC) 7.6.130.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-208446">Cisco Wireless LAN Controller (WLC) 7.6.1.62</FullProductName>
+    <FullProductName ProductID="CVRFPID-202728">Cisco Wireless LAN Controller (WLC) 8.0.100</FullProductName>
+    <FullProductName ProductID="CVRFPID-206693">Cisco Wireless LAN Controller (WLC) 8.0.72.140</FullProductName>
+    <FullProductName ProductID="CVRFPID-207941">Cisco Wireless LAN Controller (WLC) 8.0.115.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210976">Cisco Wireless LAN Controller (WLC) 8.0.120.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210981">Cisco Wireless LAN Controller (WLC) 8.0.121.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-214143">Cisco Wireless LAN Controller (WLC) 8.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-217235">Cisco Wireless LAN Controller (WLC) 8.0.0.30220.385</FullProductName>
+    <FullProductName ProductID="CVRFPID-209818">Cisco Wireless LAN Controller (WLC) 8.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-209819">Cisco Wireless LAN Controller (WLC) 8.1.104.37</FullProductName>
+    <FullProductName ProductID="CVRFPID-210977">Cisco Wireless LAN Controller (WLC) 8.1.111.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210979">Cisco Wireless LAN Controller (WLC) 8.1.122.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-210980">Cisco Wireless LAN Controller (WLC) 8.1.130.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wireless LAN Controller TSM SNMP Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz40221</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the traffic stream metrics (TSM) implemented with the Inter-Access Point Protocol (IAPP) of the Cisco Wireless LAN Controller (WLC) could allow an unauthenticated, adjacent attacker to cause a denial of service (DoS) condition because the process on the WLC unexpectedly restarts. The DoS condition could occur when a subsequent Simple Network Management Protocol (SNMP) request is received for TSM information.
+
+
+
+The device reloads when an SNMP request for TSM information is received. An attacker could exploit this vulnerability by sending crafted IAPP packets followed by an SNMP request for TSM information to the targeted device. An exploit could allow the attacker to cause a DoS condition when the WLC unexpectedly restarts.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz40221</Note>
+    </Notes>
+    <CVE>CVE-2016-6375</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61493</ProductID>
+        <ProductID>CVRFPID-61937</ProductID>
+        <ProductID>CVRFPID-61938</ProductID>
+        <ProductID>CVRFPID-64988</ProductID>
+        <ProductID>CVRFPID-64989</ProductID>
+        <ProductID>CVRFPID-64990</ProductID>
+        <ProductID>CVRFPID-64991</ProductID>
+        <ProductID>CVRFPID-64992</ProductID>
+        <ProductID>CVRFPID-64993</ProductID>
+        <ProductID>CVRFPID-64994</ProductID>
+        <ProductID>CVRFPID-64995</ProductID>
+        <ProductID>CVRFPID-64996</ProductID>
+        <ProductID>CVRFPID-64997</ProductID>
+        <ProductID>CVRFPID-64998</ProductID>
+        <ProductID>CVRFPID-65080</ProductID>
+        <ProductID>CVRFPID-65081</ProductID>
+        <ProductID>CVRFPID-65082</ProductID>
+        <ProductID>CVRFPID-69367</ProductID>
+        <ProductID>CVRFPID-69368</ProductID>
+        <ProductID>CVRFPID-69369</ProductID>
+        <ProductID>CVRFPID-69370</ProductID>
+        <ProductID>CVRFPID-69371</ProductID>
+        <ProductID>CVRFPID-69372</ProductID>
+        <ProductID>CVRFPID-69373</ProductID>
+        <ProductID>CVRFPID-82267</ProductID>
+        <ProductID>CVRFPID-82268</ProductID>
+        <ProductID>CVRFPID-82270</ProductID>
+        <ProductID>CVRFPID-82271</ProductID>
+        <ProductID>CVRFPID-82272</ProductID>
+        <ProductID>CVRFPID-82273</ProductID>
+        <ProductID>CVRFPID-82274</ProductID>
+        <ProductID>CVRFPID-82276</ProductID>
+        <ProductID>CVRFPID-82277</ProductID>
+        <ProductID>CVRFPID-82279</ProductID>
+        <ProductID>CVRFPID-88659</ProductID>
+        <ProductID>CVRFPID-88660</ProductID>
+        <ProductID>CVRFPID-88661</ProductID>
+        <ProductID>CVRFPID-88662</ProductID>
+        <ProductID>CVRFPID-88663</ProductID>
+        <ProductID>CVRFPID-88664</ProductID>
+        <ProductID>CVRFPID-88665</ProductID>
+        <ProductID>CVRFPID-88666</ProductID>
+        <ProductID>CVRFPID-88667</ProductID>
+        <ProductID>CVRFPID-100594</ProductID>
+        <ProductID>CVRFPID-100595</ProductID>
+        <ProductID>CVRFPID-109053</ProductID>
+        <ProductID>CVRFPID-109054</ProductID>
+        <ProductID>CVRFPID-109055</ProductID>
+        <ProductID>CVRFPID-109056</ProductID>
+        <ProductID>CVRFPID-109058</ProductID>
+        <ProductID>CVRFPID-109059</ProductID>
+        <ProductID>CVRFPID-109060</ProductID>
+        <ProductID>CVRFPID-109061</ProductID>
+        <ProductID>CVRFPID-114900</ProductID>
+        <ProductID>CVRFPID-114902</ProductID>
+        <ProductID>CVRFPID-114903</ProductID>
+        <ProductID>CVRFPID-114904</ProductID>
+        <ProductID>CVRFPID-114905</ProductID>
+        <ProductID>CVRFPID-188109</ProductID>
+        <ProductID>CVRFPID-188110</ProductID>
+        <ProductID>CVRFPID-188675</ProductID>
+        <ProductID>CVRFPID-188676</ProductID>
+        <ProductID>CVRFPID-194375</ProductID>
+        <ProductID>CVRFPID-194376</ProductID>
+        <ProductID>CVRFPID-194377</ProductID>
+        <ProductID>CVRFPID-194378</ProductID>
+        <ProductID>CVRFPID-194379</ProductID>
+        <ProductID>CVRFPID-194380</ProductID>
+        <ProductID>CVRFPID-200677</ProductID>
+        <ProductID>CVRFPID-200678</ProductID>
+        <ProductID>CVRFPID-200772</ProductID>
+        <ProductID>CVRFPID-202724</ProductID>
+        <ProductID>CVRFPID-202725</ProductID>
+        <ProductID>CVRFPID-202728</ProductID>
+        <ProductID>CVRFPID-203011</ProductID>
+        <ProductID>CVRFPID-206305</ProductID>
+        <ProductID>CVRFPID-206693</ProductID>
+        <ProductID>CVRFPID-207506</ProductID>
+        <ProductID>CVRFPID-207941</ProductID>
+        <ProductID>CVRFPID-207968</ProductID>
+        <ProductID>CVRFPID-208446</ProductID>
+        <ProductID>CVRFPID-208536</ProductID>
+        <ProductID>CVRFPID-209818</ProductID>
+        <ProductID>CVRFPID-209819</ProductID>
+        <ProductID>CVRFPID-210367</ProductID>
+        <ProductID>CVRFPID-210368</ProductID>
+        <ProductID>CVRFPID-210809</ProductID>
+        <ProductID>CVRFPID-210976</ProductID>
+        <ProductID>CVRFPID-210977</ProductID>
+        <ProductID>CVRFPID-210979</ProductID>
+        <ProductID>CVRFPID-210980</ProductID>
+        <ProductID>CVRFPID-210981</ProductID>
+        <ProductID>CVRFPID-211322</ProductID>
+        <ProductID>CVRFPID-214143</ProductID>
+        <ProductID>CVRFPID-217235</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.7</BaseScore>
+        <TemporalScore>4.7</TemporalScore>
+        <Vector>AV:A/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160831-wlc-1</URL>
+        <Description>Cisco Wireless LAN Controller TSM SNMP Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

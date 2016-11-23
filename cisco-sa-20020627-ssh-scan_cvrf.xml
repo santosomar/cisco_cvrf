@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Scanning for SSH Can Cause a Crash</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20020627-ssh-scan</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2002-06-27T16:00:00</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2002-06-27T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2002-06-27T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20020627-ssh-scan</URL>
+      <Description>Scanning for SSH Can Cause a Crash</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-34114">Cisco Catalyst 6000 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-33489">Cisco Catalyst 6000 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37065">Cisco Catalyst 6000 48-PORT 10/100 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38752">Cisco Catalyst 6000 8-PORT GIGABIT Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38121">Cisco Catalyst 6000 IDS Module Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37736">Cisco Catalyst 6006 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36024">Cisco Catalyst 6009 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36124">Cisco Catalyst 6500 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38791">Cisco Catalyst 6506 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34942">Cisco Catalyst 6509 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36397">Cisco Catalyst 6513 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36288">Cisco Content Services Switch (CSS) Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34652">Cisco Content Services Switch (CSS) 11050 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-38963">Cisco Content Services Switch (CSS) 11150 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-36281">Cisco Content Services Switch (CSS) 11500 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37422">Cisco Content Services Switch (CSS) 11800 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35221">Cisco IOS 12.1(1)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-35231">Cisco IOS 12.1(5c)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-35241">Cisco IOS 12.1(8a)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-35244">Cisco IOS 12.1(9)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-34800">Cisco PIX Firewall Manager Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35610">Cisco PIX Firewall Software 4.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37659">Cisco PIX Firewall Software 4.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34194">Cisco PIX Firewall Software 5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35025">Cisco PIX Firewall Software 5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34171">Cisco PIX Firewall Software 5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34177">Cisco PIX Firewall Software 5.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-37165">Cisco PIX Firewall Software 6.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35165">Cisco PIX Firewall Software 6.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35170">Cisco PIX Firewall Software 6.2 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco SSH Denial of Service</Title>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-33489</ProductID>
+        <ProductID>CVRFPID-34114</ProductID>
+        <ProductID>CVRFPID-34942</ProductID>
+        <ProductID>CVRFPID-36024</ProductID>
+        <ProductID>CVRFPID-36124</ProductID>
+        <ProductID>CVRFPID-36397</ProductID>
+        <ProductID>CVRFPID-37065</ProductID>
+        <ProductID>CVRFPID-37736</ProductID>
+        <ProductID>CVRFPID-38121</ProductID>
+        <ProductID>CVRFPID-38752</ProductID>
+        <ProductID>CVRFPID-38791</ProductID>
+        <ProductID>CVRFPID-34652</ProductID>
+        <ProductID>CVRFPID-36281</ProductID>
+        <ProductID>CVRFPID-36288</ProductID>
+        <ProductID>CVRFPID-37422</ProductID>
+        <ProductID>CVRFPID-38963</ProductID>
+        <ProductID>CVRFPID-35221</ProductID>
+        <ProductID>CVRFPID-35231</ProductID>
+        <ProductID>CVRFPID-35241</ProductID>
+        <ProductID>CVRFPID-35244</ProductID>
+        <ProductID>CVRFPID-34800</ProductID>
+        <ProductID>CVRFPID-34171</ProductID>
+        <ProductID>CVRFPID-34177</ProductID>
+        <ProductID>CVRFPID-34194</ProductID>
+        <ProductID>CVRFPID-35025</ProductID>
+        <ProductID>CVRFPID-35165</ProductID>
+        <ProductID>CVRFPID-35170</ProductID>
+        <ProductID>CVRFPID-35610</ProductID>
+        <ProductID>CVRFPID-37165</ProductID>
+        <ProductID>CVRFPID-37659</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20020627-ssh-scan</URL>
+        <Description>Scanning for SSH Can Cause a Crash</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

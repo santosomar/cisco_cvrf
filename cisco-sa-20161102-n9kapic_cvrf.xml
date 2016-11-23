@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Application Policy Infrastructure Controller Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161102-n9kapic</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-11-02T15:54:57</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-11-02T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-11-02T15:54:57</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in  the Cisco Nexus 9000 Series Platform Leaf Switches for Application Centric Infrastructure (ACI) could allow
+an unauthenticated, adjacent attacker to cause a denial of service (DoS)
+condition on the affected device.
+
+
+
+The vulnerability is due to
+improper handling of a type of Layer 2 control plane traffic. An attacker could exploit
+this vulnerability by sending crafted traffic to a host behind a leaf switch. An
+exploit could allow the attacker to cause a DoS condition on the affected device.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that mitigate this vulnerability.
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161102-n9kapic["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161102-n9kapic"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161102-n9kapic</URL>
+      <Description>Cisco Application Policy Infrastructure Controller Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-222440">Cisco Application Policy Infrastructure Controller (APIC) 1.3(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-222441">Cisco Application Policy Infrastructure Controller (APIC) 1.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-222438">Cisco Application Policy Infrastructure Controller (APIC) 1.2(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-222439">Cisco Application Policy Infrastructure Controller (APIC) 1.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-222444">Cisco Application Policy Infrastructure Controller (APIC) 2.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220765">Cisco NX-OS Software for Nexus 9000 Series 11.2(2g)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220766">Cisco NX-OS Software for Nexus 9000 Series 11.2(2h)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220767">Cisco NX-OS Software for Nexus 9000 Series 11.2(2i)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220768">Cisco NX-OS Software for Nexus 9000 Series 11.2(3c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220769">Cisco NX-OS Software for Nexus 9000 Series 11.2(3e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220770">Cisco NX-OS Software for Nexus 9000 Series 11.2(3h)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220771">Cisco NX-OS Software for Nexus 9000 Series 11.3(1i)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220772">Cisco NX-OS Software for Nexus 9000 Series 11.3(2f)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220773">Cisco NX-OS Software for Nexus 9000 Series 11.3(2h)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220774">Cisco NX-OS Software for Nexus 9000 Series 11.3(2i)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220775">Cisco NX-OS Software for Nexus 9000 Series 12.0(1m)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220776">Cisco NX-OS Software for Nexus 9000 Series 12.0(1n)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220777">Cisco NX-OS Software for Nexus 9000 Series 12.0(1o)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220778">Cisco NX-OS Software for Nexus 9000 Series 12.0(1p)</FullProductName>
+    <FullProductName ProductID="CVRFPID-220779">Cisco NX-OS Software for Nexus 9000 Series 12.0(1q)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Application Policy Infrastructure Controller Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy93241</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in  the Cisco Nexus 9000 Series Platform Leaf Switches for Application Centric Infrastructure (ACI) could allow
+an unauthenticated, adjacent attacker to cause a denial of service (DoS)
+condition on the affected device.
+
+
+
+The vulnerability is due to
+improper handling of a type of Layer 2 control plane traffic. An attacker could exploit
+this vulnerability by sending crafted traffic to a host behind a leaf switch. An
+exploit could allow the attacker to cause a DoS condition on the affected device.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuy93241</Note>
+    </Notes>
+    <CVE>CVE-2016-6457</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-220765</ProductID>
+        <ProductID>CVRFPID-220766</ProductID>
+        <ProductID>CVRFPID-220767</ProductID>
+        <ProductID>CVRFPID-220768</ProductID>
+        <ProductID>CVRFPID-220769</ProductID>
+        <ProductID>CVRFPID-220770</ProductID>
+        <ProductID>CVRFPID-220771</ProductID>
+        <ProductID>CVRFPID-220772</ProductID>
+        <ProductID>CVRFPID-220773</ProductID>
+        <ProductID>CVRFPID-220774</ProductID>
+        <ProductID>CVRFPID-220775</ProductID>
+        <ProductID>CVRFPID-220776</ProductID>
+        <ProductID>CVRFPID-220777</ProductID>
+        <ProductID>CVRFPID-220778</ProductID>
+        <ProductID>CVRFPID-220779</ProductID>
+        <ProductID>CVRFPID-222438</ProductID>
+        <ProductID>CVRFPID-222439</ProductID>
+        <ProductID>CVRFPID-222440</ProductID>
+        <ProductID>CVRFPID-222441</ProductID>
+        <ProductID>CVRFPID-222444</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.1</BaseScore>
+        <TemporalScore>5.0</TemporalScore>
+        <Vector>AV:A/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability. However, administrators may disable the ARP flood mode or unicast routing of the bridge domain by issuing the following commands on the APIC command-line interface (CLI):
+
+
+apic1#
+apic1# configure
+apic1(config)# tenant t1
+apic1(config-tenant)# bridge-domain 10
+apic1(config-tenant-bd)# no arp flooding
+apic1(config-tenant-bd)# no unicast routing
+apic1(config-tenant-bd)# end
+apic1#
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161102-n9kapic</URL>
+        <Description>Cisco Application Policy Infrastructure Controller Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

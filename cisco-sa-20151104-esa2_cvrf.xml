@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Email Security Appliance Email Scanner Denial of Service Vulnerability </DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151104-esa2</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-11-04T15:06:43</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2015-11-16T22:15:17</Date>
+        <Description>Added information about CES maintenance and upgrades.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2015-11-20T17:48:32</Date>
+        <Description>Added steps for upgrading a device by using the GUI.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-11-04T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-11-20T17:48:32</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the email message filtering feature of Cisco AsyncOS for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to cause an ESA device to become unavailable due to a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to improper input validation when an email attachment contains corrupted fields and is filtered by the ESA. An attacker could exploit this vulnerability by sending a crafted email with an attachment to the ESA. A successful exploit could allow the attacker to cause a DoS condition. While the attachment is being filtered, memory is consumed at at high rate until the filtering process restarts. When the process restarts, it will resume processing the same malformed attachment and the DoS condition will continue.
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that mitigate this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-esa2["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-esa2"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-esa2</URL>
+      <Description>Cisco Email Security Appliance Email Scanner Denial of Service Vulnerability </Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-211005">Cisco Email Security Appliance (ESA) 7.7.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211006">Cisco Email Security Appliance (ESA) 7.7.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-189809">Cisco Email Security Appliance (ESA) 8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-198224">Cisco Email Security Appliance (ESA) 8.5.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211008">Cisco Email Security Appliance (ESA) 8.5.6-052</FullProductName>
+    <FullProductName ProductID="CVRFPID-208798">Cisco Email Security Appliance (ESA) 8.5.6-073</FullProductName>
+    <FullProductName ProductID="CVRFPID-208217">Cisco Email Security Appliance (ESA) 8.5.6-074</FullProductName>
+    <FullProductName ProductID="CVRFPID-207644">Cisco Email Security Appliance (ESA) 8.5.6-106</FullProductName>
+    <FullProductName ProductID="CVRFPID-209313">Cisco Email Security Appliance (ESA) 8.5.6-113</FullProductName>
+    <FullProductName ProductID="CVRFPID-209264">Cisco Email Security Appliance (ESA) 8.5.7-042</FullProductName>
+    <FullProductName ProductID="CVRFPID-208800">Cisco Email Security Appliance (ESA) 9.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211016">Cisco Email Security Appliance (ESA) 9.0.0-212</FullProductName>
+    <FullProductName ProductID="CVRFPID-208801">Cisco Email Security Appliance (ESA) 9.0.0-461</FullProductName>
+    <FullProductName ProductID="CVRFPID-211017">Cisco Email Security Appliance (ESA) 9.0.5-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-209314">Cisco Email Security Appliance (ESA) 9.1.0-032</FullProductName>
+    <FullProductName ProductID="CVRFPID-209302">Cisco Email Security Appliance (ESA) 9.6.0-042</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Email Security Appliance Email Scanner Denial of Service Vulnerability </Title>
+    <ID SystemName="Cisco Bug ID">CSCuv47151</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the email message filtering feature of Cisco AsyncOS for Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to cause an ESA device to become unavailable due to a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to improper input validation when an email attachment contains corrupted fields and is filtered by the ESA. An attacker could exploit this vulnerability by sending a crafted email with an attachment to the ESA. A successful exploit could allow the attacker to cause a DoS condition. While the attachment is being filtered, memory is consumed at a high rate until the filtering process restarts. When the process restarts, it will resume processing the same malformed attachment and the DoS condition will continue.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuv47151</Note>
+    </Notes>
+    <CVE>CVE-2015-6291</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-189809</ProductID>
+        <ProductID>CVRFPID-198224</ProductID>
+        <ProductID>CVRFPID-207644</ProductID>
+        <ProductID>CVRFPID-208217</ProductID>
+        <ProductID>CVRFPID-208798</ProductID>
+        <ProductID>CVRFPID-208800</ProductID>
+        <ProductID>CVRFPID-208801</ProductID>
+        <ProductID>CVRFPID-209264</ProductID>
+        <ProductID>CVRFPID-209302</ProductID>
+        <ProductID>CVRFPID-209313</ProductID>
+        <ProductID>CVRFPID-209314</ProductID>
+        <ProductID>CVRFPID-211005</ProductID>
+        <ProductID>CVRFPID-211006</ProductID>
+        <ProductID>CVRFPID-211008</ProductID>
+        <ProductID>CVRFPID-211016</ProductID>
+        <ProductID>CVRFPID-211017</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151104-esa2</URL>
+        <Description>Cisco Email Security Appliance Email Scanner Denial of Service Vulnerability </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

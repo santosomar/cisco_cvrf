@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Identity Services Engine Unauthorized Access Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160113-ise2</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-01-12T21:11:10</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-01-19T14:43:31</Date>
+        <Description>Added patch details for version 1.4.
+Corrected sentence "Cisco Identity Services Engine versions 2.0 and prior are vulnerable." It should read "Cisco Identity Services Engine versions prior to 2.0 are vulnerable."</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-01-13T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-01-19T14:43:31</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Cisco Identity Services Engine versions prior to 2.0 contain a vulnerability that could allow a low-privileged authenticated, remote attacker to access specific web resources that are designed to be accessed only by higher-privileged administrative users.
+
+
+
+The vulnerability occurs because specific types of web resources are not correctly filtered for administrative users with different privileges. An attacker could exploit this vulnerability by authenticating at a low-privileged account and then accessing the web resources directly. An exploit could allow the attacker to access web pages that are reserved for higher-privileged administrative users.
+
+
+
+Cisco has released software updates that address these vulnerabilities. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160113-ise2["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160113-ise2"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160113-ise2</URL>
+      <Description>Cisco Identity Services Engine Unauthorized Access Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-111905">Cisco Identity Services Engine Software 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-185039">Cisco Identity Services Engine Software 1.0.4.573</FullProductName>
+    <FullProductName ProductID="CVRFPID-111907">Cisco Identity Services Engine Software 1.0 MR Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-193076">Cisco Identity Services Engine Software 1.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-195254">Cisco Identity Services Engine Software 1.1.1 patch 1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195255">Cisco Identity Services Engine Software 1.1.1 patch 2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195256">Cisco Identity Services Engine Software 1.1.1 patch 3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195257">Cisco Identity Services Engine Software 1.1.1 patch 4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195258">Cisco Identity Services Engine Software 1.1.1 patch 5</FullProductName>
+    <FullProductName ProductID="CVRFPID-195259">Cisco Identity Services Engine Software 1.1.1 patch 6</FullProductName>
+    <FullProductName ProductID="CVRFPID-195260">Cisco Identity Services Engine Software 1.1.2 patch 1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195261">Cisco Identity Services Engine Software 1.1.2 patch 2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195262">Cisco Identity Services Engine Software 1.1.2 patch 3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195263">Cisco Identity Services Engine Software 1.1.2 patch 4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195264">Cisco Identity Services Engine Software 1.1.2 patch 5</FullProductName>
+    <FullProductName ProductID="CVRFPID-195265">Cisco Identity Services Engine Software 1.1.2 patch 6</FullProductName>
+    <FullProductName ProductID="CVRFPID-195266">Cisco Identity Services Engine Software 1.1.2 patch 7</FullProductName>
+    <FullProductName ProductID="CVRFPID-195267">Cisco Identity Services Engine Software 1.1.2 patch 8</FullProductName>
+    <FullProductName ProductID="CVRFPID-195268">Cisco Identity Services Engine Software 1.1.2 patch 9</FullProductName>
+    <FullProductName ProductID="CVRFPID-195269">Cisco Identity Services Engine Software 1.1.3 patch 1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195270">Cisco Identity Services Engine Software 1.1.3 patch 2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195271">Cisco Identity Services Engine Software 1.1.3 patch 3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195272">Cisco Identity Services Engine Software 1.1.3 patch 4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195273">Cisco Identity Services Engine Software 1.1.3 patch 5</FullProductName>
+    <FullProductName ProductID="CVRFPID-195274">Cisco Identity Services Engine Software 1.1.3 patch 6</FullProductName>
+    <FullProductName ProductID="CVRFPID-195275">Cisco Identity Services Engine Software 1.1.3 patch 7</FullProductName>
+    <FullProductName ProductID="CVRFPID-195276">Cisco Identity Services Engine Software 1.1.4 patch 1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195277">Cisco Identity Services Engine Software 1.1.4 patch 2</FullProductName>
+    <FullProductName ProductID="CVRFPID-195278">Cisco Identity Services Engine Software 1.1.4 patch 3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195279">Cisco Identity Services Engine Software 1.1.4 patch 4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195280">Cisco Identity Services Engine Software 1.1.4 patch 5</FullProductName>
+    <FullProductName ProductID="CVRFPID-195281">Cisco Identity Services Engine Software 1.1.4 patch 6</FullProductName>
+    <FullProductName ProductID="CVRFPID-195282">Cisco Identity Services Engine Software 1.1.4 patch 7</FullProductName>
+    <FullProductName ProductID="CVRFPID-194911">Cisco Identity Services Engine Software 1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-202745">Cisco Identity Services Engine Software 1.2(0.747)</FullProductName>
+    <FullProductName ProductID="CVRFPID-195295">Cisco Identity Services Engine Software 1.2.1 patch 1</FullProductName>
+    <FullProductName ProductID="CVRFPID-195296">Cisco Identity Services Engine Software 1.2.1 patch 2</FullProductName>
+    <FullProductName ProductID="CVRFPID-206217">Cisco Identity Services Engine Software 1.2.0.899 patch 14</FullProductName>
+    <FullProductName ProductID="CVRFPID-207969">Cisco Identity Services Engine Software 1.2(1.901)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208843">Cisco Identity Services Engine Software 1.2(0.793)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208849">Cisco Identity Services Engine Software 1.2(1.198)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207680">Cisco Identity Services Engine Software 1.3(0.876)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207970">Cisco Identity Services Engine Software 1.3(0.722)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208838">Cisco Identity Services Engine Software 1.3(106.146)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208839">Cisco Identity Services Engine Software 1.3(120.135)</FullProductName>
+    <FullProductName ProductID="CVRFPID-207682">Cisco Identity Services Engine Software 1.4(0.181)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208844">Cisco Identity Services Engine Software 1.4(0.109)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209266">Cisco Identity Services Engine Software 1.4(0.253)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Identity Services Engine Unauthorized Access Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuu45926</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">Cisco Identity Services Engine versions prior to 2.0 contain a vulnerability that could allow a low-privileged authenticated, remote attacker to access specific web resources that are designed to be accessed only by higher-privileged administrative users.
+
+
+
+The vulnerability occurs because specific types of web resources are not correctly filtered for administrative users with different privileges. An attacker could exploit this vulnerability by authenticating at a low-privileged account and then accessing the web resources directly. An exploit could allow the attacker to access web pages that are reserved for higher-privileged administrative users.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuu45926</Note>
+    </Notes>
+    <CVE>CVE-2015-6317</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111905</ProductID>
+        <ProductID>CVRFPID-111907</ProductID>
+        <ProductID>CVRFPID-185039</ProductID>
+        <ProductID>CVRFPID-193076</ProductID>
+        <ProductID>CVRFPID-194911</ProductID>
+        <ProductID>CVRFPID-195254</ProductID>
+        <ProductID>CVRFPID-195255</ProductID>
+        <ProductID>CVRFPID-195256</ProductID>
+        <ProductID>CVRFPID-195257</ProductID>
+        <ProductID>CVRFPID-195258</ProductID>
+        <ProductID>CVRFPID-195259</ProductID>
+        <ProductID>CVRFPID-195260</ProductID>
+        <ProductID>CVRFPID-195261</ProductID>
+        <ProductID>CVRFPID-195262</ProductID>
+        <ProductID>CVRFPID-195263</ProductID>
+        <ProductID>CVRFPID-195264</ProductID>
+        <ProductID>CVRFPID-195265</ProductID>
+        <ProductID>CVRFPID-195266</ProductID>
+        <ProductID>CVRFPID-195267</ProductID>
+        <ProductID>CVRFPID-195268</ProductID>
+        <ProductID>CVRFPID-195269</ProductID>
+        <ProductID>CVRFPID-195270</ProductID>
+        <ProductID>CVRFPID-195271</ProductID>
+        <ProductID>CVRFPID-195272</ProductID>
+        <ProductID>CVRFPID-195273</ProductID>
+        <ProductID>CVRFPID-195274</ProductID>
+        <ProductID>CVRFPID-195275</ProductID>
+        <ProductID>CVRFPID-195276</ProductID>
+        <ProductID>CVRFPID-195277</ProductID>
+        <ProductID>CVRFPID-195278</ProductID>
+        <ProductID>CVRFPID-195279</ProductID>
+        <ProductID>CVRFPID-195280</ProductID>
+        <ProductID>CVRFPID-195281</ProductID>
+        <ProductID>CVRFPID-195282</ProductID>
+        <ProductID>CVRFPID-195295</ProductID>
+        <ProductID>CVRFPID-195296</ProductID>
+        <ProductID>CVRFPID-202745</ProductID>
+        <ProductID>CVRFPID-206217</ProductID>
+        <ProductID>CVRFPID-207680</ProductID>
+        <ProductID>CVRFPID-207682</ProductID>
+        <ProductID>CVRFPID-207969</ProductID>
+        <ProductID>CVRFPID-207970</ProductID>
+        <ProductID>CVRFPID-208838</ProductID>
+        <ProductID>CVRFPID-208839</ProductID>
+        <ProductID>CVRFPID-208843</ProductID>
+        <ProductID>CVRFPID-208844</ProductID>
+        <ProductID>CVRFPID-208849</ProductID>
+        <ProductID>CVRFPID-209266</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.3</BaseScore>
+        <TemporalScore>5.2</TemporalScore>
+        <Vector>AV:N/AC:M/Au:S/C:N/I:C/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160113-ise2</URL>
+        <Description>Cisco Identity Services Engine Unauthorized Access Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified Computing System 6200 Series Fabric Interconnect Series Switch DoS Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151210-ucs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-12-10T17:22:49</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-12-10T00:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-12-10T17:22:49</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the SSH management interface of the Cisco Unified Computing System (UCS) 6200 Series Fabric Interconnect Series Switch could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition because a fabric interconnect interface might not boot completely up or might have high CPU utilization. This would only happen if the attack occurred while a reload of the affected UCS switch was already in progress.
+
+ 
+
+The vulnerability is due to a lack of rate-limiting on incoming TCP connection requests for SSH, which is TCP port 22 during boot time. An attacker could exploit this vulnerability by sending a TCP SYN flood of packets to the SSH management interface of the device while a reload of the switch is in progress. An exploit could allow the attacker to create a DoS condition due to the Cisco UCS FI not proper properly booting up or having high CPU utilization.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-ucs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-ucs"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-ucs</URL>
+      <Description>Cisco Unified Computing System 6200 Series Fabric Interconnect Series Switch DoS Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-212195">Cisco Unified Computing System (Management Software) 2.2(3f)A</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Computing System 6200 Series Fabric Interconnect Series Switch DoS Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuu81757</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the SSH management interface of the Cisco Unified Computing System (UCS) 6200 Series Fabric Interconnect Series Switch could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition because a fabric interconnect interface might not boot completely up or might have high CPU utilization. This would only happen if the attack occurred while a reload of the affected UCS switch was already in progress.
+
+ 
+
+The vulnerability is due to a lack of rate-limiting on incoming TCP connection requests for SSH, which is TCP port 22 during boot time. An attacker could exploit this vulnerability by sending a TCP SYN flood of packets to the SSH management interface of the device while a reload of the switch is in progress. An exploit could allow the attacker to create a DoS condition due to the Cisco UCS FI not proper properly booting up or having high CPU utilization.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuu81757</Note>
+    </Notes>
+    <CVE>CVE-2015-6415</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-212195</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.4</BaseScore>
+        <TemporalScore>4.5</TemporalScore>
+        <Vector>AV:N/AC:H/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Cisco recommends that the Cisco UCS FI SSH management interface is behind a firewall and not directly reachable via the Internet.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151210-ucs</URL>
+        <Description>Cisco Unified Computing System 6200 Series Fabric Interconnect Series Switch DoS Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

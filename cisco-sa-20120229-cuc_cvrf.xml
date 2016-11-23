@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in Cisco Unity Connection</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20120229-cuc</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2012-02-29T15:52:57</Date>
+        <Description>No Description Available</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2012-04-02T14:10:15</Date>
+        <Description>No Description Available</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2012-02-29T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2012-04-02T14:16:01</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120229-cuc</URL>
+      <Description>Multiple Vulnerabilities in Cisco Unity Connection</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-73609">Cisco Unity Connection 1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-73613">Cisco Unity Connection 1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-73611">Cisco Unity Connection 2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-114985">Cisco Unity Connection 2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-114975">Cisco Unity Connection 7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-114977">Cisco Unity Connection 7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-114979">Cisco Unity Connection 8.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-114981">Cisco Unity Connection 8.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-114983">Cisco Unity Connection 8.6</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unity Connection Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtd45141</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">Cisco Unity Connection contains a vulnerability that may allow an authenticated,
+remote attacker with privilege of the Help Desk Administrator role to elevate privileges and obtain full access to the affected system.
+
+The vulnerability is due to improper privilege assignment and validation of the "Help Desk Administrator" role. An attacker could exploit this
+vulnerability by logging in to the system as the Help Desk Administrator user and changing the password for the administrative user. 
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCtd45141</Note>
+    </Notes>
+    <CVE>CVE-2012-0366</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-73609</ProductID>
+        <ProductID>CVRFPID-73611</ProductID>
+        <ProductID>CVRFPID-73613</ProductID>
+        <ProductID>CVRFPID-114975</ProductID>
+        <ProductID>CVRFPID-114977</ProductID>
+        <ProductID>CVRFPID-114985</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.0</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120229-cuc</URL>
+        <Description>Multiple Vulnerabilities in Cisco Unity Connection</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unity Connection Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtq67899</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">Cisco Unity Connection contains a vulnerability that may allow an unauthenticated,
+remote attacker to cause system services to terminate unexpectedly, which may result in a denial of service.
+
+The vulnerability is due to improper handling of TCP segments. An
+attacker could exploit this
+vulnerability by sending a sequence of TCP segments to the affected
+system. 
+
+
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="5">CSCtq67899</Note>
+    </Notes>
+    <CVE>CVE-2012-0367</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-73609</ProductID>
+        <ProductID>CVRFPID-73611</ProductID>
+        <ProductID>CVRFPID-114975</ProductID>
+        <ProductID>CVRFPID-114977</ProductID>
+        <ProductID>CVRFPID-114979</ProductID>
+        <ProductID>CVRFPID-114981</ProductID>
+        <ProductID>CVRFPID-114983</ProductID>
+        <ProductID>CVRFPID-114985</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120229-cuc</URL>
+        <Description>Multiple Vulnerabilities in Cisco Unity Connection</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

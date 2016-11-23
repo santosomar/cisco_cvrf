@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS XE Software NAT Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160928-esp-nat</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-09-28T14:22:17</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-09-28T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-09-28T14:22:17</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the implementation of Network Address Translation (NAT) functionality in Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause an affected device to reload.
+
+
+
+The vulnerability is due to improper handling of malformed ICMP packets by the affected software. An attacker could exploit this vulnerability by sending crafted ICMP packets that require NAT processing by an affected device. A successful exploit could allow the attacker to cause the device to reload, resulting in a denial of service (DoS) condition.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160928-esp-nat["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160928-esp-nat"]
+
+
+
+This advisory is part of the September 28, 2016, release of the Cisco IOS and IOS XE Software Security Advisory Bundled Publication, which includes 10 Cisco Security Advisories that describe 11 vulnerabilities. All the vulnerabilities have a Security Impact Rating of ?High.? For a complete list of the advisories and links to them, see Cisco Event Response: September 2016 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication["http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-56513"].</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160928-esp-nat</URL>
+      <Description>Cisco IOS XE Software NAT Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20160928-bundle</URL>
+      <Description>Summary of the Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, September 28, 2016</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20160928-bundle</URL>
+      <Description>Summary of the Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, September 28, 2016</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-56513</URL>
+      <Description>Cisco Event Response: September 2016 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-56513</URL>
+      <Description>Cisco Event Response: September 2016 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-213809">Cisco IOS XE Software 16.2 16.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112448">Cisco IOS XE Software 3.1S 3.1.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206184">Cisco IOS XE Software 3.1S 3.1.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210067">Cisco IOS XE Software 3.1S 3.1.4aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-112449">Cisco IOS XE Software 3.2S 3.2.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112450">Cisco IOS XE Software 3.2S 3.2.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-111952">Cisco IOS XE Software 3.3S 3.3.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112451">Cisco IOS XE Software 3.3S 3.3.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112452">Cisco IOS XE Software 3.3S 3.3.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-111954">Cisco IOS XE Software 3.4S 3.4.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-112453">Cisco IOS XE Software 3.4S 3.4.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184469">Cisco IOS XE Software 3.4S 3.4.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184470">Cisco IOS XE Software 3.4S 3.4.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184471">Cisco IOS XE Software 3.4S 3.4.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194728">Cisco IOS XE Software 3.4S 3.4.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194729">Cisco IOS XE Software 3.4S 3.4.6S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184472">Cisco IOS XE Software 3.5S 3.5.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184473">Cisco IOS XE Software 3.5S 3.5.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184474">Cisco IOS XE Software 3.5S 3.5.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184475">Cisco IOS XE Software 3.6S 3.6.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184476">Cisco IOS XE Software 3.6S 3.6.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184477">Cisco IOS XE Software 3.6S 3.6.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184480">Cisco IOS XE Software 3.7S 3.7.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213955">Cisco IOS XE Software 3.7S 3.7.0bS</FullProductName>
+    <FullProductName ProductID="CVRFPID-184481">Cisco IOS XE Software 3.7S 3.7.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194730">Cisco IOS XE Software 3.7S 3.7.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213799">Cisco IOS XE Software 3.7S 3.7.2tS</FullProductName>
+    <FullProductName ProductID="CVRFPID-194731">Cisco IOS XE Software 3.7S 3.7.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194732">Cisco IOS XE Software 3.7S 3.7.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213798">Cisco IOS XE Software 3.7S 3.7.4aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-202541">Cisco IOS XE Software 3.7S 3.7.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202542">Cisco IOS XE Software 3.7S 3.7.6S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206188">Cisco IOS XE Software 3.7S 3.7.7S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194735">Cisco IOS XE Software 3.8S 3.8.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194736">Cisco IOS XE Software 3.8S 3.8.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194737">Cisco IOS XE Software 3.8S 3.8.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194843">Cisco IOS XE Software 3.9S 3.9.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213825">Cisco IOS XE Software 3.9S 3.9.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-194842">Cisco IOS XE Software 3.9S 3.9.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213816">Cisco IOS XE Software 3.9S 3.9.1aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-202558">Cisco IOS XE Software 3.9S 3.9.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198123">Cisco IOS XE Software 3.10S 3.10.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198124">Cisco IOS XE Software 3.10S 3.10.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198125">Cisco IOS XE Software 3.10S 3.10.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213471">Cisco IOS XE Software 3.10S 3.10.2tS</FullProductName>
+    <FullProductName ProductID="CVRFPID-202539">Cisco IOS XE Software 3.10S 3.10.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202540">Cisco IOS XE Software 3.10S 3.10.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206159">Cisco IOS XE Software 3.10S 3.10.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206189">Cisco IOS XE Software 3.10S 3.10.6S</FullProductName>
+    <FullProductName ProductID="CVRFPID-203353">Cisco IOS XE Software 3.11S 3.11.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200768">Cisco IOS XE Software 3.11S 3.11.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200771">Cisco IOS XE Software 3.11S 3.11.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206160">Cisco IOS XE Software 3.11S 3.11.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206190">Cisco IOS XE Software 3.11S 3.11.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200770">Cisco IOS XE Software 3.12S 3.12.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213473">Cisco IOS XE Software 3.12S 3.12.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-206161">Cisco IOS XE Software 3.12S 3.12.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213474">Cisco IOS XE Software 3.12S 3.12.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206162">Cisco IOS XE Software 3.12S 3.12.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206176">Cisco IOS XE Software 3.12S 3.12.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213661">Cisco IOS XE Software 3.13S 3.13.2aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-201495">Cisco IOS XE Software 3.13S 3.13.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213781">Cisco IOS XE Software 3.13S 3.13.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-206174">Cisco IOS XE Software 3.13S 3.13.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206175">Cisco IOS XE Software 3.13S 3.13.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210078">Cisco IOS XE Software 3.13S 3.13.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213475">Cisco IOS XE Software 3.13S 3.13.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206178">Cisco IOS XE Software 3.14S 3.14.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206181">Cisco IOS XE Software 3.14S 3.14.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206191">Cisco IOS XE Software 3.14S 3.14.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206192">Cisco IOS XE Software 3.14S 3.14.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213700">Cisco IOS XE Software 3.15S 3.15.1cS</FullProductName>
+    <FullProductName ProductID="CVRFPID-213776">Cisco IOS XE Software 3.15S 3.15.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206180">Cisco IOS XE Software 3.15S 3.15.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-210079">Cisco IOS XE Software 3.15S 3.15.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-212268">Cisco IOS XE Software 3.15S 3.15.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-212411">Cisco IOS XE Software 3.17S 3.17.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-214993">Cisco IOS XE Software 16.1 16.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-217252">Cisco IOS XE Software 16.1 16.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-210081">Cisco IOS XE Software 3.16S 3.16.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213778">Cisco IOS XE Software 3.16S 3.16.0cS</FullProductName>
+    <FullProductName ProductID="CVRFPID-212408">Cisco IOS XE Software 3.16S 3.16.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213477">Cisco IOS XE Software 3.16S 3.16.1aS</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS XE Software NAT Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuw85853</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the implementation of Network Address Translation (NAT) functionality in Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause an affected device to reload.
+
+
+
+The vulnerability is due to improper handling of malformed ICMP packets by the affected software. An attacker could exploit this vulnerability by sending crafted ICMP packets that require NAT processing by an affected device. A successful exploit could allow the attacker to cause the device to reload, resulting in a denial of service (DoS) condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuw85853</Note>
+    </Notes>
+    <CVE>CVE-2016-6378</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111952</ProductID>
+        <ProductID>CVRFPID-111954</ProductID>
+        <ProductID>CVRFPID-112448</ProductID>
+        <ProductID>CVRFPID-112449</ProductID>
+        <ProductID>CVRFPID-112450</ProductID>
+        <ProductID>CVRFPID-112451</ProductID>
+        <ProductID>CVRFPID-112452</ProductID>
+        <ProductID>CVRFPID-112453</ProductID>
+        <ProductID>CVRFPID-184469</ProductID>
+        <ProductID>CVRFPID-184470</ProductID>
+        <ProductID>CVRFPID-184471</ProductID>
+        <ProductID>CVRFPID-184472</ProductID>
+        <ProductID>CVRFPID-184473</ProductID>
+        <ProductID>CVRFPID-184474</ProductID>
+        <ProductID>CVRFPID-184475</ProductID>
+        <ProductID>CVRFPID-184476</ProductID>
+        <ProductID>CVRFPID-184477</ProductID>
+        <ProductID>CVRFPID-184480</ProductID>
+        <ProductID>CVRFPID-184481</ProductID>
+        <ProductID>CVRFPID-194728</ProductID>
+        <ProductID>CVRFPID-194729</ProductID>
+        <ProductID>CVRFPID-194730</ProductID>
+        <ProductID>CVRFPID-194731</ProductID>
+        <ProductID>CVRFPID-194732</ProductID>
+        <ProductID>CVRFPID-194735</ProductID>
+        <ProductID>CVRFPID-194736</ProductID>
+        <ProductID>CVRFPID-194737</ProductID>
+        <ProductID>CVRFPID-194842</ProductID>
+        <ProductID>CVRFPID-194843</ProductID>
+        <ProductID>CVRFPID-198123</ProductID>
+        <ProductID>CVRFPID-198124</ProductID>
+        <ProductID>CVRFPID-198125</ProductID>
+        <ProductID>CVRFPID-200768</ProductID>
+        <ProductID>CVRFPID-200770</ProductID>
+        <ProductID>CVRFPID-200771</ProductID>
+        <ProductID>CVRFPID-201495</ProductID>
+        <ProductID>CVRFPID-202539</ProductID>
+        <ProductID>CVRFPID-202540</ProductID>
+        <ProductID>CVRFPID-202541</ProductID>
+        <ProductID>CVRFPID-202542</ProductID>
+        <ProductID>CVRFPID-202558</ProductID>
+        <ProductID>CVRFPID-203353</ProductID>
+        <ProductID>CVRFPID-206159</ProductID>
+        <ProductID>CVRFPID-206160</ProductID>
+        <ProductID>CVRFPID-206161</ProductID>
+        <ProductID>CVRFPID-206162</ProductID>
+        <ProductID>CVRFPID-206174</ProductID>
+        <ProductID>CVRFPID-206175</ProductID>
+        <ProductID>CVRFPID-206176</ProductID>
+        <ProductID>CVRFPID-206178</ProductID>
+        <ProductID>CVRFPID-206180</ProductID>
+        <ProductID>CVRFPID-206181</ProductID>
+        <ProductID>CVRFPID-206184</ProductID>
+        <ProductID>CVRFPID-206188</ProductID>
+        <ProductID>CVRFPID-206189</ProductID>
+        <ProductID>CVRFPID-206190</ProductID>
+        <ProductID>CVRFPID-206191</ProductID>
+        <ProductID>CVRFPID-206192</ProductID>
+        <ProductID>CVRFPID-210067</ProductID>
+        <ProductID>CVRFPID-210078</ProductID>
+        <ProductID>CVRFPID-210079</ProductID>
+        <ProductID>CVRFPID-210081</ProductID>
+        <ProductID>CVRFPID-212268</ProductID>
+        <ProductID>CVRFPID-212408</ProductID>
+        <ProductID>CVRFPID-212411</ProductID>
+        <ProductID>CVRFPID-213471</ProductID>
+        <ProductID>CVRFPID-213473</ProductID>
+        <ProductID>CVRFPID-213474</ProductID>
+        <ProductID>CVRFPID-213475</ProductID>
+        <ProductID>CVRFPID-213477</ProductID>
+        <ProductID>CVRFPID-213661</ProductID>
+        <ProductID>CVRFPID-213700</ProductID>
+        <ProductID>CVRFPID-213776</ProductID>
+        <ProductID>CVRFPID-213778</ProductID>
+        <ProductID>CVRFPID-213781</ProductID>
+        <ProductID>CVRFPID-213798</ProductID>
+        <ProductID>CVRFPID-213799</ProductID>
+        <ProductID>CVRFPID-213809</ProductID>
+        <ProductID>CVRFPID-213816</ProductID>
+        <ProductID>CVRFPID-213825</ProductID>
+        <ProductID>CVRFPID-213955</ProductID>
+        <ProductID>CVRFPID-214993</ProductID>
+        <ProductID>CVRFPID-217252</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160928-esp-nat</URL>
+        <Description>Cisco IOS XE Software NAT Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

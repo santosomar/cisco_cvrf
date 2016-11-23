@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unity Connection Cross-Site Request Forgery Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151209-uc</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-12-09T20:50:21</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-12-09T20:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-12-09T20:50:21</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A cross-site request forgery (CSRF) vulnerability in Cisco Unity Connection could allow an unauthenticated, remote attacker to execute unwanted actions.
+
+
+
+The vulnerability is due to a lack of CSRF protections by an affected device. An attacker could exploit this vulnerability by convincing a user to follow a malicious link. A successful exploit could allow the attacker to submit arbitrary requests to the affected device via the web browser with the privileges of the user.
+
+
+
+Cisco has not released software updates that address this vulnerability. A workaround that mitigates this vulnerability is available. 
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-uc["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-uc"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-uc</URL>
+      <Description>Cisco Unity Connection Cross-Site Request Forgery Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-212167">Cisco Unity Connection 11.5(0.98)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unity Connection Cross-Site Request Forgery Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCux24578</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A cross-site request forgery (CSRF) vulnerability in Cisco Unity Connection could allow an unauthenticated, remote attacker to execute unwanted actions.
+
+
+
+The vulnerability is due to a lack of CSRF protections by an affected device. An attacker could exploit this vulnerability by convincing a user to follow a malicious link. A successful exploit could allow the attacker to submit arbitrary requests to the affected device via the web browser with the privileges of the user.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux24578</Note>
+    </Notes>
+    <CVE>CVE-2015-6408</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-212167</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.3</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:N/I:P/A:N/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Users should verify that unsolicited links are safe to follow.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151209-uc</URL>
+        <Description>Cisco Unity Connection Cross-Site Request Forgery Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

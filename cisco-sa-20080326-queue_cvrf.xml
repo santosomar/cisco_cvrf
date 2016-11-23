@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Vulnerability in Cisco IOS with OSPF, MPLS VPN, and Supervisor 32, Supervisor 720, or Route Switch Processor 720</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20080326-queue</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.3</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2008-03-26T16:00:00</Date>
+        <Description>Updated Summary to remove link and verbiage.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2008-03-26T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2008-03-26T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080326-queue</URL>
+      <Description>Vulnerability in Cisco IOS with OSPF, MPLS VPN, and Supervisor 32, Supervisor 720, or Route Switch Processor 720</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-60290">Cisco IOS 12.2(18)IXA</FullProductName>
+    <FullProductName ProductID="CVRFPID-60353">Cisco IOS 12.2(18)IXB</FullProductName>
+    <FullProductName ProductID="CVRFPID-107138">Cisco IOS 12.2(18)IXB1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104182">Cisco IOS 12.2(18)IXB2</FullProductName>
+    <FullProductName ProductID="CVRFPID-63900">Cisco IOS 12.2(18)IXC</FullProductName>
+    <FullProductName ProductID="CVRFPID-66211">Cisco IOS 12.2(18)IXD</FullProductName>
+    <FullProductName ProductID="CVRFPID-104120">Cisco IOS 12.2(18)IXD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-104028">Cisco IOS 12.2(18)IXE</FullProductName>
+    <FullProductName ProductID="CVRFPID-60293">Cisco IOS 12.2(33)SRA</FullProductName>
+    <FullProductName ProductID="CVRFPID-106417">Cisco IOS 12.2(33)SRA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105507">Cisco IOS 12.2(33)SRA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105792">Cisco IOS 12.2(33)SRA3</FullProductName>
+    <FullProductName ProductID="CVRFPID-105814">Cisco IOS 12.2(99)SX1010</FullProductName>
+    <FullProductName ProductID="CVRFPID-104614">Cisco IOS 12.2(99)SX1012</FullProductName>
+    <FullProductName ProductID="CVRFPID-104867">Cisco IOS 12.2(99)SX1017</FullProductName>
+    <FullProductName ProductID="CVRFPID-50444">Cisco IOS 12.2(17b)SXA</FullProductName>
+    <FullProductName ProductID="CVRFPID-105932">Cisco IOS 12.2(17b)SXA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-50443">Cisco IOS 12.2(17d)SXB</FullProductName>
+    <FullProductName ProductID="CVRFPID-106944">Cisco IOS 12.2(17d)SXB1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106213">Cisco IOS 12.2(17d)SXB10</FullProductName>
+    <FullProductName ProductID="CVRFPID-103807">Cisco IOS 12.2(17d)SXB11</FullProductName>
+    <FullProductName ProductID="CVRFPID-106402">Cisco IOS 12.2(17d)SXB11a</FullProductName>
+    <FullProductName ProductID="CVRFPID-105138">Cisco IOS 12.2(17d)SXB2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105412">Cisco IOS 12.2(17d)SXB3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104060">Cisco IOS 12.2(17d)SXB4</FullProductName>
+    <FullProductName ProductID="CVRFPID-105583">Cisco IOS 12.2(17d)SXB5</FullProductName>
+    <FullProductName ProductID="CVRFPID-103643">Cisco IOS 12.2(17d)SXB6</FullProductName>
+    <FullProductName ProductID="CVRFPID-103988">Cisco IOS 12.2(17d)SXB7</FullProductName>
+    <FullProductName ProductID="CVRFPID-106369">Cisco IOS 12.2(17d)SXB8</FullProductName>
+    <FullProductName ProductID="CVRFPID-107656">Cisco IOS 12.2(17d)SXB9</FullProductName>
+    <FullProductName ProductID="CVRFPID-50442">Cisco IOS 12.2(18)SXD</FullProductName>
+    <FullProductName ProductID="CVRFPID-103778">Cisco IOS 12.2(18)SXD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106715">Cisco IOS 12.2(18)SXD2</FullProductName>
+    <FullProductName ProductID="CVRFPID-106940">Cisco IOS 12.2(18)SXD3</FullProductName>
+    <FullProductName ProductID="CVRFPID-106180">Cisco IOS 12.2(18)SXD4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106010">Cisco IOS 12.2(18)SXD5</FullProductName>
+    <FullProductName ProductID="CVRFPID-105224">Cisco IOS 12.2(18)SXD6</FullProductName>
+    <FullProductName ProductID="CVRFPID-105438">Cisco IOS 12.2(18)SXD7</FullProductName>
+    <FullProductName ProductID="CVRFPID-62605">Cisco IOS 12.2(18)SXD7a</FullProductName>
+    <FullProductName ProductID="CVRFPID-103501">Cisco IOS 12.2(18)SXD7b</FullProductName>
+    <FullProductName ProductID="CVRFPID-50440">Cisco IOS 12.2(18)SXE</FullProductName>
+    <FullProductName ProductID="CVRFPID-105612">Cisco IOS 12.2(18)SXE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-53781">Cisco IOS 12.2(18)SXE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104469">Cisco IOS 12.2(18)SXE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104742">Cisco IOS 12.2(18)SXE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-107684">Cisco IOS 12.2(18)SXE5</FullProductName>
+    <FullProductName ProductID="CVRFPID-62606">Cisco IOS 12.2(18)SXE6</FullProductName>
+    <FullProductName ProductID="CVRFPID-104574">Cisco IOS 12.2(18)SXE6a</FullProductName>
+    <FullProductName ProductID="CVRFPID-104776">Cisco IOS 12.2(18)SXE6b</FullProductName>
+    <FullProductName ProductID="CVRFPID-60291">Cisco IOS 12.2(18)SXF</FullProductName>
+    <FullProductName ProductID="CVRFPID-103786">Cisco IOS 12.2(18)SXF1</FullProductName>
+    <FullProductName ProductID="CVRFPID-107205">Cisco IOS 12.2(18)SXF2</FullProductName>
+    <FullProductName ProductID="CVRFPID-104849">Cisco IOS 12.2(18)SXF3</FullProductName>
+    <FullProductName ProductID="CVRFPID-104234">Cisco IOS 12.2(18)SXF4</FullProductName>
+    <FullProductName ProductID="CVRFPID-62607">Cisco IOS 12.2(18)SXF5</FullProductName>
+    <FullProductName ProductID="CVRFPID-60354">Cisco IOS 12.2(18)ZU</FullProductName>
+    <FullProductName ProductID="CVRFPID-104978">Cisco IOS 12.2(18)ZU1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105269">Cisco IOS 12.2(18)ZU2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS MPLS VPN OSPF Packet Processing Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCsf12082</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCsf12082</Note>
+    </Notes>
+    <CVE>CVE-2008-0537</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-50440</ProductID>
+        <ProductID>CVRFPID-50442</ProductID>
+        <ProductID>CVRFPID-50443</ProductID>
+        <ProductID>CVRFPID-50444</ProductID>
+        <ProductID>CVRFPID-53781</ProductID>
+        <ProductID>CVRFPID-60290</ProductID>
+        <ProductID>CVRFPID-60291</ProductID>
+        <ProductID>CVRFPID-60293</ProductID>
+        <ProductID>CVRFPID-60353</ProductID>
+        <ProductID>CVRFPID-60354</ProductID>
+        <ProductID>CVRFPID-62605</ProductID>
+        <ProductID>CVRFPID-62606</ProductID>
+        <ProductID>CVRFPID-62607</ProductID>
+        <ProductID>CVRFPID-63900</ProductID>
+        <ProductID>CVRFPID-66211</ProductID>
+        <ProductID>CVRFPID-103501</ProductID>
+        <ProductID>CVRFPID-103643</ProductID>
+        <ProductID>CVRFPID-103778</ProductID>
+        <ProductID>CVRFPID-103786</ProductID>
+        <ProductID>CVRFPID-103807</ProductID>
+        <ProductID>CVRFPID-103988</ProductID>
+        <ProductID>CVRFPID-104028</ProductID>
+        <ProductID>CVRFPID-104060</ProductID>
+        <ProductID>CVRFPID-104120</ProductID>
+        <ProductID>CVRFPID-104182</ProductID>
+        <ProductID>CVRFPID-104234</ProductID>
+        <ProductID>CVRFPID-104469</ProductID>
+        <ProductID>CVRFPID-104574</ProductID>
+        <ProductID>CVRFPID-104614</ProductID>
+        <ProductID>CVRFPID-104742</ProductID>
+        <ProductID>CVRFPID-104776</ProductID>
+        <ProductID>CVRFPID-104849</ProductID>
+        <ProductID>CVRFPID-104867</ProductID>
+        <ProductID>CVRFPID-104978</ProductID>
+        <ProductID>CVRFPID-105138</ProductID>
+        <ProductID>CVRFPID-105224</ProductID>
+        <ProductID>CVRFPID-105269</ProductID>
+        <ProductID>CVRFPID-105412</ProductID>
+        <ProductID>CVRFPID-105438</ProductID>
+        <ProductID>CVRFPID-105507</ProductID>
+        <ProductID>CVRFPID-105583</ProductID>
+        <ProductID>CVRFPID-105612</ProductID>
+        <ProductID>CVRFPID-105792</ProductID>
+        <ProductID>CVRFPID-105814</ProductID>
+        <ProductID>CVRFPID-105932</ProductID>
+        <ProductID>CVRFPID-106010</ProductID>
+        <ProductID>CVRFPID-106180</ProductID>
+        <ProductID>CVRFPID-106213</ProductID>
+        <ProductID>CVRFPID-106369</ProductID>
+        <ProductID>CVRFPID-106402</ProductID>
+        <ProductID>CVRFPID-106417</ProductID>
+        <ProductID>CVRFPID-106715</ProductID>
+        <ProductID>CVRFPID-106940</ProductID>
+        <ProductID>CVRFPID-106944</ProductID>
+        <ProductID>CVRFPID-107138</ProductID>
+        <ProductID>CVRFPID-107205</ProductID>
+        <ProductID>CVRFPID-107656</ProductID>
+        <ProductID>CVRFPID-107684</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:POC/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20080326-queue</URL>
+        <Description>Vulnerability in Cisco IOS with OSPF, MPLS VPN, and Supervisor 32, Supervisor 720, or Route Switch Processor 720</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

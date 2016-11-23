@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Nexus 3000 Series and 3500 Platform Switches Insecure Default Credentials Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160302-n3k</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-03-02T15:33:25</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-03-08T17:55:21</Date>
+        <Description>Updated the Workaround section to include more detailed information.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-03-02T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-03-08T17:55:21</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Cisco NX-OS Software running on Cisco Nexus 3000 Series Switches and Cisco Nexus 3500 Platform Switches could allow an unauthenticated, remote attacker to log in to the device with the privileges of the root user with bash shell access.
+
+ 
+
+The vulnerability is due to a user account that has a default and static password. This account is created at installation and cannot be changed or deleted without impacting the functionality of the system. An attacker could exploit this vulnerability by connecting to the affected system using this default account. The account can be used to authenticate remotely to the device via Telnet (or SSH on a specific release) and locally on the serial console.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are available.
+
+
+
+This advisory is available at the following link:
+
+
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-n3k["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-n3k"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-n3k</URL>
+      <Description>Cisco Nexus 3000 Series and 3500 Platform Switches Insecure Default Credentials Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-209610">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213564">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A7(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213565">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213566">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213567">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213568">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213569">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213570">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213571">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213572">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213573">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(5)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Nexus 3000 Series and 3500 Platform Switches Insecure Default Credentials Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy25800</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco NX-OS Software running on Cisco Nexus 3000 Series Switches and Cisco Nexus 3500 Platform Switches could allow an unauthenticated, remote attacker to log in to the device with the privileges of the root user with bash shell access.
+
+ 
+
+The vulnerability is due to a user account that has a default and static password. This account is created at installation and cannot be changed or deleted without impacting the functionality of the system. An attacker could exploit this vulnerability by connecting to the affected system using this default account. The account can be used to authenticate remotely to the device via Telnet (or SSH on a specific release) and locally on the serial console.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuy25800</Note>
+    </Notes>
+    <CVE>CVE-2016-1329</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-209610</ProductID>
+        <ProductID>CVRFPID-213564</ProductID>
+        <ProductID>CVRFPID-213565</ProductID>
+        <ProductID>CVRFPID-213566</ProductID>
+        <ProductID>CVRFPID-213567</ProductID>
+        <ProductID>CVRFPID-213568</ProductID>
+        <ProductID>CVRFPID-213569</ProductID>
+        <ProductID>CVRFPID-213570</ProductID>
+        <ProductID>CVRFPID-213571</ProductID>
+        <ProductID>CVRFPID-213572</ProductID>
+        <ProductID>CVRFPID-213573</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>For the following devices and Cisco NX-OS Software releases, this vulnerability is specific to remote access using Telnet or direct serial console access. A workaround to prevent exploitation via Telnet is to disable Telnet and use SSH for remote connections to the device. Note that no workaround is available for exploitation via direct serial console access.
+
+
+    Cisco Nexus 3000 Series Switches NX-OS Software Releases
+    
+        6.0(2)U6(1)
+        6.0(2)U6(2)
+        6.0(2)U6(3)
+        6.0(2)U6(4)
+        6.0(2)U6(5)
+    
+    
+    Cisco Nexus 3500 Platform Switches NX-OS Software Releases
+    
+        6.0(2)A6(2)
+        6.0(2)A6(3)
+        6.0(2)A6(4)
+        6.0(2)A6(5)
+        6.0(2)A7(1)
+    
+    
+
+The Telnet protocol is disabled by default on Nexus 3000 Series and 3500 Platform Switches. To determine whether the Telnet protocol is enabled, the administrative user can issue the show feature | incl telnet command:
+
+
+
+# show feature | incl telnet
+telnetServer          1          disabled
+
+
+
+Note: This workaround does not apply to Nexus 3500 Platform Switches running Cisco NX-OS Software release 6.0(2)A6(1) because the default account can be used with SSH remote access in this software release. Administrators of devices running 6.0(2)A6(1) are advised to upgrade to a fixed release.
+
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-n3k</URL>
+        <Description>Cisco Nexus 3000 Series and 3500 Platform Switches Insecure Default Credentials Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

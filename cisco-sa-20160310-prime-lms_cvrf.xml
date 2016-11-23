@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Prime LAN Management Solution Default Decryption Key Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160310-prime-lms</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-03-10T15:21:20</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-03-10T08:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-03-10T15:21:20</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Cisco Prime LAN Management Solution (LMS) could allow an authenticated, local attacker to decrypt and access data fields in LMS databases that are used to manage devices in Cisco networks.
+
+
+
+The vulnerability is due to the presence of a default database decryption key that is shared across installations of Cisco Prime LMS. An authenticated, local attacker who has both local connectivity to the console and a valid account on the operating system of a device on which LMS is installed could exploit this vulnerability by obtaining the default, hard-coded key from the device file system. The attacker could use the key to connect to and decrypt all the data in the LMS database that is used to managed devices in the network, and access all the fields in the database. After obtaining the key, the attacker can use the key to access the database locally or via a remote connection to LMS.
+
+
+
+Cisco has not released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160310-prime-lms["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160310-prime-lms"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160310-prime-lms</URL>
+      <Description>Cisco Prime LAN Management Solution Default Decryption Key Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-188428">Cisco Prime LAN Management Solution (LMS) 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-188430">Cisco Prime LAN Management Solution (LMS) 4.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-188431">Cisco Prime LAN Management Solution (LMS) 4.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-188432">Cisco Prime LAN Management Solution (LMS) 4.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-188433">Cisco Prime LAN Management Solution (LMS) 4.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-214007">Cisco Prime LAN Management Solution (LMS) 4.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-214008">Cisco Prime LAN Management Solution (LMS) 4.2.5</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Prime LAN Management Solution Default Decryption Key Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuw85390</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco Prime LAN Management Solution (LMS) could allow an authenticated, local attacker to decrypt and access data fields in LMS databases that are used to manage devices in Cisco networks.
+
+
+
+The vulnerability is due to the presence of a default database decryption key that is shared across installations of Cisco Prime LMS. An authenticated, local attacker who has both local connectivity to the console and a valid account on the operating system of a device on which LMS is installed could exploit this vulnerability by obtaining the default, hard-coded key from the device file system. The attacker could use the key to connect to and decrypt all the data in the LMS database that is used to managed devices in the network, and access all the fields in the database. After obtaining the key, the attacker can use the key to access the database locally or via a remote connection to LMS.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuw85390</Note>
+    </Notes>
+    <CVE>CVE-2016-1360</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-188428</ProductID>
+        <ProductID>CVRFPID-188430</ProductID>
+        <ProductID>CVRFPID-188431</ProductID>
+        <ProductID>CVRFPID-188432</ProductID>
+        <ProductID>CVRFPID-188433</ProductID>
+        <ProductID>CVRFPID-214007</ProductID>
+        <ProductID>CVRFPID-214008</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.0</BaseScore>
+        <TemporalScore>2.8</TemporalScore>
+        <Vector>AV:L/AC:M/Au:S/C:P/I:P/A:N/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160310-prime-lms</URL>
+        <Description>Cisco Prime LAN Management Solution Default Decryption Key Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

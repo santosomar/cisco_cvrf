@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Catalyst Switches Network Mobility Services Protocol Port Information Disclosure Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160413-nms</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-04-13T21:40:09</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-08-25T16:51:36</Date>
+        <Description>Added Cisco Catalyst 6k Switches to Products Confirmed Not Vulnerable.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-04-13T21:35:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-08-25T16:51:36</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Cisco Catalyst Switches running Cisco IOS Software releases prior to 15.2(2)E1 may allow an unauthenticated, remote attacker to retrieve version information about the software release running on the device by accessing the Network Mobility Services Protocol (NMSP) port.
+
+
+
+The vulnerability is due to a failure to properly secure NMSP with authentication, which has been made standard in Cisco IOS Software releases 15.2(2)E1 and later. An attacker could exploit earlier software releases to map the network and gather information for further attacks.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160413-nms["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160413-nms"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160413-nms</URL>
+      <Description>Cisco Catalyst Switches Network Mobility Services Protocol Port Information Disclosure Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-106089">Cisco IOS 15.1(1)SG</FullProductName>
+    <FullProductName ProductID="CVRFPID-117196">Cisco IOS 15.1(1)SG1</FullProductName>
+    <FullProductName ProductID="CVRFPID-185281">Cisco IOS 15.1(1)SG2</FullProductName>
+    <FullProductName ProductID="CVRFPID-115477">Cisco IOS 15.1(2)SG</FullProductName>
+    <FullProductName ProductID="CVRFPID-188035">Cisco IOS 15.1(2)SG1</FullProductName>
+    <FullProductName ProductID="CVRFPID-193283">Cisco IOS 15.1(2)SG2</FullProductName>
+    <FullProductName ProductID="CVRFPID-194741">Cisco IOS 15.1(2)SG3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195489">Cisco IOS 15.1(2)SG4</FullProductName>
+    <FullProductName ProductID="CVRFPID-197465">Cisco IOS 15.1(2)SG5</FullProductName>
+    <FullProductName ProductID="CVRFPID-204187">Cisco IOS 15.1(2)SG6</FullProductName>
+    <FullProductName ProductID="CVRFPID-209034">Cisco IOS 15.1(2)SG7</FullProductName>
+    <FullProductName ProductID="CVRFPID-112489">Cisco IOS 15.1(1)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-115285">Cisco IOS 15.1(1)SY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191635">Cisco IOS 15.1(1)SY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-194944">Cisco IOS 15.1(1)SY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-198426">Cisco IOS 15.1(1)SY4</FullProductName>
+    <FullProductName ProductID="CVRFPID-204109">Cisco IOS 15.1(1)SY5</FullProductName>
+    <FullProductName ProductID="CVRFPID-209043">Cisco IOS 15.1(1)SY6</FullProductName>
+    <FullProductName ProductID="CVRFPID-184932">Cisco IOS 15.1(2)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-188061">Cisco IOS 15.1(2)SY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-189219">Cisco IOS 15.1(2)SY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-198059">Cisco IOS 15.1(2)SY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-201019">Cisco IOS 15.1(2)SY4</FullProductName>
+    <FullProductName ProductID="CVRFPID-204832">Cisco IOS 15.1(2)SY4a</FullProductName>
+    <FullProductName ProductID="CVRFPID-204110">Cisco IOS 15.1(2)SY5</FullProductName>
+    <FullProductName ProductID="CVRFPID-209044">Cisco IOS 15.1(2)SY6</FullProductName>
+    <FullProductName ProductID="CVRFPID-210406">Cisco IOS 15.1(2)SY7</FullProductName>
+    <FullProductName ProductID="CVRFPID-214052">Cisco IOS 15.1(2)SY8</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Catalyst Switches Network Mobility Services Protocol Port Information Disclosure Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCum62591</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">Cisco Catalyst Switches running Cisco IOS Software releases prior to 15.2(2)E1 may allow an unauthenticated, remote attacker to retrieve version information about the software release running on the device by accessing the Network Mobility Services Protocol (NMSP) port.
+
+
+
+The vulnerability is due to a failure to properly secure NMSP with authentication, which has been made standard in Cisco IOS Software releases 15.2(2)E1 and later. An attacker could exploit earlier software releases to map the network and gather information for further attacks.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCum62591</Note>
+    </Notes>
+    <CVE>CVE-2016-1378</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-106089</ProductID>
+        <ProductID>CVRFPID-112489</ProductID>
+        <ProductID>CVRFPID-115285</ProductID>
+        <ProductID>CVRFPID-115477</ProductID>
+        <ProductID>CVRFPID-117196</ProductID>
+        <ProductID>CVRFPID-184932</ProductID>
+        <ProductID>CVRFPID-185281</ProductID>
+        <ProductID>CVRFPID-188035</ProductID>
+        <ProductID>CVRFPID-188061</ProductID>
+        <ProductID>CVRFPID-189219</ProductID>
+        <ProductID>CVRFPID-191635</ProductID>
+        <ProductID>CVRFPID-193283</ProductID>
+        <ProductID>CVRFPID-194741</ProductID>
+        <ProductID>CVRFPID-194944</ProductID>
+        <ProductID>CVRFPID-195489</ProductID>
+        <ProductID>CVRFPID-197465</ProductID>
+        <ProductID>CVRFPID-198059</ProductID>
+        <ProductID>CVRFPID-198426</ProductID>
+        <ProductID>CVRFPID-201019</ProductID>
+        <ProductID>CVRFPID-204109</ProductID>
+        <ProductID>CVRFPID-204110</ProductID>
+        <ProductID>CVRFPID-204187</ProductID>
+        <ProductID>CVRFPID-204832</ProductID>
+        <ProductID>CVRFPID-209034</ProductID>
+        <ProductID>CVRFPID-209043</ProductID>
+        <ProductID>CVRFPID-209044</ProductID>
+        <ProductID>CVRFPID-210406</ProductID>
+        <ProductID>CVRFPID-214052</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:P/I:N/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160413-nms</URL>
+        <Description>Cisco Catalyst Switches Network Mobility Services Protocol Port Information Disclosure Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

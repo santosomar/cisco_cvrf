@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>GNU glibc gethostbyname Function Buffer Overflow Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150128-ghost</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.33</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-01-28T22:25:04</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2015-01-29T22:40:56</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections. Added Cisco ERP to Workarounds section.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2015-01-30T22:30:12</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2015-02-03T00:16:28</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2015-02-03T23:37:50</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2015-02-04T17:12:14</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2015-02-06T01:11:50</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.7</Number>
+        <Date>2015-02-06T17:59:31</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.8</Number>
+        <Date>2015-02-09T20:49:09</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2015-02-10T22:27:11</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.10</Number>
+        <Date>2015-02-11T16:48:52</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.11</Number>
+        <Date>2015-02-12T19:34:51</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.12</Number>
+        <Date>2015-02-13T18:37:51</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.13</Number>
+        <Date>2015-02-16T18:15:56</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.14</Number>
+        <Date>2015-02-17T20:56:48</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.15</Number>
+        <Date>2015-02-18T21:33:12</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.16</Number>
+        <Date>2015-02-19T21:39:09</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.17</Number>
+        <Date>2015-02-20T20:21:16</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.18</Number>
+        <Date>2015-02-24T18:55:23</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.19</Number>
+        <Date>2015-02-27T20:57:43</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.20</Number>
+        <Date>2015-03-03T19:58:52</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.21</Number>
+        <Date>2015-03-06T23:02:00</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.22</Number>
+        <Date>2015-03-10T23:10:40</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.23</Number>
+        <Date>2015-03-13T19:40:32</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.24</Number>
+        <Date>2015-03-17T19:49:36</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.25</Number>
+        <Date>2015-03-20T19:19:48</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.26</Number>
+        <Date>2015-03-24T21:36:27</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.27</Number>
+        <Date>2015-03-27T19:59:34</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.28</Number>
+        <Date>2015-03-31T19:19:21</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.29</Number>
+        <Date>2015-04-10T17:49:01</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.30</Number>
+        <Date>2015-04-14T20:09:45</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.31</Number>
+        <Date>2015-04-28T17:36:16</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.32</Number>
+        <Date>2015-05-22T16:57:22</Date>
+        <Description>Updated the Affected Products, Vulnerable Products, and Products Confirmed Not Vulnerable sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.33</Number>
+        <Date>2015-07-24T17:47:13</Date>
+        <Description>Updated Fixed Releases availability data for some products.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-01-28T22:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-07-24T17:47:13</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">On January 27, 2015, a buffer overflow vulnerability in the GNU C library (glibc) was publicly announced. This vulnerability is related to the various gethostbyname functions included in glibc and affects applications that call these functions. This vulnerability may allow an attacker to obtain sensitive information from an exploited system or, in some instances, perform remote code execution with the privileges of the application being exploited.
+
+
+
+The glibc library is a commonly used third-party software component that is released by the GNU software project and a number of Cisco products are likely affected.
+
+
+
+This advisory will be updated as additional information becomes available. Cisco will release free software updates that address this vulnerability. Workarounds that mitigate this vulnerability are not available. 
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150128-ghost["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150128-ghost"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150128-ghost</URL>
+      <Description>GNU glibc gethostbyname Function Buffer Overflow Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>GNU glibc gethost Function Calls Heap-Based Buffer Overflow Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the function of GNU glibc could allow an unauthenticated, remote attacker to execute arbitrary code, cause a denial of service condition, or access sensitive information.
+
+
+
+The vulnerability is due to improper input validation. An unauthenticated, remote attacker could exploit this vulnerability by sending malicious requests to a targeted system. </Note>
+    </Notes>
+    <CVE>CVE-2015-0235</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are currently no network-based mitigations for this vulnerability or any mitigations that can be performed directly on affected systems.
+
+
+
+Cisco has published an Event Response for this vulnerability: http://www.cisco.com/web/about/security/intelligence/ERP_GHOST_29-Jan-2015.html["http://www.cisco.com/web/about/security/intelligence/ERP_GHOST_29-Jan-2015.html"]</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150128-ghost</URL>
+        <Description>GNU glibc gethostbyname Function Buffer Overflow Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

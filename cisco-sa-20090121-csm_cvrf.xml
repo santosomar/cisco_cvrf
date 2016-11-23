@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Security Manager Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20090121-csm</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2009-01-21T16:00:00</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2009-01-21T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2009-01-21T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090121-csm</URL>
+      <Description>Cisco Security Manager Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090121-csm</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Security Manager Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20090121-csm</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco Security Manager Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-79787">Cisco Security Manager  3.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-79792">Cisco Security Manager  3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88530">Cisco Security Manager  3.1.1 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88531">Cisco Security Manager  3.1.1 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-88532">Cisco Security Manager  3.1.1 SP3</FullProductName>
+    <FullProductName ProductID="CVRFPID-79789">Cisco Security Manager  3.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-88534">Cisco Security Manager  3.2.0 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88535">Cisco Security Manager  3.2.0 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-88528">Cisco Security Manager  3.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-88533">Cisco Security Manager  3.2.1 SP1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Security Manager IPS Event Viewer Unauthorized Access Vulnerability</Title>
+    <CVE>CVE-2008-3820</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-79787</ProductID>
+        <ProductID>CVRFPID-79789</ProductID>
+        <ProductID>CVRFPID-79792</ProductID>
+        <ProductID>CVRFPID-88528</ProductID>
+        <ProductID>CVRFPID-88530</ProductID>
+        <ProductID>CVRFPID-88531</ProductID>
+        <ProductID>CVRFPID-88532</ProductID>
+        <ProductID>CVRFPID-88533</ProductID>
+        <ProductID>CVRFPID-88534</ProductID>
+        <ProductID>CVRFPID-88535</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>8.8</BaseScore>
+        <TemporalScore>7.3</TemporalScore>
+        <Vector>AV:N/AC:M/Au:N/C:C/I:C/A:N/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20090121-csm</URL>
+        <Description>Cisco Security Manager Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Email Security Appliance Corrupted Attachment Fields Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161026-esa3</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-10-26T15:30:14</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-10-26T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-10-26T15:30:14</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the email message filtering feature of Cisco AsyncOS Software for Cisco Email Security Appliances could allow an unauthenticated, remote attacker to cause an affected device to stop scanning and forwarding email messages due to a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to improper input validation of email attachments that have corrupted fields. An attacker could exploit this vulnerability by sending a crafted email message, which has an attachment with corrupted fields, through an affected device. When the affected software filters the attachment, the filtering process could crash and restart, resulting in a DoS condition. After the filtering process restarts, the software resumes filtering for the same attachment, causing the filtering process to crash and restart again. A successful exploit could allow the attacker to cause a repeated DoS condition.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+
+This advisory is available at the following link:
+
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esa3["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esa3"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esa3</URL>
+      <Description>Cisco Email Security Appliance Corrupted Attachment Fields Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-208215">Cisco Email Security Appliance (ESA) 3.3.1-09</FullProductName>
+    <FullProductName ProductID="CVRFPID-189799">Cisco Email Security Appliance (ESA) 7.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-189960">Cisco Email Security Appliance (ESA) 7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-189961">Cisco Email Security Appliance (ESA) 7.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-189962">Cisco Email Security Appliance (ESA) 7.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-189963">Cisco Email Security Appliance (ESA) 7.1.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-189964">Cisco Email Security Appliance (ESA) 7.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-189801">Cisco Email Security Appliance (ESA) 7.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-190773">Cisco Email Security Appliance (ESA) 7.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-190774">Cisco Email Security Appliance (ESA) 7.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-189803">Cisco Email Security Appliance (ESA) 7.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-189965">Cisco Email Security Appliance (ESA) 7.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-189966">Cisco Email Security Appliance (ESA) 7.5.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-216284">Cisco Email Security Appliance (ESA) 7.5.2-201</FullProductName>
+    <FullProductName ProductID="CVRFPID-189805">Cisco Email Security Appliance (ESA) 7.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-189967">Cisco Email Security Appliance (ESA) 7.6.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-208216">Cisco Email Security Appliance (ESA) 7.6.1-gpl-022</FullProductName>
+    <FullProductName ProductID="CVRFPID-189968">Cisco Email Security Appliance (ESA) 7.6.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-211003">Cisco Email Security Appliance (ESA) 7.6.3-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216285">Cisco Email Security Appliance (ESA) 7.6.3-025</FullProductName>
+    <FullProductName ProductID="CVRFPID-211005">Cisco Email Security Appliance (ESA) 7.7.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211006">Cisco Email Security Appliance (ESA) 7.7.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-189807">Cisco Email Security Appliance (ESA) 7.8.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211007">Cisco Email Security Appliance (ESA) 7.8.0-311</FullProductName>
+    <FullProductName ProductID="CVRFPID-189809">Cisco Email Security Appliance (ESA) 8.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-216286">Cisco Email Security Appliance (ESA) 8.0.1-023</FullProductName>
+    <FullProductName ProductID="CVRFPID-198224">Cisco Email Security Appliance (ESA) 8.5.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-216287">Cisco Email Security Appliance (ESA) 8.5.0-ER1-198</FullProductName>
+    <FullProductName ProductID="CVRFPID-211008">Cisco Email Security Appliance (ESA) 8.5.6-052</FullProductName>
+    <FullProductName ProductID="CVRFPID-208798">Cisco Email Security Appliance (ESA) 8.5.6-073</FullProductName>
+    <FullProductName ProductID="CVRFPID-208217">Cisco Email Security Appliance (ESA) 8.5.6-074</FullProductName>
+    <FullProductName ProductID="CVRFPID-207644">Cisco Email Security Appliance (ESA) 8.5.6-106</FullProductName>
+    <FullProductName ProductID="CVRFPID-209313">Cisco Email Security Appliance (ESA) 8.5.6-113</FullProductName>
+    <FullProductName ProductID="CVRFPID-209264">Cisco Email Security Appliance (ESA) 8.5.7-042</FullProductName>
+    <FullProductName ProductID="CVRFPID-211010">Cisco Email Security Appliance (ESA) 8.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211011">Cisco Email Security Appliance (ESA) 8.6.0-011</FullProductName>
+    <FullProductName ProductID="CVRFPID-211013">Cisco Email Security Appliance (ESA) 8.9.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211014">Cisco Email Security Appliance (ESA) 8.9.1-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-211015">Cisco Email Security Appliance (ESA) 8.9.2-032</FullProductName>
+    <FullProductName ProductID="CVRFPID-208800">Cisco Email Security Appliance (ESA) 9.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211016">Cisco Email Security Appliance (ESA) 9.0.0-212</FullProductName>
+    <FullProductName ProductID="CVRFPID-208801">Cisco Email Security Appliance (ESA) 9.0.0-461</FullProductName>
+    <FullProductName ProductID="CVRFPID-211017">Cisco Email Security Appliance (ESA) 9.0.5-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-209298">Cisco Email Security Appliance (ESA) 9.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211018">Cisco Email Security Appliance (ESA) 9.1.0-011</FullProductName>
+    <FullProductName ProductID="CVRFPID-209299">Cisco Email Security Appliance (ESA) 9.1.0-101</FullProductName>
+    <FullProductName ProductID="CVRFPID-209314">Cisco Email Security Appliance (ESA) 9.1.0-032</FullProductName>
+    <FullProductName ProductID="CVRFPID-211020">Cisco Email Security Appliance (ESA) 9.4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-211021">Cisco Email Security Appliance (ESA) 9.4.4-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-208932">Cisco Email Security Appliance (ESA) 9.5.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-208933">Cisco Email Security Appliance (ESA) 9.5.0-201</FullProductName>
+    <FullProductName ProductID="CVRFPID-209301">Cisco Email Security Appliance (ESA) 9.6.0-000</FullProductName>
+    <FullProductName ProductID="CVRFPID-209302">Cisco Email Security Appliance (ESA) 9.6.0-042</FullProductName>
+    <FullProductName ProductID="CVRFPID-213464">Cisco Email Security Appliance (ESA) 9.6.0-051</FullProductName>
+    <FullProductName ProductID="CVRFPID-213466">Cisco Email Security Appliance (ESA) 9.7.0-125</FullProductName>
+    <FullProductName ProductID="CVRFPID-218949">Cisco Email Security Appliance (ESA) 9.7.1-066</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Email Security Appliance Corrupted Attachment Fields Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz63143</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the email message filtering feature of Cisco AsyncOS Software for Cisco Email Security Appliances could allow an unauthenticated, remote attacker to cause an affected device to stop scanning and forwarding email messages due to a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to improper input validation of email attachments that have corrupted fields. An attacker could exploit this vulnerability by sending a crafted email message, which has an attachment with corrupted fields, through an affected device. When the affected software filters the attachment, the filtering process could crash and restart, resulting in a DoS condition. After the filtering process restarts, the software resumes filtering for the same attachment, causing the filtering process to crash and restart again. A successful exploit could allow the attacker to cause a repeated DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz63143</Note>
+    </Notes>
+    <CVE>CVE-2016-6356</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-189799</ProductID>
+        <ProductID>CVRFPID-189801</ProductID>
+        <ProductID>CVRFPID-189803</ProductID>
+        <ProductID>CVRFPID-189805</ProductID>
+        <ProductID>CVRFPID-189807</ProductID>
+        <ProductID>CVRFPID-189809</ProductID>
+        <ProductID>CVRFPID-189960</ProductID>
+        <ProductID>CVRFPID-189961</ProductID>
+        <ProductID>CVRFPID-189962</ProductID>
+        <ProductID>CVRFPID-189963</ProductID>
+        <ProductID>CVRFPID-189964</ProductID>
+        <ProductID>CVRFPID-189965</ProductID>
+        <ProductID>CVRFPID-189966</ProductID>
+        <ProductID>CVRFPID-189967</ProductID>
+        <ProductID>CVRFPID-189968</ProductID>
+        <ProductID>CVRFPID-190773</ProductID>
+        <ProductID>CVRFPID-190774</ProductID>
+        <ProductID>CVRFPID-198224</ProductID>
+        <ProductID>CVRFPID-207644</ProductID>
+        <ProductID>CVRFPID-208215</ProductID>
+        <ProductID>CVRFPID-208216</ProductID>
+        <ProductID>CVRFPID-208217</ProductID>
+        <ProductID>CVRFPID-208798</ProductID>
+        <ProductID>CVRFPID-208800</ProductID>
+        <ProductID>CVRFPID-208801</ProductID>
+        <ProductID>CVRFPID-208932</ProductID>
+        <ProductID>CVRFPID-208933</ProductID>
+        <ProductID>CVRFPID-209264</ProductID>
+        <ProductID>CVRFPID-209298</ProductID>
+        <ProductID>CVRFPID-209299</ProductID>
+        <ProductID>CVRFPID-209301</ProductID>
+        <ProductID>CVRFPID-209302</ProductID>
+        <ProductID>CVRFPID-209313</ProductID>
+        <ProductID>CVRFPID-209314</ProductID>
+        <ProductID>CVRFPID-211003</ProductID>
+        <ProductID>CVRFPID-211005</ProductID>
+        <ProductID>CVRFPID-211006</ProductID>
+        <ProductID>CVRFPID-211007</ProductID>
+        <ProductID>CVRFPID-211008</ProductID>
+        <ProductID>CVRFPID-211010</ProductID>
+        <ProductID>CVRFPID-211011</ProductID>
+        <ProductID>CVRFPID-211013</ProductID>
+        <ProductID>CVRFPID-211014</ProductID>
+        <ProductID>CVRFPID-211015</ProductID>
+        <ProductID>CVRFPID-211016</ProductID>
+        <ProductID>CVRFPID-211017</ProductID>
+        <ProductID>CVRFPID-211018</ProductID>
+        <ProductID>CVRFPID-211020</ProductID>
+        <ProductID>CVRFPID-211021</ProductID>
+        <ProductID>CVRFPID-213464</ProductID>
+        <ProductID>CVRFPID-213466</ProductID>
+        <ProductID>CVRFPID-216284</ProductID>
+        <ProductID>CVRFPID-216285</ProductID>
+        <ProductID>CVRFPID-216286</ProductID>
+        <ProductID>CVRFPID-216287</ProductID>
+        <ProductID>CVRFPID-218949</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esa3</URL>
+        <Description>Cisco Email Security Appliance Corrupted Attachment Fields Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

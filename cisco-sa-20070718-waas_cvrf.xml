@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Denial of Service Vulnerability in Cisco Wide Area Application Services (WAAS) Software</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20070718-waas</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2007-07-18T16:00:00</Date>
+        <Description>In "Vulnerable Products" section, added a line break</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-07-18T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-07-18T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070718-waas</URL>
+      <Description>Denial of Service Vulnerability in Cisco Wide Area Application Services (WAAS) Software</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20070718-waas</URL>
+      <Description>Identifying and Mitigating Exploitation of the DoS Vulnerability in Cisco WAAS Software</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20070718-waas</URL>
+      <Description>Identifying and Mitigating Exploitation of the DoS Vulnerability in Cisco WAAS Software</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-69137">Cisco Wide Area Application Services (WAAS) 4.0.7</FullProductName>
+    <FullProductName ProductID="CVRFPID-69138">Cisco Wide Area Application Services (WAAS) 4.0.9</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wide Area Application Services Remote Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-3923</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-69137</ProductID>
+        <ProductID>CVRFPID-69138</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.3</BaseScore>
+        <TemporalScore>2.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:N/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070718-waas</URL>
+        <Description>Denial of Service Vulnerability in Cisco Wide Area Application Services (WAAS) Software</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

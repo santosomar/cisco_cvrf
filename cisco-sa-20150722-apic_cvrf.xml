@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150722-apic</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-07-22T13:39:41</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-07-22T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-07-22T13:39:41</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the cluster management configuration of the Cisco Application Policy Infrastructure Controller (APIC) and the Cisco Nexus 9000 Series ACI Mode Switch could allow an authenticated, remote attacker to access the APIC as the root user.
+
+
+
+The vulnerability is due to improper implementation of access controls in the APIC filesystem. An attacker could exploit this vulnerability by accessing the cluster management configuration of the APIC. An exploit could allow the attacker to gain access to the APIC as the root user and perform root-level commands.
+
+
+
+Cisco has released software updates that address this vulnerability.
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150722-apic["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150722-apic"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150722-apic</URL>
+      <Description>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=39563</URL>
+      <Description>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=39563</URL>
+      <Description>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-202555">Cisco Application Policy Infrastructure Controller (APIC) 1.0(1e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-202735">Cisco NX-OS Software for Nexus 9000 Series 11.0(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-202736">Cisco NX-OS Software for Nexus 9000 Series 11.0(1c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208584">Cisco NX-OS Software for Nexus 9000 Series 11.0(1d)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208585">Cisco NX-OS Software for Nexus 9000 Series 11.0(1e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208586">Cisco NX-OS Software for Nexus 9000 Series 11.0(2j)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208587">Cisco NX-OS Software for Nexus 9000 Series 11.0(2m)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208588">Cisco NX-OS Software for Nexus 9000 Series 11.0(3f)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208589">Cisco NX-OS Software for Nexus 9000 Series 11.0(3i)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208590">Cisco NX-OS Software for Nexus 9000 Series 11.0(3k)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208591">Cisco NX-OS Software for Nexus 9000 Series 11.0(3n)</FullProductName>
+    <FullProductName ProductID="CVRFPID-208592">Cisco NX-OS Software for Nexus 9000 Series 11.0(4h)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Application Policy Infrastructure Controller Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuu72094</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the cluster management configuration of the Cisco Application Policy Infrastructure Controller (APIC) and Cisco Nexus 9000 Series ACI Mode Switches could allow an authenticated, remote attacker to access the APIC and Nexus 9000 switch as the root user.
+
+
+
+The vulnerability is due to improper access control in the APIC filesystem. An attacker could exploit this vulnerability by accessing the cluster management of the APIC. An exploit could allow the attacker to access the APIC as the root user and perform root-level commands.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuu72094,CSCuv11991</Note>
+    </Notes>
+    <CVE>CVE-2015-4235</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-202555</ProductID>
+        <ProductID>CVRFPID-202735</ProductID>
+        <ProductID>CVRFPID-202736</ProductID>
+        <ProductID>CVRFPID-208584</ProductID>
+        <ProductID>CVRFPID-208585</ProductID>
+        <ProductID>CVRFPID-208586</ProductID>
+        <ProductID>CVRFPID-208587</ProductID>
+        <ProductID>CVRFPID-208588</ProductID>
+        <ProductID>CVRFPID-208589</ProductID>
+        <ProductID>CVRFPID-208590</ProductID>
+        <ProductID>CVRFPID-208591</ProductID>
+        <ProductID>CVRFPID-208592</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>8.5</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:H/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are currently no known workarounds for this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150722-apic</URL>
+        <Description>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

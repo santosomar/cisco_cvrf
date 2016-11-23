@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Email Security Appliance Internal Testing Interface Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160922-esa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-09-22T15:45:48</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-09-28T19:08:25</Date>
+        <Description>Added fixed software information</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2016-10-04T13:26:31</Date>
+        <Description>Added fixed software information</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-09-22T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-10-04T13:26:31</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Cisco IronPort AsyncOS for Cisco Email Security Appliances (ESA) could allow an unauthenticated, remote attacker to obtain complete control of an affected device.
+
+
+
+The vulnerability is due to the presence of a Cisco internal testing and debugging interface (intended for use during product manufacturing only) on customer-available software releases. An attacker could exploit this vulnerability by connecting to this testing and debugging interface. An exploit could allow an attacker to obtain complete control of an affected device with root-level privileges.
+
+
+
+Cisco has released software updates that address this vulnerability. A workaround that mitigates this vulnerability is available.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160922-esa["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160922-esa"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160922-esa</URL>
+      <Description>Cisco Email Security Appliance Internal Testing Interface Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-220477">Cisco Email Security Appliance (ESA) 9.1.2-023 </FullProductName>
+    <FullProductName ProductID="CVRFPID-220478">Cisco Email Security Appliance (ESA) 9.1.2-028 </FullProductName>
+    <FullProductName ProductID="CVRFPID-220479">Cisco Email Security Appliance (ESA) 9.1.2-036  </FullProductName>
+    <FullProductName ProductID="CVRFPID-220480">Cisco Email Security Appliance (ESA) 9.7.2-046  </FullProductName>
+    <FullProductName ProductID="CVRFPID-220481">Cisco Email Security Appliance (ESA) 9.7.2-047</FullProductName>
+    <FullProductName ProductID="CVRFPID-220482">Cisco Email Security Appliance (ESA) 9.7.2-054 </FullProductName>
+    <FullProductName ProductID="CVRFPID-220484">Cisco Email Security Appliance (ESA) 10.0.0-124</FullProductName>
+    <FullProductName ProductID="CVRFPID-220485">Cisco Email Security Appliance (ESA) 10.0.0-125</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Email Security Appliance (ESA) Internal Testing Interface Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvb26017</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco IronPort AsyncOS for Cisco Email Security Appliances (ESA) could allow an unauthenticated, remote attacker to obtain complete control of an affected device.
+
+
+
+The vulnerability is due to the presence of a Cisco internal testing and debugging interface (intended for use during product manufacturing only) on customer-available software releases. An attacker could exploit this vulnerability by connecting to this testing and debugging interface. An exploit could allow an attacker to obtain complete control of an affected device with root-level privileges.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCvb26017</Note>
+    </Notes>
+    <CVE>CVE-2016-6406</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-220477</ProductID>
+        <ProductID>CVRFPID-220478</ProductID>
+        <ProductID>CVRFPID-220479</ProductID>
+        <ProductID>CVRFPID-220480</ProductID>
+        <ProductID>CVRFPID-220481</ProductID>
+        <ProductID>CVRFPID-220482</ProductID>
+        <ProductID>CVRFPID-220484</ProductID>
+        <ProductID>CVRFPID-220485</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>9.0</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:W/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>The debugging and testing interface can be disabled by rebooting an affected device. In order to reboot an ESA device, issue the reboot command from the CLI. The interface will be permanently disabled and unavailable once the device has finished rebooting.
+
+
+
+Customers concerned about the effectiveness of the workaround should open a support case with their support organization to verify the testing interface has effectively been disabled.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160922-esa</URL>
+        <Description>Cisco Email Security Appliance Internal Testing Interface Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

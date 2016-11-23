@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco ACE 4710 Application Control Engine Command Injection Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160224-ace</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-02-24T15:30:41</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-02-24T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-02-24T15:30:41</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Device Manager GUI of the Cisco ACE 4710 Application Control Engine could allow an authenticated, remote attacker to execute any command-line interface (CLI) command on the ACE with admin user privileges. 
+
+
+
+The vulnerability is due to insufficient validation of user-supplied input. An attacker could exploit this vulnerability by crafting a malicious HTTP POST request with injected CLI commands inside the value of a POST parameter value. An exploit could allow the attacker to bypass the role-based access control (RBAC) restrictions enforced by the Cisco ACE Device Manager GUI.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are available.
+
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160224-ace["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160224-ace"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160224-ace</URL>
+      <Description>Cisco ACE 4710 Application Control Engine Command Injection Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-212767">Cisco ACE 4700 Series Application Control Engine Appliances A5(1.0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212769">Cisco ACE 4700 Series Application Control Engine Appliances A5(1.1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212770">Cisco ACE 4700 Series Application Control Engine Appliances A5(1.2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212771">Cisco ACE 4700 Series Application Control Engine Appliances A5(2.0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212772">Cisco ACE 4700 Series Application Control Engine Appliances A5(2.1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-212773">Cisco ACE 4700 Series Application Control Engine Appliances A5(2.1e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-202753">Cisco ACE 4700 Series Application Control Engine Appliances A5(3.0)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco ACE 4710 Application Control Engine Command Injection Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCul84801</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Device Manager GUI of the Cisco ACE 4710 Application Control Engine could allow an authenticated, remote attacker to execute any command-line interface (CLI) command on the ACE with admin user privileges. 
+
+
+
+The vulnerability is due to insufficient validation of user-supplied input. An attacker could exploit this vulnerability by crafting a malicious HTTP POST request with injected CLI commands inside the value of a POST parameter value. An exploit could allow the attacker to bypass the role-based access control (RBAC) restrictions enforced by the Cisco ACE Device Manager GUI.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCul84801</Note>
+    </Notes>
+    <CVE>CVE-2016-1297</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-202753</ProductID>
+        <ProductID>CVRFPID-212767</ProductID>
+        <ProductID>CVRFPID-212769</ProductID>
+        <ProductID>CVRFPID-212770</ProductID>
+        <ProductID>CVRFPID-212771</ProductID>
+        <ProductID>CVRFPID-212772</ProductID>
+        <ProductID>CVRFPID-212773</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>8.5</BaseScore>
+        <TemporalScore>7.0</TemporalScore>
+        <Vector>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Administrators can disable management access to the Cisco ACE 4710 Application Control Engine Device Manager GUI until the appropriate fix can be applied. The following example shows how to disable access, assuming the device is configured with the following management class map:
+
+
+
+class-map type management match-any my-mgmt-class
+202 match protocol icmp any
+203 match protocol https any  
+204 match protocol ssh any
+
+
+ace-4710-1/Admin# configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+
+ace-4710-1/Admin(config)# class-map type management match-any my-mgmt-class
+ace-4710-1/Admin(config-cmap-mgmt)# no match protocol https any</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160224-ace</URL>
+        <Description>Cisco ACE 4710 Application Control Engine Command Injection Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

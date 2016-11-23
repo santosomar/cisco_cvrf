@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified Computing System Command Line Interface Privilege Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160914-ucs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-09-12T16:10:16</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-09-14T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-09-12T16:10:16</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the command-line interface (CLI) of the Cisco Unified Computing System (UCS) Manager and UCS 6200 Series Fabric Interconnects could allow an authenticated, local attacker to access the underlying operating system with the privileges of the root user.
+
+
+
+The vulnerability is due to insufficient sanitization of user-supplied input at the CLI. An attacker could exploit this vulnerability by bypassing policy restrictions and executing commands on the underlying operating system. The user needs to log in to the device with valid user credentials to exploit this vulnerability.
+
+
+
+Cisco has not released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are not available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160914-ucs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160914-ucs"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160914-ucs</URL>
+      <Description>Cisco Unified Computing System Command Line Interface Privilege Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-190627">Cisco Unified Computing System (Managed) 2.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-209221">Cisco Unified Computing System (Managed) 2.2(1b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209222">Cisco Unified Computing System (Managed) 2.2(1c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209223">Cisco Unified Computing System (Managed) 2.2(1d)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209224">Cisco Unified Computing System (Managed) 2.2(1e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209225">Cisco Unified Computing System (Managed) 2.2(1f)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209226">Cisco Unified Computing System (Managed) 2.2(1g)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209227">Cisco Unified Computing System (Managed) 2.2(1h)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209228">Cisco Unified Computing System (Managed) 2.2(2c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-202731">Cisco Unified Computing System (Managed) 2.2(2c)A</FullProductName>
+    <FullProductName ProductID="CVRFPID-209229">Cisco Unified Computing System (Managed) 2.2(2d)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209230">Cisco Unified Computing System (Managed) 2.2(2e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209231">Cisco Unified Computing System (Managed) 2.2(3a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209232">Cisco Unified Computing System (Managed) 2.2(3b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209233">Cisco Unified Computing System (Managed) 2.2(3c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209234">Cisco Unified Computing System (Managed) 2.2(3d)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209235">Cisco Unified Computing System (Managed) 2.2(3e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209236">Cisco Unified Computing System (Managed) 2.2(3f)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209237">Cisco Unified Computing System (Managed) 2.2(3g)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209238">Cisco Unified Computing System (Managed) 2.2(4b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209239">Cisco Unified Computing System (Managed) 2.2(4c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209240">Cisco Unified Computing System (Managed) 2.2(5a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-211436">Cisco Unified Computing System (Managed) 2.2(5b)A</FullProductName>
+    <FullProductName ProductID="CVRFPID-209243">Cisco Unified Computing System (Managed) 3.0(1c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209244">Cisco Unified Computing System (Managed) 3.0(1d)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209245">Cisco Unified Computing System (Managed) 3.0(1e)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209246">Cisco Unified Computing System (Managed) 3.0(2c)</FullProductName>
+    <FullProductName ProductID="CVRFPID-209247">Cisco Unified Computing System (Managed) 3.0(2d)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Computing System Command Line Interface Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz91263</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the command-line interface (CLI) of the Cisco Unified Computing System (UCS) Manager and UCS 6200 Series Fabric Interconnects could allow an authenticated, local attacker to access the underlying operating system with the privileges of the root user.
+
+
+
+The vulnerability is due to insufficient sanitization of user-supplied input at the CLI. An attacker could exploit this vulnerability by bypassing policy restrictions and executing commands on the underlying operating system. The user needs to log in to the device with valid user credentials to exploit this vulnerability.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz91263</Note>
+    </Notes>
+    <CVE>CVE-2016-6402</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-190627</ProductID>
+        <ProductID>CVRFPID-202731</ProductID>
+        <ProductID>CVRFPID-209221</ProductID>
+        <ProductID>CVRFPID-209222</ProductID>
+        <ProductID>CVRFPID-209223</ProductID>
+        <ProductID>CVRFPID-209224</ProductID>
+        <ProductID>CVRFPID-209225</ProductID>
+        <ProductID>CVRFPID-209226</ProductID>
+        <ProductID>CVRFPID-209227</ProductID>
+        <ProductID>CVRFPID-209228</ProductID>
+        <ProductID>CVRFPID-209229</ProductID>
+        <ProductID>CVRFPID-209230</ProductID>
+        <ProductID>CVRFPID-209231</ProductID>
+        <ProductID>CVRFPID-209232</ProductID>
+        <ProductID>CVRFPID-209233</ProductID>
+        <ProductID>CVRFPID-209234</ProductID>
+        <ProductID>CVRFPID-209235</ProductID>
+        <ProductID>CVRFPID-209236</ProductID>
+        <ProductID>CVRFPID-209237</ProductID>
+        <ProductID>CVRFPID-209238</ProductID>
+        <ProductID>CVRFPID-209239</ProductID>
+        <ProductID>CVRFPID-209240</ProductID>
+        <ProductID>CVRFPID-209243</ProductID>
+        <ProductID>CVRFPID-209244</ProductID>
+        <ProductID>CVRFPID-209245</ProductID>
+        <ProductID>CVRFPID-209246</ProductID>
+        <ProductID>CVRFPID-209247</ProductID>
+        <ProductID>CVRFPID-211436</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>6.8</BaseScore>
+        <TemporalScore>6.5</TemporalScore>
+        <Vector>AV:L/AC:L/Au:S/C:C/I:C/A:C/E:F/RL:U/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160914-ucs</URL>
+        <Description>Cisco Unified Computing System Command Line Interface Privilege Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Gigabit Switch Router 12000 Series Routers Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160311-gsr</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-03-11T14:49:49</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-03-11T14:49:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-03-11T14:49:49</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the ASIC UDP ingress receive function of Cisco Gigabit Switch Router (GSR) 12000 Series Routers could allow an unauthenticated, remote attacker to cause a partial denial of service (DoS) condition when one line card in the router unexpectedly restarts.
+
+
+
+The vulnerability is due to improper input validation for the presence of a Bidirectional Forwarding Detection (BFD) header on the UDP packet. An attacker could exploit this vulnerability by sending a crafted UDP packet with a specific UDP port range to the affected device. An exploit could allow the attacker to cause a partial denial of service condition when a line card unexpectedly restarts.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are available.
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160311-gsr["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160311-gsr"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160311-gsr</URL>
+      <Description>Cisco Gigabit Switch Router 12000 Series Routers Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-66337">Cisco IOS XR Software 3.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66335">Cisco IOS XR Software 3.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-69871">Cisco IOS XR Software 3.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-93240">Cisco IOS XR Software 3.4.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-93241">Cisco IOS XR Software 3.5.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-93242">Cisco IOS XR Software 3.5.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-93243">Cisco IOS XR Software 3.5.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-93235">Cisco IOS XR Software 3.6.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-93236">Cisco IOS XR Software 3.6.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-93244">Cisco IOS XR Software 3.6.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-214017">Cisco IOS XR Software 3.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-93239">Cisco IOS XR Software 3.7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-214016">Cisco IOS XR Software 3.7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-93248">Cisco IOS XR Software 3.8.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-93249">Cisco IOS XR Software 3.8.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-100571">Cisco IOS XR Software 3.8.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-100573">Cisco IOS XR Software 3.8.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-100569">Cisco IOS XR Software 3.9.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-100570">Cisco IOS XR Software 3.9.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-109761">Cisco IOS XR Software 3.9.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-109768">Cisco IOS XR Software 4.0.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-109764">Cisco IOS XR Software 4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-116017">Cisco IOS XR Software 4.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-109769">Cisco IOS XR Software 4.1.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-116015">Cisco IOS XR Software 4.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-116016">Cisco IOS XR Software 4.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-116014">Cisco IOS XR Software 4.2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-185106">Cisco IOS XR Software 4.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-185107">Cisco IOS XR Software 4.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-191720">Cisco IOS XR Software 4.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-191721">Cisco IOS XR Software 4.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-191719">Cisco IOS XR Software 4.3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-194335">Cisco IOS XR Software 4.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-194336">Cisco IOS XR Software 4.3.2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Gigabit Switch Router 12000 Series Routers Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuw56900</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the ASIC UDP ingress receive function of Cisco Gigabit Switch Router (GSR) 12000 Series Routers could allow an unauthenticated, remote attacker to cause a partial denial of service (DoS) condition when one line card in the router unexpectedly restarts.
+
+
+
+The vulnerability is due to improper input validation for the presence of a Bidirectional Forwarding Detection (BFD) header on the UDP packet. An attacker could exploit this vulnerability by sending a crafted UDP packet with a specific UDP port range to the affected device. An exploit could allow the attacker to cause a partial denial of service condition when a line card unexpectedly restarts.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuw56900,CSCuv17791</Note>
+    </Notes>
+    <CVE>CVE-2016-1361</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-66335</ProductID>
+        <ProductID>CVRFPID-66337</ProductID>
+        <ProductID>CVRFPID-69871</ProductID>
+        <ProductID>CVRFPID-93235</ProductID>
+        <ProductID>CVRFPID-93236</ProductID>
+        <ProductID>CVRFPID-93239</ProductID>
+        <ProductID>CVRFPID-93240</ProductID>
+        <ProductID>CVRFPID-93241</ProductID>
+        <ProductID>CVRFPID-93242</ProductID>
+        <ProductID>CVRFPID-93243</ProductID>
+        <ProductID>CVRFPID-93244</ProductID>
+        <ProductID>CVRFPID-93248</ProductID>
+        <ProductID>CVRFPID-93249</ProductID>
+        <ProductID>CVRFPID-100569</ProductID>
+        <ProductID>CVRFPID-100570</ProductID>
+        <ProductID>CVRFPID-100571</ProductID>
+        <ProductID>CVRFPID-100573</ProductID>
+        <ProductID>CVRFPID-109761</ProductID>
+        <ProductID>CVRFPID-109764</ProductID>
+        <ProductID>CVRFPID-109768</ProductID>
+        <ProductID>CVRFPID-109769</ProductID>
+        <ProductID>CVRFPID-116014</ProductID>
+        <ProductID>CVRFPID-116015</ProductID>
+        <ProductID>CVRFPID-116016</ProductID>
+        <ProductID>CVRFPID-116017</ProductID>
+        <ProductID>CVRFPID-185106</ProductID>
+        <ProductID>CVRFPID-185107</ProductID>
+        <ProductID>CVRFPID-191719</ProductID>
+        <ProductID>CVRFPID-191720</ProductID>
+        <ProductID>CVRFPID-191721</ProductID>
+        <ProductID>CVRFPID-194335</ProductID>
+        <ProductID>CVRFPID-194336</ProductID>
+        <ProductID>CVRFPID-214016</ProductID>
+        <ProductID>CVRFPID-214017</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.6</BaseScore>
+        <TemporalScore>3.8</TemporalScore>
+        <Vector>AV:A/AC:H/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>An access-control list (ACL) can be applied to the incoming interface to block the offending packets.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160311-gsr</URL>
+        <Description>Cisco Gigabit Switch Router 12000 Series Routers Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

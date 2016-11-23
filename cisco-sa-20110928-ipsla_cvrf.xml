@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software IP Service Level Agreement Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20110928-ipsla</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>2.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2011-10-10T20:20:00</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+      <Revision>
+        <Number>2.1</Number>
+        <Date>2011-10-18T19:52:15</Date>
+        <Description>No Description Available</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2011-09-28T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2011-10-18T19:52:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">The Cisco IOS IP Service Level Agreement (IP SLA) feature contains a
+denial of service (DoS) vulnerability. The vulnerability is triggered when
+malformed UDP packets are sent to a vulnerable device. The vulnerable UDP port
+numbers depend on the device configuration. Default ports are not used for the
+vulnerable UDP IP SLA operation or for the UDP responder ports.
+
+Cisco has released software updates that address this vulnerability. 
+
+This advisory is posted at
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20110928-ipsla["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20110928-ipsla"].
+
+
+Note: The September 28, 2011, Cisco IOS Software
+Security Advisory bundled publication includes ten Cisco Security Advisories.
+Nine of the advisories address vulnerabilities in Cisco IOS Software, and one
+advisory addresses vulnerabilities in Cisco Unified Communications Manager.
+Each advisory lists the Cisco IOS Software releases that correct the
+vulnerability or vulnerabilities detailed in the advisory as well as the Cisco
+IOS Software releases that correct all vulnerabilities in the September 2011
+Bundled Publication. 
+
+ Individual publication links are in "Cisco Event Response:
+Semiannual Cisco IOS Software Security Advisory Bundled Publication" at the
+following link: 
+
+
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep11.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep11.html"]
+
+
+
+
+["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20110928-ipsla"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20110928-ipsla</URL>
+      <Description>Cisco IOS Software IP Service Level Agreement Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20110928-bundle</URL>
+      <Description>Summary of Cisco IOS Software Bundled Advisories, September 28, 2011</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20110928-ipsla</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco IOS Software IP Service Level Agreement Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20110928-bundle</URL>
+      <Description>Summary of Cisco IOS Software Bundled Advisories, September 28, 2011</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20110928-ipsla</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco IOS Software IP Service Level Agreement Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>IP SLA Memory Corruption Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">The Cisco IOS IP Service Level Agreement (IP SLA) feature contains a
+denial of service (DoS) vulnerability. The vulnerability is triggered when
+malformed UDP packets are sent to a vulnerable device. The vulnerable UDP port
+numbers depend on the device configuration. Default ports are not used for the
+vulnerable UDP IP SLA operation or for the UDP responder ports.</Note>
+    </Notes>
+    <CVE>CVE-2011-3272</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds for this vulnerability, but there are
+mitigations that can be deployed on a general IP SLA responder to reduce the
+exposure to this vulnerability. 
+
+General IP SLA Responder Mitigation
+For devices that are configured as general responders, a mitigation is
+to restrict IP SLA control packets on UDP port 1967 that are addressed to the
+vulnerable device to permit only trusted probe originators to open UDP ports
+that could be exploited. This can be accomplished using techniques such as
+Infrastructure Access list or Control Plane Protection.
+
+For devices configured as general responders, mitigation techniques
+that can be deployed on Cisco devices within the network are available in the
+Cisco Applied Mitigation Bulletin companion document for this advisory:
+
+http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20110928-ipsla.["http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20110928-ipsla"]
+
+
+["http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20110928-ipsla"]
+
+IP SLA Permanent Responder Mitigation
+For the permanent responder, the mitigation is to filter UDP packets
+addressed to the configured UDP port of each permanent responder to permit
+packets from the IP addresses of trusted devices. 
+
+IP SLA Source Devices Mitigation
+For IP SLA source devices, a mitigation is to allow only UDP packets
+from trusted devices (that is, devices that are the target of IP SLA
+operations)
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20110928-ipsla</URL>
+        <Description>Cisco IOS Software IP Service Level Agreement Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

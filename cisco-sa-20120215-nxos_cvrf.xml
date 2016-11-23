@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco NX-OS Malformed IP Packet Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20120215-nxos</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>2.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2012-03-01T17:05:37</Date>
+        <Description>No Description Available</Description>
+      </Revision>
+      <Revision>
+        <Number>2.0</Number>
+        <Date>2012-03-26T21:02:26</Date>
+        <Description>Added Nexus 1010 and VSG as vulnerable products and included fixed software information for them. Added 4.2(1)SV1(4b) as a first fixed release for Nexus 1000v.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2012-02-15T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2012-03-26T21:02:26</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120215-nxos</URL>
+      <Description>Cisco NX-OS Malformed IP Packet Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco NX-OS Malformed IP Packet Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCti23447</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">Cisco NX-OS Software is affected by a denial of service vulnerability
+
+that can cause Cisco Nexus 1000v Series Switches, Cisco Nexus 5000
+
+Series Switches and Cisco Nexus 7000 Series Switches running affected versions of Cisco NX-OS Software to
+
+reload when the IP stack processes a malformed IP packet.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCti23447,CSCti49507,CSCtj01991</Note>
+    </Notes>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20120215-nxos</URL>
+        <Description>Cisco NX-OS Malformed IP Packet Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

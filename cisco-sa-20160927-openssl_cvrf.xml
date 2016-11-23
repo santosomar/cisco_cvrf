@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: September 2016 </DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160927-openssl</ID>
+    </Identification>
+    <Status>Interim</Status>
+    <Version>1.12</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-09-27T22:41:57</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-09-28T17:38:01</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2016-09-29T19:27:54</Date>
+        <Description>Updated the lists of products under investigation and vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2016-09-30T18:53:50</Date>
+        <Description>Updated the lists of products under investigation and vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2016-10-03T17:09:03</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2016-10-05T17:57:48</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2016-10-07T17:25:28</Date>
+        <Description>Updated the lists of products under investigation and vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.7</Number>
+        <Date>2016-10-12T15:33:19</Date>
+        <Description>Updated the lists of products under investigation and vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.8</Number>
+        <Date>2016-10-14T17:47:18</Date>
+        <Description>Updated the lists of products under investigation and vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2016-10-19T18:10:48</Date>
+        <Description>Updated the lists of products under investigation and vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.10</Number>
+        <Date>2016-10-26T17:57:38</Date>
+        <Description>Updated the lists of products under investigation and vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.11</Number>
+        <Date>2016-10-28T18:43:34</Date>
+        <Description>Updated the lists of products under investigation and vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.12</Number>
+        <Date>2016-11-16T19:26:07</Date>
+        <Description>Updated the list of vulnerable products.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-09-27T22:40:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-11-16T19:26:07</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">On September 22, 2016, the OpenSSL Software Foundation released an advisory that describes 14 vulnerabilities. Of these 14 vulnerabilities, the OpenSSL Software Foundation classifies one as ?Critical Severity,? one as ?Moderate Severity,? and the other 12 as ?Low Severity.?
+
+
+
+
+Subsequently, on September 26, the OpenSSL Software Foundation released an additional advisory that describes two new vulnerabilities. These vulnerabilities affect the OpenSSL versions that were released to address the vulnerabilities disclosed in the previous advisory. One of the new vulnerabilities was rated as ?High Severity? and the other as ?Moderate Severity.?
+
+
+
+
+Of the 16 released vulnerabilities:
+
+
+    Fourteen track issues that could result in a denial of service (DoS) condition
+    One (CVE-2016-2183, aka SWEET32) tracks an implementation of a Birthday attack against Transport Layer Security (TLS) block ciphers that use a 64-bit block size that could result in loss of confidentiality
+    One (CVE-2016-2178) is a timing side-channel attack that, in specific circumstances, could allow an attacker to derive the private DSA key that belongs to another user or service running on the same system
+
+
+
+Five of the 16 vulnerabilities exclusively affect the recently released OpenSSL versions that are part of the 1.1.0 release series, which has not yet been integrated into any Cisco product.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160927-openssl["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160927-openssl"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160927-openssl</URL>
+      <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: September 2016 </Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL 3DES CBC Mode Information Disclosure Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to access sensitive information.
+
+
+
+The vulnerability is due to a cipher block collision that may occur during an encrypted session where OpenSSL uses a 64-bit block cipher, such as 3DES Cipher Block Chaining (CBC) mode. An attacker who is able to capture nearly a terabyte of network traffic could exploit this vulnerability to monitor a cipher block collision, which could be leveraged to decrypt data in transit and gain access to sensitive information. A successful exploit could be leveraged to conduct further attacks.</Note>
+    </Notes>
+    <CVE>CVE-2016-2183</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address these vulnerabilities.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160927-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: September 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL Security Advisory for September 22, 2016</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">Multiple vulnerabilities in OpenSSL could allow an unauthenticated, remote attacker to access sensitive information or cause a denial of service (DoS) condition.
+
+
+
+This update addresses multiple vulnerabilities that are due to insufficient bounds checking by the affected software along with insufficient validation of user-supplied input processed by certain functions implemented in the affected software. An attacker could exploit these vulnerabilities by submitting crafted input to a targeted system, causing the system to become unresponsive or crash and resulting in a DoS condition.
+
+
+
+In addition, an attacker in a man-in-the-middle position between a targeted system and a system that is communicating with the targeted system could conduct a SWEET32 attack, identified as CVE-2016-2183, to access sensitive information.</Note>
+    </Notes>
+    <CVE>CVE-2016-2178</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address these vulnerabilities.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160927-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: September 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL Large Message Sizes Use-After-Free Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="5">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to insufficient bounds checking by the affected software. An attacker could exploit this vulnerability by sending a
+message that is larger than 16 KB to a targeted system. An exploit could
+trigger a use-after-free condition that the attacker could leverage to execute
+arbitrary code or cause the affected
+application to crash, resulting in a DoS condition.</Note>
+    </Notes>
+    <CVE>CVE-2016-6309</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address these vulnerabilities.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160927-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: September 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL OCSP Stapling Status Request Memory Exhaustion Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="7">A vulnerability in the Online Certificate Status Protocol (OCSP) stapling implementation of OpenSSL could allow an unauthenticated, remote attacker to keep consuming memory on the targeted system. The vulnerability is due to the implementation of the OCSP Status Request SSL/TLS extension. 
+
+
+
+An attacker could exploit this vulnerability by establishing an SSL/TLS session to the targeted system and iteratively performing renegotiation, sending an OCSP Status Request each time. An exploit could allow the attacker to indefinitely keep increasing the memory allocated to the process that is running the vulnerable OpenSSL code.</Note>
+    </Notes>
+    <CVE>CVE-2016-6304</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address these vulnerabilities.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160927-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: September 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL CRL Denial of Service Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="9">A vulnerability in the code handling for Certificate Revocation Lists (CRL)
+in OpenSSL could allow an unauthenticated, remote attacker to trigger a
+crash of the targeted system, resulting in a denial of service (DoS)
+condition.
+
+
+
+The vulnerability is due to a missing CRL sanity
+check. An attacker could exploit this vulnerability by triggering the
+target to perform a CRL-related operation.</Note>
+    </Notes>
+    <CVE>CVE-2016-7052</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address these vulnerabilities.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160927-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: September 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

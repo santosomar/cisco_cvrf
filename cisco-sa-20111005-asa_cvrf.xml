@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in Cisco ASA 5500 Series Adaptive Security Appliances and Cisco Catalyst 6500 Series ASA Services Module</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20111005-asa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2011-10-05T21:45:00</Date>
+        <Description>Updated recommended release table.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2012-07-14T09:38:47</Date>
+        <Description>Updated meta-tags for Affected Products.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2011-10-05T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2012-07-14T09:38:47</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">
+Cisco ASA 5500 Series Adaptive Security Appliances and Cisco Catalyst 6500 Series ASA Services Module are affected by multiple vulnerabilities as follows:
+
+
+    MSN Instant Messenger (IM) Inspection Denial of Service vulnerability
+    TACACS+ Authentication Bypass vulnerability
+    Four SunRPC Inspection Denial of Service vulnerabilities
+    Internet Locator Service (ILS) Inspection Denial of Service vulnerability
+
+These vulnerabilities are independent; a release that is affected by one vulnerability may not necessarily be affected by the others.
+
+Workarounds for some of the vulnerabilities are provided in this advisory.
+
+
+This advisory is posted at http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-asa["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-asa"].
+
+
+
+Note:  The Cisco Firewall Services Module (FWSM) is affected by the TACACS+ authentication bypass vulnerability, SunRPC Inspection denial of service (DoS) vulnerabilities and ILS inspection DoS vulnerability. A separate Cisco Security Advisory has been published to disclose the vulnerabilities that affect the FWSM. This advisory is available at: http://www.cisco.com/warp/public/707/cisco-sa-20110831-fwsm.shtml["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-fwsm"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-asa</URL>
+      <Description>Multiple Vulnerabilities in Cisco ASA 5500 Series Adaptive Security Appliances and Cisco Catalyst 6500 Series ASA Services Module</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-91013">Cisco Adaptive Security Appliance (ASA) Software 7.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-70764">Cisco Adaptive Security Appliance (ASA) Software 7.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-70760">Cisco Adaptive Security Appliance (ASA) Software 7.2.2.34</FullProductName>
+    <FullProductName ProductID="CVRFPID-91012">Cisco Adaptive Security Appliance (ASA) Software 7.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-70763">Cisco Adaptive Security Appliance (ASA) Software 7.2.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-91011">Cisco Adaptive Security Appliance (ASA) Software 7.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-91089">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.27</FullProductName>
+    <FullProductName ProductID="CVRFPID-91090">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.30</FullProductName>
+    <FullProductName ProductID="CVRFPID-111872">Cisco Adaptive Security Appliance (ASA) Software 7.2.4.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-100027">Cisco Adaptive Security Appliance (ASA) Software 7.2.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-91006">Cisco Adaptive Security Appliance (ASA) Software 8.0.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-91005">Cisco Adaptive Security Appliance (ASA) Software 8.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-70761">Cisco Adaptive Security Appliance (ASA) Software 8.0.2.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-91004">Cisco Adaptive Security Appliance (ASA) Software 8.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-91003">Cisco Adaptive Security Appliance (ASA) Software 8.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-91021">Cisco Adaptive Security Appliance (ASA) Software 8.0.4.25</FullProductName>
+    <FullProductName ProductID="CVRFPID-91022">Cisco Adaptive Security Appliance (ASA) Software 8.0.4.28</FullProductName>
+    <FullProductName ProductID="CVRFPID-92322">Cisco Adaptive Security Appliance (ASA) Software 8.0.4.32</FullProductName>
+    <FullProductName ProductID="CVRFPID-92319">Cisco Adaptive Security Appliance (ASA) Software 8.0.4.33</FullProductName>
+    <FullProductName ProductID="CVRFPID-97262">Cisco Adaptive Security Appliance (ASA) Software 8.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-91009">Cisco Adaptive Security Appliance (ASA) Software 8.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-91010">Cisco Adaptive Security Appliance (ASA) Software 8.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-91019">Cisco Adaptive Security Appliance (ASA) Software 8.1.2.15</FullProductName>
+    <FullProductName ProductID="CVRFPID-91020">Cisco Adaptive Security Appliance (ASA) Software 8.1.2.16</FullProductName>
+    <FullProductName ProductID="CVRFPID-91088">Cisco Adaptive Security Appliance (ASA) Software 8.1.2.19</FullProductName>
+    <FullProductName ProductID="CVRFPID-92320">Cisco Adaptive Security Appliance (ASA) Software 8.1.2.23</FullProductName>
+    <FullProductName ProductID="CVRFPID-92321">Cisco Adaptive Security Appliance (ASA) Software 8.1.2.24</FullProductName>
+    <FullProductName ProductID="CVRFPID-70762">Cisco Adaptive Security Appliance (ASA) Software 8.2.0.45</FullProductName>
+    <FullProductName ProductID="CVRFPID-97260">Cisco Adaptive Security Appliance (ASA) Software 8.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-97261">Cisco Adaptive Security Appliance (ASA) Software 8.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-99994">Cisco Adaptive Security Appliance (ASA) Software 8.2.2.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-108072">Cisco Adaptive Security Appliance (ASA) Software 8.2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-108074">Cisco Adaptive Security Appliance (ASA) Software 8.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-99997">Cisco Adaptive Security Appliance (ASA) Software 8.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-99996">Cisco Adaptive Security Appliance (ASA) Software 8.3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-108069">Cisco Adaptive Security Appliance (ASA) Software 8.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-108073">Cisco Adaptive Security Appliance (ASA) Software 8.4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112136">Cisco Adaptive Security Appliance (ASA) Software 8.5.1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Adaptive Security Appliance Firmware Microsoft Network Instant Messenger Packet Inspection Denial of Service Vulnerability</Title>
+    <CVE>CVE-2011-3304</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-70760</ProductID>
+        <ProductID>CVRFPID-70761</ProductID>
+        <ProductID>CVRFPID-70762</ProductID>
+        <ProductID>CVRFPID-70763</ProductID>
+        <ProductID>CVRFPID-70764</ProductID>
+        <ProductID>CVRFPID-91003</ProductID>
+        <ProductID>CVRFPID-91004</ProductID>
+        <ProductID>CVRFPID-91005</ProductID>
+        <ProductID>CVRFPID-91006</ProductID>
+        <ProductID>CVRFPID-91009</ProductID>
+        <ProductID>CVRFPID-91010</ProductID>
+        <ProductID>CVRFPID-91011</ProductID>
+        <ProductID>CVRFPID-91012</ProductID>
+        <ProductID>CVRFPID-91013</ProductID>
+        <ProductID>CVRFPID-91019</ProductID>
+        <ProductID>CVRFPID-91020</ProductID>
+        <ProductID>CVRFPID-91021</ProductID>
+        <ProductID>CVRFPID-91022</ProductID>
+        <ProductID>CVRFPID-91088</ProductID>
+        <ProductID>CVRFPID-91089</ProductID>
+        <ProductID>CVRFPID-91090</ProductID>
+        <ProductID>CVRFPID-92319</ProductID>
+        <ProductID>CVRFPID-92320</ProductID>
+        <ProductID>CVRFPID-92321</ProductID>
+        <ProductID>CVRFPID-92322</ProductID>
+        <ProductID>CVRFPID-97260</ProductID>
+        <ProductID>CVRFPID-97261</ProductID>
+        <ProductID>CVRFPID-97262</ProductID>
+        <ProductID>CVRFPID-99994</ProductID>
+        <ProductID>CVRFPID-99996</ProductID>
+        <ProductID>CVRFPID-99997</ProductID>
+        <ProductID>CVRFPID-100027</ProductID>
+        <ProductID>CVRFPID-108069</ProductID>
+        <ProductID>CVRFPID-108072</ProductID>
+        <ProductID>CVRFPID-108073</ProductID>
+        <ProductID>CVRFPID-108074</ProductID>
+        <ProductID>CVRFPID-111872</ProductID>
+        <ProductID>CVRFPID-112136</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>
+This Cisco Security Advisory describes multiple distinct vulnerabilities. These vulnerabilities and their respective workarounds are independent of each other.
+
+MSN Instant Messeger (IM) Inspection DoS Vulnerability
+Administrators can mitigate this vulnerability by disabling MSN IM inspection if it is not required. Administrators can disable MSN IM inspection by issuing the no inspect im command in class configuration sub-mode in the policy map configuration. Disabling MSN IM inspection may cause MSN IM traffic to stop through the security appliance.
+
+TACACS+ Authentication Bypass Vulnerability
+There are no workarounds available for this vulnerability other than using a different authentication protocol such as RADIUS, Active Directory, etc.
+
+SunRPC Inspection DoS Vulnerabilities
+Administrators can mitigate this vulnerability by disabling SunRPC inspection if it is not required. Administrators can disable SunRPC inspection by issuing the no inspect sunrpc command in class configuration sub-mode in the policy map configuration. Disabling SunRPC inspection may cause SunRPC traffic to stop through the security appliance.
+
+ILS Inspection DoS Vulnerability
+Administrators can mitigate this vulnerability by disabling ILS inspection if it is not required. Administrators can disable ILS inspection by issuing the no inspect ils command in class configuration sub-mode in the policy map configuration. Disabling ILS inspection may cause ILS traffic to stop through the security appliance.
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco ASA 5500 Series Adaptive Security Appliances and Cisco Catalyst 6500 Series ASA Services Module</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Adaptive Security Appliance Firmware and Firewall Services Module Software TACACS+ Authentication Bypass Vulnerability</Title>
+    <CVE>CVE-2011-3298</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>
+This Cisco Security Advisory describes multiple distinct vulnerabilities. These vulnerabilities and their respective workarounds are independent of each other.
+
+MSN Instant Messeger (IM) Inspection DoS Vulnerability
+Administrators can mitigate this vulnerability by disabling MSN IM inspection if it is not required. Administrators can disable MSN IM inspection by issuing the no inspect im command in class configuration sub-mode in the policy map configuration. Disabling MSN IM inspection may cause MSN IM traffic to stop through the security appliance.
+
+TACACS+ Authentication Bypass Vulnerability
+There are no workarounds available for this vulnerability other than using a different authentication protocol such as RADIUS, Active Directory, etc.
+
+SunRPC Inspection DoS Vulnerabilities
+Administrators can mitigate this vulnerability by disabling SunRPC inspection if it is not required. Administrators can disable SunRPC inspection by issuing the no inspect sunrpc command in class configuration sub-mode in the policy map configuration. Disabling SunRPC inspection may cause SunRPC traffic to stop through the security appliance.
+
+ILS Inspection DoS Vulnerability
+Administrators can mitigate this vulnerability by disabling ILS inspection if it is not required. Administrators can disable ILS inspection by issuing the no inspect ils command in class configuration sub-mode in the policy map configuration. Disabling ILS inspection may cause ILS traffic to stop through the security appliance.
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco ASA 5500 Series Adaptive Security Appliances and Cisco Catalyst 6500 Series ASA Services Module</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Adaptive Security Appliance Firmware and Firewall Services Module Software SunRPC Packet Inspection Denial of Service Vulnerability
+</Title>
+    <CVE>CVE-2011-3299</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>
+This Cisco Security Advisory describes multiple distinct vulnerabilities. These vulnerabilities and their respective workarounds are independent of each other.
+
+MSN Instant Messeger (IM) Inspection DoS Vulnerability
+Administrators can mitigate this vulnerability by disabling MSN IM inspection if it is not required. Administrators can disable MSN IM inspection by issuing the no inspect im command in class configuration sub-mode in the policy map configuration. Disabling MSN IM inspection may cause MSN IM traffic to stop through the security appliance.
+
+TACACS+ Authentication Bypass Vulnerability
+There are no workarounds available for this vulnerability other than using a different authentication protocol such as RADIUS, Active Directory, etc.
+
+SunRPC Inspection DoS Vulnerabilities
+Administrators can mitigate this vulnerability by disabling SunRPC inspection if it is not required. Administrators can disable SunRPC inspection by issuing the no inspect sunrpc command in class configuration sub-mode in the policy map configuration. Disabling SunRPC inspection may cause SunRPC traffic to stop through the security appliance.
+
+ILS Inspection DoS Vulnerability
+Administrators can mitigate this vulnerability by disabling ILS inspection if it is not required. Administrators can disable ILS inspection by issuing the no inspect ils command in class configuration sub-mode in the policy map configuration. Disabling ILS inspection may cause ILS traffic to stop through the security appliance.
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco ASA 5500 Series Adaptive Security Appliances and Cisco Catalyst 6500 Series ASA Services Module</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Adaptive Security Appliance Firmware and Firewall Services Module Software Internet Locator Service Packet Inspection Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtq57697</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="5">CSCtq57697</Note>
+    </Notes>
+    <CVE>CVE-2011-3303</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-108073</ProductID>
+      </Status>
+    </ProductStatuses>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>
+This Cisco Security Advisory describes multiple distinct vulnerabilities. These vulnerabilities and their respective workarounds are independent of each other.
+
+MSN Instant Messeger (IM) Inspection DoS Vulnerability
+Administrators can mitigate this vulnerability by disabling MSN IM inspection if it is not required. Administrators can disable MSN IM inspection by issuing the no inspect im command in class configuration sub-mode in the policy map configuration. Disabling MSN IM inspection may cause MSN IM traffic to stop through the security appliance.
+
+TACACS+ Authentication Bypass Vulnerability
+There are no workarounds available for this vulnerability other than using a different authentication protocol such as RADIUS, Active Directory, etc.
+
+SunRPC Inspection DoS Vulnerabilities
+Administrators can mitigate this vulnerability by disabling SunRPC inspection if it is not required. Administrators can disable SunRPC inspection by issuing the no inspect sunrpc command in class configuration sub-mode in the policy map configuration. Disabling SunRPC inspection may cause SunRPC traffic to stop through the security appliance.
+
+ILS Inspection DoS Vulnerability
+Administrators can mitigate this vulnerability by disabling ILS inspection if it is not required. Administrators can disable ILS inspection by issuing the no inspect ils command in class configuration sub-mode in the policy map configuration. Disabling ILS inspection may cause ILS traffic to stop through the security appliance.
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111005-asa</URL>
+        <Description>Multiple Vulnerabilities in Cisco ASA 5500 Series Adaptive Security Appliances and Cisco Catalyst 6500 Series ASA Services Module</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

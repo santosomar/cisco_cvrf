@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software Smart Install Denial of Service Vulnerability	</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20130327-smartinstall</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.3</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2013-03-27T15:44:29</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2013-03-27T18:24:30</Date>
+        <Description>Updated "Software Versions and Fixes" section.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2013-03-28T16:40:45</Date>
+        <Description>Updated "Software Versions and Fixes" section, corrected software table.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2013-04-11T15:42:13</Date>
+        <Description>Updated vulnerability status for 15.0EY and 15.0SG trains.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2013-03-27T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2013-04-11T15:42:13</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">The Smart Install client feature in Cisco IOS Software contains a vulnerability that could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.
+
+
+
+Affected devices that are configured as Smart Install clients are vulnerable.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds for devices that have the Smart Install client feature enabled.
+
+
+
+This advisory is available at the following link:
+
+
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130327-smartinstall["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130327-smartinstall"]
+
+
+
+Note: The March 27, 2013, Cisco IOS Software Security Advisory bundled publication includes seven Cisco Security Advisories. All advisories address vulnerabilities in Cisco IOS Software. Each Cisco IOS Software Security Advisory lists the Cisco IOS Software releases that correct the vulnerability or vulnerabilities detailed in the advisory as well as the Cisco IOS Software releases that correct all Cisco IOS Software vulnerabilities in the March 2013 bundled publication. 
+
+Individual publication links are in "Cisco Event Response: Semiannual Cisco IOS Software Security Advisory Bundled Publication" at the following link: 
+
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_mar13.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_mar13.html"]
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130327-smartinstall</URL>
+      <Description>Cisco IOS Software Smart Install Denial of Service Vulnerability	</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20130327-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, March 27, 2013</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20130327-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, March 27, 2013</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=28655</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco IOS Software Smart Install Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=28655</URL>
+      <Description>Identifying and Mitigating Exploitation of the Cisco IOS Software Smart Install Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-107852">Cisco IOS 15.0(2)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-107856">Cisco IOS 15.1(4)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-112489">Cisco IOS 15.1(1)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-107057">Cisco IOS 15.1(3)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-107862">Cisco IOS 15.2(2)T</FullProductName>
+    <FullProductName ProductID="CVRFPID-103851">Cisco IOS 15.3(1)T</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software Smart Install Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCub55790</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">Cisco IOS Software contains a vulnerability in the Smart Install feature that could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition if the Smart Install feature is enabled. 
+
+
+
+The vulnerability is due to incorrect handling of image list parameters. An attacker could exploit this vulnerability by sending crafted Smart Install packets to TCP port 4786. An exploit could cause an affected Cisco Catalyst switch to crash, resulting in DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCub55790</Note>
+    </Notes>
+    <CVE>CVE-2013-1146</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-103851</ProductID>
+        <ProductID>CVRFPID-107057</ProductID>
+        <ProductID>CVRFPID-107852</ProductID>
+        <ProductID>CVRFPID-107856</ProductID>
+        <ProductID>CVRFPID-107862</ProductID>
+        <ProductID>CVRFPID-112489</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds available to mitigate this vulnerability other than disabling the Smart Install feature. The Smart Install Feature is enabled by default on client switches. No configuration is needed in the client switches.
+
+
+
+In certain versions of Cisco IOS Software, the Smart Install client feature can be disabled with the global configuration command no vstack. In certain versions of Cisco IOS Software where the command is available, the vulnerability can be mitigated by disabling the Smart Install client feature.
+
+
+
+The following is the output of the show vstack config command in a Cisco Catalyst Switch with Smart Install client feature disabled:
+
+
+
+switch#show vstack config  
+ Role: Client (SmartInstall disabled)  
+Vstack Director IP address: 10.1.1.100
+
+
+
+Note: The no vstack global configuration command to disable the Smart Install client feature was introduced with the fix for Cisco bug CSCtj75729["https://tools.cisco.com/bugsearch/bug/CSCtj75729"] ("Ability to shut Smart Install default service on TCP port 4786"). If a Cisco IOS Software release supports the Smart Install client feature but the no vstack command does not exist, the release does not contain the fix for Cisco bug CSCtj75729["https://tools.cisco.com/bugsearch/bug/CSCtj75729"].
+
+
+
+Additional mitigations that can be deployed on Cisco devices within the network are available in the companion document "Identifying and Mitigating Exploitation of the Cisco IOS Software Smart Install Denial of Service Vulnerability," which is available at http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=28655["http://tools.cisco.com/security/center/viewAMBAlert.x?alertId=28655"].
+
+
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20130327-smartinstall</URL>
+        <Description>Cisco IOS Software Smart Install Denial of Service Vulnerability	</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

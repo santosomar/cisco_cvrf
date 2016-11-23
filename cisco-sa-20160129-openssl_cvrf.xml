@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in OpenSSL (January 2016) Affecting Cisco Products</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160129-openssl</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.14</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-01-29T16:13:34</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-02-02T15:26:44</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2016-02-03T14:56:19</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2016-02-04T15:11:07</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2016-02-05T14:55:43</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2016-02-08T13:39:59</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2016-02-09T14:19:52</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.7</Number>
+        <Date>2016-02-11T16:19:10</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.8</Number>
+        <Date>2016-02-12T14:03:00</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2016-02-16T15:14:40</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.10</Number>
+        <Date>2016-02-19T15:38:34</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.11</Number>
+        <Date>2016-02-22T17:14:36</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.12</Number>
+        <Date>2016-02-25T15:11:29</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.13</Number>
+        <Date>2016-03-02T15:31:31</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.14</Number>
+        <Date>2016-03-24T12:52:08</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-01-29T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-03-24T12:52:08</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">On January 28, 2016, the OpenSSL Project released a security advisory detailing two vulnerabilities.
+
+
+
+Multiple Cisco products incorporate a version of the OpenSSL package affected by one or more vulnerabilities that could allow an unauthenticated, remote attacker to conduct man-in-the-middle attacks on an SSL/TLS connection.
+
+
+
+This advisory will be updated as additional information becomes available.
+
+
+
+Cisco will release software updates that address these vulnerabilities.
+
+
+
+Workarounds that address these vulnerabilities are not available.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl</URL>
+      <Description>Multiple Vulnerabilities in OpenSSL (January 2016) Affecting Cisco Products</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL DH Small Subgroups Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the generation of Diffie-Hellman (DH) parameters based on unsafe primes in OpenSSL could allow an unauthenticated, remote attacker to discover the private DH exponent of a TLS server.
+
+
+
+The vulnerability is due to the ability to generate DH parameters based on unsafe primes, introduced in version 1.0.2 of OpenSSL, where support was provided for generating X9.42 style parameter files. An attacker could exploit this vulnerability by completing multiple handshakes in which the peer uses the same private DH exponent. An exploit could allow the attacker to discover the private DH exponent of a TLS server and conduct man-in-the-middle attacks on the SSL/TLS connection.</Note>
+    </Notes>
+    <CVE>CVE-2016-0701</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL (January 2016) Affecting Cisco Products</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL SSLv2 Doesn?t Block Disabled Ciphers</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in the SSL negotiation of OpenSSL could allow an unauthenticated, remote attacker to negotiate SSLv2 ciphers that have been disabled on the server.
+
+
+
+The vulnerability is due to the ability of a malicious client to negotiate SSLv2 ciphers that have been disabled on the server and complete an SSLv2 handshake, even if all SSLv2 ciphers have been disabled. An exploit could allow the attacker to negotiate weak SSLv2 ciphers for SSL/TLS connections, making them vulnerable to man-in-the-middle attacks.</Note>
+    </Notes>
+    <CVE>CVE-2015-3197</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL (January 2016) Affecting Cisco Products</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

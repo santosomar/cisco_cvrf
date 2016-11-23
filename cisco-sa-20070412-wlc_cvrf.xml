@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in the Cisco Wireless LAN Controller and Cisco Lightweight Access Points</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20070412-wlc</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.4</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2007-04-12T16:00:00</Date>
+        <Description>Updated links to the CVSS scoring for each bug ID.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-04-12T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-04-12T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070412-wlc</URL>
+      <Description>Multiple Vulnerabilities in the Cisco Wireless LAN Controller and Cisco Lightweight Access Points</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20070412-wlc</URL>
+      <Description>Identifying and Mitigating Exploitation of Multiple Vulnerabilities in the Cisco WLC and Cisco Lightweight APs</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20070412-wlc</URL>
+      <Description>Identifying and Mitigating Exploitation of Multiple Vulnerabilities in the Cisco WLC and Cisco Lightweight APs</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-56036">Cisco Aironet 1100 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-65037">Cisco Aironet 1500 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64997">Cisco Wireless LAN Controller (WLC) 3.1.59.24</FullProductName>
+    <FullProductName ProductID="CVRFPID-61938">Cisco Wireless LAN Controller (WLC) 3.1.105.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64998">Cisco Wireless LAN Controller (WLC) 3.1.111.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-61937">Cisco Wireless LAN Controller (WLC) 3.2.78.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64992">Cisco Wireless LAN Controller (WLC) 3.2.116.21</FullProductName>
+    <FullProductName ProductID="CVRFPID-64993">Cisco Wireless LAN Controller (WLC) 3.2.150.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-64994">Cisco Wireless LAN Controller (WLC) 3.2.150.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-64995">Cisco Wireless LAN Controller (WLC) 3.2.171.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-64996">Cisco Wireless LAN Controller (WLC) 3.2.171.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-65080">Cisco Wireless LAN Controller (WLC) 3.2.185.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64988">Cisco Wireless LAN Controller (WLC) 4.0.108</FullProductName>
+    <FullProductName ProductID="CVRFPID-65081">Cisco Wireless LAN Controller (WLC) 4.0.155.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64989">Cisco Wireless LAN Controller (WLC) 4.0.155.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-64990">Cisco Wireless LAN Controller (WLC) 4.0.179.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-64991">Cisco Wireless LAN Controller (WLC) 4.0.179.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-61493">Cisco Wireless LAN Controller (WLC) 4.0.196</FullProductName>
+    <FullProductName ProductID="CVRFPID-65082">Cisco Wireless LAN Controller (WLC) 4.0.206.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wireless LAN Controller Default SNMP Strings Vulnerability</Title>
+    <CVE>CVE-2007-2036</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61493</ProductID>
+        <ProductID>CVRFPID-61937</ProductID>
+        <ProductID>CVRFPID-61938</ProductID>
+        <ProductID>CVRFPID-64988</ProductID>
+        <ProductID>CVRFPID-64989</ProductID>
+        <ProductID>CVRFPID-64990</ProductID>
+        <ProductID>CVRFPID-64991</ProductID>
+        <ProductID>CVRFPID-64992</ProductID>
+        <ProductID>CVRFPID-64993</ProductID>
+        <ProductID>CVRFPID-64994</ProductID>
+        <ProductID>CVRFPID-64995</ProductID>
+        <ProductID>CVRFPID-64996</ProductID>
+        <ProductID>CVRFPID-64997</ProductID>
+        <ProductID>CVRFPID-64998</ProductID>
+        <ProductID>CVRFPID-65080</ProductID>
+        <ProductID>CVRFPID-65081</ProductID>
+        <ProductID>CVRFPID-65082</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>9.0</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:C/I:C/A:C/B:N/E:F/RL:W/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070412-wlc</URL>
+        <Description>Multiple Vulnerabilities in the Cisco Wireless LAN Controller and Cisco Lightweight Access Points</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wireless LAN Controller Malformed Ethernet Traffic Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-2037</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61937</ProductID>
+        <ProductID>CVRFPID-61938</ProductID>
+        <ProductID>CVRFPID-64988</ProductID>
+        <ProductID>CVRFPID-64997</ProductID>
+        <ProductID>CVRFPID-64998</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.3</BaseScore>
+        <TemporalScore>2.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:N/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070412-wlc</URL>
+        <Description>Multiple Vulnerabilities in the Cisco Wireless LAN Controller and Cisco Lightweight Access Points</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wireless LAN Controller NPU Denial of Service Vulnerabilities</Title>
+    <CVE>CVE-2007-2039</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61493</ProductID>
+        <ProductID>CVRFPID-61937</ProductID>
+        <ProductID>CVRFPID-61938</ProductID>
+        <ProductID>CVRFPID-64988</ProductID>
+        <ProductID>CVRFPID-64989</ProductID>
+        <ProductID>CVRFPID-64990</ProductID>
+        <ProductID>CVRFPID-64991</ProductID>
+        <ProductID>CVRFPID-64992</ProductID>
+        <ProductID>CVRFPID-64993</ProductID>
+        <ProductID>CVRFPID-64994</ProductID>
+        <ProductID>CVRFPID-64997</ProductID>
+        <ProductID>CVRFPID-64998</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.3</BaseScore>
+        <TemporalScore>2.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:N/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070412-wlc</URL>
+        <Description>Multiple Vulnerabilities in the Cisco Wireless LAN Controller and Cisco Lightweight Access Points</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wireless LAN Controller ACL Configuration Vulnerability</Title>
+    <CVE>CVE-2007-2041</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61493</ProductID>
+        <ProductID>CVRFPID-64988</ProductID>
+        <ProductID>CVRFPID-64989</ProductID>
+        <ProductID>CVRFPID-64990</ProductID>
+        <ProductID>CVRFPID-64991</ProductID>
+        <ProductID>CVRFPID-65081</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.7</BaseScore>
+        <TemporalScore>3.1</TemporalScore>
+        <Vector>AV:R/AC:H/Au:NR/C:P/I:P/A:N/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070412-wlc</URL>
+        <Description>Multiple Vulnerabilities in the Cisco Wireless LAN Controller and Cisco Lightweight Access Points</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Aironet Lightweight Access Point Default Service Password Issue </Title>
+    <CVE>CVE-2007-2040</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-56036</ProductID>
+        <ProductID>CVRFPID-65037</ProductID>
+        <ProductID>CVRFPID-61493</ProductID>
+        <ProductID>CVRFPID-61937</ProductID>
+        <ProductID>CVRFPID-61938</ProductID>
+        <ProductID>CVRFPID-64988</ProductID>
+        <ProductID>CVRFPID-64989</ProductID>
+        <ProductID>CVRFPID-64990</ProductID>
+        <ProductID>CVRFPID-64991</ProductID>
+        <ProductID>CVRFPID-64992</ProductID>
+        <ProductID>CVRFPID-64993</ProductID>
+        <ProductID>CVRFPID-64994</ProductID>
+        <ProductID>CVRFPID-64995</ProductID>
+        <ProductID>CVRFPID-64996</ProductID>
+        <ProductID>CVRFPID-64997</ProductID>
+        <ProductID>CVRFPID-64998</ProductID>
+        <ProductID>CVRFPID-65081</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.6</BaseScore>
+        <TemporalScore>4.6</TemporalScore>
+        <Vector>AV:L/AC:H/Au:NR/C:C/I:C/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070412-wlc</URL>
+        <Description>Multiple Vulnerabilities in the Cisco Wireless LAN Controller and Cisco Lightweight Access Points</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="6" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wireless LAN Controller Malformed SNAP Packet NPU Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-2038</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61493</ProductID>
+        <ProductID>CVRFPID-61937</ProductID>
+        <ProductID>CVRFPID-61938</ProductID>
+        <ProductID>CVRFPID-64988</ProductID>
+        <ProductID>CVRFPID-64989</ProductID>
+        <ProductID>CVRFPID-64990</ProductID>
+        <ProductID>CVRFPID-64991</ProductID>
+        <ProductID>CVRFPID-64992</ProductID>
+        <ProductID>CVRFPID-64993</ProductID>
+        <ProductID>CVRFPID-64994</ProductID>
+        <ProductID>CVRFPID-64995</ProductID>
+        <ProductID>CVRFPID-64996</ProductID>
+        <ProductID>CVRFPID-64997</ProductID>
+        <ProductID>CVRFPID-64998</ProductID>
+        <ProductID>CVRFPID-65080</ProductID>
+        <ProductID>CVRFPID-65081</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.3</BaseScore>
+        <TemporalScore>2.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:N/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070412-wlc</URL>
+        <Description>Multiple Vulnerabilities in the Cisco Wireless LAN Controller and Cisco Lightweight Access Points</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Vulnerabilities in SNMP Message Processing</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20040420-snmp</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.5</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2004-04-20T21:00:00</Date>
+        <Description>Updated software availability information for 12.0S, 12.1EB,
+			 12.2, 12.2S, 12.2SW, 12.3, 12.3T, 12.3XH, 12.3XK, and 12.3XQ. No new releases
+			 added.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2004-04-20T21:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2004-04-20T21:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20040420-snmp</URL>
+      <Description>Vulnerabilities in SNMP Message Processing</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-106544">Cisco IOS 12.0(23)S4</FullProductName>
+    <FullProductName ProductID="CVRFPID-106926">Cisco IOS 12.0(24)S4</FullProductName>
+    <FullProductName ProductID="CVRFPID-103694">Cisco IOS 12.0(24)S4a</FullProductName>
+    <FullProductName ProductID="CVRFPID-105614">Cisco IOS 12.0(24)S5</FullProductName>
+    <FullProductName ProductID="CVRFPID-60159">Cisco IOS 12.0(27)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-50425">Cisco IOS 12.1(20)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-105698">Cisco IOS 12.1(20)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-106120">Cisco IOS 12.1(20)EA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-60238">Cisco IOS 12.1(20)EB</FullProductName>
+    <FullProductName ProductID="CVRFPID-60234">Cisco IOS 12.1(20)EC</FullProductName>
+    <FullProductName ProductID="CVRFPID-60235">Cisco IOS 12.1(20)EW</FullProductName>
+    <FullProductName ProductID="CVRFPID-104623">Cisco IOS 12.2(12g)</FullProductName>
+    <FullProductName ProductID="CVRFPID-107311">Cisco IOS 12.2(12h)</FullProductName>
+    <FullProductName ProductID="CVRFPID-107574">Cisco IOS 12.2(21)</FullProductName>
+    <FullProductName ProductID="CVRFPID-106279">Cisco IOS 12.2(21a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-107481">Cisco IOS 12.2(20)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65495">Cisco IOS 12.3(5a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65494">Cisco IOS 12.3(5b)</FullProductName>
+    <FullProductName ProductID="CVRFPID-65508">Cisco IOS 12.3(6)</FullProductName>
+    <FullProductName ProductID="CVRFPID-107131">Cisco IOS 12.3(4)T1</FullProductName>
+    <FullProductName ProductID="CVRFPID-105274">Cisco IOS 12.3(4)T2</FullProductName>
+    <FullProductName ProductID="CVRFPID-105512">Cisco IOS 12.3(2)XC1</FullProductName>
+    <FullProductName ProductID="CVRFPID-103953">Cisco IOS 12.3(4)XD1</FullProductName>
+    <FullProductName ProductID="CVRFPID-65470">Cisco IOS 12.3(2)XE</FullProductName>
+    <FullProductName ProductID="CVRFPID-65471">Cisco IOS 12.3(2)XF</FullProductName>
+    <FullProductName ProductID="CVRFPID-65490">Cisco IOS 12.3(4)XG</FullProductName>
+    <FullProductName ProductID="CVRFPID-45793">Cisco Optical Networking Systems (ONS) 4.6 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco SNMP Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCed68575</ID>
+    <Notes>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCed68575</Note>
+    </Notes>
+    <CVE>CVE-2004-0714</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-50425</ProductID>
+        <ProductID>CVRFPID-60159</ProductID>
+        <ProductID>CVRFPID-60234</ProductID>
+        <ProductID>CVRFPID-60235</ProductID>
+        <ProductID>CVRFPID-60238</ProductID>
+        <ProductID>CVRFPID-65470</ProductID>
+        <ProductID>CVRFPID-65471</ProductID>
+        <ProductID>CVRFPID-65490</ProductID>
+        <ProductID>CVRFPID-65494</ProductID>
+        <ProductID>CVRFPID-65495</ProductID>
+        <ProductID>CVRFPID-65508</ProductID>
+        <ProductID>CVRFPID-103694</ProductID>
+        <ProductID>CVRFPID-103953</ProductID>
+        <ProductID>CVRFPID-104623</ProductID>
+        <ProductID>CVRFPID-105274</ProductID>
+        <ProductID>CVRFPID-105512</ProductID>
+        <ProductID>CVRFPID-105614</ProductID>
+        <ProductID>CVRFPID-105698</ProductID>
+        <ProductID>CVRFPID-106120</ProductID>
+        <ProductID>CVRFPID-106279</ProductID>
+        <ProductID>CVRFPID-106544</ProductID>
+        <ProductID>CVRFPID-106926</ProductID>
+        <ProductID>CVRFPID-107131</ProductID>
+        <ProductID>CVRFPID-107311</ProductID>
+        <ProductID>CVRFPID-107481</ProductID>
+        <ProductID>CVRFPID-107574</ProductID>
+        <ProductID>CVRFPID-45793</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20040420-snmp</URL>
+        <Description>Vulnerabilities in SNMP Message Processing</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Security Agent for Linux Port Scan Denial of Service</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20061025-csa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2006-10-25T16:00:00</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2006-10-25T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2006-10-25T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20061025-csa</URL>
+      <Description>Cisco Security Agent for Linux Port Scan Denial of Service</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20061101-csa</URL>
+      <Description>Identifying and Mitigating Exploitation of the CSA for Linux DoS Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20061101-csa</URL>
+      <Description>Identifying and Mitigating Exploitation of the CSA for Linux DoS Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-60970">Cisco Security Agent  for Linux 4.5.0.573</FullProductName>
+    <FullProductName ProductID="CVRFPID-60969">Cisco Security Agent  for Linux 4.5.1.628</FullProductName>
+    <FullProductName ProductID="CVRFPID-60968">Cisco Security Agent  for Linux 4.5.1.645</FullProductName>
+    <FullProductName ProductID="CVRFPID-60967">Cisco Security Agent  for Linux 4.5.1.646</FullProductName>
+    <FullProductName ProductID="CVRFPID-60966">Cisco Security Agent  for Linux 4.5.1.649</FullProductName>
+    <FullProductName ProductID="CVRFPID-60965">Cisco Security Agent  for Linux 4.5.1.654</FullProductName>
+    <FullProductName ProductID="CVRFPID-60964">Cisco Security Agent  for Linux 4.5.1.655</FullProductName>
+    <FullProductName ProductID="CVRFPID-60958">Cisco Security Agent  for Linux 5.0.0.74</FullProductName>
+    <FullProductName ProductID="CVRFPID-60963">Cisco Security Agent  for Linux 5.0.0.179</FullProductName>
+    <FullProductName ProductID="CVRFPID-60962">Cisco Security Agent  for Linux 5.0.0.181</FullProductName>
+    <FullProductName ProductID="CVRFPID-60961">Cisco Security Agent  for Linux 5.0.0.183</FullProductName>
+    <FullProductName ProductID="CVRFPID-60960">Cisco Security Agent  for Linux 5.0.0.186</FullProductName>
+    <FullProductName ProductID="CVRFPID-60959">Cisco Security Agent  for Linux 5.0.0.187</FullProductName>
+    <FullProductName ProductID="CVRFPID-60980">Cisco Unified CallManager 5.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60979">Cisco Unified CallManager 5.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60977">Cisco Unified CallManager 5.0(2a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60978">Cisco Unified CallManager 5.0(3a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60976">Cisco Unified CallManager 5.0(3.1101)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60975">Cisco Unified CallManager 5.0(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60974">Cisco Unified CallManager 5.0(4a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-60981">Cisco Unified Presence Server  1.0.2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Security Agent for Linux Network Port Scans Denial of Service Vulnerability [publish when publicly available]</Title>
+    <CVE>CVE-2006-5553</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-60958</ProductID>
+        <ProductID>CVRFPID-60959</ProductID>
+        <ProductID>CVRFPID-60960</ProductID>
+        <ProductID>CVRFPID-60961</ProductID>
+        <ProductID>CVRFPID-60962</ProductID>
+        <ProductID>CVRFPID-60963</ProductID>
+        <ProductID>CVRFPID-60964</ProductID>
+        <ProductID>CVRFPID-60965</ProductID>
+        <ProductID>CVRFPID-60966</ProductID>
+        <ProductID>CVRFPID-60967</ProductID>
+        <ProductID>CVRFPID-60968</ProductID>
+        <ProductID>CVRFPID-60969</ProductID>
+        <ProductID>CVRFPID-60970</ProductID>
+        <ProductID>CVRFPID-60974</ProductID>
+        <ProductID>CVRFPID-60975</ProductID>
+        <ProductID>CVRFPID-60976</ProductID>
+        <ProductID>CVRFPID-60977</ProductID>
+        <ProductID>CVRFPID-60978</ProductID>
+        <ProductID>CVRFPID-60979</ProductID>
+        <ProductID>CVRFPID-60980</ProductID>
+        <ProductID>CVRFPID-60981</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>2.3</BaseScore>
+        <TemporalScore>1.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:N/A:P/B:N/E:U/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20061025-csa</URL>
+        <Description>Cisco Security Agent for Linux Port Scan Denial of Service</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

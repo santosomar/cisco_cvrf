@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Clean Access Unauthenticated API Access</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20050817-cca</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2005-08-17T16:00:00</Date>
+        <Description>Initial release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2005-08-17T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2005-08-17T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20050817-cca</URL>
+      <Description>Cisco Clean Access Unauthenticated API Access</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-53133">Cisco NAC Appliance Software 3.3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53134">Cisco NAC Appliance Software 3.3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53135">Cisco NAC Appliance Software 3.3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53136">Cisco NAC Appliance Software 3.3.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53137">Cisco NAC Appliance Software 3.3.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53138">Cisco NAC Appliance Software 3.3.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53139">Cisco NAC Appliance Software 3.3.6 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53140">Cisco NAC Appliance Software 3.3.7 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53141">Cisco NAC Appliance Software 3.3.8 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53142">Cisco NAC Appliance Software 3.3.9 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53143">Cisco NAC Appliance Software 3.4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53144">Cisco NAC Appliance Software 3.4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53145">Cisco NAC Appliance Software 3.4.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53146">Cisco NAC Appliance Software 3.4.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53147">Cisco NAC Appliance Software 3.4.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53148">Cisco NAC Appliance Software 3.4.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53149">Cisco NAC Appliance Software 3.5.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53150">Cisco NAC Appliance Software 3.5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53151">Cisco NAC Appliance Software 3.5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-53152">Cisco NAC Appliance Software 3.5.3 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Clean Access Privilege Escalation Vulnerability</Title>
+    <CVE>CVE-2005-2631</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-53133</ProductID>
+        <ProductID>CVRFPID-53134</ProductID>
+        <ProductID>CVRFPID-53135</ProductID>
+        <ProductID>CVRFPID-53136</ProductID>
+        <ProductID>CVRFPID-53137</ProductID>
+        <ProductID>CVRFPID-53138</ProductID>
+        <ProductID>CVRFPID-53139</ProductID>
+        <ProductID>CVRFPID-53140</ProductID>
+        <ProductID>CVRFPID-53141</ProductID>
+        <ProductID>CVRFPID-53142</ProductID>
+        <ProductID>CVRFPID-53143</ProductID>
+        <ProductID>CVRFPID-53144</ProductID>
+        <ProductID>CVRFPID-53145</ProductID>
+        <ProductID>CVRFPID-53146</ProductID>
+        <ProductID>CVRFPID-53147</ProductID>
+        <ProductID>CVRFPID-53148</ProductID>
+        <ProductID>CVRFPID-53149</ProductID>
+        <ProductID>CVRFPID-53150</ProductID>
+        <ProductID>CVRFPID-53151</ProductID>
+        <ProductID>CVRFPID-53152</ProductID>
+      </Status>
+    </ProductStatuses>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20050817-cca</URL>
+        <Description>Cisco Clean Access Unauthenticated API Access</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

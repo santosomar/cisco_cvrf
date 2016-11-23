@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS and IOS XE Software IPv6 First Hop Security Denial of Service Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20150923-fhs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-09-23T13:28:17</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-01-14T16:58:30</Date>
+        <Description>Updated Cisco IOS Checker Software Checker form to query all previously published Cisco IOS Software Security Advisories.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-09-23T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-01-14T17:29:51</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Two vulnerabilities in the IPv6 first hop security feature of Cisco IOS and IOS XE Software could allow an unauthenticated, remote attacker to cause an affected device to reload.
+
+
+
+Cisco has released software updates that address these vulnerabilities. There are no workarounds to mitigate these vulnerabilities.
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150923-fhs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150923-fhs"]
+
+
+
+Note: The September 23, 2015, release of the Cisco IOS and IOS XE Software Security Advisory bundled publication includes three Cisco Security Advisories. All the advisories address vulnerabilities in Cisco IOS Software and Cisco IOS XE Software. Individual publication links are in Cisco Event Response: September 2015 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication at the following link:
+http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep15.html["http://www.cisco.com/web/about/security/intelligence/Cisco_ERP_sep15.html"]
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150923-fhs</URL>
+      <Description>Cisco IOS and IOS XE Software IPv6 First Hop Security Denial of Service Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20150923-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, September 23, 2015</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40940</URL>
+      <Description>Cisco IOS and IOS XE Software IPv6 Snooping Secure Network Discovery Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40941</URL>
+      <Description>Cisco IOS and IOS XE Software IPv6 Snooping Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20150923-bundle</URL>
+      <Description>Summary of Semiannual Cisco IOS Software Security Advisory Bundled Publication, September 23, 2015</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40940</URL>
+      <Description>Cisco IOS and IOS XE Software IPv6 Snooping Secure Network Discovery Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewAlert.x?alertId=40941</URL>
+      <Description>Cisco IOS and IOS XE Software IPv6 Snooping Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-105105">Cisco IOS 12.2(50)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-111042">Cisco IOS 12.2(50)SY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-113953">Cisco IOS 12.2(50)SY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-116841">Cisco IOS 12.2(50)SY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-185005">Cisco IOS 12.2(50)SY4</FullProductName>
+    <FullProductName ProductID="CVRFPID-209027">Cisco IOS 15.0(2)EA2</FullProductName>
+    <FullProductName ProductID="CVRFPID-191948">Cisco IOS 15.0(2)EJ</FullProductName>
+    <FullProductName ProductID="CVRFPID-197471">Cisco IOS 15.0(2)EJ1</FullProductName>
+    <FullProductName ProductID="CVRFPID-109442">Cisco IOS 15.0(1)EX</FullProductName>
+    <FullProductName ProductID="CVRFPID-205064">Cisco IOS 15.0(2a)EX5</FullProductName>
+    <FullProductName ProductID="CVRFPID-190637">Cisco IOS 15.0(2)EZ</FullProductName>
+    <FullProductName ProductID="CVRFPID-107852">Cisco IOS 15.0(2)SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-115939">Cisco IOS 15.0(2)SE1</FullProductName>
+    <FullProductName ProductID="CVRFPID-116083">Cisco IOS 15.0(2)SE2</FullProductName>
+    <FullProductName ProductID="CVRFPID-189455">Cisco IOS 15.0(2)SE3</FullProductName>
+    <FullProductName ProductID="CVRFPID-190635">Cisco IOS 15.0(2)SE4</FullProductName>
+    <FullProductName ProductID="CVRFPID-192706">Cisco IOS 15.0(2)SE5</FullProductName>
+    <FullProductName ProductID="CVRFPID-195770">Cisco IOS 15.0(2)SE6</FullProductName>
+    <FullProductName ProductID="CVRFPID-204097">Cisco IOS 15.0(2)SE7</FullProductName>
+    <FullProductName ProductID="CVRFPID-209028">Cisco IOS 15.0(2)SE8</FullProductName>
+    <FullProductName ProductID="CVRFPID-105790">Cisco IOS 15.0(1)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-112823">Cisco IOS 15.0(1)SY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-115282">Cisco IOS 15.0(1)SY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-183657">Cisco IOS 15.0(1)SY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-187347">Cisco IOS 15.0(1)SY4</FullProductName>
+    <FullProductName ProductID="CVRFPID-190630">Cisco IOS 15.0(1)SY5</FullProductName>
+    <FullProductName ProductID="CVRFPID-193427">Cisco IOS 15.0(1)SY6</FullProductName>
+    <FullProductName ProductID="CVRFPID-198058">Cisco IOS 15.0(1)SY7</FullProductName>
+    <FullProductName ProductID="CVRFPID-202602">Cisco IOS 15.0(1)SY7a</FullProductName>
+    <FullProductName ProductID="CVRFPID-201608">Cisco IOS 15.0(1)SY8</FullProductName>
+    <FullProductName ProductID="CVRFPID-115477">Cisco IOS 15.1(2)SG</FullProductName>
+    <FullProductName ProductID="CVRFPID-188035">Cisco IOS 15.1(2)SG1</FullProductName>
+    <FullProductName ProductID="CVRFPID-193283">Cisco IOS 15.1(2)SG2</FullProductName>
+    <FullProductName ProductID="CVRFPID-194741">Cisco IOS 15.1(2)SG3</FullProductName>
+    <FullProductName ProductID="CVRFPID-195489">Cisco IOS 15.1(2)SG4</FullProductName>
+    <FullProductName ProductID="CVRFPID-197465">Cisco IOS 15.1(2)SG5</FullProductName>
+    <FullProductName ProductID="CVRFPID-204187">Cisco IOS 15.1(2)SG6</FullProductName>
+    <FullProductName ProductID="CVRFPID-112489">Cisco IOS 15.1(1)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-115285">Cisco IOS 15.1(1)SY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191635">Cisco IOS 15.1(1)SY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-194944">Cisco IOS 15.1(1)SY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-198426">Cisco IOS 15.1(1)SY4</FullProductName>
+    <FullProductName ProductID="CVRFPID-204109">Cisco IOS 15.1(1)SY5</FullProductName>
+    <FullProductName ProductID="CVRFPID-184932">Cisco IOS 15.1(2)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-188061">Cisco IOS 15.1(2)SY1</FullProductName>
+    <FullProductName ProductID="CVRFPID-189219">Cisco IOS 15.1(2)SY2</FullProductName>
+    <FullProductName ProductID="CVRFPID-198059">Cisco IOS 15.1(2)SY3</FullProductName>
+    <FullProductName ProductID="CVRFPID-201019">Cisco IOS 15.1(2)SY4</FullProductName>
+    <FullProductName ProductID="CVRFPID-204832">Cisco IOS 15.1(2)SY4a</FullProductName>
+    <FullProductName ProductID="CVRFPID-204110">Cisco IOS 15.1(2)SY5</FullProductName>
+    <FullProductName ProductID="CVRFPID-183811">Cisco IOS 15.2(1)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-195469">Cisco IOS 15.2(1)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198060">Cisco IOS 15.2(1)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-200488">Cisco IOS 15.2(1)E3</FullProductName>
+    <FullProductName ProductID="CVRFPID-187057">Cisco IOS 15.2(2)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-201074">Cisco IOS 15.2(2)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204228">Cisco IOS 15.2(2)E2</FullProductName>
+    <FullProductName ProductID="CVRFPID-204818">Cisco IOS 15.2(2a)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-197483">Cisco IOS 15.2(3)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-204186">Cisco IOS 15.2(3)E1</FullProductName>
+    <FullProductName ProductID="CVRFPID-209047">Cisco IOS 15.2(3a)E</FullProductName>
+    <FullProductName ProductID="CVRFPID-209049">Cisco IOS 15.2(2)EA1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112424">Cisco IOS 15.2(4)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-183813">Cisco IOS 15.2(4)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-183837">Cisco IOS 15.2(4)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-183839">Cisco IOS 15.2(4)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-191686">Cisco IOS 15.2(4)S3a</FullProductName>
+    <FullProductName ProductID="CVRFPID-183835">Cisco IOS 15.2(4)S4</FullProductName>
+    <FullProductName ProductID="CVRFPID-195062">Cisco IOS 15.2(4)S4a</FullProductName>
+    <FullProductName ProductID="CVRFPID-183838">Cisco IOS 15.2(4)S5</FullProductName>
+    <FullProductName ProductID="CVRFPID-183836">Cisco IOS 15.2(4)S6</FullProductName>
+    <FullProductName ProductID="CVRFPID-209059">Cisco IOS 15.2(4)S7</FullProductName>
+    <FullProductName ProductID="CVRFPID-192726">Cisco IOS 15.2(1)SY</FullProductName>
+    <FullProductName ProductID="CVRFPID-209063">Cisco IOS 15.2(1)SY0a</FullProductName>
+    <FullProductName ProductID="CVRFPID-113970">Cisco IOS 15.3(1)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-187962">Cisco IOS 15.3(1)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-116256">Cisco IOS 15.3(2)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-190979">Cisco IOS 15.3(2)S0a</FullProductName>
+    <FullProductName ProductID="CVRFPID-191336">Cisco IOS 15.3(2)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-191331">Cisco IOS 15.3(2)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-117783">Cisco IOS 15.3(3)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-193406">Cisco IOS 15.3(3)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-193407">Cisco IOS 15.3(3)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-193408">Cisco IOS 15.3(3)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-194877">Cisco IOS 15.3(3)S4</FullProductName>
+    <FullProductName ProductID="CVRFPID-197469">Cisco IOS 15.3(3)S5</FullProductName>
+    <FullProductName ProductID="CVRFPID-187147">Cisco IOS 15.4(1)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-197474">Cisco IOS 15.4(1)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-198067">Cisco IOS 15.4(1)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-201259">Cisco IOS 15.4(1)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-190980">Cisco IOS 15.4(2)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200485">Cisco IOS 15.4(2)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204105">Cisco IOS 15.4(2)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-209096">Cisco IOS 15.4(2)S3</FullProductName>
+    <FullProductName ProductID="CVRFPID-193544">Cisco IOS 15.4(3)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-201595">Cisco IOS 15.4(3)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-204106">Cisco IOS 15.4(3)S2</FullProductName>
+    <FullProductName ProductID="CVRFPID-196322">Cisco IOS 15.5(1)S</FullProductName>
+    <FullProductName ProductID="CVRFPID-204830">Cisco IOS 15.5(1)S1</FullProductName>
+    <FullProductName ProductID="CVRFPID-213783">Cisco IOS XE Software 3.2JA 3.2.0JA</FullProductName>
+    <FullProductName ProductID="CVRFPID-196216">Cisco IOS XE Software 3.2SE 3.2.0SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196221">Cisco IOS XE Software 3.2SE 3.2.1SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196222">Cisco IOS XE Software 3.2SE 3.2.2SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196223">Cisco IOS XE Software 3.2SE 3.2.3SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196218">Cisco IOS XE Software 3.3SE 3.3.0SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196925">Cisco IOS XE Software 3.3SE 3.3.1SE</FullProductName>
+    <FullProductName ProductID="CVRFPID-196230">Cisco IOS XE Software 3.4SG 3.4.0SG</FullProductName>
+    <FullProductName ProductID="CVRFPID-196288">Cisco IOS XE Software 3.4SG 3.4.1SG</FullProductName>
+    <FullProductName ProductID="CVRFPID-196231">Cisco IOS XE Software 3.4SG 3.4.2SG</FullProductName>
+    <FullProductName ProductID="CVRFPID-206165">Cisco IOS XE Software 3.4SG 3.4.3SG</FullProductName>
+    <FullProductName ProductID="CVRFPID-206166">Cisco IOS XE Software 3.4SG 3.4.4SG</FullProductName>
+    <FullProductName ProductID="CVRFPID-210070">Cisco IOS XE Software 3.4SG 3.4.6SG</FullProductName>
+    <FullProductName ProductID="CVRFPID-197145">Cisco IOS XE Software 3.5E 3.5.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206168">Cisco IOS XE Software 3.5E 3.5.1E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206169">Cisco IOS XE Software 3.5E 3.5.2E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206170">Cisco IOS XE Software 3.5E 3.5.3E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206172">Cisco IOS XE Software 3.6E 3.6.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206173">Cisco IOS XE Software 3.6E 3.6.1E</FullProductName>
+    <FullProductName ProductID="CVRFPID-210075">Cisco IOS XE Software 3.6E 3.6.2aE</FullProductName>
+    <FullProductName ProductID="CVRFPID-210264">Cisco IOS XE Software 3.6E 3.6.2E</FullProductName>
+    <FullProductName ProductID="CVRFPID-206211">Cisco IOS XE Software 3.7E 3.7.0E</FullProductName>
+    <FullProductName ProductID="CVRFPID-210076">Cisco IOS XE Software 3.7E 3.7.1E</FullProductName>
+    <FullProductName ProductID="CVRFPID-184480">Cisco IOS XE Software 3.7S 3.7.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-184481">Cisco IOS XE Software 3.7S 3.7.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194732">Cisco IOS XE Software 3.7S 3.7.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213798">Cisco IOS XE Software 3.7S 3.7.4aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-202541">Cisco IOS XE Software 3.7S 3.7.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202542">Cisco IOS XE Software 3.7S 3.7.6S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206188">Cisco IOS XE Software 3.7S 3.7.7S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194735">Cisco IOS XE Software 3.8S 3.8.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194737">Cisco IOS XE Software 3.8S 3.8.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-194843">Cisco IOS XE Software 3.9S 3.9.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213825">Cisco IOS XE Software 3.9S 3.9.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-194842">Cisco IOS XE Software 3.9S 3.9.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213816">Cisco IOS XE Software 3.9S 3.9.1aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-202558">Cisco IOS XE Software 3.9S 3.9.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198123">Cisco IOS XE Software 3.10S 3.10.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-198535">Cisco IOS XE Software 3.10S 3.10.0aS</FullProductName>
+    <FullProductName ProductID="CVRFPID-198124">Cisco IOS XE Software 3.10S 3.10.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-213642">Cisco IOS XE Software 3.10S 3.10.1xbS</FullProductName>
+    <FullProductName ProductID="CVRFPID-198125">Cisco IOS XE Software 3.10S 3.10.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202539">Cisco IOS XE Software 3.10S 3.10.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-202540">Cisco IOS XE Software 3.10S 3.10.4S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206159">Cisco IOS XE Software 3.10S 3.10.5S</FullProductName>
+    <FullProductName ProductID="CVRFPID-207269">Cisco IOS XE Software 3.10S 3.10.01S</FullProductName>
+    <FullProductName ProductID="CVRFPID-203353">Cisco IOS XE Software 3.11S 3.11.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200771">Cisco IOS XE Software 3.11S 3.11.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206160">Cisco IOS XE Software 3.11S 3.11.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-200770">Cisco IOS XE Software 3.12S 3.12.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206161">Cisco IOS XE Software 3.12S 3.12.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206162">Cisco IOS XE Software 3.12S 3.12.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206176">Cisco IOS XE Software 3.12S 3.12.3S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206174">Cisco IOS XE Software 3.13S 3.13.1S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206175">Cisco IOS XE Software 3.13S 3.13.2S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206178">Cisco IOS XE Software 3.14S 3.14.0S</FullProductName>
+    <FullProductName ProductID="CVRFPID-206181">Cisco IOS XE Software 3.14S 3.14.1S</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS and IOS XE Software IPv6 Snooping Secure Network Discovery Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCus19794</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the IPv6 snooping feature from the first-hop security features in Cisco IOS and IOS XE Software could allow an unauthenticated, remote attacker to cause an affected device to reload.
+
+
+
+The vulnerability is due to insufficient Control Plane Protection (CPPr) against specific IPv6 ND packets. An attacker could exploit this vulnerability by sending a flood of traffic consisting of specific IPv6 ND packets to an affected device where the IPv6 snooping feature is configured.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCus19794</Note>
+    </Notes>
+    <CVE>CVE-2015-6278</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-105105</ProductID>
+        <ProductID>CVRFPID-105790</ProductID>
+        <ProductID>CVRFPID-107852</ProductID>
+        <ProductID>CVRFPID-109442</ProductID>
+        <ProductID>CVRFPID-111042</ProductID>
+        <ProductID>CVRFPID-112424</ProductID>
+        <ProductID>CVRFPID-112489</ProductID>
+        <ProductID>CVRFPID-112823</ProductID>
+        <ProductID>CVRFPID-113953</ProductID>
+        <ProductID>CVRFPID-113970</ProductID>
+        <ProductID>CVRFPID-115282</ProductID>
+        <ProductID>CVRFPID-115285</ProductID>
+        <ProductID>CVRFPID-115477</ProductID>
+        <ProductID>CVRFPID-115939</ProductID>
+        <ProductID>CVRFPID-116083</ProductID>
+        <ProductID>CVRFPID-116256</ProductID>
+        <ProductID>CVRFPID-116841</ProductID>
+        <ProductID>CVRFPID-117783</ProductID>
+        <ProductID>CVRFPID-183657</ProductID>
+        <ProductID>CVRFPID-183811</ProductID>
+        <ProductID>CVRFPID-183813</ProductID>
+        <ProductID>CVRFPID-183835</ProductID>
+        <ProductID>CVRFPID-183836</ProductID>
+        <ProductID>CVRFPID-183837</ProductID>
+        <ProductID>CVRFPID-183838</ProductID>
+        <ProductID>CVRFPID-183839</ProductID>
+        <ProductID>CVRFPID-184932</ProductID>
+        <ProductID>CVRFPID-185005</ProductID>
+        <ProductID>CVRFPID-187057</ProductID>
+        <ProductID>CVRFPID-187147</ProductID>
+        <ProductID>CVRFPID-187347</ProductID>
+        <ProductID>CVRFPID-187962</ProductID>
+        <ProductID>CVRFPID-188035</ProductID>
+        <ProductID>CVRFPID-188061</ProductID>
+        <ProductID>CVRFPID-189219</ProductID>
+        <ProductID>CVRFPID-189455</ProductID>
+        <ProductID>CVRFPID-190630</ProductID>
+        <ProductID>CVRFPID-190635</ProductID>
+        <ProductID>CVRFPID-190637</ProductID>
+        <ProductID>CVRFPID-190979</ProductID>
+        <ProductID>CVRFPID-190980</ProductID>
+        <ProductID>CVRFPID-191331</ProductID>
+        <ProductID>CVRFPID-191336</ProductID>
+        <ProductID>CVRFPID-191635</ProductID>
+        <ProductID>CVRFPID-191686</ProductID>
+        <ProductID>CVRFPID-191948</ProductID>
+        <ProductID>CVRFPID-192706</ProductID>
+        <ProductID>CVRFPID-192726</ProductID>
+        <ProductID>CVRFPID-193283</ProductID>
+        <ProductID>CVRFPID-193406</ProductID>
+        <ProductID>CVRFPID-193407</ProductID>
+        <ProductID>CVRFPID-193408</ProductID>
+        <ProductID>CVRFPID-193427</ProductID>
+        <ProductID>CVRFPID-193544</ProductID>
+        <ProductID>CVRFPID-194741</ProductID>
+        <ProductID>CVRFPID-194877</ProductID>
+        <ProductID>CVRFPID-194944</ProductID>
+        <ProductID>CVRFPID-195062</ProductID>
+        <ProductID>CVRFPID-195469</ProductID>
+        <ProductID>CVRFPID-195489</ProductID>
+        <ProductID>CVRFPID-195770</ProductID>
+        <ProductID>CVRFPID-196322</ProductID>
+        <ProductID>CVRFPID-197465</ProductID>
+        <ProductID>CVRFPID-197469</ProductID>
+        <ProductID>CVRFPID-197471</ProductID>
+        <ProductID>CVRFPID-197474</ProductID>
+        <ProductID>CVRFPID-197483</ProductID>
+        <ProductID>CVRFPID-198058</ProductID>
+        <ProductID>CVRFPID-198059</ProductID>
+        <ProductID>CVRFPID-198060</ProductID>
+        <ProductID>CVRFPID-198067</ProductID>
+        <ProductID>CVRFPID-198426</ProductID>
+        <ProductID>CVRFPID-200485</ProductID>
+        <ProductID>CVRFPID-200488</ProductID>
+        <ProductID>CVRFPID-201019</ProductID>
+        <ProductID>CVRFPID-201074</ProductID>
+        <ProductID>CVRFPID-201259</ProductID>
+        <ProductID>CVRFPID-201595</ProductID>
+        <ProductID>CVRFPID-201608</ProductID>
+        <ProductID>CVRFPID-202602</ProductID>
+        <ProductID>CVRFPID-204097</ProductID>
+        <ProductID>CVRFPID-204105</ProductID>
+        <ProductID>CVRFPID-204106</ProductID>
+        <ProductID>CVRFPID-204109</ProductID>
+        <ProductID>CVRFPID-204110</ProductID>
+        <ProductID>CVRFPID-204186</ProductID>
+        <ProductID>CVRFPID-204187</ProductID>
+        <ProductID>CVRFPID-204228</ProductID>
+        <ProductID>CVRFPID-204818</ProductID>
+        <ProductID>CVRFPID-204830</ProductID>
+        <ProductID>CVRFPID-204832</ProductID>
+        <ProductID>CVRFPID-205064</ProductID>
+        <ProductID>CVRFPID-209027</ProductID>
+        <ProductID>CVRFPID-209028</ProductID>
+        <ProductID>CVRFPID-209047</ProductID>
+        <ProductID>CVRFPID-209049</ProductID>
+        <ProductID>CVRFPID-209059</ProductID>
+        <ProductID>CVRFPID-209063</ProductID>
+        <ProductID>CVRFPID-209096</ProductID>
+        <ProductID>CVRFPID-184480</ProductID>
+        <ProductID>CVRFPID-184481</ProductID>
+        <ProductID>CVRFPID-194732</ProductID>
+        <ProductID>CVRFPID-194735</ProductID>
+        <ProductID>CVRFPID-194737</ProductID>
+        <ProductID>CVRFPID-194842</ProductID>
+        <ProductID>CVRFPID-194843</ProductID>
+        <ProductID>CVRFPID-196216</ProductID>
+        <ProductID>CVRFPID-196218</ProductID>
+        <ProductID>CVRFPID-196221</ProductID>
+        <ProductID>CVRFPID-196222</ProductID>
+        <ProductID>CVRFPID-196223</ProductID>
+        <ProductID>CVRFPID-196230</ProductID>
+        <ProductID>CVRFPID-196231</ProductID>
+        <ProductID>CVRFPID-196288</ProductID>
+        <ProductID>CVRFPID-196925</ProductID>
+        <ProductID>CVRFPID-197145</ProductID>
+        <ProductID>CVRFPID-198123</ProductID>
+        <ProductID>CVRFPID-198124</ProductID>
+        <ProductID>CVRFPID-198125</ProductID>
+        <ProductID>CVRFPID-198535</ProductID>
+        <ProductID>CVRFPID-200770</ProductID>
+        <ProductID>CVRFPID-200771</ProductID>
+        <ProductID>CVRFPID-202539</ProductID>
+        <ProductID>CVRFPID-202540</ProductID>
+        <ProductID>CVRFPID-202541</ProductID>
+        <ProductID>CVRFPID-202542</ProductID>
+        <ProductID>CVRFPID-202558</ProductID>
+        <ProductID>CVRFPID-203353</ProductID>
+        <ProductID>CVRFPID-206159</ProductID>
+        <ProductID>CVRFPID-206160</ProductID>
+        <ProductID>CVRFPID-206161</ProductID>
+        <ProductID>CVRFPID-206162</ProductID>
+        <ProductID>CVRFPID-206165</ProductID>
+        <ProductID>CVRFPID-206166</ProductID>
+        <ProductID>CVRFPID-206168</ProductID>
+        <ProductID>CVRFPID-206169</ProductID>
+        <ProductID>CVRFPID-206170</ProductID>
+        <ProductID>CVRFPID-206172</ProductID>
+        <ProductID>CVRFPID-206173</ProductID>
+        <ProductID>CVRFPID-206174</ProductID>
+        <ProductID>CVRFPID-206175</ProductID>
+        <ProductID>CVRFPID-206176</ProductID>
+        <ProductID>CVRFPID-206178</ProductID>
+        <ProductID>CVRFPID-206181</ProductID>
+        <ProductID>CVRFPID-206188</ProductID>
+        <ProductID>CVRFPID-206211</ProductID>
+        <ProductID>CVRFPID-207269</ProductID>
+        <ProductID>CVRFPID-210070</ProductID>
+        <ProductID>CVRFPID-210075</ProductID>
+        <ProductID>CVRFPID-210076</ProductID>
+        <ProductID>CVRFPID-210264</ProductID>
+        <ProductID>CVRFPID-213642</ProductID>
+        <ProductID>CVRFPID-213783</ProductID>
+        <ProductID>CVRFPID-213798</ProductID>
+        <ProductID>CVRFPID-213816</ProductID>
+        <ProductID>CVRFPID-213825</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds for these vulnerabilities. 
+
+
+
+Administrators may disable the IPv6 snooping feature on an affected device until the device is upgraded to a nonvulnerable release. 
+
+
+
+To disable IPv6 snooping use the no ipv6 snooping command in the interface configuration mode for each interface where the feature has been configured.
+
+
+
+To verify that the feature was disabled, use the show running-config | include ipv6 snooping command or the show ipv6 snooping policies command.
+
+
+
+The following example shows a Cisco IOS device with IPv6 snooping disabled:
+
+
+
+
+router#show ipv6 snooping policies
+Target               Type  Policy               Feature        Target range
+router#
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150923-fhs</URL>
+        <Description>Cisco IOS and IOS XE Software IPv6 First Hop Security Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS and IOS XE Software IPv6 Snooping Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuo04400</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in the IPv6 snooping feature from the first-hop security features in Cisco IOS and IOS XE Software could allow an unauthenticated, remote attacker to cause an affected device to reload.
+
+
+
+The vulnerability is due to insufficient validation of IPv6 ND packets that use the Cryptographically Generated Address (CGA) option. An attacker could exploit this vulnerability by sending a malformed packet to an affected device where the IPv6 Snooping feature is enabled.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="5">CSCuo04400</Note>
+    </Notes>
+    <CVE>CVE-2015-6279</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-105105</ProductID>
+        <ProductID>CVRFPID-105790</ProductID>
+        <ProductID>CVRFPID-107852</ProductID>
+        <ProductID>CVRFPID-109442</ProductID>
+        <ProductID>CVRFPID-111042</ProductID>
+        <ProductID>CVRFPID-112424</ProductID>
+        <ProductID>CVRFPID-112489</ProductID>
+        <ProductID>CVRFPID-112823</ProductID>
+        <ProductID>CVRFPID-113953</ProductID>
+        <ProductID>CVRFPID-113970</ProductID>
+        <ProductID>CVRFPID-115282</ProductID>
+        <ProductID>CVRFPID-115285</ProductID>
+        <ProductID>CVRFPID-115477</ProductID>
+        <ProductID>CVRFPID-115939</ProductID>
+        <ProductID>CVRFPID-116083</ProductID>
+        <ProductID>CVRFPID-116256</ProductID>
+        <ProductID>CVRFPID-116841</ProductID>
+        <ProductID>CVRFPID-117783</ProductID>
+        <ProductID>CVRFPID-183657</ProductID>
+        <ProductID>CVRFPID-183811</ProductID>
+        <ProductID>CVRFPID-183813</ProductID>
+        <ProductID>CVRFPID-183835</ProductID>
+        <ProductID>CVRFPID-183836</ProductID>
+        <ProductID>CVRFPID-183837</ProductID>
+        <ProductID>CVRFPID-183838</ProductID>
+        <ProductID>CVRFPID-183839</ProductID>
+        <ProductID>CVRFPID-184932</ProductID>
+        <ProductID>CVRFPID-185005</ProductID>
+        <ProductID>CVRFPID-187057</ProductID>
+        <ProductID>CVRFPID-187147</ProductID>
+        <ProductID>CVRFPID-187347</ProductID>
+        <ProductID>CVRFPID-187962</ProductID>
+        <ProductID>CVRFPID-188035</ProductID>
+        <ProductID>CVRFPID-188061</ProductID>
+        <ProductID>CVRFPID-189219</ProductID>
+        <ProductID>CVRFPID-189455</ProductID>
+        <ProductID>CVRFPID-190630</ProductID>
+        <ProductID>CVRFPID-190635</ProductID>
+        <ProductID>CVRFPID-190637</ProductID>
+        <ProductID>CVRFPID-190979</ProductID>
+        <ProductID>CVRFPID-190980</ProductID>
+        <ProductID>CVRFPID-191331</ProductID>
+        <ProductID>CVRFPID-191336</ProductID>
+        <ProductID>CVRFPID-191635</ProductID>
+        <ProductID>CVRFPID-191686</ProductID>
+        <ProductID>CVRFPID-191948</ProductID>
+        <ProductID>CVRFPID-192706</ProductID>
+        <ProductID>CVRFPID-192726</ProductID>
+        <ProductID>CVRFPID-193283</ProductID>
+        <ProductID>CVRFPID-193406</ProductID>
+        <ProductID>CVRFPID-193407</ProductID>
+        <ProductID>CVRFPID-193408</ProductID>
+        <ProductID>CVRFPID-193427</ProductID>
+        <ProductID>CVRFPID-193544</ProductID>
+        <ProductID>CVRFPID-194741</ProductID>
+        <ProductID>CVRFPID-194877</ProductID>
+        <ProductID>CVRFPID-194944</ProductID>
+        <ProductID>CVRFPID-195062</ProductID>
+        <ProductID>CVRFPID-195469</ProductID>
+        <ProductID>CVRFPID-195489</ProductID>
+        <ProductID>CVRFPID-195770</ProductID>
+        <ProductID>CVRFPID-197465</ProductID>
+        <ProductID>CVRFPID-197471</ProductID>
+        <ProductID>CVRFPID-197474</ProductID>
+        <ProductID>CVRFPID-197483</ProductID>
+        <ProductID>CVRFPID-198058</ProductID>
+        <ProductID>CVRFPID-198059</ProductID>
+        <ProductID>CVRFPID-198060</ProductID>
+        <ProductID>CVRFPID-198067</ProductID>
+        <ProductID>CVRFPID-198426</ProductID>
+        <ProductID>CVRFPID-200485</ProductID>
+        <ProductID>CVRFPID-200488</ProductID>
+        <ProductID>CVRFPID-201019</ProductID>
+        <ProductID>CVRFPID-201074</ProductID>
+        <ProductID>CVRFPID-201259</ProductID>
+        <ProductID>CVRFPID-201595</ProductID>
+        <ProductID>CVRFPID-201608</ProductID>
+        <ProductID>CVRFPID-202602</ProductID>
+        <ProductID>CVRFPID-204097</ProductID>
+        <ProductID>CVRFPID-204105</ProductID>
+        <ProductID>CVRFPID-204106</ProductID>
+        <ProductID>CVRFPID-204109</ProductID>
+        <ProductID>CVRFPID-204110</ProductID>
+        <ProductID>CVRFPID-204186</ProductID>
+        <ProductID>CVRFPID-204228</ProductID>
+        <ProductID>CVRFPID-204818</ProductID>
+        <ProductID>CVRFPID-204832</ProductID>
+        <ProductID>CVRFPID-205064</ProductID>
+        <ProductID>CVRFPID-209027</ProductID>
+        <ProductID>CVRFPID-209047</ProductID>
+        <ProductID>CVRFPID-209049</ProductID>
+        <ProductID>CVRFPID-209059</ProductID>
+        <ProductID>CVRFPID-209063</ProductID>
+        <ProductID>CVRFPID-209096</ProductID>
+        <ProductID>CVRFPID-184480</ProductID>
+        <ProductID>CVRFPID-184481</ProductID>
+        <ProductID>CVRFPID-194732</ProductID>
+        <ProductID>CVRFPID-194735</ProductID>
+        <ProductID>CVRFPID-194737</ProductID>
+        <ProductID>CVRFPID-194842</ProductID>
+        <ProductID>CVRFPID-194843</ProductID>
+        <ProductID>CVRFPID-196216</ProductID>
+        <ProductID>CVRFPID-196218</ProductID>
+        <ProductID>CVRFPID-196221</ProductID>
+        <ProductID>CVRFPID-196222</ProductID>
+        <ProductID>CVRFPID-196223</ProductID>
+        <ProductID>CVRFPID-196230</ProductID>
+        <ProductID>CVRFPID-196231</ProductID>
+        <ProductID>CVRFPID-196288</ProductID>
+        <ProductID>CVRFPID-196925</ProductID>
+        <ProductID>CVRFPID-197145</ProductID>
+        <ProductID>CVRFPID-198123</ProductID>
+        <ProductID>CVRFPID-198124</ProductID>
+        <ProductID>CVRFPID-198125</ProductID>
+        <ProductID>CVRFPID-198535</ProductID>
+        <ProductID>CVRFPID-200770</ProductID>
+        <ProductID>CVRFPID-200771</ProductID>
+        <ProductID>CVRFPID-202539</ProductID>
+        <ProductID>CVRFPID-202540</ProductID>
+        <ProductID>CVRFPID-202541</ProductID>
+        <ProductID>CVRFPID-202542</ProductID>
+        <ProductID>CVRFPID-202558</ProductID>
+        <ProductID>CVRFPID-203353</ProductID>
+        <ProductID>CVRFPID-206160</ProductID>
+        <ProductID>CVRFPID-206161</ProductID>
+        <ProductID>CVRFPID-206162</ProductID>
+        <ProductID>CVRFPID-206165</ProductID>
+        <ProductID>CVRFPID-206166</ProductID>
+        <ProductID>CVRFPID-206168</ProductID>
+        <ProductID>CVRFPID-206169</ProductID>
+        <ProductID>CVRFPID-206170</ProductID>
+        <ProductID>CVRFPID-207269</ProductID>
+        <ProductID>CVRFPID-213642</ProductID>
+        <ProductID>CVRFPID-213783</ProductID>
+        <ProductID>CVRFPID-213798</ProductID>
+        <ProductID>CVRFPID-213816</ProductID>
+        <ProductID>CVRFPID-213825</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds for these vulnerabilities. 
+
+
+
+Administrators may disable the IPv6 snooping feature on an affected device until the device is upgraded to a nonvulnerable release. 
+
+
+
+To disable IPv6 snooping use the no ipv6 snooping command in the interface configuration mode for each interface where the feature has been configured.
+
+
+
+To verify that the feature was disabled, use the show running-config | include ipv6 snooping command or the show ipv6 snooping policies command.
+
+
+
+The following example shows a Cisco IOS device with IPv6 snooping disabled:
+
+
+
+
+router#show ipv6 snooping policies
+Target               Type  Policy               Feature        Target range
+router#
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20150923-fhs</URL>
+        <Description>Cisco IOS and IOS XE Software IPv6 First Hop Security Denial of Service Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Denial of Service Vulnerability in Cisco Video Surveillance IP Cameras</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20111026-camera</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2011-10-26T15:14:20</Date>
+        <Description>Initial public release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2011-10-26T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2011-10-26T15:14:20</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111026-camera</URL>
+      <Description>Denial of Service Vulnerability in Cisco Video Surveillance IP Cameras</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20111026-camera</URL>
+      <Description>Identifying and Mitigating Exploitation of the Denial of Service Vulnerability in Cisco Video Surveillance IP Cameras</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20111026-camera</URL>
+      <Description>Identifying and Mitigating Exploitation of the Denial of Service Vulnerability in Cisco Video Surveillance IP Cameras</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-112545">Cisco Video Surveillance 2000 Series IP Dome Firmware</FullProductName>
+    <FullProductName ProductID="CVRFPID-112548">Cisco Video Surveillance 2000 Series IP Dome Firmware 1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112550">Cisco Video Surveillance 2000 Series IP Dome Firmware 2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-92402">Cisco Video Surveillance 2500 Series IP Camera Firmware</FullProductName>
+    <FullProductName ProductID="CVRFPID-92405">Cisco Video Surveillance 2500 Series IP Camera Firmware 1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112504">Cisco Video Surveillance 2500 Series IP Camera Firmware 2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112511">Cisco Video Surveillance 2600 Series IP Camera Firmware</FullProductName>
+    <FullProductName ProductID="CVRFPID-112512">Cisco Video Surveillance 2600 Series IP Camera Firmware 4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-112514">Cisco Video Surveillance 2600 Series IP Camera Firmware 4.2</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Video Surveillance IP Cameras RTSP Crafted Packet Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtj96312</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">The Cisco Video Surveillance IP Cameras 2421, 2500 series, and 2600
+series of devices are affected by a RSTP TCP crafted packets denial of service vulnerability that may allow an
+unauthenticated attacker to cause the device to reload by sending a
+series of crafted packets. This vulnerability can be exploited
+from both wired and wireless segments.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCtj96312,CSCtj39462,CSCtl80175</Note>
+    </Notes>
+    <CVE>CVE-2011-3318</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-112545</ProductID>
+        <ProductID>CVRFPID-112548</ProductID>
+        <ProductID>CVRFPID-112550</ProductID>
+        <ProductID>CVRFPID-92402</ProductID>
+        <ProductID>CVRFPID-92405</ProductID>
+        <ProductID>CVRFPID-112504</ProductID>
+        <ProductID>CVRFPID-112511</ProductID>
+        <ProductID>CVRFPID-112512</ProductID>
+        <ProductID>CVRFPID-112514</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111026-camera</URL>
+        <Description>Denial of Service Vulnerability in Cisco Video Surveillance IP Cameras</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

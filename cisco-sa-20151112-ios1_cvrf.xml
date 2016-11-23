@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco IOS Software Virtual PPP Interfaces Security Bypass Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20151112-ios1</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2015-11-13T18:42:29</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2015-11-13T11:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2015-11-13T18:42:29</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Cisco devices that are running Cisco IOS Software Release 15.2(04)M or Cisco IOS Software Release 15.4(03)M and are configured to use access control lists (ACLs) could allow a user who is connected to an authenticated PPP session to bypass ACLs that are configured on virtual PPP interfaces, if the ACL on the physical interface permits the traffic to pass.
+
+
+
+The vulnerability is due to the physical interface ignoring virtual PPP ACLs. An attacker could exploit this vulnerability to bypass virtual PPP ACLs and pass denied traffic across virtual PPP interfaces. A successful exploit could allow the attacker to pass traffic as if the ACLs do not exist.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are not available.
+
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151112-ios1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151112-ios1"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151112-ios1</URL>
+      <Description>Cisco IOS Software Virtual PPP Interfaces Security Bypass Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-106899">Cisco IOS 15.2(4)M</FullProductName>
+    <FullProductName ProductID="CVRFPID-193350">Cisco IOS 15.4(3)M</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco IOS Software Virtual PPP Interfaces Security Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCur61303</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco devices that are running Cisco IOS Software Release 15.2(04)M or Cisco IOS Software Release 15.4(03)M and are configured to use access control lists (ACLs) could allow a user who is connected to an authenticated PPP session to bypass ACLs that are configured on virtual PPP interfaces, if the ACL on the physical interface permits the traffic to pass.
+
+
+
+The vulnerability is due to the physical interface ignoring virtual PPP ACLs. An attacker could exploit this vulnerability to bypass virtual PPP ACLs and pass denied traffic across virtual PPP interfaces. A successful exploit could allow the attacker to pass traffic as if the ACLs do not exist.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCur61303</Note>
+    </Notes>
+    <CVE>CVE-2015-6365</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-106899</ProductID>
+        <ProductID>CVRFPID-193350</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.0</BaseScore>
+        <TemporalScore>3.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:S/C:N/I:P/A:N/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that mitigate this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151112-ios1</URL>
+        <Description>Cisco IOS Software Virtual PPP Interfaces Security Bypass Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

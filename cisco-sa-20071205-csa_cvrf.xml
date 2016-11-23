@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Security Agent for Windows System Driver Remote Buffer Overflow Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20071205-csa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2007-12-05T16:00:00</Date>
+        <Description>Updated link to CVSS scoring for
+			 CSCsl00618.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-12-05T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-12-05T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20071205-csa</URL>
+      <Description>Cisco Security Agent for Windows System Driver Remote Buffer Overflow Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20071205-csa</URL>
+      <Description>Identifying and Mitigating Exploitation of the CSA for Windows System Driver Remote Buffer Overflow Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20071205-csa</URL>
+      <Description>Identifying and Mitigating Exploitation of the CSA for Windows System Driver Remote Buffer Overflow Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-66832">Cisco Conference Connection 1.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66831">Cisco Conference Connection 1.1(3)spA</FullProductName>
+    <FullProductName ProductID="CVRFPID-42736">Cisco Conference Connection 1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66830">Cisco Conference Connection 1.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66829">Cisco Conference Connection 1.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66827">Cisco Conference Connection 1.2(2)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66828">Cisco Conference Connection 1.2(2)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-42735">Cisco Emergency Responder 1.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66805">Cisco Emergency Responder 1.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66804">Cisco Emergency Responder 1.1(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66793">Cisco Emergency Responder 1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66803">Cisco Emergency Responder 1.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66802">Cisco Emergency Responder 1.2(1)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66801">Cisco Emergency Responder 1.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66800">Cisco Emergency Responder 1.2(2)sr1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66797">Cisco Emergency Responder 1.2(3)a</FullProductName>
+    <FullProductName ProductID="CVRFPID-66799">Cisco Emergency Responder 1.2(3)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66798">Cisco Emergency Responder 1.2(3a)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66794">Cisco Emergency Responder 1.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66796">Cisco Emergency Responder 1.3(1a)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66795">Cisco Emergency Responder 1.3(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73682">Cisco Emergency Responder 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-73683">Cisco Emergency Responder 2.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-34796">Cisco Intelligent Contact Manager (ICM) Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67087">Cisco Intelligent Contact Manager (ICM) 4.6(2)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-67091">Cisco Intelligent Contact Manager (ICM) 4.6(2)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-67092">Cisco Intelligent Contact Manager (ICM) 4.6(2)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-67093">Cisco Intelligent Contact Manager (ICM) 4.6(2)_SR4</FullProductName>
+    <FullProductName ProductID="CVRFPID-67094">Cisco Intelligent Contact Manager (ICM) 4.6(2)_SR5</FullProductName>
+    <FullProductName ProductID="CVRFPID-67095">Cisco Intelligent Contact Manager (ICM) 4.6(2)_SR6</FullProductName>
+    <FullProductName ProductID="CVRFPID-40535">Cisco Intelligent Contact Manager (ICM) 5.0(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-67096">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-67097">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-67098">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR4</FullProductName>
+    <FullProductName ProductID="CVRFPID-67099">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR5</FullProductName>
+    <FullProductName ProductID="CVRFPID-67100">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR7</FullProductName>
+    <FullProductName ProductID="CVRFPID-67101">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR8</FullProductName>
+    <FullProductName ProductID="CVRFPID-67102">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR9</FullProductName>
+    <FullProductName ProductID="CVRFPID-67103">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR10</FullProductName>
+    <FullProductName ProductID="CVRFPID-67104">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR11</FullProductName>
+    <FullProductName ProductID="CVRFPID-67105">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR12</FullProductName>
+    <FullProductName ProductID="CVRFPID-67106">Cisco Intelligent Contact Manager (ICM) 5.0(0)_SR13</FullProductName>
+    <FullProductName ProductID="CVRFPID-67088">Cisco Intelligent Contact Manager (ICM) 6.0(0)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-67107">Cisco Intelligent Contact Manager (ICM) 6.0(0)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-67108">Cisco Intelligent Contact Manager (ICM) 6.0(0)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-67109">Cisco Intelligent Contact Manager (ICM) 6.0(0)_SR4</FullProductName>
+    <FullProductName ProductID="CVRFPID-67110">Cisco Intelligent Contact Manager (ICM) 6.0(0)_SR5</FullProductName>
+    <FullProductName ProductID="CVRFPID-67111">Cisco Intelligent Contact Manager (ICM) 6.0(0)_SR6</FullProductName>
+    <FullProductName ProductID="CVRFPID-67112">Cisco Intelligent Contact Manager (ICM) 6.0(0)_SR7</FullProductName>
+    <FullProductName ProductID="CVRFPID-67113">Cisco Intelligent Contact Manager (ICM) 6.0(0)_SR8</FullProductName>
+    <FullProductName ProductID="CVRFPID-67114">Cisco Intelligent Contact Manager (ICM) 6.0(0)_SR9</FullProductName>
+    <FullProductName ProductID="CVRFPID-67115">Cisco Intelligent Contact Manager (ICM) 6.0(0)_SR10</FullProductName>
+    <FullProductName ProductID="CVRFPID-67089">Cisco Intelligent Contact Manager (ICM) 7.0(0)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-67116">Cisco Intelligent Contact Manager (ICM) 7.0(0)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-67117">Cisco Intelligent Contact Manager (ICM) 7.0(0)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-67118">Cisco Intelligent Contact Manager (ICM) 7.0(0)_SR4</FullProductName>
+    <FullProductName ProductID="CVRFPID-67090">Cisco Intelligent Contact Manager (ICM) 7.1(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-67119">Cisco Intelligent Contact Manager (ICM) 7.1(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-67120">Cisco Intelligent Contact Manager (ICM) 7.1(4)</FullProductName>
+    <FullProductName ProductID="CVRFPID-67121">Cisco Intelligent Contact Manager (ICM) 7.1(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-71339">Cisco Intelligent Contact Manager (ICM) 7.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-71338">Cisco Intelligent Contact Manager (ICM) 7.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-44549">Cisco Unified Contact Center Enterprise Edition Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62324">Cisco Unified Contact Center Enterprise Edition 4.6.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-62323">Cisco Unified Contact Center Enterprise Edition 5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-62322">Cisco Unified Contact Center Enterprise Edition 6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-62319">Cisco Unified Contact Center Enterprise Edition 7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-62320">Cisco Unified Contact Center Enterprise Edition 7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62321">Cisco Unified Contact Center Enterprise Edition 7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62332">Cisco Unified Contact Center Enterprise Edition 7.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-73675">Cisco Unified Contact Center Enterprise Edition 7.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-73680">Cisco Unified Contact Center Enterprise Edition 7.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73676">Cisco Unified Contact Center Enterprise Edition 7.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-44547">Cisco Unified Contact Center Express Edition Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66851">Cisco Unified Contact Center Express Edition 2.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-66852">Cisco Unified Contact Center Express Edition 2.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66850">Cisco Unified Contact Center Express Edition 2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66855">Cisco Unified Contact Center Express Edition 2.1.1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-66854">Cisco Unified Contact Center Express Edition 2.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66853">Cisco Unified Contact Center Express Edition 2.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66849">Cisco Unified Contact Center Express Edition 2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66856">Cisco Unified Contact Center Express Edition 2.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66857">Cisco Unified Contact Center Express Edition 2.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66859">Cisco Unified Contact Center Express Edition 2.2.3b</FullProductName>
+    <FullProductName ProductID="CVRFPID-66858">Cisco Unified Contact Center Express Edition 2.2.3b_spE</FullProductName>
+    <FullProductName ProductID="CVRFPID-66848">Cisco Unified Contact Center Express Edition 3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-66860">Cisco Unified Contact Center Express Edition 3.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66864">Cisco Unified Contact Center Express Edition 3.0.3a_spA</FullProductName>
+    <FullProductName ProductID="CVRFPID-66863">Cisco Unified Contact Center Express Edition 3.0.3a_spB</FullProductName>
+    <FullProductName ProductID="CVRFPID-66862">Cisco Unified Contact Center Express Edition 3.0.3a_spC</FullProductName>
+    <FullProductName ProductID="CVRFPID-66861">Cisco Unified Contact Center Express Edition 3.0.3a_spD</FullProductName>
+    <FullProductName ProductID="CVRFPID-66847">Cisco Unified Contact Center Express Edition 3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66866">Cisco Unified Contact Center Express Edition 3.1(1)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66865">Cisco Unified Contact Center Express Edition 3.1(1)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66868">Cisco Unified Contact Center Express Edition 3.1(2)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66867">Cisco Unified Contact Center Express Edition 3.1(2)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66869">Cisco Unified Contact Center Express Edition 3.1(2)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66870">Cisco Unified Contact Center Express Edition 3.1(2)_SR4</FullProductName>
+    <FullProductName ProductID="CVRFPID-66871">Cisco Unified Contact Center Express Edition 3.1(3)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66872">Cisco Unified Contact Center Express Edition 3.1(3)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66873">Cisco Unified Contact Center Express Edition 3.1(3)_SR4</FullProductName>
+    <FullProductName ProductID="CVRFPID-66874">Cisco Unified Contact Center Express Edition 3.1(3)_SR5</FullProductName>
+    <FullProductName ProductID="CVRFPID-66846">Cisco Unified Contact Center Express Edition 3.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-66875">Cisco Unified Contact Center Express Edition 3.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66876">Cisco Unified Contact Center Express Edition 3.5(1)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66877">Cisco Unified Contact Center Express Edition 3.5(2)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66883">Cisco Unified Contact Center Express Edition 3.5(3)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66878">Cisco Unified Contact Center Express Edition 3.5(3)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66879">Cisco Unified Contact Center Express Edition 3.5(3)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66880">Cisco Unified Contact Center Express Edition 3.5(3)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66881">Cisco Unified Contact Center Express Edition 3.5(4)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66882">Cisco Unified Contact Center Express Edition 3.5(4)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66843">Cisco Unified Contact Center Express Edition 4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-66884">Cisco Unified Contact Center Express Edition 4.0(1)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66885">Cisco Unified Contact Center Express Edition 4.0(4)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66886">Cisco Unified Contact Center Express Edition 4.0(5)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66845">Cisco Unified Contact Center Express Edition 4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66887">Cisco Unified Contact Center Express Edition 4.1(1)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66844">Cisco Unified Contact Center Express Edition 4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-66888">Cisco Unified Contact Center Express Edition 4.5(2)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66889">Cisco Unified Contact Center Express Edition 4.5(2)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66890">Cisco Unified Contact Center Express Edition 5.0(1)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-44548">Cisco Unified Contact Center Hosted Edition Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-62330">Cisco Unified Contact Center Hosted Edition 4.6.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-62329">Cisco Unified Contact Center Hosted Edition 5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-62328">Cisco Unified Contact Center Hosted Edition 6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-62326">Cisco Unified Contact Center Hosted Edition 7.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-62327">Cisco Unified Contact Center Hosted Edition 7.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62325">Cisco Unified Contact Center Hosted Edition 7.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-62331">Cisco Unified Contact Center Hosted Edition 7.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-73677">Cisco Unified Contact Center Hosted Edition 7.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-73679">Cisco Unified Contact Center Hosted Edition 7.2(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73678">Cisco Unified Contact Center Hosted Edition 7.2(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66891">Cisco Unified IP IVR 2.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66892">Cisco Unified IP IVR 2.1.1a</FullProductName>
+    <FullProductName ProductID="CVRFPID-66893">Cisco Unified IP IVR 2.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66894">Cisco Unified IP IVR 2.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66895">Cisco Unified IP IVR 2.2(5)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66896">Cisco Unified IP IVR 2.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66897">Cisco Unified IP IVR 2.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66898">Cisco Unified IP IVR 2.2.3b</FullProductName>
+    <FullProductName ProductID="CVRFPID-66899">Cisco Unified IP IVR 2.2.3b_spE</FullProductName>
+    <FullProductName ProductID="CVRFPID-66901">Cisco Unified IP IVR 2.2.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-66900">Cisco Unified IP IVR 2.2.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-66902">Cisco Unified IP IVR 3.0.1_spB</FullProductName>
+    <FullProductName ProductID="CVRFPID-66905">Cisco Unified IP IVR 3.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66906">Cisco Unified IP IVR 3.0.3a_spA</FullProductName>
+    <FullProductName ProductID="CVRFPID-66907">Cisco Unified IP IVR 3.0.3a_spB</FullProductName>
+    <FullProductName ProductID="CVRFPID-66908">Cisco Unified IP IVR 3.0.3a_spC</FullProductName>
+    <FullProductName ProductID="CVRFPID-66909">Cisco Unified IP IVR 3.0.3a_spD</FullProductName>
+    <FullProductName ProductID="CVRFPID-66903">Cisco Unified IP IVR 3.1(1)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66910">Cisco Unified IP IVR 3.1(2)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66911">Cisco Unified IP IVR 3.1(2)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66912">Cisco Unified IP IVR 3.1(2)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66913">Cisco Unified IP IVR 3.1(3)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66914">Cisco Unified IP IVR 3.1(3)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66915">Cisco Unified IP IVR 3.1(3)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66916">Cisco Unified IP IVR 3.1(3)_SR4</FullProductName>
+    <FullProductName ProductID="CVRFPID-66917">Cisco Unified IP IVR 3.1(3)_SR5</FullProductName>
+    <FullProductName ProductID="CVRFPID-66918">Cisco Unified IP IVR 3.5(1)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66904">Cisco Unified IP IVR 3.5(1)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66919">Cisco Unified IP IVR 3.5(1)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66920">Cisco Unified IP IVR 3.5(2)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66921">Cisco Unified IP IVR 3.5(3)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66922">Cisco Unified IP IVR 3.5(3)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66923">Cisco Unified IP IVR 3.5(3)_SR3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66924">Cisco Unified IP IVR 3.5(4)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66925">Cisco Unified IP IVR 3.5(4)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66926">Cisco Unified IP IVR 3.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66927">Cisco Unified IP IVR 3.5.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66928">Cisco Unified IP IVR 4.0(1)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66929">Cisco Unified IP IVR 4.0(4)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-73674">Cisco Unified IP IVR 4.0(5)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66930">Cisco Unified IP IVR 4.1(1)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66931">Cisco Unified IP IVR 4.5(2)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66932">Cisco Unified IP IVR 4.5(2)_SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66933">Cisco Unified IP IVR 5.0(1)_SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-67123">Cisco IP Queue Manager 2.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66825">Cisco Personal Assistant 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66826">Cisco Personal Assistant 1.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66821">Cisco Personal Assistant 1.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-42737">Cisco Personal Assistant 1.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66818">Cisco Personal Assistant 1.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66819">Cisco Personal Assistant 1.3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66820">Cisco Personal Assistant 1.3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66813">Cisco Personal Assistant 1.3.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-42738">Cisco Personal Assistant 1.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66817">Cisco Personal Assistant 1.4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66816">Cisco Personal Assistant 1.4.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66814">Cisco Personal Assistant 1.4.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-66815">Cisco Personal Assistant 1.4.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-66824">Cisco Personal Assistant 1.4.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-52353">Cisco Security Agent  4.5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-55202">Cisco Security Agent  4.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-61129">Cisco Security Agent  4.5.1.628</FullProductName>
+    <FullProductName ProductID="CVRFPID-61128">Cisco Security Agent  4.5.1.645</FullProductName>
+    <FullProductName ProductID="CVRFPID-61125">Cisco Security Agent  4.5.1.649</FullProductName>
+    <FullProductName ProductID="CVRFPID-61123">Cisco Security Agent  4.5.1.654</FullProductName>
+    <FullProductName ProductID="CVRFPID-61120">Cisco Security Agent  4.5.1.655</FullProductName>
+    <FullProductName ProductID="CVRFPID-61119">Cisco Security Agent  4.5.1.657</FullProductName>
+    <FullProductName ProductID="CVRFPID-61127">Cisco Security Agent  5.0.0.179</FullProductName>
+    <FullProductName ProductID="CVRFPID-61126">Cisco Security Agent  5.0.0.181</FullProductName>
+    <FullProductName ProductID="CVRFPID-61124">Cisco Security Agent  5.0.0.183</FullProductName>
+    <FullProductName ProductID="CVRFPID-61121">Cisco Security Agent  5.0.0.186</FullProductName>
+    <FullProductName ProductID="CVRFPID-61122">Cisco Security Agent  5.0.0.187</FullProductName>
+    <FullProductName ProductID="CVRFPID-61118">Cisco Security Agent  5.0.0.194</FullProductName>
+    <FullProductName ProductID="CVRFPID-61116">Cisco Security Agent  5.1.0.74</FullProductName>
+    <FullProductName ProductID="CVRFPID-61117">Cisco Security Agent  5.1.0.79</FullProductName>
+    <FullProductName ProductID="CVRFPID-73607">Cisco Security Agent  5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-46476">Cisco Unified Communications Manager 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-46477">Cisco Unified Communications Manager 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-35574">Cisco Unified Communications Manager 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66791">Cisco Unified Communications Manager 3.0.3(a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34979">Cisco Unified Communications Manager 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-63563">Cisco Unified Communications Manager 3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-46478">Cisco Unified Communications Manager 3.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-46479">Cisco Unified Communications Manager 3.1.3a</FullProductName>
+    <FullProductName ProductID="CVRFPID-66788">Cisco Unified Communications Manager 3.1(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66785">Cisco Unified Communications Manager 3.1(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66784">Cisco Unified Communications Manager 3.1(2)SR3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66780">Cisco Unified Communications Manager 3.1(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66779">Cisco Unified Communications Manager 3.1(3)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66778">Cisco Unified Communications Manager 3.1(3)SR4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-34741">Cisco Unified Communications Manager 3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66792">Cisco Unified Communications Manager 3.2(3)SR3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-40531">Cisco Unified Communications Manager 3.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66790">Cisco Unified Communications Manager 3.3(2)SPc Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66789">Cisco Unified Communications Manager 3.3(3)  Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52281">Cisco Unified Communications Manager 3.3(3)ES61 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66786">Cisco Unified Communications Manager 3.3(3)SR3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66783">Cisco Unified Communications Manager 3.3(3)SR4a Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66787">Cisco Unified Communications Manager 3.3(3a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66782">Cisco Unified Communications Manager 3.3(4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52282">Cisco Unified Communications Manager 3.3(4)ES25 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66776">Cisco Unified Communications Manager 3.3(4)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66781">Cisco Unified Communications Manager 3.3(4c) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52283">Cisco Unified Communications Manager 3.3(5) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56082">Cisco Unified Communications Manager 3.3(5)ES24 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66775">Cisco Unified Communications Manager 3.3(5)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56079">Cisco Unified Communications Manager 3.3(5)SR1a Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64511">Cisco Unified Communications Manager 3.3(5)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64505">Cisco Unified Communications Manager 3.3(5)SR2a Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58686">Cisco Unified Communications Manager 3.3(5)SR3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66777">Cisco Unified Communications Manager 3.3(59) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64516">Cisco Unified Communications Manager 3.3(61) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64515">Cisco Unified Communications Manager 3.3(63) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64514">Cisco Unified Communications Manager 3.3(64) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64513">Cisco Unified Communications Manager 3.3(65) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64512">Cisco Unified Communications Manager 3.3(66) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64510">Cisco Unified Communications Manager 3.3(67.5) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64509">Cisco Unified Communications Manager 3.3(68.1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64508">Cisco Unified Communications Manager 3.3(71.0) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64507">Cisco Unified Communications Manager 3.3(74.0) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66774">Cisco Unified Communications Manager 3.3(78) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64506">Cisco Unified Communications Manager 3.3(76) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-45341">Cisco Unified Communications Manager 4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-45342">Cisco Unified Communications Manager 4.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-52284">Cisco Unified Communications Manager 4.0(2a)ES40 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56083">Cisco Unified Communications Manager 4.0(2a)ES56 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52285">Cisco Unified Communications Manager 4.0(2a)SR2b Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56080">Cisco Unified Communications Manager 4.0(2a)SR2c Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-51459">Cisco Unified Communications Manager 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64533">Cisco Unified Communications Manager 4.1(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52286">Cisco Unified Communications Manager 4.1(2)ES33 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56084">Cisco Unified Communications Manager 4.1(2)ES50 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64534">Cisco Unified Communications Manager 4.1(2)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64519">Cisco Unified Communications Manager 4.1(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66341">Cisco Unified Communications Manager 4.1(3)ES Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52287">Cisco Unified Communications Manager 4.1(3)ES07 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56085">Cisco Unified Communications Manager 4.1(3)ES24 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66340">Cisco Unified Communications Manager 4.1(3)SR Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52288">Cisco Unified Communications Manager 4.1(3)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-56081">Cisco Unified Communications Manager 4.1(3)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67786">Cisco Unified Communications Manager 4.1(3)SR3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58738">Cisco Unified Communications Manager 4.1(3)SR3b Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64523">Cisco Unified Communications Manager 4.1(3)SR3c Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58685">Cisco Unified Communications Manager 4.1(3)SR4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64521">Cisco Unified Communications Manager 4.1(3)SR4b  Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64518">Cisco Unified Communications Manager 4.1(3)SR4d Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67787">Cisco Unified Communications Manager 4.1(3)SR5 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-52289">Cisco Unified Communications Manager 4.1(4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64530">Cisco Unified Communications Manager 4.1(9) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64532">Cisco Unified Communications Manager 4.1(17) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64531">Cisco Unified Communications Manager 4.1(19) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64529">Cisco Unified Communications Manager 4.1(22) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64528">Cisco Unified Communications Manager 4.1(23) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64527">Cisco Unified Communications Manager 4.1(25) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64526">Cisco Unified Communications Manager 4.1(26) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64525">Cisco Unified Communications Manager 4.1(27.7) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64524">Cisco Unified Communications Manager 4.1(28.2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64522">Cisco Unified Communications Manager 4.1(30.4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64520">Cisco Unified Communications Manager 4.1(36) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64517">Cisco Unified Communications Manager 4.1(39) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64535">Cisco Unified Communications Manager 4.2(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64543">Cisco Unified Communications Manager 4.2(1)SR1b Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64545">Cisco Unified Communications Manager 4.2(1.02) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64541">Cisco Unified Communications Manager 4.2(1.05.3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64538">Cisco Unified Communications Manager 4.2(1.06) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64537">Cisco Unified Communications Manager 4.2(1.07) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58684">Cisco Unified Communications Manager 4.2(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64540">Cisco Unified Communications Manager 4.2(3)SR1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67788">Cisco Unified Communications Manager 4.2(3)SR2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64539">Cisco Unified Communications Manager 4.2(3.08) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64542">Cisco Unified Communications Manager 4.2(3.2.3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64544">Cisco Unified Communications Manager 4.2(3.3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64536">Cisco Unified Communications Manager 4.2(3.13) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58683">Cisco Unified Communications Manager 4.3(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-67789">Cisco Unified Communications Manager 4.3(1)SR Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66342">Cisco Unified Communications Manager 4.3(1.57) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59002">Cisco Unified Communications Manager 5.0(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59003">Cisco Unified Communications Manager 5.0(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59006">Cisco Unified Communications Manager 5.0(2a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59016">Cisco Unified Communications Manager 5.0(3) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59004">Cisco Unified Communications Manager 5.0(3a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59007">Cisco Unified Communications Manager 5.0(3.1101) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-59005">Cisco Unified Communications Manager 5.0(4) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64558">Cisco Unified Communications Manager 5.0(4a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64561">Cisco Unified Communications Manager 5.0(4a)SU1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66343">Cisco Unified Communications Manager 5.0(4.2136.001) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66344">Cisco Unified Communications Manager 5.0(4.2137.001) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66345">Cisco Unified Communications Manager 5.0(4.2137.002) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-61494">Cisco Unified Communications Manager 5.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66351">Cisco Unified Communications Manager 5.1(1) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66350">Cisco Unified Communications Manager 5.1(1a) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66346">Cisco Unified Communications Manager 5.1(1.9131.045) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-68121">Cisco Unified Communications Manager 5.1(2) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66347">Cisco Unified Communications Manager 6.0(0.9901.169) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66348">Cisco Unified Communications Manager 6.0(0.9901.190) Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66839">Cisco Unified Customer Voice Portal (CVP) 3.0(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66840">Cisco Unified Customer Voice Portal (CVP) 3.0(0)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66841">Cisco Unified Customer Voice Portal (CVP) 3.0(0)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66836">Cisco Unified Customer Voice Portal (CVP) 3.1(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66837">Cisco Unified Customer Voice Portal (CVP) 3.1(0)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66838">Cisco Unified Customer Voice Portal (CVP) 3.1(0)SR2</FullProductName>
+    <FullProductName ProductID="CVRFPID-66833">Cisco Unified Customer Voice Portal (CVP) 4.0(0)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66842">Cisco Unified Customer Voice Portal (CVP) 4.0(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-66835">Cisco Unified Customer Voice Portal (CVP) 4.0(1)SR1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66834">Cisco Unified Customer Voice Portal (CVP) 4.0(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-64201">Cisco Unified MeetingPlace 4.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-64202">Cisco Unified MeetingPlace 5.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-33371">Cisco Unity Original Release Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-45323">Cisco Unity 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-45324">Cisco Unity 2.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-45325">Cisco Unity 2.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-45326">Cisco Unity 2.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-45327">Cisco Unity 2.4 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-46481">Cisco Unity 2.46 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-40532">Cisco Unity 3.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58745">Cisco Unity 3.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-40533">Cisco Unity 3.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58743">Cisco Unity 3.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-58744">Cisco Unity 3.1.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-66807">Cisco Unity 3.1.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-66808">Cisco Unity 3.1.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-46482">Cisco Unity 3.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-46483">Cisco Unity 3.3 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-40534">Cisco Unity 4.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66806">Cisco Unity 4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-48772">Cisco Unity 4.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-48773">Cisco Unity 4.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-48774">Cisco Unity 4.0.3b</FullProductName>
+    <FullProductName ProductID="CVRFPID-48775">Cisco Unity 4.0.4</FullProductName>
+    <FullProductName ProductID="CVRFPID-58741">Cisco Unity 4.0.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-58740">Cisco Unity 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-58746">Cisco Unity 4.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-58742">Cisco Unity 4.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-66809">Cisco Unity 4.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-66810">Cisco Unity 4.2.1 ES27</FullProductName>
+    <FullProductName ProductID="CVRFPID-73603">Cisco Unity Bridge 3.0.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-73605">Cisco Unity Bridge 3.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-73610">Cisco Unity Connection 1.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-73614">Cisco Unity Connection 1.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-73612">Cisco Unity Connection 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44411">Cisco Internet Service Node (ISN) 1.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44412">Cisco Internet Service Node (ISN) 2.0 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-44413">Cisco Internet Service Node (ISN) 2.1 Base</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Security Agent Windows System Driver Buffer Overflow Vulnerability</Title>
+    <CVE>CVE-2007-5582</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-34741</ProductID>
+        <ProductID>CVRFPID-34979</ProductID>
+        <ProductID>CVRFPID-35574</ProductID>
+        <ProductID>CVRFPID-40531</ProductID>
+        <ProductID>CVRFPID-45341</ProductID>
+        <ProductID>CVRFPID-45342</ProductID>
+        <ProductID>CVRFPID-46476</ProductID>
+        <ProductID>CVRFPID-46477</ProductID>
+        <ProductID>CVRFPID-46478</ProductID>
+        <ProductID>CVRFPID-46479</ProductID>
+        <ProductID>CVRFPID-51459</ProductID>
+        <ProductID>CVRFPID-52281</ProductID>
+        <ProductID>CVRFPID-52282</ProductID>
+        <ProductID>CVRFPID-52283</ProductID>
+        <ProductID>CVRFPID-52284</ProductID>
+        <ProductID>CVRFPID-52285</ProductID>
+        <ProductID>CVRFPID-52286</ProductID>
+        <ProductID>CVRFPID-52287</ProductID>
+        <ProductID>CVRFPID-52288</ProductID>
+        <ProductID>CVRFPID-52289</ProductID>
+        <ProductID>CVRFPID-56079</ProductID>
+        <ProductID>CVRFPID-56080</ProductID>
+        <ProductID>CVRFPID-56081</ProductID>
+        <ProductID>CVRFPID-56082</ProductID>
+        <ProductID>CVRFPID-56083</ProductID>
+        <ProductID>CVRFPID-56084</ProductID>
+        <ProductID>CVRFPID-56085</ProductID>
+        <ProductID>CVRFPID-58683</ProductID>
+        <ProductID>CVRFPID-58684</ProductID>
+        <ProductID>CVRFPID-58685</ProductID>
+        <ProductID>CVRFPID-58686</ProductID>
+        <ProductID>CVRFPID-58738</ProductID>
+        <ProductID>CVRFPID-59002</ProductID>
+        <ProductID>CVRFPID-59003</ProductID>
+        <ProductID>CVRFPID-59004</ProductID>
+        <ProductID>CVRFPID-59005</ProductID>
+        <ProductID>CVRFPID-59006</ProductID>
+        <ProductID>CVRFPID-59007</ProductID>
+        <ProductID>CVRFPID-59016</ProductID>
+        <ProductID>CVRFPID-61494</ProductID>
+        <ProductID>CVRFPID-63563</ProductID>
+        <ProductID>CVRFPID-64505</ProductID>
+        <ProductID>CVRFPID-64506</ProductID>
+        <ProductID>CVRFPID-64507</ProductID>
+        <ProductID>CVRFPID-64508</ProductID>
+        <ProductID>CVRFPID-64509</ProductID>
+        <ProductID>CVRFPID-64510</ProductID>
+        <ProductID>CVRFPID-64511</ProductID>
+        <ProductID>CVRFPID-64512</ProductID>
+        <ProductID>CVRFPID-64513</ProductID>
+        <ProductID>CVRFPID-64514</ProductID>
+        <ProductID>CVRFPID-64515</ProductID>
+        <ProductID>CVRFPID-64516</ProductID>
+        <ProductID>CVRFPID-64517</ProductID>
+        <ProductID>CVRFPID-64518</ProductID>
+        <ProductID>CVRFPID-64519</ProductID>
+        <ProductID>CVRFPID-64520</ProductID>
+        <ProductID>CVRFPID-64521</ProductID>
+        <ProductID>CVRFPID-64522</ProductID>
+        <ProductID>CVRFPID-64523</ProductID>
+        <ProductID>CVRFPID-64524</ProductID>
+        <ProductID>CVRFPID-64525</ProductID>
+        <ProductID>CVRFPID-64526</ProductID>
+        <ProductID>CVRFPID-64527</ProductID>
+        <ProductID>CVRFPID-64528</ProductID>
+        <ProductID>CVRFPID-64529</ProductID>
+        <ProductID>CVRFPID-64530</ProductID>
+        <ProductID>CVRFPID-64531</ProductID>
+        <ProductID>CVRFPID-64532</ProductID>
+        <ProductID>CVRFPID-64533</ProductID>
+        <ProductID>CVRFPID-64534</ProductID>
+        <ProductID>CVRFPID-64535</ProductID>
+        <ProductID>CVRFPID-64536</ProductID>
+        <ProductID>CVRFPID-64537</ProductID>
+        <ProductID>CVRFPID-64538</ProductID>
+        <ProductID>CVRFPID-64539</ProductID>
+        <ProductID>CVRFPID-64540</ProductID>
+        <ProductID>CVRFPID-64541</ProductID>
+        <ProductID>CVRFPID-64542</ProductID>
+        <ProductID>CVRFPID-64543</ProductID>
+        <ProductID>CVRFPID-64544</ProductID>
+        <ProductID>CVRFPID-64545</ProductID>
+        <ProductID>CVRFPID-64558</ProductID>
+        <ProductID>CVRFPID-64561</ProductID>
+        <ProductID>CVRFPID-66340</ProductID>
+        <ProductID>CVRFPID-66341</ProductID>
+        <ProductID>CVRFPID-66342</ProductID>
+        <ProductID>CVRFPID-66343</ProductID>
+        <ProductID>CVRFPID-66344</ProductID>
+        <ProductID>CVRFPID-66345</ProductID>
+        <ProductID>CVRFPID-66346</ProductID>
+        <ProductID>CVRFPID-66347</ProductID>
+        <ProductID>CVRFPID-66348</ProductID>
+        <ProductID>CVRFPID-66350</ProductID>
+        <ProductID>CVRFPID-66351</ProductID>
+        <ProductID>CVRFPID-66774</ProductID>
+        <ProductID>CVRFPID-66775</ProductID>
+        <ProductID>CVRFPID-66776</ProductID>
+        <ProductID>CVRFPID-66777</ProductID>
+        <ProductID>CVRFPID-66778</ProductID>
+        <ProductID>CVRFPID-66779</ProductID>
+        <ProductID>CVRFPID-66780</ProductID>
+        <ProductID>CVRFPID-66781</ProductID>
+        <ProductID>CVRFPID-66782</ProductID>
+        <ProductID>CVRFPID-66783</ProductID>
+        <ProductID>CVRFPID-66784</ProductID>
+        <ProductID>CVRFPID-66785</ProductID>
+        <ProductID>CVRFPID-66786</ProductID>
+        <ProductID>CVRFPID-66787</ProductID>
+        <ProductID>CVRFPID-66788</ProductID>
+        <ProductID>CVRFPID-66789</ProductID>
+        <ProductID>CVRFPID-66790</ProductID>
+        <ProductID>CVRFPID-66791</ProductID>
+        <ProductID>CVRFPID-66792</ProductID>
+        <ProductID>CVRFPID-67786</ProductID>
+        <ProductID>CVRFPID-67787</ProductID>
+        <ProductID>CVRFPID-67788</ProductID>
+        <ProductID>CVRFPID-67789</ProductID>
+        <ProductID>CVRFPID-68121</ProductID>
+        <ProductID>CVRFPID-42736</ProductID>
+        <ProductID>CVRFPID-66827</ProductID>
+        <ProductID>CVRFPID-66828</ProductID>
+        <ProductID>CVRFPID-66829</ProductID>
+        <ProductID>CVRFPID-66830</ProductID>
+        <ProductID>CVRFPID-66831</ProductID>
+        <ProductID>CVRFPID-66832</ProductID>
+        <ProductID>CVRFPID-42735</ProductID>
+        <ProductID>CVRFPID-66793</ProductID>
+        <ProductID>CVRFPID-66794</ProductID>
+        <ProductID>CVRFPID-66795</ProductID>
+        <ProductID>CVRFPID-66796</ProductID>
+        <ProductID>CVRFPID-66797</ProductID>
+        <ProductID>CVRFPID-66798</ProductID>
+        <ProductID>CVRFPID-66799</ProductID>
+        <ProductID>CVRFPID-66800</ProductID>
+        <ProductID>CVRFPID-66801</ProductID>
+        <ProductID>CVRFPID-66802</ProductID>
+        <ProductID>CVRFPID-66803</ProductID>
+        <ProductID>CVRFPID-66804</ProductID>
+        <ProductID>CVRFPID-66805</ProductID>
+        <ProductID>CVRFPID-73682</ProductID>
+        <ProductID>CVRFPID-73683</ProductID>
+        <ProductID>CVRFPID-34796</ProductID>
+        <ProductID>CVRFPID-40535</ProductID>
+        <ProductID>CVRFPID-67087</ProductID>
+        <ProductID>CVRFPID-67088</ProductID>
+        <ProductID>CVRFPID-67089</ProductID>
+        <ProductID>CVRFPID-67090</ProductID>
+        <ProductID>CVRFPID-67091</ProductID>
+        <ProductID>CVRFPID-67092</ProductID>
+        <ProductID>CVRFPID-67093</ProductID>
+        <ProductID>CVRFPID-67094</ProductID>
+        <ProductID>CVRFPID-67095</ProductID>
+        <ProductID>CVRFPID-67096</ProductID>
+        <ProductID>CVRFPID-67097</ProductID>
+        <ProductID>CVRFPID-67098</ProductID>
+        <ProductID>CVRFPID-67099</ProductID>
+        <ProductID>CVRFPID-67100</ProductID>
+        <ProductID>CVRFPID-67101</ProductID>
+        <ProductID>CVRFPID-67102</ProductID>
+        <ProductID>CVRFPID-67103</ProductID>
+        <ProductID>CVRFPID-67104</ProductID>
+        <ProductID>CVRFPID-67105</ProductID>
+        <ProductID>CVRFPID-67106</ProductID>
+        <ProductID>CVRFPID-67107</ProductID>
+        <ProductID>CVRFPID-67108</ProductID>
+        <ProductID>CVRFPID-67109</ProductID>
+        <ProductID>CVRFPID-67110</ProductID>
+        <ProductID>CVRFPID-67111</ProductID>
+        <ProductID>CVRFPID-67112</ProductID>
+        <ProductID>CVRFPID-67113</ProductID>
+        <ProductID>CVRFPID-67114</ProductID>
+        <ProductID>CVRFPID-67115</ProductID>
+        <ProductID>CVRFPID-67116</ProductID>
+        <ProductID>CVRFPID-67117</ProductID>
+        <ProductID>CVRFPID-67118</ProductID>
+        <ProductID>CVRFPID-67119</ProductID>
+        <ProductID>CVRFPID-67120</ProductID>
+        <ProductID>CVRFPID-67121</ProductID>
+        <ProductID>CVRFPID-71338</ProductID>
+        <ProductID>CVRFPID-71339</ProductID>
+        <ProductID>CVRFPID-44547</ProductID>
+        <ProductID>CVRFPID-44548</ProductID>
+        <ProductID>CVRFPID-44549</ProductID>
+        <ProductID>CVRFPID-62319</ProductID>
+        <ProductID>CVRFPID-62320</ProductID>
+        <ProductID>CVRFPID-62321</ProductID>
+        <ProductID>CVRFPID-62322</ProductID>
+        <ProductID>CVRFPID-62323</ProductID>
+        <ProductID>CVRFPID-62324</ProductID>
+        <ProductID>CVRFPID-62325</ProductID>
+        <ProductID>CVRFPID-62326</ProductID>
+        <ProductID>CVRFPID-62327</ProductID>
+        <ProductID>CVRFPID-62328</ProductID>
+        <ProductID>CVRFPID-62329</ProductID>
+        <ProductID>CVRFPID-62330</ProductID>
+        <ProductID>CVRFPID-62331</ProductID>
+        <ProductID>CVRFPID-62332</ProductID>
+        <ProductID>CVRFPID-66843</ProductID>
+        <ProductID>CVRFPID-66844</ProductID>
+        <ProductID>CVRFPID-66845</ProductID>
+        <ProductID>CVRFPID-66846</ProductID>
+        <ProductID>CVRFPID-66847</ProductID>
+        <ProductID>CVRFPID-66848</ProductID>
+        <ProductID>CVRFPID-66849</ProductID>
+        <ProductID>CVRFPID-66850</ProductID>
+        <ProductID>CVRFPID-66851</ProductID>
+        <ProductID>CVRFPID-66852</ProductID>
+        <ProductID>CVRFPID-66853</ProductID>
+        <ProductID>CVRFPID-66854</ProductID>
+        <ProductID>CVRFPID-66855</ProductID>
+        <ProductID>CVRFPID-66856</ProductID>
+        <ProductID>CVRFPID-66857</ProductID>
+        <ProductID>CVRFPID-66858</ProductID>
+        <ProductID>CVRFPID-66859</ProductID>
+        <ProductID>CVRFPID-66860</ProductID>
+        <ProductID>CVRFPID-66861</ProductID>
+        <ProductID>CVRFPID-66862</ProductID>
+        <ProductID>CVRFPID-66863</ProductID>
+        <ProductID>CVRFPID-66864</ProductID>
+        <ProductID>CVRFPID-66865</ProductID>
+        <ProductID>CVRFPID-66866</ProductID>
+        <ProductID>CVRFPID-66867</ProductID>
+        <ProductID>CVRFPID-66868</ProductID>
+        <ProductID>CVRFPID-66869</ProductID>
+        <ProductID>CVRFPID-66870</ProductID>
+        <ProductID>CVRFPID-66871</ProductID>
+        <ProductID>CVRFPID-66872</ProductID>
+        <ProductID>CVRFPID-66873</ProductID>
+        <ProductID>CVRFPID-66874</ProductID>
+        <ProductID>CVRFPID-66875</ProductID>
+        <ProductID>CVRFPID-66876</ProductID>
+        <ProductID>CVRFPID-66877</ProductID>
+        <ProductID>CVRFPID-66878</ProductID>
+        <ProductID>CVRFPID-66879</ProductID>
+        <ProductID>CVRFPID-66880</ProductID>
+        <ProductID>CVRFPID-66881</ProductID>
+        <ProductID>CVRFPID-66882</ProductID>
+        <ProductID>CVRFPID-66883</ProductID>
+        <ProductID>CVRFPID-66884</ProductID>
+        <ProductID>CVRFPID-66885</ProductID>
+        <ProductID>CVRFPID-66886</ProductID>
+        <ProductID>CVRFPID-66887</ProductID>
+        <ProductID>CVRFPID-66888</ProductID>
+        <ProductID>CVRFPID-66889</ProductID>
+        <ProductID>CVRFPID-66890</ProductID>
+        <ProductID>CVRFPID-73675</ProductID>
+        <ProductID>CVRFPID-73676</ProductID>
+        <ProductID>CVRFPID-73677</ProductID>
+        <ProductID>CVRFPID-73678</ProductID>
+        <ProductID>CVRFPID-73679</ProductID>
+        <ProductID>CVRFPID-73680</ProductID>
+        <ProductID>CVRFPID-66891</ProductID>
+        <ProductID>CVRFPID-66892</ProductID>
+        <ProductID>CVRFPID-66893</ProductID>
+        <ProductID>CVRFPID-66894</ProductID>
+        <ProductID>CVRFPID-66895</ProductID>
+        <ProductID>CVRFPID-66896</ProductID>
+        <ProductID>CVRFPID-66897</ProductID>
+        <ProductID>CVRFPID-66898</ProductID>
+        <ProductID>CVRFPID-66899</ProductID>
+        <ProductID>CVRFPID-66900</ProductID>
+        <ProductID>CVRFPID-66901</ProductID>
+        <ProductID>CVRFPID-66902</ProductID>
+        <ProductID>CVRFPID-66903</ProductID>
+        <ProductID>CVRFPID-66904</ProductID>
+        <ProductID>CVRFPID-66905</ProductID>
+        <ProductID>CVRFPID-66906</ProductID>
+        <ProductID>CVRFPID-66907</ProductID>
+        <ProductID>CVRFPID-66908</ProductID>
+        <ProductID>CVRFPID-66909</ProductID>
+        <ProductID>CVRFPID-66910</ProductID>
+        <ProductID>CVRFPID-66911</ProductID>
+        <ProductID>CVRFPID-66912</ProductID>
+        <ProductID>CVRFPID-66913</ProductID>
+        <ProductID>CVRFPID-66914</ProductID>
+        <ProductID>CVRFPID-66915</ProductID>
+        <ProductID>CVRFPID-66916</ProductID>
+        <ProductID>CVRFPID-66917</ProductID>
+        <ProductID>CVRFPID-66918</ProductID>
+        <ProductID>CVRFPID-66919</ProductID>
+        <ProductID>CVRFPID-66920</ProductID>
+        <ProductID>CVRFPID-66921</ProductID>
+        <ProductID>CVRFPID-66922</ProductID>
+        <ProductID>CVRFPID-66923</ProductID>
+        <ProductID>CVRFPID-66924</ProductID>
+        <ProductID>CVRFPID-66925</ProductID>
+        <ProductID>CVRFPID-66926</ProductID>
+        <ProductID>CVRFPID-66927</ProductID>
+        <ProductID>CVRFPID-66928</ProductID>
+        <ProductID>CVRFPID-66929</ProductID>
+        <ProductID>CVRFPID-66930</ProductID>
+        <ProductID>CVRFPID-66931</ProductID>
+        <ProductID>CVRFPID-66932</ProductID>
+        <ProductID>CVRFPID-66933</ProductID>
+        <ProductID>CVRFPID-73674</ProductID>
+        <ProductID>CVRFPID-67123</ProductID>
+        <ProductID>CVRFPID-64201</ProductID>
+        <ProductID>CVRFPID-64202</ProductID>
+        <ProductID>CVRFPID-42737</ProductID>
+        <ProductID>CVRFPID-42738</ProductID>
+        <ProductID>CVRFPID-66813</ProductID>
+        <ProductID>CVRFPID-66814</ProductID>
+        <ProductID>CVRFPID-66815</ProductID>
+        <ProductID>CVRFPID-66816</ProductID>
+        <ProductID>CVRFPID-66817</ProductID>
+        <ProductID>CVRFPID-66818</ProductID>
+        <ProductID>CVRFPID-66819</ProductID>
+        <ProductID>CVRFPID-66820</ProductID>
+        <ProductID>CVRFPID-66821</ProductID>
+        <ProductID>CVRFPID-66824</ProductID>
+        <ProductID>CVRFPID-66825</ProductID>
+        <ProductID>CVRFPID-66826</ProductID>
+        <ProductID>CVRFPID-52353</ProductID>
+        <ProductID>CVRFPID-55202</ProductID>
+        <ProductID>CVRFPID-61116</ProductID>
+        <ProductID>CVRFPID-61117</ProductID>
+        <ProductID>CVRFPID-61118</ProductID>
+        <ProductID>CVRFPID-61119</ProductID>
+        <ProductID>CVRFPID-61120</ProductID>
+        <ProductID>CVRFPID-61121</ProductID>
+        <ProductID>CVRFPID-61122</ProductID>
+        <ProductID>CVRFPID-61123</ProductID>
+        <ProductID>CVRFPID-61124</ProductID>
+        <ProductID>CVRFPID-61125</ProductID>
+        <ProductID>CVRFPID-61126</ProductID>
+        <ProductID>CVRFPID-61127</ProductID>
+        <ProductID>CVRFPID-61128</ProductID>
+        <ProductID>CVRFPID-61129</ProductID>
+        <ProductID>CVRFPID-73607</ProductID>
+        <ProductID>CVRFPID-66833</ProductID>
+        <ProductID>CVRFPID-66834</ProductID>
+        <ProductID>CVRFPID-66835</ProductID>
+        <ProductID>CVRFPID-66836</ProductID>
+        <ProductID>CVRFPID-66837</ProductID>
+        <ProductID>CVRFPID-66838</ProductID>
+        <ProductID>CVRFPID-66839</ProductID>
+        <ProductID>CVRFPID-66840</ProductID>
+        <ProductID>CVRFPID-66841</ProductID>
+        <ProductID>CVRFPID-66842</ProductID>
+        <ProductID>CVRFPID-33371</ProductID>
+        <ProductID>CVRFPID-40532</ProductID>
+        <ProductID>CVRFPID-40533</ProductID>
+        <ProductID>CVRFPID-40534</ProductID>
+        <ProductID>CVRFPID-45323</ProductID>
+        <ProductID>CVRFPID-45324</ProductID>
+        <ProductID>CVRFPID-45325</ProductID>
+        <ProductID>CVRFPID-45326</ProductID>
+        <ProductID>CVRFPID-45327</ProductID>
+        <ProductID>CVRFPID-46481</ProductID>
+        <ProductID>CVRFPID-46482</ProductID>
+        <ProductID>CVRFPID-46483</ProductID>
+        <ProductID>CVRFPID-48772</ProductID>
+        <ProductID>CVRFPID-48773</ProductID>
+        <ProductID>CVRFPID-48774</ProductID>
+        <ProductID>CVRFPID-48775</ProductID>
+        <ProductID>CVRFPID-58740</ProductID>
+        <ProductID>CVRFPID-58741</ProductID>
+        <ProductID>CVRFPID-58742</ProductID>
+        <ProductID>CVRFPID-58743</ProductID>
+        <ProductID>CVRFPID-58744</ProductID>
+        <ProductID>CVRFPID-58745</ProductID>
+        <ProductID>CVRFPID-58746</ProductID>
+        <ProductID>CVRFPID-66806</ProductID>
+        <ProductID>CVRFPID-66807</ProductID>
+        <ProductID>CVRFPID-66808</ProductID>
+        <ProductID>CVRFPID-66809</ProductID>
+        <ProductID>CVRFPID-66810</ProductID>
+        <ProductID>CVRFPID-73603</ProductID>
+        <ProductID>CVRFPID-73605</ProductID>
+        <ProductID>CVRFPID-73610</ProductID>
+        <ProductID>CVRFPID-73612</ProductID>
+        <ProductID>CVRFPID-73614</ProductID>
+        <ProductID>CVRFPID-44411</ProductID>
+        <ProductID>CVRFPID-44412</ProductID>
+        <ProductID>CVRFPID-44413</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>10.0</BaseScore>
+        <TemporalScore>8.3</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C/CDP:N/TD:N/CR:ND/IR:ND/AR:ND</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20071205-csa</URL>
+        <Description>Cisco Security Agent for Windows System Driver Remote Buffer Overflow Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>CiscoWorks Common Services Arbitrary Command Execution Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20111019-cs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2011-10-19T15:33:02</Date>
+        <Description>Initial Public Release</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2011-10-19T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2011-10-19T15:33:02</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111019-cs</URL>
+      <Description>CiscoWorks Common Services Arbitrary Command Execution Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-79784">Cisco Security Manager  3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-79786">Cisco Security Manager  3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-79788">Cisco Security Manager  3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-91845">Cisco Security Manager  3.2.2 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-91846">Cisco Security Manager  3.2.2 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-112412">Cisco Security Manager  3.2.2 SP3</FullProductName>
+    <FullProductName ProductID="CVRFPID-112413">Cisco Security Manager  3.2.2 SP4</FullProductName>
+    <FullProductName ProductID="CVRFPID-112282">Cisco Security Manager  3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-112414">Cisco Security Manager  3.3 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112415">Cisco Security Manager  3.3 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-112290">Cisco Security Manager  3.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112416">Cisco Security Manager  3.3.1 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112417">Cisco Security Manager  3.3.1 SP2</FullProductName>
+    <FullProductName ProductID="CVRFPID-112418">Cisco Security Manager  3.3.1 SP3</FullProductName>
+    <FullProductName ProductID="CVRFPID-112284">Cisco Security Manager  4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-112419">Cisco Security Manager  4.0 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112291">Cisco Security Manager  4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112420">Cisco Security Manager  4.0.1 SP1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112286">Cisco Security Manager  4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-112288">Cisco Security Manager  4.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-79762">Cisco Unified Operations Manager</FullProductName>
+    <FullProductName ProductID="CVRFPID-109560">Cisco Unified Operations Manager 2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-109562">Cisco Unified Operations Manager 2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-109564">Cisco Unified Operations Manager 8.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-109566">Cisco Unified Operations Manager 8.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-79770">Cisco Unified Service Monitor</FullProductName>
+    <FullProductName ProductID="CVRFPID-111633">Cisco Unified Service Monitor 2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-111635">Cisco Unified Service Monitor 2.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-111637">Cisco Unified Service Monitor 8.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-111639">Cisco Unified Service Monitor 8.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-73690">CiscoWorks Common Services (CS) 3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-91835">CiscoWorks Common Services (CS) 3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-101643">CiscoWorks Common Services (CS) 3.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-112405">CiscoWorks Common Services (CS) 3.3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-111643">CiscoWorks LAN Management Solution (LMS) 3.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-111645">CiscoWorks LAN Management Solution (LMS) 3.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-112407">CiscoWorks LAN Management Solution (LMS) 3.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-111647">CiscoWorks LAN Management Solution (LMS) 4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-112406">CiscoWorks LAN Management Solution (LMS) 4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-8038">CiscoWorks QoS Policy Manager (QPM)</FullProductName>
+    <FullProductName ProductID="CVRFPID-79776">CiscoWorks QoS Policy Manager (QPM) 4.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-79778">CiscoWorks QoS Policy Manager (QPM) 4.0.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-79779">CiscoWorks QoS Policy Manager (QPM) 4.0.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-91843">CiscoWorks QoS Policy Manager (QPM) 4.0.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-91841">CiscoWorks QoS Policy Manager (QPM) 4.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-91844">CiscoWorks QoS Policy Manager (QPM) 4.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-91847">CiscoWorks Voice Manager</FullProductName>
+    <FullProductName ProductID="CVRFPID-91848">CiscoWorks Voice Manager 3.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-91850">CiscoWorks Voice Manager 3.1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>CiscoWorks Arbitrary command execution vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCtq63992</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">CiscoWorks Common Services for Microsoft Windows contains a vulnerability that could allow an authenticated, remote attacker to execute arbitrary commands on the affected system with the privileges of a system administrator.
+
+
+
+The vulnerability is due to improper input validation in the CiscoWorks Home Page component. An attacker could exploit this vulnerability by sending a specially crafted URL to the affected system. An exploit could allow the attacker to execute arbitrary commands on the affected system with the privileges of a system administrator.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCtq63992,CSCtq64019,CSCtq64011,CSCtq48990,CSCtr23090,CSCtt25535</Note>
+    </Notes>
+    <CVE>CVE-2011-3310</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-79784</ProductID>
+        <ProductID>CVRFPID-79786</ProductID>
+        <ProductID>CVRFPID-79788</ProductID>
+        <ProductID>CVRFPID-91845</ProductID>
+        <ProductID>CVRFPID-91846</ProductID>
+        <ProductID>CVRFPID-112282</ProductID>
+        <ProductID>CVRFPID-112284</ProductID>
+        <ProductID>CVRFPID-112286</ProductID>
+        <ProductID>CVRFPID-112288</ProductID>
+        <ProductID>CVRFPID-112290</ProductID>
+        <ProductID>CVRFPID-112291</ProductID>
+        <ProductID>CVRFPID-112412</ProductID>
+        <ProductID>CVRFPID-112413</ProductID>
+        <ProductID>CVRFPID-112414</ProductID>
+        <ProductID>CVRFPID-112415</ProductID>
+        <ProductID>CVRFPID-112416</ProductID>
+        <ProductID>CVRFPID-112417</ProductID>
+        <ProductID>CVRFPID-112418</ProductID>
+        <ProductID>CVRFPID-112419</ProductID>
+        <ProductID>CVRFPID-112420</ProductID>
+        <ProductID>CVRFPID-79762</ProductID>
+        <ProductID>CVRFPID-109560</ProductID>
+        <ProductID>CVRFPID-109562</ProductID>
+        <ProductID>CVRFPID-109564</ProductID>
+        <ProductID>CVRFPID-109566</ProductID>
+        <ProductID>CVRFPID-79770</ProductID>
+        <ProductID>CVRFPID-111633</ProductID>
+        <ProductID>CVRFPID-111635</ProductID>
+        <ProductID>CVRFPID-111637</ProductID>
+        <ProductID>CVRFPID-111639</ProductID>
+        <ProductID>CVRFPID-73690</ProductID>
+        <ProductID>CVRFPID-91835</ProductID>
+        <ProductID>CVRFPID-101643</ProductID>
+        <ProductID>CVRFPID-111643</ProductID>
+        <ProductID>CVRFPID-111645</ProductID>
+        <ProductID>CVRFPID-111647</ProductID>
+        <ProductID>CVRFPID-112405</ProductID>
+        <ProductID>CVRFPID-112406</ProductID>
+        <ProductID>CVRFPID-112407</ProductID>
+        <ProductID>CVRFPID-8038</ProductID>
+        <ProductID>CVRFPID-79776</ProductID>
+        <ProductID>CVRFPID-79778</ProductID>
+        <ProductID>CVRFPID-79779</ProductID>
+        <ProductID>CVRFPID-91841</ProductID>
+        <ProductID>CVRFPID-91843</ProductID>
+        <ProductID>CVRFPID-91844</ProductID>
+        <ProductID>CVRFPID-91847</ProductID>
+        <ProductID>CVRFPID-91848</ProductID>
+        <ProductID>CVRFPID-91850</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>9.0</BaseScore>
+        <TemporalScore>7.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20111019-cs</URL>
+        <Description>CiscoWorks Common Services Arbitrary Command Execution Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

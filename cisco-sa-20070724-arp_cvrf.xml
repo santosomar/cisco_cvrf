@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Wireless ARP Storm Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20070724-arp</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2007-07-24T16:00:00</Date>
+        <Description>Updated fixed software version information</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2007-07-24T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2007-07-24T16:00:00</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes />
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070724-arp</URL>
+      <Description>Wireless ARP Storm Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-61937">Cisco Wireless LAN Controller (WLC) 3.2.78.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64992">Cisco Wireless LAN Controller (WLC) 3.2.116.21</FullProductName>
+    <FullProductName ProductID="CVRFPID-64993">Cisco Wireless LAN Controller (WLC) 3.2.150.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-64994">Cisco Wireless LAN Controller (WLC) 3.2.150.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-64995">Cisco Wireless LAN Controller (WLC) 3.2.171.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-64996">Cisco Wireless LAN Controller (WLC) 3.2.171.6</FullProductName>
+    <FullProductName ProductID="CVRFPID-65080">Cisco Wireless LAN Controller (WLC) 3.2.185.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-69372">Cisco Wireless LAN Controller (WLC) 3.2.193.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-69371">Cisco Wireless LAN Controller (WLC) 3.2.195.10</FullProductName>
+    <FullProductName ProductID="CVRFPID-64988">Cisco Wireless LAN Controller (WLC) 4.0.108</FullProductName>
+    <FullProductName ProductID="CVRFPID-65081">Cisco Wireless LAN Controller (WLC) 4.0.155.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-64989">Cisco Wireless LAN Controller (WLC) 4.0.155.5</FullProductName>
+    <FullProductName ProductID="CVRFPID-64990">Cisco Wireless LAN Controller (WLC) 4.0.179.8</FullProductName>
+    <FullProductName ProductID="CVRFPID-64991">Cisco Wireless LAN Controller (WLC) 4.0.179.11</FullProductName>
+    <FullProductName ProductID="CVRFPID-61493">Cisco Wireless LAN Controller (WLC) 4.0.196</FullProductName>
+    <FullProductName ProductID="CVRFPID-65082">Cisco Wireless LAN Controller (WLC) 4.0.206.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-69370">Cisco Wireless LAN Controller (WLC) 4.0.217.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-69367">Cisco Wireless LAN Controller (WLC) 4.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-69369">Cisco Wireless LAN Controller (WLC) 4.1.171.0</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wireless LAN Controller Unicast ARP Request Denial of Service Vulnerability </Title>
+    <CVE>CVE-2007-4011</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61493</ProductID>
+        <ProductID>CVRFPID-61937</ProductID>
+        <ProductID>CVRFPID-64988</ProductID>
+        <ProductID>CVRFPID-64989</ProductID>
+        <ProductID>CVRFPID-64990</ProductID>
+        <ProductID>CVRFPID-64991</ProductID>
+        <ProductID>CVRFPID-64992</ProductID>
+        <ProductID>CVRFPID-64993</ProductID>
+        <ProductID>CVRFPID-64994</ProductID>
+        <ProductID>CVRFPID-64995</ProductID>
+        <ProductID>CVRFPID-64996</ProductID>
+        <ProductID>CVRFPID-65080</ProductID>
+        <ProductID>CVRFPID-65081</ProductID>
+        <ProductID>CVRFPID-65082</ProductID>
+        <ProductID>CVRFPID-69367</ProductID>
+        <ProductID>CVRFPID-69369</ProductID>
+        <ProductID>CVRFPID-69370</ProductID>
+        <ProductID>CVRFPID-69371</ProductID>
+        <ProductID>CVRFPID-69372</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.3</BaseScore>
+        <TemporalScore>2.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:N/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070724-arp</URL>
+        <Description>Wireless ARP Storm Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wireless LAN Controller ARP Broadcast Storm Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-4012</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-69367</ProductID>
+        <ProductID>CVRFPID-69369</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>3.3</BaseScore>
+        <TemporalScore>2.7</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:N/A:C/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070724-arp</URL>
+        <Description>Wireless ARP Storm Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Wireless LAN Controller Unicast ARP Handling Denial of Service Vulnerability</Title>
+    <CVE>CVE-2007-4011</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-61493</ProductID>
+        <ProductID>CVRFPID-61937</ProductID>
+        <ProductID>CVRFPID-64988</ProductID>
+        <ProductID>CVRFPID-64989</ProductID>
+        <ProductID>CVRFPID-64990</ProductID>
+        <ProductID>CVRFPID-64991</ProductID>
+        <ProductID>CVRFPID-64992</ProductID>
+        <ProductID>CVRFPID-64993</ProductID>
+        <ProductID>CVRFPID-64994</ProductID>
+        <ProductID>CVRFPID-64995</ProductID>
+        <ProductID>CVRFPID-64996</ProductID>
+        <ProductID>CVRFPID-65080</ProductID>
+        <ProductID>CVRFPID-65081</ProductID>
+        <ProductID>CVRFPID-65082</ProductID>
+        <ProductID>CVRFPID-69367</ProductID>
+        <ProductID>CVRFPID-69369</ProductID>
+        <ProductID>CVRFPID-69370</ProductID>
+        <ProductID>CVRFPID-69371</ProductID>
+        <ProductID>CVRFPID-69372</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>4.7</BaseScore>
+        <TemporalScore>3.9</TemporalScore>
+        <Vector>AV:R/AC:L/Au:NR/C:N/I:P/A:P/B:N/E:F/RL:O/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20070724-arp</URL>
+        <Description>Wireless ARP Storm Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

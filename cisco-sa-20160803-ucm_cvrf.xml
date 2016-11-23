@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Unified Communications Manager IM and Presence Service SIP Packet Processing Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160803-ucm</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-08-03T14:52:04</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-08-05T13:46:45</Date>
+        <Description>Added COP file for 11.5(1)</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-08-03T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-08-05T13:46:45</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Session Initiation Protocol (SIP) processing functions of the Cisco Unified Communications Manager Instant Messaging (IM) and Presence Service could allow an unauthenticated, remote attacker to cause the Cisco SIP Proxy Daemon (sipd) process to restart unexpectedly, resulting in a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability is due to improper input validation of SIP packet headers. An attacker could exploit this vulnerability by sending a crafted SIP packet to a targeted system. A successful exploit could allow the attacker to cause the sipd process to restart unexpectedly, resulting in a DoS condition on the system. If the sipd process restarts repeatedly, a successful exploit could also result in a sustained DoS condition and cause high disk utilization due to a large number of sipd core files being written to disk, which could exacerbate the DoS condition.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160803-ucm["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160803-ucm"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160803-ucm</URL>
+      <Description>Cisco Unified Communications Manager IM and Presence Service SIP Packet Processing Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-189788">Cisco Unified Communications Manager IM and Presence Service 9.1(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-213309">Cisco Unified Communications Manager IM and Presence Service 10.5(2)</FullProductName>
+    <FullProductName ProductID="CVRFPID-210630">Cisco Unified Communications Manager IM and Presence Service 11.5(1)</FullProductName>
+    <FullProductName ProductID="CVRFPID-217742">Cisco Unified Communications Manager IM and Presence Service 11.0(1)</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Unified Communications Manager IM and Presence Service SIP Packet Processing Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCva39072</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Session Initiation Protocol (SIP) processing functions of the Cisco Unified Communications Manager Instant Messaging (IM) and Presence Service could allow an unauthenticated, remote attacker to cause the Cisco SIP Proxy Daemon (sipd) process to restart unexpectedly, resulting in a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability is due to improper input validation of SIP packet headers. An attacker could exploit this vulnerability by sending a crafted SIP packet to a targeted system. A successful exploit could allow the attacker to cause the sipd process to restart unexpectedly, resulting in a DoS condition on the system. If the sipd process restarts repeatedly, a successful exploit could also result in a sustained DoS condition and cause high disk utilization due to a large number of sipd core files being written to disk, which could exacerbate the DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCva39072</Note>
+    </Notes>
+    <CVE>CVE-2016-1466</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-189788</ProductID>
+        <ProductID>CVRFPID-210630</ProductID>
+        <ProductID>CVRFPID-213309</ProductID>
+        <ProductID>CVRFPID-217742</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>7.8</BaseScore>
+        <TemporalScore>6.4</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160803-ucm</URL>
+        <Description>Cisco Unified Communications Manager IM and Presence Service SIP Packet Processing Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

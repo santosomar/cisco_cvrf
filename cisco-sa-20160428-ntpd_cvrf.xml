@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160428-ntpd</ID>
+    </Identification>
+    <Status>Interim</Status>
+    <Version>1.10</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-04-28T15:27:06</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-04-29T13:24:46</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2016-05-02T12:37:45</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2016-05-03T12:55:10</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2016-05-04T12:53:30</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2016-05-05T21:39:38</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2016-05-06T19:24:00</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.7</Number>
+        <Date>2016-05-09T17:40:34</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.8</Number>
+        <Date>2016-05-10T11:41:53</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2016-05-11T13:09:15</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.10</Number>
+        <Date>2016-05-13T15:48:40</Date>
+        <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-04-28T09:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-05-13T15:48:40</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">Multiple Cisco products incorporate a version of the Network Time Protocol daemon (ntpd) package. Versions of this package are affected by one or more vulnerabilities that could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition or modify the time being advertised by a device acting as a Network Time Protocol (NTP) server.
+
+
+
+On April 26, 2016, the NTP Consortium of the Network Time Foundation released a security notice that details 11 issues regarding DoS vulnerabilities, information disclosure vulnerabilities, and logic issues that may allow an attacker to shift a system's time. Two of the vulnerabilities disclosed in the NTP security notice address issues that were previously disclosed without a complete fix.
+
+
+
+The new vulnerabilities disclosed in this document are as follows:
+
+
+    CVE-2016-1547: Network Time Protocol CRYPTO-NAK Denial of Service Vulnerability
+    CVE-2016-1548: Network Time Protocol Interleave-Pivot Denial of Service Vulnerability
+    CVE-2016-1549: Network Time Protocol Sybil Ephemeral Association Attack Vulnerability
+    CVE-2016-1550: Network Time Protocol Improve NTP Security Against Buffer Comparison Timing Attacks
+    CVE-2016-1551: Network Time Protocol Refclock Impersonation Vulnerability
+    CVE-2016-2516: Network Time Protocol Duplicate IPs on Unconfig Directives Will Cause an Assertion Botch in ntpd
+    CVE-2016-2517: Network Time Protocol Remote Configuration Trustedkey/Requestkey/Controlkey Values Are Not Properly Validated
+    CVE-2016-2518: Network Time Protocol Crafted addpeer Causes Array Wraparound with MATCH_ASSOC
+    CVE-2016-2519: Network Time Protocol Remote ctl_getitem() Return Value Not Always Checked
+
+The two vulnerabilities that were previously disclosed without a complete fix are as follows:
+
+
+    CVE-2015-8138: Network Time Protocol Zero Origin Timestamp Bypass
+    CVE-2015-7704: Network Time Protocol Packet Processing Denial of Service Vulnerability
+
+Those vulnerabilities were disclosed by Cisco in the following Cisco Security Advisories:
+
+
+    
+    Multiple Vulnerabilities in ntpd Affecting Cisco Products - October 2015["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20151021-ntp"]
+    
+    Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: January 2016["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-ntpd"]
+
+Additional details about each vulnerability are in the NTP Consortium Security Notice["http://support.ntp.org/bin/view/Main/SecurityNotice#April_2016_NTP_4_2_8p7_Security"].
+
+
+
+Cisco will release software updates that address these vulnerabilities.
+
+
+
+Workarounds that address one or more of these vulnerabilities may be available and will be documented in the Cisco bug for each affected product.
+
+
+
+This advisory is available at the following link: 
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd"]
+
+
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+      <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol Refclock Impersonation Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to inject the refclock source IP to the NTPd process and thus take over the system clock on a targeted system.
+
+
+
+The vulnerability is due to insufficient checks of the source IP address of the incoming NTP packet by the affected software. An attacker could exploit this vulnerability by sending a crafted packet to a targeted system. A successful exploit could allow remote attacker to inject the refclock source IP to the NTPd process and thus take over the system clock on a targeted system
+
+
+</Note>
+    </Notes>
+    <CVE>CVE-2016-1551</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol Sybil Ephemeral Association Attack Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in Network Time Protocol (NTP) could allow an authenticated, remote attacker to modify the system clock on a targeted system.
+
+
+
+The vulnerability is due to not enforcing the limit on the number of active ephemeral associations that may be created under a single key. A successful exploit could allow a malicious authenticated peer can create arbitrarily-many ephemeral associations in order to win ntpd's clock selection algorithm and modify a victim's clock.
+</Note>
+    </Notes>
+    <CVE>CVE-2016-1549</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol Duplicate IPs on Unconfig Directives Will Cause an Assertion Botch in ntpd</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="5">A vulnerability in Network Time Protocol (NTP) could allow an authenticated, remote attacker to cause a reload of the affected system.
+
+
+
+The vulnerability is due to insufficient checking of the duplicate peers requested to be removed by the NTP Mode 7 'unconfig' command. A successful exploit could allow an authenticated, remote attacker to cause a reload of the affected system.
+</Note>
+    </Notes>
+    <CVE>CVE-2016-2516</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol Remote Configuration Trustedkey/Requestkey/Controlkey Values Are Not Properly Validated</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="7">A vulnerability in Network Time Protocol (NTP) could allow an authenticated, remote attacker to change the values of trustedkey, controlkey, or requestkey to a value that will prevent any subsequent authentication with ntpd until ntpd is restarted.
+
+
+
+The vulnerability is due to insufficient validation of remote configuration trustedkey/requestkey values when the system is expressly configured to allow for remote configuration. A successful exploit could allow an authenticated, remote attacker to change the values of trustedkey, controlkey, or requestkey to a value that will prevent any subsequent authentication with ntpd until ntpd is restarted.
+</Note>
+    </Notes>
+    <CVE>CVE-2016-2517</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol Crafted addpeer Causes Array Wraparound with MATCH_ASSOC</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="9">A vulnerability in Network Time Protocol (NTP) could allow an authenticated, remote attacker to cause out-of-bond references on the affected device.
+
+
+
+The vulnerability is due to insufficient validation of the crafted packets carrying a illegal hmode value. A successful exploit could allow an authenticated, remote attacker to cause out-of-bond references on the affected device.</Note>
+    </Notes>
+    <CVE>CVE-2016-2518</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="6" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol Remote ctl_getitem() Return Value Not Always Checked</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="11">A vulnerability in Network Time Protocol (NTP) could allow an authenticated, remote attacker to cause a reload of the affected system.
+
+
+
+The vulnerability is due to insufficient validation of the user supplied data. A successful exploit could allow an authenticated, remote attacker to cause a reload of the affected system.
+
+
+</Note>
+    </Notes>
+    <CVE>CVE-2016-2519</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="7" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol CRYPTO-NAK Denial of Service Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="13">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to cause a preemptable client association to be removed.
+
+
+
+The vulnerability is due to insufficient validation the pre-emptable client associations' authentication. A successful exploit could allow an unauthenticated, remote attacker to cause a preemptable client association to be removed.
+</Note>
+    </Notes>
+    <CVE>CVE-2016-1547</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="8" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol Interleave-Pivot Denial of Service Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="15">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to change an existing client/server association to an interleaved symmetric mode, allowing malicious actor can then control the time or deny access to the legitimate server.
+
+
+
+The vulnerability is due to insufficient validation of the user supplied data. A successful exploit could allow an unauthenticated, remote attacker to change an existing client/server association to an interleaved symmetric mode, allowing malicious actor can then control the time or deny access to the legitimate server.
+</Note>
+    </Notes>
+    <CVE>CVE-2016-1548</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="9" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol Improve NTP Security Against Buffer Comparison Timing Attacks</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="17">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to brute force the message digest by guessing values and determining when the comparison function runs for a longer amount of time.
+
+
+
+The vulnerability is due to susceptibility of the authentication process to brute force by a timing attack. A successful exploit could allow an unauthenticated, remote attacker to brute force the message digest by guessing values and determining when the comparison function runs for a longer amount of time.
+</Note>
+    </Notes>
+    <CVE>CVE-2016-1550</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="10" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol Packet Processing Denial of Service Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="19">A vulnerability in the Network Time Protocol daemon could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to improper validation of user-supplied input. An unauthenticated, remote attacker could exploit the vulnerability by sending malicious requests to the targeted system.
+</Note>
+    </Notes>
+    <CVE>CVE-2015-7704</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="11" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Network Time Protocol Zero Origin Timestamp Bypass</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="21">A vulnerability in the Network Time Protocol daemon (ntpd) could allow an unauthenticated, remote attacker to modify time settings on a targeted system.
+
+
+
+The vulnerability is due to incorrect processing of NTP update packets. An attacker could exploit this vulnerability by sending crafted updates that contain an a zero-origin timestamp to the clients' peer server. An exploit could allow the attacker to modify the time values received by the client, preventing client systems from receiving further updates from its legitimately configured time server.</Note>
+    </Notes>
+    <CVE>CVE-2015-8138</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160428-ntpd</URL>
+        <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: April 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

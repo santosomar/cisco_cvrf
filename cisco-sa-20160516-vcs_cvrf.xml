@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Video Communication Server Session Initiation Protocol Packet Processing Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160516-vcs</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-05-16T15:31:57</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-05-16T00:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-05-16T15:31:57</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Session Initiation Protocol (SIP) implementation of the Cisco Video Communications Server (VCS) could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition.
+
+ 
+
+The vulnerability is due to a malformed SIP header message. An attacker could exploit this vulnerability by manipulating the SIP URI. An exploit could allow the attacker to cause a disruption of service to the application.
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are not available.
+
+
+
+
+This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160516-vcs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160516-vcs"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160516-vcs</URL>
+      <Description>Cisco Video Communication Server Session Initiation Protocol Packet Processing Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-197131">Cisco TelePresence Video Communication Server (VCS) X8.1 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-202676">Cisco TelePresence Video Communication Server (VCS) X8.1.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-213294">Cisco TelePresence Video Communication Server (VCS) X8.1.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-202678">Cisco TelePresence Video Communication Server (VCS) X8.2 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-202679">Cisco TelePresence Video Communication Server (VCS) X8.2.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-213293">Cisco TelePresence Video Communication Server (VCS) X8.2.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-205970">Cisco TelePresence Video Communication Server (VCS) X8.5.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-205971">Cisco TelePresence Video Communication Server (VCS) X8.5.1</FullProductName>
+    <FullProductName ProductID="CVRFPID-208138">Cisco TelePresence Video Communication Server (VCS) X8.5 RC4</FullProductName>
+    <FullProductName ProductID="CVRFPID-209631">Cisco TelePresence Video Communication Server (VCS) X8.5.2</FullProductName>
+    <FullProductName ProductID="CVRFPID-213292">Cisco TelePresence Video Communication Server (VCS) X8.5.3</FullProductName>
+    <FullProductName ProductID="CVRFPID-210350">Cisco TelePresence Video Communication Server (VCS) X8.6.0</FullProductName>
+    <FullProductName ProductID="CVRFPID-213291">Cisco TelePresence Video Communication Server (VCS) X8.6.1</FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Video Communication Server Session Initiation Protocol Packet Processing Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy43258</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Session Initiation Protocol (SIP) implementation of the Cisco Video Communications Server (VCS) could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition.
+
+ 
+
+The vulnerability is due to a malformed SIP header message. An attacker could exploit this vulnerability by manipulating the SIP URI. An exploit could allow the attacker to cause a disruption of service to the application.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuy43258</Note>
+    </Notes>
+    <CVE>CVE-2016-1400</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-197131</ProductID>
+        <ProductID>CVRFPID-202676</ProductID>
+        <ProductID>CVRFPID-202678</ProductID>
+        <ProductID>CVRFPID-202679</ProductID>
+        <ProductID>CVRFPID-205970</ProductID>
+        <ProductID>CVRFPID-205971</ProductID>
+        <ProductID>CVRFPID-208138</ProductID>
+        <ProductID>CVRFPID-209631</ProductID>
+        <ProductID>CVRFPID-210350</ProductID>
+        <ProductID>CVRFPID-213291</ProductID>
+        <ProductID>CVRFPID-213292</ProductID>
+        <ProductID>CVRFPID-213293</ProductID>
+        <ProductID>CVRFPID-213294</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160516-vcs</URL>
+        <Description>Cisco Video Communication Server Session Initiation Protocol Packet Processing Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

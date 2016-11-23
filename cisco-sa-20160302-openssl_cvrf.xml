@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2016</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20160302-openssl</ID>
+    </Identification>
+    <Status>Interim</Status>
+    <Version>2.2</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-03-02T19:33:23</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2016-03-03T20:03:17</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2016-03-04T18:08:07</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2016-03-08T17:38:44</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2016-03-09T18:39:47</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2016-03-10T19:37:04</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2016-03-15T15:26:18</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.7</Number>
+        <Date>2016-03-18T18:26:27</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.8</Number>
+        <Date>2016-04-01T19:28:00</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2016-04-11T19:20:45</Date>
+        <Description>Updated the lists of products under investigation or vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.0</Number>
+        <Date>2016-05-02T17:57:43</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.1</Number>
+        <Date>2016-05-11T17:25:51</Date>
+        <Description>Updated the lists of products under investigation, vulnerable, and not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.2</Number>
+        <Date>2016-05-23T14:04:56</Date>
+        <Description>Updated the list of vulnerable products.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-03-02T12:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-05-23T14:04:56</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">On March 1, 2016, the OpenSSL Software Foundation released a security advisory detailing seven vulnerabilities and a new attack, referred to as the Decrypting RSA with Obsolete and Weakened eNcryption (DROWN) attack. A total of eight Common Vulnerabilities and Exposures (CVEs) were assigned. Of the eight CVEs, three relate to the DROWN attack. The remaining CVEs track low severity vulnerabilities.
+
+
+
+DROWN is a cross-protocol attack that actively exploits weaknesses in SSL Version 2 (SSLv2) to decrypt passively collected Transport Layer Security (TLS) sessions. DROWN does not exploit a vulnerability in the TLS protocol or any specific implementation of the protocol.
+
+
+
+To execute a successful DROWN attack, the attacker must identify a server that supports both SSLv2 and TLS, and uses the same RSA key pair for both protocols. The attacker must also be able to collect TLS traffic for the server.
+
+
+
+
+This advisory will be updated as additional information becomes available.
+
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl</URL>
+      <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2016</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Multiple Vendor SSL/TLS Implementation DROWN Information Disclosure Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in multiple vendor products using SSL/TLS could allow an unauthenticated, remote attacker to conduct a Decrypting RSA with Obsolete and Weakened eNcryption (DROWN) cross-protocol attack and gain access to sensitive information.
+
+ 
+
+The vulnerability is due to an implementation error in the SSLv2 protocol that could allow the use of weak Rivest, Shamir, and Adleman (RSA) cipher suites within Transport Layer Security (TLS). An attacker could exploit this vulnerability by intercepting traffic between a targeted system and a vulnerable SSLv2 server that uses the same private key to observe and possibly decrypt one of the connections. The attacker could return the decrypted ciphertext to the targeted server and, judging by the server's responses, determine the secret keys used within the encrypted communication. An exploit could allow the attacker to decrypt the TLS session between the targeted client and SSLv2 server, which the attacker could leverage to gain access to sensitive information.</Note>
+    </Notes>
+    <CVE>CVE-2016-0800</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL Digital Signature Algorithm Private Key Processing Double Free Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to improper parsing of malformed Digital Signature Algorithm (DSA) private keys by the affected software. An attacker could exploit this vulnerability by persuading a user of an application that uses a vulnerable version of OpenSSL to connect to an attacker-controlled server in an attempt to exchange malformed DSA private keys with the application. An exploit could cause a double free memory corruption condition that the attacker could leverage to cause a DoS condition.</Note>
+    </Notes>
+    <CVE>CVE-2016-0705</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL SRP_VBASE_get_by_user Method Memory Leak Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="5">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to improper memory handling. An unauthenticated, remote attacker could exploit the vulnerability by sending malicious login requests to the SRP user database. A successful exploit could allow the attacker to cause a memory leak on the affected system, resulting in a DoS condition.</Note>
+    </Notes>
+    <CVE>CVE-2016-0798</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL BN_hex2bn and BN_dec2bn Functions NULL Pointer Dereference Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="7">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to improper memory operations performed by the affected software. An unauthenticated, remote attacker could exploit this vulnerability by submitting a crafted input to be processed by the affected software. A successful exploit could allow an attacker to cause the application to stop intermittently, leading to a DoS condition.</Note>
+    </Notes>
+    <CVE>CVE-2016-0797</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL BIO_*printf Functions Out-of-Bounds Memory Read Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="9">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to gain access to sensitive information.
+
+
+
+The vulnerability is due to improper bounds-checks performed by the affected software. An unauthenticated, remote attacker could exploit this vulnerability by submitting a crafted input to be processed by the affected software. A successful exploit could allow an attacker to gain access to sensitive information on a targeted system.</Note>
+    </Notes>
+    <CVE>CVE-2016-0799</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="6" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL RSA Cryptographic Key Recovery Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="11">A vulnerability in OpenSSL could allow an unauthenticated, local attacker to gain access to sensitive information.
+
+
+
+The vulnerability is due to improper memory management performed by the affected software. An unauthenticated, local attacker could exploit this vulnerability by injecting a malicious code in the affected software. A successful exploit could allow an attacker to gain access to sensitive information on a targeted system.</Note>
+    </Notes>
+    <CVE>CVE-2016-0702</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="7" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL SSLv2 master-key Recovery Information Disclosure Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="13">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to gain access to sensitive information.
+
+
+
+The vulnerability is due to improper security restrictions implemented by the affected software. An unauthenticated, remote attacker could exploit this vulnerability by intercepting the communication traffic. A successful exploit could allow an attacker to gain access to sensitive information on a targeted system.</Note>
+    </Notes>
+    <CVE>CVE-2016-0703</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="8" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>OpenSSL Bleichenbacher Protection Security Bypass Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="15">A vulnerability in the SSLv2 protocol implementation in OpenSSL could allow an unauthenticated, remote attacker to bypass security restrictions.
+
+
+
+The vulnerability is due to improper implementation of the Bleichenbacher protection for export cipher suites by the affected software. An attacker could exploit this vulnerability to establish a Bleichenbacher oracle, which could aid at conducting more variants of the Decrypting RSA with Obsolete and Weakened eNcryption (DROWN) attack.</Note>
+    </Notes>
+    <CVE>CVE-2016-0704</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: March 2016</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

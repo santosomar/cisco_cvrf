@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+  <DocumentTitle>Cisco Email Security Appliance FTP Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161026-esa6</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-10-18T18:35:10</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-10-26T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-10-18T18:35:10</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in local FTP to the Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to cause a partial denial of service (DoS) condition when the FTP application unexpectedly quits.
+
+
+
+The vulnerability is due to improper input validation of user-supplied fields when logging in using FTP. An attacker could exploit this vulnerability by opening an FTP connection to the targeted device and crafting user-supplied parameters. An exploit could allow the attacker to cause a partial DoS condition when the FTP process unexpectedly quits. This vulnerability does not impact other user traffic.
+
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esa6["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esa6"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esa6</URL>
+      <Description>Cisco Email Security Appliance FTP Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
+    <FullProductName ProductID="CVRFPID-218977">Cisco Email Security Appliance (ESA) 9.9 Base</FullProductName>
+    <FullProductName ProductID="CVRFPID-218978">Cisco Email Security Appliance (ESA) 9.9.6-026</FullProductName>
+    <FullProductName ProductID="CVRFPID-218949">Cisco Email Security Appliance (ESA) 9.7.1-066</FullProductName>
+    <FullProductName ProductID="CVRFPID-220480">Cisco Email Security Appliance (ESA) 9.7.2-046  </FullProductName>
+    <FullProductName ProductID="CVRFPID-220481">Cisco Email Security Appliance (ESA) 9.7.2-047</FullProductName>
+    <FullProductName ProductID="CVRFPID-220482">Cisco Email Security Appliance (ESA) 9.7.2-054 </FullProductName>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+    <Title>Cisco Email Security Appliance FTP Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCux68539</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in local FTP to the Cisco Email Security Appliance (ESA) could allow an unauthenticated, remote attacker to cause a partial denial of service (DoS) condition when the FTP application unexpectedly quits.
+
+
+
+The vulnerability is due to improper input validation of user-supplied fields when logging in using FTP. An attacker could exploit this vulnerability by opening an FTP connection to the targeted device and crafting user-supplied parameters. An exploit could allow the attacker to cause a partial DoS condition when the FTP process unexpectedly quits. This vulnerability does not impact other user traffic.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux68539</Note>
+    </Notes>
+    <CVE>CVE-2016-6358</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-218949</ProductID>
+        <ProductID>CVRFPID-218977</ProductID>
+        <ProductID>CVRFPID-218978</ProductID>
+        <ProductID>CVRFPID-220480</ProductID>
+        <ProductID>CVRFPID-220481</ProductID>
+        <ProductID>CVRFPID-220482</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSet>
+        <BaseScore>5.0</BaseScore>
+        <TemporalScore>4.1</TemporalScore>
+        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
+      </ScoreSet>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esa6</URL>
+        <Description>Cisco Email Security Appliance FTP Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>
