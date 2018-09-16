@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco FXOS and NX-OS Software Cisco Fabric Services Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180620-nx-os-fabric-services-dos</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-06-19T23:15:09</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2018-07-05T21:11:49</Date>
+        <Description>Update Fixed Releases for FXOS and MDS platforms.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-06-20T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-07-05T21:11:49</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Cisco Fabric Services component of Cisco FXOS Software and Cisco NX-OS Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.
+
+The vulnerability exists because the affected software insufficiently validates Cisco Fabric Services packets when the software processes packet data. An attacker could exploit this vulnerability by sending a maliciously crafted Cisco Fabric Services packet to an affected device. A successful exploit could allow the attacker to cause a buffer overflow condition on the device, which could cause process crashes and result in a DoS condition on the device.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+  This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-nx-os-fabric-services-dos ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-nx-os-fabric-services-dos"]
+
+This advisory is part of the June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection, which includes 24 Cisco Security Advisories that describe 24 vulnerabilities. For a complete list of the advisories and links to them, see Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection ["https://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770"].</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2" />
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">This vulnerability affects the following Cisco products if they are running a vulnerable release of Cisco FXOS Software or Cisco NX-OS Software and are configured to use Cisco Fabric Services:
+
+    Firepower 4100 Series Next-Generation Firewalls
+    Firepower 9300 Security Appliance
+    MDS 9000 Series Multilayer Switches
+    Nexus 2000 Series Fabric Extenders
+    Nexus 3000 Series Switches
+    Nexus 3500 Platform Switches
+    Nexus 5500 Platform Switches
+    Nexus 5600 Platform Switches
+    Nexus 6000 Series Switches
+    Nexus 7000 Series Switches
+    Nexus 7700 Series Switches
+    Nexus 9000 Series Switches in standalone NX-OS mode
+    Nexus 9500 R-Series Line Cards and Fabric Modules
+    UCS 6100 Series Fabric Interconnects
+    UCS 6200 Series Fabric Interconnects
+    UCS 6300 Series Fabric Interconnects
+
+For information about which Cisco FXOS and NX-OS Software releases are vulnerable, see the Fixed Software ["#fs"] section of this advisory.
+
+For information about determining whether a device is configured to use Cisco Fabric Services, see the Details ["#details"] section of this advisory.
+  Determining the Cisco FXOS Software Release
+Administrators can check the release of Cisco FXOS Software that is running on a device by using the following commands in the device CLI or by navigating to the Overview tab in the Admin portal. The following example shows the output of the show version CLI command on a device that is running Cisco FXOS Software Release 2.2(2.14), as identified in the Package-Vers field of the command output:
+
+
+QP4120B1 # scope system
+QP4120B1 /system # show version  FPRM:  Running-Vers: 4.2(2.15)  Package-Vers: 2.2(2.14)  Activate-Status: Ready
+    Determining the Cisco NX-OS Software Release
+Administrators can check the release of Cisco NX-OS Software that is running on a device by using the show version command in the device CLI. The following example shows the output of this command on a device that is running Cisco NX-OS Software Release 7.3(2)D1(1):
+
+
+nxos-switch# show version
+
+
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac  Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html  Copyright (c) 2002-2017, Cisco Systems, Inc. All rights reserved.  The copyrights to certain works contained in this software are  owned by other third parties and used and distributed under  license. Certain components of this software are licensed under  the GNU General Public License (GPL) version 2.0 or the GNU  Lesser General Public License (LGPL) Version 2.1. A copy of each  such license is available at  http://www.opensource.org/licenses/gpl-2.0.php and  http://www.opensource.org/licenses/lgpl-2.1.php  Software    BIOS:      version 2.12.0    kickstart: version 7.3(2)D1(1)    system:    version 7.3(2)D1(1)  .  .  .</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Only products listed in the Vulnerable Products ["#vp"] section of this advisory are known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect the following Cisco products:
+
+Firepower 2100 Series Firewalls
+Nexus 1000V Series Switches
+Nexus 1100 Series Cloud Services Platforms
+Nexus 3600 Platform Switches
+Nexus 9000 Series Fabric Switches in Application Centric Infrastructure (ACI) mode
+
+Cisco has not investigated whether this vulnerability affects Cisco Nexus 4000 Series Switches, Cisco Nexus 5010 Switches, or Cisco Nexus 5020 Switches because those products have reached end-of-life status. For more information, refer to the End-of-Sale and End-of-Life Announcement for the Cisco Nexus 4000 Series Switch Modules for IBM BladeCenter ["https://www.cisco.com/c/en/us/products/collateral/switches/nexus-4000-series-switches/eos-eol-notice-c51-733205.html"] and the End-of-Sale and End-of-Life Announcement for the Cisco Nexus 5010 and Nexus 5020 Switches ["https://www.cisco.com/c/en/us/products/collateral/switches/nexus-5000-series-switches/eol_c51-709037.html"].</Note>
+    <Note Title="Details" Type="General" Ordinal="5">Cisco Fabric Services provides a common infrastructure for distributing and synchronizing configuration data between Cisco devices that are on the same network and with virtual port channels (vPCs). This includes configuration data for applications and features that are compatible with and enabled to use Cisco Fabric Services—for example, Distributed Device Alias Services, Network Time Protocol (NTP), and user and administrator roles.
+
+To distribute and synchronize data, Cisco Fabric Services can be configured to use any of the following distribution types:
+
+Cisco Fabric Services over Fibre Channel (CFSoFC)—Distributes data over a Fibre Channel (FC), such as a virtual storage area network (VSAN). CFSoFC distribution is enabled by default.
+Cisco Fabric Services over Ethernet (CFSoE)—Distributes data over an Ethernet network. For vPC support, Cisco Fabric Services must be configured to use this distribution type. CFSoE distribution is disabled by default.
+Cisco Fabric Services over IP (CFSoIP)—Distributes data over an IPv4 or IPv6 network. CFSoIP distribution is disabled by default.
+
+The vulnerability described in this advisory is due to insufficient input validation that could occur when the affected software processes Cisco Fabric Services packets that it receives during distribution and synchronization operations. Exploitation of the vulnerability does not require any applications to be enabled to use Cisco Fabric Services. Instead, exploitation depends on which Cisco Fabric Services distribution types are configured for a device. In addition, the attack vectors vary based on which distribution types are configured, as follows:
+
+CFSoFC—An attack could occur via Fibre Channel over Ethernet (FCoE) or Fibre Channel over IP (FCIP), if FC ports are configured for a device. In this scenario, an attack could succeed in the data plane, not the management plane, of any FC port. If no FC ports are configured for a device, this distribution type cannot be used to exploit the vulnerability.
+CFSoE—An attack is possible from only a vPC peer or an attacker who has access to a vPC peer link. No other peer, neighbor, or network node can be used to exploit the vulnerability.
+CFSoIP—An attack is possible from any node that has IP network connectivity to the management interface of a device. In this scenario, an attack cannot succeed from the data plane.
+
+If a device is enabled to use more than one distribution type, the applicable attack vectors for all those distribution types exist for the device.
+
+Administrators can display configuration information and check the distribution status of Cisco Fabric Services for a device by using the show cfs status command in the device CLI, as shown in the following example:
+
+
+switch# show cfs status
+Distribution : Enabled  Distribution over IP : Disabled  IPv4 multicast address : 239.255.70.83  IPv6 multicast address : ff15::efff:4653  Distribution over Ethernet : Disabled
+
+In the preceding example, the Enabled value in the Distribution field of the command output indicates that Cisco Fabric Services is enabled for the device and the device is configured to use the default Cisco Fabric Services distribution type, which is CFSoFC. The Disabled value in the Distribution over IP field and the Distribution over Ethernet field indicates that the device is not additionally configured to use the CFSoIP and CFSoE distribution types.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+  Customers Without Service Contracts
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+  Fixed Releases
+Customers are advised to upgrade to an appropriate release as indicated in the applicable table in this section. To help ensure a complete upgrade solution, consider that this advisory is part of a collection. For a complete list of the advisories in the collection and links to them, see Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection ["http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770"].
+
+In the following tables, the left column lists releases of Cisco FXOS or NX-OS Software. The center column indicates whether a release is affected by the vulnerability described in this advisory and the first release that includes the fix for this vulnerability. The right column indicates whether a release is affected by all the vulnerabilities described in this collection of advisories and which release includes fixes for those vulnerabilities.
+
+  Firepower 4100 Series Next-Generation Firewalls: CSCve04859 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve04859"]
+                                    Cisco FXOS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              1.1              1.1.4.179              2.0.1.159                                  2.0              2.0.1.153              2.0.1.159
+                                  2.1.1                            2.1.1.86                            2.1.1.86 or 2.3.1.58                                  2.2.1              2.2.1.70              2.2.2.17 or 2.3.1.58                                                2.2.2              2.2.2.17              2.2.2.17 or 2.3.1.58                                                2.3               Not vulnerable              Not vulnerable
+Firepower 9300 Security Appliance: CSCve04859 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve04859"]
+                                Cisco FXOS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              1.1              1.1.4.179              2.0.1.159                                                2.0              2.0.1.153              2.0.1.159                                  2.1.1                            2.1.1.86                            2.1.1.86 or 2.3.1.58                                  2.2.1              2.2.1.70              2.2.2.17 or 2.3.1.58                                                2.2.2              2.2.2.17              2.2.2.17 or 2.3.1.58                                                2.3               Not vulnerable              Not vulnerable
+MDS 9000 Series Multilayer Switches: CSCvd69960 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd69960"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              5.2               6.2(21)              8.1(1a) or 8.2(1)                                                6.2               6.2(21)              8.1(1a) or 8.2(1)                                                7.3               8.1(1a)              8.1(1a) or 8.2(1)                                                8.1               8.1(1a)              8.1(1a) or 8.2(1)                                                8.2               Not vulnerable              Not vulnerable
+Nexus 3000 Series Switches: CSCve41537 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve41537"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              Prior to 7.0(3)I4                            7.0(3)I4(7)              7.0(3)I7(4)                                                7.0(3)I4                            7.0(3)I4(7)              7.0(3)I7(4)                                                7.0(3)I5                            7.0(3)I6(2)              7.0(3)I7(4)                                                7.0(3)I6                            7.0(3)I6(2)              7.0(3)I7(4)                                                7.0(3)I7              Not vulnerable              7.0(3)I7(4)
+Nexus 3500 Platform Switches: CSCve41530 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve41530"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              6.0              6.0(2)A8(9)              7.0(3)I7(4)                                                7.0.3               Not vulnerable              7.0(3)I7(4)
+Nexus 2000 Series Fabric Extenders and Nexus 5500, 5600, and 6000 Series Switches: CSCve02463 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve02463"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              6.0                            7.3(3)N1(1)              7.3(3)N1(1)                                                7.0              7.3(3)N1(1)              7.3(3)N1(1)                                                7.1              7.3(3)N1(1)              7.3(3)N1(1)                                                7.2              7.3(3)N1(1)              7.3(3)N1(1)                                                7.3              7.3(3)N1(1)              7.3(3)N1(1)
+Nexus 7000 Series and 7700 Series Switches: CSCvd69960 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd69960"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              6.2              6.2(20)              8.1(2) or 8.2(1)                                                7.2              7.3(2)D1(1)              8.1(2) or 8.2(1)                                                7.3               7.3(2)D1(1)              8.1(2) or 8.2(1)                                                8.0               8.1(2)              8.1(2) or 8.2(1)                                                8.1               8.1(2)              8.1(2) or 8.2(1)                                                8.2               Not vulnerable              Not vulnerable
+Nexus 9000 Series Switches in standalone NX-OS mode: CSCve41537 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve41537"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              Prior to 7.0(3)I4                            7.0(3)I4(7)              7.0(3)I7(4)                                                7.0(3)I4              7.0(3)I4(7)              7.0(3)I7(4)                                                7.0(3)I5              7.0(3)I6(2)              7.0(3)I7(4)                                                7.0(3)I6              7.0(3)I6(2)              7.0(3)I7(4)                                                7.0(3)I7              Not vulnerable              7.0(3)I7(4)
+Nexus 9500 R-Series Line Cards and Fabric Modules: CSCve41557 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve41557"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              7.0              7.0(3)F3(1)              7.0(3)F3(3a)
+ UCS 6100, 6200, and 6300 Series Fabric Interconnects: CSCve41541 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve41541"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              Prior to 2.2               3.2(b)              3.2(b)                                                2.2              3.2(b)              3.2(b)                                                2.5              3.2(b)              3.2(b)                                                3.0              3.2(b)              3.2(b)                                                3.1               3.2(b)              3.2(b)                                                3.2               3.2(b)              3.2(b)</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was found during internal security testing.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-nx-os-fabric-services-dos</URL>
+      <Description>Cisco FXOS and NX-OS Software Cisco Fabric Services Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770</URL>
+      <Description>Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770</URL>
+      <Description>Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco NX-OS Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-80720">Cisco NX-OS Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Computing System (Managed)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-112776">Cisco Unified Computing System (Managed) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco MDS 9000 NX-OS Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-114292">Cisco MDS 9000 NX-OS Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Firepower Extensible Operating System (FXOS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-225888">Cisco Firepower Extensible Operating System (FXOS) </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco FXOS and NX-OS Software Cisco Fabric Services Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCve04859</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Cisco Fabric Services component of Cisco FXOS Software and Cisco NX-OS Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.
+
+The vulnerability exists because the affected software insufficiently validates Cisco Fabric Services packets when the software processes packet data. An attacker could exploit this vulnerability by sending a maliciously crafted Cisco Fabric Services packet to an affected device. A successful exploit could allow the attacker to cause a buffer overflow condition on the device, which could cause process crashes and result in a DoS condition on the device.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCve04859,CSCve41541,CSCve02463,CSCve41530,CSCve41557,CSCvd69960,CSCve41537</Note>
+    </Notes>
+    <CVE>CVE-2018-0311</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-225888</ProductID>
+        <ProductID>CVRFPID-114292</ProductID>
+        <ProductID>CVRFPID-112776</ProductID>
+        <ProductID>CVRFPID-80720</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>8.6</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-nx-os-fabric-services-dos</URL>
+        <Description>Cisco FXOS and NX-OS Software Cisco Fabric Services Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

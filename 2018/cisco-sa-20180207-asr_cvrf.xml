@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco StarOS for Cisco ASR 5000 Series Aggregation Services Routers File Overwrite Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180207-asr</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-02-06T17:01:28</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-02-07T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-02-06T17:01:28</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the CLI of the Cisco StarOS operating system for Cisco ASR 5000 Series Aggregation Services Routers could allow an authenticated, local attacker to overwrite system files that are stored in the flash memory of an affected system.
+
+The vulnerability is due to insufficient validation of user-supplied input by the affected operating system. An attacker could exploit this vulnerability by injecting crafted command arguments into a vulnerable CLI command for the affected operating system. A successful exploit could allow the attacker to overwrite or modify arbitrary files that are stored in the flash memory of an affected system. To exploit this vulnerability, the attacker would need to authenticate to an affected system by using valid administrator credentials.
+
+There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180207-asr ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180207-asr"]</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180207-asr</URL>
+      <Description>Cisco StarOS for Cisco ASR 5000 Series Aggregation Services Routers File Overwrite Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco ASR 5000 Series Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-193199">Cisco ASR 5000 Series Software </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco StarOS for Cisco ASR 5000 Series Aggregation Services Routers File Overwrite Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvf93335</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the CLI of the Cisco StarOS operating system for Cisco ASR 5000 Series Aggregation Services Routers could allow an authenticated, local attacker to overwrite system files that are stored in the flash memory of an affected system.
+
+
+
+The vulnerability is due to insufficient validation of user-supplied input by the affected operating system. An attacker could exploit this vulnerability by injecting crafted command arguments into a vulnerable CLI command for the affected operating system. A successful exploit could allow the attacker to overwrite or modify arbitrary files that are stored in the flash memory of an affected system. To exploit this vulnerability, the attacker would need to authenticate to an affected system by using valid administrator credentials.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCvf93335</Note>
+    </Notes>
+    <CVE>CVE-2018-0122</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-193199</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.4</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:L/AC:L/PR:H/UI:N/S:U/C:N/I:H/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180207-asr</URL>
+        <Description>Cisco StarOS for Cisco ASR 5000 Series Aggregation Services Routers File Overwrite Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

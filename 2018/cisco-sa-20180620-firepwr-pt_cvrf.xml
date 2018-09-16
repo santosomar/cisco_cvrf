@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco Firepower 4100 Series Next-Generation Firewall and Firepower 9300 Security Appliance Path Traversal Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180620-firepwr-pt</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-06-19T23:14:57</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2018-07-05T21:11:34</Date>
+        <Description>Updated Fixed Releases for FXOS platforms.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-06-20T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-07-05T21:11:34</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the process of uploading new application images to the Cisco Firepower 4100 Series Next-Generation Firewall (NGFW) and Firepower 9300 Security Appliance could allow an authenticated, remote attacker using path traversal techniques to create or overwrite arbitrary files on an affected device.
+
+The vulnerability is due to insufficient validation during the application image upload process. An attacker could exploit this vulnerability by creating an application image containing malicious code and installing the image on the affected device using the CLI or web-based user interface (web UI). These actions occur prior to signature verification and could allow the attacker to create and execute arbitrary code with root privileges.
+
+Note: A missing or invalid signature in the application image will cause the upload process to fail, but does not prevent the exploit.
+
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-firepwr-pt ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-firepwr-pt"]
+
+
+This advisory is part of the June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection, which includes 24 Cisco Security Advisories that describe 24 vulnerabilities. For a complete list of the advisories and links to them, see Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection ["https://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770"].</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2"></Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">This vulnerability affects Cisco Firepower 4100 Series Next-Generation Firewall and Firepower 9300 Security Appliance if they are running a vulnerable release of Cisco FXOS Software.
+
+For information about which Cisco FXOS Software releases are vulnerable, see the Fixed Software ["#fs"] section of this advisory
+
+See the Details ["#ds"] section for additional information on application type images.
+
+Determining the Cisco FXOS Software Release
+Administrators can check the release of Cisco FXOS Software that is running on a device by using the following commands in the device CLI or by navigating to the Overview tab in the Admin portal. The following example shows the output of the show version CLI command on a device that is running Cisco FXOS Software Release 2.2(2.14), as identified in the Package-Vers field of the command output:
+
+
+QP4120B1 # scope system
+QP4120B1 /system # show version  FPRM:  Running-Vers: 4.2(2.15)  Package-Vers: 2.2(2.14)  Activate-Status: Ready</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Only products listed in the Vulnerable Products ["#vp"] section of this advisory are known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect the following Cisco products:
+
+Firepower 2100 Series
+MDS 9000 Series Multilayer Switches
+Nexus 1000V Series Switches
+Nexus 1100 Series Cloud Services Platforms
+Nexus 2000 Series Fabric Extenders
+Nexus 3000 Series Switches
+Nexus 3500 Platform Switches
+Nexus 3600 Platform Switches
+Nexus 5500 Platform Switches
+Nexus 5600 Platform Switches
+Nexus 6000 Series Switches
+Nexus 7000 Series Switches
+Nexus 7700 Series Switches
+Nexus 9000 Series Fabric Switches in Application Centric Infrastructure (ACI) mode
+Nexus 9000 Series Switches in standalone NX-OS mode
+Nexus 9500 R-Series Line Cards and Fabric Modules
+UCS 6100 Series Fabric Interconnects
+UCS 6200 Series Fabric Interconnects
+UCS 6300 Series Fabric Interconnects
+
+
+Cisco has not investigated whether this vulnerability affects Cisco Nexus 4000 Series Switches, Cisco Nexus 5010 Switches, or Cisco Nexus 5020 Switches because those products have reached end-of-life status. For more information, refer to the End-of-Sale and End-of-Life Announcement for the Cisco Nexus 4000 Series Switch Modules for IBM BladeCenter ["https://www.cisco.com/c/en/us/products/collateral/switches/nexus-4000-series-switches/eos-eol-notice-c51-733205.html"] and the End-of-Sale and End-of-Life Announcement for the Cisco Nexus 5010 and Nexus 5020 Switches ["https://www.cisco.com/c/en/us/products/collateral/switches/nexus-5000-series-switches/eol_c51-709037.html"].</Note>
+    <Note Title="Details" Type="General" Ordinal="5">The Cisco Firepower 4100 Series Next-Generation Firewall and Firepower 9300 Security Appliance use two basic types of images:
+
+Platform Bundle—The Firepower platform bundle is a collection of multiple independent images that form the Firepower eXtensible Operating System software package.
+Application—Application images are the software images that are deployed on the security module/engine of the Cisco Firepower 4100 and Firepower 9300 chassis. Application images are delivered as Cisco Secure Package (CSP) files and are stored on the supervisor until deployed to a security module/engine as part of logical device creation or in preparation for later logical device creation. The Cisco Firepower supervisor can store different version of the same application image.
+  Note: The platform bundle is a Firepower eXtensible Operating System software package and is not applicable to this vulnerability.  This vulnerability only applies to application images.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+  Customers Without Service Contracts
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+  Fixed Releases
+
+Customers are advised to upgrade to an appropriate release as indicated in the applicable table in this section. To help ensure a complete upgrade solution, consider that this advisory is part of a collection. For a complete list of the advisories in the collection and links to them, see Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection ["http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770"].
+
+In the following tables, the left column lists releases of Cisco FXOS or NX-OS Software. The center column indicates whether a release is affected by the vulnerability described in this advisory and the first release that includes the fix for this vulnerability. The right column indicates whether a release is affected by all the vulnerabilities described in this collection of advisories and which release includes fixes for those vulnerabilities.
+
+
+Firepower 4100 Series Next-Generation Firewall: CSCvc21901 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvc21901"]
+                                    Cisco FXOS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                  1.1
+              1.1.4.169
+              2.0.1.159 or 2.3.1.58                                  2.0              2.0.1.141
+               2.0.1.159 or 2.3.1.58
+                                  2.1               2.1.1.73
+              2.1.1.86 or 2.3.1.58
+                                  2.2              Not vulnerable
+              2.2.2.17 or 2.3.1.58
+                                  2.3               Not vulnerable
+              Not vulnerable
+
+Firepower 9300 Security Appliance: CSCvc21901 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvc21901"]
+
+                                Cisco FXOS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                   1.1
+              1.1.4.169
+              2.0.1.159 or 2.3.1.58
+                                  2.0              2.0.1.141
+              2.0.1.159 or 2.3.1.58
+                                  2.1               2.1.1.73
+              2.1.1.86 or 2.3.1.58
+                                  2.2               Not vulnerable
+              2.2.2.17 or 2.3.1.58
+                                  2.3               Not vulnerable
+              Not vulnerable</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was found during internal security testing.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-firepwr-pt</URL>
+      <Description>Cisco Firepower 4100 Series Next-Generation Firewall and Firepower 9300 Security Appliance Path Traversal Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770</URL>
+      <Description>Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770</URL>
+      <Description>Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Firepower Extensible Operating System (FXOS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-225888">Cisco Firepower Extensible Operating System (FXOS) </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco Firepower 4100 Series NGFW and Firepower 9300 Security Appliance Path Traversal Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvc21901</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the process of uploading new application images to the Cisco Firepower 4100 Series Next-Generation Firewall (NGFW) and Firepower 9300 Security Appliance could allow an authenticated, remote attacker using path traversal techniques to create or overwrite arbitrary files on an affected device.
+
+The vulnerability is due to insufficient validation during the application image upload process. An attacker could exploit this vulnerability by creating an application image containing malicious code and installing the image on the affected device using the CLI or web-based user interface (web UI). These actions occur prior to signature verification and could allow the attacker to create and execute arbitrary code with root privileges.
+
+Note: A missing or invalid signature in the application image will cause the upload process to fail, but does not prevent the exploit.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvc21901</Note>
+    </Notes>
+    <CVE>CVE-2018-0300</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-225888</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>7.2</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-firepwr-pt</URL>
+        <Description>Cisco Firepower 4100 Series Next-Generation Firewall and Firepower 9300 Security Appliance Path Traversal Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

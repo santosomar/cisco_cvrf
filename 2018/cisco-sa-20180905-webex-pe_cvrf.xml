@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco Webex Meetings Client for Windows Privilege Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180905-webex-pe</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-09-05T15:59:18</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-09-05T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-09-05T15:59:18</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the folder permissions of Cisco Webex Meetings client for Windows could allow an authenticated, local attacker to modify locally stored files and execute code on a targeted device with the privilege level of the user.
+
+The vulnerability is due to folder permissions that grant a user the permission to read, write, and execute files in the Webex folders. An attacker could exploit this vulnerability to write malicious files to the Webex client directory, affecting all other users of the targeted device. A successful exploit could allow a user to execute commands with elevated privileges.
+
+Attacks on single-user systems are less likely to occur, as the attack must be carried out by the user on the user's own system. Multiuser systems have a higher risk of exploitation because folder permissions have an impact on all users of the device. For an attacker to exploit this vulnerability successfully, a second user must execute the locally installed malicious file to allow remote code execution to occur.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180905-webex-pe ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180905-webex-pe"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects client applications installed from the following Cisco Webex Meetings products when running on Microsoft Windows end-user systems:
+
+Cisco Webex Meetings Suite (WBS31)
+Cisco Webex Meetings Suite (WBS32)
+Cisco Webex Meetings Suite (WBS33)
+Cisco Webex Meetings
+Cisco Webex Meetings Server
+
+To determine whether a Cisco Webex meeting site is running an affected version of the Webex software, users can log in to their Cisco Webex meeting site and go to Support &gt; Downloads. The version of the Webex software will be displayed on the right side of the page under About Meeting Center. See the Fixed Software ["#fs"] section of this advisory for details.
+
+Alternatively, version information for the Cisco Webex meeting client can be accessed directly in the client. Version information for the Cisco Webex meeting client on Windows platforms can be viewed by choosing Help &gt; About Cisco Webex Meeting Center.
+
+Note: Customers who do not receive automatic software updates may be running versions of Cisco Webex Meetings that have reached end of software maintenance and should contact the Cisco TAC (Technical Assistance Center).</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">Only products listed in the Vulnerable Products ["#vp"] section of this advisory are known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect Cisco Webex Meetings client applications running on Mac OS X and Linux operating systems.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco will release free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+  Customers Without Service Contracts
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+  Fixed Releases
+Cisco has released new desktop applications to remediate this vulnerability. Users must have the new desktop applications installed to remediate the vulnerability.
+
+Users can obtain the installable MSI from their upgraded site. For WBS33, the applications are automatically delivered and installed automatically when administrative users attend a meeting on a WBS33 site.
+
+Users without administrative rights will not be able to install the update automatically and will require administrators to install the application installable MSI on their desktops.
+
+Due to customers’ lock down status of WBS 32, users or IT administrators must install the desktop applications manually.
+
+Users or IT administrators can contact the Cisco TAC to obtain the desktop applications’ installable MSI prior to their site’s upgrade.
+
+Customers’ sites are being upgraded to make this desktop application available to users according to the following schedule:
+
+Webex Major Release
+
+First Fixed Release
+
+Availability
+
+Cisco Webex Meetings Suite (WBS31)
+
+N/A
+
+Cisco will not release a new desktop application for WBS31 releases. Customers must upgrade to WBS32 or WBS33 and install the appropriate update.
+
+Cisco Webex Meetings Suite (WBS32)
+
+WBS32.15.20
+
+Released
+
+See WBS 32.15.20 availability on your site based on your cluster schedule: https://status.webex.com/#/maintenance/calendar
+
+End users or IT administrators must install new desktop applications manually to remediate the vulnerability.
+
+Contact the Cisco TAC to obtain desktop applications’ installable MSI prior to availability on your site.
+
+Cisco Webex Meetings Suite (WBS33)
+
+WBS33.4
+
+Released
+
+See WBS33.4 availability on your site based on your cluster schedule: https://status.webex.com/#/maintenance/calendar
+
+Users with administrative rights on their desktops will automatically receive a Windows User Account Control (UAC) pop-up window after they join or start a meeting on an updated WBS33.4 site. Users must accept this UAC request to remediate the vulnerability.
+
+Users without administrative rights will not be able to install the update automatically and will require administrators to install the application installable MSI on their desktops.
+
+Contact the Cisco TAC to obtain the desktop applications’ installable MSI prior to availability on your site.
+
+Note that the WBS33.4 installable MSI installs the new Webex Desktop application, which includes the new Outlook plug-in and replaces the older Productivity Tools. Although replacement of Productivity Tools with the new desktop application is highly recommended, please contact the Cisco TAC if this replacement is not desired.
+
+Cisco Webex Meetings
+
+1.3.37
+
+Available beginning September 14, 2018
+
+Contact the Cisco TAC to obtain the desktop applications’ installable MSI prior to availability on the site.
+
+Cisco Webex Meetings Server
+
+3.0MR2
+
+Released
+
+The software is available for download from the Software Center ["https://software.cisco.com/download/home"] on Cisco.com by clicking Browse all and navigating to Conferencing &gt; Web Conferencing &gt; Webex Meetings Server &gt; Webex Meetings Server 3.0 or via direct link ["https://software.cisco.com/download/home/286312005/type"].
+
+Fixed software will be available on customers’ sites based on the release update schedule. Customers will receive a separate communication with the update schedule for their site. Customers can also contact the Cisco TAC to determine their site’s update schedule.
+
+To determine whether a meeting site has an updated  version of the Cisco Webex software, users can sign in to their Cisco  Webex Meetings site and go to the Support &gt; Downloads section. The version is displayed on the right side of the page under About Webex Meetings.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is aware of public announcements of the vulnerability. However, there has been no indication of malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="8">Cisco would like to thank Simon Zuckerbraun, working with Trend Micro's Zero Day Initiative (ZDI), for reporting this vulnerability.
+
+Cisco would also like to thank Ben Cheney from DXC Technology for independently reporting this vulnerability.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180905-webex-pe</URL>
+      <Description>Cisco Webex Meetings Client for Windows Privilege Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco WebEx Meeting Center" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-97151">Cisco WebEx Meeting Center </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meetings Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190702">Cisco WebEx Meetings Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meetings" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-228295">Cisco WebEx Meetings </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco Webex Meetings Client for Windows Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvh89155</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the folder permissions of Cisco Webex Meetings client for Windows could allow an authenticated, local attacker to modify locally stored files and execute code on a targeted device with the privilege level of the user.
+
+
+
+The vulnerability is due to folder permissions that grant a user the permission to read, write, and execute files in the Webex folders. An attacker could exploit this vulnerability to write malicious files to the Webex client directory, affecting all other users of the targeted device. A successful exploit could allow a user to execute commands with elevated privileges.
+
+
+
+Attacks on single-user systems are less likely to occur, as the attack must be carried out by the user on the user's own system. Multiuser systems have a higher risk of exploitation because folder permissions have an impact on all users of the device. For an attacker to exploit this vulnerability successfully, a second user must execute the locally installed malicious file to allow remote code execution to occur.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvh89155,CSCvh89157,CSCvh89158</Note>
+    </Notes>
+    <CVE>CVE-2018-0422</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-97151</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-228295</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>7.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180905-webex-pe</URL>
+        <Description>Cisco Webex Meetings Client for Windows Privilege Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco Web Security Appliance Layer 4 Traffic Monitor Security Bypass Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180606-wsa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-06-06T14:33:03</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2018-06-08T14:26:30</Date>
+        <Description>Updated fixed release information to reflect availability of Release 10.5.2-042.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-06-06T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-06-08T14:26:30</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in traffic-monitoring functions in Cisco Web Security Appliance (WSA) could allow an unauthenticated, remote attacker to circumvent Layer 4 Traffic Monitor (L4TM) functionality and bypass security protections.
+
+The vulnerability is due to a change in the underlying operating system software that is responsible for monitoring affected traffic. An attacker could exploit this vulnerability by sending crafted IP packets to an affected device. A successful exploit could allow the attacker to pass traffic through the device, which the WSA was configured to deny. This vulnerability affects both IPv4 and IPv6 traffic.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-wsa ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-wsa"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2"></Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">This vulnerability affects Cisco AsyncOS versions for WSA on both virtual and hardware appliances running any release of the 10.5.1, 10.5.2, or 11.0.0 WSA Software. See the Fixed Software ["#fs"] section of this security advisory for additional information about affected software releases.
+
+The WSA is vulnerable if it is configured for L4TM. To check whether a WSA is configured for L4TM, administrators can navigate to the L4 Traffic Monitor configuration settings:
+
+      Click Security Services &gt; L4 Traffic Monitor
+      Click Edit Global Settings
+      Check Enable L4 Traffic Monitor and select the required ports
+  Determining the WSA Software Version
+  To determine whether a vulnerable version of Cisco AsyncOS Software is running on a Cisco WSA, administrators can use the version command in the WSA CLI. The following example shows the results for an appliance running Cisco AsyncOS Software version 10.5.1-296:
+
+
+ciscowsa&gt; version
+
+
+Current Version
+===============
+Product: Cisco IronPort S670 Web Security Appliance
+Model: S670
+Version: 10.5.1-296
+.
+.
+.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Only products listed in the Vulnerable Products ["#vp"] section of this advisory are known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect the following Cisco products:
+
+Email Security Appliance (ESA), both virtual and hardware versions
+Security Mail Appliance (SMA), both virtual and hardware versions</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:  https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC: https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+  Fixed Releases
+In the following table, the left column lists major releases of Cisco AsyncOS for WSA Software. The right column indicates whether a major release is affected by the vulnerability described in this advisory and the first minor release that includes the fix for this vulnerability.
+
+  Customers should upgrade to an appropriate release as indicated in the following table:
+                                Cisco AsyncOS WSA Software Major Release              First Fixed Release for This Vulnerability                                              Prior to 10.5.1
+              Not vulnerable
+                                  10.5.1
+              10.5.2-042
+                                  10.5.2               10.5.2-042                                  11.0.0               11.5.0-0614
+In most cases, a WSA can be updated over the network by using the System Upgrade options in the System Administration GUI. To upgrade a device by using the System Administration GUI:
+
+      Choose System Administration &gt; System Upgrade.
+      Click Upgrade Options.
+      Choose Download and Install.
+      Choose the release to upgrade to.
+      In the Upgrade Preparation area, choose the appropriate options.
+      Click Proceed to begin the upgrade. A progress bar displays the status of the upgrade.
+
+  After the upgrade is complete, the device reboots.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was found during the resolution of a Cisco TAC support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-wsa</URL>
+      <Description>Cisco Web Security Appliance Layer 4 Traffic Monitor Security Bypass Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Web Security Appliance (WSA)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-189789">Cisco Web Security Appliance (WSA) </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco Web Security Appliance Layer 4 Traffic Monitor Security Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvg78875</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in traffic-monitoring functions in Cisco Web Security Appliance (WSA) could allow an unauthenticated, remote attacker to circumvent Layer 4 Traffic Monitor (L4TM) functionality and bypass security protections.
+
+
+
+The vulnerability is due to a change in the underlying operating system software that is responsible for monitoring affected traffic. An attacker could exploit this vulnerability by sending crafted IP packets to an affected device. A successful exploit could allow the attacker to pass traffic through the device, which the WSA was configured to deny. This vulnerability affects both IPv4 and IPv6 traffic.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg78875</Note>
+    </Notes>
+    <CVE>CVE-2018-0353</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-189789</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>7.5</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-wsa</URL>
+        <Description>Cisco Web Security Appliance Layer 4 Traffic Monitor Security Bypass Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

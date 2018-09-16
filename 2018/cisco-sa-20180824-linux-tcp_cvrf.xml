@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Linux and FreeBSD Kernels TCP Reassembly Denial of Service Vulnerabilities Affecting Cisco Products: August 2018</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180824-linux-tcp</ID>
+    </Identification>
+    <Status>Interim</Status>
+    <Version>1.5</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-08-24T21:31:51</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2018-08-29T17:26:00</Date>
+        <Description>Updated the lists of products under investigation and products confirmed not vulnerable.  	Updated information about fixed release availability.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2018-08-30T16:55:21</Date>
+        <Description>Updated information about fixed release availability.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2018-09-04T18:05:25</Date>
+        <Description>Updated the lists of products under investigation, vulnerable products, and products confirmed not vulnerable. Updated information about fixed release availability.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2018-09-06T18:15:43</Date>
+        <Description>Updated the lists of products under investigation and vulnerable products. Updated information about fixed release availability.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2018-09-13T18:32:47</Date>
+        <Description>Updated the lists of products under investigation. Moved Firepower Management Center to the products confirmed not vulnerable as after further evaluation, no publicly available software releases were found to be vulnerable.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-08-24T21:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-09-13T18:32:47</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">On August 6, 2018, the Vulnerability Coordination team of the National Cyber Security Centre of Finland (NCSC-FI) and the CERT Coordination Center (CERT/CC) disclosed vulnerabilities in the TCP stacks that are used by the Linux and FreeBSD kernels. These vulnerabilities are publicly known as SegmentSmack.
+
+The vulnerabilities could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device. An attack could be executed by using low transfer rates of TCP packets, unlike typical distributed denial of service (DDoS) attacks.
+
+The vulnerabilities are due to inefficient TCP reassembly algorithms in the TCP stacks that are used by the affected kernels. Linux Kernel Versions 4.9 and later and all supported versions of the FreeBSD kernel are known to be affected by these vulnerabilities.
+
+An attacker could exploit these vulnerabilities by sending a stream of packets that are designed to trigger the issue in an established TCP session with an affected device. A sustained DoS condition requires the attacker to maintain a continuous stream of malicious traffic. Due to the required use of an established session, an attack cannot be performed using spoofed IP addresses.
+
+This advisory will be updated as additional information becomes available.
+
+Cisco will release software updates that address these vulnerabilities.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180824-linux-tcp ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180824-linux-tcp"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2">Cisco is investigating its product line to determine which products and services may be affected by these vulnerabilities. The investigation is focusing primarily on Cisco products that use Linux Kernel Version 4.9 or later or any supported version of the FreeBSD kernel. However, reports have indicated that some earlier versions of the Linux Kernel may be affected in similar ways if they are exposed to the same attack at significantly higher traffic rates. Therefore, Cisco is also evaluating the impact on these systems.
+
+The “Vulnerable Products” section of this advisory includes Cisco bug IDs for each affected product or service. The bugs are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"] and contain additional platform-specific information, including workarounds (if available) and fixed software releases.
+
+Any product or service not listed in the “Products Under  Investigation” or “Vulnerable Products” section of this advisory is to  be considered not vulnerable. Because this is an ongoing investigation,  be aware that products and services that are currently considered not  vulnerable may subsequently be considered vulnerable as additional  information becomes available.
+
+  Products Under Investigation
+The following products are under active investigation to determine whether they are affected by the vulnerability that is described in this advisory.
+  Voice and Unified Communications Devices
+
+Cisco Webex Video Mesh Node
+Cisco Webex Hybrid Data Security Node</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">The following table lists Cisco products that are affected by the Linux Kernel vulnerability that is described in this advisory:
+                                Product              Cisco Bug ID              Fixed Release Availability                                  Network and Content Security Devices                                  Cisco Threat Grid Appliance M5              CSCvk69486 ["https://tools.cisco.com/bugsearch/bug/CSCvk69486"]              2.5 (Oct-2018)                                  Routing and Switching - Enterprise and Service Provider                                  Cisco DNA Center              CSCvm34581 ["https://tools.cisco.com/bugsearch/bug/CSCvm34581"]                                                Cisco Network Assurance Engine              CSCvm34702 ["https://tools.cisco.com/bugsearch/bug/CSCvm34702"]                                                Video, Streaming, TelePresence, and Transcoding Devices                                  Cisco Expressway Series              CSCvk74922 ["https://tools.cisco.com/bugsearch/bug/CSCvk74922"]              x12.0 (Nov-2018)                                  Cisco Meeting Management              CSCvk69487 ["https://tools.cisco.com/bugsearch/bug/CSCvk69487"]              1.1.0.27 (Sept-2018)                                  Cisco TelePresence Conductor              CSCvk75754 ["https://tools.cisco.com/bugsearch/bug/CSCvk75754"]              4.3.4 MR (Nov-2018)                                  Cisco TelePresence Video Communication Server (VCS)              CSCvk74922 ["https://tools.cisco.com/bugsearch/bug/CSCvk74922"]              x12.0 (Nov-2018)
+The following table lists Cisco products that are affected by the FreeBSD vulnerability that is described in this advisory:
+                                Product              Cisco Bug ID              Fixed Release Availability                                  Network and Content Security Devices                                  Cisco Content Security Management Appliance (SMA)              CSCvk74266 ["https://tools.cisco.com/bugsearch/bug/CSCvk74266"]              12.0.0 (Nov-2018)                                  Cisco Email Security Appliance (ESA)              CSCvk74109 ["https://tools.cisco.com/bugsearch/bug/CSCvk74109"]              11.0.3 (Oct-2018)
+12.0.0 (Nov-2018)                                  Cisco Web Security Appliance (WSA)              CSCvk74112 ["https://tools.cisco.com/bugsearch/bug/CSCvk74112"]              10.1.4 (Sept-2018)
+10.5.3 (Oct-2018)
+11.5.2 (Nov-2018)
+                                  Video, Streaming, TelePresence, and Transcoding Devices                                  Cisco TelePresence MCU 5300 Series, MSE 8420              CSCvk74254 ["https://tools.cisco.com/bugsearch/bug/CSCvk74254"]                                                Cisco TelePresence MCU MSE 8510              CSCvk74254 ["https://tools.cisco.com/bugsearch/bug/CSCvk74254"]                                                Cisco TelePresence Server 7010 and MSE 8710              CSCvk74256 ["https://tools.cisco.com/bugsearch/bug/CSCvk74256"]                                                Cisco TelePresence Server on Multiparty Media 310, 320 and 820              CSCvk74256 ["https://tools.cisco.com/bugsearch/bug/CSCvk74256"]</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Only products and services listed in the “Vulnerable Products” section of this advisory are known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect the following products and services:
+  Network and Content Security Devices
+Cisco Firepower Management Center
+Video, Streaming, TelePresence, and Transcoding Devices
+Cisco TelePresence MCU 4200 Series and 4500 Series
+Cisco TelePresence Advanced Media Gateway Series</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">Any workarounds will be documented in the product-specific Cisco bugs, which are identified in the “Vulnerable Products” section of this advisory.
+
+It is important to note that exploitation of these vulnerabilities requires an attacker to establish a TCP three-way handshake with an  open TCP port on an affected device. Customers are therefore advised to use an external  firewall to allow only explicitly trusted source IP addresses to connect to open TCP ports on affected devices.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">For information about fixed software releases, consult the Cisco bugs identified in the “Vulnerable Products” section of this advisory.
+
+When considering software upgrades, customers are advised to  regularly consult the advisories for Cisco products, which are available  from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded  contain sufficient memory and confirm that current hardware and  software configurations will continue to be supported properly by the  new release. If the information is not clear, customers are advised to  contact the Cisco TAC or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any malicious use of the vulnerabilities that are described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">These vulnerabilities were reported by Juha-Matti Tilli, of the Aalto University Department of Communications and Networking, and Nokia Bell Labs.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME. CISCO EXPECTS TO UPDATE THIS DOCUMENT AS NEW INFORMATION BECOMES AVAILABLE.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180824-linux-tcp</URL>
+      <Description>Linux and FreeBSD Kernels TCP Reassembly Denial of Service Vulnerabilities Affecting Cisco Products: August 2018</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Linux Kernel TCP Reassembly Algorithm Remote Denial of Service Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Linux Kernel could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability exists because the affected software uses an inefficient TCP reassembly algorithm. An attacker could exploit this vulnerability by sending TCP packets within ongoing sessions that submit malicious input to a targeted system. A successful exploit could trigger resource-intensive time and calculation calls to the tcp_collapse_ofo_queue() and tcp_prune_ofo_queue() functions of the software, which could consume excessive CPU resources, resulting in a DoS condition.</Note>
+    </Notes>
+    <CVE>CVE-2018-5390</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the product-specific Cisco bugs, which are identified in the “Vulnerable Products” section of this advisory.
+
+It is important to note that exploitation of these vulnerabilities requires an attacker to establish a TCP three-way handshake with an  open TCP port on an affected device. Customers are therefore advised to use an external  firewall to allow only explicitly trusted source IP addresses to connect to open TCP ports on affected devices.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180824-linux-tcp</URL>
+        <Description>Linux and FreeBSD Kernels TCP Reassembly Denial of Service Vulnerabilities Affecting Cisco Products: August 2018</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>FreeBSD TCP Reassembly Denial of Service Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the TCP reassembly algorithm used by FreeBSD could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability exists because one of the data structures used by the affected software uses an inefficient algorithm to reassemble TCP segments. An attacker could exploit this vulnerability by sending TCP packets that submit malicious input to the targeted system. A successful exploit could cause excessive CPU resources to be utilized by the system, resulting in a DoS condition.</Note>
+    </Notes>
+    <CVE>CVE-2018-6922</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the product-specific Cisco bugs, which are identified in the “Vulnerable Products” section of this advisory.
+
+It is important to note that exploitation of these vulnerabilities requires an attacker to establish a TCP three-way handshake with an  open TCP port on an affected device. Customers are therefore advised to use an external  firewall to allow only explicitly trusted source IP addresses to connect to open TCP ports on affected devices.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180824-linux-tcp</URL>
+        <Description>Linux and FreeBSD Kernels TCP Reassembly Denial of Service Vulnerabilities Affecting Cisco Products: August 2018</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

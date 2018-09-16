@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>CPU Side-Channel Information Disclosure Vulnerabilities</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180104-cpusidechannel</ID>
+    </Identification>
+    <Status>Interim</Status>
+    <Version>1.31</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-01-04T22:24:26</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2018-01-04T23:26:00</Date>
+        <Description>Clarified the non-vulnerable product section.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2018-01-05T20:52:29</Date>
+        <Description>Updated Summary and Products Under Investigation, added the Vulnerable Products table with information about fixes.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2018-01-08T22:28:29</Date>
+        <Description>Updated vulnerability details and information about products under investigation and products confirmed not vulnerable. Added the Vulnerable Products table, including information about fixed release availability.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2018-01-09T20:20:13</Date>
+        <Description>Updated information about products under investigation and vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2018-01-10T21:32:05</Date>
+        <Description>Updated the summary to indicate the status of Cisco cloud services and remind administrators to control user access. Updated information about vulnerable products, products under investigation, and products confirmed not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2018-01-11T21:04:01</Date>
+        <Description>Updated information about vulnerable products, products under investigation, and products confirmed not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.7</Number>
+        <Date>2018-01-12T21:22:52</Date>
+        <Description>Updated information about vulnerable products, products under investigation, and products confirmed not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.8</Number>
+        <Date>2018-01-15T19:52:57</Date>
+        <Description>Updated information about  products under investigation and vulnerable products, including fixed release availability.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2018-01-16T22:37:34</Date>
+        <Description>Updated information about products under investigation and vulnerable products, including fixed release availability.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.10</Number>
+        <Date>2018-01-17T22:03:45</Date>
+        <Description>Updated Vulnerable Products section with fixed release availability and estimates.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.11</Number>
+        <Date>2018-01-18T22:34:03</Date>
+        <Description>Updated Summary section to provide guidance on updating underlying operating systems and hypervisors within virtual environments. Updated Affected Products sections and fixed release table.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.12</Number>
+        <Date>2018-01-19T21:04:12</Date>
+        <Description>Updated Products Under Investigation and Vulnerable Products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.13</Number>
+        <Date>2018-01-22T20:45:55</Date>
+        <Description>Updated Products Under Investigation and Vulnerable Products sections.  Removed UCS M5 server firmware release date.  The UCS M5 BIOS updates have been removed from cisco.com at this time.  Customers are advised to wait for the next revision of these updates before updating their devices.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.14</Number>
+        <Date>2018-01-24T21:06:03</Date>
+        <Description>Updated Products Under Investigation and Vulnerable Products sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.15</Number>
+        <Date>2018-01-26T17:23:15</Date>
+        <Description>Updated Vulnerable Products section.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.16</Number>
+        <Date>2018-01-30T20:21:50</Date>
+        <Description>Updated Vulnerable and Confirmed Not Vulnerable sections.  Cisco Industrial Ethernet 4000 devices moved to Confirmed Not Vulnerable section.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.17</Number>
+        <Date>2018-02-05T20:55:19</Date>
+        <Description>Updated Vulnerable Products table.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.18</Number>
+        <Date>2018-02-07T19:48:53</Date>
+        <Description>Updated Vulnerable Products Table with fiximelines on a number of products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.19</Number>
+        <Date>2018-02-07T22:16:45</Date>
+        <Description>Updated Vulnerable Products Table Fix information for E-Series servers.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.20</Number>
+        <Date>2018-03-01T21:13:58</Date>
+        <Description>Updated Vulnerable Products table with estimated availability dates for the delivery of fixed software for multiple products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.21</Number>
+        <Date>2018-03-07T21:57:52</Date>
+        <Description>Updated Vulnerable Products table with estimated availability dates for the delivery of fixed software for Cisco UCS Servers.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.22</Number>
+        <Date>2018-03-20T22:32:23</Date>
+        <Description>Updated Vulnerable Products table with version information and estimated availability dates for the delivery of fixed software for Cisco UCS Servers.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.23</Number>
+        <Date>2018-04-09T19:33:18</Date>
+        <Description>Updated Vulnerable Products table with fixed version information for UCS M2, M3, and additional M4 models.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.24</Number>
+        <Date>2018-05-15T17:10:59</Date>
+        <Description>Updated Vulnerable Products table with fixed version information for multiple products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.25</Number>
+        <Date>2018-05-22T18:30:08</Date>
+        <Description>Updated Vulnerable Products table with fixed version information for multiple products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.26</Number>
+        <Date>2018-06-05T18:00:09</Date>
+        <Description>Updated Vulnerable Products table with fixed version information for multiple products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.27</Number>
+        <Date>2018-06-08T18:55:52</Date>
+        <Description>Updated Vulnerable Products table with fixed version information for multiple products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.28</Number>
+        <Date>2018-06-13T18:39:34</Date>
+        <Description>Updated Vulnerable Products table with fixed version information for multiple products.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.29</Number>
+        <Date>2018-06-22T18:11:46</Date>
+        <Description>Updated Vulnerable Products table with fixed version information for multiple products. Added second defect for a selection of IOS XE-based products to cover independent fixes of Spectre and Meltdown issues.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.30</Number>
+        <Date>2018-06-27T21:00:41</Date>
+        <Description>Updated Vulnerable Products table with fixed version information for UCS E-Series M2 Servers.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.31</Number>
+        <Date>2018-07-06T21:11:04</Date>
+        <Description>Updated Vulnerable Products table with fixed version information for multiple products.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-01-04T22:20:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-07-06T21:11:04</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">On January 3, 2018, researchers disclosed three vulnerabilities that take advantage of the implementation of speculative execution of instructions on many modern microprocessor architectures to perform side-channel information disclosure attacks. These vulnerabilities could allow an unprivileged local attacker, in specific circumstances, to read privileged memory belonging to other processes or memory allocated to  the operating system kernel.
+
+The first two vulnerabilities, CVE-2017-5753 and CVE-2017-5715,  are collectively known as Spectre. The third vulnerability, CVE-2017-5754, is known as Meltdown. The vulnerabilities are all variants of the same attack and differ in the way that speculative execution is exploited.
+
+To exploit any of these vulnerabilities, an attacker must be able to run crafted code on an affected device. Although the underlying CPU and operating system combination in a product or service may be affected by these vulnerabilities, the majority of Cisco products are closed systems that do not allow customers to run custom code and are, therefore, not vulnerable. There is no vector to exploit them. Cisco products are considered potentially vulnerable only if they allow customers to execute custom code side-by-side with Cisco code on the same microprocessor.
+
+A Cisco product that may be deployed as a virtual machine or a container, even while not directly affected by any of these vulnerabilities, could be targeted by such attacks if the hosting environment is vulnerable. Cisco recommends that customers harden their virtual environments, tightly control user access, and ensure that all security updates are installed. Customers who are deploying products as a virtual device in multi-tenant hosting environments should ensure that the underlying hardware, as well as operating system or hypervisor, is patched against the vulnerabilities in question.
+
+Although Cisco cloud services are not directly affected by these vulnerabilities, the infrastructure on which they run may be impacted. Refer to the “Affected Products” section of this advisory for information about the impact of these vulnerabilities on Cisco cloud services.
+
+Cisco will release software updates that address these vulnerabilities.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180104-cpusidechannel ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180104-cpusidechannel"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2">Cisco is investigating its product line to determine which products and cloud services may be affected by these vulnerabilities. As the investigation progresses, Cisco will update this advisory with information about affected products and services, including the Cisco bug ID for each affected product or service.
+
+Any product or service not listed in the “Products Under Investigation” or “Vulnerable Products” section of this advisory is to be considered not vulnerable. The criteria for considering whether a product is vulnerable is explained in the “Summary” section of this advisory. Because this is an ongoing investigation, please be aware that products and services currently considered not vulnerable may subsequently be considered vulnerable as additional information becomes available.
+
+Products Under Investigation
+No products are currently under active investigation to determine whether they are affected by the vulnerability that is described in this advisory.</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">The following table lists Cisco products and cloud services that are affected by the vulnerabilities described in this advisory:
+                                Product              Cisco Bug ID              Fixed Release Availability                                  Network Application, Service, and Acceleration                                  Cisco Cloud Services Platform 2100              CSCvh32644 ["https://tools.cisco.com/bugsearch/bug/CSCvh32644"]              Consult the Cisco bug ID for details                                  Cisco Network Functions Virtualization Infrastructure Software              CSCvh49919 ["https://tools.cisco.com/bugsearch/bug/CSCvh49919"]              Consult the Cisco bug ID for details                                  Cisco Nexus 3000 Series Switches              CSCvh32392 ["https://tools.cisco.com/bugsearch/bug/CSCvh32392"]              Consult the Cisco bug ID for details                                  Cisco Nexus 9000 Series Switches - Standalone, NX-OS mode              CSCvh32392 ["https://tools.cisco.com/bugsearch/bug/CSCvh32392"]              Consult the Cisco bug ID for details                                  Cisco Wide Area Application Services (WAAS)              CSCvh49646 ["https://tools.cisco.com/bugsearch/bug/CSCvh49646"]              Update to v6.x (Available)                                  Cisco vBond Orchestrator              —              18.2 (Available)                                  Cisco vEdge 5000              —              18.2 (Available)                                  Cisco vEdge Cloud              —              18.2 (Available)                                  Cisco vManage NMS              —                                                Cisco vSmart Controller              —              18.2 (Available)                                  Network Management and Provisioning                                  Cisco Application Policy Infrastructure Controller (APIC)              CSCvh58549 ["https://tools.cisco.com/bugsearch/bug/CSCvh58549"]              3.2(1l) (Available)                                  Cisco Evolved Programmable Network Manager              CSCvh64005 ["https://tools.cisco.com/bugsearch/bug/CSCvh64005"]              Consult the Cisco bug ID for details                                  Cisco Virtual Application Policy Infrastructure Controller (APIC)              CSCvh58549 ["https://tools.cisco.com/bugsearch/bug/CSCvh58549"]              3.2(1l) (Available)                                  Routing and Switching - Enterprise and Service Provider                                  Cisco 4000 Series Integrated Services Routers (IOS XE Open Service Containers) - Meltdown              CSCvh32416 ["https://tools.cisco.com/bugsearch/bug/CSCvh32416"]              16.3.7 (June-2018)                                  Cisco 4000 Series Integrated Services Routers (IOS XE Open Service Containers) - Spectre v1, v2, v3              CSCvj59152 ["https://tools.cisco.com/bugsearch/bug/CSCvj59152"]              A fix is pending on upstream vendors                                  Cisco 800 Industrial Integrated Services Routers (IOx feature)              CSCvh31418 ["https://tools.cisco.com/bugsearch/bug/CSCvh31418"]              Consult the Cisco bug ID for details                                  Cisco ASR 1000 Series Aggregation Services Router with RP2 or RP3 (IOS XE Open Service Containers) - Meltdown              CSCvh32416 ["https://tools.cisco.com/bugsearch/bug/CSCvh32416"]              16.3.7 (June-2018)                                  Cisco ASR 1000 Series Aggregation Services Router with RP2 or RP3 (IOS XE Open Service Containers) - Spectre v1, v2, v3              CSCvj59152 ["https://tools.cisco.com/bugsearch/bug/CSCvj59152"]              A fix is pending on upstream vendors                                  Cisco ASR 1001-HX Series Aggregation Services Routers (IOS XE Open Service Containers) - Meltdown              CSCvh32416 ["https://tools.cisco.com/bugsearch/bug/CSCvh32416"]              16.3.7 (June-2018)                                  Cisco ASR 1001-HX Series Aggregation Services Routers (IOS XE Open Service Containers) - Spectre v1, v2, v3              CSCvj59152 ["https://tools.cisco.com/bugsearch/bug/CSCvj59152"]              A fix is pending on upstream vendors                                  Cisco ASR 1001-X Series Aggregation Services Routers (IOS XE Open Service Containers) - Meltdown              CSCvh32416 ["https://tools.cisco.com/bugsearch/bug/CSCvh32416"]              16.3.7 (June-2018)                                  Cisco ASR 1001-X Series Aggregation Services Routers (IOS XE Open Service Containers) - Spectre v1, v2, v3              CSCvj59152 ["https://tools.cisco.com/bugsearch/bug/CSCvj59152"]              A fix is pending on upstream vendors                                  Cisco ASR 1002-HX Series Aggregation Services Routers (IOS XE Open Service Containers) - Meltdown              CSCvh32416 ["https://tools.cisco.com/bugsearch/bug/CSCvh32416"]              16.3.7 (June-2018)                                  Cisco ASR 1002-HX Series Aggregation Services Routers (IOS XE Open Service Containers) - Spectre v1, v2, v3              CSCvj59152 ["https://tools.cisco.com/bugsearch/bug/CSCvj59152"]              A fix is pending on upstream vendors                                  Cisco ASR 1002-X Series Aggregation Services Routers (IOS XE Open Service Containers) - Meltdown              CSCvh32416 ["https://tools.cisco.com/bugsearch/bug/CSCvh32416"]              16.3.7 (June-2018)                                  Cisco ASR 1002-X Series Aggregation Services Routers (IOS XE Open Service Containers) - Spectre v1, v2, v3              CSCvj59152 ["https://tools.cisco.com/bugsearch/bug/CSCvj59152"]              A fix is pending on upstream vendors                                  Cisco ASR 9000 XR 64-bit Series Routers              CSCvh32429 ["https://tools.cisco.com/bugsearch/bug/CSCvh32429"]              Consult the Cisco bug ID for details                                  Cisco CGR 1000 Compute Module (IOx feature)              CSCvh32516 ["https://tools.cisco.com/bugsearch/bug/CSCvh32516"]              Consult the Cisco bug ID for details                                  Cisco Catalyst 9300 Series Switches (Open Service Container or IOx feature)              CSCvh44164 ["https://tools.cisco.com/bugsearch/bug/CSCvh44164"]              16.6.3
+16.7.2
+16.8.1
+16.9.1
+(June - 2018)
+                                  Cisco Catalyst 9400 Series Switches (Open Service Container or IOx feature)              CSCvh44165 ["https://tools.cisco.com/bugsearch/bug/CSCvh44165"]              16.6.3
+16.7.2
+16.8.1
+16.9.1
+(June - 2018)                                  Cisco Catalyst 9500 Series Switches (Open Service Container or IOx feature)              CSCvh44166 ["https://tools.cisco.com/bugsearch/bug/CSCvh44166"]              16.6.3
+16.7.2
+16.8.1
+16.9.1
+(June -2018)                                  Cisco Cloud Services Router 1000V Series (IOS XE Open Service Containers) - Meltdown              CSCvh32416 ["https://tools.cisco.com/bugsearch/bug/CSCvh32416"]              16.3.7 (June-2018)                                  Cisco Cloud Services Router 1000V Series (IOS XE Open Service Containers) - Spectre v1, v2, v3              CSCvj59152 ["https://tools.cisco.com/bugsearch/bug/CSCvj59152"]              A fix is pending on upstream vendors                                  Cisco NCS 1000 Series Routers              CSCvh32429 ["https://tools.cisco.com/bugsearch/bug/CSCvh32429"]              Consult the Cisco bug ID for details                                  Cisco NCS 5000 Series Routers              CSCvh32429 ["https://tools.cisco.com/bugsearch/bug/CSCvh32429"]              Consult the Cisco bug ID for details                                  Cisco NCS 5500 Series Routers              CSCvh32429 ["https://tools.cisco.com/bugsearch/bug/CSCvh32429"]              Consult the Cisco bug ID for details                                  Cisco Nexus 3500 Series Switches              CSCvh32393 ["https://tools.cisco.com/bugsearch/bug/CSCvh32393"]              No fix expected                                  Cisco Nexus 5000 Series Switches (OAC feature)              CSCvh32394 ["https://tools.cisco.com/bugsearch/bug/CSCvh32394"]              Consult the Cisco bug ID for details                                  Cisco Nexus 6000 Series Switches (OAC feature)              CSCvh32390 ["https://tools.cisco.com/bugsearch/bug/CSCvh32390"]              Consult the Cisco bug ID for details                                  Cisco Nexus 7000 Series Switches (OAC feature, Feature Bash)              CSCvh32390 ["https://tools.cisco.com/bugsearch/bug/CSCvh32390"]              Consult the Cisco bug ID for details                                  Cisco XRv 9000 Series Routers              CSCvh32429 ["https://tools.cisco.com/bugsearch/bug/CSCvh32429"]              Consult the Cisco bug ID for details                                  Cisco c800 Series Integrated Services Routers (IOx feature)              CSCvh51582 ["https://tools.cisco.com/bugsearch/bug/CSCvh51582"]              Consult the Cisco bug ID for details                                  Unified Computing                                  Cisco C880 M4 Server              CSCvh66783 ["https://tools.cisco.com/bugsearch/bug/CSCvh66783"]              Consult the Cisco bug ID for details                                  Cisco C880 M5 Server              CSCvh66783 ["https://tools.cisco.com/bugsearch/bug/CSCvh66783"]              Consult the Cisco bug ID for details                                  Cisco Enterprise Network Compute System 5100 Series Servers              CSCvh48274 ["https://tools.cisco.com/bugsearch/bug/CSCvh48274"]              UCS E-Series M2 Servers - Single-wide: v1.5.0.7
+UCS E-Series M2 Servers - Double-wide: v2.5.0.5
+UCS E-Series M3 Servers - Consult the Cisco Bug ID for details                                  Cisco Enterprise Network Compute System 5400 Series Servers              CSCvh48274 ["https://tools.cisco.com/bugsearch/bug/CSCvh48274"]              UCS E-Series M2 Servers - Single-wide: v1.5.0.7
+UCS E-Series M2 Servers - Double-wide: v2.5.0.5
+UCS E-Series M3 Servers - Consult the Cisco Bug ID for details                                  Cisco HyperFlex with VMWare Hypervisor              CSCvh68612 ["https://tools.cisco.com/bugsearch/bug/CSCvh68612"]              HX 2.5.1d
+HX 2.6.1d
+HX 3.0.1a
+(Available)                                  Cisco UCS B-Series M2 Blade Servers              CSCvh31576 ["https://tools.cisco.com/bugsearch/bug/CSCvh31576"]              UCS B-Series M2 Blade Servers - UCS Manager 2.2(8j) (Apr-2018)
+UCS Manager 3.1(3h) (May-2018)
+UCS Manager 3.2(3b) (May-2018)
+UCS C-Series M2 Rack Servers -UCS Manager 2.2(8j) (Apr-2018)
+IMC 1.4(3z08) (Apr-2018) / 1.5(9e) (Apr-2018)
+                                  Cisco UCS B-Series M3 Blade Servers              CSCvg97965 ["https://tools.cisco.com/bugsearch/bug/CSCvg97965"]              UCS B-Series M3 Blade Servers
+3.2(3a)(Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS C-Series M3 Rack Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+UCS Manager 2.2(8j) (Apr-2018)
+IMC 3.0(4a) (Mar-2018)
+IMC 2.0(9n) (Apr-2018)
+                                  Cisco UCS B-Series M4 Blade Servers (except B260, B460)              CSCvg97979 ["https://tools.cisco.com/bugsearch/bug/CSCvg97979"]              UCS B-Series M4 Blade Servers (except B260
+B460)
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS C-Series M4 Rack Servers (except C460)
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+IMC 3.0(4a) (Mar-2018)
+IMC 2.0(10i) (Apr-2018)
+UCS S3260 M4 Storage Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+IMC 3.0(4a) (Mar-2018)
+                                  Cisco UCS B-Series M5 Blade Servers              CSCvh31577 ["https://tools.cisco.com/bugsearch/bug/CSCvh31577"]              UCS B-Series M5 Blade Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+UCS C-Series M5 Rack Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+IMC 3.1(3a) (Mar-2018)
+                                  Cisco UCS B260 M4 Blade Server              CSCvg98015 ["https://tools.cisco.com/bugsearch/bug/CSCvg98015"]              UCS B260 M4 Blade Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS B460 M4 Blade Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS C460 M4 Rack Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+                                  Cisco UCS B460 M4 Blade Server              CSCvg98015 ["https://tools.cisco.com/bugsearch/bug/CSCvg98015"]              UCS B260 M4 Blade Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS B460 M4 Blade Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS C460 M4 Rack Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+                                  Cisco UCS C-Series M2 Rack Servers              CSCvh31576 ["https://tools.cisco.com/bugsearch/bug/CSCvh31576"]              UCS B-Series M2 Blade Servers - UCS Manager 2.2(8j) (Apr-2018)
+UCS Manager 3.1(3h) (May-2018)
+UCS Manager 3.2(3b) (May-2018)
+UCS C-Series M2 Rack Servers -UCS Manager 2.2(8j) (Apr-2018)
+IMC 1.4(3z08) (Apr-2018) / 1.5(9e) (Apr-2018)
+                                  Cisco UCS C-Series M3 Rack Servers              CSCvg97965 ["https://tools.cisco.com/bugsearch/bug/CSCvg97965"]              UCS B-Series M3 Blade Servers
+3.2(3a)(Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS C-Series M3 Rack Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+UCS Manager 2.2(8j) (Apr-2018)
+IMC 3.0(4a) (Mar-2018)
+IMC 2.0(9n) (Apr-2018)
+                                  Cisco UCS C-Series M4 Rack Servers (except C460) 1              CSCvg97979 ["https://tools.cisco.com/bugsearch/bug/CSCvg97979"]              UCS B-Series M4 Blade Servers (except B260
+B460)
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS C-Series M4 Rack Servers (except C460)
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+IMC 3.0(4a) (Mar-2018)
+IMC 2.0(10i) (Apr-2018)
+UCS S3260 M4 Storage Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+IMC 3.0(4a) (Mar-2018)
+                                  Cisco UCS C-Series M5 Rack Servers 1              CSCvh31577 ["https://tools.cisco.com/bugsearch/bug/CSCvh31577"]              UCS B-Series M5 Blade Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+UCS C-Series M5 Rack Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+IMC 3.1(3a) (Mar-2018)
+                                  Cisco UCS C460 M4 Rack Server              CSCvg98015 ["https://tools.cisco.com/bugsearch/bug/CSCvg98015"]              UCS B260 M4 Blade Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS B460 M4 Blade Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS C460 M4 Rack Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+                                  Cisco UCS E-Series M2 Servers              CSCvh48274 ["https://tools.cisco.com/bugsearch/bug/CSCvh48274"]              UCS E-Series M2 Servers - Single-wide: v1.5.0.7
+UCS E-Series M2 Servers - Double-wide: v2.5.0.5
+UCS E-Series M3 Servers - Consult the Cisco Bug ID for details                                  Cisco UCS E-Series M3 Servers              CSCvh48274 ["https://tools.cisco.com/bugsearch/bug/CSCvh48274"]              UCS E-Series M2 Servers - Single-wide: v1.5.0.7
+UCS E-Series M2 Servers - Double-wide: v2.5.0.5
+UCS E-Series M3 Servers - Consult the Cisco Bug ID for details                                  Cisco UCS M-Series Modular Servers              CSCvh55760 ["https://tools.cisco.com/bugsearch/bug/CSCvh55760"]              No fix expected                                  Cisco UCS S3260 M4 Storage Server              CSCvg97979 ["https://tools.cisco.com/bugsearch/bug/CSCvg97979"]              UCS B-Series M4 Blade Servers (except B260
+B460)
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+UCS C-Series M4 Rack Servers (except C460)
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+2.2(8j) (Apr-2018)
+IMC 3.0(4a) (Mar-2018)
+IMC 2.0(10i) (Apr-2018)
+UCS S3260 M4 Storage Servers
+3.2(3a) (Mar-2018)
+3.2(2f) (Mar-2018)
+3.1(3f) (Mar-2018)
+IMC 3.0(4a) (Mar-2018)
+                                  Voice and Unified Communications Devices                                  Cisco Remote Expert Mobile              CSCvh58132 ["https://tools.cisco.com/bugsearch/bug/CSCvh58132"]              11.6(1)ES3 11.5(1)ES8 (Available)                                  Wireless                                  Cisco Wireless Gateway for LoRaWAN              CSCvh58504 ["https://tools.cisco.com/bugsearch/bug/CSCvh58504"]              Consult the Cisco bug ID for details                                  Cisco Cloud Hosted Services                                  Cisco Metacloud              CSCvh53992 ["https://tools.cisco.com/bugsearch/bug/CSCvh53992"]              Meltdown and Spectre variant 1 (v4.7) (Feb-2018)
+Spectre variant 2 (Apr-2018)
+                                  Cisco Threat Grid              —              v2.4.3 (Available)
+  1 Cisco UCS M4 and M5 Rack Servers are used as part of the Cisco HyperFlex Solution.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">No other Cisco products or cloud services are currently known to be affected by these vulnerabilities.
+
+Cisco has confirmed that these vulnerabilities do not affect the following products or cloud services:
+
+Collaboration and Social Media
+
+Cisco Meeting Server
+Network Application, Service, and Acceleration
+
+Cisco vEdge 1000
+Cisco vEdge 100
+Cisco vEdge 2000
+Routing and Switching - Enterprise and Service Provider
+
+Cisco 1000 Series Connected Grid Routers
+Cisco 500 Series WPAN Industrial Routers (IOx feature)
+Cisco ASR 1001 Fixed Configuration Aggregation Services Router
+Cisco ASR 1002 Fixed Configuration Aggregation Services Router
+Cisco ASR 1002-F Fixed Configuration Aggregation Services Router
+Cisco Catalyst 3650 Series Switches
+Cisco Catalyst 3850 Series Switches
+Cisco Industrial Ethernet 4000 Series Switches (IOx feature)
+Cisco Nexus 4000 Series Blade Switches
+Cisco Nexus 9000 Series Fabric Switches - ACI mode
+Cisco Cloud Hosted Services
+
+Cisco Cloudlock
+Cisco Managed Services
+Cisco Meraki
+Cisco Spark
+Cisco Umbrella
+Cisco WebEx Centers - Meeting Center, Training Center, Event Center, Support Center</Note>
+    <Note Title="Details" Type="General" Ordinal="5">Details about the vulnerabilities are as follows.
+
+Modern CPU Process Prediction Information Disclosure Vulnerability
+
+A vulnerability due to the design of most modern CPUs could allow a local attacker to access sensitive information on a targeted system.
+
+The vulnerability is due to improper implementation of the speculative execution of instructions by the affected software. This vulnerability can by triggered by utilizing branch target injection. An attacker could exploit this vulnerability by executing arbitrary code and performing a side-channel attack on a targeted system. A successful exploit could allow the attacker to read sensitive memory information.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-5715
+
+Modern CPU Process Branch Prediction Information Disclosure Vulnerability
+
+A vulnerability due to the design of most modern CPUs could allow a local attacker to access sensitive information on a targeted system.
+
+The vulnerability is due to improper implementation of the speculative execution of instructions by the affected software. This vulnerability can by triggered by performing a bounds check bypass. An attacker could exploit this vulnerability by executing arbitrary code and performing a side-channel attack on a targeted system. A successful exploit could allow the attacker to read sensitive memory information.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-5753
+
+Intel CPU Indirect Branch Prediction Information Disclosure Vulnerability
+
+A vulnerability in Intel CPU hardware could allow a local attacker to gain access to sensitive information on a targeted system.
+
+The vulnerability is due to side-channel attacks, which are also referred to as Meltdown attacks. A local attacker could exploit this vulnerability by executing arbitrary code on the affected system. A successful exploit could allow the attacker to gain access to sensitive information on the targeted system, including accessing memory from the CPU cache.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-5754</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">Any workarounds will be documented in the product-specific Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">For information about fixed software releases, consult the Cisco bugs identified in the “Vulnerable Products” section of this advisory.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The vulnerabilities described in this advisory were discussed in several articles and discussion forums as of January 3, 2018.
+
+The Cisco Product Security Incident Response Team (PSIRT) is not aware of any malicious use of the vulnerabilities that are described in this advisory.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME. CISCO EXPECTS TO UPDATE THIS DOCUMENT AS NEW INFORMATION BECOMES AVAILABLE.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180104-cpusidechannel</URL>
+      <Description>CPU Side-Channel Information Disclosure Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>https://tools.cisco.com/security/center/viewAlert.x?alertId=56354</URL>
+      <Description>CPU Side-Channel Information Disclosure Vulnerabilities</Description>
+    </Reference>
+    <Reference>
+      <URL>https://tools.cisco.com/security/center/viewAlert.x?alertId=56354</URL>
+      <Description>CPU Side-Channel Information Disclosure Vulnerabilities</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Intel CPU Indirect Branch Prediction Information Disclosure Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Intel CPU hardware could allow a local attacker to gain access to sensitive information on a targeted system.
+
+
+
+The vulnerability is due to side-channel attacks, which are also referred to as Meltdown attacks. A local attacker could exploit this vulnerability by executing arbitrary code on the affected system. A successful exploit could allow the attacker to gain access to sensitive information on the targeted system, including accessing memory from the CPU cache.</Note>
+    </Notes>
+    <CVE>CVE-2017-5754</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the product-specific Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180104-cpusidechannel</URL>
+        <Description>CPU Side-Channel Information Disclosure Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Modern CPU Process Branch Prediction Information Disclosure Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability due to the design of most modern CPUs could allow a local attacker to access sensitive information on a targeted system.
+
+
+
+The vulnerability is due to improper implementation of the speculative execution of instructions by the affected software. This vulnerability can by triggered by performing a bounds check bypass. An attacker could exploit this vulnerability by executing arbitrary code and performing a side-channel attack on a targeted system. A successful exploit could allow the attacker to read sensitive memory information.</Note>
+    </Notes>
+    <CVE>CVE-2017-5753</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the product-specific Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180104-cpusidechannel</URL>
+        <Description>CPU Side-Channel Information Disclosure Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Modern CPU Process Prediction Information Disclosure Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability due to the design of most modern CPUs could allow a local attacker to access sensitive information on a targeted system.
+
+
+
+The vulnerability is due to improper implementation of the speculative execution of instructions by the affected software. This vulnerability can by triggered by utilizing branch target injection. An attacker could exploit this vulnerability by executing arbitrary code and performing a side-channel attack on a targeted system. A successful exploit could allow the attacker to read sensitive memory information.</Note>
+    </Notes>
+    <CVE>CVE-2017-5715</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds will be documented in the product-specific Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180104-cpusidechannel</URL>
+        <Description>CPU Side-Channel Information Disclosure Vulnerabilities</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco IOS XE Software Authentication, Authorization, and Accounting Login Authentication Remote Code Execution Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180606-aaa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-06-06T14:04:32</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2018-06-08T13:55:30</Date>
+        <Description>Added that this vulnerability can be exploited via IPv4 or IPv6. Specified where to configure the vty ACLs and added details for use of the no exec command.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-06-06T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-06-08T13:55:30</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the authentication, authorization, and accounting (AAA) security services of Cisco IOS XE Software could allow an unauthenticated, remote attacker to execute arbitrary code on an affected device or cause an affected device to reload, resulting in a denial of service (DoS) condition.
+
+The vulnerability is due to incorrect memory operations that the affected software performs when the software parses a username during login authentication. An attacker could exploit this vulnerability by attempting to authenticate to an affected device. A successful exploit could allow the attacker to execute arbitrary code on the affected device or cause the affected device to reload, resulting in a DoS condition.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-aaa ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-aaa"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2" />
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">This vulnerability affects Cisco devices that are running Cisco IOS XE Software Release Fuji 16.7.1 or Fuji 16.8.1 and are configured to use AAA for login authentication.
+  Checking the AAA Configuration
+To determine whether a device is configured to use AAA for login authentication, administrators can log in to the device and use the show running-config | include aaa authentication login command in the CLI, as shown in the following example:
+
+
+Router# show running-config | include aaa authentication login
+  aaa authentication login default local  Router#
+
+If the device is configured to use AAA for login authentication, the output of the command will include the aaa authentication login command and the configuration values for the name of the authentication list (default in the preceding example) and the authentication method (local in the preceding example).
+
+If the show running-config | include aaa authentication login command does not return any output, the device is not configured to use AAA for login authentication.
+  Determining the Cisco IOS XE Software Release
+To determine which Cisco IOS XE Software release is running on a device, administrators can log in to the device, use the show version command in the CLI, and then refer to the system banner that appears. If the device is running Cisco IOS XE Software, the system banner displays Cisco IOS Software, Cisco IOS XE Software, or similar text.
+
+The following example shows the output of the command for a device that is running Cisco IOS XE Software Release 16.2.1 and has an installed image name of CAT3K_CAA-UNIVERSALK9-M:
+
+
+ios-xe-device# show version
+  Cisco IOS Software, Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version Denali 16.2.1, RELEASE SOFTWARE (fc1)  Technical Support: http://www.cisco.com/techsupport  Copyright (c) 1986-2016 by Cisco Systems, Inc.  Compiled Sun 27-Mar-16 21:47 by mcpre  .  .  .
+
+For information about the naming and numbering conventions for Cisco IOS XE Software releases, see the Cisco IOS and NX-OS Software Reference Guide ["https://www.cisco.com/c/en/us/about/security-center/ios-nx-os-reference-guide.html"].</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Only products listed in the Vulnerable Products ["#vp"] section of this advisory are known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect any other releases of Cisco IOS XE Software. Cisco has also confirmed that this vulnerability does not affect Cisco IOS Software, Cisco IOS XR Software, or Cisco NX-OS Software.</Note>
+    <Note Title="Details" Type="General" Ordinal="5">This vulnerability affects AAA login authentication that is applied to any supported tty lines, including console port (CTY) lines, auxiliary (AUX) port lines, virtual terminal (VTY) lines, and asynchronous tty (TTY) lines.
+
+This vulnerability can be exploited via IPv4 or IPv6.
+
+This vulnerability does not affect login authentication to the web UI of the affected software.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">There are no workarounds that address this vulnerability. However, administrators may limit the exposure of a device by limiting administration sessions to the device.
+
+By applying a vty access class that permits only known, trusted devices to connect to the device, administrators can help ensure that only trusted sources can access a device via vty.
+
+The following example shows a vty access class that permits vty access to a device from the 192.168.1.0/24 netblock and the IP address 172.16.1.2, and denies vty access from everywhere else:
+
+
+Router(config)# access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)# access-list 1 permit host 172.16.1.2  Router(config)# line vty 0 4  Router(config-line)# access-class 1 in
+
+For console ports or auxiliary ports that are connected via a terminal server connection, ensure that the vty access class is configured on the terminal server. For console ports or auxiliary ports that are not connected or not used, issue the no exec command on the line to prevent access to that port, as shown in the following example:
+
+
+Router(config)# line aux 0
+Router(config-line)# no exec
+
+Because different Cisco platforms support different numbers of terminal lines, administrators should check the device configuration to determine the correct number of terminal lines for the platform.
+
+For detailed information about restricting traffic to a device via a vty line, see the Telnet, Console and AUX Port Passwords on Cisco Routers Configuration Example ["https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-software-releases-110/45843-configpasswords.html"].</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+  Fixed Releases
+This vulnerability is fixed in Cisco IOS XE Software Releases Fuji 16.7.2, Fuji 16.8.1c, and Fuji 16.8.1s.
+
+This vulnerability will be fixed in Cisco IOS XE Software Release Fuji 16.9.1, which is expected to be released in July 2018, and Cisco IOS XE Software Release Fuji 16.8.2, which is expected to be released in September 2018.
+  Cisco IOS and IOS XE Software
+To help customers determine their exposure to vulnerabilities in Cisco IOS and IOS XE Software, Cisco provides a tool, the Cisco IOS Software Checker ["http://tools.cisco.com/security/center/selectIOSVersion.x"], that identifies any Cisco Security Advisories that impact a specific software release and the earliest release that fixes the vulnerabilities described in each advisory (“First Fixed”). If applicable, the tool also returns the earliest release that fixes all the vulnerabilities described in all the advisories identified (“Combined First Fixed”).
+
+Customers can use this tool to perform the following tasks:
+
+Initiate a search by choosing one or more releases from a drop-down menu or uploading a file from a local system for the tool to parse
+Enter the output of the show version command for the tool to parse
+Create a custom search by including all previously published Cisco Security Advisories, a specific advisory, or all advisories in the most recent bundled publication
+
+To determine whether a release is affected by any published Cisco Security Advisory, use the Cisco IOS Software Checker ["http://tools.cisco.com/security/center/selectIOSVersion.x"] on Cisco.com or enter a Cisco IOS Software or Cisco IOS XE Software release—for example, 15.1(4)M2 or 3.1.4S—in the following field:</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was found during the resolution of a Cisco TAC support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-aaa</URL>
+      <Description>Cisco IOS XE Software Authentication, Authorization, and Accounting Login Authentication Remote Code Execution Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco IOS XE Software" Type="Product Name">
+        <Branch Name="16.7" Type="Product Version">
+          <Branch Name="16.7.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-218903">Cisco IOS XE Software 16.7 16.7.1</FullProductName>
+          </Branch>
+          <Branch Name="16.7.1a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-231389">Cisco IOS XE Software 16.7 16.7.1a</FullProductName>
+          </Branch>
+          <Branch Name="16.7.1b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232767">Cisco IOS XE Software 16.7 16.7.1b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.8" Type="Product Version">
+          <Branch Name="16.8.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-218905">Cisco IOS XE Software 16.8 16.8.1</FullProductName>
+          </Branch>
+          <Branch Name="16.8.1a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-235307">Cisco IOS XE Software 16.8 16.8.1a</FullProductName>
+          </Branch>
+          <Branch Name="16.8.1b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-235858">Cisco IOS XE Software 16.8 16.8.1b</FullProductName>
+          </Branch>
+        </Branch>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco IOS XE Software Authentication, Authorization, and Accounting Login Authentication Remote Code Execution Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvi25380</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the authentication, authorization, and accounting (AAA) security services of Cisco IOS XE Software could allow an unauthenticated, remote attacker to execute arbitrary code on an affected device or cause an affected device to reload, resulting in a denial of service (DoS) condition.
+
+The vulnerability is due to incorrect memory operations that the affected software performs when the software parses a username during login authentication. An attacker could exploit this vulnerability by attempting to authenticate to an affected device. A successful exploit could allow the attacker to execute arbitrary code on the affected device or cause the affected device to reload, resulting in a DoS condition.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvi25380</Note>
+    </Notes>
+    <CVE>CVE-2018-0315</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-218903</ProductID>
+        <ProductID>CVRFPID-218905</ProductID>
+        <ProductID>CVRFPID-231389</ProductID>
+        <ProductID>CVRFPID-232767</ProductID>
+        <ProductID>CVRFPID-235307</ProductID>
+        <ProductID>CVRFPID-235858</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>9.8</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability. However, administrators may limit the exposure of a device by limiting administration sessions to the device.
+
+By applying a vty access class that permits only known, trusted devices to connect to the device, administrators can help ensure that only trusted sources can access a device via vty.
+
+The following example shows a vty access class that permits vty access to a device from the 192.168.1.0/24 netblock and the IP address 172.16.1.2, and denies vty access from everywhere else:
+
+
+Router(config)# access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)# access-list 1 permit host 172.16.1.2  Router(config)# line vty 0 4  Router(config-line)# access-class 1 in
+
+For console ports or auxiliary ports that are connected via a terminal server connection, ensure that the vty access class is configured on the terminal server. For console ports or auxiliary ports that are not connected or not used, issue the no exec command on the line to prevent access to that port, as shown in the following example:
+
+
+Router(config)# line aux 0
+Router(config-line)# no exec
+
+Because different Cisco platforms support different numbers of terminal lines, administrators should check the device configuration to determine the correct number of terminal lines for the platform.
+
+For detailed information about restricting traffic to a device via a vty line, see the Telnet, Console and AUX Port Passwords on Cisco Routers Configuration Example ["https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-software-releases-110/45843-configpasswords.html"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180606-aaa</URL>
+        <Description>Cisco IOS XE Software Authentication, Authorization, and Accounting Login Authentication Remote Code Execution Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

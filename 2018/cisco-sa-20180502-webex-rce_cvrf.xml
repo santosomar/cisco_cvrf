@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco WebEx Advanced Recording Format Player Remote Code Execution Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180502-webex-rce</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-05-01T16:53:33</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-05-02T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-05-01T16:53:33</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Cisco WebEx Network Recording Player for Advanced Recording Format (ARF) files could allow an unauthenticated, remote attacker to execute arbitrary code on an affected system.
+
+The vulnerability is due to a design flaw in the affected software. An attacker could exploit this vulnerability by sending a user an email attachment or link to a malicious ARF file and persuading the user to open the file or follow the link. A successful exploit could allow the attacker to execute arbitrary code on the user’s system.
+
+There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180502-webex-rce ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180502-webex-rce"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2"></Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">This vulnerability affects Cisco WebEx Business Suite meeting sites, Cisco WebEx Meetings sites, Cisco WebEx Meetings Server, and Cisco WebEx ARF players. For information about affected software releases, consult the Cisco bug ID(s) at the top of this advisory.
+
+To determine whether a Cisco WebEx Meetings site is running an affected version of a WebEx client build, users can log in to the Cisco WebEx Meetings site and go to Support &gt; Downloads. The version of the WebEx client build will be displayed on the right side of the page under About Meeting Center.
+
+Alternatively, version information for a Cisco WebEx Meetings client can be accessed directly within the Cisco WebEx Meetings client. Version information for the Cisco WebEx Meetings client on Windows and Linux platforms can be viewed by choosing Help &gt; About Cisco WebEx Meeting Center. Version information for the Cisco WebEx Meetings client on Mac platforms can be viewed by choosing Meeting Center &gt; About Cisco WebEx Meeting Center.
+
+Cisco WebEx software updates are cumulative in client builds. For example, if client build 30.32.16 is fixed, build 30.32.17 will contain updated software. Cisco WebEx site administrators have access to secondary version nomenclature, for example, T30 SP32 EP 16, which shows that the server is running client build 30.32.16.
+
+Note: Customers who do not receive automatic software updates may be running versions of Cisco WebEx that have reached end of software maintenance and should contact customer support.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Only products listed in the Vulnerable Products ["#vp"] section of this advisory are known to be affected by this vulnerability.</Note>
+    <Note Title="Details" Type="General" Ordinal="5">Cisco WebEx Business Suite (WBS) meeting services are a hosted multimedia conferencing solution that is managed and maintained by Cisco WebEx. The Cisco WebEx Meetings Server is a multimedia conferencing solution that customers can host in their private clouds.
+
+The ARF file format is used to store WebEx meeting recordings that have been recorded on a WebEx meeting site.
+
+The Cisco WebEx ARF Player is an application that is used to play back and edit WebEx ARF recording files (files with an .arf filename extension).
+
+The Cisco WebEx ARF Player can be installed automatically when a user accesses a recording file that is hosted on a Cisco WebEx Meetings site (for stream playback mode). The Cisco WebEx ARF Player can also be installed manually after downloading the application from http://www.webex.com/play-webex-recording.html ["http://www.webex.com/play-webex-recording.html"] for offline playback of recording files.
+
+The Cisco WebEx ARF Player is available for all Cisco WebEx Business Suite clients (WBS31 and WBS32), Cisco WebEx Meetings clients, and Cisco WebEx Meetings Server clients.
+
+The vulnerability described in this advisory could allow an attacker to cause a player application to crash or, in some cases, remotely execute arbitrary code on an affected system.
+
+To exploit this vulnerability, the attacker would need to persuade a user to open a malicious ARF file by using the player application on an affected system. The attacker may be able to accomplish an exploit by providing the malicious ARF file directly to users, as an email attachment for example, or by directing a user to a malicious web page. This vulnerability cannot be triggered by users who are attending a WebEx meeting.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">There are no workarounds that address this vulnerability. However, it is possible to remove all Cisco WebEx software completely from a system by using the Meeting Services Removal Tool (for Microsoft Windows) or the Mac WebEx Meeting Application Uninstaller (for Apple Mac OS X), both of which are available for download from the Cisco Collaboration Help article at https://collaborationhelp.cisco.com/article/en-us/WBX000026396 ["https://collaborationhelp.cisco.com/article/en-us/WBX000026396"].
+
+Removal of Cisco WebEx software from a Linux or UNIX-based system can be accomplished by following the steps in the Cisco Collaboration Help article at https://collaborationhelp.cisco.com/article/en-us/WBX28548 ["https://collaborationhelp.cisco.com/article/en-us/WBX28548"].</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">For information about fixed software releases, consult the Cisco bug ID(s) at the top of this advisory.
+
+  When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+  In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">Cisco would like to thank Kushal Arvind Shah of Fortinet’s FortiGuard Labs for reporting this vulnerability.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180502-webex-rce</URL>
+      <Description>Cisco WebEx Advanced Recording Format Player Remote Code Execution Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco WebEx ARF Player" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-100455">Cisco WebEx ARF Player </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meetings Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190702">Cisco WebEx Meetings Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meetings" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-228295">Cisco WebEx Meetings </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco WebEx Advanced Recording Format Player Remote Code Execution Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvh70228</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Cisco WebEx Network Recording Player for Advanced Recording Format (ARF) files could allow an unauthenticated, remote attacker to execute arbitrary code on an affected system.
+
+The vulnerability is due to a design flaw in the affected software. An attacker could exploit this vulnerability by sending a user an email attachment or link to a malicious ARF file and persuading the user to open the file or follow the link. A successful exploit could allow the attacker to execute arbitrary code on the user&amp;rsquo;s system.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvh70228,CSCvh70213,CSCvh70222</Note>
+    </Notes>
+    <CVE>CVE-2018-0287</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-228295</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-100455</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>6.5</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability. However, it is possible to remove all Cisco WebEx software completely from a system by using the Meeting Services Removal Tool (for Microsoft Windows) or the Mac WebEx Meeting Application Uninstaller (for Apple Mac OS X), both of which are available for download from the Cisco Collaboration Help article at https://collaborationhelp.cisco.com/article/en-us/WBX000026396 ["https://collaborationhelp.cisco.com/article/en-us/WBX000026396"].
+
+Removal of Cisco WebEx software from a Linux or UNIX-based system can be accomplished by following the steps in the Cisco Collaboration Help article at https://collaborationhelp.cisco.com/article/en-us/WBX28548 ["https://collaborationhelp.cisco.com/article/en-us/WBX28548"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180502-webex-rce</URL>
+        <Description>Cisco WebEx Advanced Recording Format Player Remote Code Execution Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco FXOS and NX-OS Software Unauthorized Administrator Account Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180620-nxosadmin</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-06-19T23:15:18</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2018-07-05T21:11:36</Date>
+        <Description>Updated Fixed Releases for FXOS platforms.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-06-20T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-07-05T21:11:36</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the write-erase feature of Cisco FXOS Software and Cisco NX-OS Software could allow an authenticated, local attacker to configure an unauthorized administrator account for an affected device.
+
+The vulnerability exists because the affected software does not properly delete sensitive files when certain CLI commands are used to clear the device configuration and reload a device. An attacker could exploit this vulnerability by logging into an affected device as an administrative user and configuring an unauthorized account for the device. The account would not require a password for authentication and would be accessible only via a Secure Shell (SSH) connection to the device. A successful exploit could allow the attacker to configure an unauthorized account that has administrative privileges, does not require a password for authentication, and does not appear in the running configuration or the audit logs for the affected device.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-nxosadmin ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-nxosadmin"]
+
+
+This advisory is part of the June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection, which includes 24 Cisco Security Advisories that describe 24 vulnerabilities. For a complete list of the advisories and links to them, see Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection ["https://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770"].</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2" />
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">This vulnerability affects the following Cisco products if they are running a vulnerable release of Cisco FXOS Software or Cisco NX-OS Software:
+
+      Firepower 4100 Series Next-Generation Firewalls
+      Firepower 9300 Security Appliance
+      Nexus 1000V Series Switches
+      Nexus 1100 Series Cloud Services Platforms
+      Nexus 2000 Series Fabric Extenders
+      Nexus 3500 Platform Switches
+      Nexus 4000 Series Switches
+      Nexus 5500 Platform Switches
+      Nexus 5600 Platform Switches
+Nexus 6000 Series Switches
+UCS 6100 Series Fabric Interconnects
+UCS 6200 Series Fabric Interconnects
+UCS 6300 Series Fabric Interconnects
+
+For information about which Cisco FXOS and NX-OS Software releases are vulnerable, see the Fixed Software ["#fs"] section of this advisory.
+
+  Determining the Cisco FXOS Software Release
+Administrators can check the release of Cisco FXOS Software that is running on a device by using the following commands in the device CLI or by navigating to the Overview tab in the Admin portal. The following example shows the output of the show version CLI command on a device that is running Cisco FXOS Software Release 2.2(2.14), as identified in the Package-Vers field of the command output:
+
+
+QP4120B1 # scope system
+QP4120B1 /system # show version  FPRM:  Running-Vers: 4.2(2.15)  Package-Vers: 2.2(2.14)  Activate-Status: Ready
+
+
+Determining the Cisco NX-OS Software Release
+Administrators can check the release of Cisco NX-OS Software that is running on a device by using the show version command in the device CLI. The following example shows the output of this command on a device that is running Cisco NX-OS Software Release 7.3(2)D1(1):
+
+
+nxos-switch# show version
+
+
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac  Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html  Copyright (c) 2002-2017, Cisco Systems, Inc. All rights reserved.  The copyrights to certain works contained in this software are  owned by other third parties and used and distributed under  license. Certain components of this software are licensed under  the GNU General Public License (GPL) version 2.0 or the GNU  Lesser General Public License (LGPL) Version 2.1. A copy of each  such license is available at  http://www.opensource.org/licenses/gpl-2.0.php and  http://www.opensource.org/licenses/lgpl-2.1.php  Software    BIOS:      version 2.12.0    kickstart: version 7.3(2)D1(1)    system:    version 7.3(2)D1(1)  .  .  .</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Only products listed in the Vulnerable Products ["#vp"] section of this advisory are known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect the following Cisco products:
+
+
+
+      Firepower 2100 Series Firewalls
+      MDS 9000 Series Multilayer Switches
+      Nexus 3000 Series Switches
+      Nexus 3600 Platform Switches
+Nexus 7000 Series Switches
+Nexus 7700 Series Switches
+      Nexus 9000 Series Fabric Switches in Application Centric Infrastructure (ACI) mode
+Nexus 9000 Series Switches in standalone NX-OS mode
+Nexus 9500 R-Series Line Cards and Fabric Modules
+
+Cisco has not investigated whether this vulnerability affects Cisco Nexus 5010 Switches and Cisco Nexus 5020 Switches because those products have reached end-of-life status. For more information, refer to the End-of-Sale and End-of-Life Announcement for the Cisco Nexus 5010 and Nexus 5020 Switches ["https://www.cisco.com/c/en/us/products/collateral/switches/nexus-5000-series-switches/eol_c51-709037.html"].</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+  Customers Without Service Contracts
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+  Fixed Releases
+Customers are advised to upgrade to an appropriate release as indicated in the applicable table in this section. To help ensure a complete upgrade solution, consider that this advisory is part of a collection. For a complete list of the advisories in the collection and links to them, see Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection ["http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770"].
+
+In the following tables, the left column lists releases of Cisco FXOS or NX-OS Software. The center column indicates whether a release is affected by the vulnerability described in this advisory and the first release that includes the fix for this vulnerability. The right column indicates whether a release is affected by all the vulnerabilities described in this collection of advisories and which release includes fixes for those vulnerabilities.
+
+  Firepower 4100 Series Next-Generation Firewalls: CSCve35753 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve35753"]
+                                    Cisco FXOS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              1.1                            2.0.1.159                            2.0.1.159 or 2.3.1.58                                                2.0              2.0.1.159              2.0.1.159 or 2.3.1.58                                                2.1.1              2.1.1.86              2.1.1.86 or 2.3.1.58                                                2.2              2.2.2.17              2.2.2.17 or 2.3.1.58                                                2.2.2               2.2.2.17                            2.2.2.17 or 2.3.1.58                                                2.3               Not vulnerable                            Not vulnerable
+  Firepower 9300 Security Appliance: CSCve35753 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve35753"]
+                                Cisco FXOS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              1.1                            2.0.1.159                            2.0.1.159  or 2.3.1.58                                                2.0              2.0.1.159              2.0.1.159  or 2.3.1.58                                                2.1.1              2.1.1.86              2.1.1.86 or 2.3.1.58                                                2.2               2.2.2.17              2.2.2.17 or 2.3.1.58                                                2.2.2              2.2.2.17              2.2.2.17 or 2.3.1.58                                                2.3               Not vulnerable                            Not vulnerable
+Nexus 1000V Series Switches and Nexus 1100 Series Cloud Services Platforms: CSCvd34845 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd34845"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              Prior to 5.2              5.2(1)SV3(3.1)               5.2(1)SV3(3.15)                                              5.2               5.2(1)SV3(3.1)               5.2(1)SV3(3.15)
+Nexus 3500 Platform Switches: CSCvd34857 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd34857"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              6.0(2)              6.0(2)A8(7)                            7.0(3)I7(4)                                                7.0(3)               7.0(3)I7(2)               7.0(3)I7(4)
+Nexus 4000 Series Switches: CSCvd34879 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd34879"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              4.1                             4.1(2)E1(1r)                            4.1(2)E1(1s)
+Nexus 2000 Series Fabric Extenders and Nexus 5500, 5600, and 6000 Series Switches: CSCvd13993 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd13993"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                              6.0                             7.1(5)N1(1)                7.3(3)N1(1)                                                7.0                7.1(5)N1(1)                7.3(3)N1(1)                                              7.1                7.1(5)N1(1) or later                7.3(3)N1(1)                                              7.2                7.3(2)N1(1)                7.3(3)N1(1)                                              7.3               7.3(2)N1(1)               7.3(3)N1(1)
+UCS 6100, 6200, and 6300 Fabric Interconnects: CSCvd34862 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd34862"]
+                                Cisco NX-OS Software Release              First Fixed Release for This Vulnerability              First Fixed Release for All Vulnerabilities Described in the Collection of Advisories                                               Prior to 2.2                3.1(3a)1                3.2(2b)                                              2.2              3.1(3a)1              3.2(2b)                                              2.5              3.1(3a)              3.2(2b)                                               3.0                3.1(3a)                3.2(2b)                                               3.1                3.1(3a)                3.2(2b)                                              3.2               3.2(1d)                3.2(2b)
+1 Cisco UCS 6100 Series Fabric Interconnects are vulnerable if they are running Cisco NX-OS Software Release 2.2 or prior. However, a fix is not available for Cisco UCS 6100 Series Fabric Interconnects because the product has reached end-of-life status. For more information, refer to the End-of-Sale and End-of-Life Announcement for the Cisco UCS 6100 Series Fabric Interconnects ["https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-6100-series-fabric-interconnects/eol_c51-709473.html"].</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was found during internal security testing.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-nxosadmin</URL>
+      <Description>Cisco FXOS and NX-OS Software Unauthorized Administrator Account Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770</URL>
+      <Description>Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-67770</URL>
+      <Description>Cisco Event Response: June 2018 Cisco FXOS and NX-OS Software Security Advisory Collection</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco NX-OS Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-80720">Cisco NX-OS Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Computing System (Managed)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-112776">Cisco Unified Computing System (Managed) </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco NX-OS System Software Unauthorized Account Admin Account Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvd34879</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the write-erase feature of Cisco FXOS Software and Cisco NX-OS Software could allow an authenticated, local attacker to configure an unauthorized administrator account for an affected device.
+
+The vulnerability exists because the affected software does not properly delete sensitive files when certain CLI commands are used to clear the device configuration and reload a device. An attacker could exploit this vulnerability by logging into an affected device as an administrative user and configuring an unauthorized account for the device. The account would not require a password for authentication and would be accessible only via a Secure Shell (SSH) connection to the device. A successful exploit could allow the attacker to configure an unauthorized account that has administrative privileges, does not require a password for authentication, and does not appear in the running configuration or the audit logs for the affected device.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvd34879,CSCve35753,CSCvd34845,CSCvd34857,CSCvd13993,CSCvd34862</Note>
+    </Notes>
+    <CVE>CVE-2018-0294</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-80720</ProductID>
+        <ProductID>CVRFPID-112776</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>6.4</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:L/AC:H/PR:H/UI:N/S:U/C:H/I:H/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180620-nxosadmin</URL>
+        <Description>Cisco FXOS and NX-OS Software Unauthorized Administrator Account Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

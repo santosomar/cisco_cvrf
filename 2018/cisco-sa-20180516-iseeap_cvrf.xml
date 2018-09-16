@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco Identity Services Engine EAP TLS Certificate Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180516-iseeap</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-05-16T15:35:37</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2018-06-07T21:38:15</Date>
+        <Description>Updated the fixed release information for Releases 2.0.0, 2.0.1, and 2.1.0.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-05-16T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-06-07T21:38:15</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Extensible Authentication Protocol-Transport Layer Security (EAP-TLS) certificate validation during EAP authentication for the Cisco Identity Services Engine (ISE) could allow an unauthenticated, remote attacker to cause the ISE application server to restart  unexpectedly, causing a denial of service (DoS) condition on an affected system.
+
+The vulnerability is due to incomplete input validation of the client EAP-TLS certificate. An attacker could exploit this vulnerability by initiating EAP authentication over TLS to the ISE with a crafted EAP-TLS certificate. A successful exploit could allow the attacker to restart the ISE application server, resulting in a DoS condition on the affected system. The ISE application could continue to restart while the client attempts to establish the EAP authentication connection.
+
+If an attacker attempted to import the same EAP-TLS certificate to the ISE trust store, it could trigger a DoS condition on the affected system. This exploit vector would require the attacker to have valid administrator credentials.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180516-iseeap ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180516-iseeap"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2"></Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">The vulnerability affects the following Cisco ISE products:
+
+Cisco ISE
+Cisco ISE Express
+Cisco ISE Virtual Appliance
+  To determine which release of the software is currently running on a device, administrators may use the show version command in the device CLI or navigate to the top-right corner and click Settings (gear icon) &gt; About Identity Service Engine in the Admin portal. The output of the command in the CLI is similar to the following example:
+ServiceEngine115/admin# show version
+
+
+Cisco Application Deployment Engine OS Release: 2.3
+ADE-OS Build Version: 2.3.0.187
+ADE-OS System Architecture: x86_64
+
+Copyright (c) 2005-2014 by Cisco Systems, Inc.
+All rights reserved.
+Hostname: ServiceEngine115
+
+Version information of installed applications
+---------------------------------------------
+
+Cisco Identity Services Engine
+---------------------------------------------
+Version      : 2.0.0.306
+Build Date   : Thu Oct  8 13:25:23 2015
+Install Date : Tue Nov 17 21:02:22 2015
+
+Cisco Identity Services Engine Patch
+---------------------------------------------
+Version      : 5
+Install Date : Fri Jul 07 01:57:01 2017</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Only products listed in the Vulnerable Products ["#vp"] section of this advisory are known to be affected by this vulnerability.
+  Cisco has confirmed that this vulnerability does not affect Cisco ISE Passive Identity Connector.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC: https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+Fixed Releases
+                                Cisco Identity Services Engine Release                            First Fixed Release for This Vulnerability                                                            Prior to 1.4.0
+              Vulnerable; migrate to 1.4.0.253-Patch12
+                                  1.4.0               1.4.0.253-Patch12                                   2.0.0               Vulnerable; migrate to 2.1.0.474-Patch7                                  2.0.1               Vulnerable; migrate to 2.1.0.474-Patch7                                  2.1.0               2.1.0.474-Patch7                                  2.2.0               2.2.0.470-Patch5                                   2.3.0
+              Not vulnerable</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was found during the resolution of a Cisco TAC support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180516-iseeap</URL>
+      <Description>Cisco Identity Services Engine EAP TLS Certificate Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Identity Services Engine Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-111903">Cisco Identity Services Engine Software </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco Identity Services Engine EAP-TLS Certificate Denial of Service Vulnerability </Title>
+    <ID SystemName="Cisco Bug ID">CSCve31857</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Extensible Authentication Protocol-Transport Layer Security (EAP-TLS) certificate validation during EAP authentication for the Cisco Identity Services Engine (ISE) could allow an unauthenticated, remote attacker to cause the ISE application server to restart  unexpectedly, causing a denial of service (DoS) condition on an affected system.
+
+
+
+The vulnerability is due to incomplete input validation of the client EAP-TLS certificate. An attacker could exploit this vulnerability by initiating EAP authentication over TLS to the ISE with a crafted EAP-TLS certificate. A successful exploit could allow the attacker to restart the ISE application server, resulting in a DoS condition on the affected system. The ISE application could continue to restart while the client attempts to establish the EAP authentication connection. 
+
+
+
+If an attacker attempted to import the same EAP-TLS certificate to the ISE trust store, it could trigger a DoS condition on the affected system. This exploit vector would require the attacker to have valid administrator credentials.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCve31857</Note>
+    </Notes>
+    <CVE>CVE-2018-0277</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111903</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>8.6</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180516-iseeap</URL>
+        <Description>Cisco Identity Services Engine EAP TLS Certificate Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

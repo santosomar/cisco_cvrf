@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco Email Security and Content Security Management Appliance Privilege Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20180117-esasma</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2018-01-17T15:35:27</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2018-01-23T16:28:48</Date>
+        <Description>Updated the Fixed Release table.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2018-01-17T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-01-23T16:28:48</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the administrative shell of the Cisco Email Security Appliance (ESA) and Content Security Management Appliance (SMA) could allow an authenticated, local attacker to escalate their privilege level and gain root access. The attacker has to have a valid user credential with at least a privilege level of a guest user.
+
+The vulnerability is due to an incorrect networking configuration at the administrative shell CLI. An attacker could exploit this vulnerability by authenticating to the targeted device and issuing a set of crafted, malicious commands at the administrative shell. An exploit could allow the attacker to gain root access on the device.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180117-esasma ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180117-esasma"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects all software versions through the first fixed release of Cisco AsyncOS Software for ESA and Content SMA, for both virtual and hardware appliances.
+
+Cisco Cloud Email Security (CES) includes the ESA and SMA as part of the service solution. Cisco provides regular maintenance of the products included in this solution. Customers can also request a software upgrade by contacting CES support.
+
+Determining the Software Version
+
+To determine whether a vulnerable version of Cisco AsyncOS Software is running on a Cisco ESA, administrators can use the version command in the ESA CLI. The following example shows the results for a device running Cisco AsyncOS Software version 9.7.2-065:
+ciscoesa&gt; version
+Current Version
+===============
+Product: Cisco IronPort X1070 Messaging Gateway(tm) Appliance
+Model: X1070
+Version: 9.7.2-065
+.
+.
+.
+
+To determine whether a vulnerable version of Cisco AsyncOS Software is running on a Cisco SMA, administrators can use the version command in the SMA CLI. The following example shows the results for a device running Cisco AsyncOS Software version 9.1.1-005:
+
+
+ciscosma&gt; version
+Current Version
+===============
+Product: Cisco IronPort M670 Security Management(tm) Appliance
+Model: M670
+Version: 9.1.1-005
+.
+.
+.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect Cisco Web Security Appliance, virtual and hardware versions.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:  https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC: https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+Fixed Releases
+
+In the following tables, the left column lists major releases of Cisco AsyncOS Software for ESA and SMA. The right column indicates whether a major release is affected by the vulnerability described in this advisory and the first minor release that includes the fix for this vulnerability.
+
+Customers should upgrade to an appropriate release as indicated in the following tables:
+                                Cisco AsyncOS ESA Software Major Release                            First Fixed Release for This Vulnerability                                                Prior to 9.8
+               Affected; migrate to 9.8.0-015 or 10.0.1-087                                   9.8               9.8.0-092                                   10.0
+               10.0.1-087                                   11.0               Not vulnerable
+
+                                Cisco AsyncOS SMA Software Major Release                            First Fixed Release for This Vulnerability                                                Prior to 10.1
+              Affected; migrate to 11.0.0-115
+                                  10.1               Affected; migrate to 11.0.0-115
+                                  10.5               Affected; migrate to 11.0.0-115                                   11.0
+              11.0.0-115
+
+  In most cases, administrators can upgrade ESA and SMA software over the network by doing the following in the Cisco AsyncOS System Administration GUI:
+
+Choose System Administration &gt; System Upgrade.
+Click Upgrade Options.
+Click Download.
+Choose the Cisco AsyncOS Software release to upgrade to.
+In the Upgrade Preparation area, choose the appropriate options.
+Click Proceed. A progress bar displays the status of the upgrade.
+
+After the upgrade is complete, the ESA or SMA will reboot.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="8">This vulnerability was found during the resolution of a Cisco TAC support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180117-esasma</URL>
+      <Description>Cisco Email Security and Content Security Management Appliance Privilege Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Email Security Appliance (ESA)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-189790">Cisco Email Security Appliance (ESA) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Content Security Management Appliance (SMA)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-189791">Cisco Content Security Management Appliance (SMA) </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco Email Security and Content Security Management Appliance Splunk Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvb34303</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the administrative shell of the Cisco Email Security Appliance (ESA) and Content Security Management Appliance (SMA) could allow an authenticated, local attacker to escalate their privilege level and gain root access. The attacker has to have a valid user credential with at least a privilege level of a guest user. 
+
+
+
+The vulnerability is due to an incorrect networking configuration at the administrative shell CLI. An attacker could exploit this vulnerability by authenticating to the targeted device and issuing a set of crafted, malicious commands at the administrative shell. An exploit could allow the attacker to gain root access on the device.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvb34303,CSCvb35726</Note>
+    </Notes>
+    <CVE>CVE-2018-0095</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-189790</ProductID>
+        <ProductID>CVRFPID-189791</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>7.8</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180117-esasma</URL>
+        <Description>Cisco Email Security and Content Security Management Appliance Privilege Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>
