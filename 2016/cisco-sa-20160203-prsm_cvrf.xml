@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco ASA-CX and Cisco Prime Security Manager Privilege Escalation Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the role-based access control of Cisco ASA-CX and Cisco Prime Security Manager (PRSM) could allow an authenticated, remote attacker to change the password of any user on the system.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the role-based access control of Cisco ASA-CX and Cisco Prime Security Manager (PRSM) could allow an authenticated, remote attacker to change the password of any user on the system.
 
 
 
@@ -45,6 +45,102 @@ Cisco has released software updates that address this vulnerability.
 
 This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-prsm["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-prsm"]
 </Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">All versions of Cisco ASA-CX Content-Aware Security and Cisco PRSM software prior to 9.3.1.1(112) are affected by the vulnerability described in this advisory.
+
+
+
+To determine the running version of Cisco ASA-CX software, issue the show version command from the Cisco ASA-CX command-line interface, to which an administrator can obtain access via serial console, an SSH session to the ASA-CX management interface, or a session opened from the parent ASA using the session command. 
+
+
+
+The following example shows Cisco ASA-CX software version 9.2.1.3(11) and Cisco PRSM Version 9.2.1.3(11):
+
+
+asacx&gt; show version
+Cisco ASA CX Platform  9.2.1.3(11)
+Cisco Prime Security Manager 9.2.1.3(11) for asacx firewall
+asacx&gt;
+
+
+Customers using Cisco PRSM to manage Cisco ASA-CX devices can locate the software version of Cisco ASA-CX in the Device &gt; Devices menu item of the Cisco Prime Security Manager window.
+
+
+
+
+To determine the running version of Cisco PRSM software, issue the show version command from the Cisco PRSM command-line interface, which an administrator can obtain access to via the PRSM VMware console or an SSH session to the Cisco PRSM management interface.
+
+
+
+The following example shows Cisco PRSM software version 9.0.1(40):
+
+
+prsm&gt; show version
+Cisco Prime Security Manager 9.0.1 (40) Multi Device prsm-vm
+
+
+
+Customers using HTTPS to access Cisco PRSM can locate the software version of Cisco PRSM in the Administration &gt; About PRSM menu item of the Cisco Prime Security Manager window.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"]
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution. 
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and  confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+
+Customers Without Service Contracts
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC):
+
+
+
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+
+
+Fixed Versions
+
+
+
+This vulnerability has been fixed in Cisco ASA-CX Context-Aware Security and Cisco Prime Security Manager Software versions 9.3.1.1(112) and later.
+
+
+
+Cisco ASA-CX Context-Aware Security Software can be downloaded at the following link:
+
+http://www.cisco.com/cisco/pub/software/portal/select.html?&amp;mdfid=284325223&amp;softwareid=284399944 ["http://www.cisco.com/cisco/pub/software/portal/select.html?&amp;mdfid=284325223&amp;softwareid=284399944"]
+
+
+
+Cisco Prime Security Manager Software can be downloaded at the following link:
+
+http://www.cisco.com/cisco/pub/software/portal/select.html?&amp;mdfid=284397197&amp;flowid=33362&amp;softwareid=284399945["http://www.cisco.com/cisco/pub/software/portal/select.html?&amp;mdfid=284397197&amp;flowid=33362&amp;softwareid=284399945"]</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy[http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="8">This vulnerability was discovered by Karn Ganeshen of Cisco Systems when performing independent security testing.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -52,35 +148,17 @@ This advisory is available at the following link: http://tools.cisco.com/securit
       <Description>Cisco ASA-CX and Cisco Prime Security Manager Privilege Escalation Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-184514">Cisco ASA CX Context-Aware Security Software 9.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-184515">Cisco ASA CX Context-Aware Security Software 9.0.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-184688">Cisco ASA CX Context-Aware Security Software 9.0.1-40</FullProductName>
-    <FullProductName ProductID="CVRFPID-184516">Cisco ASA CX Context-Aware Security Software 9.0.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-184689">Cisco ASA CX Context-Aware Security Software 9.0.2-68</FullProductName>
-    <FullProductName ProductID="CVRFPID-206507">Cisco ASA CX Context-Aware Security Software 9.1.2-29</FullProductName>
-    <FullProductName ProductID="CVRFPID-206510">Cisco ASA CX Context-Aware Security Software 9.1.2-42</FullProductName>
-    <FullProductName ProductID="CVRFPID-206511">Cisco ASA CX Context-Aware Security Software 9.1.3-8</FullProductName>
-    <FullProductName ProductID="CVRFPID-206512">Cisco ASA CX Context-Aware Security Software 9.1.3-10</FullProductName>
-    <FullProductName ProductID="CVRFPID-206513">Cisco ASA CX Context-Aware Security Software 9.1.3-13</FullProductName>
-    <FullProductName ProductID="CVRFPID-206509">Cisco ASA CX Context-Aware Security Software 9.2.1-1</FullProductName>
-    <FullProductName ProductID="CVRFPID-206514">Cisco ASA CX Context-Aware Security Software 9.2.1-2</FullProductName>
-    <FullProductName ProductID="CVRFPID-206515">Cisco ASA CX Context-Aware Security Software 9.2.1-3</FullProductName>
-    <FullProductName ProductID="CVRFPID-206516">Cisco ASA CX Context-Aware Security Software 9.2.1-4</FullProductName>
-    <FullProductName ProductID="CVRFPID-184692">Cisco Prime Security Manager (PRSM) 9.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-184693">Cisco Prime Security Manager (PRSM) 9.0.1-40</FullProductName>
-    <FullProductName ProductID="CVRFPID-184694">Cisco Prime Security Manager (PRSM) 9.0.2-68</FullProductName>
-    <FullProductName ProductID="CVRFPID-198461">Cisco Prime Security Manager (PRSM) 9.1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-198464">Cisco Prime Security Manager (PRSM) 9.1.2-29</FullProductName>
-    <FullProductName ProductID="CVRFPID-198465">Cisco Prime Security Manager (PRSM) 9.1.2-42</FullProductName>
-    <FullProductName ProductID="CVRFPID-198466">Cisco Prime Security Manager (PRSM) 9.1.3-8</FullProductName>
-    <FullProductName ProductID="CVRFPID-198467">Cisco Prime Security Manager (PRSM) 9.1.3-10</FullProductName>
-    <FullProductName ProductID="CVRFPID-198468">Cisco Prime Security Manager (PRSM) 9.1.3-13</FullProductName>
-    <FullProductName ProductID="CVRFPID-198463">Cisco Prime Security Manager (PRSM) 9.2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-198469">Cisco Prime Security Manager (PRSM) 9.2.1-1</FullProductName>
-    <FullProductName ProductID="CVRFPID-198470">Cisco Prime Security Manager (PRSM) 9.2.1-2</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco ASA CX Context-Aware Security Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-184512">Cisco ASA CX Context-Aware Security Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Security Manager (PRSM)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-184690">Cisco Prime Security Manager (PRSM) </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Prime Security Manager Privilege Escalation Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCuo94842</ID>
     <Notes>
@@ -90,45 +168,21 @@ This advisory is available at the following link: http://tools.cisco.com/securit
 
 The vulnerability exists because the password change request is not fully qualified. An authenticated attacker with a user role other than Administrator could exploit this vulnerability by sending a specially crafted HTTP request to the Cisco PRSM. An exploit could allow the attacker to change the password of any user on the system, including users with the Administrator role.
 </Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuo94842</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuo94842</Note>
     </Notes>
     <CVE>CVE-2016-1301</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-184692</ProductID>
-        <ProductID>CVRFPID-184693</ProductID>
-        <ProductID>CVRFPID-184694</ProductID>
-        <ProductID>CVRFPID-198461</ProductID>
-        <ProductID>CVRFPID-198463</ProductID>
-        <ProductID>CVRFPID-198464</ProductID>
-        <ProductID>CVRFPID-198465</ProductID>
-        <ProductID>CVRFPID-198466</ProductID>
-        <ProductID>CVRFPID-198467</ProductID>
-        <ProductID>CVRFPID-198468</ProductID>
-        <ProductID>CVRFPID-198469</ProductID>
-        <ProductID>CVRFPID-198470</ProductID>
-        <ProductID>CVRFPID-184514</ProductID>
-        <ProductID>CVRFPID-184515</ProductID>
-        <ProductID>CVRFPID-184516</ProductID>
-        <ProductID>CVRFPID-184688</ProductID>
-        <ProductID>CVRFPID-184689</ProductID>
-        <ProductID>CVRFPID-206507</ProductID>
-        <ProductID>CVRFPID-206509</ProductID>
-        <ProductID>CVRFPID-206510</ProductID>
-        <ProductID>CVRFPID-206511</ProductID>
-        <ProductID>CVRFPID-206512</ProductID>
-        <ProductID>CVRFPID-206513</ProductID>
-        <ProductID>CVRFPID-206514</ProductID>
-        <ProductID>CVRFPID-206515</ProductID>
-        <ProductID>CVRFPID-206516</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>8.5</BaseScore>
-        <TemporalScore>7.0</TemporalScore>
-        <Vector>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>8.5</BaseScoreV2>
+        <TemporalScoreV2>7.0</TemporalScoreV2>
+        <VectorV2>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

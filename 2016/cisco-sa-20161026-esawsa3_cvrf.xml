@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Email and Web Security Appliance JAR Advanced Malware Protection DoS Vulnerability </DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -37,7 +37,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Advanced Malware Protection (AMP) for Cisco Email Security Appliances (ESA) and Web Security Appliances (WSA) could allow an unauthenticated, remote attacker to cause a partial denial of service (DoS) condition due to the AMP process unexpectedly restarting.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Advanced Malware Protection (AMP) for Cisco Email Security Appliances (ESA) and Web Security Appliances (WSA) could allow an unauthenticated, remote attacker to cause a partial denial of service (DoS) condition due to the AMP process unexpectedly restarting.
 
 
 
@@ -54,6 +54,91 @@ This advisory is available at the following link:
 
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esawsa3["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161026-esawsa3"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">The following products are affected:
+
+
+    Cisco AsyncOS Software for Email Security Appliances (ESA) versions 9.5 and later up to the first fixed release
+    Cisco AsyncOS Software for Web Security Appliances (WSA) all versions prior to the first fixed release
+
+To determine which release of Cisco AsyncOS Software is running on an ESA, administrators can use the version command in the CLI. The following example shows the output of the version command for an ESA running Cisco AsyncOS Software Release 8.5.7-044:
+
+
+ciscoesa&gt; version
+
+Current Version
+===============
+Product: Cisco IronPort X1070 Messaging Gateway(tm) Appliance
+Model: X1070
+Version: 8.5.7-044
+.
+.
+.
+
+Note that Cisco provides regular maintenance of products in the Cisco Cloud Email Security (CES) service solution, which includes Cisco Email Security Appliances and Cisco Content Security Management Appliances. Customers can also request a software upgrade by contacting Cisco CES support.
+
+
+
+To determine whether a vulnerable version of Cisco AsyncOS Software is running on a Cisco WSA, administrators can use the version command in the WSA CLI. The following example shows the results for an appliance running Cisco AsyncOS Software version 8.5.3-051:
+
+
+
+ciscowsa&gt; version
+
+Current Version
+
+===============
+
+Product: Cisco IronPort S670 Web Security Appliance
+
+Model: S670
+
+Version: 8.5.3-051
+
+.
+
+.
+
+.
+
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">The following products are not vulnerable:
+
+
+    Content Security Management Appliance
+    FireSIGHT System Software
+    AnyConnect Secure Mobility Client for iOS
+    AnyConnect Secure Mobility Client for Mac OS X
+    AnyConnect Secure Mobility Client for Android
+    AnyConnect Secure Mobility Client for Windows
+    AnyConnect Secure Mobility Client for Linux
+
+No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="4">Exploitation of this vulnerability could cause the malformed JAR file to be marked as UNSCANNABLE and the following error logged:
+
+
+
+ Info: MID &lt;####&gt; AMP file reputation verdict : UNSCANNABLE
+
+
+
+The ESA and WSA could also write out a core file for the AMP process. Contact the Cisco Technical Assistance Center (TAC) to review the core file and confirm if the core file shows that the device has been compromised by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">Workarounds that address this vulnerability are not available.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco provides information about fixed software in Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution. 
+
+
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and  confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was found during resolution of a support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -61,25 +146,17 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco Email and Web Security Appliance JAR Advanced Malware Protection DoS Vulnerability </Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-216214">Cisco Web Security Appliance (WSA) 8.8.0-085</FullProductName>
-    <FullProductName ProductID="CVRFPID-209311">Cisco Web Security Appliance (WSA) 9.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-209312">Cisco Web Security Appliance (WSA) 9.0.0-193</FullProductName>
-    <FullProductName ProductID="CVRFPID-212699">Cisco Web Security Appliance (WSA) 9.1 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-212700">Cisco Web Security Appliance (WSA) 9.1.0-000</FullProductName>
-    <FullProductName ProductID="CVRFPID-216210">Cisco Web Security Appliance (WSA) 9.1.0-070</FullProductName>
-    <FullProductName ProductID="CVRFPID-212696">Cisco Web Security Appliance (WSA) 9.5 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-212697">Cisco Web Security Appliance (WSA) 9.5.0-235</FullProductName>
-    <FullProductName ProductID="CVRFPID-216211">Cisco Web Security Appliance (WSA) 9.5.0-284</FullProductName>
-    <FullProductName ProductID="CVRFPID-219000">Cisco Web Security Appliance (WSA) 9.5.0-444</FullProductName>
-    <FullProductName ProductID="CVRFPID-208932">Cisco Email Security Appliance (ESA) 9.5.0-000</FullProductName>
-    <FullProductName ProductID="CVRFPID-208933">Cisco Email Security Appliance (ESA) 9.5.0-201</FullProductName>
-    <FullProductName ProductID="CVRFPID-209301">Cisco Email Security Appliance (ESA) 9.6.0-000</FullProductName>
-    <FullProductName ProductID="CVRFPID-209302">Cisco Email Security Appliance (ESA) 9.6.0-042</FullProductName>
-    <FullProductName ProductID="CVRFPID-213464">Cisco Email Security Appliance (ESA) 9.6.0-051</FullProductName>
-    <FullProductName ProductID="CVRFPID-213466">Cisco Email Security Appliance (ESA) 9.7.0-125</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Web Security Appliance (WSA)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-189789">Cisco Web Security Appliance (WSA) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Email Security Appliance (ESA)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-189790">Cisco Email Security Appliance (ESA) </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco ESA and WSA JAR Advanced Malware Protection DoS Vulnerability </Title>
     <ID SystemName="Cisco Bug ID">CSCux56406</ID>
     <Notes>
@@ -88,35 +165,21 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 
 The vulnerability is due to improper validation of a Java Archive (JAR) file that is scanned when AMP is configured. An attacker could exploit this vulnerability by crafting a JAR file and attaching this JAR file to an email that is then sent through the ESA, or allowing the JAR file to be download from the web through the WSA. An exploit could allow the attacker to cause the Cisco ESA and WSA AMP process to unexpectedly restart due to the malformed JAR file.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux56406,CSCux59928</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCux56406,CSCux59928</Note>
     </Notes>
     <CVE>CVE-2016-6360</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-208932</ProductID>
-        <ProductID>CVRFPID-208933</ProductID>
-        <ProductID>CVRFPID-209301</ProductID>
-        <ProductID>CVRFPID-209302</ProductID>
-        <ProductID>CVRFPID-213464</ProductID>
-        <ProductID>CVRFPID-213466</ProductID>
-        <ProductID>CVRFPID-209311</ProductID>
-        <ProductID>CVRFPID-209312</ProductID>
-        <ProductID>CVRFPID-212696</ProductID>
-        <ProductID>CVRFPID-212697</ProductID>
-        <ProductID>CVRFPID-212699</ProductID>
-        <ProductID>CVRFPID-212700</ProductID>
-        <ProductID>CVRFPID-216210</ProductID>
-        <ProductID>CVRFPID-216211</ProductID>
-        <ProductID>CVRFPID-216214</ProductID>
-        <ProductID>CVRFPID-219000</ProductID>
+        <ProductID>CVRFPID-189790</ProductID>
+        <ProductID>CVRFPID-189789</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>5.0</BaseScore>
-        <TemporalScore>4.1</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>5.0</BaseScoreV2>
+        <TemporalScoreV2>4.1</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco NX-OS Border Gateway Protocol Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Border Gateway Protocol (BGP) implementation of Cisco NX-OS System Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition due to the device unexpectedly reloading.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Border Gateway Protocol (BGP) implementation of Cisco NX-OS System Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition due to the device unexpectedly reloading.
 
 
 
@@ -60,6 +60,508 @@ This advisory is available at the following link:
 
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-bgp["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-bgp"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">The following Cisco products are affected by this vulnerability when configured with BGP:
+
+    Nexus 1000v Series Switches
+    Nexus 2000 Series Fabric Extenders
+    Nexus 3000 Series Switches
+    Nexus 3500 Platform Switches
+    Nexus 5000 Series Switches
+    Nexus 5500 Platform Switches
+    Nexus 5600 Platform Switches
+    Nexus 6000 Series Switches
+    Nexus 7000 Series Switches
+    Nexus 7700 Series Switches
+    Nexus 9000 Series Switches in ACI mode
+    Nexus 9000 Series Switches in NX-OS mode
+
+
+The vulnerability affects only NX-OS devices configured with BGP functionality and, in addition, the device needs to have at least one BGP neighbor (peer) configured. The potentially malicious BGP peer needs to be configured on the NX-OS device as a BGP neighbor. This vulnerability applies to BGP traffic destined for the device. The device processes BGP packets on TCP port 179 on either IP version 4 (IPv4) or IP version 6 (IPv6).
+
+
+
+To determine whether a Nexus device is configured with the BGP feature and a BGP neighbor, administrators can use the show running-config | include "router bgp" and show running-config | include "neighbor" commands from the NX-OS command-line interface (CLI) and verify that the feature is enabled.
+
+
+
+The following example shows the BGP feature enabled with one BGP neighbor on a device running NX-OS Software:
+
+
+nxos-switch# show running-config | include "router bgp"
+router bgp 64512
+nxos-switch#
+nxos-switch# show running-config | include "neighbor"
+neighbor 209.165.201.1 remote-as 64497
+nxos-switch#
+
+
+Administrators can check the version of NX-OS Software running on their device by utilizing the show version command from the device CLI.  The following example identifies the 6.2(14) release:
+
+
+nxos-switch# show version
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents:
+http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.
+html
+Copyright (c) 2002-2015, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained in this software are
+owned by other third parties and used and distributed under
+license. Certain components of this software are licensed under
+the GNU General Public License (GPL) version 2.0 or the GNU
+Lesser General Public License (LGPL) Version 2.1. A copy of each
+such license is available at
+http://www.opensource.org/licenses/gpl-2.0.php and
+http://www.opensource.org/licenses/lgpl-2.1.php
+
+Software
+  BIOS:      version 2.12.0
+  kickstart: version 6.2(14)
+  system:    version 6.2(14)
+.
+.
+.
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">The following Cisco products are not affected by this vulnerability:
+
+
+    Multilayer Director Switches
+    Nexus 4000 Series Switches
+    Unified Computing System (UCS) 6100 Series Fabric Interconnects
+    Unified Computing System (UCS) 6200 Series Fabric Interconnects
+
+
+
+ No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="4">Exploitation of this vulnerability could cause an affected device to reload and generate an URIB core file. To view the URIB core file, administrators can use the show core command in the NX-OS CLI. Contact the Cisco Technical Assistance Center (TAC) to review the URIB core file and determine whether the device has been compromised by exploitation of this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">Workarounds that address this vulnerability are not available.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license: http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"].
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized re-seller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+Customers Without Service Contracts
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC): http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"].
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+ 
+
+Fixed Releases
+
+
+
+Customers should upgrade to an appropriate release as indicated in the applicable table in this section. To help ensure a complete upgrade solution, consider that this advisory is part of a collection that includes the following advisories:
+
+
+
+cisco-sa-20161005-bgp["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-bgp"]: Cisco NX-OS Border Gateway Protocol Denial of Service Vulnerability
+
+cisco-sa-20161005-dhcp1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-dhcp1"]: Cisco NX-OS Software Crafted DHCPv4 Packet Denial of Service Vulnerability
+
+cisco-sa-20161005-dhcp2["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-dhcp2"]: Cisco NX-OS Software Malformed DHCPv4 Packet Denial of Service Vulnerability
+
+
+["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-otv"]cisco-sa-20161005-nxaaa["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-nxaaa"]: Cisco NX-OS Software-Based Products Authentication, Authorization, and Accounting Bypass Vulnerability
+
+cisco-sa-20161005-otv["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-otv"]: Cisco Nexus 7000 and 7700 Series Switches Overlay Transport Virtualization Buffer Overflow Vulnerability
+
+
+
+In the following table, the left column lists major releases of Cisco NX-OS Software. The center column indicates whether a major release is affected by the vulnerability described in this advisory and the first minor release that includes the fix for this vulnerability. The right column indicates whether a major release is affected by all the vulnerabilities described in this collection of advisories and which release includes fixes for those vulnerabilities.
+
+
+
+
+Cisco Nexus 1000 Series Switches : CSCux11417["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCux11417"]
+
+
+
+
+    
+        
+            Cisco NX-OS Software Major Release - Nexus 1000 Series Switches
+            First Fixed Release for This Vulnerability
+            First Fixed Release for This Vulnerability and All Vulnerabilities Described in the Collection of Advisories 
+
+            
+        
+        
+            Prior to 4.2
+            Affected; migrate to 5.2(1)SV3(1.15) 
+
+            
+            5.2(1)SV3(1.15)
+        
+        
+            5.2
+            5.2(1)SV3(1.15)
+
+            
+            5.2(1)SV3(1.15)
+
+            
+        
+    
+
+
+
+Cisco Nexus 3000, 3500, 2000, 5000, 5500, 6000, 7000, 9000 and 9000-ACI Series Switches : CSCuq77105["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuq77105"]
+
+
+
+
+    
+        
+            Cisco NX-OS Software Major Release - Nexus 3000 Series Switches
+            First Fixed Release for This Vulnerability
+            First Fixed Release for This Vulnerability and All Vulnerabilities Described in the Collection of Advisories 
+
+            
+        
+        
+            Prior to 6.0
+            Affected; migrate to 6.0(2)U6(7)
+
+            
+            6.0(2)U6(7)
+        
+        
+            6.0
+            
+            6.0(2)U6(7)
+
+            
+            6.0(2)U6(7)
+
+            
+        
+        
+            6.1 
+            Affected; migrate to 7.0(3)I2(2e) or 7.0(3)I4(1)
+
+            
+            7.0(3)I4(1)
+        
+        
+            7.0
+            7.0(3)I2(2e) or 7.0(3)I4(1)
+
+            
+            7.0(3)I4(1)
+
+            
+        
+    
+
+
+
+
+    
+        
+            Cisco NX-OS Software Major Release - Nexus 3500 Platform Series Switches
+            First Fixed Release for This Vulnerability
+            First Fixed Release for This Vulnerability and All Vulnerabilities Described in the Collection of Advisories 
+
+            
+        
+        
+            Prior to 6.0
+            Affected; migrate to 6.0(2)A6(8) or 6.0(2)A8(1)
+            6.0(2)A8(1)
+        
+        
+            6.0
+            6.0(2)A6(8) or 6.0(2)A8(1)
+
+            
+            6.0(2)A8(1)
+
+            
+        
+    
+
+
+
+
+    
+        
+            Cisco NX-OS Software
+
+            Major Release - Nexus 5000 Series Switches 
+            
+            First Fixed Release for This Vulnerability
+            First Fixed Release for This Vulnerability and All Vulnerabilities  Described in the Collection of Advisories 
+            
+        
+        
+            Prior to 5.2 
+            No fix available
+            5.2(1)N1(9a); Note: There is no fix for the vulnerability described in this advisory
+
+            
+        
+        
+            5.2
+
+            
+            No fix available
+
+            
+            5.2(1)N1(9a); Note: There is no fix for the vulnerability described in this advisory
+
+            
+        
+    
+
+
+
+
+    
+        
+            Cisco NX-OS Software
+
+            Major Release - Nexus 2000, 5500, 5600 and 6000 Platform Switches 
+            
+            First Fixed Release for This Vulnerability
+            First Fixed Release for This Vulnerability and All Vulnerabilities  Described in the Collection of Advisories 
+            
+        
+        
+            Prior to 5.2 
+            Affected; migrate to 7.1(1)N1(1)
+
+            
+            7.1(4)N1(1)
+
+            
+        
+        
+            5.2
+
+            
+            Affected; migrate to 7.1(1)N1(1)
+
+            
+            7.1(4)N1(1)
+
+            
+        
+        
+            6.0
+
+            
+            Affected; migrate to 7.1(1)N1(1)
+
+            
+            7.1(4)N1(1)
+
+            
+        
+        
+            7.0
+            Affected; migrate to 7.1(1)N1(1)
+
+            
+            7.1(4)N1(1)
+
+            
+        
+        
+            7.1 
+            7.1(1)N1(1)
+
+            
+            7.1(4)N1(1)
+        
+        
+            7.2 
+            7.2(0)N1(1)
+
+            
+            7.2(2)N1(1)
+
+            
+        
+        
+            7.3
+            7.3(0)N1(1)
+
+            
+            7.3(0)N1(1)
+
+            
+        
+    
+
+
+
+
+    
+        
+            Cisco NX-OS Software Major Release - Nexus 7000 and 7700 Series Switches
+            First Fixed Release for This Vulnerability
+            First Fixed Release for This Vulnerability and  All Vulnerabilities Described in the Collection of Advisories 
+
+            
+        
+        
+            Prior to 5.2
+            Affected; migrate to 6.2(10)
+
+            
+            7.2(2)D1(1)
+        
+        
+            5.2
+
+            
+            Affected; migrate to 6.2(10)
+
+            
+            7.2(2)D1(1)
+            
+        
+        
+            6.0
+            
+            Affected; migrate to 6.2(10)
+
+            
+            7.2(2)D1(1)
+
+            
+        
+        
+            6.1 
+            Affected; migrate to 6.2(10)
+
+            
+            7.2(2)D1(1)
+        
+        
+            6.2 
+            6.2(10)
+            7.2(2)D1(1)
+        
+        
+            7.2 
+            7.2(0)D1(1)
+            7.2(2)D1(1)
+        
+        
+            7.3
+            7.3(0)D1(1)
+
+            
+            7.3(1)D1(1)
+        
+    
+
+
+
+
+    
+        
+            Cisco NX-OS Software Major Release - Nexus 9000 Series Switch ACI Mode
+            First Fixed Release for This Vulnerability
+            First Fixed Release for This Vulnerability and All Vulnerabilities Described in the Collection of Advisories 
+
+            
+        
+        
+            11.0
+            Affected; migrate to 11.1(1j)
+
+            
+            11.1(1j)
+        
+        
+            11.1
+            11.1(1j)
+
+            
+            11.1(1j)
+
+            
+        
+        
+            11.2
+            Not Vulnerable
+
+            
+            Not Vulnerable
+        
+    
+
+
+
+
+    
+        
+            Cisco NX-OS Software Major Release - Nexus 9000 Series Switch NX-OS Mode
+            First Fixed Release for This Vulnerability
+            First Fixed Release for This Vulnerability and All Vulnerabilities Described in the Collection of Advisories 
+
+            
+        
+        
+            6.1
+            Affected; migrate to 7.0(3)I2(2e) or 7.0(3)I4(1)
+
+            
+            7.0(3)I4(1)
+
+            
+        
+        
+            7.0
+            7.0(3)I2(2e) or 7.0(3)I4(1)
+
+            
+            7.0(3)I4(1)
+
+            
+        
+    
+
+
+
+Release Recommendations
+
+
+
+For additional assistance in determining the best NX-OS Software release for a Cisco Nexus Switch, refer to the recommended release document for the switch:
+
+
+    Cisco Nexus 1000V for VMware Switches["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus1000/sw/recommended_releases/b_Cisco_N1KV_VMware_MinRecommendedReleases.html "]
+    Cisco Nexus 3000 Series and 3500 Series Switches["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/recommended_release/b_Minimum_and_Recommended_Cisco_NX-OS_Releases_for_Cisco_Nexus_3000_Series_Switches.html"]
+    Cisco Nexus 5000 Series Switches["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus5000/sw/release/recommended_releases/recommended_nx-os_releases.html"]
+    Cisco Nexus 5500 Platform Switches["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus5500/sw/release/recommended_releases/n5500_recommended_nx-os_releases.html"]
+    Cisco Nexus 6000 Series Switches["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus6000/sw/release/recommended_releases/recommended_nx-os_releases.html"]
+    Cisco Nexus 7000 Series Switches[" http://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/nx-os/recommended_releases/recommended_nx-os_releases.html"]
+    Cisco Nexus 9000 Series Switches["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/recommended_release/b_Minimum_and_Recommended_Cisco_NX-OS_Releases_for_Cisco_Nexus_9000_Series_Switches.html"]
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was discovered during internal testing.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -67,303 +569,14 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco NX-OS Border Gateway Protocol Denial of Service Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-191370">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-191551">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.0(4)SV1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191552">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.0(4)SV1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191553">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.0(4)SV1(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191554">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.0(4)SV1(3a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191555">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.0(4)SV1(3b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191556">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.0(4)SV1(3c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191379">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.0(4)SV1(3d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191557">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV1(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191558">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV1(4a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191559">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV1(4b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191560">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV1(5.1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191561">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV1(5.1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191562">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV1(5.2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191563">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV1(5.2b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191380">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV2(1.1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191381">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV2(1.1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196618">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV2(2.1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196619">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 4.2(1)SV2(2.1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-210024">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 5.2(1)SV3(1.4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-217747">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 5.2(1)SV3(1.1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-217748">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 5.2(1)SV3(1.3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220693">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 5.2(1)SV3(1.5a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220694">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 5.2(1)SV3(1.5b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220695">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 5.2(1)SV3(1.6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220696">Cisco NX-OS Software Cisco Nexus 1000V Switch for VMware vSphere 5.2(1)SV3(1.10)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191391">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191392">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191393">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U1(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191466">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U1(1d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191467">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191468">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U1(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191469">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191470">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U2(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191471">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U2(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191472">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U2(2b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191473">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U2(2c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191474">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U2(2d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191475">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U3(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191476">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U3(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191477">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U3(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191478">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U3(2b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191479">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U4(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191480">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U5(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191481">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U5(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191482">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U5(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191483">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U5(1c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191484">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U5(1d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191485">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U5(1e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196613">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U5(1f)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196614">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U5(1g)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196615">Cisco NX-OS Software for Nexus 3000 Series 5.0(3)U5(1h)</FullProductName>
-    <FullProductName ProductID="CVRFPID-194693">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196616">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-194694">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196617">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U1(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205076">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U1(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205077">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205078">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U2(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205079">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U2(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205080">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U2(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205081">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U2(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205082">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U2(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205083">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U3(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205084">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U3(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205085">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U3(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205086">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U3(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205087">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U3(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-203349">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U4(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205088">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U4(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205089">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U4(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205090">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U5(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209651">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U5(1.41)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220702">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U5(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220703">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U5(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220704">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U5(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-210611">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(0.46)</FullProductName>
-    <FullProductName ProductID="CVRFPID-213569">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-213570">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-213571">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-213572">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-213573">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220699">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220700">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(7)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220701">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)U6(8)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209610">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-213565">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-213566">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-213567">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-213568">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220705">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220714">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(7)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220715">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A6(8)</FullProductName>
-    <FullProductName ProductID="CVRFPID-213564">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A7(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220716">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A7(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220717">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A7(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220718">Cisco NX-OS Software for Nexus 3000 Series 6.0(2)A8(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209650">Cisco NX-OS Software for Nexus 3000 Series 7.0(3)I2(0.373)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191376">Cisco NX-OS Software for Nexus 5000 Series Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-191394">Cisco NX-OS Software for Nexus 5000 Series 4.0(0)N1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191395">Cisco NX-OS Software for Nexus 5000 Series 4.0(0)N1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191396">Cisco NX-OS Software for Nexus 5000 Series 4.0(0)N1(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191397">Cisco NX-OS Software for Nexus 5000 Series 4.0(1a)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191398">Cisco NX-OS Software for Nexus 5000 Series 4.0(1a)N1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191399">Cisco NX-OS Software for Nexus 5000 Series 4.0(1a)N2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191400">Cisco NX-OS Software for Nexus 5000 Series 4.0(1a)N2(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191401">Cisco NX-OS Software for Nexus 5000 Series 4.1(3)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191402">Cisco NX-OS Software for Nexus 5000 Series 4.1(3)N1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191403">Cisco NX-OS Software for Nexus 5000 Series 4.1(3)N2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191404">Cisco NX-OS Software for Nexus 5000 Series 4.1(3)N2(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191405">Cisco NX-OS Software for Nexus 5000 Series 4.2(1)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191406">Cisco NX-OS Software for Nexus 5000 Series 4.2(1)N2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191407">Cisco NX-OS Software for Nexus 5000 Series 4.2(1)N2(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191408">Cisco NX-OS Software for Nexus 5000 Series 5.0(2)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191409">Cisco NX-OS Software for Nexus 5000 Series 5.0(3)N1(1c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191410">Cisco NX-OS Software for Nexus 5000 Series 5.0(2)N2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191411">Cisco NX-OS Software for Nexus 5000 Series 5.0(2)N2(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191412">Cisco NX-OS Software for Nexus 5000 Series 5.0(3)N2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191413">Cisco NX-OS Software for Nexus 5000 Series 5.0(3)N2(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191414">Cisco NX-OS Software for Nexus 5000 Series 5.0(3)N2(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191415">Cisco NX-OS Software for Nexus 5000 Series 5.0(3)N2(2b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191416">Cisco NX-OS Software for Nexus 5000 Series 5.1(3)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191417">Cisco NX-OS Software for Nexus 5000 Series 5.1(3)N1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191418">Cisco NX-OS Software for Nexus 5000 Series 5.1(3)N2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191419">Cisco NX-OS Software for Nexus 5000 Series 5.1(3)N2(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191420">Cisco NX-OS Software for Nexus 5000 Series 5.1(3)N2(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191421">Cisco NX-OS Software for Nexus 5000 Series 5.1(3)N2(1c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191422">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191423">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191424">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191425">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191426">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191427">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191428">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196611">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196612">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-198539">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(7)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201888">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(8)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201874">Cisco NX-OS Software for Nexus 5000 Series 5.2(1)N1(8a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212073">Cisco NX-OS Software for Nexus 5000 Series 5.2(9)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201875">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201876">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201877">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N1(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201878">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201879">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N2(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201880">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N2(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201881">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N2(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201882">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N2(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201883">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N2(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220728">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N2(5a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220729">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N2(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220730">Cisco NX-OS Software for Nexus 5000 Series 6.0(2)N2(7)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201884">Cisco NX-OS Software for Nexus 5000 Series 7.0(0)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201885">Cisco NX-OS Software for Nexus 5000 Series 7.0(1)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201886">Cisco NX-OS Software for Nexus 5000 Series 7.0(2)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201887">Cisco NX-OS Software for Nexus 5000 Series 7.0(3)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220724">Cisco NX-OS Software for Nexus 5000 Series 7.0(5)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220725">Cisco NX-OS Software for Nexus 5000 Series 7.0(5)N1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208805">Cisco NX-OS Software for Nexus 5000 Series 7.0(6)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220726">Cisco NX-OS Software for Nexus 5000 Series 7.0(7)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220727">Cisco NX-OS Software for Nexus 5000 Series 7.0(8)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208806">Cisco NX-OS Software for Nexus 5000 Series 7.1(1)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220731">Cisco NX-OS Software for Nexus 5000 Series 7.1(2)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220732">Cisco NX-OS Software for Nexus 5000 Series 7.1(3)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220733">Cisco NX-OS Software for Nexus 5000 Series 7.1(3)N1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220734">Cisco NX-OS Software for Nexus 5000 Series 7.1(4)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220735">Cisco NX-OS Software for Nexus 5000 Series 7.2(0)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220736">Cisco NX-OS Software for Nexus 5000 Series 7.2(1)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201890">Cisco NX-OS Software for Nexus 6000 Series Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-201891">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201892">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N1(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201893">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201894">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N2(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201895">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N2(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201896">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N2(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201897">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N2(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201898">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N2(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212034">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N2(5a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212035">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N2(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212036">Cisco NX-OS Software for Nexus 6000 Series 6.0(2)N2(7)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201899">Cisco NX-OS Software for Nexus 6000 Series 7.0(0)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201900">Cisco NX-OS Software for Nexus 6000 Series 7.0(1)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201901">Cisco NX-OS Software for Nexus 6000 Series 7.0(2)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201902">Cisco NX-OS Software for Nexus 6000 Series 7.0(3)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212037">Cisco NX-OS Software for Nexus 6000 Series 7.0(4)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212038">Cisco NX-OS Software for Nexus 6000 Series 7.0(5)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212039">Cisco NX-OS Software for Nexus 6000 Series 7.0(5)N1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208807">Cisco NX-OS Software for Nexus 6000 Series 7.0(6)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212040">Cisco NX-OS Software for Nexus 6000 Series 7.0(7)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208808">Cisco NX-OS Software for Nexus 6000 Series 7.1(1)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212041">Cisco NX-OS Software for Nexus 6000 Series 7.1(0)N1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212042">Cisco NX-OS Software for Nexus 6000 Series 7.1(0)N1(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212043">Cisco NX-OS Software for Nexus 6000 Series 7.1(2)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212044">Cisco NX-OS Software for Nexus 6000 Series 7.1(3)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212045">Cisco NX-OS Software for Nexus 6000 Series 7.2(0)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212046">Cisco NX-OS Software for Nexus 6000 Series 7.2(1)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191378">Cisco NX-OS Software for Nexus 7000 Series Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-191429">Cisco NX-OS Software for Nexus 7000 Series 4.1.(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191430">Cisco NX-OS Software for Nexus 7000 Series 4.1.(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191431">Cisco NX-OS Software for Nexus 7000 Series 4.1.(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191432">Cisco NX-OS Software for Nexus 7000 Series 4.1.(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191433">Cisco NX-OS Software for Nexus 7000 Series 4.2.(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191434">Cisco NX-OS Software for Nexus 7000 Series 4.2(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191435">Cisco NX-OS Software for Nexus 7000 Series 4.2(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191436">Cisco NX-OS Software for Nexus 7000 Series 4.2(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191437">Cisco NX-OS Software for Nexus 7000 Series 4.2(8)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191438">Cisco NX-OS Software for Nexus 7000 Series 5.0(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191439">Cisco NX-OS Software for Nexus 7000 Series 5.0(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191440">Cisco NX-OS Software for Nexus 7000 Series 5.0(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191441">Cisco NX-OS Software for Nexus 7000 Series 5.1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191442">Cisco NX-OS Software for Nexus 7000 Series 5.1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191443">Cisco NX-OS Software for Nexus 7000 Series 5.1(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191444">Cisco NX-OS Software for Nexus 7000 Series 5.1(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191445">Cisco NX-OS Software for Nexus 7000 Series 5.1(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191446">Cisco NX-OS Software for Nexus 7000 Series 5.1(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191447">Cisco NX-OS Software for Nexus 7000 Series 5.2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191448">Cisco NX-OS Software for Nexus 7000 Series 5.2(3a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191449">Cisco NX-OS Software for Nexus 7000 Series 5.2(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191450">Cisco NX-OS Software for Nexus 7000 Series 5.2(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191451">Cisco NX-OS Software for Nexus 7000 Series 5.2(7)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191452">Cisco NX-OS Software for Nexus 7000 Series 5.2(9)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191453">Cisco NX-OS Software for Nexus 7000 Series 6.0(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191454">Cisco NX-OS Software for Nexus 7000 Series 6.0(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191455">Cisco NX-OS Software for Nexus 7000 Series 6.0(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191456">Cisco NX-OS Software for Nexus 7000 Series 6.0(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191457">Cisco NX-OS Software for Nexus 7000 Series 6.1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191458">Cisco NX-OS Software for Nexus 7000 Series 6.1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191459">Cisco NX-OS Software for Nexus 7000 Series 6.1(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196607">Cisco NX-OS Software for Nexus 7000 Series 6.1(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196608">Cisco NX-OS Software for Nexus 7000 Series 6.1(4a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212033">Cisco NX-OS Software for Nexus 7000 Series 6.1(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196609">Cisco NX-OS Software for Nexus 7000 Series 6.2(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196610">Cisco NX-OS Software for Nexus 7000 Series 6.2(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-202738">Cisco NX-OS Software for Nexus 7000 Series 6.2(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205071">Cisco NX-OS Software for Nexus 7000 Series 6.2(6b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205072">Cisco NX-OS Software for Nexus 7000 Series 6.2(8)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205073">Cisco NX-OS Software for Nexus 7000 Series 6.2(8a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205074">Cisco NX-OS Software for Nexus 7000 Series 6.2(8b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205075">Cisco NX-OS Software for Nexus 7000 Series 6.2(10)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208194">Cisco NX-OS Software for Nexus 7000 Series 6.2(12)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209649">Cisco NX-OS Software for Nexus 7000 Series 6.2(14)S1</FullProductName>
-    <FullProductName ProductID="CVRFPID-209668">Cisco NX-OS Software for Nexus 7000 Series 7.2(0)N1(0.1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201604">Cisco NX-OS Software for Nexus 9000 Series 6.1(2)I2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201605">Cisco NX-OS Software for Nexus 9000 Series 6.1(2)I2(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201606">Cisco NX-OS Software for Nexus 9000 Series 6.1(2)I2(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-202737">Cisco NX-OS Software for Nexus 9000 Series 6.1(2)I2(2b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201607">Cisco NX-OS Software for Nexus 9000 Series 6.1(2)I2(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205091">Cisco NX-OS Software for Nexus 9000 Series 6.1(2)I3(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205092">Cisco NX-OS Software for Nexus 9000 Series 6.1(2)I3(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205093">Cisco NX-OS Software for Nexus 9000 Series 6.1(2)I3(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208867">Cisco NX-OS Software for Nexus 9000 Series 6.1(2)I3(3.78)</FullProductName>
-    <FullProductName ProductID="CVRFPID-210263">Cisco NX-OS Software for Nexus 9000 Series 6.1(2)I3(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208195">Cisco NX-OS Software for Nexus 9000 Series 7.0(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208580">Cisco NX-OS Software for Nexus 9000 Series 7.0(3)I1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208581">Cisco NX-OS Software for Nexus 9000 Series 7.0(3)I1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208582">Cisco NX-OS Software for Nexus 9000 Series 7.0(3)I1(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208583">Cisco NX-OS Software for Nexus 9000 Series 7.0(3)I1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-202735">Cisco NX-OS Software for Nexus 9000 Series 11.0(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-202736">Cisco NX-OS Software for Nexus 9000 Series 11.0(1c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208584">Cisco NX-OS Software for Nexus 9000 Series 11.0(1d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208585">Cisco NX-OS Software for Nexus 9000 Series 11.0(1e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208586">Cisco NX-OS Software for Nexus 9000 Series 11.0(2j)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208587">Cisco NX-OS Software for Nexus 9000 Series 11.0(2m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208588">Cisco NX-OS Software for Nexus 9000 Series 11.0(3f)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208589">Cisco NX-OS Software for Nexus 9000 Series 11.0(3i)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208590">Cisco NX-OS Software for Nexus 9000 Series 11.0(3k)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208591">Cisco NX-OS Software for Nexus 9000 Series 11.0(3n)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208592">Cisco NX-OS Software for Nexus 9000 Series 11.0(4h)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208593">Cisco NX-OS Software for Nexus 9000 Series 11.0(4o)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208594">Cisco NX-OS Software for Nexus 9000 Series 11.1(1j)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209618">Cisco NX-OS Software for Nexus 9000 Series 11.1(1c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220752">Cisco NX-OS Software for Nexus 9000 Series 11.1(1o)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220753">Cisco NX-OS Software for Nexus 9000 Series 11.1(1r)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220754">Cisco NX-OS Software for Nexus 9000 Series 11.1(1s)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220755">Cisco NX-OS Software for Nexus 9000 Series 11.1(2h)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220756">Cisco NX-OS Software for Nexus 9000 Series 11.1(2i)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220757">Cisco NX-OS Software for Nexus 9000 Series 11.1(3f)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220758">Cisco NX-OS Software for Nexus 9000 Series 11.1(4e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220759">Cisco NX-OS Software for Nexus 9000 Series 11.1(4f)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220760">Cisco NX-OS Software for Nexus 9000 Series 11.1(4g)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220761">Cisco NX-OS Software for Nexus 9000 Series 11.1(4i)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220762">Cisco NX-OS Software for Nexus 9000 Series 11.1(4l)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220763">Cisco NX-OS Software for Nexus 9000 Series 11.1(4m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220764">Cisco NX-OS Software for Nexus 9000 Series 11.2(1m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220765">Cisco NX-OS Software for Nexus 9000 Series 11.2(2g)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220766">Cisco NX-OS Software for Nexus 9000 Series 11.2(2h)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220767">Cisco NX-OS Software for Nexus 9000 Series 11.2(2i)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220768">Cisco NX-OS Software for Nexus 9000 Series 11.2(3c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220769">Cisco NX-OS Software for Nexus 9000 Series 11.2(3e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220770">Cisco NX-OS Software for Nexus 9000 Series 11.2(3h)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220771">Cisco NX-OS Software for Nexus 9000 Series 11.3(1i)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220772">Cisco NX-OS Software for Nexus 9000 Series 11.3(2f)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220773">Cisco NX-OS Software for Nexus 9000 Series 11.3(2h)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220774">Cisco NX-OS Software for Nexus 9000 Series 11.3(2i)</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco NX-OS Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-80720">Cisco NX-OS Software </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco NX-OS BGP Denial of Service Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCuq77105</ID>
     <Notes>
@@ -385,313 +598,20 @@ The vulnerability may be triggered when the router receives a malformed BGP mess
 
 If all BGP peers to the NX-OS Software are Cisco IOS, IOS-XE, or IOS-XR devices and those devices are not configured for Cisco Multicast VPN (MVPN) interautonomous system support, this vulnerability cannot be remotely exploited.
 </Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuq77105,CSCux11417</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuq77105,CSCux11417</Note>
     </Notes>
     <CVE>CVE-2016-1454</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-191370</ProductID>
-        <ProductID>CVRFPID-191376</ProductID>
-        <ProductID>CVRFPID-191378</ProductID>
-        <ProductID>CVRFPID-191379</ProductID>
-        <ProductID>CVRFPID-191380</ProductID>
-        <ProductID>CVRFPID-191381</ProductID>
-        <ProductID>CVRFPID-191391</ProductID>
-        <ProductID>CVRFPID-191392</ProductID>
-        <ProductID>CVRFPID-191393</ProductID>
-        <ProductID>CVRFPID-191394</ProductID>
-        <ProductID>CVRFPID-191395</ProductID>
-        <ProductID>CVRFPID-191396</ProductID>
-        <ProductID>CVRFPID-191397</ProductID>
-        <ProductID>CVRFPID-191398</ProductID>
-        <ProductID>CVRFPID-191399</ProductID>
-        <ProductID>CVRFPID-191400</ProductID>
-        <ProductID>CVRFPID-191401</ProductID>
-        <ProductID>CVRFPID-191402</ProductID>
-        <ProductID>CVRFPID-191403</ProductID>
-        <ProductID>CVRFPID-191404</ProductID>
-        <ProductID>CVRFPID-191405</ProductID>
-        <ProductID>CVRFPID-191406</ProductID>
-        <ProductID>CVRFPID-191407</ProductID>
-        <ProductID>CVRFPID-191408</ProductID>
-        <ProductID>CVRFPID-191409</ProductID>
-        <ProductID>CVRFPID-191410</ProductID>
-        <ProductID>CVRFPID-191411</ProductID>
-        <ProductID>CVRFPID-191412</ProductID>
-        <ProductID>CVRFPID-191413</ProductID>
-        <ProductID>CVRFPID-191414</ProductID>
-        <ProductID>CVRFPID-191415</ProductID>
-        <ProductID>CVRFPID-191416</ProductID>
-        <ProductID>CVRFPID-191417</ProductID>
-        <ProductID>CVRFPID-191418</ProductID>
-        <ProductID>CVRFPID-191419</ProductID>
-        <ProductID>CVRFPID-191420</ProductID>
-        <ProductID>CVRFPID-191421</ProductID>
-        <ProductID>CVRFPID-191422</ProductID>
-        <ProductID>CVRFPID-191423</ProductID>
-        <ProductID>CVRFPID-191424</ProductID>
-        <ProductID>CVRFPID-191425</ProductID>
-        <ProductID>CVRFPID-191426</ProductID>
-        <ProductID>CVRFPID-191427</ProductID>
-        <ProductID>CVRFPID-191428</ProductID>
-        <ProductID>CVRFPID-191429</ProductID>
-        <ProductID>CVRFPID-191430</ProductID>
-        <ProductID>CVRFPID-191431</ProductID>
-        <ProductID>CVRFPID-191432</ProductID>
-        <ProductID>CVRFPID-191433</ProductID>
-        <ProductID>CVRFPID-191434</ProductID>
-        <ProductID>CVRFPID-191435</ProductID>
-        <ProductID>CVRFPID-191436</ProductID>
-        <ProductID>CVRFPID-191437</ProductID>
-        <ProductID>CVRFPID-191438</ProductID>
-        <ProductID>CVRFPID-191439</ProductID>
-        <ProductID>CVRFPID-191440</ProductID>
-        <ProductID>CVRFPID-191441</ProductID>
-        <ProductID>CVRFPID-191442</ProductID>
-        <ProductID>CVRFPID-191443</ProductID>
-        <ProductID>CVRFPID-191444</ProductID>
-        <ProductID>CVRFPID-191445</ProductID>
-        <ProductID>CVRFPID-191446</ProductID>
-        <ProductID>CVRFPID-191447</ProductID>
-        <ProductID>CVRFPID-191448</ProductID>
-        <ProductID>CVRFPID-191449</ProductID>
-        <ProductID>CVRFPID-191450</ProductID>
-        <ProductID>CVRFPID-191451</ProductID>
-        <ProductID>CVRFPID-191452</ProductID>
-        <ProductID>CVRFPID-191453</ProductID>
-        <ProductID>CVRFPID-191454</ProductID>
-        <ProductID>CVRFPID-191455</ProductID>
-        <ProductID>CVRFPID-191456</ProductID>
-        <ProductID>CVRFPID-191457</ProductID>
-        <ProductID>CVRFPID-191458</ProductID>
-        <ProductID>CVRFPID-191459</ProductID>
-        <ProductID>CVRFPID-191466</ProductID>
-        <ProductID>CVRFPID-191467</ProductID>
-        <ProductID>CVRFPID-191468</ProductID>
-        <ProductID>CVRFPID-191469</ProductID>
-        <ProductID>CVRFPID-191470</ProductID>
-        <ProductID>CVRFPID-191471</ProductID>
-        <ProductID>CVRFPID-191472</ProductID>
-        <ProductID>CVRFPID-191473</ProductID>
-        <ProductID>CVRFPID-191474</ProductID>
-        <ProductID>CVRFPID-191475</ProductID>
-        <ProductID>CVRFPID-191476</ProductID>
-        <ProductID>CVRFPID-191477</ProductID>
-        <ProductID>CVRFPID-191478</ProductID>
-        <ProductID>CVRFPID-191479</ProductID>
-        <ProductID>CVRFPID-191480</ProductID>
-        <ProductID>CVRFPID-191481</ProductID>
-        <ProductID>CVRFPID-191482</ProductID>
-        <ProductID>CVRFPID-191483</ProductID>
-        <ProductID>CVRFPID-191484</ProductID>
-        <ProductID>CVRFPID-191485</ProductID>
-        <ProductID>CVRFPID-191551</ProductID>
-        <ProductID>CVRFPID-191552</ProductID>
-        <ProductID>CVRFPID-191553</ProductID>
-        <ProductID>CVRFPID-191554</ProductID>
-        <ProductID>CVRFPID-191555</ProductID>
-        <ProductID>CVRFPID-191556</ProductID>
-        <ProductID>CVRFPID-191557</ProductID>
-        <ProductID>CVRFPID-191558</ProductID>
-        <ProductID>CVRFPID-191559</ProductID>
-        <ProductID>CVRFPID-191560</ProductID>
-        <ProductID>CVRFPID-191561</ProductID>
-        <ProductID>CVRFPID-191562</ProductID>
-        <ProductID>CVRFPID-191563</ProductID>
-        <ProductID>CVRFPID-194693</ProductID>
-        <ProductID>CVRFPID-194694</ProductID>
-        <ProductID>CVRFPID-196607</ProductID>
-        <ProductID>CVRFPID-196608</ProductID>
-        <ProductID>CVRFPID-196609</ProductID>
-        <ProductID>CVRFPID-196610</ProductID>
-        <ProductID>CVRFPID-196611</ProductID>
-        <ProductID>CVRFPID-196612</ProductID>
-        <ProductID>CVRFPID-196613</ProductID>
-        <ProductID>CVRFPID-196614</ProductID>
-        <ProductID>CVRFPID-196615</ProductID>
-        <ProductID>CVRFPID-196616</ProductID>
-        <ProductID>CVRFPID-196617</ProductID>
-        <ProductID>CVRFPID-196618</ProductID>
-        <ProductID>CVRFPID-196619</ProductID>
-        <ProductID>CVRFPID-198539</ProductID>
-        <ProductID>CVRFPID-201604</ProductID>
-        <ProductID>CVRFPID-201605</ProductID>
-        <ProductID>CVRFPID-201606</ProductID>
-        <ProductID>CVRFPID-201607</ProductID>
-        <ProductID>CVRFPID-201874</ProductID>
-        <ProductID>CVRFPID-201875</ProductID>
-        <ProductID>CVRFPID-201876</ProductID>
-        <ProductID>CVRFPID-201877</ProductID>
-        <ProductID>CVRFPID-201878</ProductID>
-        <ProductID>CVRFPID-201879</ProductID>
-        <ProductID>CVRFPID-201880</ProductID>
-        <ProductID>CVRFPID-201881</ProductID>
-        <ProductID>CVRFPID-201882</ProductID>
-        <ProductID>CVRFPID-201883</ProductID>
-        <ProductID>CVRFPID-201884</ProductID>
-        <ProductID>CVRFPID-201885</ProductID>
-        <ProductID>CVRFPID-201886</ProductID>
-        <ProductID>CVRFPID-201887</ProductID>
-        <ProductID>CVRFPID-201888</ProductID>
-        <ProductID>CVRFPID-201890</ProductID>
-        <ProductID>CVRFPID-201891</ProductID>
-        <ProductID>CVRFPID-201892</ProductID>
-        <ProductID>CVRFPID-201893</ProductID>
-        <ProductID>CVRFPID-201894</ProductID>
-        <ProductID>CVRFPID-201895</ProductID>
-        <ProductID>CVRFPID-201896</ProductID>
-        <ProductID>CVRFPID-201897</ProductID>
-        <ProductID>CVRFPID-201898</ProductID>
-        <ProductID>CVRFPID-201899</ProductID>
-        <ProductID>CVRFPID-201900</ProductID>
-        <ProductID>CVRFPID-201901</ProductID>
-        <ProductID>CVRFPID-201902</ProductID>
-        <ProductID>CVRFPID-202735</ProductID>
-        <ProductID>CVRFPID-202736</ProductID>
-        <ProductID>CVRFPID-202737</ProductID>
-        <ProductID>CVRFPID-202738</ProductID>
-        <ProductID>CVRFPID-203349</ProductID>
-        <ProductID>CVRFPID-205071</ProductID>
-        <ProductID>CVRFPID-205072</ProductID>
-        <ProductID>CVRFPID-205073</ProductID>
-        <ProductID>CVRFPID-205074</ProductID>
-        <ProductID>CVRFPID-205075</ProductID>
-        <ProductID>CVRFPID-205076</ProductID>
-        <ProductID>CVRFPID-205077</ProductID>
-        <ProductID>CVRFPID-205078</ProductID>
-        <ProductID>CVRFPID-205079</ProductID>
-        <ProductID>CVRFPID-205080</ProductID>
-        <ProductID>CVRFPID-205081</ProductID>
-        <ProductID>CVRFPID-205082</ProductID>
-        <ProductID>CVRFPID-205083</ProductID>
-        <ProductID>CVRFPID-205084</ProductID>
-        <ProductID>CVRFPID-205085</ProductID>
-        <ProductID>CVRFPID-205086</ProductID>
-        <ProductID>CVRFPID-205087</ProductID>
-        <ProductID>CVRFPID-205088</ProductID>
-        <ProductID>CVRFPID-205089</ProductID>
-        <ProductID>CVRFPID-205090</ProductID>
-        <ProductID>CVRFPID-205091</ProductID>
-        <ProductID>CVRFPID-205092</ProductID>
-        <ProductID>CVRFPID-205093</ProductID>
-        <ProductID>CVRFPID-208194</ProductID>
-        <ProductID>CVRFPID-208195</ProductID>
-        <ProductID>CVRFPID-208580</ProductID>
-        <ProductID>CVRFPID-208581</ProductID>
-        <ProductID>CVRFPID-208582</ProductID>
-        <ProductID>CVRFPID-208583</ProductID>
-        <ProductID>CVRFPID-208584</ProductID>
-        <ProductID>CVRFPID-208585</ProductID>
-        <ProductID>CVRFPID-208586</ProductID>
-        <ProductID>CVRFPID-208587</ProductID>
-        <ProductID>CVRFPID-208588</ProductID>
-        <ProductID>CVRFPID-208589</ProductID>
-        <ProductID>CVRFPID-208590</ProductID>
-        <ProductID>CVRFPID-208591</ProductID>
-        <ProductID>CVRFPID-208592</ProductID>
-        <ProductID>CVRFPID-208593</ProductID>
-        <ProductID>CVRFPID-208594</ProductID>
-        <ProductID>CVRFPID-208805</ProductID>
-        <ProductID>CVRFPID-208806</ProductID>
-        <ProductID>CVRFPID-208807</ProductID>
-        <ProductID>CVRFPID-208808</ProductID>
-        <ProductID>CVRFPID-208867</ProductID>
-        <ProductID>CVRFPID-209610</ProductID>
-        <ProductID>CVRFPID-209618</ProductID>
-        <ProductID>CVRFPID-209649</ProductID>
-        <ProductID>CVRFPID-209650</ProductID>
-        <ProductID>CVRFPID-209651</ProductID>
-        <ProductID>CVRFPID-209668</ProductID>
-        <ProductID>CVRFPID-210024</ProductID>
-        <ProductID>CVRFPID-210263</ProductID>
-        <ProductID>CVRFPID-210611</ProductID>
-        <ProductID>CVRFPID-212033</ProductID>
-        <ProductID>CVRFPID-212034</ProductID>
-        <ProductID>CVRFPID-212035</ProductID>
-        <ProductID>CVRFPID-212036</ProductID>
-        <ProductID>CVRFPID-212037</ProductID>
-        <ProductID>CVRFPID-212038</ProductID>
-        <ProductID>CVRFPID-212039</ProductID>
-        <ProductID>CVRFPID-212040</ProductID>
-        <ProductID>CVRFPID-212041</ProductID>
-        <ProductID>CVRFPID-212042</ProductID>
-        <ProductID>CVRFPID-212043</ProductID>
-        <ProductID>CVRFPID-212044</ProductID>
-        <ProductID>CVRFPID-212045</ProductID>
-        <ProductID>CVRFPID-212046</ProductID>
-        <ProductID>CVRFPID-212073</ProductID>
-        <ProductID>CVRFPID-213564</ProductID>
-        <ProductID>CVRFPID-213565</ProductID>
-        <ProductID>CVRFPID-213566</ProductID>
-        <ProductID>CVRFPID-213567</ProductID>
-        <ProductID>CVRFPID-213568</ProductID>
-        <ProductID>CVRFPID-213569</ProductID>
-        <ProductID>CVRFPID-213570</ProductID>
-        <ProductID>CVRFPID-213571</ProductID>
-        <ProductID>CVRFPID-213572</ProductID>
-        <ProductID>CVRFPID-213573</ProductID>
-        <ProductID>CVRFPID-217747</ProductID>
-        <ProductID>CVRFPID-217748</ProductID>
-        <ProductID>CVRFPID-220693</ProductID>
-        <ProductID>CVRFPID-220694</ProductID>
-        <ProductID>CVRFPID-220695</ProductID>
-        <ProductID>CVRFPID-220696</ProductID>
-        <ProductID>CVRFPID-220699</ProductID>
-        <ProductID>CVRFPID-220700</ProductID>
-        <ProductID>CVRFPID-220701</ProductID>
-        <ProductID>CVRFPID-220702</ProductID>
-        <ProductID>CVRFPID-220703</ProductID>
-        <ProductID>CVRFPID-220704</ProductID>
-        <ProductID>CVRFPID-220705</ProductID>
-        <ProductID>CVRFPID-220714</ProductID>
-        <ProductID>CVRFPID-220715</ProductID>
-        <ProductID>CVRFPID-220716</ProductID>
-        <ProductID>CVRFPID-220717</ProductID>
-        <ProductID>CVRFPID-220718</ProductID>
-        <ProductID>CVRFPID-220724</ProductID>
-        <ProductID>CVRFPID-220725</ProductID>
-        <ProductID>CVRFPID-220726</ProductID>
-        <ProductID>CVRFPID-220727</ProductID>
-        <ProductID>CVRFPID-220728</ProductID>
-        <ProductID>CVRFPID-220729</ProductID>
-        <ProductID>CVRFPID-220730</ProductID>
-        <ProductID>CVRFPID-220731</ProductID>
-        <ProductID>CVRFPID-220732</ProductID>
-        <ProductID>CVRFPID-220733</ProductID>
-        <ProductID>CVRFPID-220734</ProductID>
-        <ProductID>CVRFPID-220735</ProductID>
-        <ProductID>CVRFPID-220736</ProductID>
-        <ProductID>CVRFPID-220752</ProductID>
-        <ProductID>CVRFPID-220753</ProductID>
-        <ProductID>CVRFPID-220754</ProductID>
-        <ProductID>CVRFPID-220755</ProductID>
-        <ProductID>CVRFPID-220756</ProductID>
-        <ProductID>CVRFPID-220757</ProductID>
-        <ProductID>CVRFPID-220758</ProductID>
-        <ProductID>CVRFPID-220759</ProductID>
-        <ProductID>CVRFPID-220760</ProductID>
-        <ProductID>CVRFPID-220761</ProductID>
-        <ProductID>CVRFPID-220762</ProductID>
-        <ProductID>CVRFPID-220763</ProductID>
-        <ProductID>CVRFPID-220764</ProductID>
-        <ProductID>CVRFPID-220765</ProductID>
-        <ProductID>CVRFPID-220766</ProductID>
-        <ProductID>CVRFPID-220767</ProductID>
-        <ProductID>CVRFPID-220768</ProductID>
-        <ProductID>CVRFPID-220769</ProductID>
-        <ProductID>CVRFPID-220770</ProductID>
-        <ProductID>CVRFPID-220771</ProductID>
-        <ProductID>CVRFPID-220772</ProductID>
-        <ProductID>CVRFPID-220773</ProductID>
-        <ProductID>CVRFPID-220774</ProductID>
+        <ProductID>CVRFPID-80720</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>7.1</BaseScore>
-        <TemporalScore>5.9</TemporalScore>
-        <Vector>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>7.1</BaseScoreV2>
+        <TemporalScoreV2>5.9</TemporalScoreV2>
+        <VectorV2>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Wide Area Application Service CIFS Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Common Internet File System (CIFS) optimization feature of the Cisco Wide Area Application Service (WAAS) device could allow an unauthenticated, remote attacker to perform a resource consumption attack which, could result in a complete denial of service (DoS) condition.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Common Internet File System (CIFS) optimization feature of the Cisco Wide Area Application Service (WAAS) device could allow an unauthenticated, remote attacker to perform a resource consumption attack which, could result in a complete denial of service (DoS) condition.
 
  
 
@@ -43,6 +43,161 @@ The vulnerability is due to insufficient flow handling of incoming CIFS traffic.
 
 
 This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-waascifs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160127-waascifs"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">The following Cisco WAAS products are affected by this vulnerability:
+
+
+    Cisco WAAS appliances
+    Cisco Virtual WAAS (vWAAS)
+    Cisco WAAS modules
+
+The vulnerability was introduced in WAAS version 5.1.1d. Administrators can use the  show version command from the WAAS command-line interface (CLI) to determine whether a vulnerable version of Cisco WAAS Software is running. The following example shows the results for a WAAS device running Software Version 5.5.5 Build 16:
+
+
+
+
+# show version
+
+Cisco Wide Area Application Services Software (WAAS) Copyright (c) 1999-2015 by Cisco Systems, Inc.
+
+Cisco Wide Area Application Services (accelerator-k9) Software Release 5.5.5 (build b16 Aug  4 2015)
+
+Version: oe594-5.5.5.16
+
+...
+
+
+See the "Fixed Software" section of this security advisory for more information about the affected versions.
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">The following products running Cisco WAAS software are not affected by this vulnerability:
+
+
+    
+    Cisco WAAS Express (WAASx)
+    Cisco WAAS Mobile
+
+No other Cisco products are currently known to be affected by this vulnerability.
+</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="4">Exploitation of this vulnerability could cause an affected device to reload and generate a core file. To view the core file, administrators can use the dir crash command in the WAAS CLI. To determine whether a device was affected by this vulnerability, the core file should be reviewed by the Cisco Technical Assistance Center (TAC).</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">The workaround for this vulnerability is to configure the following command at the WAAS CLI:
+
+
+# accelerator cifs expert RxCIFS IOCTLHandling true
+
+
+This command disables part of the cifs-ao optimization process. The workaround causes some requests to be sent without being locally processed, which may cause a minor performance impact in the optimization of CIFS traffic.
+</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+Customers Without Service Contracts
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC):
+
+
+
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+
+In the following table, the left column lists major releases of Cisco WAAS software. The right column indicates whether a major release is affected by the vulnerability described in this advisory and the first minor release that includes the fix for this vulnerability.
+
+ 
+
+Customers should upgrade to an appropriate release as indicated in the following table:
+
+
+
+
+    
+        
+            WAAS Major Release 
+            
+            First Fixed Release for This Advisory 
+            
+        
+        
+            Prior to 5.0
+
+            
+            Not affected
+
+            
+        
+        
+            5.0 
+
+            
+            Not affected
+
+            
+        
+        
+            5.1
+            Releases prior to 5.1.1d not affected, all other releases affected; migrate to 5.3.5d or later.
+
+            
+        
+        
+            5.2
+            Affected; migrate to 5.3.5d
+        
+        
+            5.3
+            5.3.5d 
+        
+        
+            5.4
+            Affected; migrate to 5.5.3
+
+            
+        
+        
+            5.5
+            5.5.3 
+        
+        
+            6.0
+            Not affected
+        
+    
+
+
+
+Software Download
+
+
+
+The latest Cisco WAAS software can be downloaded from the Software Center on Cisco.com by visiting http://www.cisco.com/cisco/software/navigator.html["http://www.cisco.com/cisco/software/navigator.html"] and selecting:
+
+
+
+Downloads Home &gt; Products &gt; Application Networking Services &gt; Wide Area Application Services &gt; Wide Area Application Services (WAAS) Software 
+
+
+
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy[http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">The vulnerability was discovered by Cisco TAC during resolution of a support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -50,22 +205,14 @@ This advisory is available at the following link: http://tools.cisco.com/securit
       <Description>Cisco Wide Area Application Service CIFS Denial of Service Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-192299">Cisco Wide Area Application Services (WAAS) 5.1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-192300">Cisco Wide Area Application Services (WAAS) 5.1.1a</FullProductName>
-    <FullProductName ProductID="CVRFPID-192301">Cisco Wide Area Application Services (WAAS) 5.1.1b</FullProductName>
-    <FullProductName ProductID="CVRFPID-192302">Cisco Wide Area Application Services (WAAS) 5.1.1c</FullProductName>
-    <FullProductName ProductID="CVRFPID-199523">Cisco Wide Area Application Services (WAAS) 5.1.1d</FullProductName>
-    <FullProductName ProductID="CVRFPID-192293">Cisco Wide Area Application Services (WAAS) 5.2 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-192303">Cisco Wide Area Application Services (WAAS) 5.2.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-199519">Cisco Wide Area Application Services (WAAS) 5.3.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-199520">Cisco Wide Area Application Services (WAAS) 5.3.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-199521">Cisco Wide Area Application Services (WAAS) 5.3.5</FullProductName>
-    <FullProductName ProductID="CVRFPID-199522">Cisco Wide Area Application Services (WAAS) 5.3.5a</FullProductName>
-    <FullProductName ProductID="CVRFPID-202808">Cisco Wide Area Application Services (WAAS) 5.3.5b</FullProductName>
-    <FullProductName ProductID="CVRFPID-212229">Cisco Wide Area Application Services (WAAS) 5.3.5c</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Wide Area Application Services (WAAS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7367">Cisco Wide Area Application Services (WAAS) </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Wide Area Application Service CIFS DoS Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCus85330</ID>
     <Notes>
@@ -74,32 +221,20 @@ This advisory is available at the following link: http://tools.cisco.com/securit
  
 
 The vulnerability is due to insufficient flow handling of incoming CIFS traffic. An attacker could exploit this vulnerability by sending malicious traffic designed to trigger the vulnerability. An exploit could allow the attacker to cause a DoS condition by exhausting system buffering resources, resulting in a reload of the affected device.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCus85330</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCus85330</Note>
     </Notes>
     <CVE>CVE-2015-6421</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-192293</ProductID>
-        <ProductID>CVRFPID-192299</ProductID>
-        <ProductID>CVRFPID-192300</ProductID>
-        <ProductID>CVRFPID-192301</ProductID>
-        <ProductID>CVRFPID-192302</ProductID>
-        <ProductID>CVRFPID-192303</ProductID>
-        <ProductID>CVRFPID-199519</ProductID>
-        <ProductID>CVRFPID-199520</ProductID>
-        <ProductID>CVRFPID-199521</ProductID>
-        <ProductID>CVRFPID-199522</ProductID>
-        <ProductID>CVRFPID-199523</ProductID>
-        <ProductID>CVRFPID-202808</ProductID>
-        <ProductID>CVRFPID-212229</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>7.8</BaseScore>
-        <TemporalScore>6.4</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>7.8</BaseScoreV2>
+        <TemporalScoreV2>6.4</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

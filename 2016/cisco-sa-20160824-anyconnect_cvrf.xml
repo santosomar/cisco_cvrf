@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco AnyConnect Secure Mobility Client Local Privilege Escalation Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Cisco AnyConnect Secure Mobility Client for Windows could allow an authenticated, local attacker to install and execute an arbitrary executable file with privileges equivalent to the Microsoft Windows operating system SYSTEM account.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco AnyConnect Secure Mobility Client for Windows could allow an authenticated, local attacker to install and execute an arbitrary executable file with privileges equivalent to the Microsoft Windows operating system SYSTEM account.
 
 
 
@@ -45,6 +45,26 @@ Cisco has released software updates that address this vulnerability. There are n
 
 
 This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160824-anyconnect["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160824-anyconnect"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">All software releases of Cisco AnyConnect Secure Mobility Client earlier than the first fixed releases of 4.2.05015 and 4.3.02039 are vulnerable.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco provides information about fixed software in Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution. 
+
+
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and  confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="8">This vulnerability was reported to Cisco by Felix Willhelm, a security researcher with ERNW.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -52,66 +72,14 @@ This advisory is available at the following link: http://tools.cisco.com/securit
       <Description>Cisco AnyConnect Secure Mobility Client Local Privilege Escalation Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-109828">Cisco AnyConnect Secure Mobility Client 2.0.0343</FullProductName>
-    <FullProductName ProductID="CVRFPID-109830">Cisco AnyConnect Secure Mobility Client 2.1.0148</FullProductName>
-    <FullProductName ProductID="CVRFPID-109832">Cisco AnyConnect Secure Mobility Client 2.2.0133</FullProductName>
-    <FullProductName ProductID="CVRFPID-109833">Cisco AnyConnect Secure Mobility Client 2.2.0136</FullProductName>
-    <FullProductName ProductID="CVRFPID-109834">Cisco AnyConnect Secure Mobility Client 2.2.0140</FullProductName>
-    <FullProductName ProductID="CVRFPID-109836">Cisco AnyConnect Secure Mobility Client 2.3.0185</FullProductName>
-    <FullProductName ProductID="CVRFPID-115640">Cisco AnyConnect Secure Mobility Client 2.3.0254</FullProductName>
-    <FullProductName ProductID="CVRFPID-115641">Cisco AnyConnect Secure Mobility Client 2.3.1003</FullProductName>
-    <FullProductName ProductID="CVRFPID-115642">Cisco AnyConnect Secure Mobility Client 2.3.2016</FullProductName>
-    <FullProductName ProductID="CVRFPID-115648">Cisco AnyConnect Secure Mobility Client 2.4.0202</FullProductName>
-    <FullProductName ProductID="CVRFPID-115649">Cisco AnyConnect Secure Mobility Client 2.4.1012</FullProductName>
-    <FullProductName ProductID="CVRFPID-109812">Cisco AnyConnect Secure Mobility Client 2.5 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-109815">Cisco AnyConnect Secure Mobility Client 2.5.0217</FullProductName>
-    <FullProductName ProductID="CVRFPID-109816">Cisco AnyConnect Secure Mobility Client 2.5.2006</FullProductName>
-    <FullProductName ProductID="CVRFPID-109817">Cisco AnyConnect Secure Mobility Client 2.5.2010</FullProductName>
-    <FullProductName ProductID="CVRFPID-109818">Cisco AnyConnect Secure Mobility Client 2.5.2011</FullProductName>
-    <FullProductName ProductID="CVRFPID-109819">Cisco AnyConnect Secure Mobility Client 2.5.2014</FullProductName>
-    <FullProductName ProductID="CVRFPID-109820">Cisco AnyConnect Secure Mobility Client 2.5.2017</FullProductName>
-    <FullProductName ProductID="CVRFPID-109821">Cisco AnyConnect Secure Mobility Client 2.5.2018</FullProductName>
-    <FullProductName ProductID="CVRFPID-109822">Cisco AnyConnect Secure Mobility Client 2.5.2019</FullProductName>
-    <FullProductName ProductID="CVRFPID-109823">Cisco AnyConnect Secure Mobility Client 2.5.3041</FullProductName>
-    <FullProductName ProductID="CVRFPID-115643">Cisco AnyConnect Secure Mobility Client 2.5.3046</FullProductName>
-    <FullProductName ProductID="CVRFPID-115644">Cisco AnyConnect Secure Mobility Client 2.5.3051</FullProductName>
-    <FullProductName ProductID="CVRFPID-115645">Cisco AnyConnect Secure Mobility Client 2.5.3054</FullProductName>
-    <FullProductName ProductID="CVRFPID-115646">Cisco AnyConnect Secure Mobility Client 2.5.3055</FullProductName>
-    <FullProductName ProductID="CVRFPID-109814">Cisco AnyConnect Secure Mobility Client 3.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-109824">Cisco AnyConnect Secure Mobility Client 3.0.0629</FullProductName>
-    <FullProductName ProductID="CVRFPID-109825">Cisco AnyConnect Secure Mobility Client 3.0.1047</FullProductName>
-    <FullProductName ProductID="CVRFPID-109826">Cisco AnyConnect Secure Mobility Client 3.0.2052</FullProductName>
-    <FullProductName ProductID="CVRFPID-115650">Cisco AnyConnect Secure Mobility Client 3.0.3050</FullProductName>
-    <FullProductName ProductID="CVRFPID-115651">Cisco AnyConnect Secure Mobility Client 3.0.3054</FullProductName>
-    <FullProductName ProductID="CVRFPID-115652">Cisco AnyConnect Secure Mobility Client 3.0.4235</FullProductName>
-    <FullProductName ProductID="CVRFPID-115653">Cisco AnyConnect Secure Mobility Client 3.0.5075</FullProductName>
-    <FullProductName ProductID="CVRFPID-115654">Cisco AnyConnect Secure Mobility Client 3.0.5080</FullProductName>
-    <FullProductName ProductID="CVRFPID-203350">Cisco AnyConnect Secure Mobility Client 3.0.09231</FullProductName>
-    <FullProductName ProductID="CVRFPID-203351">Cisco AnyConnect Secure Mobility Client 3.0.09266</FullProductName>
-    <FullProductName ProductID="CVRFPID-203352">Cisco AnyConnect Secure Mobility Client 3.0.09353</FullProductName>
-    <FullProductName ProductID="CVRFPID-191881">Cisco AnyConnect Secure Mobility Client 3.1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-191882">Cisco AnyConnect Secure Mobility Client 3.1.02043</FullProductName>
-    <FullProductName ProductID="CVRFPID-204854">Cisco AnyConnect Secure Mobility Client 3.1.05182</FullProductName>
-    <FullProductName ProductID="CVRFPID-204855">Cisco AnyConnect Secure Mobility Client 3.1.05187</FullProductName>
-    <FullProductName ProductID="CVRFPID-204856">Cisco AnyConnect Secure Mobility Client 3.1.06073</FullProductName>
-    <FullProductName ProductID="CVRFPID-208063">Cisco AnyConnect Secure Mobility Client 3.1.07021</FullProductName>
-    <FullProductName ProductID="CVRFPID-208444">Cisco AnyConnect Secure Mobility Client 3.1(60)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209528">Cisco AnyConnect Secure Mobility Client 4.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-204858">Cisco AnyConnect Secure Mobility Client 4.0.00048</FullProductName>
-    <FullProductName ProductID="CVRFPID-204859">Cisco AnyConnect Secure Mobility Client 4.0.00051</FullProductName>
-    <FullProductName ProductID="CVRFPID-207963">Cisco AnyConnect Secure Mobility Client 4.0(64)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208051">Cisco AnyConnect Secure Mobility Client 4.0(48)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209322">Cisco AnyConnect Secure Mobility Client 4.0(2049)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209527">Cisco AnyConnect Secure Mobility Client 4.1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-210409">Cisco AnyConnect Secure Mobility Client 4.1(8)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220229">Cisco AnyConnect Secure Mobility Client 4.2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220230">Cisco AnyConnect Secure Mobility Client 4.2.04039</FullProductName>
-    <FullProductName ProductID="CVRFPID-220232">Cisco AnyConnect Secure Mobility Client 4.3.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220233">Cisco AnyConnect Secure Mobility Client 4.3.00748</FullProductName>
-    <FullProductName ProductID="CVRFPID-220234">Cisco AnyConnect Secure Mobility Client 4.3.01095</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco AnyConnect Secure Mobility Client" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-109810">Cisco AnyConnect Secure Mobility Client </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco AnyConnect Secure Mobility Client Local Privilege Escalation Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCuz92464</ID>
     <Notes>
@@ -120,76 +88,20 @@ This advisory is available at the following link: http://tools.cisco.com/securit
 
 
 The vulnerability is due to incomplete input validation of path names and filenames of the file to be installed. An attacker could exploit this vulnerability by creating a modified INF file. An exploit could allow the attacker to execute commands on the underlying Microsoft Windows host with privileges equivalent to the SYSTEM account.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz92464</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz92464</Note>
     </Notes>
     <CVE>CVE-2016-6369</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-109812</ProductID>
-        <ProductID>CVRFPID-109814</ProductID>
-        <ProductID>CVRFPID-109815</ProductID>
-        <ProductID>CVRFPID-109816</ProductID>
-        <ProductID>CVRFPID-109817</ProductID>
-        <ProductID>CVRFPID-109818</ProductID>
-        <ProductID>CVRFPID-109819</ProductID>
-        <ProductID>CVRFPID-109820</ProductID>
-        <ProductID>CVRFPID-109821</ProductID>
-        <ProductID>CVRFPID-109822</ProductID>
-        <ProductID>CVRFPID-109823</ProductID>
-        <ProductID>CVRFPID-109824</ProductID>
-        <ProductID>CVRFPID-109825</ProductID>
-        <ProductID>CVRFPID-109826</ProductID>
-        <ProductID>CVRFPID-109828</ProductID>
-        <ProductID>CVRFPID-109830</ProductID>
-        <ProductID>CVRFPID-109832</ProductID>
-        <ProductID>CVRFPID-109833</ProductID>
-        <ProductID>CVRFPID-109834</ProductID>
-        <ProductID>CVRFPID-109836</ProductID>
-        <ProductID>CVRFPID-115640</ProductID>
-        <ProductID>CVRFPID-115641</ProductID>
-        <ProductID>CVRFPID-115642</ProductID>
-        <ProductID>CVRFPID-115643</ProductID>
-        <ProductID>CVRFPID-115644</ProductID>
-        <ProductID>CVRFPID-115645</ProductID>
-        <ProductID>CVRFPID-115646</ProductID>
-        <ProductID>CVRFPID-115648</ProductID>
-        <ProductID>CVRFPID-115649</ProductID>
-        <ProductID>CVRFPID-115650</ProductID>
-        <ProductID>CVRFPID-115651</ProductID>
-        <ProductID>CVRFPID-115652</ProductID>
-        <ProductID>CVRFPID-115653</ProductID>
-        <ProductID>CVRFPID-115654</ProductID>
-        <ProductID>CVRFPID-191881</ProductID>
-        <ProductID>CVRFPID-191882</ProductID>
-        <ProductID>CVRFPID-203350</ProductID>
-        <ProductID>CVRFPID-203351</ProductID>
-        <ProductID>CVRFPID-203352</ProductID>
-        <ProductID>CVRFPID-204854</ProductID>
-        <ProductID>CVRFPID-204855</ProductID>
-        <ProductID>CVRFPID-204856</ProductID>
-        <ProductID>CVRFPID-204858</ProductID>
-        <ProductID>CVRFPID-204859</ProductID>
-        <ProductID>CVRFPID-207963</ProductID>
-        <ProductID>CVRFPID-208051</ProductID>
-        <ProductID>CVRFPID-208063</ProductID>
-        <ProductID>CVRFPID-208444</ProductID>
-        <ProductID>CVRFPID-209322</ProductID>
-        <ProductID>CVRFPID-209527</ProductID>
-        <ProductID>CVRFPID-209528</ProductID>
-        <ProductID>CVRFPID-210409</ProductID>
-        <ProductID>CVRFPID-220229</ProductID>
-        <ProductID>CVRFPID-220230</ProductID>
-        <ProductID>CVRFPID-220232</ProductID>
-        <ProductID>CVRFPID-220233</ProductID>
-        <ProductID>CVRFPID-220234</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>6.8</BaseScore>
-        <TemporalScore>5.3</TemporalScore>
-        <Vector>AV:L/AC:L/Au:S/C:C/I:C/A:C/E:POC/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>6.8</BaseScoreV2>
+        <TemporalScoreV2>5.3</TemporalScoreV2>
+        <VectorV2>AV:L/AC:L/Au:S/C:C/I:C/A:C/E:POC/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

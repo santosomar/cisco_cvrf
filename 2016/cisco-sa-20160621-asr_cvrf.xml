@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco ASR 5000 Series Packet Data Network Gateway Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the implementation of General Packet Radio Switching Tunneling Protocol Version 1 (GTPv1) in Cisco ASR 5000 Series Packet Data Network Gateways  could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition due to an unexpected restart of the Session Manager process for the device.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the implementation of General Packet Radio Switching Tunneling Protocol Version 1 (GTPv1) in Cisco ASR 5000 Series Packet Data Network Gateways  could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition due to an unexpected restart of the Session Manager process for the device.
 
 
 
@@ -45,6 +45,26 @@ Cisco has released software updates that address this vulnerability. There are n
 
 
 This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160621-asr["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160621-asr"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco ASR 5000 Series Packet Data Network Gateways running a software release prior to Release 19.4.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco provides information about fixed software in Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
+
+ 
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.
+</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="8">This vulnerability was found during the resolution of a support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -52,31 +72,14 @@ This advisory is available at the following link: http://tools.cisco.com/securit
       <Description>Cisco ASR 5000 Series Packet Data Network Gateway Denial of Service Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-201739">Cisco ASR 5000 Series Software 17.2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-208361">Cisco ASR 5000 Series Software 17.2.0.59184</FullProductName>
-    <FullProductName ProductID="CVRFPID-213602">Cisco ASR 5000 Series Software 17.7.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-208360">Cisco ASR 5000 Series Software 18.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-208362">Cisco ASR 5000 Series Software 18.0.L0.59219</FullProductName>
-    <FullProductName ProductID="CVRFPID-211207">Cisco ASR 5000 Series Software 18.0.0.57828</FullProductName>
-    <FullProductName ProductID="CVRFPID-208886">Cisco ASR 5000 Series Software 18.0.0.59167</FullProductName>
-    <FullProductName ProductID="CVRFPID-208887">Cisco ASR 5000 Series Software 18.0.0.59211</FullProductName>
-    <FullProductName ProductID="CVRFPID-207271">Cisco ASR 5000 Series Software 18.1 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-207272">Cisco ASR 5000 Series Software 18.1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-207273">Cisco ASR 5000 Series Software 18.1.0.59776</FullProductName>
-    <FullProductName ProductID="CVRFPID-209815">Cisco ASR 5000 Series Software 18.1.0.59780</FullProductName>
-    <FullProductName ProductID="CVRFPID-213604">Cisco ASR 5000 Series Software 18.4.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-213605">Cisco ASR 5000 Series Software 19.0.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-209814">Cisco ASR 5000 Series Software 19.0.M0.60737</FullProductName>
-    <FullProductName ProductID="CVRFPID-209816">Cisco ASR 5000 Series Software 19.0.M0.60828</FullProductName>
-    <FullProductName ProductID="CVRFPID-211208">Cisco ASR 5000 Series Software 19.0.M0.61045</FullProductName>
-    <FullProductName ProductID="CVRFPID-211422">Cisco ASR 5000 Series Software 19.1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-211425">Cisco ASR 5000 Series Software 19.1.0.61559</FullProductName>
-    <FullProductName ProductID="CVRFPID-211424">Cisco ASR 5000 Series Software 19.2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-213607">Cisco ASR 5000 Series Software 19.3.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-216758">Cisco ASR 5000 Series Software 17.3.1</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco ASR 5000 Series Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-193199">Cisco ASR 5000 Series Software </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco ASR 5000 Series Packet Data Network Gateway Denial of Service Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCuz46198</ID>
     <Notes>
@@ -85,41 +88,20 @@ This advisory is available at the following link: http://tools.cisco.com/securit
 
 
 The vulnerability is due to improper input validation of GTPv1 packet headers. An attacker could exploit this vulnerability by sending a crafted GTPv1 packet to a targeted device. A successful exploit could allow the attacker to cause the Session Manager process for the device to restart unexpectedly, resulting in a DoS condition.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuz46198</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz46198</Note>
     </Notes>
     <CVE>CVE-2016-1436</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-201739</ProductID>
-        <ProductID>CVRFPID-207271</ProductID>
-        <ProductID>CVRFPID-207272</ProductID>
-        <ProductID>CVRFPID-207273</ProductID>
-        <ProductID>CVRFPID-208360</ProductID>
-        <ProductID>CVRFPID-208361</ProductID>
-        <ProductID>CVRFPID-208362</ProductID>
-        <ProductID>CVRFPID-208886</ProductID>
-        <ProductID>CVRFPID-208887</ProductID>
-        <ProductID>CVRFPID-209814</ProductID>
-        <ProductID>CVRFPID-209815</ProductID>
-        <ProductID>CVRFPID-209816</ProductID>
-        <ProductID>CVRFPID-211207</ProductID>
-        <ProductID>CVRFPID-211208</ProductID>
-        <ProductID>CVRFPID-211422</ProductID>
-        <ProductID>CVRFPID-211424</ProductID>
-        <ProductID>CVRFPID-211425</ProductID>
-        <ProductID>CVRFPID-213602</ProductID>
-        <ProductID>CVRFPID-213604</ProductID>
-        <ProductID>CVRFPID-213605</ProductID>
-        <ProductID>CVRFPID-213607</ProductID>
-        <ProductID>CVRFPID-216758</ProductID>
+        <ProductID>CVRFPID-193199</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>5.0</BaseScore>
-        <TemporalScore>4.1</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>5.0</BaseScoreV2>
+        <TemporalScoreV2>4.1</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

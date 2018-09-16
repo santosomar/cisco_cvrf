@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Meeting Server Information Disclosure Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Web Bridge for Cisco Meeting Server could allow an unauthenticated, remote attacker to retrieve memory from a connected server.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Web Bridge for Cisco Meeting Server could allow an unauthenticated, remote attacker to retrieve memory from a connected server.
 
 
 
@@ -45,6 +45,39 @@ Cisco has released software updates that address this vulnerability. Workarounds
 
 
 This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161019-cms1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161019-cms1"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">Cisco Meeting Server is affected.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Details" Type="General" Ordinal="4">Cisco Meeting Server incorporates video, audio, and content-sharing capabilities into software that can be accessed via a conference room, desktop, or mobile device. The Cisco Meeting Server product works across Cisco video rooms and connects with Skype for Business and other hardware providers to allow a seamless meeting architecture. This capability exists via collaboration between Cisco and Acano, who joined Cisco in early 2016. Software releases prior to 2.0 are available via Acano's website at https://www.acano.com/support/downloads["https://www.acano.com/support/downloads"]. Acano's release notes addressing this vulnerability in the 1.8 and 1.9 releases can be found at ftp://ftp.acano.com/software/server/1.8/1.8.17/Release%20Notes%201.8.17.pdf["ftp://ftp.acano.com/software/server/1.8/1.8.17/Release%20Notes%201.8.17.pdf"] and https://www.acano.com/publications/2016/09/Release-Notes-R1.9.5.pdf["https://www.acano.com/publications/2016/09/Release-Notes-R1.9.5.pdf"].</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">Workarounds that address this vulnerability are not available.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco Meeting Server version 2.0.3 software is available for download at Cisco's Software Download Center: https://software.cisco.com/download/navigator.html?mdfid=286309710["https://software.cisco.com/download/navigator.html?mdfid=286309710"]
+
+
+
+Acano Meeting Server version 1.9.5 software is available for download on Acano's website: https://www.acano.com/support/downloads/["https://www.acano.com/support/downloads/"]
+
+
+
+Acano Meeting Server version 1.8.17 software is available for download on Acano's website: ftp://ftp.acano.com/software/server/1.8/1.8.17["ftp://ftp.acano.com/software/server/1.8/1.8.17"]
+
+
+
+Cisco provides information about fixed software in Cisco bugs, which are accessible through the Cisco Bug Search Tool.["https://bst.cloudapps.cisco.com/bugsearch/"]
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution. 
+
+
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.
+</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory. 
+</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -52,18 +85,14 @@ This advisory is available at the following link: http://tools.cisco.com/securit
       <Description>Cisco Meeting Server Information Disclosure Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-217170">Cisco Meeting Server 1.8 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-217174">Cisco Meeting Server 1.8.15</FullProductName>
-    <FullProductName ProductID="CVRFPID-217172">Cisco Meeting Server 1.9.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-217175">Cisco Meeting Server 1.9.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-221055">Cisco Meeting Server 2.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-221056">Cisco Meeting Server 2.0.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-221057">Cisco Meeting Server 2.0.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-221058">Cisco Meeting Server 2.0.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-221059">Cisco Meeting Server 2.0.5</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Meeting Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-217166">Cisco Meeting Server </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Meeting Server Information Disclosure Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCvb03308</ID>
     <Notes>
@@ -72,28 +101,20 @@ This advisory is available at the following link: http://tools.cisco.com/securit
 
 
 The vulnerability is due to missing bounds checks in the Web Bridge functionality. An attacker could exploit this vulnerability by sending a crafted packet to the affected server. An exploit could allow the attacker to disclose a portion of memory from the server for every packet. The disclosed portions of memory could contain sensitive information such as private keys or passwords.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCvb03308</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvb03308</Note>
     </Notes>
     <CVE>CVE-2016-6446</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-217170</ProductID>
-        <ProductID>CVRFPID-217172</ProductID>
-        <ProductID>CVRFPID-217174</ProductID>
-        <ProductID>CVRFPID-217175</ProductID>
-        <ProductID>CVRFPID-221055</ProductID>
-        <ProductID>CVRFPID-221056</ProductID>
-        <ProductID>CVRFPID-221057</ProductID>
-        <ProductID>CVRFPID-221058</ProductID>
-        <ProductID>CVRFPID-221059</ProductID>
+        <ProductID>CVRFPID-217166</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>5.0</BaseScore>
-        <TemporalScore>4.1</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:P/I:N/A:N/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>5.0</BaseScoreV2>
+        <TemporalScoreV2>4.1</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:P/I:N/A:N/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

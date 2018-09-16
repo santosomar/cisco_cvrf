@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco NX-OS Software SNMP Packet Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Simple Network Management Protocol (SNMP) input packet processor of Cisco Nexus 5500 Platform Switches, Cisco Nexus 5600 Platform Switches, and Cisco Nexus 6000 Series Switches running Cisco NX-OS Software could allow an unauthenticated, remote attacker to cause the SNMP application on an affected device to restart unexpectedly.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Simple Network Management Protocol (SNMP) input packet processor of Cisco Nexus 5500 Platform Switches, Cisco Nexus 5600 Platform Switches, and Cisco Nexus 6000 Series Switches running Cisco NX-OS Software could allow an unauthenticated, remote attacker to cause the SNMP application on an affected device to restart unexpectedly.
 
 
 
@@ -49,6 +49,181 @@ This advisory is available at the following link:
 
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-n5ksnmp["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-n5ksnmp"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco Nexus 5500 Platform Switches, Cisco Nexus 5600 Platform Switches, and Cisco Nexus 6000 Series Switches running Cisco NX-OS Software Release 7.1(1)N1(1).
+
+
+
+To determine whether a device is running a vulnerable release of Cisco NX-OS Software, administrators can use the show version command in the NX-OS command-line interface. The following example shows the output of this command for a Cisco Nexus 5500 Platform Switch running Cisco NX-OS Software Release 7.1(1)N1(1):
+
+
+# show version
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2012, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained herein are owned by
+other third parties and are used and distributed under license.
+Some parts of this software are covered under the GNU Public
+License. A copy of the license is available at
+http://www.gnu.org/licenses/gpl.html.
+
+Software
+BIOS:      version 3.6.0
+loader:    version N/A
+kickstart: version 7.1(1)N1(1)
+system:    version 7.1(1)N1(1)
+.
+.
+.
+
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+
+
+Cisco has confirmed that this vulnerability does not affect the following Cisco products:
+
+
+    Cisco Multilayer Director Switches
+    Cisco Nexus 1000 Series Switches
+    Cisco Nexus 2000 Series Switches
+    Cisco Nexus 3000 Series Switches
+    Cisco Nexus 3500 Series Switches
+    Cisco Nexus 4000 Series Switches
+    Cisco Nexus 5000 Series Switches, except Cisco Nexus 5500 and Cisco Nexus 5600 Platform Switches
+    Cisco Nexus 7000 Series Switches
+    Cisco Nexus 7700 Series Switches
+    Cisco Nexus 9000 Series Switches
+    Cisco Unified Computing System (UCS) 6100 Series Fabric Interconnects
+    Cisco Unified Computing System (UCS) 6200 Series Fabric Interconnects
+</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="4">Exploitation of this vulnerability could cause an affected device to reload and generate an SNMP core file. To view the SNMP core file, administrators can use the show core command in the NX-OS CLI. Contact the Cisco Technical Assistance Center (TAC) to review the SNMP core file and determine whether the device has been compromised by exploitation of this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license: http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"].
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+Customers Without Service Contracts
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC): http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"].
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+
+Fixed Releases
+
+
+
+
+Customers should upgrade to an appropriate release as indicated in the applicable table in this section. To help ensure a complete upgrade solution, consider that this advisory is part of a collection that includes the following advisories:
+
+    cisco-sa-20160302-n5ksnmp["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-n5ksnmp"]: Cisco NX-OS Software SNMP Packet Denial of Service Vulnerability
+    cisco-sa-20160302-netstack["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-netstack"]: Cisco NX-OS Software TCP Netstack Denial of Service Vulnerability
+    cisco-sa-20160302-n3k["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160302-n3k"]: Cisco Nexus 3000 Series and 3500 Platform Switches Insecure Default Credentials Vulnerability
+
+In the following table, the left column lists major releases of Cisco NX-OS Software. The center column indicates whether a major release is affected by the vulnerability described in this advisory and the first minor release that includes the fix for this vulnerability. The right column indicates whether a major release is affected by all the vulnerabilities described in this collection of advisories and which release includes fixes for those vulnerabilities.
+
+Customers should upgrade to an appropriate release as indicated in the following table:
+
+
+    
+        
+            Cisco NX-OS Software Major Release - Nexus 5500, 5600, and 6000 Series Switches
+            
+            First Fixed Release for
+
+            This Vulnerability
+            
+            First Fixed Release for
+
+            This Vulnerability and
+
+            All Vulnerabilities Described in the Collection of Advisories
+            
+        
+        
+            Prior to 5.2
+            Not affected
+            7.1(2)N1(1)
+
+            
+        
+        
+            5.2
+
+            
+            Not affected
+
+            
+            7.1(2)N1(1)
+
+            
+        
+        
+            6.0
+
+            
+            Not affected
+
+            
+            7.1(2)N1(1)
+
+            
+        
+        
+            7.0
+            Not affected
+
+            
+            7.1(2)N1(1)
+
+            
+        
+        
+            7.1
+            7.1(2)N1(1)
+            7.1(2)N1(1)
+        
+        
+            7.2
+            Not affected
+            7.1(2)N1(1)
+
+            
+        
+    
+
+
+
+Release Recommendations
+
+
+
+For additional assistance in determining the best Cisco NX-OS Software release for a Cisco Nexus Switch, refer to the recommended release document for the switch: Cisco Nexus 5500 Platform Switches["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus5500/sw/release/recommended_releases/n5500_recommended_nx-os_releases.html"], Cisco Nexus 5600 Platform Switches["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus5600/sw/release/recommended_releases/n5600_recommended_nx-os_releases.html"], and Cisco Nexus 6000 Series Switches["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus6000/sw/release/recommended_releases/recommended_nx-os_releases.html"]</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.
+</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -56,11 +231,14 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco NX-OS Software SNMP Packet Denial of Service Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-208806">Cisco NX-OS Software for Nexus 5000 Series 7.1(1)N1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208808">Cisco NX-OS Software for Nexus 6000 Series 7.1(1)N1(1)</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco NX-OS Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-80720">Cisco NX-OS Software </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco NX-OS Software SNMP Packet Denial of Service Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCut84645</ID>
     <Notes>
@@ -69,21 +247,20 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 
 The vulnerability is due to improper validation of SNMP Protocol Data Units (PDUs) in SNMP packets. An attacker could exploit this vulnerability by sending a crafted SNMP packet to an affected device, which could cause the SNMP application on the device to restart. A successful exploit could allow the attacker to cause the SNMP application to restart multiple times, leading to a system-level restart and a denial of service (DoS) condition.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCut84645</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCut84645</Note>
     </Notes>
     <CVE>CVE-2015-6260</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-208806</ProductID>
-        <ProductID>CVRFPID-208808</ProductID>
+        <ProductID>CVRFPID-80720</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>7.8</BaseScore>
-        <TemporalScore>6.4</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>7.8</BaseScoreV2>
+        <TemporalScoreV2>6.4</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

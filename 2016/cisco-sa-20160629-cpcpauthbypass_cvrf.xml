@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Prime Collaboration Provisioning Lightweight Directory Access Protocol Authentication Bypass Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Lightweight Directory Access Protocol (LDAP) authentication for Cisco Prime Collaboration Provisioning could allow an unauthenticated, remote attacker to bypass authentication. The attacker could be granted full administrator privileges.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Lightweight Directory Access Protocol (LDAP) authentication for Cisco Prime Collaboration Provisioning could allow an unauthenticated, remote attacker to bypass authentication. The attacker could be granted full administrator privileges.
 
 
 
@@ -49,6 +49,88 @@ This advisory is available at the following link:
 
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160629-cpcpauthbypass["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160629-cpcpauthbypass"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">Cisco Prime Collaboration Provisioning software version 10.6 with Service Pack 2 (SP2) installed is the only vulnerable version. 
+
+
+
+To determine whether a vulnerable version of Cisco Prime Collaboration Provisioning Software is running, administrators can use the show version command at the command-line interface (CLI) and check if Current patch  version : 10.6.0.10602 is displayed. This indicated that 10.6 SP2 is installed on the device.
+
+
+
+
+
+
+
+cpcpserver/admin# show version
+
+Cisco Application Deployment Engine OS Release:
+ADE-OS Build Version:
+ADE-OS System Architecture: x86_64
+Copyright (c) 2005-2010 by Cisco Systems, Inc.
+All rights reserved.
+Hostname: cpcpserver
+
+Version information of installed applications
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Collaboration Manager
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Version      : 10.6.0.1015
+Build Date   : Fri Dec 19 00:29:48 2014
+Install Date : Fri Dec 19 00:59:44 2014
+	
+Prime Collaboration Manager Patch information
+########################################
+Current patch  version : 10.6.0.10602
+Total Number of patches applied so far :  1
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">Cisco has confirmed that this vulnerability does not affect Cisco Prime Collaboration Assurance.
+
+
+
+No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are no workarounds that address this vulnerability.
+</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license: http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"].
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized re-seller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+Customers Without Service Contracts
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC): http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html."].
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+ 
+
+Fixed Releases
+
+
+
+This vulnerability is fixed in Prime Collaboration Provisioning software Patch_CSCuv37513_10.6_SP2.zip. The software can be downloaded from the Software Center["http://www.cisco.com/cisco/software/navigator.html"] on Cisco.com by navigating to Products &gt; Cloud and Systems Management &gt; Collaboration and Unified Communications Management &gt; Prime Collaboration &gt; Prime Collaboration 10.6 &gt; Prime Collaboration Patches.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="8">This vulnerability was found during the resolution of a support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -56,10 +138,14 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco Prime Collaboration Provisioning Lightweight Directory Access Protocol Authentication Bypass Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-216439">Cisco Prime Collaboration Provisioning 10.6.2</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Prime Collaboration Provisioning" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-209583">Cisco Prime Collaboration Provisioning </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Prime Collaboration Provisioning Lightweight Directory Access Protocol Authentication Bypass Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCuv37513</ID>
     <Notes>
@@ -68,20 +154,20 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 
 The vulnerability is due to an improper implementation of LDAP authentication. An attacker could exploit this vulnerability by logging into a targeted device that is configured for LDAP authentication. Successful exploitation of this vulnerability could grant the attacker full administrator privileges.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuv37513</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuv37513</Note>
     </Notes>
     <CVE>CVE-2016-1416</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-216439</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>10.0</BaseScore>
-        <TemporalScore>8.3</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>10.0</BaseScoreV2>
+        <TemporalScoreV2>8.3</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

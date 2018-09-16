@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Video Communications Server Information Disclosure Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">Cisco Video Communications Server (VCS), when utilized as part of a Jabber Guest deployment, contains an information disclosure vulnerability that could allow and unauthenticated, remote attacker to gain access to potentially sensitive information.
+    <Note Title="Summary" Type="Summary" Ordinal="1">Cisco Video Communications Server (VCS), when utilized as part of a Jabber Guest deployment, contains an information disclosure vulnerability that could allow and unauthenticated, remote attacker to gain access to potentially sensitive information.
 
 
 
@@ -45,6 +45,20 @@ Cisco has not released software updates that address this vulnerability. Workaro
 
 
 This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160208-vcs["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160208-vcs"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">Cisco TelePresence Video Communication Server (VCS) X8 versions utilized by Jabber Guest deployment are vulnerable.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">Workarounds are not available.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution. 
+
+
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and  confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="8">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -52,22 +66,14 @@ This advisory is available at the following link: http://tools.cisco.com/securit
       <Description>Cisco Video Communications Server Information Disclosure Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-197131">Cisco TelePresence Video Communication Server (VCS) X8.1 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202676">Cisco TelePresence Video Communication Server (VCS) X8.1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-213294">Cisco TelePresence Video Communication Server (VCS) X8.1.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-202678">Cisco TelePresence Video Communication Server (VCS) X8.2 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202679">Cisco TelePresence Video Communication Server (VCS) X8.2.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-213293">Cisco TelePresence Video Communication Server (VCS) X8.2.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-205970">Cisco TelePresence Video Communication Server (VCS) X8.5.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-205971">Cisco TelePresence Video Communication Server (VCS) X8.5.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-209631">Cisco TelePresence Video Communication Server (VCS) X8.5.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-213292">Cisco TelePresence Video Communication Server (VCS) X8.5.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-210350">Cisco TelePresence Video Communication Server (VCS) X8.6.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-213291">Cisco TelePresence Video Communication Server (VCS) X8.6.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-213290">Cisco TelePresence Video Communication Server (VCS) X8.7 Base</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco TelePresence Video Communication Server (VCS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-112250">Cisco TelePresence Video Communication Server (VCS) </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Video Communications Server Information Disclosure Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCux73362</ID>
     <Notes>
@@ -76,32 +82,20 @@ This advisory is available at the following link: http://tools.cisco.com/securit
 
 
 The vulnerability exists due to a failure to properly protect an informational URL that contains aggregated call statistics. An attacker that knows the URL could submit a request to retrieve the page containing the information.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux73362</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCux73362</Note>
     </Notes>
     <CVE>CVE-2016-1316</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-197131</ProductID>
-        <ProductID>CVRFPID-202676</ProductID>
-        <ProductID>CVRFPID-202678</ProductID>
-        <ProductID>CVRFPID-202679</ProductID>
-        <ProductID>CVRFPID-205970</ProductID>
-        <ProductID>CVRFPID-205971</ProductID>
-        <ProductID>CVRFPID-209631</ProductID>
-        <ProductID>CVRFPID-210350</ProductID>
-        <ProductID>CVRFPID-213290</ProductID>
-        <ProductID>CVRFPID-213291</ProductID>
-        <ProductID>CVRFPID-213292</ProductID>
-        <ProductID>CVRFPID-213293</ProductID>
-        <ProductID>CVRFPID-213294</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>5.0</BaseScore>
-        <TemporalScore>4.8</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:P/I:N/A:N/E:F/RL:U/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>5.0</BaseScoreV2>
+        <TemporalScoreV2>4.8</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:P/I:N/A:N/E:F/RL:U/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

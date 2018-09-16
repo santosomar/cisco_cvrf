@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco IOS and NX-OS Software Locator/ID Separation Protocol Packet Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Locator/ID Separation Protocol (LISP) of Cisco IOS Software running on the Cisco Catalyst 6500 and 6800 Series Switches and Cisco NX-OS Software running on the Cisco Nexus 7000 and Nexus 7700 Series Switches with an M1 Series Gigabit Ethernet Module could allow an unauthenticated, remote attacker to cause a reload of the vulnerable device.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Locator/ID Separation Protocol (LISP) of Cisco IOS Software running on the Cisco Catalyst 6500 and 6800 Series Switches and Cisco NX-OS Software running on the Cisco Nexus 7000 and Nexus 7700 Series Switches with an M1 Series Gigabit Ethernet Module could allow an unauthenticated, remote attacker to cause a reload of the vulnerable device.
 
 
 
@@ -53,6 +53,254 @@ This advisory is available at the following link:
 
 
 This advisory is part of the March 23, 2016, release of the Cisco IOS and IOS XE Software Security Advisory Bundled Publication, which includes six Cisco Security Advisories that describe six vulnerabilities. All the vulnerabilities have a Security Impact Rating of "High." For a complete list of advisories and links to them, see Cisco Event Response: Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication["http://www.cisco.com/c/en/us/about/security-center/event-response/cisco-erp-march-2016.html"].</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">Cisco Catalyst 6500 and 6800 Series Switches running Cisco IOS Software, and Cisco Nexus 7000 and Nexus 7700 Series Switches with an M1 Series Gigabit Ethernet Module running Cisco NX-OS Software are vulnerable when LISP is configured. LISP is not enabled by default on either platform.
+
+
+
+For information about which Cisco IOS and NX-OS Software versions are vulnerable, see the "Fixed Software" section of this advisory. 
+
+
+
+Cisco Catalyst 6500 and 6800 Series Switches
+
+
+
+
+LISP support was first introduced in release 15.1(1)SY1. To determine if LISP is configured on the device, use the show running-config | include lisp command to see if router lisp is configured, as shown in the following example:
+
+
+
+iosRouter# show running-config | include lisp
+
+router lisp
+Determining the Cisco IOS Software Release
+
+
+
+To determine which Cisco IOS Software release is running on a Cisco product, administrators can log in to the device and issue the show version command to display the system banner. If the device is running Cisco IOS Software, the system banner displays text similar to Cisco Internetwork Operating System Software or Cisco IOS Software. The image name displays in parentheses, followed by the Cisco IOS Software release number and release name.
+
+
+
+The following example identifies a Cisco product that is running Cisco IOS Software Release 15.2(1)SY1 with an installed image name of c6880x-ADVENTERPRISEK9-M:
+
+
+
+iosRouter# show version
+Cisco IOS Software, c6880x Software (c6880x-ADVENTERPRISEK9-M), Version 15.2(1)SY1, RELEASE SOFTWARE (fc5)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2015 by Cisco Systems, Inc.
+Compiled Mon 11-May-15 00:26 by prod_rel_team
+.
+.
+.
+Additional information about Cisco IOS Software release naming conventions is available in White Paper: Cisco IOS and NX-OS Software Reference Guide["http://www.cisco.com/c/en/us/about/security-center/ios-nx-os-reference-guide.html"].
+
+
+
+Nexus 7000 and 7700 Series Switches 
+
+
+
+The Nexus 7000 and 7700 Series Switches added LISP support in software release 5.2(1). The Nexus 7000 and 7700 Series Switches with LISP configured are vulnerable only if the LISP packet is input on an M1 Series Gigabit Ethernet Module. Use the show module | include M1 command to check whether an M1 module is installed in the Nexus 7000 chassis, as shown in the following example:
+
+
+
+nxosRouter# show module | include M1
+
+3    48     10/100/1000 Mbps Ethernet XL Module N7K-M148GT-11L     powered-up
+If there is an M1 Series Gigabit Ethernet Module installed, it will be vulnerable only if LISP packets are input to interfaces configured on this module. To check whether the LISP feature is enabled, use the show feature | include lisp command, as in the following example:
+
+
+
+nxosRouter# show feature | include lisp
+
+lisp                  1         enabled
+The show ip lisp command can be used to determine the LISP configuration for the M1 interfaces:
+
+
+
+nxosRouter# show ip lisp 
+
+LISP IP Configuration Information for VRF "default" (iid 1)
+
+  Ingress Tunnel Router (ITR):enabled
+
+  Egress Tunnel Router (ETR):disabled
+
+  Proxy-ITR Router (PTR):disabled
+
+  Proxy-ETR Router (PETR):disabled
+
+  Map Resolver (MR):disabled
+
+  Map Server (MS):disabled
+
+  LISP Multicast:disabled
+
+.
+.
+.
+For more information on the Nexus 7000 and 7700 Series Switches LISP Configuration, see Configuring Locator/ID Separation Protocol["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/nx-os/lisp/configuration/guide/b_NX-OS_LISP_Configuration_Guide/b_NX-OS_LISP_Configuration_Guide_chapter_01.html"]. 
+
+
+
+Determine the Cisco NX-OS Software Release
+
+
+
+To determine the Cisco NX-OS Software release that is running on a Cisco Nexus 7000 Series switch, administrators can log in to the device and issue the show version command. The following example identifies the 6.2(14) release:
+
+
+
+nxosRouter# show version
+
+Cisco Nexus Operating System (NX-OS) Software
+
+TAC support: http://www.cisco.com/tac
+
+Documents: http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+
+Copyright (c) 2002-2015, Cisco Systems, Inc. All rights reserved.
+
+The copyrights to certain works contained in this software are
+
+owned by other third parties and used and distributed under
+
+license. Certain components of this software are licensed under
+
+the GNU General Public License (GPL) version 2.0 or the GNU
+
+Lesser General Public License (LGPL) Version 2.1. A copy of each
+
+such license is available at
+
+http://www.opensource.org/licenses/gpl-2.0.php and
+
+http://www.opensource.org/licenses/lgpl-2.1.php
+
+
+Software
+
+  BIOS:      version 2.12.0
+
+  kickstart: version 6.2(14)
+
+  system:    version 6.2(14)
+.
+.
+.
+
+Note: The following Cisco M1 Series Gigabit Ethernet Module Series modules are no longer supported as of Cisco NX-OS Release 7.3(0)D1(1):
+
+
+    N7K-M148GT-11
+    N7K-M132XP-12
+    N7K-M148GS-11
+
+For further information, see the Unsupported Hardware section in Cisco Nexus 7000 Series NX-OS Release Notes, Release 7.3["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/7_x/nx-os/release/notes/7x_nx-os_release_note.html#17498"].
+
+
+
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+
+
+Cisco has confirmed that this vulnerability does not affect Cisco IOS-XR and Cisco IOS-XE. 
+
+
+
+Cisco 7600 Series Routers are not affected by this vulnerability.</Note>
+    <Note Title="Details" Type="General" Ordinal="4">The LISP network architecture and protocol implements a new semantic for IP addressing by creating two new namespaces: Endpoint Identifiers (EIDs), which are assigned to end hosts, and Routing Locators (RLOCs), which are assigned to devices (primarily routers) that make up the global routing system. Splitting EID and RLOC functions improves routing system scalability, multihoming efficiency, and ingress traffic engineering. LISP end site support is configured on devices such as Cisco routers. This vulnerability is present for any type of LISP configuration in which a LISP packet is input on an affected interface.
+
+
+
+The Cisco Catalyst 6500 and 6800 Series Switches and the Cisco Nexus 7000 and 7700 Series Switches with an M1 Series Gigabit Ethernet Module share a common ASIC, which could crash when a malformed LISP packet is received. For this vulnerability to be exploited, the LISP packet must be destined to UDP port number 4341, which is the well-known port number for LISP, the UDP LISP header must be malformed, and the header length must be incorrect.
+
+
+
+On the Cisco Catalyst 6500 and 6800 Series Switches this vulnerability results in a complete reload of the device. On the Cisco Nexus 7000 and 7700 Series Switches with M1 Series Gigabit Ethernet Module installed, the M1 module itself reloads but the rest of the chassis remains stable.
+</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="5">On Cisco Catalyst 6500 and 6800 Series Switches, an exploit of this vulnerability causes the device to reload with a reset reason of EARL Recovery Patch errors. 
+
+
+
+On Cisco Nexus 7000 and 7700 Series Switches with M1 Series Gigabit Ethernet Module, this vulnerability causes the M1 module to reload with a reset reason of Fatal Interrupt Metropolis device error.
+
+
+
+Cisco Technical Assistance Center (TAC) should review the system log file to determine if the device has been affected by this vulnerability.
+</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"]
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC):
+
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+
+    
+        
+    
+    
+        Cisco IOS Software
+        To help customers determine their exposure to vulnerabilities in Cisco IOS Software, Cisco provides a tool, the Cisco IOS Software Checker["http://tools.cisco.com/security/center/selectIOSVersion.x"], that identifies any Cisco Security Advisories that impact a specific Cisco IOS Software release and the earliest release that fixes the vulnerabilities described in each advisory ("First Fixed"). If applicable, the tool also returns the earliest release that fixes all the vulnerabilities described in all the advisories identified ("Combined First Fixed").
+
+        Customers can use this tool to perform the following tasks:
+
+        
+            Initiate a search by choosing one or more releases from a drop-down menu or uploading a file from a local system for the tool to parse
+            Enter the output of the show version command for the tool to parse 
+            Create a custom search by including all previously published Cisco Security Advisories, a specific advisory, or all advisories in the most recent bundled publication
+        
+        To determine whether a release is affected by any published Cisco Security Advisory, use the Cisco IOS Software Checker["http://tools.cisco.com/security/center/selectIOSVersion.x"] on Cisco.com or enter a Cisco IOS Software release—for example, 15.1(4)M2—in the following field:
+
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+            
+            
+
+        
+    
+
+
+
+
+Cisco NX-OS Software
+
+
+
+This vulnerability is fixed in software version 7.3(0)D1(1). The Cisco Nexus 7000 and Nexus 7700 Series Software can be downloaded from the Software Center on Cisco.com by visiting http://www.cisco.com/cisco/software/navigator.html ["http://www.cisco.com/cisco/software/navigator.html "]and choosing Downloads Home &gt; Products &gt; Switches &gt; Data Center Switches &gt; Nexus 7000 Series Switches.
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was found during resolution of a customer case handled by the Cisco TAC.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -76,65 +324,136 @@ This advisory is part of the March 23, 2016, release of the Cisco IOS and IOS XE
       <Description>Summary of Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, March 23, 2016 </Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-191378">Cisco NX-OS Software for Nexus 7000 Series Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-191429">Cisco NX-OS Software for Nexus 7000 Series 4.1.(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191430">Cisco NX-OS Software for Nexus 7000 Series 4.1.(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191431">Cisco NX-OS Software for Nexus 7000 Series 4.1.(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191432">Cisco NX-OS Software for Nexus 7000 Series 4.1.(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191433">Cisco NX-OS Software for Nexus 7000 Series 4.2.(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191434">Cisco NX-OS Software for Nexus 7000 Series 4.2(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191435">Cisco NX-OS Software for Nexus 7000 Series 4.2(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191436">Cisco NX-OS Software for Nexus 7000 Series 4.2(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191437">Cisco NX-OS Software for Nexus 7000 Series 4.2(8)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191438">Cisco NX-OS Software for Nexus 7000 Series 5.0(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191439">Cisco NX-OS Software for Nexus 7000 Series 5.0(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191440">Cisco NX-OS Software for Nexus 7000 Series 5.0(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191441">Cisco NX-OS Software for Nexus 7000 Series 5.1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191442">Cisco NX-OS Software for Nexus 7000 Series 5.1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191443">Cisco NX-OS Software for Nexus 7000 Series 5.1(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191444">Cisco NX-OS Software for Nexus 7000 Series 5.1(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191445">Cisco NX-OS Software for Nexus 7000 Series 5.1(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191446">Cisco NX-OS Software for Nexus 7000 Series 5.1(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191447">Cisco NX-OS Software for Nexus 7000 Series 5.2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191448">Cisco NX-OS Software for Nexus 7000 Series 5.2(3a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191449">Cisco NX-OS Software for Nexus 7000 Series 5.2(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191450">Cisco NX-OS Software for Nexus 7000 Series 5.2(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191451">Cisco NX-OS Software for Nexus 7000 Series 5.2(7)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191452">Cisco NX-OS Software for Nexus 7000 Series 5.2(9)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191453">Cisco NX-OS Software for Nexus 7000 Series 6.0(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191454">Cisco NX-OS Software for Nexus 7000 Series 6.0(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191455">Cisco NX-OS Software for Nexus 7000 Series 6.0(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191456">Cisco NX-OS Software for Nexus 7000 Series 6.0(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191457">Cisco NX-OS Software for Nexus 7000 Series 6.1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191458">Cisco NX-OS Software for Nexus 7000 Series 6.1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191459">Cisco NX-OS Software for Nexus 7000 Series 6.1(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196607">Cisco NX-OS Software for Nexus 7000 Series 6.1(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196608">Cisco NX-OS Software for Nexus 7000 Series 6.1(4a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196609">Cisco NX-OS Software for Nexus 7000 Series 6.2(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196610">Cisco NX-OS Software for Nexus 7000 Series 6.2(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-202738">Cisco NX-OS Software for Nexus 7000 Series 6.2(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205071">Cisco NX-OS Software for Nexus 7000 Series 6.2(6b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205072">Cisco NX-OS Software for Nexus 7000 Series 6.2(8)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205073">Cisco NX-OS Software for Nexus 7000 Series 6.2(8a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205074">Cisco NX-OS Software for Nexus 7000 Series 6.2(8b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205075">Cisco NX-OS Software for Nexus 7000 Series 6.2(10)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208194">Cisco NX-OS Software for Nexus 7000 Series 6.2(12)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209649">Cisco NX-OS Software for Nexus 7000 Series 6.2(14)S1</FullProductName>
-    <FullProductName ProductID="CVRFPID-209668">Cisco NX-OS Software for Nexus 7000 Series 7.2(0)N1(0.1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-184932">Cisco IOS 15.1(2)SY</FullProductName>
-    <FullProductName ProductID="CVRFPID-188061">Cisco IOS 15.1(2)SY1</FullProductName>
-    <FullProductName ProductID="CVRFPID-189219">Cisco IOS 15.1(2)SY2</FullProductName>
-    <FullProductName ProductID="CVRFPID-198059">Cisco IOS 15.1(2)SY3</FullProductName>
-    <FullProductName ProductID="CVRFPID-201019">Cisco IOS 15.1(2)SY4</FullProductName>
-    <FullProductName ProductID="CVRFPID-204832">Cisco IOS 15.1(2)SY4a</FullProductName>
-    <FullProductName ProductID="CVRFPID-204110">Cisco IOS 15.1(2)SY5</FullProductName>
-    <FullProductName ProductID="CVRFPID-209044">Cisco IOS 15.1(2)SY6</FullProductName>
-    <FullProductName ProductID="CVRFPID-192726">Cisco IOS 15.2(1)SY</FullProductName>
-    <FullProductName ProductID="CVRFPID-209063">Cisco IOS 15.2(1)SY0a</FullProductName>
-    <FullProductName ProductID="CVRFPID-204828">Cisco IOS 15.2(1)SY1</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="IOS" Type="Product Name">
+        <Branch Name="15.1M" Type="Product Version">
+          <Branch Name="15.1(4)M12c" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-233143">Cisco IOS 15.1M 15.1(4)M12c</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SG" Type="Product Version">
+          <Branch Name="15.1(2)SG8a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-233796">Cisco IOS 15.1SG 15.1(2)SG8a</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SY" Type="Product Version">
+          <Branch Name="15.1(1)SY1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-115285">Cisco IOS 15.1SY 15.1(1)SY1</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-184932">Cisco IOS 15.1SY 15.1(2)SY</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-188061">Cisco IOS 15.1SY 15.1(2)SY1</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-189219">Cisco IOS 15.1SY 15.1(2)SY2</FullProductName>
+          </Branch>
+          <Branch Name="15.1(1)SY2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-191635">Cisco IOS 15.1SY 15.1(1)SY2</FullProductName>
+          </Branch>
+          <Branch Name="15.1(1)SY3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-194944">Cisco IOS 15.1SY 15.1(1)SY3</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-198059">Cisco IOS 15.1SY 15.1(2)SY3</FullProductName>
+          </Branch>
+          <Branch Name="15.1(1)SY4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-198426">Cisco IOS 15.1SY 15.1(1)SY4</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-201019">Cisco IOS 15.1SY 15.1(2)SY4</FullProductName>
+          </Branch>
+          <Branch Name="15.1(1)SY5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204109">Cisco IOS 15.1SY 15.1(1)SY5</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204110">Cisco IOS 15.1SY 15.1(2)SY5</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY4a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204832">Cisco IOS 15.1SY 15.1(2)SY4a</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY6" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209044">Cisco IOS 15.1SY 15.1(2)SY6</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="12.4JAN" Type="Product Version">
+          <Branch Name="12.4(25e)JAN2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-192702">Cisco IOS 12.4JAN 12.4(25e)JAN2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.2SY" Type="Product Version">
+          <Branch Name="15.2(1)SY" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-192726">Cisco IOS 15.2SY 15.2(1)SY</FullProductName>
+          </Branch>
+          <Branch Name="15.2(1)SY1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204828">Cisco IOS 15.2SY 15.2(1)SY1</FullProductName>
+          </Branch>
+          <Branch Name="15.2(1)SY0a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209063">Cisco IOS 15.2SY 15.2(1)SY0a</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVG" Type="Product Version">
+          <Branch Name="15.1(3)SVG3d" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232957">Cisco IOS 15.1SVG 15.1(3)SVG3d</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.2EA" Type="Product Version">
+          <Branch Name="15.2(3)EA1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209052">Cisco IOS 15.2EA 15.2(3)EA1</FullProductName>
+          </Branch>
+          <Branch Name="15.2(4a)EA5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-224700">Cisco IOS 15.2EA 15.2(4a)EA5</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.0SQD" Type="Product Version">
+          <Branch Name="15.0(2)SQD8" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232850">Cisco IOS 15.0SQD 15.0(2)SQD8</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVI" Type="Product Version">
+          <Branch Name="15.1(3)SVI1b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-238577">Cisco IOS 15.1SVI 15.1(3)SVI1b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.6SP" Type="Product Version">
+          <Branch Name="15.6(2)SP3b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-231824">Cisco IOS 15.6SP 15.6(2)SP3b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVM" Type="Product Version">
+          <Branch Name="15.1(3)SVM3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-235859">Cisco IOS 15.1SVM 15.1(3)SVM3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVK" Type="Product Version">
+          <Branch Name="15.1(3)SVK4b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-236199">Cisco IOS 15.1SVK 15.1(3)SVK4b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVN" Type="Product Version">
+          <Branch Name="15.1(3)SVN2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-235860">Cisco IOS 15.1SVN 15.1(3)SVN2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVO" Type="Product Version">
+          <Branch Name="15.1(3)SVO1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-236836">Cisco IOS 15.1SVO 15.1(3)SVO1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.3JI" Type="Product Version">
+          <Branch Name="15.3(3)JI" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-238602">Cisco IOS 15.3JI 15.3(3)JI</FullProductName>
+          </Branch>
+        </Branch>
+      </Branch>
+      <Branch Name="Cisco NX-OS Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-80720">Cisco NX-OS Software </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco IOS and NX-OS Software Locator/ID Separation Protocol Packet Denial of Service Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCuu64279</ID>
     <Notes>
@@ -143,136 +462,86 @@ This advisory is part of the March 23, 2016, release of the Cisco IOS and IOS XE
 
 
 The vulnerability is due to a lack of proper input validation when a malformed LISP packet header is received. An attacker could exploit this vulnerability by sending a malformed LISP packet on UDP port 4341. An exploit could allow the attacker to cause a denial of service (DoS) condition.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuu64279,CSCuv11993</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuu64279,CSCuv11993</Note>
     </Notes>
     <CVE>CVE-2016-1351</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
+        <ProductID>CVRFPID-115285</ProductID>
         <ProductID>CVRFPID-184932</ProductID>
         <ProductID>CVRFPID-188061</ProductID>
         <ProductID>CVRFPID-189219</ProductID>
+        <ProductID>CVRFPID-191635</ProductID>
+        <ProductID>CVRFPID-192702</ProductID>
         <ProductID>CVRFPID-192726</ProductID>
+        <ProductID>CVRFPID-194944</ProductID>
         <ProductID>CVRFPID-198059</ProductID>
+        <ProductID>CVRFPID-198426</ProductID>
         <ProductID>CVRFPID-201019</ProductID>
+        <ProductID>CVRFPID-204109</ProductID>
         <ProductID>CVRFPID-204110</ProductID>
         <ProductID>CVRFPID-204828</ProductID>
         <ProductID>CVRFPID-204832</ProductID>
         <ProductID>CVRFPID-209044</ProductID>
+        <ProductID>CVRFPID-209052</ProductID>
         <ProductID>CVRFPID-209063</ProductID>
-        <ProductID>CVRFPID-191378</ProductID>
-        <ProductID>CVRFPID-191429</ProductID>
-        <ProductID>CVRFPID-191430</ProductID>
-        <ProductID>CVRFPID-191431</ProductID>
-        <ProductID>CVRFPID-191432</ProductID>
-        <ProductID>CVRFPID-191433</ProductID>
-        <ProductID>CVRFPID-191434</ProductID>
-        <ProductID>CVRFPID-191435</ProductID>
-        <ProductID>CVRFPID-191436</ProductID>
-        <ProductID>CVRFPID-191437</ProductID>
-        <ProductID>CVRFPID-191438</ProductID>
-        <ProductID>CVRFPID-191439</ProductID>
-        <ProductID>CVRFPID-191440</ProductID>
-        <ProductID>CVRFPID-191441</ProductID>
-        <ProductID>CVRFPID-191442</ProductID>
-        <ProductID>CVRFPID-191443</ProductID>
-        <ProductID>CVRFPID-191444</ProductID>
-        <ProductID>CVRFPID-191445</ProductID>
-        <ProductID>CVRFPID-191446</ProductID>
-        <ProductID>CVRFPID-191447</ProductID>
-        <ProductID>CVRFPID-191448</ProductID>
-        <ProductID>CVRFPID-191449</ProductID>
-        <ProductID>CVRFPID-191450</ProductID>
-        <ProductID>CVRFPID-191451</ProductID>
-        <ProductID>CVRFPID-191452</ProductID>
-        <ProductID>CVRFPID-191453</ProductID>
-        <ProductID>CVRFPID-191454</ProductID>
-        <ProductID>CVRFPID-191455</ProductID>
-        <ProductID>CVRFPID-191456</ProductID>
-        <ProductID>CVRFPID-191457</ProductID>
-        <ProductID>CVRFPID-191458</ProductID>
-        <ProductID>CVRFPID-191459</ProductID>
-        <ProductID>CVRFPID-196607</ProductID>
-        <ProductID>CVRFPID-196608</ProductID>
-        <ProductID>CVRFPID-196609</ProductID>
-        <ProductID>CVRFPID-196610</ProductID>
-        <ProductID>CVRFPID-202738</ProductID>
-        <ProductID>CVRFPID-205071</ProductID>
-        <ProductID>CVRFPID-205072</ProductID>
-        <ProductID>CVRFPID-205073</ProductID>
-        <ProductID>CVRFPID-205074</ProductID>
-        <ProductID>CVRFPID-205075</ProductID>
-        <ProductID>CVRFPID-208194</ProductID>
-        <ProductID>CVRFPID-209649</ProductID>
-        <ProductID>CVRFPID-209668</ProductID>
+        <ProductID>CVRFPID-224700</ProductID>
+        <ProductID>CVRFPID-231824</ProductID>
+        <ProductID>CVRFPID-232850</ProductID>
+        <ProductID>CVRFPID-232957</ProductID>
+        <ProductID>CVRFPID-233143</ProductID>
+        <ProductID>CVRFPID-233796</ProductID>
+        <ProductID>CVRFPID-235859</ProductID>
+        <ProductID>CVRFPID-235860</ProductID>
+        <ProductID>CVRFPID-236199</ProductID>
+        <ProductID>CVRFPID-236836</ProductID>
+        <ProductID>CVRFPID-238577</ProductID>
+        <ProductID>CVRFPID-238602</ProductID>
+        <ProductID>CVRFPID-80720</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>7.8</BaseScore>
-        <TemporalScore>6.4</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
+      <ScoreSetV2>
+        <BaseScoreV2>7.8</BaseScoreV2>
+        <TemporalScoreV2>6.4</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</VectorV2>
+        <ProductID>CVRFPID-115285</ProductID>
         <ProductID>CVRFPID-184932</ProductID>
         <ProductID>CVRFPID-188061</ProductID>
         <ProductID>CVRFPID-189219</ProductID>
+        <ProductID>CVRFPID-191635</ProductID>
+        <ProductID>CVRFPID-192702</ProductID>
         <ProductID>CVRFPID-192726</ProductID>
+        <ProductID>CVRFPID-194944</ProductID>
         <ProductID>CVRFPID-198059</ProductID>
+        <ProductID>CVRFPID-198426</ProductID>
         <ProductID>CVRFPID-201019</ProductID>
+        <ProductID>CVRFPID-204109</ProductID>
         <ProductID>CVRFPID-204110</ProductID>
         <ProductID>CVRFPID-204828</ProductID>
         <ProductID>CVRFPID-204832</ProductID>
         <ProductID>CVRFPID-209044</ProductID>
+        <ProductID>CVRFPID-209052</ProductID>
         <ProductID>CVRFPID-209063</ProductID>
-      </ScoreSet>
-      <ScoreSet>
-        <BaseScore>5.0</BaseScore>
-        <TemporalScore>4.1</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
-        <ProductID>CVRFPID-191378</ProductID>
-        <ProductID>CVRFPID-191429</ProductID>
-        <ProductID>CVRFPID-191430</ProductID>
-        <ProductID>CVRFPID-191431</ProductID>
-        <ProductID>CVRFPID-191432</ProductID>
-        <ProductID>CVRFPID-191433</ProductID>
-        <ProductID>CVRFPID-191434</ProductID>
-        <ProductID>CVRFPID-191435</ProductID>
-        <ProductID>CVRFPID-191436</ProductID>
-        <ProductID>CVRFPID-191437</ProductID>
-        <ProductID>CVRFPID-191438</ProductID>
-        <ProductID>CVRFPID-191439</ProductID>
-        <ProductID>CVRFPID-191440</ProductID>
-        <ProductID>CVRFPID-191441</ProductID>
-        <ProductID>CVRFPID-191442</ProductID>
-        <ProductID>CVRFPID-191443</ProductID>
-        <ProductID>CVRFPID-191444</ProductID>
-        <ProductID>CVRFPID-191445</ProductID>
-        <ProductID>CVRFPID-191446</ProductID>
-        <ProductID>CVRFPID-191447</ProductID>
-        <ProductID>CVRFPID-191448</ProductID>
-        <ProductID>CVRFPID-191449</ProductID>
-        <ProductID>CVRFPID-191450</ProductID>
-        <ProductID>CVRFPID-191451</ProductID>
-        <ProductID>CVRFPID-191452</ProductID>
-        <ProductID>CVRFPID-191453</ProductID>
-        <ProductID>CVRFPID-191454</ProductID>
-        <ProductID>CVRFPID-191455</ProductID>
-        <ProductID>CVRFPID-191456</ProductID>
-        <ProductID>CVRFPID-191457</ProductID>
-        <ProductID>CVRFPID-191458</ProductID>
-        <ProductID>CVRFPID-191459</ProductID>
-        <ProductID>CVRFPID-196607</ProductID>
-        <ProductID>CVRFPID-196608</ProductID>
-        <ProductID>CVRFPID-196609</ProductID>
-        <ProductID>CVRFPID-196610</ProductID>
-        <ProductID>CVRFPID-202738</ProductID>
-        <ProductID>CVRFPID-205071</ProductID>
-        <ProductID>CVRFPID-205072</ProductID>
-        <ProductID>CVRFPID-205073</ProductID>
-        <ProductID>CVRFPID-205074</ProductID>
-        <ProductID>CVRFPID-205075</ProductID>
-        <ProductID>CVRFPID-208194</ProductID>
-        <ProductID>CVRFPID-209649</ProductID>
-        <ProductID>CVRFPID-209668</ProductID>
-      </ScoreSet>
+        <ProductID>CVRFPID-224700</ProductID>
+        <ProductID>CVRFPID-231824</ProductID>
+        <ProductID>CVRFPID-232850</ProductID>
+        <ProductID>CVRFPID-232957</ProductID>
+        <ProductID>CVRFPID-233143</ProductID>
+        <ProductID>CVRFPID-233796</ProductID>
+        <ProductID>CVRFPID-235859</ProductID>
+        <ProductID>CVRFPID-235860</ProductID>
+        <ProductID>CVRFPID-236199</ProductID>
+        <ProductID>CVRFPID-236836</ProductID>
+        <ProductID>CVRFPID-238577</ProductID>
+        <ProductID>CVRFPID-238602</ProductID>
+      </ScoreSetV2>
+      <ScoreSetV2>
+        <BaseScoreV2>5.0</BaseScoreV2>
+        <TemporalScoreV2>4.1</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</VectorV2>
+        <ProductID>CVRFPID-80720</ProductID>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

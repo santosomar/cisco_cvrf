@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Finesse HTTP Request Processing Server-Side Request Forgery Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the web interface of Cisco Finesse could allow an unauthenticated, remote attacker to trigger the Finesse server to perform an HTTP request to an arbitrary host. This type of attack is commonly referred to as server-side request forgery (SSRF).
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web interface of Cisco Finesse could allow an unauthenticated, remote attacker to trigger the Finesse server to perform an HTTP request to an arbitrary host. This type of attack is commonly referred to as server-side request forgery (SSRF).
 
 
 
@@ -45,6 +45,35 @@ Cisco has released software updates that address this vulnerability. Workarounds
 
 
 This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-finesse["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-finesse"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">The following Cisco Finesse versions are affected:
+
+
+    8.5(1) through 8.5(5)
+    8.6(1)
+    9.0(1) and 9.0(2)
+    9.1(1), 9.1(1)SU1, 9.1(1)SU1.1, and 9.1(1)ES1 through 9.1(1)ES5
+    10.0(1), 10.0(1)SU1, and 10.0(1)SU1.1
+    10.5(1), 10.5(1)ES1 through 10.5(1)ES4
+    10.5(1)SU1, 10.5(1)SU1.1, and 10.5(1)SU1.7
+    10.6(1), 10.6(1)SU1, and 10.6(1)SU2
+    11.0(1)
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">Workarounds that address this vulnerability are not available.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution. 
+
+
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and  confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.
+</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory. 
+</Note>
+    <Note Title="Source" Type="General" Ordinal="8">Cisco PSIRT would like to thank Juliano Rizzo for discovering and reporting this vulnerability to Cisco.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -52,40 +81,14 @@ This advisory is available at the following link: http://tools.cisco.com/securit
       <Description>Cisco Finesse HTTP Request Processing Server-Side Request Forgery Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-193471">Cisco Finesse 9.0(1) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-193473">Cisco Finesse 9.1(1) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214440">Cisco Finesse 9.1(1) SU1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-214441">Cisco Finesse 9.1(1) SU1</FullProductName>
-    <FullProductName ProductID="CVRFPID-214442">Cisco Finesse 9.1(1) ES5</FullProductName>
-    <FullProductName ProductID="CVRFPID-214443">Cisco Finesse 9.1(1) ES4</FullProductName>
-    <FullProductName ProductID="CVRFPID-214444">Cisco Finesse 9.1(1) ES3</FullProductName>
-    <FullProductName ProductID="CVRFPID-214445">Cisco Finesse 9.1(1) ES2</FullProductName>
-    <FullProductName ProductID="CVRFPID-214446">Cisco Finesse 9.1(1) ES1</FullProductName>
-    <FullProductName ProductID="CVRFPID-207350">Cisco Finesse 10.0(1) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214456">Cisco Finesse 10.0(1) SU1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-214457">Cisco Finesse 10.0(1) SU1</FullProductName>
-    <FullProductName ProductID="CVRFPID-207352">Cisco Finesse 10.5(1) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214449">Cisco Finesse 10.5(1) SU1.7</FullProductName>
-    <FullProductName ProductID="CVRFPID-214450">Cisco Finesse 10.5(1) SU1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-214451">Cisco Finesse 10.5(1) SU1</FullProductName>
-    <FullProductName ProductID="CVRFPID-214452">Cisco Finesse 10.5(1) ES4</FullProductName>
-    <FullProductName ProductID="CVRFPID-214453">Cisco Finesse 10.5(1) ES3</FullProductName>
-    <FullProductName ProductID="CVRFPID-214454">Cisco Finesse 10.5(1) ES2</FullProductName>
-    <FullProductName ProductID="CVRFPID-214455">Cisco Finesse 10.5(1) ES1</FullProductName>
-    <FullProductName ProductID="CVRFPID-207354">Cisco Finesse 10.6(1) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214447">Cisco Finesse 10.6(1) SU2</FullProductName>
-    <FullProductName ProductID="CVRFPID-214448">Cisco Finesse 10.6(1) SU1</FullProductName>
-    <FullProductName ProductID="CVRFPID-207356">Cisco Finesse 11.0(1) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214427">Cisco Finesse 9.0(2) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214429">Cisco Finesse 8.6(1) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214431">Cisco Finesse 8.5(5) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214433">Cisco Finesse 8.5(4) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214435">Cisco Finesse 8.5(3) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214437">Cisco Finesse 8.5(2) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-214439">Cisco Finesse 8.5(1) Base</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Finesse" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-193469">Cisco Finesse </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Finesse HTTP Request Processing Server-Side Request Forgery Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCuw86623</ID>
     <Notes>
@@ -94,50 +97,20 @@ This advisory is available at the following link: http://tools.cisco.com/securit
 
 
 The vulnerability is due to insufficient access controls for the Finesse application programming interface (API) for gadgets integration. An attacker could exploit this vulnerability by submitting a crafted HTTP request to the Finesse server.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuw86623</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuw86623</Note>
     </Notes>
     <CVE>CVE-2016-1373</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-193471</ProductID>
-        <ProductID>CVRFPID-193473</ProductID>
-        <ProductID>CVRFPID-207350</ProductID>
-        <ProductID>CVRFPID-207352</ProductID>
-        <ProductID>CVRFPID-207354</ProductID>
-        <ProductID>CVRFPID-207356</ProductID>
-        <ProductID>CVRFPID-214427</ProductID>
-        <ProductID>CVRFPID-214429</ProductID>
-        <ProductID>CVRFPID-214431</ProductID>
-        <ProductID>CVRFPID-214433</ProductID>
-        <ProductID>CVRFPID-214435</ProductID>
-        <ProductID>CVRFPID-214437</ProductID>
-        <ProductID>CVRFPID-214439</ProductID>
-        <ProductID>CVRFPID-214440</ProductID>
-        <ProductID>CVRFPID-214441</ProductID>
-        <ProductID>CVRFPID-214442</ProductID>
-        <ProductID>CVRFPID-214443</ProductID>
-        <ProductID>CVRFPID-214444</ProductID>
-        <ProductID>CVRFPID-214445</ProductID>
-        <ProductID>CVRFPID-214446</ProductID>
-        <ProductID>CVRFPID-214447</ProductID>
-        <ProductID>CVRFPID-214448</ProductID>
-        <ProductID>CVRFPID-214449</ProductID>
-        <ProductID>CVRFPID-214450</ProductID>
-        <ProductID>CVRFPID-214451</ProductID>
-        <ProductID>CVRFPID-214452</ProductID>
-        <ProductID>CVRFPID-214453</ProductID>
-        <ProductID>CVRFPID-214454</ProductID>
-        <ProductID>CVRFPID-214455</ProductID>
-        <ProductID>CVRFPID-214456</ProductID>
-        <ProductID>CVRFPID-214457</ProductID>
+        <ProductID>CVRFPID-193469</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>5.0</BaseScore>
-        <TemporalScore>4.1</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:N/I:P/A:N/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>5.0</BaseScoreV2>
+        <TemporalScoreV2>4.1</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:P/A:N/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

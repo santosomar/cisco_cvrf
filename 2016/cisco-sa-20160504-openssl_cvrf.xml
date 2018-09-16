@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -17,7 +17,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
       <ID>cisco-sa-20160504-openssl</ID>
     </Identification>
     <Status>Final</Status>
-    <Version>1.11</Version>
+    <Version>1.12</Version>
     <RevisionHistory>
       <Revision>
         <Number>1.0</Number>
@@ -77,17 +77,22 @@ More information can be found in Cisco Security Vulnerability Policy available a
       <Revision>
         <Number>1.11</Number>
         <Date>2016-11-08T23:55:14</Date>
-        <Description>Updated the list of vulnerable products and products not vulnerable</Description>
+        <Description>Updated the list of vulnerable products and products not vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.12</Number>
+        <Date>2016-12-05T16:10:21</Date>
+        <Description>Updated the list of vulnerable products.</Description>
       </Revision>
     </RevisionHistory>
     <InitialReleaseDate>2016-05-04T19:30:00</InitialReleaseDate>
-    <CurrentReleaseDate>2016-11-08T23:55:14</CurrentReleaseDate>
+    <CurrentReleaseDate>2016-12-05T16:10:21</CurrentReleaseDate>
     <Generator>
       <Engine>TVCE</Engine>
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">On May 3, 2016, the OpenSSL Software Foundation released a security advisory that included six vulnerabilities. Of the six vulnerabilities disclosed, four of them may cause memory corruption or excessive memory usage, one could allow a padding oracle attack to decrypt traffic when the connection uses an AES CBC cipher and the server supports AES-NI, and, lastly, one is specific to a product performing an operation with Extended Binary Coded Decimal Interchange Code (EBCDIC) encoding.
+    <Note Title="Summary" Type="Summary" Ordinal="1">On May 3, 2016, the OpenSSL Software Foundation released a security advisory that included six vulnerabilities. Of the six vulnerabilities disclosed, four of them may cause memory corruption or excessive memory usage, one could allow a padding oracle attack to decrypt traffic when the connection uses an AES CBC cipher and the server supports AES-NI, and, lastly, one is specific to a product performing an operation with Extended Binary Coded Decimal Interchange Code (EBCDIC) encoding.
 
 
 
@@ -103,6 +108,1769 @@ This advisory will be updated as additional information becomes available.
 This advisory is available at the following link:
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2">Cisco investigated its product line to determine which products may be affected by these vulnerabilities and the impact on each affected product. Refer to the "Vulnerable Products" and "Products Confirmed Not Vulnerable" sections of this advisory for information about whether a product is affected.
+
+
+
+The "Vulnerable Products" section includes Cisco bug IDs for each affected product. The bugs are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"] and contain additional platform-specific information, including workarounds (if available) and fixed software releases.
+</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">The following table lists Cisco products that are affected by one or more vulnerabilities described in this advisory.
+
+
+
+
+
+    
+        
+            Product
+            Cisco Bug ID
+            Fixed Release Availability
+        
+        
+            Collaboration and Social Media
+        
+        
+            Cisco MeetingPlace
+            CSCuz52556["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52556"]
+            CWMS 2.7 (Available)
+        
+        
+            Cisco SocialMiner
+            CSCuz63938["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz63938"]
+            11.5.1 (Available)
+        
+        
+            Cisco WebEx Meetings Server versions 1.x
+            CSCuz52375["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52375"]
+            "
+
+            2.6.1.2109 (Available)
+
+            2.7.1.12 (Available)"
+
+            
+        
+        
+            Cisco WebEx Meetings Server versions 2.x
+            CSCuz52375["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52375"]
+            "
+
+            2.6.1.2109 (Available)
+
+            2.7.1.12 (Available)"
+
+            
+        
+        
+            Cisco WebEx Node for MCS
+            CSCuz52370["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52370"]
+            3.12.9.8 (Available)
+        
+        
+            Endpoint Clients and Client Software
+        
+        
+            Cisco Agent for OpenFlow
+            CSCuz52503["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52503"]
+            2.1.5 (N3K/N9K) (Available) 2.0.7 (N7K) (Available) 2.0.7 (cat3k/cat4k) (Available)
+        
+        
+            Cisco AnyConnect Secure Mobility Client for Android
+            CSCuz52506["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52506"]
+            4.3 for Windows
+
+            Linux
+
+            OS X (10-JUN-2016) 4.2 for Windows
+
+            Linux
+
+            OS X (16-JUN-2016) 4.0 for Android
+
+            iOS (30-JUN-2016)
+        
+        
+            Cisco AnyConnect Secure Mobility Client for Android
+            CSCuz52507["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52507"]
+            4.3 for Windows
+
+            Linux
+
+            OS X (Available) 4.2 for Windows
+
+            Linux
+
+            OS X (Available) 4.0 for Android
+
+            iOS (Available)
+        
+        
+            Cisco AnyConnect Secure Mobility Client for Linux
+            CSCuz52506["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52506"]
+            4.3 for Windows
+
+            Linux
+
+            OS X (10-JUN-2016) 4.2 for Windows
+
+            Linux
+
+            OS X (16-JUN-2016) 4.0 for Android
+
+            iOS (30-JUN-2016)
+        
+        
+            Cisco AnyConnect Secure Mobility Client for OS X
+            CSCuz52506["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52506"]
+            4.3 for Windows
+
+            Linux
+
+            OS X (10-JUN-2016) 4.2 for Windows
+
+            Linux
+
+            OS X (16-JUN-2016) 4.0 for Android
+
+            iOS (30-JUN-2016)
+        
+        
+            Cisco AnyConnect Secure Mobility Client for Windows
+            CSCuz52506["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52506"]
+            4.3 for Windows
+
+            Linux
+
+            OS X (10-JUN-2016) 4.2 for Windows
+
+            Linux
+
+            OS X (16-JUN-2016) 4.0 for Android
+
+            iOS (30-JUN-2016)
+        
+        
+            Cisco AnyConnect Secure Mobility Client for iOS
+            CSCuz52506["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52506"]
+            4.3 for Windows
+
+            Linux
+
+            OS X (10-JUN-2016) 4.2 for Windows
+
+            Linux
+
+            OS X (16-JUN-2016) 4.0 for Android
+
+            iOS (30-JUN-2016)
+        
+        
+            Cisco Jabber Guest 10.0(2)
+            CSCuz52554["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52554"]
+            11.0 (Available)
+        
+        
+            Cisco Jabber Software Development Kit
+            CSCuz52552["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52552"]
+            11.7 (Available)
+        
+        
+            Cisco Jabber for Android
+            CSCuz52568["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52568"]
+            11.6 MR (Available)
+        
+        
+            Cisco Jabber for Mac
+            CSCuz52551["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52551"]
+            11.7 (Available)
+        
+        
+            Cisco Jabber for Windows
+            CSCuz60563["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz60563"]
+            11.6(1) (Available)
+        
+        
+            Cisco MMP server
+            CSCuz52380["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52380"]
+            3.10.0 (Available)
+        
+        
+            Cisco WebEx Meetings Client - Hosted
+            CSCuz52379["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52379"]
+            T31R1SP6 (15-DEC-2016)
+        
+        
+            Cisco WebEx Meetings Client - On Premises
+            CSCuz52374["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52374"]
+            2.7.1.12 (Available)
+
+            2.6.1.2109 (Available)
+        
+        
+            Cisco WebEx Meetings for Android
+            CSCuz52371["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52371"]
+            A patch file is available for vulnerable releases
+        
+        
+            Cisco WebEx Meetings for WP8
+            CSCuz52373["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52373"]
+            No further releases are planned
+        
+        
+            WebEx Meetings Server - SSL Gateway
+            CSCuz52376["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52376"]
+            "
+
+            2.6.1.2109 (Available)
+
+            2.7.1.12 (Available)"
+
+            
+        
+        
+            WebEx Recording Playback Client
+            CSCuz52378["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52378"]
+            T31R1SP6 (DEC-2016)
+        
+        
+            Network Application, Service, and Acceleration
+        
+        
+            Cisco ACE 30 Application Control Engine Module
+            CSCuz52383["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52383"]
+            No fix available
+        
+        
+            Cisco ACE 4710 Application Control Engine (A5)
+            CSCuz52383["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52383"]
+            No fix available
+        
+        
+            Cisco Application and Content Networking System (ACNS)
+            CSCuz52468["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52468"]
+            5.5.41 (31-JUL-2016)
+        
+        
+            Cisco InTracer
+            CSCuz52350["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52350"]
+            Product is EOL  so no fix is expected.
+        
+        
+            Cisco Network Admission Control (NAC)
+            CSCuz52469["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52469"]
+            No fix available
+        
+        
+            Cisco Visual Quality Experience Server
+            CSCuz52466["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52466"]
+            3.11(3.1) (Available)
+        
+        
+            Cisco Visual Quality Experience Tools Server
+            CSCuz52466["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52466"]
+            3.11(3.1) (Available)
+        
+        
+            Cisco Wide Area Application Services (WAAS)
+            CSCuz52481["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52481"]
+            5.5.7 (30-JUN-2016)
+
+            6.2.3 (29-JUL-2016)
+        
+        
+            Network and Content Security Devices
+        
+        
+            Cisco ASA CX and Cisco Prime Security Manager
+            CSCuz52482["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52482"]
+            9.5.4.3 (30-MAY-2016)
+        
+        
+            Cisco ASA Next-Generation Firewall Services
+            CSCuz52479["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52479"]
+            R2.1.1 (Available)
+        
+        
+            Cisco Adaptive Security Appliance (ASA)
+            CSCuz52474["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52474"]
+            All affected systems have been updated.
+        
+        
+            Cisco Clean Access Manager
+            CSCuz52470["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52470"]
+            No fix available
+        
+        
+            Cisco Content Security Management Appliance (SMA)
+            CSCuz52367["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52367"]
+            10.5 (APR-2017)
+        
+        
+            Cisco FireSIGHT System Software
+            CSCuz52366["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52366"]
+            6.0.1.2 (27-JUN-2016)
+        
+        
+            Cisco IPS
+            CSCuz52508["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52508"]
+            No fix available
+        
+        
+            Cisco Identity Services Engine (ISE)
+            CSCuz52493["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52493"]
+            2.2.1 (Available)
+        
+        
+            Cisco Email Security Appliance (ESA)
+
+            
+            CSCuz52363["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52363"]
+            11.0 (APR-2017)
+        
+        
+            Cisco IronPort Encryption Appliance (IEA)
+            CSCuz52365["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52365"]
+            No fix available
+        
+        
+            Cisco NAC Guest Server
+            CSCuz52472["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52472"]
+            No fix available
+        
+        
+            Cisco NAC Server
+            CSCuz52471["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52471"]
+            No fix available
+        
+        
+            Cisco Physical Access Control Gateway
+            CSCuz52487["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52487"]
+             
+        
+        
+            Cisco Secure Access Control Server (ACS)
+            CSCuz52504["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52504"]
+            5.8 patch 5 (JUL-2016)
+        
+        
+            Cisco Secure Access Control System (ACS)
+            CSCuz52505["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52505"]
+            5.8 patch 5 (Available)
+
+            
+        
+        
+            Cisco Virtual Security Gateway for Microsoft Hyper-V
+            CSCuz52403["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52403"]
+            5.2(1) (20-AUG-2016)
+
+            VSG2(1.4) (20-AUG-2016)
+        
+        
+            Cisco Web Security Appliance (WSA)
+            CSCuz52369["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52369"]
+            10.5 (MAR-2017)
+        
+        
+            Lancope Stealthwatch SMC
+
+            
+             
+            6.7.3   End of May 2016
+
+            6.8.0   End of May 2016
+
+            6.8.1   June 2016
+
+            6.8.2   End of Jun 2016 
+        
+        
+            Lancope Stealthwatch FlowCollector NetFlow
+
+            
+             
+            6.7.3   End of May 2016
+
+            6.8.0   End of May 2016
+
+            6.8.1   June 2016
+
+            6.8.2   End of Jun 2016 
+        
+        
+            Lancope Stealthwatch FlowCollector sFlow
+
+            
+             
+            6.7.3   End of May 2016
+
+            6.8.0   End of May 2016
+
+            6.8.1   June 2016
+
+            6.8.2   End of Jun 2016 
+        
+        
+            Lancope Stealthwatch FlowSensor
+
+            
+             
+            6.7.3   End of May 2016
+
+            6.8.0   End of May 2016
+
+            6.8.1   June 2016
+
+            6.8.2   End of Jun 2016 
+        
+        
+            Lancope Stealthwatch UDP Director
+
+            
+             
+            6.7.3   End of May 2016
+
+            6.8.0   End of May 2016
+
+            6.8.1   June 2016
+
+            6.8.2   End of Jun 2016 
+        
+        
+            Network Management and Provisioning
+        
+        
+            Cisco Application Networking Manager
+            CSCuz52384["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52384"]
+            Contact TAC for upgrade options
+        
+        
+            Cisco Application Policy Infrastructure Controller (APIC)
+            CSCuz52389["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52389"]
+            11.6 MR (Available)
+        
+        
+            Cisco Digital Media Manager
+            CSCuz52441["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52441"]
+            5.3.0 (Available) 
+
+            5.3.6 (Available) 
+
+            5.3.6(RB1) (Available) 
+
+            5.3.6(RB2) (Available) 
+
+            5.4.0 (Available) 
+
+            5.4.1 (Available) 
+
+            5.4.1(RB1) (Available)
+
+            5.4.1(RB2) (Available)
+        
+        
+            Cisco MATE Collector
+            CSCuz52583["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52583"]
+            6.3.5dev-19-g2329292 (Available)
+
+            6.4dev-2206-g9361bc4 (Available)
+
+            6.4dev-2250-g50ed411 (Available)
+        
+        
+            Cisco MATE Design
+            CSCuz52583["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52583"]
+            6.3.5dev-19-g2329292 (Available)
+
+            6.4dev-2206-g9361bc4 (Available)
+
+            6.4dev-2250-g50ed411 (Available)
+        
+        
+            Cisco MATE Live
+            CSCuz52583["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52583"]
+            6.3.5dev-19-g2329292 (Available)
+
+            6.4dev-2206-g9361bc4 (Available)
+
+            6.4dev-2250-g50ed411 (Available)
+        
+        
+            Cisco Management Appliance (MAP)
+            CSCuz52355["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52355"]
+            0.9.8e (Available)
+
+            0.9.8-39.el5_11 (08-JUN-2016)
+        
+        
+            Cisco Mobile Wireless Transport Manager
+            CSCuz52431["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52431"]
+            No fix expected.
+        
+        
+            Cisco NetFlow Generation Appliance
+            CSCuz52426["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52426"]
+            Affected systems will be updated (01-AUG-2016)
+        
+        
+            Cisco Network Analysis Module
+            CSCuz52423["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52423"]
+            6.3.1 (Available)
+        
+        
+            Cisco Packet Tracer
+            CSCuz52451["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52451"]
+            7.0 (Available)
+        
+        
+            Cisco Policy Suite (CPS)
+            CSCuz52587["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52587"]
+            10.0 (Available)
+        
+        
+            Cisco Prime Access Registrar
+            CSCuz52418["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52418"]
+            7.0.1.7 (JUN-2016)
+
+            7.1.x (JUN-2016)
+
+            7.2 (SEP-2016)
+        
+        
+            Cisco Prime Collaboration Assurance
+            CSCuz52430["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52430"]
+            11.5 SP1 (Aug. 2016)
+        
+        
+            Cisco Prime Collaboration Deployment
+            CSCuz52537["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52537"]
+            11.5 (Available)
+        
+        
+            Cisco Prime Collaboration Provisioning
+            CSCuz52429["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52429"]
+            11.2 (Available)
+        
+        
+            Cisco Prime Data Center Network Manager (DCNM)
+            CSCuz52387["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52387"]
+            10.0(1.28)S0 (Available)
+        
+        
+            Cisco Prime IP Express
+            CSCuz52421["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52421"]
+             
+        
+        
+            Cisco Prime Infrastructure Standalone Plug and Play Gateway
+            CSCuz52424["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52424"]
+             
+        
+        
+            Cisco Prime Infrastructure
+            CSCuz52425["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52425"]
+            3.1.1 (JUN-2016)
+        
+        
+            Cisco Prime LAN Management Solution (LMS - Solaris)
+            CSCuz52413["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52413"]
+            No fix is expected.
+        
+        
+            Cisco Prime License Manager
+            CSCuz52452["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52452"]
+            11.5 (JUN-2016)
+        
+        
+            Cisco Prime Network Registrar (CPNR)
+            CSCuz52415["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52415"]
+             
+        
+        
+            Cisco Prime Network Services Controller
+            CSCuz52433["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52433"]
+            3.4.2 (AUG-2016)
+        
+        
+            Cisco Prime Network
+            CSCuz52408["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52408"]
+            Affected systems will be updated (30-Jun-2016)
+        
+        
+            Cisco Prime Optical for SPs
+            CSCuz52420["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52420"]
+            10.6 (Available)
+        
+        
+            Cisco Prime Performance Manager
+            CSCuz52409["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52409"]
+            1.7.0.6 (30-JUL-2016)
+        
+        
+            Cisco Prime Security Manager
+            CSCuz52477["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52477"]
+            9.5.4.3 (Available)
+        
+        
+            Cisco Security Manager
+            CSCuz52432["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52432"]
+            4.12 (Available)
+        
+        
+            Cisco UCS Central
+            CSCuz52405["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52405"]
+            1.5(1a) (Available)
+        
+        
+            Cisco Unified Intelligence Center (CUIC)
+            CSCuz63935["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz63935"]
+            11.5.1 (Available)
+        
+        
+            Local Collector Appliance (LCA)
+            CSCuz52524["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52524"]
+            2.2.12 (20-MAY-2016)
+        
+        
+            Routing and Switching - Enterprise and Service Provider
+        
+        
+            Cisco ASR 5000 Series
+            CSCuz52351["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52351"]
+            19.4.0 (30-JUN-2016)
+
+            20.2.0 (29-JUL-2016)
+
+            21.0.0 (30-SEP-2016)
+        
+        
+            Cisco Connected Grid Router - CGOS
+            CSCuz52385["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52385"]
+            15.6.2.15T (5-JUN-2016)
+        
+        
+            Cisco Connected Grid Router
+            CSCuz52529["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52529"]
+            15.6.2.15T (05-JUN-2016)
+        
+        
+            Cisco IOS Software and Cisco IOS-XE Software
+            CSCuz52528["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52528"]
+            "
+
+            15.4(1)IA1.73 (Available)
+
+            15.6(2)T0.1 (Available)
+
+            15.6(2.19)T (Available)
+
+            16.3(0.232) (Available)
+
+            16.4(0.49) (Available)"
+
+            
+        
+        
+            Cisco IOS-XR
+            CSCuz52437["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52437"]
+            Affected systems will be updated (08-Jun-2016)
+        
+        
+            Cisco MDS 9000 Series Multilayer Switches
+            CSCuz52394["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52394"]
+            6.2.17 (MDS) (JUN-2016)
+
+            7.3.1DX (N7k and MDS) (AUG-2016)
+
+            7.3.1NX (N5k/N6k) (AUG-2016)
+
+            8.3 (N3k/N9k) (NOV-2016)
+
+            
+        
+        
+            Cisco Nexus 1000V InterCloud
+            CSCuz52393["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52393"]
+            Affected systems will be updated (30-Jun-2016)
+        
+        
+            Cisco Nexus 1000V Series Switches (ESX)
+            CSCuz52399["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52399"]
+            5.2(1)SV3(2.1) (30-JUN-2016)
+        
+        
+            Cisco Nexus 1000V Series Switches
+            CSCuz52397["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52397"]
+            5.2(1)SV3(2.1) (Available)
+        
+        
+            Cisco Nexus 3X00 Series Switches
+            CSCuz52400["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52400"]
+            6.0(2)A8(1) (Available)
+        
+        
+            Cisco Nexus 4000 Series Blade Switches
+            CSCuz52512["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52512"]
+            0.9.8zf (Available)
+        
+        
+            Cisco Nexus 5000 Series Switches
+            CSCuz52401["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52401"]
+            7.3.1 (Available)
+        
+        
+            Cisco Nexus 6000 Series Switches
+            CSCuz52395["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52395"]
+            6.2.17 (MDS) (JUN-2016)
+
+            7.3.1DX (N7k and MDS) (AUG-2016)
+
+            7.3.1NX (N5k/N6k) (AUG-2016)
+
+            8.3 (N3k/N9k) (NOV-2016)
+
+            
+        
+        
+            Cisco Nexus 7000 Series Switches
+            CSCuz52395["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52395"]
+            6.2.17 (MDS) (JUN-2016)
+
+            7.3.1DX (N7k and MDS) (AUG-2016)
+
+            7.3.1NX (N5k/N6k) (AUG-2016)
+
+            8.3 (N3k/N9k) (NOV-2016)
+
+            
+        
+        
+            Cisco Nexus 9000 (ACI/Fabric Switch)
+            CSCuz52391["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52391"]
+            12.0(0.133) (Available)
+        
+        
+            Cisco Nexus 9000 Series (standalone, running NxOS)
+            CSCuz52396["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52396"]
+            10.6(3.11002.7)
+        
+        
+            Cisco ONS 15454 Series Multiservice Provisioning Platforms
+            CSCuz52486["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52486"]
+            10.6.1 (30-JUN-2016)
+        
+        
+            Cisco OnePK All-in-One VM
+            CSCuz52485["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52485"]
+            No fix available
+        
+        
+            Cisco Service Control Operating System
+            CSCuz52530["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52530"]
+            5.1 (Available)
+
+            5.2 (Available)
+        
+        
+            Routing and Switching - Small Business
+        
+        
+            Cisco Sx220 switches
+            CSCuz52497["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52497"]
+            1.4.7 (NOV-2016)
+        
+        
+            Cisco Sx300 switches
+            CSCuz52500["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52500"]
+            1.4.7 (NOV-2016)
+        
+        
+            Cisco Sx500 switches
+            CSCuz52502["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52502"]
+            1.4.7 (NOV-2016)
+        
+        
+            Unified Computing
+        
+        
+            Cisco Cloupia Unified Infrastructure Controller
+            CSCuz52386["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52386"]
+            5.5 (Available)
+        
+        
+            Cisco Common Services Platform Collector
+            CSCuz52352["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52352"]
+            1.10 (SEPT-2016)
+        
+        
+            Cisco Standalone rack server CIMC
+            CSCuz52406["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52406"]
+            2.0(13) (Available)
+        
+        
+            Cisco Unified Computing System (Management software)
+            CSCuz52483["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52483"]
+            3.1.2 (AUG-2016)
+        
+        
+            Cisco Virtual Security Gateway
+            CSCuz52402["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52402"]
+            5.2(1) (20-AUG-2016)
+
+            VSG2(1.4) (20-AUG-2016)
+        
+        
+            Voice and Unified Communications Devices
+        
+        
+            Cisco 190 ATA Series Analog Terminal Adaptor
+            CSCuz52534["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52534"]
+            1.3.0 (APR-2017)
+        
+        
+            Cisco 8800 Series IP Phones - VPN Feature
+            CSCuz52565["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52565"]
+            11.5.2 (12-DEC-2016)
+        
+        
+            Cisco ATA 187 Analog Telephone Adaptor
+            CSCuz52560["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52560"]
+            9.2.5 (05-APR-2017)
+        
+        
+            Cisco Agent Desktop for Cisco Unified Contact Center Express
+            CSCuz52539["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52539"]
+            No fix is expected
+        
+        
+            Cisco Computer Telephony Integration Object Server (CTIOS)
+            CSCuz52360["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52360"]
+            11.51 (Available)
+        
+        
+            Cisco DX Series IP Phones
+            CSCuz52563["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52563"]
+            No fix is expected
+        
+        
+            Cisco Emergency Responder
+            CSCuz52543["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52543"]
+            11.5 (Available)
+        
+        
+            Cisco Finesse
+            CSCuz63940["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz63940"]
+            11.5.1 (09-AUG-2016)
+        
+        
+            Cisco Hosted Collaboration Mediation Fulfillment
+            CSCuz52547["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52547"]
+            10.6(1.99000.17) (Available)
+
+            10.6(1.99000.18) (Available)
+
+            10.6(3.11002.7) (Available)
+        
+        
+            Cisco IM and Presence Service (CUPS)
+            CSCuz52545["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52545"]
+            11.5 (Available)
+        
+        
+            Cisco IP Interoperability and Collaboration System (IPICS)
+            CSCuz52461["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52461"]
+            5.0 (30-AUG-2016)
+        
+        
+            Cisco Jabber for Apple iOS
+            CSCuz52550["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52550"]
+            11.7.0 (Available)
+
+            
+        
+        
+            Cisco MediaSense
+            CSCuz52562["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52562"]
+            11.5.1 (Available)
+        
+        
+            Cisco Paging Server (Informacast)
+            CSCuz52548["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52548"]
+            11.5.1 (Available)
+        
+        
+            Cisco Paging Server
+            CSCuz52548["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52548"]
+            11.5.1 (Available)
+        
+        
+            Cisco SPA112 2-Port Phone Adapter
+            CSCuz52494["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52494"]
+            1.4.5 (05-OCT-2016)
+        
+        
+            Cisco SPA122 ATA with Router
+            CSCuz52494["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52494"]
+            1.4.5 (05-OCT-2016)
+        
+        
+            Cisco SPA232D Multi-Line DECT ATA
+            CSCuz52494["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52494"]
+            1.4.5 (05-OCT-2016)
+        
+        
+            Cisco SPA30X Series IP Phones
+            CSCuz52496["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52496"]
+            No further releases are planned
+        
+        
+            Cisco SPA50X Series IP Phones
+            CSCuz52496["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52496"]
+            No further releases are planned
+        
+        
+            Cisco SPA51X Series IP Phones
+            CSCuz52496["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52496"]
+            No further releases are planned
+        
+        
+            Cisco SPA525G
+            CSCuz52495["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52495"]
+            7.6.5 (05-APR-2017)
+        
+        
+            Cisco Unified 6901 IP Phones
+            CSCuz52557["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52557"]
+            9.3(1)SR3 (05-APR-2017)
+        
+        
+            Cisco Unified 6945 IP Phones
+            CSCuz52561["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52561"]
+            No fix available
+        
+        
+            Cisco Unified 7800 Series IP Phones
+            CSCuz52566["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52566"]
+            11.5.2 (Available)
+        
+        
+            Cisco Unified 8831 series IP Conference Phone
+            CSCuz52559["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52559"]
+            79xx: 9.4.2 SR2 (JUN-2016)
+
+            8831: 10.3.2 (JUL-2016)
+
+            99xx: 9.4.2SR3 (JUL-2016)
+
+            8941/45: 9.4.2SR3 (AUG-2016)
+        
+        
+            Cisco Unified 8945 IP Phone
+            CSCuz52558["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52558"]
+            9.4.2SR3 (Available)
+        
+        
+            Cisco Unified 8961 IP Phone
+            CSCuz52546["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52546"]
+            9.4.2SR3 (Available)
+        
+        
+            Cisco Unified 9951 IP Phone
+            CSCuz52546["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52546"]
+            9.4.2SR3 (Available)
+        
+        
+            Cisco Unified 9971 IP Phone
+            CSCuz52546["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52546"]
+            9.4.2SR3 (Available)
+        
+        
+            Cisco Unified Attendant Console Advanced
+            CSCuz52532["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52532"]
+            11.5.1 (Available)
+        
+        
+            Cisco Unified Attendant Console Business Edition
+            CSCuz52532["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52532"]
+            11.5.1 (Available)
+        
+        
+            Cisco Unified Attendant Console Department Edition
+            CSCuz52532["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52532"]
+            11.5.1 (Available)
+        
+        
+            Cisco Unified Attendant Console Enterprise Edition
+            CSCuz52532["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52532"]
+            11.5.1 (Available)
+        
+        
+            Cisco Unified Attendant Console Premium Edition
+            CSCuz52532["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52532"]
+            11.5.1 (Available)
+        
+        
+            Cisco Unified Attendant Console Standard
+            CSCuz52533["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52533"]
+            11.5.1 (Available)
+        
+        
+            Cisco Unified Communications Manager (UCM)
+            CSCuz52535["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52535"]
+            11.5 (Available)
+        
+        
+            Cisco Unified Communications Manager Session Management Edition (SME)
+            CSCuz52535["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52535"]
+            11.5 (Available)
+        
+        
+            Cisco Unified Communications for Microsoft Lync
+            CSCuz52541["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52541"]
+            11.6(0.39070) (Available)
+        
+        
+            Cisco Unified Contact Center Enterprise
+            CSCuz52360["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52360"]
+            11.51 (Available)
+        
+        
+            Cisco Unified Contact Center Express -  Live Data Server
+            CSCuz63936["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz63936"]
+             
+        
+        
+            Cisco Unified Contact Center Express
+            CSCuz63939["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz63939"]
+            11.5.1 (Available)
+
+            
+        
+        
+            Cisco Unified IP Conference Phone 8831 for
+            Third-Party Call Control
+            CSCuz52320["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52320"]
+            No further releases are planned.
+        
+        
+            Cisco Unified IP Phone 7900 Series
+            CSCuz52567["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52567"]
+            No fix available
+        
+        
+            Cisco Unified Intelligent Contact Management Enterprise
+            CSCuz52360["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52360"]
+            11.51 (Available)
+        
+        
+            Cisco Unified Sip Proxy
+            CSCuz52349["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52349"]
+            CUSP 10.0 (Sept. 2016)
+        
+        
+            Cisco Unified Wireless IP Phone
+            CSCuz52573["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52573"]
+            1.5.1 (05-APR-2017)
+        
+        
+            Cisco Unified Workforce Optimization Quality Management
+            CSCuz52571["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52571"]
+            11.0 SR3 ES5 (30-JUN-2016)
+        
+        
+            Cisco Unified Workforce Optimization
+            CSCuz52572["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52572"]
+            11.0 SR3 ES5 (Available)
+        
+        
+            Cisco Unity Connection (UC)
+            CSCuz52538["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52538"]
+            11.5 (Available)
+        
+        
+            Cisco Unity Express
+            CSCuz52348["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52348"]
+            10.0 (JAN-2017)
+        
+        
+            Cisco Virtualization Experience Media Engine
+            CSCuz52570["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52570"]
+            11.7(0) (Available) 
+
+            11.5.1 (Available)
+
+            
+        
+        
+            Video, Streaming, TelePresence, and Transcoding Devices
+        
+        
+            Cisco AnyRes Live (CAL)
+            CSCuz52522["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52522"]
+            9.4.5 (30-JUN-2016)
+        
+        
+            Cisco DCM Series 9900-Digital Content Manager
+            CSCuz52407["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52407"]
+            19.0.0 (Available)
+        
+        
+            Cisco Digital Media Players (DMP) 4300 Series
+            CSCuz52440["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52440"]
+            "
+
+            5.4(1)RB(2P11) (Available)
+
+            5.3(6) RB(2P8) (Available)"
+
+            
+        
+        
+            Cisco Digital Media Players (DMP) 4400 Series
+            CSCuz52440["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52440"]
+            "
+
+            5.4(1)RB(2P11) (Available)
+
+            5.3(6) RB(2P8) (Available)"
+
+            
+        
+        
+            Cisco Edge 300 Digital Media Player
+            CSCuz52514["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52514"]
+            1.6RB4_5 (29-JUN-2016)
+        
+        
+            Cisco Edge 340 Digital Media Player
+            CSCuz52515["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52515"]
+            1.2.0.20 (23-JUN-2016)
+        
+        
+            Cisco Enterprise Content Delivery System (ECDS)
+            CSCuz52442["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52442"]
+            2.6.8 (Available)
+        
+        
+            Cisco Expressway Series
+            CSCuz55590["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz55590"]
+            8.8 (Available)
+        
+        
+            Cisco Internet Streamer (CDS)
+            CSCuz52465["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52465"]
+            4.3.2 (JUN-2016)
+        
+        
+            Cisco Media Experience Engines (MXE)
+            CSCuz52449["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52449"]
+            3.5.2 (Available)
+        
+        
+            Cisco Media Services Interface
+            CSCuz52438["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52438"]
+            No fix is expected
+        
+        
+            Cisco Show and Share (SnS)
+            CSCuz52454["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52454"]
+            No fixes are expected.
+        
+        
+            Cisco TelePresence 1310
+            CSCuz52531["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52531"]
+            "
+
+            6.1.13 (15-JAN-2016)
+
+            1.10.16 (15-JAN-2016)
+
+            1.9.12 (15-JAN-2016)"
+
+            
+        
+        
+            Cisco TelePresence Conductor
+            CSCuz52439["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52439"]
+            4.3 (Available)
+        
+        
+            Cisco TelePresence Content Server (TCS)
+            CSCuz52456["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52456"]
+            7.2 (Available)
+        
+        
+            Cisco TelePresence EX Series
+            CSCuz52455["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52455"]
+            7.3.7(SEP-2016)
+
+            8.2.0 (JUL-2016)
+        
+        
+            Cisco TelePresence ISDN GW 3241
+            CSCuz52444["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52444"]
+            2.2(113) (Available)
+        
+        
+            Cisco TelePresence ISDN GW MSE 8321
+            CSCuz52444["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52444"]
+            2.2(113) (Available)
+        
+        
+            Cisco TelePresence ISDN Link
+            CSCuz52446["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52446"]
+            1.1.6 (Available)
+        
+        
+            Cisco TelePresence MCU (8510, 8420, 4200, 4500 and 5300)
+            CSCuz52447["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52447"]
+            4.5(1.86) (NOV-2016)
+        
+        
+            Cisco TelePresence MX Series
+            CSCuz52455["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52455"]
+            7.3.7(SEP-2016)
+
+            8.2.0 (JUL-2016)
+        
+        
+            Cisco TelePresence Profile Series
+            CSCuz52455["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52455"]
+            7.3.7(SEP-2016)
+
+            8.2.0 (JUL-2016)
+        
+        
+            Cisco TelePresence SX Series
+            CSCuz52455["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52455"]
+            7.3.7(SEP-2016)
+
+            8.2.0 (JUL-2016)
+        
+        
+            Cisco TelePresence Serial Gateway Series
+            CSCuz52453["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52453"]
+            No fix is planned
+        
+        
+            Cisco TelePresence Server 8710, 7010
+            CSCuz52458["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52458"]
+            4.2 MR2 (Available) 
+
+            4.4 (Available)
+
+            
+        
+        
+            Cisco TelePresence Server on Multiparty Media 310, 320
+            CSCuz52458["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52458"]
+            4.2 MR2 (Available) 
+
+            4.4 (Available)
+
+            
+        
+        
+            Cisco TelePresence Server on Virtual Machine
+            CSCuz52458["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52458"]
+            4.2 MR2 (Available) 
+
+            4.4 (Available)
+
+            
+        
+        
+            Cisco TelePresence Supervisor MSE 8050
+            CSCuz52448["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52448"]
+            2.3(1.50) (Available)
+        
+        
+            Cisco TelePresence System 1000
+            CSCuz52531["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52531"]
+            "
+
+            6.1.13 (15-JAN-2016)
+
+            1.10.16 (15-JAN-2016)
+
+            1.9.12 (15-JAN-2016)"
+
+            
+        
+        
+            Cisco TelePresence System 1100
+            CSCuz52531["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52531"]
+            "
+
+            6.1.13 (15-JAN-2016)
+
+            1.10.16 (15-JAN-2016)
+
+            1.9.12 (15-JAN-2016)"
+
+            
+        
+        
+            Cisco TelePresence System 1300
+            CSCuz52531["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52531"]
+            "
+
+            6.1.13 (15-JAN-2016)
+
+            1.10.16 (15-JAN-2016)
+
+            1.9.12 (15-JAN-2016)"
+
+            
+        
+        
+            Cisco TelePresence System 3000 Series
+            CSCuz52531["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52531"]
+            "
+
+            6.1.13 (15-JAN-2016)
+
+            1.10.16 (15-JAN-2016)
+
+            1.9.12 (15-JAN-2016)"
+
+            
+        
+        
+            Cisco TelePresence System 500-32
+            CSCuz52531["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52531"]
+            "
+
+            6.1.13 (15-JAN-2016)
+
+            1.10.16 (15-JAN-2016)
+
+            1.9.12 (15-JAN-2016)"
+
+            
+        
+        
+            Cisco TelePresence System 500-37
+            CSCuz52531["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52531"]
+            "
+
+            6.1.13 (15-JAN-2016)
+
+            1.10.16 (15-JAN-2016)
+
+            1.9.12 (15-JAN-2016)"
+
+            
+        
+        
+            Cisco TelePresence TX 9000 Series
+            CSCuz52531["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52531"]
+            "
+
+            6.1.13 (15-JAN-2016)
+
+            1.10.16 (15-JAN-2016)
+
+            1.9.12 (15-JAN-2016)"
+
+            
+        
+        
+            Cisco TelePresence Video Communication Server (VCS)
+            CSCuz55590["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz55590"]
+            8.8 (Available)
+        
+        
+            Cisco Telepresence Integrator C Series
+            CSCuz52455["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52455"]
+            7.3.7(SEP-2016)
+
+            8.2.0 (JUL-2016)
+        
+        
+            Cisco Video Distribution Suite for Internet Streaming (VDS-IS/CDS-IS)
+            CSCuz52464["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52464"]
+            4.3.2 (JUN-2016)
+        
+        
+            Cisco Video Surveillance 3000 Series IP Cameras
+            CSCuz52490["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52490"]
+            2.8(0.297) (Available)
+        
+        
+            Cisco Video Surveillance 3000 Series IP Cameras
+            CSCuz52491["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52491"]
+            2.8(0.297) (Available)
+        
+        
+            Cisco Video Surveillance 4000 Series High-Definition IP Cameras
+            CSCuz52488["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52488"]
+            2.4(6.309) (Available)
+        
+        
+            Cisco Video Surveillance 4300E/4500E High-Definition IP Cameras
+            CSCuz52489["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52489"]
+            3.2.8 (MAY-2016)
+        
+        
+            Cisco Video Surveillance 6000 Series IP Cameras
+            CSCuz52490["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52490"]
+            2.8(0.297) (Available)
+        
+        
+            Cisco Video Surveillance 6000 Series IP Cameras
+            CSCuz52491["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52491"]
+            2.8(0.297) (Available)
+        
+        
+            Cisco Video Surveillance 7000 Series IP Cameras
+            CSCuz52490["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52490"]
+            2.8(0.297) (Available)
+        
+        
+            Cisco Video Surveillance 7000 Series IP Cameras
+            CSCuz52491["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52491"]
+            2.8(0.297) (Available)
+        
+        
+            Cisco Video Surveillance Media Server
+            CSCuz52492["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52492"]
+            7.9 (DEC-2016)
+        
+        
+            Cisco Video Surveillance PTZ IP Cameras
+            CSCuz52490["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52490"]
+            2.8(0.297) (Available)
+        
+        
+            Cisco Video Surveillance PTZ IP Cameras
+            CSCuz52491["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52491"]
+            2.8(0.297) (Available)
+        
+        
+            Cisco Videoscape Control Suite
+            CSCuz52462["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52462"]
+            Affected systems will be updated (30-Jun-2016)
+        
+        
+            Cloud Object Store (COS)
+            CSCuz52463["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52463"]
+            3.8 (Available)
+        
+        
+            Tandberg Codian ISDN GW 3210/3220/3240
+            CSCuz52444["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52444"]
+            2.2(113) (Available)
+        
+        
+            Tandberg Codian MSE 8320 model
+            CSCuz52444["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52444"]
+            2.2(113) (Available)
+        
+        
+            Wireless
+        
+        
+            Cisco Aironet 2700 Series Access Point
+            CSCuz52410["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52410"]
+             
+        
+        
+            Cisco Mobility Services Engine (MSE)
+            CSCuz52422["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52422"]
+            8.0 (Available)
+        
+        
+            Cisco Wireless Control System
+            CSCuz73565["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz73565"]
+            No fix expected.
+        
+        
+            Cisco Wireless LAN Controller (WLC)
+            CSCuz52435["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52435"]
+            8.0 MR4 (NOV-2016)
+
+            8.2 MR1 (JUL-2016)
+
+            8.3 (JUN-2016)
+        
+        
+            Cisco Hosted Services
+        
+        
+            Cisco Connected Analytics For Collaboration
+            CSCuz52356["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52356"]
+            1.0.1q  (29-Jul-2016)
+        
+        
+            Cisco Intelligent Automation for Cloud
+            CSCuz52460["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52460"]
+            0.9.8 (Available)
+        
+        
+            Cisco Proactive Network Operations Center
+            CSCuz52354["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52354"]
+            3.0.19 (SEP-2016)
+        
+        
+            Cisco Registered Envelope Service (CRES)
+            CSCuz52362["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52362"]
+            Affected systems have been updated.
+        
+        
+            Cisco Smart Care
+            CSCuz52473["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52473"]
+             
+        
+        
+            Cisco Universal Small Cell 5000 Series running V3.4.2.x software
+            CSCuz52520["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52520"]
+            3.5.12.21 (30-JUN-2016)
+        
+        
+            Cisco Universal Small Cell 7000 Series running V3.4.2.x software
+            CSCuz52520["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52520"]
+            3.5.12.21 (30-JUN-2016)
+        
+        
+            Cisco WebEx Meeting Center
+            CSCuz52382["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52382"]
+            3.9.0.5 (25-MAY-2016)
+
+            3.9.1 (25-MAY-2016)
+        
+        
+            Cisco WebEx Messenger Service
+            CSCuz52377["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52377"]
+            Affected systems have been updated
+        
+        
+            Network Health Framework (NHF)
+            CSCuz52525["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52525"]
+            No further releases are planned
+        
+        
+            Network Performance Analytics (NPA)
+            CSCuz52526["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52526"]
+            No further releases are planned
+        
+        
+            Services Analytic Platform
+            CSCuz52357["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz52357"]
+            Affected versions will be updated (30-Jul-2016)
+        
+    
+
+
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Endpoint Clients and Client Software
+
+
+    Cisco WebEx Meetings for BlackBerry
+
+
+
+Network Management and Provisioning
+
+
+    Cisco Configuration Professional
+    Cisco Multicast Manager
+    Cisco Prime Home
+    Cisco Prime Network Registrar IP Address Manager (IPAM)
+
+
+
+Routing and Switching - Enterprise and Service Provider
+
+
+    Cisco 910 Industrial Router
+    Cisco Broadband Access Center Telco Wireless
+
+
+
+Unified Computing
+
+
+    Cisco Unified Computing System B-Series (Blade) Servers
+
+
+
+Voice and Unified Communications Devices
+
+
+    Cisco Agent Desktop
+    Cisco Packaged Contact Center Enterprise
+    Cisco TAPI Service Provider (TSP)
+    Cisco Unified Communications Domain Manager
+
+
+
+Video, Streaming, TelePresence, and Transcoding Devices
+
+
+    Cisco D9859 Advanced Receiver Transcoder
+
+
+
+Cisco Hosted Services
+
+
+    Cisco Cloud Web Security
+    Cisco One Portal
+    Cisco Services Provisioning Platform (SPP)
+    Cisco Universal Small Cell usc-iuh
+    Cisco WebEx Meetings (Meeting Center, Training Center, Event Center, Support Center)
+    Serial Number Assessment Service (SNAS)
+    Small Cell factory recovery root filesystem V2.99.4 or later
+
+
+</Note>
+    <Note Title="Details" Type="General" Ordinal="5">The names and associated Common Vulnerabilities and
+Exposures (CVE) IDs for the vulnerabilities that were disclosed on May 3, 2016, in the OpenSSL Software Foundation security advisory are as
+follows.
+
+
+
+OpenSSL Untrusted ASN.1 Structures Out-of-Bounds Write Vulnerability
+
+
+
+A vulnerability in the ASN.1 encoder in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to the way the affected software encodes certain ASN.1 data structures. An attacker could exploit this vulnerability by sending a crafted certificate to the targeted system. An exploit could cause the affected software to crash or allow the attacker to execute arbitrary code with the privileges of a targeted user running an application that is using the OpenSSL library. If the user has elevated privileges, a successful exploit could result in a complete system compromise.
+
+
+
+This vulnerability has been assigned CVE ID CVE-2016-2108.
+
+
+
+OpenSSL AES CBC Cipher Man-in-the-Middle Vulnerability
+
+
+
+A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to decrypt and access sensitive information.
+
+
+
+The vulnerability is due to insufficient padding checks by the affected software. An attacker could exploit this vulnerability by conducting a padding oracle attack if the attacker is in a man-in-the-middle position between a targeted system and a Transport Layer Security/Secure Sockets Layer (TLS/SSL) or Datagram Transport Layer Security (DTLS) server supporting Advanced Encryption Standards New Instructions (AES-NI) and the connection uses an AES Cipher Block Chaining (CBC) cipher. A successful exploit could allow the attacker to decrypt sensitive information in encrypted packets, which could be leveraged to conduct further attacks.
+
+
+
+This vulnerability has been assigned CVE ID CVE-2016-2107.
+
+
+
+OpenSSL EVP_EncryptUpdate Function Overflow Heap Corruption Vulnerability
+
+
+
+A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability is due to improper validation of user-supplied input by the affected software. An attacker could exploit this vulnerability by submitting large amounts of specially crafted data to the EVP_EncryptUpdate() function of the affected software. A successful exploit could allow the attacker to execute arbitrary code with the privileges of the user or cause a DoS condition on a targeted system.
+
+
+
+This vulnerability has been assigned CVE ID CVE-2016-2106.
+
+
+
+OpenSSL EVP_EncodeUpdate Function Overflow Vulnerability
+
+
+
+A vulnerability in the EVP_EncodeUpdate() function in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to insufficient bounds checks by the affected software. An attacker could exploit this vulnerability by submitting large amounts of data to an application that uses the OpenSSL library on a targeted system. A successful exploit could trigger an overflow condition that results in heap corruption. The attacker could use the heap corruption to cause the application to crash or to execute arbitrary code in the security context of the user who is running the application. If the user is running the application with elevated privileges, the attacker could execute arbitrary code with those privileges and compromise the system completely.
+
+
+
+This vulnerability has been assigned CVE ID CVE-2016-2105.
+
+
+
+OpenSSL d2i_CMS_bio Function Denial of Service Vulnerability
+
+
+
+A vulnerability in OpenSSL could allow a local attacker to cause a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability is due to memory exhaustion while processing certain data. An attacker could exploit this vulnerability by sending crafted ASN.1 data to a targeted system. An exploit could cause the consumption of excessive memory resources, resulting in a DoS condition.
+
+
+
+This vulnerability has been assigned CVE ID CVE-2016-2109.
+
+
+
+OpenSSL ASN.1 Strings X509_NAME_oneline Function Overread Vulnerability
+
+
+
+A vulnerability in OpenSSL could allow an unauthenticated, remote
+attacker to gain access to sensitive information on a targeted system.
+
+
+
+The vulnerability is due to improper memory processes by the affected software. An attacker could exploit this vulnerability by sending a crafted ASN.1 string greater than 1004 bytes to the X509_NAME_oneline() function of the affected software. A successful exploit could allow an attacker to cause a memory overread condition and gain access to sensitive information on a targeted system.
+
+
+
+This vulnerability has been assigned CVE ID CVE-2016-2176.
+</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
+</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerabilities described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"]
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution. 
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and  confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+Customers Without Service Contracts 
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC):
+
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+
+To determine the affected and fixed releases for each vulnerable product, refer to the Cisco bug identified for the product in the "Vulnerable Products" section of this advisory. Cisco bugs are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.
+</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory. 
+</Note>
+    <Note Title="Source" Type="General" Ordinal="10">These vulnerabilities were publicly disclosed by the OpenSSL Software Foundation["https://www.openssl.org/news/secadv/20160503.txt"] on May 3, 2016.
+</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -110,135 +1878,1219 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
     </Reference>
   </DocumentReferences>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Application and Content Networking System (ACNS) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-2054">Cisco Application and Content Networking System (ACNS) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unity" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-2078">Cisco Unity </FullProductName>
+      </Branch>
+      <Branch Name="IOS" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-2097">Cisco IOS </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Access Registrar" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-4432">Cisco Prime Access Registrar </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Emergency Responder" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-4844">Cisco Emergency Responder </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Contact Center" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-5239">Cisco Unified Contact Center </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IOS XR Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-5834">Cisco IOS XR Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ONS 15454 System Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-5940">Cisco ONS 15454 System Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unity Express" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-6046">Cisco Unity Express </FullProductName>
+      </Branch>
+      <Branch Name="Intrusion Prevention System (IPS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-6439">Cisco Intrusion Prevention System (IPS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Adaptive Security Appliance (ASA) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-6588">Cisco Adaptive Security Appliance (ASA) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Wireless Control System (WCS) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-6688">Cisco Wireless Control System (WCS) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ACE Application Control Engine Module" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7365">Cisco ACE Application Control Engine Module </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Wide Area Application Services (WAAS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7367">Cisco Wide Area Application Services (WAAS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Wireless LAN Controller (WLC)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7368">Cisco Wireless LAN Controller (WLC) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Contact Center Enterprise" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7500">Cisco Unified Contact Center Enterprise </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IP Interoperability and Collaboration System (IPICS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-8043">Cisco IP Interoperability and Collaboration System (IPICS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unity Connection" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-73608">Cisco Unity Connection </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-77997">Cisco TelePresence </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Security Manager " Type="Product Name">
+        <FullProductName ProductID="CVRFPID-79783">Cisco Security Manager  </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ACE 4700 Series Application Control Engine Appliances" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-80725">Cisco ACE 4700 Series Application Control Engine Appliances </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Physical Access Gateway " Type="Product Name">
+        <FullProductName ProductID="CVRFPID-92399">Cisco Physical Access Gateway  </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Contact Center Express" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-92631">Cisco Unified Contact Center Express </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Video Surveillance Media Server Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-95900">Cisco Video Surveillance Media Server Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Digital Media Manager Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-95918">Cisco Digital Media Manager Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco MeetingPlace Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-96265">Cisco MeetingPlace Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Network Analysis Module (NAM) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-96689">Cisco Network Analysis Module (NAM) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IronPort Encryption Appliance" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-96780">Cisco IronPort Encryption Appliance </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meeting Center" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-97151">Cisco WebEx Meeting Center </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Network Admission Control Guest Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-99257">Cisco Network Admission Control Guest Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco AnyConnect Secure Mobility Client" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-109810">Cisco AnyConnect Secure Mobility Client </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Show and Share" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-111580">Cisco Show and Share </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Mobility Services Engine" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-111803">Cisco Mobility Services Engine </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Identity Services Engine Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-111903">Cisco Identity Services Engine Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence Video Communication Server (VCS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-112250">Cisco TelePresence Video Communication Server (VCS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IronPort Email Security Appliance" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-114628">Cisco IronPort Email Security Appliance </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ASA CX Context-Aware Security Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-184512">Cisco ASA CX Context-Aware Security Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Security Manager (PRSM)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-184690">Cisco Prime Security Manager (PRSM) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Data Center Network Manager (DCNM)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-185359">Cisco Prime Data Center Network Manager (DCNM) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ATA 187 Analog Telephone Adaptor" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-187454">Cisco ATA 187 Analog Telephone Adaptor </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime LAN Management Solution (LMS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-188426">Cisco Prime LAN Management Solution (LMS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Email Security Appliance (ESA)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-189790">Cisco Email Security Appliance (ESA) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Content Security Management Appliance (SMA)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-189791">Cisco Content Security Management Appliance (SMA) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Aironet Access Point Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190024">Cisco Aironet Access Point Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Infrastructure" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190324">Cisco Prime Infrastructure </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Connected Grid Network Management System (CG-NMS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190474">Cisco Connected Grid Network Management System (CG-NMS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Jabber IM for Android" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190570">Cisco Jabber IM for Android </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meetings Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190702">Cisco WebEx Meetings Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Node for MCS" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190707">Cisco WebEx Node for MCS </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Computing System Central Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-191687">Cisco Unified Computing System Central Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Jabber for Windows" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-192127">Cisco Jabber for Windows </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Enterprise Content Delivery System (ECDS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-192324">Cisco Enterprise Content Delivery System (ECDS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Virtualization Experience Media Engine" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-192775">Cisco Virtualization Experience Media Engine </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ASR 5000 Series Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-193199">Cisco ASR 5000 Series Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Finesse" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-193469">Cisco Finesse </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified IP Phone 8945" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-194328">Cisco Unified IP Phone 8945 </FullProductName>
+      </Branch>
+      <Branch Name="Cisco SocialMiner" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-194456">Cisco SocialMiner </FullProductName>
+      </Branch>
+      <Branch Name="Cisco MediaSense" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-194833">Cisco MediaSense </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Video Surveillance 4000 Series IP Camera" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-195160">Cisco Video Surveillance 4000 Series IP Camera </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified SIP Proxy" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-195223">Cisco Unified SIP Proxy </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Nexus 1000V InterCloud for VMware" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-195842">Cisco Nexus 1000V InterCloud for VMware </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Network Registrar" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-195936">Cisco Prime Network Registrar </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence ISDN GW 3241" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-196515">Cisco TelePresence ISDN GW 3241 </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Digital Content Manager (DCM) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-197708">Cisco Digital Content Manager (DCM) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Intelligence Center" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-198393">Cisco Unified Intelligence Center </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Nexus 1000V Switch " Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202532">Cisco Nexus 1000V Switch  </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Expressway" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202683">Cisco Expressway </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Optical" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203051">Cisco Prime Optical </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Jabber Guest" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203403">Cisco Jabber Guest </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Visual Quality Experience" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203442">Cisco Visual Quality Experience </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Computing System (Management Software)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203512">Cisco Unified Computing System (Management Software) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence Serial Gateway Series" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203581">Cisco TelePresence Serial Gateway Series </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime License Manager" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203607">Cisco Prime License Manager </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Collaboration Deployment" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203614">Cisco Prime Collaboration Deployment </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Plug-in for OpenFlow" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203639">Cisco Plug-in for OpenFlow </FullProductName>
+      </Branch>
+      <Branch Name="Cisco MATE Collector" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203650">Cisco MATE Collector </FullProductName>
+      </Branch>
+      <Branch Name="Cisco MATE Design" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203651">Cisco MATE Design </FullProductName>
+      </Branch>
+      <Branch Name="Cisco MATE Live" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203652">Cisco MATE Live </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime IP Express" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203724">Cisco Prime IP Express </FullProductName>
+      </Branch>
+      <Branch Name="Cisco onePK All-in-One Virtual Machine" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203731">Cisco onePK All-in-One Virtual Machine </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Network Services Controller" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203737">Cisco Prime Network Services Controller </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence ISDN Link" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203746">Cisco TelePresence ISDN Link </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Telepresence Conductor" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203755">Cisco Telepresence Conductor </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Workforce Optimization Quality Management" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203834">Cisco Unified Workforce Optimization Quality Management </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Video Surveillance 3000 Series IP Cameras" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203875">Cisco Video Surveillance 3000 Series IP Cameras </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Video Surveillance 6000 Series IP Cameras" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203887">Cisco Video Surveillance 6000 Series IP Cameras </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Video Surveillance 7000 Series IP Cameras" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203888">Cisco Video Surveillance 7000 Series IP Cameras </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Video Surveillance PTZ IP Cameras" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203914">Cisco Video Surveillance PTZ IP Cameras </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meetings for Android" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203919">Cisco WebEx Meetings for Android </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meetings for Windows Phone 8" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203922">Cisco WebEx Meetings for Windows Phone 8 </FullProductName>
+      </Branch>
+      <Branch Name="Cisco FireSIGHT System Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-205007">Cisco FireSIGHT System Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IP Phone 8800 Series Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-205455">Cisco IP Phone 8800 Series Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Collaboration Assurance" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-209582">Cisco Prime Collaboration Assurance </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Collaboration Provisioning" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-209583">Cisco Prime Collaboration Provisioning </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Jabber Software Development Kit" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210536">Cisco Jabber Software Development Kit </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Jabber for Mac" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210554">Cisco Jabber for Mac </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Jabber for iOS" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210568">Cisco Jabber for iOS </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Cloupia Unified Infrastructure Controller" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210583">Cisco Cloupia Unified Infrastructure Controller </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Packet Tracer" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210586">Cisco Packet Tracer </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Network" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210593">Cisco Prime Network </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Performance Manager" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210610">Cisco Prime Performance Manager </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Agent Desktop" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210644">Cisco Agent Desktop </FullProductName>
+      </Branch>
+      <Branch Name="Cisco DX Series IP Phones" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210710">Cisco DX Series IP Phones </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Paging Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210717">Cisco Paging Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco SPA112 2-Port Phone Adapter" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210733">Cisco SPA112 2-Port Phone Adapter </FullProductName>
+      </Branch>
+      <Branch Name="Cisco SPA122 ATA with Router" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210754">Cisco SPA122 ATA with Router </FullProductName>
+      </Branch>
+      <Branch Name="Cisco SPA232D Multi-Line DECT ATA" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210777">Cisco SPA232D Multi-Line DECT ATA </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified 7800 Series IP Phones" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210824">Cisco Unified 7800 Series IP Phones </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Attendant Console" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210834">Cisco Unified Attendant Console </FullProductName>
+      </Branch>
+      <Branch Name="Cisco AnyRes Live" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210837">Cisco AnyRes Live </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Videoscape Control Suite" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210903">Cisco Videoscape Control Suite </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified IP Phone 7900 Series" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-211545">Cisco Unified IP Phone 7900 Series </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Nexus 3000 Series Switch" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-213561">Cisco Nexus 3000 Series Switch </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Policy Suite (CPS) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-213864">Cisco Policy Suite (CPS) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Hosted Collaboration Mediation Fulfillment" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-220254">Cisco Hosted Collaboration Mediation Fulfillment </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Registered Envelope Service" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-225817">Cisco Registered Envelope Service </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>OpenSSL EVP_EncryptUpdate Function Overflow Heap Corruption Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz52565</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability is due to improper validation of user-supplied input by the affected software. An attacker could exploit this vulnerability by submitting large amounts of specially crafted data to the EVP_EncryptUpdate() function of the affected software. A successful exploit could allow the attacker to execute arbitrary code with the privileges of the user or cause a DoS condition on a targeted system.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz52565,CSCuz52383,CSCuz52474,CSCuz52539,CSCuz52503,CSCuz52410,CSCuz52507,CSCuz52506,CSCuz52522,CSCuz52468,CSCuz52482,CSCuz52351,CSCuz52560,CSCuz52386,CSCuz52360,CSCuz52529,CSCuz52367,CSCuz52407,CSCuz52441,CSCuz52563,CSCuz52364,CSCuz52543,CSCuz52442,CSCuz55590,CSCuz63940,CSCuz52366,CSCuz52547,CSCuz52493,CSCuz52528,CSCuz52437,CSCuz52461,CSCuz52508,CSCuz52363,CSCuz52365,CSCuz52568,CSCuz52550,CSCuz52551,CSCuz60563,CSCuz52554,CSCuz52552,CSCuz52583,CSCuz52562,CSCuz52556,CSCuz52422,CSCuz52472,CSCuz52423,CSCuz52393,CSCuz52399,CSCuz52397,CSCuz52400,CSCuz52485,CSCuz52486,CSCuz52451,CSCuz52548,CSCuz52487,CSCuz52587,CSCuz52418,CSCuz52430,CSCuz52537,CSCuz52429,CSCuz52387,CSCuz52424,CSCuz52425,CSCuz52421,CSCuz52413,CSCuz52452,CSCuz52415,CSCuz52433,CSCuz52408,CSCuz52420,CSCuz52409,CSCuz52477,CSCuz52362,CSCuz52432,CSCuz52454,CSCuz63938,CSCuz52494,CSCuz52531,CSCuz52439,CSCuz52456,CSCuz52455,CSCuz52444,CSCuz52446,CSCuz52447,CSCuz52453,CSCuz52458,CSCuz52448,CSCuz52405,CSCuz52566,CSCuz52558,CSCuz52532,CSCuz52533,CSCuz52483,CSCuz63936,CSCuz63935,CSCuz52567,CSCuz52349,CSCuz52571,CSCuz52538,CSCuz52348,CSCuz52490,CSCuz52488,CSCuz52492,CSCuz52462,CSCuz52570,CSCuz52466,CSCuz52382,CSCuz52371,CSCuz52373,CSCuz52375,CSCuz52370,CSCuz52481,CSCuz73565,CSCuz52435</Note>
+    </Notes>
+    <CVE>CVE-2016-2106</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111803</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-114628</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-187454</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-189790</ProductID>
+        <ProductID>CVRFPID-189791</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190570</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192127</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-193199</ProductID>
+        <ProductID>CVRFPID-193469</ProductID>
+        <ProductID>CVRFPID-194328</ProductID>
+        <ProductID>CVRFPID-194456</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195160</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-195842</ProductID>
+        <ProductID>CVRFPID-195936</ProductID>
+        <ProductID>CVRFPID-196515</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-198393</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203051</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203512</ProductID>
+        <ProductID>CVRFPID-203581</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203614</ProductID>
+        <ProductID>CVRFPID-203639</ProductID>
+        <ProductID>CVRFPID-203650</ProductID>
+        <ProductID>CVRFPID-203651</ProductID>
+        <ProductID>CVRFPID-203652</ProductID>
+        <ProductID>CVRFPID-203724</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-203834</ProductID>
+        <ProductID>CVRFPID-203875</ProductID>
+        <ProductID>CVRFPID-203887</ProductID>
+        <ProductID>CVRFPID-203888</ProductID>
+        <ProductID>CVRFPID-203914</ProductID>
+        <ProductID>CVRFPID-203919</ProductID>
+        <ProductID>CVRFPID-203922</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-2078</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-2097</ProductID>
+        <ProductID>CVRFPID-210536</ProductID>
+        <ProductID>CVRFPID-210554</ProductID>
+        <ProductID>CVRFPID-210568</ProductID>
+        <ProductID>CVRFPID-210583</ProductID>
+        <ProductID>CVRFPID-210586</ProductID>
+        <ProductID>CVRFPID-210593</ProductID>
+        <ProductID>CVRFPID-210610</ProductID>
+        <ProductID>CVRFPID-210644</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210733</ProductID>
+        <ProductID>CVRFPID-210754</ProductID>
+        <ProductID>CVRFPID-210777</ProductID>
+        <ProductID>CVRFPID-210824</ProductID>
+        <ProductID>CVRFPID-210834</ProductID>
+        <ProductID>CVRFPID-210837</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211545</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4432</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5239</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-5940</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-6588</ProductID>
+        <ProductID>CVRFPID-6688</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7368</ProductID>
+        <ProductID>CVRFPID-7500</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-79783</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-80725</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96265</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-97151</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>OpenSSL ASN.1 Strings X509_NAME_oneline Function Overread Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz52565</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in OpenSSL could allow an unauthenticated, remote
+attacker to gain access to sensitive information on a targeted system.
+
+
+
+The vulnerability is due to improper memory processes by the affected software. An attacker could exploit this vulnerability by sending a crafted ASN.1 string greater than 1004 bytes to the X509_NAME_oneline() function of the affected software. A successful exploit could allow an attacker to cause a memory overread condition and gain access to sensitive information on a targeted system.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz52565,CSCuz52383,CSCuz52474,CSCuz52539,CSCuz52503,CSCuz52410,CSCuz52507,CSCuz52506,CSCuz52522,CSCuz52468,CSCuz52482,CSCuz52351,CSCuz52560,CSCuz52386,CSCuz52360,CSCuz52529,CSCuz52367,CSCuz52407,CSCuz52441,CSCuz52563,CSCuz52364,CSCuz52543,CSCuz52442,CSCuz55590,CSCuz63940,CSCuz52366,CSCuz52547,CSCuz52493,CSCuz52528,CSCuz52437,CSCuz52461,CSCuz52508,CSCuz52363,CSCuz52365,CSCuz52568,CSCuz52550,CSCuz52551,CSCuz60563,CSCuz52554,CSCuz52552,CSCuz52583,CSCuz52562,CSCuz52556,CSCuz52422,CSCuz52472,CSCuz52423,CSCuz52393,CSCuz52399,CSCuz52397,CSCuz52400,CSCuz52485,CSCuz52486,CSCuz52451,CSCuz52548,CSCuz52487,CSCuz52587,CSCuz52418,CSCuz52430,CSCuz52537,CSCuz52429,CSCuz52387,CSCuz52424,CSCuz52425,CSCuz52421,CSCuz52413,CSCuz52452,CSCuz52415,CSCuz52433,CSCuz52408,CSCuz52420,CSCuz52409,CSCuz52477,CSCuz52362,CSCuz52432,CSCuz52454,CSCuz63938,CSCuz52494,CSCuz52531,CSCuz52439,CSCuz52456,CSCuz52455,CSCuz52444,CSCuz52446,CSCuz52447,CSCuz52453,CSCuz52458,CSCuz52448,CSCuz52405,CSCuz52566,CSCuz52558,CSCuz52532,CSCuz52533,CSCuz52483,CSCuz63936,CSCuz63935,CSCuz52567,CSCuz52349,CSCuz52571,CSCuz52538,CSCuz52348,CSCuz52490,CSCuz52488,CSCuz52492,CSCuz52462,CSCuz52570,CSCuz52466,CSCuz52382,CSCuz52371,CSCuz52373,CSCuz52375,CSCuz52370,CSCuz52481,CSCuz73565,CSCuz52435</Note>
+    </Notes>
+    <CVE>CVE-2016-2176</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111803</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-114628</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-187454</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-189790</ProductID>
+        <ProductID>CVRFPID-189791</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190570</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192127</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-193199</ProductID>
+        <ProductID>CVRFPID-193469</ProductID>
+        <ProductID>CVRFPID-194328</ProductID>
+        <ProductID>CVRFPID-194456</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195160</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-195842</ProductID>
+        <ProductID>CVRFPID-195936</ProductID>
+        <ProductID>CVRFPID-196515</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-198393</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203051</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203512</ProductID>
+        <ProductID>CVRFPID-203581</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203614</ProductID>
+        <ProductID>CVRFPID-203639</ProductID>
+        <ProductID>CVRFPID-203650</ProductID>
+        <ProductID>CVRFPID-203651</ProductID>
+        <ProductID>CVRFPID-203652</ProductID>
+        <ProductID>CVRFPID-203724</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-203834</ProductID>
+        <ProductID>CVRFPID-203875</ProductID>
+        <ProductID>CVRFPID-203887</ProductID>
+        <ProductID>CVRFPID-203888</ProductID>
+        <ProductID>CVRFPID-203914</ProductID>
+        <ProductID>CVRFPID-203919</ProductID>
+        <ProductID>CVRFPID-203922</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-2078</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-2097</ProductID>
+        <ProductID>CVRFPID-210536</ProductID>
+        <ProductID>CVRFPID-210554</ProductID>
+        <ProductID>CVRFPID-210568</ProductID>
+        <ProductID>CVRFPID-210583</ProductID>
+        <ProductID>CVRFPID-210586</ProductID>
+        <ProductID>CVRFPID-210593</ProductID>
+        <ProductID>CVRFPID-210610</ProductID>
+        <ProductID>CVRFPID-210644</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210733</ProductID>
+        <ProductID>CVRFPID-210754</ProductID>
+        <ProductID>CVRFPID-210777</ProductID>
+        <ProductID>CVRFPID-210824</ProductID>
+        <ProductID>CVRFPID-210834</ProductID>
+        <ProductID>CVRFPID-210837</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211545</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4432</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5239</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-5940</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-6588</ProductID>
+        <ProductID>CVRFPID-6688</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7368</ProductID>
+        <ProductID>CVRFPID-7500</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-79783</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-80725</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96265</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-97151</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>OpenSSL EVP_EncodeUpdate Function Overflow Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz52565</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the EVP_EncodeUpdate() function in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to insufficient bounds checks by the affected software. An attacker could exploit this vulnerability by submitting large amounts of data to an application that uses the OpenSSL library on a targeted system. A successful exploit could trigger an overflow condition that results in heap corruption. The attacker could use the heap corruption to cause the application to crash or to execute arbitrary code in the security context of the user who is running the application. If the user is running the application with elevated privileges, the attacker could execute arbitrary code with those privileges and compromise the system completely.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz52565,CSCuz52383,CSCuz52474,CSCuz52539,CSCuz52503,CSCuz52410,CSCuz52507,CSCuz52506,CSCuz52522,CSCuz52468,CSCuz52482,CSCuz52351,CSCuz52560,CSCuz52386,CSCuz52360,CSCuz52529,CSCuz52367,CSCuz52407,CSCuz52441,CSCuz52563,CSCuz52364,CSCuz52543,CSCuz52442,CSCuz55590,CSCuz63940,CSCuz52366,CSCuz52547,CSCuz52493,CSCuz52528,CSCuz52437,CSCuz52461,CSCuz52508,CSCuz52363,CSCuz52365,CSCuz52568,CSCuz52550,CSCuz52551,CSCuz60563,CSCuz52554,CSCuz52552,CSCuz52583,CSCuz52562,CSCuz52556,CSCuz52422,CSCuz52472,CSCuz52423,CSCuz52393,CSCuz52399,CSCuz52397,CSCuz52400,CSCuz52485,CSCuz52486,CSCuz52451,CSCuz52548,CSCuz52487,CSCuz52587,CSCuz52418,CSCuz52430,CSCuz52537,CSCuz52429,CSCuz52387,CSCuz52424,CSCuz52425,CSCuz52421,CSCuz52413,CSCuz52452,CSCuz52415,CSCuz52433,CSCuz52408,CSCuz52420,CSCuz52409,CSCuz52477,CSCuz52362,CSCuz52432,CSCuz52454,CSCuz63938,CSCuz52494,CSCuz52531,CSCuz52439,CSCuz52456,CSCuz52455,CSCuz52444,CSCuz52446,CSCuz52447,CSCuz52453,CSCuz52458,CSCuz52448,CSCuz52405,CSCuz52566,CSCuz52558,CSCuz52532,CSCuz52533,CSCuz52483,CSCuz63936,CSCuz63935,CSCuz52567,CSCuz52349,CSCuz52571,CSCuz52538,CSCuz52348,CSCuz52490,CSCuz52488,CSCuz52492,CSCuz52462,CSCuz52570,CSCuz52466,CSCuz52382,CSCuz52371,CSCuz52373,CSCuz52375,CSCuz52370,CSCuz52481,CSCuz73565,CSCuz52435</Note>
+    </Notes>
+    <CVE>CVE-2016-2105</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111803</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-114628</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-187454</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-189790</ProductID>
+        <ProductID>CVRFPID-189791</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190570</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192127</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-193199</ProductID>
+        <ProductID>CVRFPID-193469</ProductID>
+        <ProductID>CVRFPID-194328</ProductID>
+        <ProductID>CVRFPID-194456</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195160</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-195842</ProductID>
+        <ProductID>CVRFPID-195936</ProductID>
+        <ProductID>CVRFPID-196515</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-198393</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203051</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203512</ProductID>
+        <ProductID>CVRFPID-203581</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203614</ProductID>
+        <ProductID>CVRFPID-203639</ProductID>
+        <ProductID>CVRFPID-203650</ProductID>
+        <ProductID>CVRFPID-203651</ProductID>
+        <ProductID>CVRFPID-203652</ProductID>
+        <ProductID>CVRFPID-203724</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-203834</ProductID>
+        <ProductID>CVRFPID-203875</ProductID>
+        <ProductID>CVRFPID-203887</ProductID>
+        <ProductID>CVRFPID-203888</ProductID>
+        <ProductID>CVRFPID-203914</ProductID>
+        <ProductID>CVRFPID-203919</ProductID>
+        <ProductID>CVRFPID-203922</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-2078</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-2097</ProductID>
+        <ProductID>CVRFPID-210536</ProductID>
+        <ProductID>CVRFPID-210554</ProductID>
+        <ProductID>CVRFPID-210568</ProductID>
+        <ProductID>CVRFPID-210583</ProductID>
+        <ProductID>CVRFPID-210586</ProductID>
+        <ProductID>CVRFPID-210593</ProductID>
+        <ProductID>CVRFPID-210610</ProductID>
+        <ProductID>CVRFPID-210644</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210733</ProductID>
+        <ProductID>CVRFPID-210754</ProductID>
+        <ProductID>CVRFPID-210777</ProductID>
+        <ProductID>CVRFPID-210824</ProductID>
+        <ProductID>CVRFPID-210834</ProductID>
+        <ProductID>CVRFPID-210837</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211545</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4432</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5239</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-5940</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-6588</ProductID>
+        <ProductID>CVRFPID-6688</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7368</ProductID>
+        <ProductID>CVRFPID-7500</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-79783</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-80725</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96265</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-97151</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>OpenSSL d2i_CMS_bio Function Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz52565</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in OpenSSL could allow a local attacker to cause a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability is due to memory exhaustion while processing certain data. An attacker could exploit this vulnerability by sending crafted ASN.1 data to a targeted system. An exploit could cause the consumption of excessive memory resources, resulting in a DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz52565,CSCuz52383,CSCuz52474,CSCuz52539,CSCuz52503,CSCuz52410,CSCuz52507,CSCuz52506,CSCuz52522,CSCuz52468,CSCuz52482,CSCuz52351,CSCuz52560,CSCuz52386,CSCuz52360,CSCuz52529,CSCuz52367,CSCuz52407,CSCuz52441,CSCuz52563,CSCuz52364,CSCuz52543,CSCuz52442,CSCuz55590,CSCuz63940,CSCuz52366,CSCuz52547,CSCuz52493,CSCuz52528,CSCuz52437,CSCuz52461,CSCuz52508,CSCuz52363,CSCuz52365,CSCuz52568,CSCuz52550,CSCuz52551,CSCuz60563,CSCuz52554,CSCuz52552,CSCuz52583,CSCuz52562,CSCuz52556,CSCuz52422,CSCuz52472,CSCuz52423,CSCuz52393,CSCuz52399,CSCuz52397,CSCuz52400,CSCuz52485,CSCuz52486,CSCuz52451,CSCuz52548,CSCuz52487,CSCuz52587,CSCuz52418,CSCuz52430,CSCuz52537,CSCuz52429,CSCuz52387,CSCuz52424,CSCuz52425,CSCuz52421,CSCuz52413,CSCuz52452,CSCuz52415,CSCuz52433,CSCuz52408,CSCuz52420,CSCuz52409,CSCuz52477,CSCuz52362,CSCuz52432,CSCuz52454,CSCuz63938,CSCuz52494,CSCuz52531,CSCuz52439,CSCuz52456,CSCuz52455,CSCuz52444,CSCuz52446,CSCuz52447,CSCuz52453,CSCuz52458,CSCuz52448,CSCuz52405,CSCuz52566,CSCuz52558,CSCuz52532,CSCuz52533,CSCuz52483,CSCuz63936,CSCuz63935,CSCuz52567,CSCuz52349,CSCuz52571,CSCuz52538,CSCuz52348,CSCuz52490,CSCuz52488,CSCuz52492,CSCuz52462,CSCuz52570,CSCuz52466,CSCuz52382,CSCuz52371,CSCuz52373,CSCuz52375,CSCuz52370,CSCuz52481,CSCuz73565,CSCuz52435</Note>
+    </Notes>
+    <CVE>CVE-2016-2109</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111803</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-114628</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-187454</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-189790</ProductID>
+        <ProductID>CVRFPID-189791</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190570</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192127</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-193199</ProductID>
+        <ProductID>CVRFPID-193469</ProductID>
+        <ProductID>CVRFPID-194328</ProductID>
+        <ProductID>CVRFPID-194456</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195160</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-195842</ProductID>
+        <ProductID>CVRFPID-195936</ProductID>
+        <ProductID>CVRFPID-196515</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-198393</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203051</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203512</ProductID>
+        <ProductID>CVRFPID-203581</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203614</ProductID>
+        <ProductID>CVRFPID-203639</ProductID>
+        <ProductID>CVRFPID-203650</ProductID>
+        <ProductID>CVRFPID-203651</ProductID>
+        <ProductID>CVRFPID-203652</ProductID>
+        <ProductID>CVRFPID-203724</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-203834</ProductID>
+        <ProductID>CVRFPID-203875</ProductID>
+        <ProductID>CVRFPID-203887</ProductID>
+        <ProductID>CVRFPID-203888</ProductID>
+        <ProductID>CVRFPID-203914</ProductID>
+        <ProductID>CVRFPID-203919</ProductID>
+        <ProductID>CVRFPID-203922</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-2078</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-2097</ProductID>
+        <ProductID>CVRFPID-210536</ProductID>
+        <ProductID>CVRFPID-210554</ProductID>
+        <ProductID>CVRFPID-210568</ProductID>
+        <ProductID>CVRFPID-210583</ProductID>
+        <ProductID>CVRFPID-210586</ProductID>
+        <ProductID>CVRFPID-210593</ProductID>
+        <ProductID>CVRFPID-210610</ProductID>
+        <ProductID>CVRFPID-210644</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210733</ProductID>
+        <ProductID>CVRFPID-210754</ProductID>
+        <ProductID>CVRFPID-210777</ProductID>
+        <ProductID>CVRFPID-210824</ProductID>
+        <ProductID>CVRFPID-210834</ProductID>
+        <ProductID>CVRFPID-210837</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211545</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4432</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5239</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-5940</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-6588</ProductID>
+        <ProductID>CVRFPID-6688</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7368</ProductID>
+        <ProductID>CVRFPID-7500</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-79783</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-80725</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96265</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-97151</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>OpenSSL AES CBC Cipher Man-in-the-Middle Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz52565</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to decrypt and access sensitive information.
+
+
+
+The vulnerability is due to insufficient padding checks by the affected software. An attacker could exploit this vulnerability by conducting a padding oracle attack if the attacker is in a man-in-the-middle position between a targeted system and a Transport Layer Security/Secure Sockets Layer (TLS/SSL) or Datagram Transport Layer Security (DTLS) server supporting Advanced Encryption Standards New Instructions (AES-NI) and the connection uses an AES Cipher Block Chaining (CBC) cipher. A successful exploit could allow the attacker to decrypt sensitive information in encrypted packets, which could be leveraged to conduct further attacks.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz52565,CSCuz52383,CSCuz52474,CSCuz52539,CSCuz52503,CSCuz52410,CSCuz52507,CSCuz52506,CSCuz52522,CSCuz52468,CSCuz52482,CSCuz52351,CSCuz52560,CSCuz52386,CSCuz52360,CSCuz52529,CSCuz52367,CSCuz52407,CSCuz52441,CSCuz52563,CSCuz52364,CSCuz52543,CSCuz52442,CSCuz55590,CSCuz63940,CSCuz52366,CSCuz52547,CSCuz52493,CSCuz52528,CSCuz52437,CSCuz52461,CSCuz52508,CSCuz52363,CSCuz52365,CSCuz52568,CSCuz52550,CSCuz52551,CSCuz60563,CSCuz52554,CSCuz52552,CSCuz52583,CSCuz52562,CSCuz52556,CSCuz52422,CSCuz52472,CSCuz52423,CSCuz52393,CSCuz52399,CSCuz52397,CSCuz52400,CSCuz52485,CSCuz52486,CSCuz52451,CSCuz52548,CSCuz52487,CSCuz52587,CSCuz52418,CSCuz52430,CSCuz52537,CSCuz52429,CSCuz52387,CSCuz52424,CSCuz52425,CSCuz52421,CSCuz52413,CSCuz52452,CSCuz52415,CSCuz52433,CSCuz52408,CSCuz52420,CSCuz52409,CSCuz52477,CSCuz52362,CSCuz52432,CSCuz52454,CSCuz63938,CSCuz52494,CSCuz52531,CSCuz52439,CSCuz52456,CSCuz52455,CSCuz52444,CSCuz52446,CSCuz52447,CSCuz52453,CSCuz52458,CSCuz52448,CSCuz52405,CSCuz52566,CSCuz52558,CSCuz52532,CSCuz52533,CSCuz52483,CSCuz63936,CSCuz63935,CSCuz52567,CSCuz52349,CSCuz52571,CSCuz52538,CSCuz52348,CSCuz52490,CSCuz52488,CSCuz52492,CSCuz52462,CSCuz52570,CSCuz52466,CSCuz52382,CSCuz52371,CSCuz52373,CSCuz52375,CSCuz52370,CSCuz52481,CSCuz73565,CSCuz52435</Note>
+    </Notes>
+    <CVE>CVE-2016-2107</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111803</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-114628</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-187454</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-189790</ProductID>
+        <ProductID>CVRFPID-189791</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190570</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192127</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-193199</ProductID>
+        <ProductID>CVRFPID-193469</ProductID>
+        <ProductID>CVRFPID-194328</ProductID>
+        <ProductID>CVRFPID-194456</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195160</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-195842</ProductID>
+        <ProductID>CVRFPID-195936</ProductID>
+        <ProductID>CVRFPID-196515</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-198393</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203051</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203512</ProductID>
+        <ProductID>CVRFPID-203581</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203614</ProductID>
+        <ProductID>CVRFPID-203639</ProductID>
+        <ProductID>CVRFPID-203650</ProductID>
+        <ProductID>CVRFPID-203651</ProductID>
+        <ProductID>CVRFPID-203652</ProductID>
+        <ProductID>CVRFPID-203724</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-203834</ProductID>
+        <ProductID>CVRFPID-203875</ProductID>
+        <ProductID>CVRFPID-203887</ProductID>
+        <ProductID>CVRFPID-203888</ProductID>
+        <ProductID>CVRFPID-203914</ProductID>
+        <ProductID>CVRFPID-203919</ProductID>
+        <ProductID>CVRFPID-203922</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-2078</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-2097</ProductID>
+        <ProductID>CVRFPID-210536</ProductID>
+        <ProductID>CVRFPID-210554</ProductID>
+        <ProductID>CVRFPID-210568</ProductID>
+        <ProductID>CVRFPID-210583</ProductID>
+        <ProductID>CVRFPID-210586</ProductID>
+        <ProductID>CVRFPID-210593</ProductID>
+        <ProductID>CVRFPID-210610</ProductID>
+        <ProductID>CVRFPID-210644</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210733</ProductID>
+        <ProductID>CVRFPID-210754</ProductID>
+        <ProductID>CVRFPID-210777</ProductID>
+        <ProductID>CVRFPID-210824</ProductID>
+        <ProductID>CVRFPID-210834</ProductID>
+        <ProductID>CVRFPID-210837</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211545</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4432</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5239</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-5940</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-6588</ProductID>
+        <ProductID>CVRFPID-6688</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7368</ProductID>
+        <ProductID>CVRFPID-7500</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-79783</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-80725</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96265</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-97151</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
+</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
+        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="6" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>OpenSSL Untrusted ASN.1 Structures Out-of-Bounds Write Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz52565</ID>
     <Notes>
       <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the ASN.1 encoder in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition.
 
 
 
 The vulnerability is due to the way the affected software encodes certain ASN.1 data structures. An attacker could exploit this vulnerability by sending a crafted certificate to the targeted system. An exploit could cause the affected software to crash or allow the attacker to execute arbitrary code with the privileges of a targeted user running an application that is using the OpenSSL library. If the user has elevated privileges, a successful exploit could result in a complete system compromise.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz52565,CSCuz52383,CSCuz52474,CSCuz52539,CSCuz52503,CSCuz52410,CSCuz52507,CSCuz52506,CSCuz52522,CSCuz52468,CSCuz52482,CSCuz52351,CSCuz52560,CSCuz52386,CSCuz52360,CSCuz52529,CSCuz52367,CSCuz52407,CSCuz52441,CSCuz52563,CSCuz52364,CSCuz52543,CSCuz52442,CSCuz55590,CSCuz63940,CSCuz52366,CSCuz52547,CSCuz52493,CSCuz52528,CSCuz52437,CSCuz52461,CSCuz52508,CSCuz52363,CSCuz52365,CSCuz52568,CSCuz52550,CSCuz52551,CSCuz60563,CSCuz52554,CSCuz52552,CSCuz52583,CSCuz52562,CSCuz52556,CSCuz52422,CSCuz52472,CSCuz52423,CSCuz52393,CSCuz52399,CSCuz52397,CSCuz52400,CSCuz52485,CSCuz52486,CSCuz52451,CSCuz52548,CSCuz52487,CSCuz52587,CSCuz52418,CSCuz52430,CSCuz52537,CSCuz52429,CSCuz52387,CSCuz52424,CSCuz52425,CSCuz52421,CSCuz52413,CSCuz52452,CSCuz52415,CSCuz52433,CSCuz52408,CSCuz52420,CSCuz52409,CSCuz52477,CSCuz52362,CSCuz52432,CSCuz52454,CSCuz63938,CSCuz52494,CSCuz52531,CSCuz52439,CSCuz52456,CSCuz52455,CSCuz52444,CSCuz52446,CSCuz52447,CSCuz52453,CSCuz52458,CSCuz52448,CSCuz52405,CSCuz52566,CSCuz52558,CSCuz52532,CSCuz52533,CSCuz52483,CSCuz63936,CSCuz63935,CSCuz52567,CSCuz52349,CSCuz52571,CSCuz52538,CSCuz52348,CSCuz52490,CSCuz52488,CSCuz52492,CSCuz52462,CSCuz52570,CSCuz52466,CSCuz52382,CSCuz52371,CSCuz52373,CSCuz52375,CSCuz52370,CSCuz52481,CSCuz73565,CSCuz52435</Note>
     </Notes>
     <CVE>CVE-2016-2108</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111803</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-114628</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-187454</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-189790</ProductID>
+        <ProductID>CVRFPID-189791</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190570</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192127</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-193199</ProductID>
+        <ProductID>CVRFPID-193469</ProductID>
+        <ProductID>CVRFPID-194328</ProductID>
+        <ProductID>CVRFPID-194456</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195160</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-195842</ProductID>
+        <ProductID>CVRFPID-195936</ProductID>
+        <ProductID>CVRFPID-196515</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-198393</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203051</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203512</ProductID>
+        <ProductID>CVRFPID-203581</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203614</ProductID>
+        <ProductID>CVRFPID-203639</ProductID>
+        <ProductID>CVRFPID-203650</ProductID>
+        <ProductID>CVRFPID-203651</ProductID>
+        <ProductID>CVRFPID-203652</ProductID>
+        <ProductID>CVRFPID-203724</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-203834</ProductID>
+        <ProductID>CVRFPID-203875</ProductID>
+        <ProductID>CVRFPID-203887</ProductID>
+        <ProductID>CVRFPID-203888</ProductID>
+        <ProductID>CVRFPID-203914</ProductID>
+        <ProductID>CVRFPID-203919</ProductID>
+        <ProductID>CVRFPID-203922</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-2078</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-2097</ProductID>
+        <ProductID>CVRFPID-210536</ProductID>
+        <ProductID>CVRFPID-210554</ProductID>
+        <ProductID>CVRFPID-210568</ProductID>
+        <ProductID>CVRFPID-210583</ProductID>
+        <ProductID>CVRFPID-210586</ProductID>
+        <ProductID>CVRFPID-210593</ProductID>
+        <ProductID>CVRFPID-210610</ProductID>
+        <ProductID>CVRFPID-210644</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210733</ProductID>
+        <ProductID>CVRFPID-210754</ProductID>
+        <ProductID>CVRFPID-210777</ProductID>
+        <ProductID>CVRFPID-210824</ProductID>
+        <ProductID>CVRFPID-210834</ProductID>
+        <ProductID>CVRFPID-210837</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211545</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4432</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5239</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-5940</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-6588</ProductID>
+        <ProductID>CVRFPID-6688</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7368</ProductID>
+        <ProductID>CVRFPID-7500</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-79783</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-80725</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96265</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-97151</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
     <Remediations>
       <Remediation Type="Workaround">
-        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
-</Description>
-      </Remediation>
-    </Remediations>
-    <References>
-      <Reference Type="Self">
-        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
-        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
-      </Reference>
-    </References>
-  </Vulnerability>
-  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
-    <Title>OpenSSL AES CBC Cipher Man-in-the-Middle Vulnerability</Title>
-    <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to decrypt and access sensitive information.
-
-
-
-The vulnerability is due to insufficient padding checks by the affected software. An attacker could exploit this vulnerability by conducting a padding oracle attack if the attacker is in a man-in-the-middle position between a targeted system and a Transport Layer Security/Secure Sockets Layer (TLS/SSL) or Datagram Transport Layer Security (DTLS) server supporting Advanced Encryption Standards New Instructions (AES-NI) and the connection uses an AES Cipher Block Chaining (CBC) cipher. A successful exploit could allow the attacker to decrypt sensitive information in encrypted packets, which could be leveraged to conduct further attacks.</Note>
-    </Notes>
-    <CVE>CVE-2016-2107</CVE>
-    <Remediations>
-      <Remediation Type="Workaround">
-        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
-</Description>
-      </Remediation>
-    </Remediations>
-    <References>
-      <Reference Type="Self">
-        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
-        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
-      </Reference>
-    </References>
-  </Vulnerability>
-  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
-    <Title>OpenSSL EVP_EncodeUpdate Function Overflow Vulnerability</Title>
-    <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="5">A vulnerability in the EVP_EncodeUpdate() function in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition.
-
-
-
-The vulnerability is due to insufficient bounds checks by the affected software. An attacker could exploit this vulnerability by submitting large amounts of data to an application that uses the OpenSSL library on a targeted system. A successful exploit could trigger an overflow condition that results in heap corruption. The attacker could use the heap corruption to cause the application to crash or to execute arbitrary code in the security context of the user who is running the application. If the user is running the application with elevated privileges, the attacker could execute arbitrary code with those privileges and compromise the system completely.</Note>
-    </Notes>
-    <CVE>CVE-2016-2105</CVE>
-    <Remediations>
-      <Remediation Type="Workaround">
-        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
-</Description>
-      </Remediation>
-    </Remediations>
-    <References>
-      <Reference Type="Self">
-        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
-        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
-      </Reference>
-    </References>
-  </Vulnerability>
-  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
-    <Title>OpenSSL EVP_EncryptUpdate Function Overflow Heap Corruption Vulnerability</Title>
-    <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="7">A vulnerability in OpenSSL could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition on a targeted system.
-
-
-
-The vulnerability is due to improper validation of user-supplied input by the affected software. An attacker could exploit this vulnerability by submitting large amounts of specially crafted data to the EVP_EncryptUpdate() function of the affected software. A successful exploit could allow the attacker to execute arbitrary code with the privileges of the user or cause a DoS condition on a targeted system.</Note>
-    </Notes>
-    <CVE>CVE-2016-2106</CVE>
-    <Remediations>
-      <Remediation Type="Workaround">
-        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
-</Description>
-      </Remediation>
-    </Remediations>
-    <References>
-      <Reference Type="Self">
-        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
-        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
-      </Reference>
-    </References>
-  </Vulnerability>
-  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
-    <Title>OpenSSL d2i_CMS_bio Function Denial of Service Vulnerability</Title>
-    <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="9">A vulnerability in OpenSSL could allow a local attacker to cause a denial of service (DoS) condition on a targeted system.
-
-
-
-The vulnerability is due to memory exhaustion while processing certain data. An attacker could exploit this vulnerability by sending crafted ASN.1 data to a targeted system. An exploit could cause the consumption of excessive memory resources, resulting in a DoS condition.</Note>
-    </Notes>
-    <CVE>CVE-2016-2109</CVE>
-    <Remediations>
-      <Remediation Type="Workaround">
-        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
-</Description>
-      </Remediation>
-    </Remediations>
-    <References>
-      <Reference Type="Self">
-        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160504-openssl</URL>
-        <Description>Multiple Vulnerabilities in OpenSSL Affecting Cisco Products: May 2016 </Description>
-      </Reference>
-    </References>
-  </Vulnerability>
-  <Vulnerability Ordinal="6" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
-    <Title>OpenSSL ASN.1 Strings X509_NAME_oneline Function Overread Vulnerability</Title>
-    <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="11">A vulnerability in OpenSSL could allow an unauthenticated, remote
-attacker to gain access to sensitive information on a targeted system.
-
-
-
-The vulnerability is due to improper memory processes by the affected software. An attacker could exploit this vulnerability by sending a crafted ASN.1 string greater than 1004 bytes to the X509_NAME_oneline() function of the affected software. A successful exploit could allow an attacker to cause a memory overread condition and gain access to sensitive information on a targeted system.</Note>
-    </Notes>
-    <CVE>CVE-2016-2176</CVE>
-    <Remediations>
-      <Remediation Type="Workaround">
-        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/"].
+        <Description>Any workarounds, when available, will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
 </Description>
       </Remediation>
     </Remediations>

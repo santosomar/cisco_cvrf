@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Web Security Appliance Connection Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Cisco AsyncOS for the Cisco Web Security Appliance (WSA) when the software handles a specific HTTP response code could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an appliance because the appliance runs out of system memory.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco AsyncOS for the Cisco Web Security Appliance (WSA) when the software handles a specific HTTP response code could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an appliance because the appliance runs out of system memory.
 
 
 
@@ -49,6 +49,217 @@ This advisory is available at the following link:
 
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160518-wsa4["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160518-wsa4"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco AsyncOS versions for Cisco WSA on both virtual and hardware appliances. See the "Fixed Software" section of this security advisory for additional information about the affected software versions.
+
+
+
+To determine whether a vulnerable version of Cisco AsyncOS Software is running on a Cisco WSA, administrators can use the version command in the WSA command-line interface (CLI). The following example shows the results for an appliance running Cisco AsyncOS Software version 8.5.3-051:
+
+
+
+ciscowsa&gt; version
+
+Current Version
+
+===============
+
+Product: Cisco IronPort S670 Web Security Appliance
+
+Model: S670
+
+Version: 8.5.3-051
+
+.
+
+.
+
+.
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+
+
+The following products are not affected by this vulnerability:
+
+
+    Email Security Appliance (ESA), both virtual and hardware versions
+    Security Mail Appliance (SMA), both virtual and hardware versions
+</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="4">The indicator of compromise for this vulnerability is an accumulation of TCP connections that will not be freed, which can lead to memory exhaustion. To determine whether there is an accumulation of connections, use the status detail command in the Cisco WSA CLI. The value of the Total client connections field may show a large number of connections, as shown in the following example:
+
+
+
+# status detail 
+
+Connections:
+
+  Total client connections                   99999
+
+
+
+If this condition is observed, the appliance may have been compromised by this vulnerability. In addition, any indication of memory exhaustion should be examined because this vulnerability causes a memory leak.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">If the results of using the status detail command in the Cisco WSA CLI indicate an accumulation of TCP connections, as described in the "Indicators of Compromise" section, use the diagnostic -&gt; PROXY -&gt; KICK hidden command to restart the proxy process and reclaim memory.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license: http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"].
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+
+Customers Without Service Contracts
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC): http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"].
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+
+Fixed Releases
+
+
+
+Customers should upgrade to an appropriate release as indicated in this section. To help ensure a complete upgrade solution, consider that this advisory is part of a collection that includes the following advisories:
+
+
+    cisco-sa-20160518-wsa1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160518-wsa1"]: Cisco Web Security Appliance HTTP POST Denial of Service Vulnerability
+    cisco-sa-20160518-wsa2["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160518-wsa2"]: Cisco Web Security Appliance Cached Range Request Denial of Service Vulnerability
+    cisco-sa-20160518-wsa3[" http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160518-wsa3"]: Cisco Web Security Appliance HTTP Length Denial of Service Vulnerability
+    cisco-sa-20160518-wsa4["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160518-wsa4"]: Cisco Web Security Appliance Connection Denial of Service Vulnerability
+
+In the following table, the left column lists major releases of Cisco AsyncOS for WSA Software. The center column indicates whether a major release is affected by the vulnerability described in this advisory and the first minor release that includes the fix for this vulnerability. The right column indicates whether a major release is affected by all the vulnerabilities described in this collection of advisories and which release includes fixes for those vulnerabilities.
+
+
+
+Customers should upgrade to an appropriate release as indicated in the following table:
+
+
+
+
+    
+        
+            Cisco AsyncOS Software
+
+            Major Release
+            
+            First Fixed Release for
+
+            This Vulnerability
+            First Fixed Release for
+
+            This Vulnerability and
+
+            All Vulnerabilities Described in
+
+            the Collection of Advisories
+        
+        
+            Prior to 7.7
+            
+            Affected; migrate to 9.0.1-162 or later
+
+            
+            9.0.1-162 
+
+            
+        
+        
+            7.7
+            
+            Affected; migrate to 9.0.1-162 or later
+
+            
+            9.0.1-162
+            
+        
+        
+            8.0
+            Affected; migrate to 9.0.1-162 or later
+            9.0.1-162
+        
+        
+            8.5
+            Affected; migrate to 9.0.1-162 or later
+            9.0.1-162 
+        
+        
+            8.6
+            Affected; migrate to 9.0.1-162 or later
+
+            
+            9.0.1-162
+        
+        
+            8.7
+            Affected; migrate to 9.0.1-162 or later
+            9.0.1-162
+        
+        
+            8.8
+            Affected; migrate to 9.0.1-162 or later
+            9.0.1-162
+        
+        
+            9.0
+            Not affected
+            9.0.1-162
+        
+        
+            9.1
+            Not affected
+            Not affected
+        
+    
+
+
+
+In most cases, a WSA can be updated over the network by using the System Upgrade options in the System Administration GUI. To upgrade a device by using the System Administration GUI:
+
+
+
+Choose System Administration &gt; System Upgrade.
+
+Click Upgrade Options.
+
+Choose Download and Install.
+
+Choose the release to upgrade to.
+
+In the Upgrade Preparation area, choose the appropriate options.
+
+Click Proceed to begin the upgrade. A progress bar displays the status of the upgrade.
+
+After the upgrade is complete, the device reboots.
+
+
+
+    
+        
+            Affected; migrate to 9.0.1-162
+        
+    
+
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was found during the resolution of a support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -56,37 +267,14 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco Web Security Appliance Connection Denial of Service Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-210997">Cisco Web Security Appliance (WSA) 5.6.0-623</FullProductName>
-    <FullProductName ProductID="CVRFPID-210999">Cisco Web Security Appliance (WSA) 6.0.0-000</FullProductName>
-    <FullProductName ProductID="CVRFPID-189793">Cisco Web Security Appliance (WSA) 7.1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-189952">Cisco Web Security Appliance (WSA) 7.1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-189953">Cisco Web Security Appliance (WSA) 7.1.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-189954">Cisco Web Security Appliance (WSA) 7.1.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-189955">Cisco Web Security Appliance (WSA) 7.1.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-189795">Cisco Web Security Appliance (WSA) 7.5.0-000</FullProductName>
-    <FullProductName ProductID="CVRFPID-211000">Cisco Web Security Appliance (WSA) 7.5.0-825</FullProductName>
-    <FullProductName ProductID="CVRFPID-189956">Cisco Web Security Appliance (WSA) 7.5.1-000</FullProductName>
-    <FullProductName ProductID="CVRFPID-211001">Cisco Web Security Appliance (WSA) 7.5.2-000</FullProductName>
-    <FullProductName ProductID="CVRFPID-189797">Cisco Web Security Appliance (WSA) 7.7.0-000</FullProductName>
-    <FullProductName ProductID="CVRFPID-211002">Cisco Web Security Appliance (WSA) 7.7.1-000</FullProductName>
-    <FullProductName ProductID="CVRFPID-200673">Cisco Web Security Appliance (WSA) 8.0.0-000</FullProductName>
-    <FullProductName ProductID="CVRFPID-200674">Cisco Web Security Appliance (WSA) 8.0.5</FullProductName>
-    <FullProductName ProductID="CVRFPID-200675">Cisco Web Security Appliance (WSA) 8.0.5 Hot Patch 1</FullProductName>
-    <FullProductName ProductID="CVRFPID-205811">Cisco Web Security Appliance (WSA) 8.0.6</FullProductName>
-    <FullProductName ProductID="CVRFPID-210139">Cisco Web Security Appliance (WSA) 8.0.7</FullProductName>
-    <FullProductName ProductID="CVRFPID-210971">Cisco Web Security Appliance (WSA) 8.0.6-078</FullProductName>
-    <FullProductName ProductID="CVRFPID-210972">Cisco Web Security Appliance (WSA) 8.0.8-MR-113</FullProductName>
-    <FullProductName ProductID="CVRFPID-210973">Cisco Web Security Appliance (WSA) 8.0.7-142</FullProductName>
-    <FullProductName ProductID="CVRFPID-210975">Cisco Web Security Appliance (WSA) 8.0.6-119</FullProductName>
-    <FullProductName ProductID="CVRFPID-205814">Cisco Web Security Appliance (WSA) 8.5.0.000</FullProductName>
-    <FullProductName ProductID="CVRFPID-206867">Cisco Web Security Appliance (WSA) 8.5.0-497</FullProductName>
-    <FullProductName ProductID="CVRFPID-209997">Cisco Web Security Appliance (WSA) 8.5.2-027</FullProductName>
-    <FullProductName ProductID="CVRFPID-210974">Cisco Web Security Appliance (WSA) 8.5.2-024</FullProductName>
-    <FullProductName ProductID="CVRFPID-212008">Cisco Web Security Appliance (WSA) 8.5.1-021</FullProductName>
-    <FullProductName ProductID="CVRFPID-212694">Cisco Web Security Appliance (WSA) 8.5.3-055</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Web Security Appliance (WSA)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-189789">Cisco Web Security Appliance (WSA) </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Web Security Appliance Connection Denial of Service Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCur28305</ID>
     <Notes>
@@ -95,47 +283,20 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 
 The vulnerability occurs because the software does not free client and server connection memory and system file descriptors when a certain HTTP response code is received in the HTTP request. An attacker could exploit this vulnerability by sending a crafted HTTP request to the affected device. An exploit could allow the attacker to cause a DoS condition because the appliance runs out of system memory. When this happens, the device can no longer accept new incoming connection requests.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCur28305</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCur28305</Note>
     </Notes>
     <CVE>CVE-2016-1383</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-189793</ProductID>
-        <ProductID>CVRFPID-189795</ProductID>
-        <ProductID>CVRFPID-189797</ProductID>
-        <ProductID>CVRFPID-189952</ProductID>
-        <ProductID>CVRFPID-189953</ProductID>
-        <ProductID>CVRFPID-189954</ProductID>
-        <ProductID>CVRFPID-189955</ProductID>
-        <ProductID>CVRFPID-189956</ProductID>
-        <ProductID>CVRFPID-200673</ProductID>
-        <ProductID>CVRFPID-200674</ProductID>
-        <ProductID>CVRFPID-200675</ProductID>
-        <ProductID>CVRFPID-205811</ProductID>
-        <ProductID>CVRFPID-205814</ProductID>
-        <ProductID>CVRFPID-206867</ProductID>
-        <ProductID>CVRFPID-209997</ProductID>
-        <ProductID>CVRFPID-210139</ProductID>
-        <ProductID>CVRFPID-210971</ProductID>
-        <ProductID>CVRFPID-210972</ProductID>
-        <ProductID>CVRFPID-210973</ProductID>
-        <ProductID>CVRFPID-210974</ProductID>
-        <ProductID>CVRFPID-210975</ProductID>
-        <ProductID>CVRFPID-210997</ProductID>
-        <ProductID>CVRFPID-210999</ProductID>
-        <ProductID>CVRFPID-211000</ProductID>
-        <ProductID>CVRFPID-211001</ProductID>
-        <ProductID>CVRFPID-211002</ProductID>
-        <ProductID>CVRFPID-212008</ProductID>
-        <ProductID>CVRFPID-212694</ProductID>
+        <ProductID>CVRFPID-189789</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>7.1</BaseScore>
-        <TemporalScore>5.9</TemporalScore>
-        <Vector>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>7.1</BaseScoreV2>
+        <TemporalScoreV2>5.9</TemporalScoreV2>
+        <VectorV2>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

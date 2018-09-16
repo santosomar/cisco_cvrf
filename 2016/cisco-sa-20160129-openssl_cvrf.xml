@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Multiple Vulnerabilities in OpenSSL (January 2016) Affecting Cisco Products</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -17,7 +17,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
       <ID>cisco-sa-20160129-openssl</ID>
     </Identification>
     <Status>Final</Status>
-    <Version>1.14</Version>
+    <Version>1.15</Version>
     <RevisionHistory>
       <Revision>
         <Number>1.0</Number>
@@ -94,37 +94,315 @@ More information can be found in Cisco Security Vulnerability Policy available a
         <Date>2016-03-24T12:52:08</Date>
         <Description>Updated information about products under investigation, confirmed as not vulnerable, and vulnerable.</Description>
       </Revision>
+      <Revision>
+        <Number>1.15</Number>
+        <Date>2018-01-04T12:43:46</Date>
+        <Description>Added Cisco Unified Intelligence Center (UIC) to the Affected Products section.</Description>
+      </Revision>
     </RevisionHistory>
     <InitialReleaseDate>2016-01-29T16:00:00</InitialReleaseDate>
-    <CurrentReleaseDate>2016-03-24T12:52:08</CurrentReleaseDate>
+    <CurrentReleaseDate>2018-01-04T12:43:46</CurrentReleaseDate>
     <Generator>
       <Engine>TVCE</Engine>
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">On January 28, 2016, the OpenSSL Project released a security advisory detailing two vulnerabilities.
-
-
+    <Note Title="Summary" Type="Summary" Ordinal="1">On January 28, 2016, the OpenSSL Project released a security advisory detailing two vulnerabilities.
 
 Multiple Cisco products incorporate a version of the OpenSSL package affected by one or more vulnerabilities that could allow an unauthenticated, remote attacker to conduct man-in-the-middle attacks on an SSL/TLS connection.
 
-
-
 This advisory will be updated as additional information becomes available.
-
-
 
 Cisco will release software updates that address these vulnerabilities.
 
-
-
 Workarounds that address these vulnerabilities are not available.
 
-
-
 This advisory is available at the following link:
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl ["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2">Cisco has completed its investigation of its product line to determine which products may be affected by these vulnerabilities and the impact on each affected product. The bugs are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"] and will contain additional platform-specific information, including workarounds (if available) and fixed software versions.</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">The following table lists Cisco products that are affected by the vulnerabilities that are described in this advisory.
 
-http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160129-openssl"]</Note>
+                              Product              Cisco Bug ID              Fixed Release Availability                                  Collaboration and Social Media                                  Cisco WebEx Meetings Server versions 1.x              CSCuy07247 ["https://tools.cisco.com/bugsearch/bug/CSCuy07247"]              2.6 (April 2016)                                  Cisco WebEx Meetings Server versions 2.x              CSCuy07247 ["https://tools.cisco.com/bugsearch/bug/CSCuy07247"]              2.6 (April 2016)                                  Endpoint Clients and Client Software                                  Cisco Jabber for Windows              CSCuy07508 ["https://tools.cisco.com/bugsearch/bug/CSCuy07508"]              11.6 (Apr-6 2016)                                  Network and Content Security Devices                                  Cisco ASA Next-Generation Firewall Services              CSCuy07392 ["https://tools.cisco.com/bugsearch/bug/CSCuy07392"]                                                 Cisco Email Security Appliance (ESA)              CSCuy07231 ["https://tools.cisco.com/bugsearch/bug/CSCuy07231"]                                                 Cisco IPS              CSCuy07438 ["https://tools.cisco.com/bugsearch/bug/CSCuy07438"]              7.1(11) (March 2016)
+7.3(05) (Apr 2016)                                  Network Management and Provisioning                                  Cisco Cloupia Unified Infrastructure Controller              CSCuy07267 ["https://tools.cisco.com/bugsearch/bug/CSCuy07267"]              5.4.0.3 (31-March-2016)                                  Cisco Prime Collaboration Deployment              CSCuy07476 ["https://tools.cisco.com/bugsearch/bug/CSCuy07476"]              11.5 (June 2016)                                  Cisco Prime Collaboration Provisioning              CSCuy07329 ["https://tools.cisco.com/bugsearch/bug/CSCuy07329"]              11.5 (Jun 2016)                                  Cisco Prime License Manager              CSCuy07355 ["https://tools.cisco.com/bugsearch/bug/CSCuy07355"]              11.5 (June 2016)                                  Cisco Prime Optical for SPs              CSCuy07316 ["https://tools.cisco.com/bugsearch/bug/CSCuy07316"]              10.6 (May 2016)
+10.5.0.2 Patch Release(Feb 2016)                                  Cisco Prime Performance Manager              CSCuy07305 ["https://tools.cisco.com/bugsearch/bug/CSCuy07305"]              1.7.0.4 (29-Apr-2016)                                  Cisco Unified Intelligence Center (UIC)              CSCuy16299 ["https://tools.cisco.com/bugsearch/bug/CSCuy16299"]              11.5 (June 2016)                                  Routing and Switching - Enterprise and Service Provider                                  Cisco MDS 9000 Series Multilayer Switches              CSCuy07280 ["https://tools.cisco.com/bugsearch/bug/CSCuy07280"]              7.3 (May2016)                                  Cisco Nexus 3000 Series Switches              CSCuy07288 ["https://tools.cisco.com/bugsearch/bug/CSCuy07288"]              A fix will be available (April 2016)                                  Cisco Nexus 3X00 Series Switches              CSCuy07289 ["https://tools.cisco.com/bugsearch/bug/CSCuy07289"]              A fix will be available April 2016                                  Cisco Nexus 5000 Series Switches              CSCuy07280 ["https://tools.cisco.com/bugsearch/bug/CSCuy07280"]              7.3 (May2016)                                  Cisco Nexus 6000 Series Switches              CSCuy07280 ["https://tools.cisco.com/bugsearch/bug/CSCuy07280"]              7.3 (May2016)                                  Cisco Nexus 7000 Series Switches              CSCuy07280 ["https://tools.cisco.com/bugsearch/bug/CSCuy07280"]              7.3 (May2016)                                  Cisco Nexus 9000 Series (standalone, running NxOS)              CSCuy07282 ["https://tools.cisco.com/bugsearch/bug/CSCuy07282"]                                                 Cisco ONS 15454 Series Multiservice Provisioning Platforms              CSCuy07408 ["https://tools.cisco.com/bugsearch/bug/CSCuy07408"]              10.6 (May 2016)                                  Unified Computing                                  Cisco Unified Computing System B-Series (Blade) Servers              CSCuy07294 ["https://tools.cisco.com/bugsearch/bug/CSCuy07294"]              2.2.(3d) (Feb 2016)                                  Voice and Unified Communications Devices                                  Cisco 8800 Series IP Phones - VPN Feature              CSCuy07524 ["https://tools.cisco.com/bugsearch/bug/CSCuy07524"]              11.5.0(Apr 2016)                                  Cisco Agent Desktop              CSCuy07223 ["https://tools.cisco.com/bugsearch/bug/CSCuy07223"]              11.51 (June 2016)                                  Cisco Computer Telephony Integration Object Server (CTIOS)              CSCuy07225 ["https://tools.cisco.com/bugsearch/bug/CSCuy07225"]              11.51 (June 2016)                                  Cisco Emergency Responder              CSCuy07492 ["https://tools.cisco.com/bugsearch/bug/CSCuy07492"]              11.5 (June 2016)                                  Cisco IM and Presence Service (CUPS)              CSCuy07496 ["https://tools.cisco.com/bugsearch/bug/CSCuy07496"]              11.5 (Jun 2016)                                  Cisco MediaSense              CSCuy07520 ["https://tools.cisco.com/bugsearch/bug/CSCuy07520"]              11.5 (15-Jun 2016)                                  Cisco Unified 8945 IP Phone              CSCuy07517 ["https://tools.cisco.com/bugsearch/bug/CSCuy07517"]              A patch file will be available for affected releases June 2016.                                    Cisco Unified Attendant Console Advanced              CSCuy07469 ["https://tools.cisco.com/bugsearch/bug/CSCuy07469"]              Patch will be available Sept 2016                                  Cisco Unified Attendant Console Business Edition              CSCuy07469 ["https://tools.cisco.com/bugsearch/bug/CSCuy07469"]              Patch will be available Sept 2016                                  Cisco Unified Attendant Console Department Edition              CSCuy07469 ["https://tools.cisco.com/bugsearch/bug/CSCuy07469"]              Patch will be available Sept 2016                                  Cisco Unified Attendant Console Enterprise Edition              CSCuy07469 ["https://tools.cisco.com/bugsearch/bug/CSCuy07469"]              Patch will be available Sept 2016                                  Cisco Unified Attendant Console Premium Edition              CSCuy07469 ["https://tools.cisco.com/bugsearch/bug/CSCuy07469"]              Patch will be available Sept 2016                                  Cisco Unified Attendant Console Standard              CSCuy07470 ["https://tools.cisco.com/bugsearch/bug/CSCuy07470"]              Patch file is currently available. Please see CDET                                  Cisco Unified Communications Manager (UCM)              CSCuy07473 ["https://tools.cisco.com/bugsearch/bug/CSCuy07473"]              11.5 (Jun 2016)                                  Cisco Unified Communications Manager Session Management Edition (SME)              CSCuy07473 ["https://tools.cisco.com/bugsearch/bug/CSCuy07473"]              11.5 (Jun 2016)                                  Cisco Unified Contact Center Enterprise              CSCuy07225 ["https://tools.cisco.com/bugsearch/bug/CSCuy07225"]              11.51 (June 2016)                                  Cisco Unified Contact Center Express - Live Data Server              CSCuy16302 ["https://tools.cisco.com/bugsearch/bug/CSCuy16302"]              11.51 (June 2016)                                  Cisco Unified Contact Center Express              CSCuy16304 ["https://tools.cisco.com/bugsearch/bug/CSCuy16304"]              11.5(1) (June 2016)                                  Cisco Unified Intelligent Contact Management Enterprise              CSCuy07225 ["https://tools.cisco.com/bugsearch/bug/CSCuy07225"]              11.51 (June 2016)                                  Cisco Unity Connection (UC)              CSCuy07478 ["https://tools.cisco.com/bugsearch/bug/CSCuy07478"]              11.5 (29-Feb 2016)                                  Cisco Unity Express              CSCuy07208 ["https://tools.cisco.com/bugsearch/bug/CSCuy07208"]              10.0 (Feb 2017)                                  test2              CSCuy07489 ["https://tools.cisco.com/bugsearch/bug/CSCuy07489"]                                                 Video, Streaming, TelePresence, and Transcoding Devices                                  Cisco AnyRes Live (CAL)              CSCuy07452 ["https://tools.cisco.com/bugsearch/bug/CSCuy07452"]              9.6.3 (11-Feb 2016)                                  Cisco Edge 300 Digital Media Player              CSCuy07442 ["https://tools.cisco.com/bugsearch/bug/CSCuy07442"]              1.6RB4_4 (March 2016)                                  Cisco Expressway Series              CSCuy07363 ["https://tools.cisco.com/bugsearch/bug/CSCuy07363"]              X8.7.2 (March 2016)                                  Cisco TelePresence 1310              CSCuy07467 ["https://tools.cisco.com/bugsearch/bug/CSCuy07467"]              A fix will be available July 2016                                  Cisco TelePresence Conductor              CSCuy07342 ["https://tools.cisco.com/bugsearch/bug/CSCuy07342"]              XC 4.2 (March 2016)                                  Cisco TelePresence System 1000              CSCuy07467 ["https://tools.cisco.com/bugsearch/bug/CSCuy07467"]              A fix will be available July 2016                                  Cisco TelePresence System 1100              CSCuy07467 ["https://tools.cisco.com/bugsearch/bug/CSCuy07467"]              A fix will be available July 2016                                  Cisco TelePresence System 1300              CSCuy07467 ["https://tools.cisco.com/bugsearch/bug/CSCuy07467"]              A fix will be available July 2016                                  Cisco TelePresence System 3000 Series              CSCuy07467 ["https://tools.cisco.com/bugsearch/bug/CSCuy07467"]              A fix will be available July 2016                                  Cisco TelePresence System 500-32              CSCuy07467 ["https://tools.cisco.com/bugsearch/bug/CSCuy07467"]              A fix will be available July 2016                                  Cisco TelePresence System 500-37              CSCuy07467 ["https://tools.cisco.com/bugsearch/bug/CSCuy07467"]              A fix will be available July 2016                                  Cisco TelePresence TX 9000 Series              CSCuy07467 ["https://tools.cisco.com/bugsearch/bug/CSCuy07467"]              A fix will be available July 2016                                  Cisco TelePresence Video Communication Server (VCS)              CSCuy07363 ["https://tools.cisco.com/bugsearch/bug/CSCuy07363"]              X8.7.2 (March 2016)                                  Cisco Videoscape Control Suite              CSCuy07372 ["https://tools.cisco.com/bugsearch/bug/CSCuy07372"]              3.5.3 (29-Feb 2016)                                  Wireless                                  Cisco Mobility Services Engine (MSE)              CSCuy07319 ["https://tools.cisco.com/bugsearch/bug/CSCuy07319"]              8.0.140.0. (31-March-2016)                                  Cisco Cloud Hosted Services                                  Cisco Proactive Network Operations Center              CSCuy07216 ["https://tools.cisco.com/bugsearch/bug/CSCuy07216"]              A fix will be available (4-March 2016)                                  Cisco Registered Envelope Service (CRES)              CSCuy07230 ["https://tools.cisco.com/bugsearch/bug/CSCuy07230"]              4.7 (March 2016)                                  Cisco WebEx Messenger Service              CSCuy07254 ["https://tools.cisco.com/bugsearch/bug/CSCuy07254"]              Affected systems have been updated.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">The following products are not affected by the vulnerabilities that are described in this advisory.
+Cable Modems
+
+Cisco Unified 6921 IP Phones
+Collaboration and Social Media
+
+Cisco SocialMiner
+Cisco WebEx Node for MCS
+Endpoint Clients and Client Software
+
+Cisco Agent for OpenFlow
+Cisco AnyConnect Secure Mobility Client for Android
+Cisco AnyConnect Secure Mobility Client for Linux
+Cisco AnyConnect Secure Mobility Client for OS X
+Cisco AnyConnect Secure Mobility Client for Windows
+Cisco AnyConnect Secure Mobility Client for iOS
+Cisco Jabber Guest 10.0(2)
+Cisco Jabber Software Development Kit
+Cisco Jabber for Android
+Cisco Jabber for Mac
+Cisco Jabber for iOS
+Cisco MMP server
+Cisco WebEx Connect client (Windows)
+Cisco WebEx Meetings Client - Hosted
+Cisco WebEx Meetings Client - On Premises
+Cisco WebEx Meetings for Android
+Cisco WebEx Meetings for Blackberry
+Cisco WebEx Meetings for WP8
+Cisco WebEx Productivity Tools
+WebEx Recording Playback Client
+Network Application, Service, and Acceleration
+
+Cisco ACE 30 Application Control Engine Module
+Cisco ACE 4710 Application Control Engine (A5)
+Cisco Application and Content Networking System (ACNS)
+Cisco InTracer
+Cisco Network Admission Control (NAC)
+Cisco Visual Quality Experience Server
+Cisco Visual Quality Experience Tools Server
+Cisco Wide Area Application Services (WAAS)
+Network and Content Security Devices
+
+Cisco ASA CX and Cisco Prime Security Manager
+Cisco ASA Content Security and Control (CSC) Security Services Module
+Cisco Adaptive Security Appliance (ASA)
+Cisco Clean Access Manager
+Cisco Content Security Appliance Updater Servers
+Cisco Content Security Management Appliance (SMA)
+Cisco FireSIGHT System Software
+Cisco Identity Services Engine (ISE)
+Cisco IronPort Encryption Appliance (IEA)
+Cisco NAC Guest Server
+Cisco NAC Server
+Cisco Physical Access Control Gateway
+Cisco Secure Access Control Server (ACS)
+Cisco Secure Access Control System (ACS)
+Cisco Virtual Security Gateway for Microsoft Hyper-V
+Cisco Web Security Appliance (WSA)
+Network Management and Provisioning
+
+Cisco Application Networking Manager
+Cisco Application Policy Infrastructure Controller (APIC)
+Cisco Configuration Professional
+Cisco Digital Media Manager
+Cisco MATE Collector
+Cisco MATE Design
+Cisco MATE Live
+Cisco Management Appliance (MAP)
+Cisco Mobile Wireless Transport Manager
+Cisco Multicast Manager
+Cisco NetFlow Generation Appliance
+Cisco Network Analysis Module
+Cisco Packet Tracer
+Cisco Prime Access Registrar
+Cisco Prime Collaboration Assurance
+Cisco Prime Data Center Network Manager (DCNM)
+Cisco Prime Home
+Cisco Prime IP Express
+Cisco Prime Infrastructure Standalone Plug and Play Gateway
+Cisco Prime Infrastructure
+Cisco Prime LAN Management Solution (LMS - Solaris)
+Cisco Prime Network Registrar (PNR)
+Cisco Prime Network Registrar IP Address Manager (IPAM)
+Cisco Prime Network Services Controller
+Cisco Prime Network
+Cisco Prime Security Manager
+Cisco Quantum Policy Suite (QPS)
+Cisco Quantum SON Suite
+Cisco Security Manager
+Cisco UCS Central
+Local Collector Appliance (LCA)
+Routing and Switching - Enterprise and Service Provider
+
+Cisco 910 Industrial Router
+Cisco ASR 5000 Series
+Cisco Broadband Access Center Telco Wireless
+Cisco Connected Grid Router - CGOS
+Cisco Connected Grid Router
+Cisco IOS Software and Cisco IOS-XE Software
+Cisco IOS-XE (SSLVPN feature)
+Cisco IOS-XE (WebUI feature only)
+Cisco IOS-XR
+Cisco Nexus 1000V InterCloud
+Cisco Nexus 1000V Series Switches (ESX)
+Cisco Nexus 1000V Series Switches
+Cisco Nexus 1000V Switch for Microsoft Hyper-V
+Cisco Nexus 4000 Series Blade Switches
+Cisco Nexus 9000 (ACI/Fabric Switch)
+Cisco OnePK All-in-One VM
+Cisco Service Control Operating System
+Routing and Switching - Small Business
+
+Cisco Sx220 switches
+Cisco Sx300 switches
+Cisco Sx500 switches
+Unified Computing
+
+Cisco Common Services Platform Collector
+Cisco Standalone rack server CIMC
+Cisco UCS Invicta Series Solid State Systems
+Cisco Unified Computing System (Management software)
+Cisco Virtual Security Gateway
+Voice and Unified Communications Devices
+
+Cisco 190 ATA Series Analog Terminal Adaptor
+Cisco 7937 IP Phone
+Cisco ATA 187 Analog Telephone Adaptor
+Cisco Agent Desktop for Cisco Unified Contact Center Express
+Cisco DX Series IP Phones
+Cisco Finesse
+Cisco Hosted Collaboration Mediation Fulfillment
+Cisco IP Interoperability and Collaboration System (IPICS)
+Cisco MeetingPlace
+Cisco Packaged Contact Center Enterprise
+Cisco Paging Server (Informacast)
+Cisco Paging Server
+Cisco Remote Silent Monitoring
+Cisco SPA112 2-Port Phone Adapter
+Cisco SPA122 ATA with Router
+Cisco SPA232D Multi-Line DECT ATA
+Cisco SPA30X Series IP Phones
+Cisco SPA50X Series IP Phones
+Cisco SPA51X Series IP Phones
+Cisco SPA525G
+Cisco SPA8000 8-port IP Telephony Gateway
+Cisco SPA8800 IP Telephony Gateway with 4 FXS and 4 FXO Ports
+Cisco TAPI Service Provider (TSP)
+Cisco Unified 6901 IP Phones
+Cisco Unified 6945 IP Phones
+Cisco Unified 7800 Series IP Phones
+Cisco Unified 8831 series IP Conference Phone
+Cisco Unified 8961 IP Phone
+Cisco Unified 9951 IP Phone
+Cisco Unified 9971 IP Phone
+Cisco Unified Communications Domain Manager
+Cisco Unified Communications for Microsoft Lync
+Cisco Unified E-Mail Interaction Manager
+Cisco Unified IP Conference Phone 8831 for Third-Party Call Control
+Cisco Unified IP Phone 7900 Series
+Cisco Unified Sip Proxy
+Cisco Unified Web Interaction Manager
+Cisco Unified Wireless IP Phone
+Cisco Unified Workforce Optimization Quality Management
+Cisco Unified Workforce Optimization
+Cisco Virtual PGW 2200 Softswitch
+Cisco Virtualization Experience Media Engine
+Cisco Voice Portal
+Video, Streaming, TelePresence, and Transcoding Devices
+
+Cisco AnyRes VOD
+Cisco D9859 Advanced Receiver Transcoder
+Cisco DCM Series 9900-Digital Content Manager
+Cisco Digital Media Players (DMP) 4300 Series
+Cisco Digital Media Players (DMP) 4400 Series
+Cisco Edge 340 Digital Media Player
+Cisco Enterprise Content Delivery System (ECDS)
+Cisco Headend System Release
+Cisco Media Experience Engines (MXE)
+Cisco Media Services Interface
+Cisco Model D9485 DAVIC QPSK
+Cisco Show and Share (SnS)
+Cisco TelePresence Content Server (TCS)
+Cisco TelePresence EX Series
+Cisco TelePresence ISDN GW 3241
+Cisco TelePresence ISDN GW MSE 8321
+Cisco TelePresence ISDN Link
+Cisco TelePresence MCU (8510, 8420, 4200, 4500 and 5300)
+Cisco TelePresence MX Series
+Cisco TelePresence Profile Series
+Cisco TelePresence SX Series
+Cisco TelePresence Serial Gateway Series
+Cisco TelePresence Server 8710, 7010
+Cisco TelePresence Server on Multiparty Media 310, 320
+Cisco TelePresence Server on Virtual Machine
+Cisco TelePresence Supervisor MSE 8050
+Cisco Telepresence Integrator C Series
+Cisco VEN501 Wireless Access Point
+Cisco Video Distribution Suite for Internet Streaming (VDS-IS/CDS-IS)
+Cisco Video Surveillance 3000 Series IP Cameras
+Cisco Video Surveillance 4000 Series High-Definition IP Cameras
+Cisco Video Surveillance 4300E/4500E High-Definition IP Cameras
+Cisco Video Surveillance 6000 Series IP Cameras
+Cisco Video Surveillance 7000 Series IP Cameras
+Cisco Video Surveillance Media Server
+Cisco Video Surveillance PTZ IP Cameras
+Cloud Object Store (COS)
+Tandberg Codian ISDN GW 3210/3220/3240
+Tandberg Codian MSE 8320 model
+Wireless
+
+Cisco Aironet 2700 Series Access Point
+Cisco Wireless LAN Controller (WLC)
+Cisco Cloud Hosted Services
+
+Cisco Cloud Web Security
+Cisco Connected Analytics For Collaboration
+Cisco Intelligent Automation for Cloud
+Cisco One Portal
+Cisco Services Provisioning Platform (SPP)
+Cisco Smart Care
+Cisco SmartConnection
+Cisco SmartReports
+Cisco UCS Invicta Series Autosupport Portal
+Cisco Unified Services Delivery Platform (USDP)
+Cisco Universal Small Cell 5000 Series running V3.4.2.x software
+Cisco Universal Small Cell 7000 Series running V3.4.2.x software
+Cisco Universal Small Cell usc-iuh
+Cisco WebEx Meeting Center
+Cisco WebEx Meetings (Meeting Center, Training Center, Event Center, Support Center)
+Communication/Collaboration Sizing Tool, Virtue Machine Placement Tool, Cisco Unified Communications Upgrade Readiness Assessment
+Life Cycle Management Agent Manager (LCM)
+Network Health Framework (NHF)
+Network Performance Analytics (NPA)
+Partner Supporting Service (PSS) 1.x
+Serial Number Assessment Service (SNAS)
+Services Analytic Platform
+Small Cell factory recovery root filesystem V2.99.4 or later</Note>
+    <Note Title="Details" Type="General" Ordinal="5">The vulnerability names and associated Common Vulnerabilities and Exposures (CVE) IDs for the January 28, 2016, OpenSSL Project announcement are as follows:
+
+OpenSSL DH Small Subgroups Vulnerability
+
+A vulnerability in the generation of Diffie-Hellman (DH) parameters based on unsafe primes in OpenSSL could allow an unauthenticated, remote attacker to discover the private DH exponent of a TLS server.
+
+The vulnerability is due to the ability to generate DH parameters based on unsafe primes, introduced in version 1.0.2 of OpenSSL, where support was provided for generating X9.42 style parameter files. An attacker could exploit this vulnerability by completing multiple handshakes in which the peer uses the same private DH exponent. An exploit could allow the attacker to discover the private DH exponent of a TLS server and conduct man-in-the-middle attacks on the SSL/TLS connection.
+
+This vulnerability has been assigned CVE ID CVE-2016-0701.
+
+OpenSSL SSLv2 Doesn’t Block Disabled Ciphers
+
+A vulnerability in the SSL negotiation of OpenSSL could allow an unauthenticated, remote attacker to negotiate SSLv2 ciphers that have been disabled on the server.
+
+The vulnerability is due to the ability of a malicious client to negotiate SSLv2 ciphers that have been disabled on the server and complete an SSLv2 handshake, even if all SSLv2 ciphers have been disabled. An exploit could allow the attacker to negotiate weak SSLv2 ciphers for SSL/TLS connections, making them vulnerable to man-in-the-middle attacks.
+
+This vulnerability has been assigned CVE ID CVE-2015-3197.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html ["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt ["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco  service contract and customers who make purchases through third-party  vendors but are unsuccessful in obtaining fixed software through their  point of sale should obtain upgrades by contacting the Cisco Technical  Assistance Center (TAC):
+
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html ["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">These vulnerabilities were publicly disclosed by the OpenSSL Project ["https://www.openssl.org/news/secadv/20160128.txt"] on January 28, 2016.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -132,19 +410,165 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Multiple Vulnerabilities in OpenSSL (January 2016) Affecting Cisco Products</Description>
     </Reference>
   </DocumentReferences>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
-    <Title>OpenSSL DH Small Subgroups Vulnerability</Title>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Unity" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-2078">Cisco Unity </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Emergency Responder" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-4844">Cisco Emergency Responder </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Contact Center" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-5239">Cisco Unified Contact Center </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ONS 15454 System Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-5940">Cisco ONS 15454 System Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unity Express" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-6046">Cisco Unity Express </FullProductName>
+      </Branch>
+      <Branch Name="Intrusion Prevention System (IPS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-6439">Cisco Intrusion Prevention System (IPS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Contact Center Enterprise" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7500">Cisco Unified Contact Center Enterprise </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unity Connection" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-73608">Cisco Unity Connection </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-77997">Cisco TelePresence </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Contact Center Express" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-92631">Cisco Unified Contact Center Express </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Mobility Services Engine" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-111803">Cisco Mobility Services Engine </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence Video Communication Server (VCS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-112250">Cisco TelePresence Video Communication Server (VCS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Email Security Appliance (ESA)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-189790">Cisco Email Security Appliance (ESA) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meetings Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190702">Cisco WebEx Meetings Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Jabber for Windows" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-192127">Cisco Jabber for Windows </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified IP Phone 8945" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-194328">Cisco Unified IP Phone 8945 </FullProductName>
+      </Branch>
+      <Branch Name="Cisco MediaSense" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-194833">Cisco MediaSense </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Intelligence Center" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-198393">Cisco Unified Intelligence Center </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Expressway" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202683">Cisco Expressway </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Optical" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203051">Cisco Prime Optical </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime License Manager" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203607">Cisco Prime License Manager </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Collaboration Deployment" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203614">Cisco Prime Collaboration Deployment </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Telepresence Conductor" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203755">Cisco Telepresence Conductor </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IP Phone 8800 Series Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-205455">Cisco IP Phone 8800 Series Software </FullProductName>
+      </Branch>
+      <Branch Name="UCS B-Series Blade Server Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-208962">Cisco UCS B-Series Blade Server Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Collaboration Provisioning" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-209583">Cisco Prime Collaboration Provisioning </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Cloupia Unified Infrastructure Controller" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210583">Cisco Cloupia Unified Infrastructure Controller </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Performance Manager" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210610">Cisco Prime Performance Manager </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Agent Desktop" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210644">Cisco Agent Desktop </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Attendant Console" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210834">Cisco Unified Attendant Console </FullProductName>
+      </Branch>
+      <Branch Name="Cisco AnyRes Live" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210837">Cisco AnyRes Live </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Videoscape Control Suite" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210903">Cisco Videoscape Control Suite </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Nexus 3000 Series Switch" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-213561">Cisco Nexus 3000 Series Switch </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Registered Envelope Service" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-225817">Cisco Registered Envelope Service </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>OpenSSL SSLv2 Doesn’t Block Disabled Ciphers</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy07524</ID>
     <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the generation of Diffie-Hellman (DH) parameters based on unsafe primes in OpenSSL could allow an unauthenticated, remote attacker to discover the private DH exponent of a TLS server.
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the SSL negotiation of OpenSSL could allow an unauthenticated, remote attacker to negotiate SSLv2 ciphers that have been disabled on the server.
 
 
 
-The vulnerability is due to the ability to generate DH parameters based on unsafe primes, introduced in version 1.0.2 of OpenSSL, where support was provided for generating X9.42 style parameter files. An attacker could exploit this vulnerability by completing multiple handshakes in which the peer uses the same private DH exponent. An exploit could allow the attacker to discover the private DH exponent of a TLS server and conduct man-in-the-middle attacks on the SSL/TLS connection.</Note>
+The vulnerability is due to the ability of a malicious client to negotiate SSLv2 ciphers that have been disabled on the server and complete an SSLv2 handshake, even if all SSLv2 ciphers have been disabled. An exploit could allow the attacker to negotiate weak SSLv2 ciphers for SSL/TLS connections, making them vulnerable to man-in-the-middle attacks.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuy07524,CSCuy07223,CSCuy07452,CSCuy07267,CSCuy07225,CSCuy07231,CSCuy07492,CSCuy07363,CSCuy07438,CSCuy07508,CSCuy07520,CSCuy07319,CSCuy07288,CSCuy07289,CSCuy07408,CSCuy07476,CSCuy07329,CSCuy07355,CSCuy07316,CSCuy07305,CSCuy07230,CSCuy07467,CSCuy07342,CSCuy07517,CSCuy07469,CSCuy07470,CSCuy07294,CSCuy16302,CSCuy16299,CSCuy07478,CSCuy07208,CSCuy07372,CSCuy07247</Note>
     </Notes>
-    <CVE>CVE-2016-0701</CVE>
+    <CVE>CVE-2015-3197</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111803</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-189790</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-192127</ProductID>
+        <ProductID>CVRFPID-194328</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-198393</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203051</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203614</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-2078</ProductID>
+        <ProductID>CVRFPID-208962</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-210583</ProductID>
+        <ProductID>CVRFPID-210610</ProductID>
+        <ProductID>CVRFPID-210644</ProductID>
+        <ProductID>CVRFPID-210834</ProductID>
+        <ProductID>CVRFPID-210837</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5239</ProductID>
+        <ProductID>CVRFPID-5940</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7500</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+      </Status>
+    </ProductStatuses>
     <Remediations>
       <Remediation Type="Workaround">
-        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
       </Remediation>
     </Remediations>
     <References>
@@ -154,19 +578,59 @@ The vulnerability is due to the ability to generate DH parameters based on unsaf
       </Reference>
     </References>
   </Vulnerability>
-  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
-    <Title>OpenSSL SSLv2 Doesn?t Block Disabled Ciphers</Title>
+  <Vulnerability Ordinal="2" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>OpenSSL DH Small Subgroups Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy07524</ID>
     <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in the SSL negotiation of OpenSSL could allow an unauthenticated, remote attacker to negotiate SSLv2 ciphers that have been disabled on the server.
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the generation of Diffie-Hellman (DH) parameters based on unsafe primes in OpenSSL could allow an unauthenticated, remote attacker to discover the private DH exponent of a TLS server.
 
 
 
-The vulnerability is due to the ability of a malicious client to negotiate SSLv2 ciphers that have been disabled on the server and complete an SSLv2 handshake, even if all SSLv2 ciphers have been disabled. An exploit could allow the attacker to negotiate weak SSLv2 ciphers for SSL/TLS connections, making them vulnerable to man-in-the-middle attacks.</Note>
+The vulnerability is due to the ability to generate DH parameters based on unsafe primes, introduced in version 1.0.2 of OpenSSL, where support was provided for generating X9.42 style parameter files. An attacker could exploit this vulnerability by completing multiple handshakes in which the peer uses the same private DH exponent. An exploit could allow the attacker to discover the private DH exponent of a TLS server and conduct man-in-the-middle attacks on the SSL/TLS connection.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuy07524,CSCuy07223,CSCuy07452,CSCuy07267,CSCuy07225,CSCuy07231,CSCuy07492,CSCuy07363,CSCuy07438,CSCuy07508,CSCuy07520,CSCuy07319,CSCuy07288,CSCuy07289,CSCuy07408,CSCuy07476,CSCuy07329,CSCuy07355,CSCuy07316,CSCuy07305,CSCuy07230,CSCuy07467,CSCuy07342,CSCuy07517,CSCuy07469,CSCuy07470,CSCuy07294,CSCuy16302,CSCuy16299,CSCuy07478,CSCuy07208,CSCuy07372,CSCuy07247</Note>
     </Notes>
-    <CVE>CVE-2015-3197</CVE>
+    <CVE>CVE-2016-0701</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111803</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-189790</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-192127</ProductID>
+        <ProductID>CVRFPID-194328</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-198393</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203051</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203614</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-2078</ProductID>
+        <ProductID>CVRFPID-208962</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-210583</ProductID>
+        <ProductID>CVRFPID-210610</ProductID>
+        <ProductID>CVRFPID-210644</ProductID>
+        <ProductID>CVRFPID-210834</ProductID>
+        <ProductID>CVRFPID-210837</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5239</ProductID>
+        <ProductID>CVRFPID-5940</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7500</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+      </Status>
+    </ProductStatuses>
     <Remediations>
       <Remediation Type="Workaround">
-        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].</Description>
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
       </Remediation>
     </Remediations>
     <References>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Firepower Detection Engine HTTP Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -42,7 +42,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the detection engine reassembly of HTTP packets for Cisco Firepower System Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition due to the Snort process unexpectedly restarting. 
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the detection engine reassembly of HTTP packets for Cisco Firepower System Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition due to the Snort process unexpectedly restarting. 
 
 
 
@@ -59,6 +59,101 @@ This advisory is available at the following link:
 
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161019-fpsnort["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161019-fpsnort"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">The following Cisco products are affected when they are running software versions 5.4.0.6, 5.4.1.5, 6.0, or 6.0.0.1:
+
+
+    Adaptive Security Appliance (ASA) 5500-X Series with FirePOWER Services
+    Advanced Malware Protection (AMP) for Networks, 7000 Series Appliances
+    Advanced Malware Protection (AMP) for Networks, 8000 Series Appliances
+    Firepower 4100 Series Security Appliances
+    FirePOWER 7000 Series Appliances
+    FirePOWER 8000 Series Appliances
+    Firepower 9300 Series Security Appliances
+    FirePOWER Threat Defense for Integrated Services Routers (ISRs)
+    Industrial Security Appliance 3000
+    Sourcefire 3D System Appliances
+    Virtual Next-Generation Intrusion Prevention System (NGIPSv) for VMware
+
+This vulnerability also affects the open source Snort project. For more information, see the Snort website["https://www.snort.org/"].</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">Cisco has confirmed that this vulnerability does not affect the following Cisco products:
+
+
+    Adaptive Security Appliance (ASA) Software
+    Firepower Management Center
+    Intrusion Prevention System (IPS) Software
+    Snort IPS for Integrated Services Routers (ISRs)
+
+No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Details" Type="General" Ordinal="4">This vulnerability can result in the Snort process restarting. While the Snort process is restarting, Snort detection could be bypassed or all network traffic inspection could fail. The behavior is platform and configuration dependent.
+
+
+
+FirePOWER Platforms 
+
+
+    Passive and bypass interfaces will bypass Snort inspection and pass the traffic. 
+    Routed, switched, and non-bypass interfaces will drop the traffic. 
+    FirePOWER Threat Defense (FTD) will drop the traffic.
+
+Adaptive Security Appliance (ASA) 5500-X Series with FirePOWER Services
+
+
+    If the ASA release supports the command-line interface (CLI) command sfr fail-open and it is configured, traffic will bypass Snort and not be dropped.
+</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license: http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"].
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+Customers Without Service Contracts
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC): http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"].
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+ 
+
+Fixed Releases
+
+
+
+This vulnerability has been addressed in the following releases of Firepower System Software:
+
+
+    5.4.0.7
+    5.4.1.6
+    6.0.1
+    6.1.0
+
+To upgrade the Firepower System Software use one of the following methods:
+
+
+    With Firepower Management Center (FMC), customers should install the fixed version of the software and apply the access control policy after the installation.
+    With Adaptive Security Device Manager (ASDM) or Firepower Device Manager (FDM), customers should upgrade to the fixed version of the software and apply the access control policy after the installation.
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was found during the resolution of a TAC support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -66,33 +161,14 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco Firepower Detection Engine HTTP Denial of Service Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-216729">Cisco Firepower Management Center 5.3.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-213670">Cisco Firepower Management Center 5.3.0.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-213675">Cisco Firepower Management Center 5.3.0.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-217199">Cisco Firepower Management Center 5.3.0.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-216730">Cisco Firepower Management Center 5.3.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-213674">Cisco Firepower Management Center 5.3.1.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-213673">Cisco Firepower Management Center 5.3.1.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-213672">Cisco Firepower Management Center 5.3.1.5</FullProductName>
-    <FullProductName ProductID="CVRFPID-213671">Cisco Firepower Management Center 5.3.1.6</FullProductName>
-    <FullProductName ProductID="CVRFPID-212164">Cisco Firepower Management Center 5.4 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-212168">Cisco Firepower Management Center 5.4.1.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-213663">Cisco Firepower Management Center 5.4.1.5</FullProductName>
-    <FullProductName ProductID="CVRFPID-213664">Cisco Firepower Management Center 5.4.1.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-213665">Cisco Firepower Management Center 5.4.1.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-213666">Cisco Firepower Management Center 5.4.1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-213667">Cisco Firepower Management Center 5.4.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-213668">Cisco Firepower Management Center 5.4.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-213752">Cisco Firepower Management Center 5.4.0.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-213753">Cisco Firepower Management Center 5.4.1.6</FullProductName>
-    <FullProductName ProductID="CVRFPID-212170">Cisco Firepower Management Center 6.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-212171">Cisco Firepower Management Center 6.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-212172">Cisco Firepower Management Center 6.0.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-213676">Cisco Firepower Management Center 6.0.0.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-213754">Cisco Firepower Management Center 6.0.0.0</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Firepower Management Center" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-212162">Cisco Firepower Management Center </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Firepower Detection Engine HTTP Denial of Service Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCux61630</ID>
     <Notes>
@@ -101,43 +177,20 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 
 The vulnerability is due to improper handling of an HTTP packet stream. An attacker could exploit this vulnerability by sending a crafted HTTP packet stream to the detection engine on the targeted device. An exploit could allow the attacker to cause a DoS condition if the Snort process restarts and traffic inspection is bypassed or traffic is dropped.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux61630</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCux61630</Note>
     </Notes>
     <CVE>CVE-2016-6439</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-212164</ProductID>
-        <ProductID>CVRFPID-212168</ProductID>
-        <ProductID>CVRFPID-212170</ProductID>
-        <ProductID>CVRFPID-212171</ProductID>
-        <ProductID>CVRFPID-212172</ProductID>
-        <ProductID>CVRFPID-213663</ProductID>
-        <ProductID>CVRFPID-213664</ProductID>
-        <ProductID>CVRFPID-213665</ProductID>
-        <ProductID>CVRFPID-213666</ProductID>
-        <ProductID>CVRFPID-213667</ProductID>
-        <ProductID>CVRFPID-213668</ProductID>
-        <ProductID>CVRFPID-213670</ProductID>
-        <ProductID>CVRFPID-213671</ProductID>
-        <ProductID>CVRFPID-213672</ProductID>
-        <ProductID>CVRFPID-213673</ProductID>
-        <ProductID>CVRFPID-213674</ProductID>
-        <ProductID>CVRFPID-213675</ProductID>
-        <ProductID>CVRFPID-213676</ProductID>
-        <ProductID>CVRFPID-213752</ProductID>
-        <ProductID>CVRFPID-213753</ProductID>
-        <ProductID>CVRFPID-213754</ProductID>
-        <ProductID>CVRFPID-216729</ProductID>
-        <ProductID>CVRFPID-216730</ProductID>
-        <ProductID>CVRFPID-217199</ProductID>
+        <ProductID>CVRFPID-212162</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>7.1</BaseScore>
-        <TemporalScore>5.9</TemporalScore>
-        <Vector>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>7.1</BaseScoreV2>
+        <TemporalScoreV2>5.9</TemporalScoreV2>
+        <VectorV2>AV:N/AC:M/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

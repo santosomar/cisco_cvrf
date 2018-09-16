@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco RV110W, RV130W, and RV215W Routers Cross-Site Scripting Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -37,7 +37,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the web-based management interface of Cisco RV110W Wireless-N VPN Firewalls, Cisco RV130W Wireless-N Multifunction VPN Routers, and Cisco RV215W Wireless-N VPN Routers could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the web-based management interface for a targeted device.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web-based management interface of Cisco RV110W Wireless-N VPN Firewalls, Cisco RV130W Wireless-N Multifunction VPN Routers, and Cisco RV215W Wireless-N VPN Routers could allow an unauthenticated, remote attacker to conduct a cross-site scripting (XSS) attack against a user of the web-based management interface for a targeted device.
 
 
 
@@ -54,6 +54,36 @@ This advisory is available at the following link:
 
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160615-rv1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160615-rv1"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">All releases of the following Cisco products are affected by this vulnerability:
+
+
+    RV110W Wireless-N VPN Firewall
+    RV130W Wireless-N Multifunction VPN Router
+    RV215W Wireless-N VPN Router
+
+The web-based management interface is available for these devices via a local LAN connection or the remote management feature. By default, the remote management feature is disabled for the affected devices.
+
+
+
+To determine whether the remote management feature is enabled for a device, open the web-based management interface for the device and then choose Basic Settings &gt; Remote Management. If the Enable check box is checked, remote management is enabled for the device.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco provides information about fixed software in Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt[" http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="8">Cisco would like to thank security researcher Samuel Huntley for finding and reporting this vulnerability.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -61,21 +91,20 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco RV110W, RV130W, and RV215W Routers Cross-Site Scripting Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-212343">Cisco RV110W Wireless-N VPN Firewall Firmware 1.1.0.9</FullProductName>
-    <FullProductName ProductID="CVRFPID-212345">Cisco RV110W Wireless-N VPN Firewall Firmware 1.2.0.9</FullProductName>
-    <FullProductName ProductID="CVRFPID-212346">Cisco RV110W Wireless-N VPN Firewall Firmware 1.2.0.10</FullProductName>
-    <FullProductName ProductID="CVRFPID-212347">Cisco RV110W Wireless-N VPN Firewall Firmware 1.2.1.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-212338">Cisco RV130W Wireless-N Multifunction VPN Router Firmware 1.0.0.21</FullProductName>
-    <FullProductName ProductID="CVRFPID-212339">Cisco RV130W Wireless-N Multifunction VPN Router Firmware 1.0.1.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-212340">Cisco RV130W Wireless-N Multifunction VPN Router Firmware 1.0.2.7</FullProductName>
-    <FullProductName ProductID="CVRFPID-212500">Cisco RV215W Wireless-N VPN Router Firmware 1.1.0.5</FullProductName>
-    <FullProductName ProductID="CVRFPID-212505">Cisco RV215W Wireless-N VPN Router Firmware 1.1.0.6</FullProductName>
-    <FullProductName ProductID="CVRFPID-212502">Cisco RV215W Wireless-N VPN Router Firmware 1.2.0.14</FullProductName>
-    <FullProductName ProductID="CVRFPID-212506">Cisco RV215W Wireless-N VPN Router Firmware 1.2.0.15</FullProductName>
-    <FullProductName ProductID="CVRFPID-212504">Cisco RV215W Wireless-N VPN Router Firmware 1.3.0.7</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco RV130W Wireless-N Multifunction VPN Router Firmware" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-212336">Cisco RV130W Wireless-N Multifunction VPN Router Firmware </FullProductName>
+      </Branch>
+      <Branch Name="Cisco RV110W Wireless-N VPN Firewall Firmware" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-212341">Cisco RV110W Wireless-N VPN Firewall Firmware </FullProductName>
+      </Branch>
+      <Branch Name="Cisco RV215W Wireless-N VPN Router Firmware" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-212498">Cisco RV215W Wireless-N VPN Router Firmware </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco RV110W, RV130W, and RV215W Routers Cross-Site Scripting Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCux82583</ID>
     <Notes>
@@ -84,31 +113,22 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 
 The vulnerability is due to improper input validation of certain parameters that are sent to an affected device via the HTTP GET or HTTP POST method. An unauthenticated, remote attacker could exploit this vulnerability by persuading a user to follow a link that is designed to submit malicious input to an affected device. A successful exploit could allow the attacker to execute arbitrary script in the context of the web-based management interface for the device or allow the attacker to access sensitive browser-based information.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux82583,CSCux82599,CSCux82567</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCux82583,CSCux82599,CSCux82567</Note>
     </Notes>
     <CVE>CVE-2016-1396</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-212500</ProductID>
-        <ProductID>CVRFPID-212502</ProductID>
-        <ProductID>CVRFPID-212504</ProductID>
-        <ProductID>CVRFPID-212505</ProductID>
-        <ProductID>CVRFPID-212506</ProductID>
-        <ProductID>CVRFPID-212338</ProductID>
-        <ProductID>CVRFPID-212339</ProductID>
-        <ProductID>CVRFPID-212340</ProductID>
-        <ProductID>CVRFPID-212343</ProductID>
-        <ProductID>CVRFPID-212345</ProductID>
-        <ProductID>CVRFPID-212346</ProductID>
-        <ProductID>CVRFPID-212347</ProductID>
+        <ProductID>CVRFPID-212498</ProductID>
+        <ProductID>CVRFPID-212336</ProductID>
+        <ProductID>CVRFPID-212341</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>4.3</BaseScore>
-        <TemporalScore>4.1</TemporalScore>
-        <Vector>AV:N/AC:M/Au:N/C:N/I:P/A:N/E:F/RL:U/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>4.3</BaseScoreV2>
+        <TemporalScoreV2>4.1</TemporalScoreV2>
+        <VectorV2>AV:N/AC:M/Au:N/C:N/I:P/A:N/E:F/RL:U/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

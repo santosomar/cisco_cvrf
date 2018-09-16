@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Nexus 7000 and 7700 Series Switches Overlay Transport Virtualization Buffer Overflow Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Overlay Transport Virtualization (OTV) generic routing encapsulation (GRE) implementation of the Cisco Nexus 7000 and 7700 Series Switches could allow an unauthenticated, adjacent attacker to cause a reload of the affected system or to remotely execute code.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Overlay Transport Virtualization (OTV) generic routing encapsulation (GRE) implementation of the Cisco Nexus 7000 and 7700 Series Switches could allow an unauthenticated, adjacent attacker to cause a reload of the affected system or to remotely execute code.
 
 
 
@@ -49,6 +49,238 @@ This advisory is available at the following link:
 
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-otv["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-otv"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">The following Cisco products are affected by this vulnerability when configured to use the OTV functionality:
+
+
+    Nexus 7000 Series Switches
+    Nexus 7700 Series Switches
+
+This vulnerability affects Cisco Nexus 7000 and 7700 Series Switches with the OTV feature enabled. The OTV feature was introduced with Cisco NX-OS Software Release 5.0(3) or later for the Nexus 7000 Series, and Cisco NX-OS Software Release 6.2(2) or later for the Nexus 7700 Series. 
+
+
+
+To determine whether a Nexus device is configured to use the OTV functionality, administrators can use the show running | include otv command from the NX-OS command-line interface (CLI) and verify that the feature is enabled. The following example shows the OTV feature enabled on Nexus 7700 Series Switch:
+
+
+nxos-switch# show running-config | include otv
+feature otv
+  otv join-interface ...
+nxos-switch#
+
+To determine whether a device is running a vulnerable release of Cisco NX-OS Software, administrators can use the show version command in the NX-OS CLI. The following example shows the output of this command for a Nexus 7000 Series Switch running Cisco NX-OS Software Release 6.2(14):
+
+
+nxos-switch# show version
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents:
+http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.html
+Copyright (c) 2002-2015, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained in this software are
+owned by other third parties and used and distributed under
+license. Certain components of this software are licensed under
+the GNU General Public License (GPL) version 2.0 or the GNU
+Lesser General Public License (LGPL) Version 2.1. A copy of each
+such license is available at
+http://www.opensource.org/licenses/gpl-2.0.php and
+http://www.opensource.org/licenses/lgpl-2.1.php
+
+Software
+  BIOS:      version 2.12.0
+  kickstart: version 6.2(14)
+  system:    version 6.2(14)
+.
+.
+.
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">Cisco has confirmed that this vulnerability does not affect the following Cisco products:
+
+
+    Multilayer Director Switches
+    Nexus 1000 Series Switches
+    Nexus 2000 Series Fabric Extenders
+    Nexus 3000 Series Switches
+    Nexus 3500 Series Switches
+    Nexus 4000 Series Switches
+    Nexus 5000 Series Switches 
+    Nexus 9000 Series Switches in NX-OS mode
+     Nexus 9000 Series Switches in ACI mode
+    Unified Computing System (UCS) 6100 Series Fabric Interconnects
+    Unified Computing System (UCS) 6200 Series Fabric Interconnects
+
+No other Cisco products are currently known to be affected by this vulnerability.
+
+</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="4">Exploitation of this vulnerability could cause an affected device to reload and generate an Intermediate System-to-Intermediate System (ISIS) core file. To view the ISIS core file, administrators can use the show core command in the NX-OS CLI. Contact the Cisco Technical Assistance Center (TAC) to review the ISIS core file and determine whether the device has been compromised by exploitation of this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">The following Access Control List (ACL) can be configured to drop malformed OTV control packets.
+
+
+IP access list OTV_PROT_V1
+  10 deny udp any any fragments 
+  20 deny udp any any eq 8472 packet-length lt 54 
+  30 permit ip any any
+
+Please note the following considerations when applying this ACL workaround:
+
+
+    The deny udp fragment must be the first line of the ACL.
+    In the example between sequences 10-20 and 20-30 other Access Control Entries (ACEs) can be added as long as they don't contradict sequence 10 or 20.
+    The ACL must be configured on the ingress ACL for the OTV join interface.
+    In the example instead of any as the destination address there can be multiple ACEs each with an OTV interface IP address.
+
+The command show system internal access-list interface  input statistics can be used to verify the ACL status.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license: http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"].
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt ["http://www.cisco.com/go/psirt "]and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+
+Customers Without Service Contracts
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC): http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"].
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+
+Fixed Releases
+
+
+
+Customers should upgrade to an appropriate release as indicated in the applicable table in this section. To help ensure a complete upgrade solution, consider that this advisory is part of a collection that includes the following advisories:
+
+
+
+cisco-sa-20161005-bgp["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-bgp"]: Cisco NX-OS Border Gateway Protocol Denial of Service Vulnerability
+
+cisco-sa-20161005-dhcp1["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-dhcp1"]: Cisco NX-OS Software Crafted DHCPv4 Packet Denial of Service Vulnerability
+
+cisco-sa-20161005-dhcp2["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-dhcp2"]: Cisco NX-OS Software Malformed DHCPv4 Packet Denial of Service Vulnerability
+
+
+["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-otv"]cisco-sa-20161005-nxaaa["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-nxaaa"]: Cisco NX-OS Software-Based Products Authentication, Authorization, and Accounting Bypass Vulnerability
+
+cisco-sa-20161005-otv["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161005-otv"]: Cisco Nexus 7000 and 7700 Series Switches Overlay Transport Virtualization Buffer Overflow Vulnerability
+
+
+
+In the following table, the left column lists major releases of Cisco NX-OS Software. The center column indicates whether a major release is affected by the vulnerability described in this advisory and the first minor release that includes the fix for this vulnerability. The right column indicates whether a major release is affected by all the vulnerabilities described in this collection of advisories and which release includes fixes for those vulnerabilities.
+
+
+
+
+    
+        
+            Cisco NX-OS Software Major Release - Nexus 7000 and 7700 Series Switches
+            First Fixed Release for This Vulnerability
+            First Fixed Release for This Vulnerability and  All Vulnerabilities Described in the Collection of Advisories
+
+            
+        
+        
+            Prior to 5.2
+            
+            Affected; migrate to
+
+            7.2(2)D1(1)
+
+            
+            7.2(2)D1(1)
+
+            
+        
+        
+            5.2
+            
+            Affected; migrate to 7.2(2)D1(1)
+
+            
+            7.2(2)D1(1)
+
+            
+        
+        
+            6.0
+            
+            Affected; migrate to 7.2(2)D1(1)
+
+            
+            7.2(2)D1(1)
+
+            
+        
+        
+            6.1
+            
+            Affected; migrate to
+
+            7.2(2)D1(1)
+
+            
+            7.2(2)D1(1)
+
+            
+        
+        
+            6.2
+            Affected; migrate to 
+
+            7.2(2)D1(1)
+
+            
+            7.2(2)D1(1)
+        
+        
+            7.2 
+            7.2(2)D1(1)
+
+            
+            7.2(2)D1(1)
+        
+        
+            7.3
+            7.3(0)DX(1) 7.3(1)D1(1)
+            7.3(1)D1(1)
+
+            
+        
+    
+
+
+
+Release Recommendations
+
+
+
+For additional assistance in determining the best Cisco NX-OS Software release for a Cisco Nexus Switch, refer to the recommended release document for the switch:
+
+
+
+    Cisco Nexus 7000 Series Switches["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/nx-os/recommended_releases/recommended_nx-os_releases.html"]
+
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was found during the resolution of a support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -56,55 +288,14 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco Nexus 7000 and 7700 Series Switches Overlay Transport Virtualization Buffer Overflow Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-191378">Cisco NX-OS Software for Nexus 7000 Series Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-191429">Cisco NX-OS Software for Nexus 7000 Series 4.1.(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191430">Cisco NX-OS Software for Nexus 7000 Series 4.1.(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191431">Cisco NX-OS Software for Nexus 7000 Series 4.1.(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191432">Cisco NX-OS Software for Nexus 7000 Series 4.1.(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191433">Cisco NX-OS Software for Nexus 7000 Series 4.2.(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191434">Cisco NX-OS Software for Nexus 7000 Series 4.2(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191435">Cisco NX-OS Software for Nexus 7000 Series 4.2(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191436">Cisco NX-OS Software for Nexus 7000 Series 4.2(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191437">Cisco NX-OS Software for Nexus 7000 Series 4.2(8)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191438">Cisco NX-OS Software for Nexus 7000 Series 5.0(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191439">Cisco NX-OS Software for Nexus 7000 Series 5.0(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191440">Cisco NX-OS Software for Nexus 7000 Series 5.0(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191441">Cisco NX-OS Software for Nexus 7000 Series 5.1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191442">Cisco NX-OS Software for Nexus 7000 Series 5.1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191443">Cisco NX-OS Software for Nexus 7000 Series 5.1(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191444">Cisco NX-OS Software for Nexus 7000 Series 5.1(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191445">Cisco NX-OS Software for Nexus 7000 Series 5.1(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191446">Cisco NX-OS Software for Nexus 7000 Series 5.1(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191447">Cisco NX-OS Software for Nexus 7000 Series 5.2(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191448">Cisco NX-OS Software for Nexus 7000 Series 5.2(3a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191449">Cisco NX-OS Software for Nexus 7000 Series 5.2(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191450">Cisco NX-OS Software for Nexus 7000 Series 5.2(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191451">Cisco NX-OS Software for Nexus 7000 Series 5.2(7)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191452">Cisco NX-OS Software for Nexus 7000 Series 5.2(9)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191453">Cisco NX-OS Software for Nexus 7000 Series 6.0(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191454">Cisco NX-OS Software for Nexus 7000 Series 6.0(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191455">Cisco NX-OS Software for Nexus 7000 Series 6.0(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191456">Cisco NX-OS Software for Nexus 7000 Series 6.0(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191457">Cisco NX-OS Software for Nexus 7000 Series 6.1(1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191458">Cisco NX-OS Software for Nexus 7000 Series 6.1(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191459">Cisco NX-OS Software for Nexus 7000 Series 6.1(3)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196607">Cisco NX-OS Software for Nexus 7000 Series 6.1(4)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196608">Cisco NX-OS Software for Nexus 7000 Series 6.1(4a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212033">Cisco NX-OS Software for Nexus 7000 Series 6.1(5)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196609">Cisco NX-OS Software for Nexus 7000 Series 6.2(2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-196610">Cisco NX-OS Software for Nexus 7000 Series 6.2(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-202738">Cisco NX-OS Software for Nexus 7000 Series 6.2(6)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205071">Cisco NX-OS Software for Nexus 7000 Series 6.2(6b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205072">Cisco NX-OS Software for Nexus 7000 Series 6.2(8)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205073">Cisco NX-OS Software for Nexus 7000 Series 6.2(8a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205074">Cisco NX-OS Software for Nexus 7000 Series 6.2(8b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-205075">Cisco NX-OS Software for Nexus 7000 Series 6.2(10)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208194">Cisco NX-OS Software for Nexus 7000 Series 6.2(12)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209649">Cisco NX-OS Software for Nexus 7000 Series 6.2(14)S1</FullProductName>
-    <FullProductName ProductID="CVRFPID-209668">Cisco NX-OS Software for Nexus 7000 Series 7.2(0)N1(0.1)</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco NX-OS Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-80720">Cisco NX-OS Software </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Nexus 7000 Overlay Transport Virtualization Buffer Overflow Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCuy95701</ID>
     <Notes>
@@ -113,65 +304,20 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 
 The vulnerability is due to incomplete input validation performed on the size of OTV packet header parameters, which can result in a buffer overflow. An attacker could exploit this vulnerability by sending a crafted OTV UDP packet to the OTV interface on an affected device. An exploit could allow the attacker to execute arbitrary code and obtain full control of the system or cause a reload of the OTV related process on the affected device.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCuy95701</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuy95701</Note>
     </Notes>
     <CVE>CVE-2016-1453</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-191378</ProductID>
-        <ProductID>CVRFPID-191429</ProductID>
-        <ProductID>CVRFPID-191430</ProductID>
-        <ProductID>CVRFPID-191431</ProductID>
-        <ProductID>CVRFPID-191432</ProductID>
-        <ProductID>CVRFPID-191433</ProductID>
-        <ProductID>CVRFPID-191434</ProductID>
-        <ProductID>CVRFPID-191435</ProductID>
-        <ProductID>CVRFPID-191436</ProductID>
-        <ProductID>CVRFPID-191437</ProductID>
-        <ProductID>CVRFPID-191438</ProductID>
-        <ProductID>CVRFPID-191439</ProductID>
-        <ProductID>CVRFPID-191440</ProductID>
-        <ProductID>CVRFPID-191441</ProductID>
-        <ProductID>CVRFPID-191442</ProductID>
-        <ProductID>CVRFPID-191443</ProductID>
-        <ProductID>CVRFPID-191444</ProductID>
-        <ProductID>CVRFPID-191445</ProductID>
-        <ProductID>CVRFPID-191446</ProductID>
-        <ProductID>CVRFPID-191447</ProductID>
-        <ProductID>CVRFPID-191448</ProductID>
-        <ProductID>CVRFPID-191449</ProductID>
-        <ProductID>CVRFPID-191450</ProductID>
-        <ProductID>CVRFPID-191451</ProductID>
-        <ProductID>CVRFPID-191452</ProductID>
-        <ProductID>CVRFPID-191453</ProductID>
-        <ProductID>CVRFPID-191454</ProductID>
-        <ProductID>CVRFPID-191455</ProductID>
-        <ProductID>CVRFPID-191456</ProductID>
-        <ProductID>CVRFPID-191457</ProductID>
-        <ProductID>CVRFPID-191458</ProductID>
-        <ProductID>CVRFPID-191459</ProductID>
-        <ProductID>CVRFPID-196607</ProductID>
-        <ProductID>CVRFPID-196608</ProductID>
-        <ProductID>CVRFPID-196609</ProductID>
-        <ProductID>CVRFPID-196610</ProductID>
-        <ProductID>CVRFPID-202738</ProductID>
-        <ProductID>CVRFPID-205071</ProductID>
-        <ProductID>CVRFPID-205072</ProductID>
-        <ProductID>CVRFPID-205073</ProductID>
-        <ProductID>CVRFPID-205074</ProductID>
-        <ProductID>CVRFPID-205075</ProductID>
-        <ProductID>CVRFPID-208194</ProductID>
-        <ProductID>CVRFPID-209649</ProductID>
-        <ProductID>CVRFPID-209668</ProductID>
-        <ProductID>CVRFPID-212033</ProductID>
+        <ProductID>CVRFPID-80720</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>10.0</BaseScore>
-        <TemporalScore>8.3</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>10.0</BaseScoreV2>
+        <TemporalScoreV2>8.3</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

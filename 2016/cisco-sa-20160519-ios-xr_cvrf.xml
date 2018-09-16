@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco IOS XR Software LPTS Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -42,7 +42,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the Local Packet Transport Services (LPTS) network stack of Cisco IOS XR Software could allow an unauthenticated, remote attacker to cause a limited denial of service (DoS) condition on an affected platform.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Local Packet Transport Services (LPTS) network stack of Cisco IOS XR Software could allow an unauthenticated, remote attacker to cause a limited denial of service (DoS) condition on an affected platform.
 
 
 
@@ -56,6 +56,25 @@ Cisco has released software updates that address this vulnerability. Workarounds
 
 
 This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160519-ios-xr["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160519-ios-xr"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This is a day-zero issue and all releases prior to the fixed release are vulnerable.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">Workarounds are not available.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Information about fixed software is documented in the Cisco bug, which is accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution. 
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and  confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.
+</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="8">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -63,103 +82,17 @@ This advisory is available at the following link: http://tools.cisco.com/securit
       <Description>Cisco IOS XR Software LPTS Denial of Service Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-49254">Cisco IOS XR Software 2.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-49253">Cisco IOS XR Software 3.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-50213">Cisco IOS XR Software 3.0.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-52926">Cisco IOS XR Software 3.2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-57576">Cisco IOS XR Software 3.2.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-57575">Cisco IOS XR Software 3.2.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-57574">Cisco IOS XR Software 3.2.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-57577">Cisco IOS XR Software 3.2.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-57606">Cisco IOS XR Software 3.2.50</FullProductName>
-    <FullProductName ProductID="CVRFPID-66349">Cisco IOS XR Software 3.2.6</FullProductName>
-    <FullProductName ProductID="CVRFPID-62627">Cisco IOS XR Software 3.3.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-66339">Cisco IOS XR Software 3.3.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-66338">Cisco IOS XR Software 3.3.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-66337">Cisco IOS XR Software 3.3.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-66336">Cisco IOS XR Software 3.3.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-66329">Cisco IOS XR Software 3.4.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-66335">Cisco IOS XR Software 3.4.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-69871">Cisco IOS XR Software 3.4.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-93240">Cisco IOS XR Software 3.4.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-66330">Cisco IOS XR Software 3.5.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-93241">Cisco IOS XR Software 3.5.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-93242">Cisco IOS XR Software 3.5.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-93243">Cisco IOS XR Software 3.5.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-93234">Cisco IOS XR Software 3.6 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-93235">Cisco IOS XR Software 3.6.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-93236">Cisco IOS XR Software 3.6.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-93244">Cisco IOS XR Software 3.6.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-214017">Cisco IOS XR Software 3.6.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-93238">Cisco IOS XR Software 3.7 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-93239">Cisco IOS XR Software 3.7.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-93245">Cisco IOS XR Software 3.7.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-93246">Cisco IOS XR Software 3.7.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-214016">Cisco IOS XR Software 3.7.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-93248">Cisco IOS XR Software 3.8.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-93249">Cisco IOS XR Software 3.8.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-100571">Cisco IOS XR Software 3.8.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-100572">Cisco IOS XR Software 3.8.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-100573">Cisco IOS XR Software 3.8.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-100569">Cisco IOS XR Software 3.9.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-100570">Cisco IOS XR Software 3.9.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-109761">Cisco IOS XR Software 3.9.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-195435">Cisco IOS XR Software 3.9.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-109763">Cisco IOS XR Software 4.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-109768">Cisco IOS XR Software 4.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-109764">Cisco IOS XR Software 4.0.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-109765">Cisco IOS XR Software 4.0.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-116017">Cisco IOS XR Software 4.0.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-116081">Cisco IOS XR Software 4.0.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-183715">Cisco IOS XR Software 4.0.11</FullProductName>
-    <FullProductName ProductID="CVRFPID-109767">Cisco IOS XR Software 4.1 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-109769">Cisco IOS XR Software 4.1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-116015">Cisco IOS XR Software 4.1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-116016">Cisco IOS XR Software 4.1.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-116014">Cisco IOS XR Software 4.2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-185106">Cisco IOS XR Software 4.2.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-185107">Cisco IOS XR Software 4.2.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-191720">Cisco IOS XR Software 4.2.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-191721">Cisco IOS XR Software 4.2.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-191719">Cisco IOS XR Software 4.3.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-194335">Cisco IOS XR Software 4.3.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-194336">Cisco IOS XR Software 4.3.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-206855">Cisco IOS XR Software 4.3.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-206856">Cisco IOS XR Software 4.3.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-195582">Cisco IOS XR Software 5.1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-206847">Cisco IOS XR Software 5.1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-206857">Cisco IOS XR Software 5.1.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-208334">Cisco IOS XR Software 5.1.1.K9SEC</FullProductName>
-    <FullProductName ProductID="CVRFPID-206858">Cisco IOS XR Software 5.1.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-206860">Cisco IOS XR Software 5.2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-206861">Cisco IOS XR Software 5.2.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-206862">Cisco IOS XR Software 5.2.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-212490">Cisco IOS XR Software 5.2.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-214175">Cisco IOS XR Software 5.2.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-214176">Cisco IOS XR Software 5.2.5</FullProductName>
-    <FullProductName ProductID="CVRFPID-206864">Cisco IOS XR Software 5.3.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-208435">Cisco IOS XR Software 5.3.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-212491">Cisco IOS XR Software 5.3.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-212493">Cisco IOS XR Software 5.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-212494">Cisco IOS XR Software 5.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-214177">Cisco IOS XR Software 5.0.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-202358">Cisco ASR 9000 Series Aggregation Services Routers 4.2.1 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202360">Cisco ASR 9000 Series Aggregation Services Routers 4.2.3 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202362">Cisco ASR 9000 Series Aggregation Services Routers 4.3.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202364">Cisco ASR 9000 Series Aggregation Services Routers 4.3.1 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202366">Cisco ASR 9000 Series Aggregation Services Routers 4.3.2 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202368">Cisco ASR 9000 Series Aggregation Services Routers 4.3.4(MD) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202370">Cisco ASR 9000 Series Aggregation Services Routers 5.1.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202372">Cisco ASR 9000 Series Aggregation Services Routers 5.1.1 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202374">Cisco ASR 9000 Series Aggregation Services Routers 5.1.2(ED) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202376">Cisco ASR 9000 Series Aggregation Services Routers 5.2.0(ED) Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-206294">Cisco ASR 9000 Series Aggregation Services Routers 5.2.2 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-206827">Cisco ASR 9000 Series Aggregation Services Routers 5.3.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-208930">Cisco ASR 9000 Series Aggregation Services Routers 5.1.3 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-216237">Cisco ASR 9000 Series Aggregation Services Routers 5.3.1 Base</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco IOS XR Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-5834">Cisco IOS XR Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ASR 9000 Series Aggregation Services Routers" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202356">Cisco ASR 9000 Series Aggregation Services Routers </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco IOS XR Software LPTS Denial of Service Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCux95576</ID>
     <Notes>
@@ -168,113 +101,21 @@ This advisory is available at the following link: http://tools.cisco.com/securit
 
 
 The vulnerability is due to improper handling of flow base entries by LPTS. This can cause too many known entries for a protocol to be created, causing existing or new sessions to be dropped. An attacker could exploit this vulnerability by sending continuous connection attempts to open TCP ports to cause an exhaustion of services. An exploit could allow the attacker to cause a limited DoS condition on an affected platform.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux95576</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCux95576</Note>
     </Notes>
     <CVE>CVE-2016-1407</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-49253</ProductID>
-        <ProductID>CVRFPID-49254</ProductID>
-        <ProductID>CVRFPID-50213</ProductID>
-        <ProductID>CVRFPID-52926</ProductID>
-        <ProductID>CVRFPID-57574</ProductID>
-        <ProductID>CVRFPID-57575</ProductID>
-        <ProductID>CVRFPID-57576</ProductID>
-        <ProductID>CVRFPID-57577</ProductID>
-        <ProductID>CVRFPID-57606</ProductID>
-        <ProductID>CVRFPID-62627</ProductID>
-        <ProductID>CVRFPID-66329</ProductID>
-        <ProductID>CVRFPID-66330</ProductID>
-        <ProductID>CVRFPID-66335</ProductID>
-        <ProductID>CVRFPID-66336</ProductID>
-        <ProductID>CVRFPID-66337</ProductID>
-        <ProductID>CVRFPID-66338</ProductID>
-        <ProductID>CVRFPID-66339</ProductID>
-        <ProductID>CVRFPID-66349</ProductID>
-        <ProductID>CVRFPID-69871</ProductID>
-        <ProductID>CVRFPID-93234</ProductID>
-        <ProductID>CVRFPID-93235</ProductID>
-        <ProductID>CVRFPID-93236</ProductID>
-        <ProductID>CVRFPID-93238</ProductID>
-        <ProductID>CVRFPID-93239</ProductID>
-        <ProductID>CVRFPID-93240</ProductID>
-        <ProductID>CVRFPID-93241</ProductID>
-        <ProductID>CVRFPID-93242</ProductID>
-        <ProductID>CVRFPID-93243</ProductID>
-        <ProductID>CVRFPID-93244</ProductID>
-        <ProductID>CVRFPID-93245</ProductID>
-        <ProductID>CVRFPID-93246</ProductID>
-        <ProductID>CVRFPID-93248</ProductID>
-        <ProductID>CVRFPID-93249</ProductID>
-        <ProductID>CVRFPID-100569</ProductID>
-        <ProductID>CVRFPID-100570</ProductID>
-        <ProductID>CVRFPID-100571</ProductID>
-        <ProductID>CVRFPID-100572</ProductID>
-        <ProductID>CVRFPID-100573</ProductID>
-        <ProductID>CVRFPID-109761</ProductID>
-        <ProductID>CVRFPID-109763</ProductID>
-        <ProductID>CVRFPID-109764</ProductID>
-        <ProductID>CVRFPID-109765</ProductID>
-        <ProductID>CVRFPID-109767</ProductID>
-        <ProductID>CVRFPID-109768</ProductID>
-        <ProductID>CVRFPID-109769</ProductID>
-        <ProductID>CVRFPID-116014</ProductID>
-        <ProductID>CVRFPID-116015</ProductID>
-        <ProductID>CVRFPID-116016</ProductID>
-        <ProductID>CVRFPID-116017</ProductID>
-        <ProductID>CVRFPID-116081</ProductID>
-        <ProductID>CVRFPID-183715</ProductID>
-        <ProductID>CVRFPID-185106</ProductID>
-        <ProductID>CVRFPID-185107</ProductID>
-        <ProductID>CVRFPID-191719</ProductID>
-        <ProductID>CVRFPID-191720</ProductID>
-        <ProductID>CVRFPID-191721</ProductID>
-        <ProductID>CVRFPID-194335</ProductID>
-        <ProductID>CVRFPID-194336</ProductID>
-        <ProductID>CVRFPID-195435</ProductID>
-        <ProductID>CVRFPID-195582</ProductID>
-        <ProductID>CVRFPID-206847</ProductID>
-        <ProductID>CVRFPID-206855</ProductID>
-        <ProductID>CVRFPID-206856</ProductID>
-        <ProductID>CVRFPID-206857</ProductID>
-        <ProductID>CVRFPID-206858</ProductID>
-        <ProductID>CVRFPID-206860</ProductID>
-        <ProductID>CVRFPID-206861</ProductID>
-        <ProductID>CVRFPID-206862</ProductID>
-        <ProductID>CVRFPID-206864</ProductID>
-        <ProductID>CVRFPID-208334</ProductID>
-        <ProductID>CVRFPID-208435</ProductID>
-        <ProductID>CVRFPID-212490</ProductID>
-        <ProductID>CVRFPID-212491</ProductID>
-        <ProductID>CVRFPID-212493</ProductID>
-        <ProductID>CVRFPID-212494</ProductID>
-        <ProductID>CVRFPID-214016</ProductID>
-        <ProductID>CVRFPID-214017</ProductID>
-        <ProductID>CVRFPID-214175</ProductID>
-        <ProductID>CVRFPID-214176</ProductID>
-        <ProductID>CVRFPID-214177</ProductID>
-        <ProductID>CVRFPID-202358</ProductID>
-        <ProductID>CVRFPID-202360</ProductID>
-        <ProductID>CVRFPID-202362</ProductID>
-        <ProductID>CVRFPID-202364</ProductID>
-        <ProductID>CVRFPID-202366</ProductID>
-        <ProductID>CVRFPID-202368</ProductID>
-        <ProductID>CVRFPID-202370</ProductID>
-        <ProductID>CVRFPID-202372</ProductID>
-        <ProductID>CVRFPID-202374</ProductID>
-        <ProductID>CVRFPID-202376</ProductID>
-        <ProductID>CVRFPID-206294</ProductID>
-        <ProductID>CVRFPID-206827</ProductID>
-        <ProductID>CVRFPID-208930</ProductID>
-        <ProductID>CVRFPID-216237</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-202356</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>5.0</BaseScore>
-        <TemporalScore>4.1</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>5.0</BaseScoreV2>
+        <TemporalScoreV2>4.1</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

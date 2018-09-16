@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco ACE30 Application Control Engine Module and Cisco ACE 4710 Application Control Engine Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -42,7 +42,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the SSL/TLS functions of the Cisco ACE30 Application Control Engine Module and the Cisco ACE 4700 Series Application Control Engine Appliances could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on the affected device.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the SSL/TLS functions of the Cisco ACE30 Application Control Engine Module and the Cisco ACE 4700 Series Application Control Engine Appliances could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on the affected device.
 
 
 
@@ -58,6 +58,120 @@ This advisory is available at the following link:
 
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160908-ace["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160908-ace"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects all software versions running on the Cisco ACE30 Application Control Engine Module and Cisco ACE 4710 Application Control Engine prior to A5(3.5).</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+
+
+Cisco has confirmed that this vulnerability does not affect the following Cisco products:
+
+    Cisco ACE XML Gateway
+    Cisco ACE Web Application Firewall
+    Cisco ACE GSS 4400 Series Global Site Selector Appliances
+    Cisco ACE10 Application Control Engine Module
+    Cisco ACE20 Application Control Engine Module
+</Note>
+    <Note Title="Details" Type="General" Ordinal="4">The Cisco ACE 4710 Application Control Engine appliance and the Cisco ACE30 Application Control Engine Module for Cisco Catalyst 6500 Series Switches and Cisco 7600 Series Routers are a load-balancing and application-delivery solution for data centers.  
+
+
+
+These products entered end-of-life cycle on July 26, 2013. For reference please see End-of-Sale and End-of-Life Announcement for the Cisco ACE Application Control Engine ACE30 Module["http://www.cisco.com/c/en/us/products/collateral/interfaces-modules/services-modules/eol_C51-728979.html"] and End-of-Sale and End-of-Life Announcement for the Cisco ACE 4710 Application Control Engine Hardware["http://www.cisco.com/c/en/us/products/collateral/application-networking-services/ace-4700-series-application-control-engine-appliances/eol_C51-728976.html"].
+
+
+
+The vulnerability is triggered by specific SSL/TLS protocol packets. This vulnerability affects all ACE30 and ACE 4710 devices with SSL Termination, SSL End-to-End, or SSL Initiation configurations.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="5">Exploitation of this vulnerability could cause an affected device to reload and generate a Network Process (NP) core file. To view the core file, administrators can issue the dir core: command in the ACE command-line interface (CLI). 
+
+
+
+The following system log messages may be observed when the ACE reloads:
+
+
+
+
+
+%ACE-6-199008: DC controller:Ch1 asserts back pressure” and
+%ACE-2-199006: Orderly reload started at  by System. 
+Reload reason: DC Counter exceeds threshold : DC0_COUNTER = 1 | DC1_COUNTER = 0#012#012.”
+
+Contact the Cisco Technical Assistance Center (TAC) to review the NP core file and determine whether the device has been compromised by exploitation of this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco will release free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license: http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"].
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized re-seller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+
+Customers Without Service Contracts
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC): http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"].
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+
+Fixed Software
+
+
+
+
+    
+        
+            Cisco ACE Major Release 
+            
+            First Fixed Release 
+            
+        
+        
+            A1(x)
+            Affected; Migrate to A5(3.5)
+        
+        
+            A3(x)
+            Affected; Migrate to A5(3.5)
+
+            
+        
+        
+            A4(x)
+            Affected; Migrate to A5(3.5)
+
+            
+        
+        
+            A5(x)
+            A5(3.5)
+
+            
+        
+    
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.  
+
+
+
+Cisco PSIRT has observed impact to customers due to an Internet research project that was scanning SSL/TLS servers that had the consequence of triggering the vulnerability on the Cisco ACE30 and Cisco ACE 4710.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was discovered as part of handling customer support requests.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME. CISCO EXPECTS TO UPDATE THIS DOCUMENT AS NEW INFORMATION BECOMES AVAILABLE.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -65,69 +179,17 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco ACE30 Application Control Engine Module and Cisco ACE 4710 Application Control Engine Denial of Service Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-220407">Cisco ACE Application Control Engine Module A1 7a</FullProductName>
-    <FullProductName ProductID="CVRFPID-220414">Cisco ACE Application Control Engine Module A1 7b</FullProductName>
-    <FullProductName ProductID="CVRFPID-220415">Cisco ACE Application Control Engine Module A1 8.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220416">Cisco ACE Application Control Engine Module A1 8.0a</FullProductName>
-    <FullProductName ProductID="CVRFPID-220409">Cisco ACE Application Control Engine Module A3 1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220417">Cisco ACE Application Control Engine Module A3 2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220418">Cisco ACE Application Control Engine Module A3 2.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-220419">Cisco ACE Application Control Engine Module A3 2.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-220420">Cisco ACE Application Control Engine Module A3 2.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-220421">Cisco ACE Application Control Engine Module A3 2.5</FullProductName>
-    <FullProductName ProductID="CVRFPID-220422">Cisco ACE Application Control Engine Module A3 2.6</FullProductName>
-    <FullProductName ProductID="CVRFPID-220423">Cisco ACE Application Control Engine Module A3 2.7</FullProductName>
-    <FullProductName ProductID="CVRFPID-220411">Cisco ACE Application Control Engine Module A4 1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220424">Cisco ACE Application Control Engine Module A4 1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-220425">Cisco ACE Application Control Engine Module A4 2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220426">Cisco ACE Application Control Engine Module A4 2.1a</FullProductName>
-    <FullProductName ProductID="CVRFPID-220427">Cisco ACE Application Control Engine Module A4 2.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-220428">Cisco ACE Application Control Engine Module A4 2.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-220413">Cisco ACE Application Control Engine Module A5 1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220429">Cisco ACE Application Control Engine Module A5 1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-220430">Cisco ACE Application Control Engine Module A5 1.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-220431">Cisco ACE Application Control Engine Module A5 2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220432">Cisco ACE Application Control Engine Module A5 2.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-220433">Cisco ACE Application Control Engine Module A5 2.1e</FullProductName>
-    <FullProductName ProductID="CVRFPID-220434">Cisco ACE Application Control Engine Module A5 3.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220435">Cisco ACE Application Control Engine Module A5 3.1a</FullProductName>
-    <FullProductName ProductID="CVRFPID-220436">Cisco ACE Application Control Engine Module A5 3.1b</FullProductName>
-    <FullProductName ProductID="CVRFPID-220437">Cisco ACE Application Control Engine Module A5 3.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-220438">Cisco ACE Application Control Engine Module A5 3.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-102644">Cisco ACE 4700 Series Application Control Engine Appliances A1 7</FullProductName>
-    <FullProductName ProductID="CVRFPID-102647">Cisco ACE 4700 Series Application Control Engine Appliances A1 7a</FullProductName>
-    <FullProductName ProductID="CVRFPID-102648">Cisco ACE 4700 Series Application Control Engine Appliances A1 7b</FullProductName>
-    <FullProductName ProductID="CVRFPID-102649">Cisco ACE 4700 Series Application Control Engine Appliances A1 8.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-102650">Cisco ACE 4700 Series Application Control Engine Appliances A1 8.0a</FullProductName>
-    <FullProductName ProductID="CVRFPID-102639">Cisco ACE 4700 Series Application Control Engine Appliances A3 1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-102640">Cisco ACE 4700 Series Application Control Engine Appliances A3 2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-102641">Cisco ACE 4700 Series Application Control Engine Appliances A3 2.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-99720">Cisco ACE 4700 Series Application Control Engine Appliances A3 2.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-99721">Cisco ACE 4700 Series Application Control Engine Appliances A3 2.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-99722">Cisco ACE 4700 Series Application Control Engine Appliances A3 2.5</FullProductName>
-    <FullProductName ProductID="CVRFPID-99723">Cisco ACE 4700 Series Application Control Engine Appliances A3 2.6</FullProductName>
-    <FullProductName ProductID="CVRFPID-102642">Cisco ACE 4700 Series Application Control Engine Appliances A3 2.7</FullProductName>
-    <FullProductName ProductID="CVRFPID-102646">Cisco ACE 4700 Series Application Control Engine Appliances A4 1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220398">Cisco ACE 4700 Series Application Control Engine Appliances A4 1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-220397">Cisco ACE 4700 Series Application Control Engine Appliances A4 2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-220399">Cisco ACE 4700 Series Application Control Engine Appliances A4 2.1a</FullProductName>
-    <FullProductName ProductID="CVRFPID-220400">Cisco ACE 4700 Series Application Control Engine Appliances A4 2.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-220401">Cisco ACE 4700 Series Application Control Engine Appliances A4 2.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-202752">Cisco ACE 4700 Series Application Control Engine Appliances A5 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-212767">Cisco ACE 4700 Series Application Control Engine Appliances A5(1.0)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212769">Cisco ACE 4700 Series Application Control Engine Appliances A5(1.1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212770">Cisco ACE 4700 Series Application Control Engine Appliances A5(1.2)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212771">Cisco ACE 4700 Series Application Control Engine Appliances A5(2.0)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212772">Cisco ACE 4700 Series Application Control Engine Appliances A5(2.1)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212773">Cisco ACE 4700 Series Application Control Engine Appliances A5(2.1e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-202753">Cisco ACE 4700 Series Application Control Engine Appliances A5(3.0)</FullProductName>
-    <FullProductName ProductID="CVRFPID-220402">Cisco ACE 4700 Series Application Control Engine Appliances A5 3.1a</FullProductName>
-    <FullProductName ProductID="CVRFPID-220403">Cisco ACE 4700 Series Application Control Engine Appliances A5 3.1b</FullProductName>
-    <FullProductName ProductID="CVRFPID-220404">Cisco ACE 4700 Series Application Control Engine Appliances A5 3.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-220405">Cisco ACE 4700 Series Application Control Engine Appliances A5 3.3</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco ACE Application Control Engine Module" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7365">Cisco ACE Application Control Engine Module </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ACE 4700 Series Application Control Engine Appliances" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-80725">Cisco ACE 4700 Series Application Control Engine Appliances </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Application Control Engine and Modules Denial of Service Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCvb16317</ID>
     <Notes>
@@ -137,79 +199,21 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 The vulnerability is due to incomplete input validation checks in the SSL/TLS code. An attacker could exploit this vulnerability by sending specific SSL/TLS packets to the affected device. An exploit could allow the attacker to trigger a reload of the affected device.
 </Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCvb16317</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvb16317</Note>
     </Notes>
     <CVE>CVE-2016-6399</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-220407</ProductID>
-        <ProductID>CVRFPID-220409</ProductID>
-        <ProductID>CVRFPID-220411</ProductID>
-        <ProductID>CVRFPID-220413</ProductID>
-        <ProductID>CVRFPID-220414</ProductID>
-        <ProductID>CVRFPID-220415</ProductID>
-        <ProductID>CVRFPID-220416</ProductID>
-        <ProductID>CVRFPID-220417</ProductID>
-        <ProductID>CVRFPID-220418</ProductID>
-        <ProductID>CVRFPID-220419</ProductID>
-        <ProductID>CVRFPID-220420</ProductID>
-        <ProductID>CVRFPID-220421</ProductID>
-        <ProductID>CVRFPID-220422</ProductID>
-        <ProductID>CVRFPID-220423</ProductID>
-        <ProductID>CVRFPID-220424</ProductID>
-        <ProductID>CVRFPID-220425</ProductID>
-        <ProductID>CVRFPID-220426</ProductID>
-        <ProductID>CVRFPID-220427</ProductID>
-        <ProductID>CVRFPID-220428</ProductID>
-        <ProductID>CVRFPID-220429</ProductID>
-        <ProductID>CVRFPID-220430</ProductID>
-        <ProductID>CVRFPID-220431</ProductID>
-        <ProductID>CVRFPID-220432</ProductID>
-        <ProductID>CVRFPID-220433</ProductID>
-        <ProductID>CVRFPID-220434</ProductID>
-        <ProductID>CVRFPID-220435</ProductID>
-        <ProductID>CVRFPID-220436</ProductID>
-        <ProductID>CVRFPID-220437</ProductID>
-        <ProductID>CVRFPID-220438</ProductID>
-        <ProductID>CVRFPID-99720</ProductID>
-        <ProductID>CVRFPID-99721</ProductID>
-        <ProductID>CVRFPID-99722</ProductID>
-        <ProductID>CVRFPID-99723</ProductID>
-        <ProductID>CVRFPID-102639</ProductID>
-        <ProductID>CVRFPID-102640</ProductID>
-        <ProductID>CVRFPID-102641</ProductID>
-        <ProductID>CVRFPID-102642</ProductID>
-        <ProductID>CVRFPID-102644</ProductID>
-        <ProductID>CVRFPID-102646</ProductID>
-        <ProductID>CVRFPID-102647</ProductID>
-        <ProductID>CVRFPID-102648</ProductID>
-        <ProductID>CVRFPID-102649</ProductID>
-        <ProductID>CVRFPID-102650</ProductID>
-        <ProductID>CVRFPID-202752</ProductID>
-        <ProductID>CVRFPID-202753</ProductID>
-        <ProductID>CVRFPID-212767</ProductID>
-        <ProductID>CVRFPID-212769</ProductID>
-        <ProductID>CVRFPID-212770</ProductID>
-        <ProductID>CVRFPID-212771</ProductID>
-        <ProductID>CVRFPID-212772</ProductID>
-        <ProductID>CVRFPID-212773</ProductID>
-        <ProductID>CVRFPID-220397</ProductID>
-        <ProductID>CVRFPID-220398</ProductID>
-        <ProductID>CVRFPID-220399</ProductID>
-        <ProductID>CVRFPID-220400</ProductID>
-        <ProductID>CVRFPID-220401</ProductID>
-        <ProductID>CVRFPID-220402</ProductID>
-        <ProductID>CVRFPID-220403</ProductID>
-        <ProductID>CVRFPID-220404</ProductID>
-        <ProductID>CVRFPID-220405</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-80725</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>7.8</BaseScore>
-        <TemporalScore>7.4</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:U/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>7.8</BaseScoreV2>
+        <TemporalScoreV2>7.4</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:U/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

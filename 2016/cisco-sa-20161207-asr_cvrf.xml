@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco ASR 5000 Series IPv6 Packet Processing Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20161207-asr</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2016-12-06T10:24:38</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2016-12-07T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2016-12-06T14:58:58</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in IPv6 packet fragment reassembly of StarOS for Cisco Aggregation Services Router (ASR) 5000 Series Switch could allow an unauthenticated, remote attacker to cause an unexpected reload of the Network Processing Unit (NPU) process. 
+
+
+
+The vulnerability is due to lack of proper input validation of the IPv6 fragment lengths. An attacker could exploit this vulnerability by sending a crafted IPv6 fragment chain to the targeted device. An exploit could allow the attacker to cause a denial of service (DoS) condition if the NPU process unexpectedly reloads. The DoS condition could temporarily impact user traffic.
+
+
+
+There are no workarounds that address this vulnerability.
+
+
+
+This advisory is available at the following link:
+
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161207-asr["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161207-asr"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco Aggregation Services Router (ASR) 5000. For information about affected software releases, consult the Cisco bug ID(s) at the top of this advisory.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="4">The ASR5K will write out a core file for the NPU process. This file can be viewed by using the following CLI command:
+
+# show crash &lt;#&gt;
+
+=== ==================== ======== ========== =============== =======================
+
+#           Time         Process  Card/CPU/        SW          HW_SER_NUM
+
+                                     PID         VERSION       MIO / Crash Card
+
+=== ==================== ======== ========== =============== =======================
+
+1   2010-Feb-16+07:56:37 npu     05/0/15340 19.0.M0.61045   #######################
+
+
+Contact the Cisco Technical Assistance Center (TAC) to review the core file and determine whether the device has been compromised by exploitation of this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">For information about fixed software releases, consult the Cisco bug ID(s) at the top of this advisory.
+
+
+
+When considering software upgrades, customers are advised to consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page["https://tools.cisco.com/security/center/publicationListing.x"], to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory. 
+</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="8">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161207-asr</URL>
+      <Description>Cisco ASR 5000 Series IPv6 Packet Processing Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco ASR 5000 Series Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-193199">Cisco ASR 5000 Series Software </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco ASR 5000 Series IPv6 Packet Processing Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCva84552</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in IPv6 packet fragment reassembly of StarOS for Cisco Aggregation Services Router (ASR) 5000 Series Switch could allow an unauthenticated, remote attacker to cause an unexpected reload of the Network Processing Unit (NPU) process. 
+
+
+
+The vulnerability is due to lack of proper input validation of the IPv6 fragment lengths. An attacker could exploit this vulnerability by sending a crafted IPv6 fragment chain to the targeted device. An exploit could allow the attacker to cause a denial of service (DoS) condition if the NPU process unexpectedly reloads. The DoS condition could temporarily impact user traffic.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCva84552</Note>
+    </Notes>
+    <CVE>CVE-2016-6467</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-193199</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV2>
+        <BaseScoreV2>5.0</BaseScoreV2>
+        <TemporalScoreV2>4.1</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161207-asr</URL>
+        <Description>Cisco ASR 5000 Series IPv6 Packet Processing Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

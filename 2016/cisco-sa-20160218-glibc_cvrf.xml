@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Vulnerability in GNU glibc Affecting Cisco Products: February 2016</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -17,7 +17,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
       <ID>cisco-sa-20160218-glibc</ID>
     </Identification>
     <Status>Final</Status>
-    <Version>1.16</Version>
+    <Version>1.17</Version>
     <RevisionHistory>
       <Revision>
         <Number>1.0</Number>
@@ -104,33 +104,460 @@ More information can be found in Cisco Security Vulnerability Policy available a
         <Date>2016-06-23T19:30:54</Date>
         <Description>Moved Cisco Unified Contact Center Express - Live Data Server to Confirmed Vulnerable Section.  Updated Fixed Releases Column.  Moved Document Status to Final</Description>
       </Revision>
+      <Revision>
+        <Number>1.17</Number>
+        <Date>2017-02-13T18:20:55</Date>
+        <Description>Updated language in Vulnerable Products and Fixed Software sections to clarify where to go for up-to-date information.</Description>
+      </Revision>
     </RevisionHistory>
     <InitialReleaseDate>2016-02-18T20:22:00</InitialReleaseDate>
-    <CurrentReleaseDate>2016-06-23T19:30:54</CurrentReleaseDate>
+    <CurrentReleaseDate>2017-02-13T18:20:55</CurrentReleaseDate>
     <Generator>
       <Engine>TVCE</Engine>
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">On February 16, 2016, an industry-wide, critical vulnerability in the GNU C library (glibc) was publicly disclosed.
-
-
+    <Note Title="Summary" Type="Summary" Ordinal="1">On February 16, 2016, an industry-wide, critical vulnerability in the GNU C library (glibc) was publicly disclosed.
 
 Multiple Cisco products incorporate a version of glibc that may be affected by the vulnerability. The vulnerability could allow an unauthenticated, remote attacker to trigger a buffer overflow condition that may result in a denial of service (DoS) condition or allow the attacker to execute arbitrary code on an affected device.
 
-
-
 Cisco will release software updates that address this vulnerability.
-
-
 
 Workarounds that address this vulnerability are not available.
 
-
-
 This advisory is available at the following link:
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160218-glibc ["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160218-glibc"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2">Cisco investigated its product line to determine which products may be affected by these vulnerabilities and the impact on each affected product. Refer to the "Vulnerable Products" and "Products Confirmed Not Vulnerable" sections of this advisory for information about whether a product is affected.
 
-http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160218-glibc["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160218-glibc"]</Note>
+The "Vulnerable Products" section includes Cisco bug IDs for each affected product.  The bugs are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"] and contain additional platform-specific information, including workarounds (if available) and fixed software versions.</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">The following table lists Cisco products that are affected by the vulnerability described in this advisory and provides guidance for target release dates and versions for fixed software.
+
+Detailed information regarding specific fixed software versions will be documented in the Cisco bugs listed in the Vulnerable Products table in this advisory. The bugs are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"]. When planning a software upgrade, be sure to review the bugs directly as they will have the most current and up-to-date information.
+
+Important: For additional information about whether a Cisco Nexus Switch is affected by this vulnerability, refer to the appropriate footnote at the end of the table, as indicated by the reference mark next to the name of the switch.
+
+                              Product              Cisco Bug ID              Fixed Release Availability                                  Collaboration and Social Media                                  Cisco SocialMiner              CSCuy74702 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy74702"]
+                                  Cisco WebEx Meetings Server versions 1.x              CSCuy36539 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36539"]              2.0.1.956 (31-Mar-2016)
+Patch is available for download at https://software.cisco.com/download/release.html?i=!y&amp;mdfid=284751302&amp;softwareid=284536950&amp;release=2.0(1)&amp;os=                                  Cisco WebEx Meetings Server versions 2.x              CSCuy36539 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36539"]              2.0.1.956 (31-Mar-2016)
+Patch is available for download at https://software.cisco.com/download/release.html?i=!y&amp;mdfid=284751302&amp;softwareid=284536950&amp;release=2.0(1)&amp;os=                                  Endpoint Clients and Client Software                                  Cisco Jabber Guest 10.0(2)              CSCuy36613 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36613"]              10.6(11) (30-May-2016)                                  Cisco MMP server              CSCuy36542 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36542"]              Affected systems have been updated.                                  Network Application, Service, and Acceleration                                  Cisco Intercloud Fabric              CSCuy36549 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36549"]              Customers may upgrade via Redhat which  provides 2.12-166 patch release to cover this vulnerability                                  Cisco Prime Network Service Controller (PNSC)              CSCuy36549 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36549"]              Customers may upgrade via Redhat which  provides 2.12-166 patch release to cover this vulnerability                                  Cisco Visual Quality Experience Server              CSCuy35276 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35276"]              Affected systems have been upgraded
+                                  Cisco Visual Quality Experience Tools Server              CSCuy35276 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35276"]              Affected systems have been upgraded
+                                  Network and Content Security Devices                                  Cisco FireSIGHT IPS Sensors              CSCuy32284 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy32284"]               5.4.0.7/5.4.1.6 DC (21-March-2016)
+5.4.1.6 Kenton (21-March-2016)
+5.3.0./5.3.1.7 (28-March-2016)                                   Cisco FireSIGHT System Software              CSCuy32284 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy32284"]               5.4.0.7/5.4.1.6 DC (21-March-2016)
+5.4.1.6 Kenton (21-March-2016)
+5.3.0./5.3.1.7 (28-March-2016)                                   Cisco Identity Services Engine (ISE)              CSCuy34700 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy34700"]              2.0 P3 (April 2016)                                  Cisco Physical Access Manager              CSCuy35286 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35286"]              Affected versions will be update (15-Apr-2016)                                  Cisco Secure ACS 5.x              CSCuy36585 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36585"]              5.7 patch 2 (11-Mar-2016)
+5.8 patch2 (April 2016)                                  Network Management and Provisioning                                  Cisco Access Registrar Appliance              CSCuy36565 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36565"]              7.1 (15-Apr-2016)                                  Cisco Application Policy Infrastructure              Controller Enterprise Module (APIC-EM)              CSCuy37090 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy37090"]              1.1 (March 2016)                                  Cisco Policy Suite (CPS)              CSCuy51595 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy51595"]              9.1 (April 2016)                                  Cisco Prime Access Registrar Appliance              CSCuy36565 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36565"]              7.1 (15-Apr-2016)                                  Cisco Prime Analytics              CSCuy36447 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36447"]              Please upgrade to Redhat 6.5 for OS.                                  Cisco Prime Central for SPs              CSCuy36443 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36443"]              1.5.1 (30-March-2016)                                  Cisco Prime Collaboration Deployment              CSCuy36602 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36602"]              11.5.2 (July 2016)                                  Cisco Prime Data Center Network Manager  (.ova and .iso installers)              CSCuy36546 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36546"]              8.0(1) (April 2016)                                  Cisco Prime IP Express              CSCuy36566 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36566"]              Customers may upgrade the glibc library on affected devices utilizing the RedHat yum utility. Devices will need to be restarted after the package upgrade                                  Cisco Prime License Manager              CSCuy35265 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35265"]              11.5 (June 2016)                                  Cisco Prime Network Registrar (CPNR) virtual appliance              CSCuy36564 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36564"]              Affected systems have been updated.                                  Cisco Prime Network Registrar IP Address Manager (IPAM)              CSCuy36427 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36427"]              8.3 (30-Nov-2016)                                  Cisco Prime Optical for SPs              CSCuy36433 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36433"]              10.006 (31-July-2016)                                  Cisco Prime Service Catalog Virtual Appliance              CSCuy34875 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy34875"]              Customers may upgrade the glibc library on affected devices utilizing the RedHat yum utility.  Devices will need to be restarted after the package upgrade                                  Cisco Unified Intelligence Center              CSCuy74698 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy74698"]
+                                  Cisco Videoscape Distribution Suite Service Manager              CSCuy35261 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35261"]              Affected systems have been updated.                                  Routing and Switching - Enterprise and Service Provider                                  Cisco ASR 5000 Series              CSCuy36531 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36531"]              18.6.0  (18-March-2016)
+19.4.0 (30-June-2016)
+20.0.0 (31-March-2016)                                  Cisco Connected Grid Routers (CGR)              CSCuy36412 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36412"]              Affected versions will be update (25-Mar-2016)                                  Cisco IOS-XE for Catalyst 3k, 4k, AIR-CT5760, ,Cisco RF Gateway 10 (RFGW-10)              CSCuy36597 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36597"]              15
+1(1)SG (No further releases are planned)
+15.1(2)SG (30-Nov-2016)
+15.2(1)E (No further releases are planned)
+15.2.(2)E (30-June-2016)
+15.2(3)E (31-May-2016)
+15.2(4)E (30-June-2016)
+15.0(1)EZ (No further releases are planned)
+15.0(1)EX (No further releases are planned)                                  Cisco Nexus 1000V InterCloud              CSCuy36548 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36548"]              Affected systems will be updated by (15-March-2016)                                  Cisco Nexus 3016 Switch*2              CSCuy38921 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy38921"]              Patches available at:
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322a_patch_nxos_rn.html
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322b_patch_nxos_rn.html                                  Cisco Nexus 3048 Switch*2              CSCuy38921 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy38921"]              Patches available at:
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322a_patch_nxos_rn.html
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322b_patch_nxos_rn.html                                  Cisco Nexus 3064 Series Switches*2              CSCuy38921 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy38921"]              Patches available at:
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322a_patch_nxos_rn.html
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322b_patch_nxos_rn.html                                  Cisco Nexus 31128PQ Switch *1              CSCuy36553 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36553"]              Patches are available at:
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322a_patch_nxos_rn.html
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322b_patch_nxos_rn.html                                  Cisco Nexus 3132 Series Switches*2              CSCuy38921 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy38921"]              Patches available at:
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322a_patch_nxos_rn.html
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322b_patch_nxos_rn.html                                  Cisco Nexus 3164Q Switch              CSCuy36553 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36553"]              Patches are available at:
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322a_patch_nxos_rn.html
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322b_patch_nxos_rn.html                                  Cisco Nexus 3172 Series Switches*2              CSCuy38921 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy38921"]              Patches available at:
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322a_patch_nxos_rn.html
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322b_patch_nxos_rn.html                                  Cisco Nexus 3232C Switch *1              CSCuy36553 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36553"]              Patches are available at:
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322a_patch_nxos_rn.html
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322b_patch_nxos_rn.html                                  Cisco Nexus 3264Q Switch *1              CSCuy36553 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36553"]              Patches are available at:
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322a_patch_nxos_rn.html
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322b_patch_nxos_rn.html                                  Cisco Nexus 9000 (ACI/Fabric Switch)              CSCuy37040 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy37040"]              11.2(3x) (April 2016)                                  Cisco Nexus 9000 Series Switches (standalone, running NxOS) *1              CSCuy36553 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36553"]              Patches are available at:
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322a_patch_nxos_rn.html
+http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/r
+elease/notes/70322b_patch_nxos_rn.html                                  Cisco Prime Data Center Network Manager              CSCuy36547 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36547"]              1.2(3x) (May 2016)                                  IOS-XE 16.2.x              CSCuy38943 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy38943"]              16.1.3  (31-May-2016)
+16.2 (31-Mar-2016)                                  Unified Computing                                  Cisco UCS ADA              CSCuy35223 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35223"]              Affected systems have been updated.                                  Cisco UCS Director              CSCuy36413 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36413"]              Affected systems have been updated (31-Mar-2016)                                  Cisco UCS Invicta Series              CSCuy36550 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36550"]              Appliance 5.0.1.2d (30-April-2016)
+Scaling 5.0.1.3c (30-May-2016)                                  Voice and Unified Communications Devices                                  Cisco 8800 Series IP Phones              CSCuy47726 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy47726"]              11.5(0) (March 31
+2016)                                  Cisco Emergency Responder              CSCuy36606 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36606"]              11.5 (June 2016)                                  Cisco Finesse              CSCuy74706 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy74706"]
+                                  Cisco Hosted Collaboration Mediation Fulfillment              CSCuy36610 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36610"]
+                                  Cisco IM and Presence Service (CUPS)              CSCuy36608 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36608"]              Affected systems have been updated.                                  Cisco MediaSense              CSCuy36619 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36619"]              11.5.1 (31-March 2016)
+11.0.1 (31-March 2016)                                  Cisco Paging Server (Informacast)              CSCuy36612 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36612"]              11.5.1 (June 2016)                                  Cisco Paging Server              CSCuy36612 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36612"]              11.5.1 (June 2016)                                  Cisco Unified 7800 series IP Phones              CSCuy36620 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36620"]              11.5(1) (April 2016)                                  Cisco Unified Communications Domain Manager              CSCuy36513 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36513"]              8.1.8 (July 2016)                                  Cisco Unified Communications Manager (UCM)              CSCuy32014 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy32014"]
+                                  Cisco Unified Communications Manager Session Management Edition (SME)              CSCuy32014 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy32014"]
+                                  Cisco Unified Contact Center Express -  Live Data Server              CSCuy74701 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy74701"]
+                                  Cisco Unified IP Conference Phone 8831 for              Third-Party Call Control              CSCuy36600 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36600"]
+                                  Cisco Unity Connection (UC)              CSCuy36603 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36603"]              11.5 (3-Mar-2016)                                  Video, Streaming, TelePresence, and Transcoding Devices                                  Cisco DCM Series 9900-Digital Content Manager              CSCuy35251 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35251"]
+                                  Cisco Edge 300 Digital Media Player              CSCuy35298 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35298"]              1.6RB4_5(18-Mar-2016)                                  Cisco Edge 340 Digital Media Player              CSCuy35299 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35299"]              1.2.0.19 (31-Mar-2016)                                  Cisco Expressway Series              CSCuy35269 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35269"]              X8.7.2 (31-March-2016)                                  Cisco Powerkey Encryption Server (PKES)              CSCuy37232 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy37232"]
+                                  Cisco TelePresence Conductor              CSCuy35262 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35262"]              XC4.2 (22-Mar-2016)                                  Cisco TelePresence Server 8710, 7010              CSCuy35268 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35268"]              4.3 (March 2016)
+                                  Cisco TelePresence Server on Multiparty Media 310, 320              CSCuy35268 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35268"]              4.3 (March 2016)
+                                  Cisco TelePresence Server on Virtual Machine              CSCuy35268 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35268"]              4.3 (March 2016)
+                                  Cisco TelePresence Video Communication Server (VCS)              CSCuy35269 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35269"]              X8.7.2 (31-March-2016)                                  Cisco Video Delivery System Recorder              CSCuy35274 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35274"]              Affected systems have been updated.                                  Cisco Video Distribution Suite for Internet Streaming (VDS-IS/CDS-IS)              CSCuy35275 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35275"]              4.3.1 (February 2016)                                  Cisco Video Surveillance Media Server              CSCuy38927 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy38927"]              7.8 (June 2016)                                  Cisco Videoscape Distribution Suite Transparent Caching              CSCuy36594 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36594"]
+                                  Cloud Object Store (COS)              CSCuy35273 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35273"]              Affected systems have been updated.                                  Wireless                                  Cisco Mobility Services Engine (MSE)              CSCuy36568 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36568"]              8.0.140.0  15-Apr-2016)                                  Cisco Wireless LAN Controller (WLC) 5520 running 8.1 and later              CSCuy36572 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36572"]              8.3 (31-March-2016)                                  Cisco Wireless LAN Controller (WLC) 7500 running 8.1 and later              CSCuy36572 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36572"]              8.3 (31-March-2016)                                  Cisco Wireless LAN Controller (WLC) 8500 running 8.1 and later              CSCuy36572 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36572"]              8.3 (31-March-2016)                                  Cisco Hosted Services                                  Cisco Cloud Services              CSCuy38924 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy38924"]
+                                  Cisco Cloud Web Security              CSCuy36588 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36588"]
+                                  Cisco Common Services Platform Collector              CSCuy35212 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35212"]              Customers can upgrade to the latest version of glibc.                                  Cisco Partner Supporting Service              CSCuy36463 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36463"]              Affected systems have been updated.                                  Cisco UCS Invicta Series Autosupport Portal              CSCuy36545 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36545"]
+                                  Cisco WebEx Messenger Service              CSCuy36540 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36540"]              7.17.0 (11-March 2016)                                  Feature Analytics Service              CSCuy35218 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35218"]
+                                  Network Change and Configuration Management              CSCuy35219 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy35219"]              1.9 (1-March-2016)                                  Smart Net Total Care (SNTC)              CSCuy36461 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36461"]              Affected systems have been updated.                                  Smart Net Total Care              CSCuy36454 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuy36454"]              Affected systems have been updated.
+
+1. All Cisco NX-OS Software releases prior to the first fixed release are affected by this vulnerability.
+2. Devices running a Cisco NX-OS Software 6.0(2)Ux(x) release are not affected by this vulnerability. Devices running a Cisco NX-OS Software 7.x release are affected by this vulnerability.
+
+Cisco Advanced Malware Protection
+Cisco Advanced Malware Protection (AMP) Public Cloud is affected by CVE-2015-7547 and has been patched.
+
+Cisco AMP Private Cloud is affected by CVE-2015-7547 and remediation will be delivered as part of the version 2.2 update, which is expected to be available by March 31, 2016.
+
+Cisco FirePower SSL Appliance
+Cisco FirePower SSL appliance devices are affected by CVE-2015-7547.
+
+Cisco StealthWatch Products
+For Cisco StealthWatch, formerly Lancope, products, the following patch is now available from the Lancope Download and License Center ["https://lancope.flexnetoperations.com"]: patch-common-SWD6631-6.6.x-6.7.x-01.swu. This patch can be applied to the following products and versions:
+
+StealthWatch FlowCollector - All models, versions 6.6.x and 6.7.x
+StealthWatch FlowSensor - All models, versions 6.6.x and 6.7.x
+StealthWatch Management Console - All models, versions 6.6.x and 6.7.x
+StealthWatch UDP Director - All models, versions 6.6.x and 6.7.x
+Information about this vulnerability and a patch for the StealthWatch Identity appliance are available at the following link: https://www.a10networks.com/support/psirt-security-center/cve-2015-7547 ["https://www.a10networks.com/support/psirt-security-center/cve-2015-7547"]</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">The following products are not affected by the vulnerability described in this advisory.
+
+Collaboration and Social Media
+
+Cisco MeetingPlace
+Cisco WebEx Node for MCS
+Endpoint Clients and Client Software
+
+Cisco Agent for OpenFlow
+Cisco AnyConnect Secure Mobility Client for Android
+Cisco AnyConnect Secure Mobility Client for Linux
+Cisco AnyConnect Secure Mobility Client for OS X
+Cisco AnyConnect Secure Mobility Client for Windows
+Cisco AnyConnect Secure Mobility Client for iOS
+Cisco IP Communicator
+Cisco Jabber Software Development Kit
+Cisco Jabber for Android
+Cisco Jabber for Mac
+Cisco Jabber for Windows
+Cisco Jabber for iOS
+Cisco NAC Agent for Mac
+Cisco NAC Agent for Web
+Cisco UC Integration for Microsoft Lync
+Cisco WebEx Meetings for Android
+Cisco WebEx Meetings for BlackBerry
+Cisco WebEx Meetings for WP8
+Cisco WebEx Productivity Tools
+WebEx Recording Playback Client
+Network Application, Service, and Acceleration
+
+Cisco ACE 30 Application Control Engine Module
+Cisco ACE 4700 Series Application Control Engine Appliances
+Cisco Adaptive Security Appliance (ASA) Software
+Cisco Application and Content Networking System (ACNS)
+Cisco Extensible Network Controller (XNC)
+Cisco NAC Appliance
+Cisco Nexus Data      Broker (NDB)
+Content Services Switch
+Network and Content Security Devices
+
+ASA CX Context-Aware
+Cisco ASA CX and Cisco Prime Security Manager
+Cisco Adaptive Security Device Manager
+Cisco Clean Access Manager
+Cisco Content Security Appliance Updater Servers
+Cisco Content Security Management Appliance (SMA)
+Cisco Intrusion Prevention System Solutions (IPS)
+Cisco IronPort Email Security Appliance
+Cisco NAC Guest Server
+Cisco Physical Access Control Gateway
+Cisco Prime Security Manager
+Cisco Registered Envelope Service (CRES)
+Cisco Virtual Security Gateway for Microsoft Hyper-V
+Cisco Web Security Appliance (WSA)
+Network Management and Provisioning
+
+Cisco Application Networking Manager
+Cisco Connected Grid Device Manager
+Cisco Connected Grid Network Management System
+Cisco Insight Reporter
+Cisco Linear Stream Manager
+Cisco MGC Node Manager (CMNM)
+Cisco Multicast Manager
+Cisco Prime Cable Provisioning
+Cisco Prime Collaboration Assurance
+Cisco Prime Collaboration Provisioning
+Cisco Prime Home
+Cisco Prime Infrastructure Standalone Plug and Play Gateway
+Cisco Prime Infrastructure
+Cisco Prime LAN Management Solution (LMS - Solaris)
+Cisco Prime Network
+Cisco Prime Performance Manager
+Cisco Prime Provisioning for SPs
+Cisco Security Manager
+Cisco UCS Central
+Cisco Unified Provisioning Manager (CUPM)
+CiscoWorks Network Compliance Manager
+Local Collector Appliance (LCA)
+Unified Communications Deployment Tools
+Routing and Switching - Enterprise and Service Provider
+
+Cisco ASR 9000 Series Integrated Service Module
+Cisco Broadband Access Center Telco Wireless
+Cisco IOS XE for ASR1K, ASR903, ISR4400, CSR1000V, CBR8K
+Cisco IOS XR for Cisco ASR 9000 Series Aggregation Services Routers
+Cisco IOS XR for Cisco CRS Routers
+Cisco IOS XR for Cisco XR 12000 Series Routers
+Cisco IOS
+Cisco MDS 9000 Series Multilayer Switches
+Cisco Metro Ethernet 1200 Series Access Devices
+Cisco Nexus 1000V Series Switches
+Cisco Nexus 3500 Series Switches
+Cisco Nexus 4000 Series Blade Switches
+Cisco Nexus 5000 Series Switches
+Cisco Nexus 6000 Series Switches
+Cisco Nexus 7000 Series Switches
+Cisco ONS 15454 Series Multiservice Provisioning Platforms
+Cisco OnePK All-in-One VM
+Cisco Service Control Operating System
+IOS XR for Cisco Network Convergence System (NCS) 6000
+Routing and Switching - Small Business
+
+Cisco DPH150 Series MicroCell Solution
+Cisco Small Business AP500 Series Wireless Access Points
+Cisco Small Business RV 120W Wireless-N VPN Firewall
+Cisco Small Business RV Series Routers 0xxv3
+Cisco Small Business RV Series Routers RV110W
+Cisco Small Business RV Series Routers RV130x
+Cisco Small Business RV Series Routers RV215W
+Cisco Small Business RV Series Routers RV220W
+Cisco Small Business RV Series Routers RV315W
+Cisco Small Business RV Series Routers RV320
+Cisco Sx220 Switches
+Cisco Sx300 Switches
+Cisco Sx500 Switches
+Cisco WAP4410N Wireless-N Access Point
+Unified Computing
+
+Cisco Billing and Measurement Server 3.30
+Cisco Common Crypto Module
+Cisco Standalone Rack Server CIMC
+Cisco UCS Manager
+Cisco Unified Computing Blade-Server CIMC
+Cisco Unified Computing System B-Series (Blade) Servers
+Cisco Unified Computing System E-Series Blade Server
+Voice and Unified Communications Devices
+
+Cisco 190 ATA Series Analog Terminal Adaptor
+Cisco 7937 IP Phone
+Cisco ATA 187 Analog Telephone Adaptor
+Cisco Agent Desktop for Cisco Unified Contact Center Express
+Cisco Agent Desktop
+Cisco Broadband Access Center for Cable  Tools Suite 4.1
+Cisco Broadband Access Center for Cable  Tools Suite 4.2
+Cisco Computer Telephony Integration Object Server (CTIOS)
+Cisco DX Series IP Phones
+Cisco IP Interoperability and Collaboration System (IPICS)
+Cisco Packaged Contact Center Enterprise
+Cisco Prime Cable Provisioning Tools Suite 5.0
+Cisco Prime Cable Provisioning Tools Suite 5.1
+Cisco Remote Silent Monitoring
+Cisco SPA112 2-Port Phone Adapter
+Cisco SPA122 ATA with Router
+Cisco SPA232D Multi-Line DECT ATA
+Cisco SPA30X Series IP Phones
+Cisco SPA50X Series IP Phones
+Cisco SPA51X Series IP Phones
+Cisco SPA525G
+Cisco SPA8000 8-port IP Telephony Gateway
+Cisco SPA8800 IP Telephony Gateway with 4 FXS and 4 FXO Ports
+Cisco TAPI Service Provider (TSP)
+Cisco Unified 3900 Series IP Phones
+Cisco Unified 6901 IP Phones
+Cisco Unified 6945 IP Phones
+Cisco Unified 8831 Series IP Conference Phones
+Cisco Unified 8961 IP Phones
+Cisco Unified 9951 IP Phones
+Cisco Unified 9971 IP Phones
+Cisco Unified Attendant Console Advanced
+Cisco Unified Attendant Console Business Edition
+Cisco Unified Attendant Console Department Edition
+Cisco Unified Attendant Console Enterprise Edition
+Cisco Unified Attendant Console Premium Edition
+Cisco Unified Attendant Console Standard
+Cisco Unified Client Services Framework
+Cisco Unified Contact Center Enterprise
+Cisco Unified Contact Center Express
+Cisco Unified E-Mail Interaction Manager
+Cisco Unified IP Phone 6921
+Cisco Unified IP Phone 7900 Series
+Cisco Unified IP Phone 8941 and 8945 (SIP)
+Cisco Unified Intelligent Contact Management Enterprise
+Cisco Unified Operations Manager (CUOM)
+Cisco Unified SIP Phone 3905
+Cisco Unified SIP Proxy
+Cisco Unified Web Interaction Manager
+Cisco Unified Wireless IP Phone
+Cisco Unified Workforce Optimization
+Cisco Unity Express
+xony VIM/CCDM/CCMP
+Video, Streaming, TelePresence, and Transcoding Devices
+
+Cisco AnyRes Live (CAL)
+Cisco AnyRes VOD (CAL)
+Cisco Command 2000 Server (cmd2k) (RH Based)
+Cisco D9824 Advanced Multi Decryption Receiver
+Cisco D9854/D9854-I Advanced Program Receiver
+Cisco D9858 Advanced Receiver Transcoder
+Cisco D9859 Advanced Receiver Transcoder
+Cisco D9865 Satellite Receiver
+Cisco DNCS Application Server (AppServer)
+Cisco Digital Media Players (DMP) 4300 Series
+Cisco Digital Media Players (DMP) 4400 Series
+Cisco Digital Transport Adapter Control System (DTACS)
+Cisco Download Server (DLS) (Solaris)
+Cisco Enterprise Content Delivery System (ECDS)
+Cisco International Digital Network Control System (iDNCS)
+Cisco Media Services Interface
+Cisco Model D9485 DAVIC QPSK
+Cisco Powerkey CAS Gateway (PCG)
+Cisco Show and Share
+Cisco TelePresence 1310
+Cisco TelePresence Content Server (TCS)
+Cisco TelePresence EX Series
+Cisco TelePresence Exchange System (CTX)
+Cisco TelePresence ISDN GW 3241
+Cisco TelePresence ISDN GW MSE 8321
+Cisco TelePresence ISDN Link
+Cisco TelePresence MCU (8510, 8420, 4200, 4500 and 5300)
+Cisco TelePresence MX Series
+Cisco TelePresence Management Suite (TMS)
+Cisco TelePresence Management Suite Analytics Extension (TMSAE)
+Cisco TelePresence Management Suite Extension (TMSXE)
+Cisco TelePresence Management Suite Extension for IBM
+Cisco TelePresence Management Suite Provisioning Extension
+Cisco TelePresence Profile Series
+Cisco TelePresence SX Series
+Cisco TelePresence Serial Gateway Series
+Cisco TelePresence Supervisor MSE 8050
+Cisco TelePresence System 1000
+Cisco TelePresence System 1100
+Cisco TelePresence System 1300
+Cisco TelePresence System 3000 Series
+Cisco TelePresence System 500-32
+Cisco TelePresence System 500-37
+Cisco TelePresence TX 9000 Series
+Cisco TelePresence Integrator C Series
+Cisco Transaction Encryption Device (TED)
+Cisco VEN501 Wireless Access Point
+Cisco Video Surveillance 3000 Series IP Cameras
+Cisco Video Surveillance 4000 Series High-Definition IP Cameras
+Cisco Video Surveillance 4300E/4500E High-Definition IP Cameras
+Cisco Video Surveillance 6000 Series IP Cameras
+Cisco Video Surveillance 7000 Series IP Cameras
+Cisco Video Surveillance PTZ IP Cameras
+Cisco Videoscape Conductor
+Cisco Virtual PGW 2200 Softswitch
+Explorer Controller (EC) system
+Tandberg Codian ISDN GW 3210/3220/3240
+Tandberg Codian MSE 8320 model
+VDS-Recorder
+VDS-TV Caching GW
+VDS-TV Streamer
+VDS-TV Vault
+Wireless
+
+Cisco 3G Femtocell  Wireless
+Cisco Aironet 600 Series OfficeExtend Access Point
+Cisco Mobility-Express, 1800/3800 Access Point Families
+Cisco RF Gateway 1 (RFGW-1)
+Cisco Small Business 121 Series Wireless Access Points
+Cisco Small Business 321 Series Wireless Access Points
+Cisco Small Business 500 Series Wireless Access Points
+Cisco WAP371 Wireless Access Point
+Cisco Wireless Security Gateway Application (WSG)
+Digital Life RMS 1.8.1.1      Cisco Broadband Access Center Telco Wireless 3.8.1
+Small Cell factory recovery root filesystem V2.99.4 and later
+Cisco Hosted Services
+
+Business Video Services Automation Software (BV)
+Cisco Cloud and Systems Management
+Cisco Connected Analytics For Collaboration
+Cisco Intelligent Automation for Cloud
+Cisco Proactive Network Operations Center
+Cisco SLIM
+Cisco SMB Market Place
+Cisco Services Provisioning Platform (SPP)
+Cisco Smart Care
+Cisco SmartConnection
+Cisco SmartReports
+Cisco Unified Services Delivery Platform (CUSDP)
+Cisco Universal Small Cell 5000 Series running V3.4.2.x software
+Cisco Universal Small Cell 7000 Series running V3.4.2.x software
+Cisco Universal Small Cell usc-iuh
+Cisco WebEx Meeting Center
+Cisco WebEx Node
+Communication/Collaboration Sizing Tool, Virtual Machine Placement Tool, Cisco Unified Communications Upgrade Readiness Assessment
+Data Center Analytics Framework (DCAF) UCS Collector
+IC Capture
+Life Cycle Management Agent Manager (LCM)
+MACD Process Controller (MPC)
+NetAuthenticate
+Network Health Framework (NHF)
+Network Performance Analytics (NPA)
+One View
+Partner Supporting Service (PSS) 1.x
+Sentinel
+Services Analytic Platform
+Support Central
+Web Element Manager</Note>
+    <Note Title="Details" Type="General" Ordinal="5">The vulnerability name and the associated Common Vulnerabilities and Exposures (CVE) ID for the February 16, 2016, GNU glibc disclosure are as follows.
+
+  Glibc libresolv Library Stack-Based Buffer Overflow Vulnerability
+
+A vulnerability in the libresolv library included with glibc could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition.
+
+The vulnerability is due to buffer mismanagement when the getaddrinfo function is used to perform dual A/AAAA DNS queries. In some circumstances, responses may be returned in a manner that causes the response to be written past the end of the allocated buffer. An attacker could exploit this vulnerability by sending a crafted DNS response to a targeted system. Successful exploitation could trigger a stack-based buffer overflow condition that the attacker could use to execute arbitrary code or cause a DoS condition.
+
+This vulnerability has been assigned the following CVE ID: CVE-2015-7547</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">When Cisco releases free software updates, customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html ["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt ["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+Customers Without Service Contracts  Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC):
+
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html ["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was publicly disclosed by Red Hat and Google ["https://www.sourceware.org/ml/libc-alpha/2016-02/msg00416.html"] on February 16, 2016.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -138,20 +565,221 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Vulnerability in GNU glibc Affecting Cisco Products: February 2016</Description>
     </Reference>
   </DocumentReferences>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Unity" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-2078">Cisco Unity </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Emergency Responder" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-4844">Cisco Emergency Responder </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Contact Center" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-5239">Cisco Unified Contact Center </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Wireless LAN Controller (WLC)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7368">Cisco Wireless LAN Controller (WLC) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unity Connection" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-73608">Cisco Unity Connection </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-77997">Cisco TelePresence </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Contact Center Express" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-92631">Cisco Unified Contact Center Express </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IOS XE Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-93036">Cisco IOS XE Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Video Surveillance Media Server Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-95900">Cisco Video Surveillance Media Server Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Mobility Services Engine" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-111803">Cisco Mobility Services Engine </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Identity Services Engine Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-111903">Cisco Identity Services Engine Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence Video Communication Server (VCS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-112250">Cisco TelePresence Video Communication Server (VCS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Data Center Network Manager (DCNM)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-185359">Cisco Prime Data Center Network Manager (DCNM) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Communications Domain Manager" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-188989">Cisco Unified Communications Domain Manager </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Connected Grid Network Management System (CG-NMS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190474">Cisco Connected Grid Network Management System (CG-NMS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meetings Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190702">Cisco WebEx Meetings Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Central" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-192280">Cisco Prime Central </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ASR 5000 Series Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-193199">Cisco ASR 5000 Series Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Finesse" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-193469">Cisco Finesse </FullProductName>
+      </Branch>
+      <Branch Name="Cisco SocialMiner" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-194456">Cisco SocialMiner </FullProductName>
+      </Branch>
+      <Branch Name="Cisco MediaSense" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-194833">Cisco MediaSense </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Nexus 1000V InterCloud for VMware" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-195842">Cisco Nexus 1000V InterCloud for VMware </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Network Registrar" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-195936">Cisco Prime Network Registrar </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Computing System Director" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-197112">Cisco Unified Computing System Director </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Videoscape Distribution Suite Transparent Caching (VDS TC) " Type="Product Name">
+        <FullProductName ProductID="CVRFPID-197592">Cisco Videoscape Distribution Suite Transparent Caching (VDS TC)  </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Digital Content Manager (DCM) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-197708">Cisco Digital Content Manager (DCM) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Intelligence Center" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-198393">Cisco Unified Intelligence Center </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Service Catalog" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202401">Cisco Prime Service Catalog </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Expressway" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202683">Cisco Expressway </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Optical" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203051">Cisco Prime Optical </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Jabber Guest" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203403">Cisco Jabber Guest </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Visual Quality Experience" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203442">Cisco Visual Quality Experience </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime License Manager" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203607">Cisco Prime License Manager </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Collaboration Deployment" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203614">Cisco Prime Collaboration Deployment </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime IP Express" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203724">Cisco Prime IP Express </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Telepresence Conductor" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203755">Cisco Telepresence Conductor </FullProductName>
+      </Branch>
+      <Branch Name="Cisco FireSIGHT System Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-205007">Cisco FireSIGHT System Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IP Phone 8800 Series Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-205455">Cisco IP Phone 8800 Series Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Application Policy Infrastructure Controller Enterprise Module (APIC-EM)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-209735">Cisco Application Policy Infrastructure Controller Enterprise Module (APIC-EM) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Network" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210593">Cisco Prime Network </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Paging Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210717">Cisco Paging Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified 7800 Series IP Phones" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210824">Cisco Unified 7800 Series IP Phones </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Videoscape Distribution Suite Service Manager" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-211748">Cisco Videoscape Distribution Suite Service Manager </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Nexus 3000 Series Switch" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-213561">Cisco Nexus 3000 Series Switch </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Policy Suite (CPS) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-213864">Cisco Policy Suite (CPS) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Hosted Collaboration Mediation Fulfillment" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-220254">Cisco Hosted Collaboration Mediation Fulfillment </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Cloud Services Platform 2100 " Type="Product Name">
+        <FullProductName ProductID="CVRFPID-220301">Cisco Cloud Services Platform 2100  </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Intercloud Fabric" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-223093">Cisco Intercloud Fabric </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Glibc libresolv Library Stack-Based Buffer Overflow Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuy47726</ID>
     <Notes>
       <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the libresolv library in GNC glibc could allow an unauthenticated, remote attacker to execute arbitrary code or cause a denial of service (DoS) condition.
 
 
 
 The vulnerability is due to insufficient validation of user-supplied input by the affected software when the getaddrinfo function is used while performing dual A/AAAA DNS queries. An attacker could exploit this vulnerability by sending a crafted DNS response to a targeted system. An exploit could trigger a stack-based buffer overflow condition that the attacker could leverage to execute arbitrary code or cause a DoS condition.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuy47726,CSCuy36531,CSCuy38924,CSCuy36412,CSCuy35251,CSCuy36606,CSCuy35269,CSCuy74706,CSCuy32284,CSCuy36610,CSCuy34700,CSCuy36549,CSCuy36597,CSCuy36613,CSCuy36619,CSCuy36568,CSCuy36548,CSCuy38921,CSCuy36612,CSCuy51595,CSCuy36443,CSCuy36602,CSCuy36546,CSCuy36547,CSCuy36566,CSCuy35265,CSCuy36564,CSCuy36427,CSCuy36433,CSCuy34875,CSCuy74702,CSCuy35262,CSCuy35268,CSCuy36413,CSCuy36620,CSCuy36513,CSCuy74701,CSCuy74698,CSCuy36603,CSCuy38927,CSCuy35261,CSCuy36594,CSCuy35276,CSCuy36539,CSCuy36572,CSCuy38943,CSCuy37090</Note>
     </Notes>
     <CVE>CVE-2015-7547</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111803</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-188989</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-192280</ProductID>
+        <ProductID>CVRFPID-193199</ProductID>
+        <ProductID>CVRFPID-193469</ProductID>
+        <ProductID>CVRFPID-194456</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195842</ProductID>
+        <ProductID>CVRFPID-195936</ProductID>
+        <ProductID>CVRFPID-197112</ProductID>
+        <ProductID>CVRFPID-197592</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-198393</ProductID>
+        <ProductID>CVRFPID-202401</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203051</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203614</ProductID>
+        <ProductID>CVRFPID-203724</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-2078</ProductID>
+        <ProductID>CVRFPID-209735</ProductID>
+        <ProductID>CVRFPID-210593</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210824</ProductID>
+        <ProductID>CVRFPID-211748</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-220301</ProductID>
+        <ProductID>CVRFPID-223093</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5239</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7368</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+        <ProductID>CVRFPID-93036</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+      </Status>
+    </ProductStatuses>
     <Remediations>
       <Remediation Type="Workaround">
-        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].
-</Description>
+        <Description>Any workarounds will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
       </Remediation>
     </Remediations>
     <References>

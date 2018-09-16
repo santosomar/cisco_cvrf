@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the role-based access control (RBAC) of the Cisco Application Policy Infrastructure Controller (APIC) could allow an authenticated remote user to make configuration changes outside of their configured access privileges.  
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the role-based access control (RBAC) of the Cisco Application Policy Infrastructure Controller (APIC) could allow an authenticated remote user to make configuration changes outside of their configured access privileges.  
 
 
 
@@ -46,6 +46,95 @@ Cisco has released software updates that address this vulnerability.
 
 This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-apic["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160203-apic"]
 </Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">The following products are known to be affected by this vulnerability when running affected versions of software: 
+
+
+    Cisco Application Policy Infrastructure Controllers when running software versions prior to 1.0(3h) and 1.1(1j)
+    Cisco Nexus 9000 Series ACI Mode Switches when running software versions prior to 11.0(3h) and 11.1(1j)
+
+This vulnerability affects configurations that are using either signature-based transactions or username/password configurations.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+
+ 
+
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"]
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+Customers Without Service Contracts
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco
+service contract and customers who make purchases through third-party
+vendors but are unsuccessful in obtaining fixed software through their
+point of sale should obtain upgrades by contacting the Cisco Technical
+Assistance Center (TAC):
+
+
+
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+ 
+
+Fixed Versions
+
+
+
+Cisco Application Policy Infrastructure Controllers running software versions prior to 1.0(3h) and 1.1(1j) are affected. The following list shows the first fixed releases:
+
+
+
+
+    1.0(3h) or later
+    1.0(4h) or later
+    1.1(1j) or later
+    1.1(2h) or later
+    1.1(3f) or later
+    1.1(4e) or later
+    1.2(1i) or later
+
+
+
+Cisco Nexus 9000 Series ACI Mode Switches running software versions prior to 11.0(3h) and 11.1(1j) are affected. The following list shows the first fixed releases:
+
+
+
+
+    11.0(3h) or later
+    11.0(4h) or later
+    11.1(1j) or later
+    11.1(2h) or later
+    11.1(3f) or later
+    11.1(4e) or later
+    11.2(1i) or later
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy[http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory. 
+</Note>
+    <Note Title="Source" Type="General" Ordinal="8">This vulnerability was discovered during internal security testing.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -53,25 +142,14 @@ This advisory is available at the following link: http://tools.cisco.com/securit
       <Description>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-202555">Cisco Application Policy Infrastructure Controller (APIC) 1.0(1e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208569">Cisco Application Policy Infrastructure Controller (APIC) 1.0(1h)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208570">Cisco Application Policy Infrastructure Controller (APIC) 1.0(1k)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208571">Cisco Application Policy Infrastructure Controller (APIC) 1.0(1n)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208572">Cisco Application Policy Infrastructure Controller (APIC) 1.0(2j)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208573">Cisco Application Policy Infrastructure Controller (APIC) 1.0(2m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208574">Cisco Application Policy Infrastructure Controller (APIC) 1.0(3f)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212315">Cisco Application Policy Infrastructure Controller (APIC) 1.1(0.920a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-201603">Cisco NX-OS Software for Nexus 9000 Series Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-202735">Cisco NX-OS Software for Nexus 9000 Series 11.0(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-202736">Cisco NX-OS Software for Nexus 9000 Series 11.0(1c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208584">Cisco NX-OS Software for Nexus 9000 Series 11.0(1d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208585">Cisco NX-OS Software for Nexus 9000 Series 11.0(1e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208586">Cisco NX-OS Software for Nexus 9000 Series 11.0(2j)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208587">Cisco NX-OS Software for Nexus 9000 Series 11.0(2m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-208588">Cisco NX-OS Software for Nexus 9000 Series 11.0(3f)</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Application Policy Infrastructure Controller (APIC)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202553">Cisco Application Policy Infrastructure Controller (APIC) </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Application Policy Infrastructure Controller Access Control Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCut12998</ID>
     <Notes>
@@ -80,35 +158,20 @@ This advisory is available at the following link: http://tools.cisco.com/securit
 
 
 The vulnerability is due to eligibility logic in the RBAC processing code. An authenticated user could exploit this vulnerability by sending specially crafted representational state transfer (REST) requests to the APIC. An exploit could allow the authenticated user to make configuration changes to the APIC beyond the configured privilege for their role.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCut12998</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCut12998</Note>
     </Notes>
     <CVE>CVE-2016-1302</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-202555</ProductID>
-        <ProductID>CVRFPID-208569</ProductID>
-        <ProductID>CVRFPID-208570</ProductID>
-        <ProductID>CVRFPID-208571</ProductID>
-        <ProductID>CVRFPID-208572</ProductID>
-        <ProductID>CVRFPID-208573</ProductID>
-        <ProductID>CVRFPID-208574</ProductID>
-        <ProductID>CVRFPID-212315</ProductID>
-        <ProductID>CVRFPID-201603</ProductID>
-        <ProductID>CVRFPID-202735</ProductID>
-        <ProductID>CVRFPID-202736</ProductID>
-        <ProductID>CVRFPID-208584</ProductID>
-        <ProductID>CVRFPID-208585</ProductID>
-        <ProductID>CVRFPID-208586</ProductID>
-        <ProductID>CVRFPID-208587</ProductID>
-        <ProductID>CVRFPID-208588</ProductID>
+        <ProductID>CVRFPID-202553</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>8.5</BaseScore>
-        <TemporalScore>7.0</TemporalScore>
-        <Vector>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>8.5</BaseScoreV2>
+        <TemporalScoreV2>7.0</TemporalScoreV2>
+        <VectorV2>AV:N/AC:M/Au:S/C:C/I:C/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Email Security Appliance Internal Testing Interface Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -42,7 +42,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in Cisco IronPort AsyncOS for Cisco Email Security Appliances (ESA) could allow an unauthenticated, remote attacker to obtain complete control of an affected device.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco IronPort AsyncOS for Cisco Email Security Appliances (ESA) could allow an unauthenticated, remote attacker to obtain complete control of an affected device.
 
 
 
@@ -57,6 +57,165 @@ Cisco has released software updates that address this vulnerability. A workaroun
 This advisory is available at the following link:
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160922-esa["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160922-esa"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">Cisco ESA physical and virtual devices running any of the following software releases are affected by this vulnerability:
+
+
+    9.1.2-023
+    9.1.2-028
+    9.1.2-036
+    9.7.2-046
+    9.7.2-047
+    9.7-2-054
+    10.0.0-124
+    10.0.0-125
+
+To determine whether a vulnerable version of Cisco AsyncOS Software is running on a Cisco ESA, administrators can use the version command in the ESA command-line interface (CLI). The following example shows the results for a device running Cisco AsyncOS Software version 8.5.7-044:
+
+
+
+ciscoesa&gt; version
+
+Current Version
+
+===============
+
+Product: Cisco IronPort X1070 Messaging Gateway(tm) Appliance
+
+Model: X1070
+
+Version: 8.5.7-044
+
+.
+
+.
+
+.
+
+
+
+Cisco Cloud Email Security (CES) includes the ESA and the Security Management Appliance (SMA) as part of the service solution. Cisco provides regular maintenance of the products included in this solution. Customers can also request a software upgrade by contacting Cisco CES support.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+
+
+Cisco has confirmed that this vulnerability does not affect the following products:
+
+
+    Cloud Email Security (CES) service 
+    Content Security Management Appliance (SMA) - virtual and physical devices
+    Web Security Appliance (WSA) - virtual and physical devices
+</Note>
+    <Note Title="Details" Type="General" Ordinal="4">A vulnerability in Cisco IronPort AsyncOS for Cisco Email Security Appliances (ESA) could allow an unauthenticated, remote attacker to obtain complete control of an affected device.
+
+
+
+The vulnerability is due to the presence of a Cisco internal testing and debugging interface (intended for use during product manufacturing only) on customer-available software releases. An attacker could exploit this vulnerability by connecting to this testing and debugging interface. An exploit could allow an attacker to obtain complete control of an affected device with root-level privileges.
+
+
+
+Only Cisco ESA devices that meet all of the following conditions are affected by this vulnerability:
+
+
+    The device is running one of the previously listed affected software releases, and
+    The device has been rebooted at most once since one of the previously listed affected software releases was installed, and
+    The device's Enrollment Client component version is earlier than version 1.0.2-065 
+
+A device that has been rebooted two or more times after installation of an affected software release is not affected by this vulnerability, as the interface becomes disabled and unavailable after the second device reboot.
+
+
+
+On Friday, September 15, 2016, Cisco Systems made available an Enrollment Client update for ESA devices. This update, once installed, disabled the internal testing interface. Any ESA device running one of the previously listed affected software releases but with this update installed is not affected by this vulnerability.
+
+
+
+In order to verify if an ESA device downloaded and installed the update, execute the ecstatus command. The following example shows an ESA appliance with an Enrollment Client version of 1.0.2-062:
+
+
+ciscoesa&gt; ecstatus
+
+Component                 Version    Last Updated
+Enrollment Client         1.0.2-062  30 Aug 2016 12:21 (GMT +00:00)
+
+ciscoesa&gt;
+
+
+ESA devices with an Enrollment Client component version 1.0.2-065 or later are not vulnerable, as the internal testing interface has been disabled. The previous example shows an ESA appliance that has not installed the required update, as the version displayed is below 1.0.2-065.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="5">No customer-accessible indicators of compromise are available for this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">The debugging and testing interface can be disabled by rebooting an affected device. In order to reboot an ESA device, issue the reboot command from the CLI. The interface will be permanently disabled and unavailable once the device has finished rebooting.
+
+
+
+Customers concerned about the effectiveness of the workaround should open a support case with their support organization to verify the testing interface has effectively been disabled.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license: http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"].
+
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and  confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+Customers Without Service Contracts
+
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC): http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"].
+
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+
+
+Fixed Releases
+
+
+
+Customers are advised to upgrade to an appropriate release as indicated in the following table:
+
+
+
+
+
+    
+        
+            AsyncOS ESA Major Release
+            First Fixed Release
+        
+        
+            9.1.2
+            9.1.2-041
+        
+        
+            9.7.2
+            9.7.2-065
+        
+        
+            10.0.0
+            10.0.0-203
+        
+    
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.
+</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was found during the resolution of a support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -64,17 +223,14 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco Email Security Appliance Internal Testing Interface Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-220477">Cisco Email Security Appliance (ESA) 9.1.2-023 </FullProductName>
-    <FullProductName ProductID="CVRFPID-220478">Cisco Email Security Appliance (ESA) 9.1.2-028 </FullProductName>
-    <FullProductName ProductID="CVRFPID-220479">Cisco Email Security Appliance (ESA) 9.1.2-036  </FullProductName>
-    <FullProductName ProductID="CVRFPID-220480">Cisco Email Security Appliance (ESA) 9.7.2-046  </FullProductName>
-    <FullProductName ProductID="CVRFPID-220481">Cisco Email Security Appliance (ESA) 9.7.2-047</FullProductName>
-    <FullProductName ProductID="CVRFPID-220482">Cisco Email Security Appliance (ESA) 9.7.2-054 </FullProductName>
-    <FullProductName ProductID="CVRFPID-220484">Cisco Email Security Appliance (ESA) 10.0.0-124</FullProductName>
-    <FullProductName ProductID="CVRFPID-220485">Cisco Email Security Appliance (ESA) 10.0.0-125</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Email Security Appliance (ESA)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-189790">Cisco Email Security Appliance (ESA) </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Email Security Appliance (ESA) Internal Testing Interface Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCvb26017</ID>
     <Notes>
@@ -83,27 +239,20 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 
 The vulnerability is due to the presence of a Cisco internal testing and debugging interface (intended for use during product manufacturing only) on customer-available software releases. An attacker could exploit this vulnerability by connecting to this testing and debugging interface. An exploit could allow an attacker to obtain complete control of an affected device with root-level privileges.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCvb26017</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvb26017</Note>
     </Notes>
     <CVE>CVE-2016-6406</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-220477</ProductID>
-        <ProductID>CVRFPID-220478</ProductID>
-        <ProductID>CVRFPID-220479</ProductID>
-        <ProductID>CVRFPID-220480</ProductID>
-        <ProductID>CVRFPID-220481</ProductID>
-        <ProductID>CVRFPID-220482</ProductID>
-        <ProductID>CVRFPID-220484</ProductID>
-        <ProductID>CVRFPID-220485</ProductID>
+        <ProductID>CVRFPID-189790</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>10.0</BaseScore>
-        <TemporalScore>9.0</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:W/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>10.0</BaseScoreV2>
+        <TemporalScoreV2>9.0</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:W/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

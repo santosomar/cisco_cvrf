@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Unified Computing System Manager and Cisco Firepower 9000 Remote Command Execution Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -17,7 +17,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
       <ID>cisco-sa-20160120-ucsm</ID>
     </Identification>
     <Status>Final</Status>
-    <Version>1.4</Version>
+    <Version>1.5</Version>
     <RevisionHistory>
       <Revision>
         <Number>1.0</Number>
@@ -44,29 +44,67 @@ More information can be found in Cisco Security Vulnerability Policy available a
         <Date>2016-02-25T15:04:51</Date>
         <Description>Updated first fixed versions for Cisco UCSM.</Description>
       </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2017-11-27T21:40:47</Date>
+        <Description>Updated advisory metadata.</Description>
+      </Revision>
     </RevisionHistory>
     <InitialReleaseDate>2016-01-20T16:00:00</InitialReleaseDate>
-    <CurrentReleaseDate>2016-02-25T15:04:51</CurrentReleaseDate>
+    <CurrentReleaseDate>2017-11-27T21:40:47</CurrentReleaseDate>
     <Generator>
       <Engine>TVCE</Engine>
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in a CGI script in the Cisco Unified Computing System (UCS) Manager and the Cisco Firepower 9000 Series appliance could allow an unauthenticated, remote attacker to execute arbitrary commands on the Cisco UCS Manager or the Cisco Firepower 9000 Series appliance.
-
-
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in a CGI script in the Cisco Unified Computing System (UCS) Manager and the Cisco Firepower 9000 Series appliance could allow an unauthenticated, remote attacker to execute arbitrary commands on the Cisco UCS Manager or the Cisco Firepower 9000 Series appliance.
 
 The vulnerability is due to unprotected calling of shell commands in the CGI script. An attacker could exploit this vulnerability by sending a crafted HTTP request to the Cisco UCS Manager or the Cisco Firepower 9000 Series appliance. An exploit could allow the attacker to execute arbitrary commands on the Cisco UCS Manager or the Cisco Firepower 9000 Series appliance.
 
-
-
 Cisco has released software updates that address this vulnerability.
 
-
-
 This advisory is available at the following link:
+http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160120-ucsm ["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160120-ucsm"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability was introduced in version 2.2.0 of Cisco UCS Manager. Versions 2.2.x are affected if they are earlier than the first fixed release indicated in the "Fixed Software" section of this advisory.  This vulnerability does not affect versions 2.1.x and earlier.
 
-http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160120-ucsm["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160120-ucsm"]</Note>
+FX-OS for Firepower 9000 Series earlier than version 1.1.2 is affected.
+
+Administrators can check the version of Cisco UCS Manager software by logging in to the management GUI. The UCS Manager version number is listed in the Version field in the pop-up after clicking the Information icon.
+
+Administrators can check the version of FX-OS software running on their Cisco Firepower 9000 Series chassis by logging in to the management GUI. The FX-OS version number is listed in the Version field at the top of the Overview page.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">Cisco Integrated Management Controller has been confirmed as not affected by this vulnerability.
+
+No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">Workarounds are not available.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html
+ ["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"]
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt ["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC):
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html ["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+Fixed Versions
+
+  Cisco UCS Manager
+The first fixed releases of Cisco UCS Manager are 2.2(4b), 2.2(5a), 2.2(6a), 3.0(2e), 3.1(e), and all later releases. Earlier versions of 2.2.x are affected by this vulnerability. Software is available for download from Cisco Software Central ["https://software.cisco.com/download/release.html?mdfid=283612660&amp;softwareid=283655658"].
+
+  Cisco Firepower 9000 Series Appliance
+The first fixed release of Cisco Firepower 9000 Series appliance is 1.1.2. Software is available for download from Cisco Software Central ["https://software.cisco.com/download/release.html?mdfid=286287252&amp;flowid=77282&amp;softwareid=286287263"].</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="8">This vulnerability was reported to Cisco by Jens Krabbenhoeft.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -74,95 +112,17 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco Unified Computing System Manager and Cisco Firepower 9000 Remote Command Execution Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-190617">Cisco Unified Computing System (Managed) 1.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-191521">Cisco Unified Computing System (Managed) 1.0(2k)</FullProductName>
-    <FullProductName ProductID="CVRFPID-190619">Cisco Unified Computing System (Managed) 1.1 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-191520">Cisco Unified Computing System (Managed) 1.1(1m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-190621">Cisco Unified Computing System (Managed) 1.2 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-191519">Cisco Unified Computing System (Managed) 1.2(1d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-190623">Cisco Unified Computing System (Managed) 1.3 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-191510">Cisco Unified Computing System (Managed) 1.3(1c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191511">Cisco Unified Computing System (Managed) 1.3(1m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191512">Cisco Unified Computing System (Managed) 1.3(1n)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191513">Cisco Unified Computing System (Managed) 1.3(1o)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191514">Cisco Unified Computing System (Managed) 1.3(1p)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191515">Cisco Unified Computing System (Managed) 1.3(1q)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191516">Cisco Unified Computing System (Managed) 1.3(1t)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191517">Cisco Unified Computing System (Managed) 1.3(1w)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191518">Cisco Unified Computing System (Managed) 1.3(1y)</FullProductName>
-    <FullProductName ProductID="CVRFPID-112778">Cisco Unified Computing System (Managed) 1.4 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-112788">Cisco Unified Computing System (Managed) 1.4(1i)</FullProductName>
-    <FullProductName ProductID="CVRFPID-112787">Cisco Unified Computing System (Managed) 1.4(1j)</FullProductName>
-    <FullProductName ProductID="CVRFPID-112786">Cisco Unified Computing System (Managed) 1.4(1m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-112785">Cisco Unified Computing System (Managed) 1.4(3i)</FullProductName>
-    <FullProductName ProductID="CVRFPID-112784">Cisco Unified Computing System (Managed) 1.4(3l)</FullProductName>
-    <FullProductName ProductID="CVRFPID-112783">Cisco Unified Computing System (Managed) 1.4(3m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-112782">Cisco Unified Computing System (Managed) 1.4(3q)</FullProductName>
-    <FullProductName ProductID="CVRFPID-112781">Cisco Unified Computing System (Managed) 1.4(3s)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191503">Cisco Unified Computing System (Managed) 1.4(3u)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191504">Cisco Unified Computing System (Managed) 1.4(3y)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191505">Cisco Unified Computing System (Managed) 1.4(4f)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191506">Cisco Unified Computing System (Managed) 1.4(4g)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191507">Cisco Unified Computing System (Managed) 1.4(4i)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191508">Cisco Unified Computing System (Managed) 1.4(4j)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191509">Cisco Unified Computing System (Managed) 1.4(4k)</FullProductName>
-    <FullProductName ProductID="CVRFPID-112780">Cisco Unified Computing System (Managed) 2.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-112789">Cisco Unified Computing System (Managed) 2.0(1m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-112790">Cisco Unified Computing System (Managed) 2.0(1q)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191486">Cisco Unified Computing System (Managed) 2.0(1s)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191487">Cisco Unified Computing System (Managed) 2.0(1t)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191488">Cisco Unified Computing System (Managed) 2.0(1w)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191489">Cisco Unified Computing System (Managed) 2.0(1x)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191490">Cisco Unified Computing System (Managed) 2.0(2m)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191491">Cisco Unified Computing System (Managed) 2.0(2q)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191492">Cisco Unified Computing System (Managed) 2.0(2r)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191493">Cisco Unified Computing System (Managed) 2.0(3a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191494">Cisco Unified Computing System (Managed) 2.0(3b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191495">Cisco Unified Computing System (Managed) 2.0(3c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191496">Cisco Unified Computing System (Managed) 2.0(4a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191497">Cisco Unified Computing System (Managed) 2.0(4b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191498">Cisco Unified Computing System (Managed) 2.0(4d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191499">Cisco Unified Computing System (Managed) 2.0(5a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-194074">Cisco Unified Computing System (Managed) 2.0(5b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-194075">Cisco Unified Computing System (Managed) 2.0(5c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-190625">Cisco Unified Computing System (Managed) 2.1 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-191500">Cisco Unified Computing System (Managed) 2.1(1a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191501">Cisco Unified Computing System (Managed) 2.1(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-191502">Cisco Unified Computing System (Managed) 2.1(1d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-194071">Cisco Unified Computing System (Managed) 2.1(1e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-194072">Cisco Unified Computing System (Managed) 2.1(1f)</FullProductName>
-    <FullProductName ProductID="CVRFPID-194073">Cisco Unified Computing System (Managed) 2.1(2a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-190627">Cisco Unified Computing System (Managed) 2.2 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-209221">Cisco Unified Computing System (Managed) 2.2(1b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209222">Cisco Unified Computing System (Managed) 2.2(1c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209223">Cisco Unified Computing System (Managed) 2.2(1d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209224">Cisco Unified Computing System (Managed) 2.2(1e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209225">Cisco Unified Computing System (Managed) 2.2(1f)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209226">Cisco Unified Computing System (Managed) 2.2(1g)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209227">Cisco Unified Computing System (Managed) 2.2(1h)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209228">Cisco Unified Computing System (Managed) 2.2(2c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-202731">Cisco Unified Computing System (Managed) 2.2(2c)A</FullProductName>
-    <FullProductName ProductID="CVRFPID-209231">Cisco Unified Computing System (Managed) 2.2(3a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209232">Cisco Unified Computing System (Managed) 2.2(3b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209233">Cisco Unified Computing System (Managed) 2.2(3c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209234">Cisco Unified Computing System (Managed) 2.2(3d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209235">Cisco Unified Computing System (Managed) 2.2(3e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209236">Cisco Unified Computing System (Managed) 2.2(3f)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209237">Cisco Unified Computing System (Managed) 2.2(3g)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209238">Cisco Unified Computing System (Managed) 2.2(4b)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209239">Cisco Unified Computing System (Managed) 2.2(4c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209240">Cisco Unified Computing System (Managed) 2.2(5a)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209243">Cisco Unified Computing System (Managed) 3.0(1c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209244">Cisco Unified Computing System (Managed) 3.0(1d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209245">Cisco Unified Computing System (Managed) 3.0(1e)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209246">Cisco Unified Computing System (Managed) 3.0(2c)</FullProductName>
-    <FullProductName ProductID="CVRFPID-209247">Cisco Unified Computing System (Managed) 3.0(2d)</FullProductName>
-    <FullProductName ProductID="CVRFPID-212262">Cisco Firepower Extensible Operating System 1.1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-209306">Cisco Firepower Extensible Operating System 1.1(1.86)</FullProductName>
-    <FullProductName ProductID="CVRFPID-211804">Cisco Firepower Extensible Operating System 1.1(1.160)</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Unified Computing System (Managed)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-112776">Cisco Unified Computing System (Managed) </FullProductName>
+      </Branch>
+      <Branch Name="Firepower Extensible Operating System" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-209304">Cisco Firepower Extensible Operating System </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Unified Computing System Manager and Cisco Firepower 9000 Remote Command Execution Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCur90888</ID>
     <Notes>
@@ -171,105 +131,21 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 
 The vulnerability is due to unprotected calling of shell commands in the CGI script. An attacker could exploit this vulnerability by sending a crafted HTTP request to the Cisco UCS Manager or the Cisco Firepower 9000 Series appliance. An exploit could allow the attacker to execute arbitrary commands on the Cisco UCS Manager or the Cisco Firepower 9000 Series appliance.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCur90888,CSCux10615</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCur90888,CSCux10615</Note>
     </Notes>
     <CVE>CVE-2015-6435</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-112778</ProductID>
-        <ProductID>CVRFPID-112780</ProductID>
-        <ProductID>CVRFPID-112781</ProductID>
-        <ProductID>CVRFPID-112782</ProductID>
-        <ProductID>CVRFPID-112783</ProductID>
-        <ProductID>CVRFPID-112784</ProductID>
-        <ProductID>CVRFPID-112785</ProductID>
-        <ProductID>CVRFPID-112786</ProductID>
-        <ProductID>CVRFPID-112787</ProductID>
-        <ProductID>CVRFPID-112788</ProductID>
-        <ProductID>CVRFPID-112789</ProductID>
-        <ProductID>CVRFPID-112790</ProductID>
-        <ProductID>CVRFPID-190617</ProductID>
-        <ProductID>CVRFPID-190619</ProductID>
-        <ProductID>CVRFPID-190621</ProductID>
-        <ProductID>CVRFPID-190623</ProductID>
-        <ProductID>CVRFPID-190625</ProductID>
-        <ProductID>CVRFPID-190627</ProductID>
-        <ProductID>CVRFPID-191486</ProductID>
-        <ProductID>CVRFPID-191487</ProductID>
-        <ProductID>CVRFPID-191488</ProductID>
-        <ProductID>CVRFPID-191489</ProductID>
-        <ProductID>CVRFPID-191490</ProductID>
-        <ProductID>CVRFPID-191491</ProductID>
-        <ProductID>CVRFPID-191492</ProductID>
-        <ProductID>CVRFPID-191493</ProductID>
-        <ProductID>CVRFPID-191494</ProductID>
-        <ProductID>CVRFPID-191495</ProductID>
-        <ProductID>CVRFPID-191496</ProductID>
-        <ProductID>CVRFPID-191497</ProductID>
-        <ProductID>CVRFPID-191498</ProductID>
-        <ProductID>CVRFPID-191499</ProductID>
-        <ProductID>CVRFPID-191500</ProductID>
-        <ProductID>CVRFPID-191501</ProductID>
-        <ProductID>CVRFPID-191502</ProductID>
-        <ProductID>CVRFPID-191503</ProductID>
-        <ProductID>CVRFPID-191504</ProductID>
-        <ProductID>CVRFPID-191505</ProductID>
-        <ProductID>CVRFPID-191506</ProductID>
-        <ProductID>CVRFPID-191507</ProductID>
-        <ProductID>CVRFPID-191508</ProductID>
-        <ProductID>CVRFPID-191509</ProductID>
-        <ProductID>CVRFPID-191510</ProductID>
-        <ProductID>CVRFPID-191511</ProductID>
-        <ProductID>CVRFPID-191512</ProductID>
-        <ProductID>CVRFPID-191513</ProductID>
-        <ProductID>CVRFPID-191514</ProductID>
-        <ProductID>CVRFPID-191515</ProductID>
-        <ProductID>CVRFPID-191516</ProductID>
-        <ProductID>CVRFPID-191517</ProductID>
-        <ProductID>CVRFPID-191518</ProductID>
-        <ProductID>CVRFPID-191519</ProductID>
-        <ProductID>CVRFPID-191520</ProductID>
-        <ProductID>CVRFPID-191521</ProductID>
-        <ProductID>CVRFPID-194071</ProductID>
-        <ProductID>CVRFPID-194072</ProductID>
-        <ProductID>CVRFPID-194073</ProductID>
-        <ProductID>CVRFPID-194074</ProductID>
-        <ProductID>CVRFPID-194075</ProductID>
-        <ProductID>CVRFPID-202731</ProductID>
-        <ProductID>CVRFPID-209221</ProductID>
-        <ProductID>CVRFPID-209222</ProductID>
-        <ProductID>CVRFPID-209223</ProductID>
-        <ProductID>CVRFPID-209224</ProductID>
-        <ProductID>CVRFPID-209225</ProductID>
-        <ProductID>CVRFPID-209226</ProductID>
-        <ProductID>CVRFPID-209227</ProductID>
-        <ProductID>CVRFPID-209228</ProductID>
-        <ProductID>CVRFPID-209231</ProductID>
-        <ProductID>CVRFPID-209232</ProductID>
-        <ProductID>CVRFPID-209233</ProductID>
-        <ProductID>CVRFPID-209234</ProductID>
-        <ProductID>CVRFPID-209235</ProductID>
-        <ProductID>CVRFPID-209236</ProductID>
-        <ProductID>CVRFPID-209237</ProductID>
-        <ProductID>CVRFPID-209238</ProductID>
-        <ProductID>CVRFPID-209239</ProductID>
-        <ProductID>CVRFPID-209240</ProductID>
-        <ProductID>CVRFPID-209243</ProductID>
-        <ProductID>CVRFPID-209244</ProductID>
-        <ProductID>CVRFPID-209245</ProductID>
-        <ProductID>CVRFPID-209246</ProductID>
-        <ProductID>CVRFPID-209247</ProductID>
-        <ProductID>CVRFPID-209306</ProductID>
-        <ProductID>CVRFPID-211804</ProductID>
-        <ProductID>CVRFPID-212262</ProductID>
+        <ProductID>CVRFPID-112776</ProductID>
+        <ProductID>CVRFPID-209304</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>10.0</BaseScore>
-        <TemporalScore>8.3</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>10.0</BaseScoreV2>
+        <TemporalScoreV2>8.3</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:C/I:C/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

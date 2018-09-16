@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco IOS XR for NCS 6000 Packet Timer Leak Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the management of system timer resources in Cisco IOS XR for Cisco Network Convergence System 6000 (NCS 6000) Series Routers could allow an unauthenticated, remote attacker to cause a leak of system timer resources, leading to a nonoperational state and an eventual reload of the Route Processor (RP) on the affected platform.
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the management of system timer resources in Cisco IOS XR for Cisco Network Convergence System 6000 (NCS 6000) Series Routers could allow an unauthenticated, remote attacker to cause a leak of system timer resources, leading to a nonoperational state and an eventual reload of the Route Processor (RP) on the affected platform.
 
 
 
@@ -44,6 +44,132 @@ Cisco has released software updates that address this vulnerability. There are n
 
 This advisory is available at the following link: http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160713-ncs6k["https://tvce.cisco.com/security/AIMS/http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160713-ncs6k"]
 </Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2"></Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">Cisco NCS 6000 running an affected version of Cisco IOS XR is vulnerable when configured to process SSH, SCP, and SFTP management connections to the device. For information about which Cisco IOS XR Software releases for Cisco NCS 6000 are vulnerable, see the "Fixed Software" section of this advisory.
+
+
+
+This vulnerability can be exploited using both IPv4 and IPv6 packets. The vulnerability can be triggered by SSH, SCP, or SFTP management connections destined to TCP listening port 22 or other TCP ports configured for those services, and using an IPv4 or IPv6 unicast address of any interface configured on a device. An attacker must establish a TCP three-way handshake, but the management connection to a vulnerable device does not have to be authenticated.
+
+
+
+This vulnerability can be triggered only by traffic destined to an affected device and cannot be exploited with traffic transiting an affected device.
+
+
+
+To determine whether SSH, SCP, or SFTP is configured for management access, use the show running-config | include ssh server command and verify that the ssh server v2 command is present.
+
+
+
+The following example shows a Cisco IOS XR router with an SSHv2 server enabled:
+
+
+
+
+
+RP/0/RP0/CPU0:router#sho run | in ssh server
+Thu Jun 16 06:44:34.256 CEST
+Building configuration...
+ssh server v2
+ssh server vrf default
+
+
+Determining the Cisco IOS XR Software Release
+
+
+
+To determine which Cisco IOS XR Software release is running on a device and the name of the device on which it is running, administrators can log in to the device and use the show version command in the command-line interface (CLI). If the device is running Cisco IOS XR Software, Cisco IOS XR Software or similar text appears in the system banner. The name of the hardware product appears on the line after the location of the system image file.
+
+
+
+The following example shows the output of the show version command on a device that is running Cisco IOS XR Software Release 5.2.5:
+
+
+
+
+
+
+RP/0/RP0/CPU0:ios#show version
+Wed Jun 15 16:08:37.966 UTC
+
+Cisco IOS XR Software, Version 5.2.5
+Copyright (c) 2013-2014 by Cisco Systems, Inc.
+
+Build Information:
+ Built By     : ahoang
+ Built On     : Thu Mar 17 19:26:37 PDT 2016
+ Build Host   : iox-lnx-006
+ Workspace    : /auto/srcarchive16/production/5.2.5/all/workspace
+ Version      : 5.2.5
+ Location     : /opt/cisco/XR/packages/
+
+cisco NCS-6000 () processor 
+System uptime is 6 weeks, 6 days, 19 hours, 32 minutes
+
+
+
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Cisco 12000 Series Routers, Cisco ASR 9000 Series Aggregation Services Routers, Cisco Carrier Routing System, and Cisco Network Convergence System 4000 Series running Cisco IOS XR are not affected by this vulnerability.
+
+
+
+No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="5">On devices where this vulnerability is exploited, a Route Processor (RP) may not be able to create new processes, may freeze, and may start to drop routing protocol packets and management connections, eventually leading to a reload. All traffic destined to a device, as well as pass-through traffic depending on information learned from routing protocols, would be dropped during the reload process, causing a denial of service (DoS) condition.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license
+
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution. 
+
+
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and  confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+
+Customers Without Service Contracts
+
+
+
+
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco Technical Assistance Center (TAC):
+
+
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+
+Fixed Releases
+
+
+ This vulnerability has been corrected in the following Software Maintenance Updates (SMUs) for Cisco IOS XR Software:
+
+
+
+
+    ncs6k-5.2.5.CSCux76819.smu
+    ncs6k-5.2.4.CSCux76819.smu
+    ncs6k-5.2.3.CSCux76819.smu
+    ncs6k-5.2.1.CSCux76819.smu
+    ncs6k-5.0.1.CSCux76819.smu
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.
+</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory. 
+</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was found during the resolution of a support case.
+</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -51,25 +177,14 @@ This advisory is available at the following link: http://tools.cisco.com/securit
       <Description>Cisco IOS XR for NCS 6000 Packet Timer Leak Denial of Service Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-195582">Cisco IOS XR Software 5.1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-206847">Cisco IOS XR Software 5.1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-206857">Cisco IOS XR Software 5.1.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-208334">Cisco IOS XR Software 5.1.1.K9SEC</FullProductName>
-    <FullProductName ProductID="CVRFPID-206858">Cisco IOS XR Software 5.1.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-201994">Cisco IOS XR Software for Cisco Network Convergence System 6000 Series Routers 5.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-201995">Cisco IOS XR Software for Cisco Network Convergence System 6000 Series Routers 5.0.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-206860">Cisco IOS XR Software 5.2.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-206861">Cisco IOS XR Software 5.2.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-206862">Cisco IOS XR Software 5.2.2</FullProductName>
-    <FullProductName ProductID="CVRFPID-212490">Cisco IOS XR Software 5.2.4</FullProductName>
-    <FullProductName ProductID="CVRFPID-214175">Cisco IOS XR Software 5.2.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-214176">Cisco IOS XR Software 5.2.5</FullProductName>
-    <FullProductName ProductID="CVRFPID-212493">Cisco IOS XR Software 5.0 Base</FullProductName>
-    <FullProductName ProductID="CVRFPID-212494">Cisco IOS XR Software 5.0.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-214177">Cisco IOS XR Software 5.0.1</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco IOS XR Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-5834">Cisco IOS XR Software </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco IOS XR for NCS 6000 Packet Timer Leak Denial of Service Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCux76819</ID>
     <Notes>
@@ -78,35 +193,20 @@ This advisory is available at the following link: http://tools.cisco.com/securit
 
 
 The vulnerability is due to improper management of system timer resources. An attacker could exploit this vulnerability by sending a number of  Secure Shell (SSH), Secure Copy Protocol (SCP), and Secure FTP (SFTP) management connections to an affected device. An exploit could allow the attacker to cause a leak of system timer resources, leading to a nonoperational state and an eventual reload of the RP on the affected platform.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCux76819</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCux76819</Note>
     </Notes>
     <CVE>CVE-2016-1426</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-195582</ProductID>
-        <ProductID>CVRFPID-201994</ProductID>
-        <ProductID>CVRFPID-201995</ProductID>
-        <ProductID>CVRFPID-206847</ProductID>
-        <ProductID>CVRFPID-206857</ProductID>
-        <ProductID>CVRFPID-206858</ProductID>
-        <ProductID>CVRFPID-206860</ProductID>
-        <ProductID>CVRFPID-206861</ProductID>
-        <ProductID>CVRFPID-206862</ProductID>
-        <ProductID>CVRFPID-208334</ProductID>
-        <ProductID>CVRFPID-212490</ProductID>
-        <ProductID>CVRFPID-212493</ProductID>
-        <ProductID>CVRFPID-212494</ProductID>
-        <ProductID>CVRFPID-214175</ProductID>
-        <ProductID>CVRFPID-214176</ProductID>
-        <ProductID>CVRFPID-214177</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>7.8</BaseScore>
-        <TemporalScore>6.4</TemporalScore>
-        <Vector>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>7.8</BaseScoreV2>
+        <TemporalScoreV2>6.4</TemporalScoreV2>
+        <VectorV2>AV:N/AC:L/Au:N/C:N/I:N/A:C/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

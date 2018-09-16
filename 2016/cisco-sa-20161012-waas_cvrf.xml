@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Cisco Wide Area Application Services Central Manager Denial of Service Vulnerability</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -32,7 +32,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">A vulnerability in the SSL session cache management of Cisco Wide Area Application Services (WAAS) could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition due to high consumption of disk space. The user would see a performance degradation.  
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the SSL session cache management of Cisco Wide Area Application Services (WAAS) could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition due to high consumption of disk space. The user would see a performance degradation.  
 
 
 
@@ -47,6 +47,50 @@ Cisco has released software updates that address this vulnerability. There are w
 This advisory is available at the following link:
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161012-waas["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20161012-waas"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">Cisco Wide Area Application Services (WAAS) is affected. Cisco provides information about affected releases in Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
+
+
+
+This vulnerability applies to:
+
+
+    
+    SSL (TCP port 443) management traffic of the WAAS Central Manager (CM)
+    
+    The WAAS accelerators receiving SSL connection requests
+
+
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">The SSL cache files can be removed from the disk. This is a temporary workaround that will mitigate the vulnerability until the files again grow in size. The administrator can use the following command sequence to remove the SSL cache files:
+
+
+
+
+#waas&gt; config
+#waas(config)&gt; no cms enable
+#waas(config)&gt; cms enable
+#waas(config)&gt; exit
+#waas&gt; service restart rpc_httpd
+
+
+
+Contact the Cisco Technical Assistance Center (TAC) for a script to update the configuration of the SSL cache files.
+</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco provides information about fixed software in Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/"].
+
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page["http://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="8">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -54,22 +98,14 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Cisco Wide Area Application Services Central Manager Denial of Service Vulnerability</Description>
     </Reference>
   </DocumentReferences>
-  <ProductTree xmlns="http://www.icasi.org/CVRF/schema/prod/1.1">
-    <FullProductName ProductID="CVRFPID-199519">Cisco Wide Area Application Services (WAAS) 5.3.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-199520">Cisco Wide Area Application Services (WAAS) 5.3.3</FullProductName>
-    <FullProductName ProductID="CVRFPID-199521">Cisco Wide Area Application Services (WAAS) 5.3.5</FullProductName>
-    <FullProductName ProductID="CVRFPID-199522">Cisco Wide Area Application Services (WAAS) 5.3.5a</FullProductName>
-    <FullProductName ProductID="CVRFPID-202808">Cisco Wide Area Application Services (WAAS) 5.3.5b</FullProductName>
-    <FullProductName ProductID="CVRFPID-212229">Cisco Wide Area Application Services (WAAS) 5.3.5c</FullProductName>
-    <FullProductName ProductID="CVRFPID-220922">Cisco Wide Area Application Services (WAAS) 5.3.5d</FullProductName>
-    <FullProductName ProductID="CVRFPID-220923">Cisco Wide Area Application Services (WAAS) 5.3.5e</FullProductName>
-    <FullProductName ProductID="CVRFPID-220924">Cisco Wide Area Application Services (WAAS) 5.3.5f</FullProductName>
-    <FullProductName ProductID="CVRFPID-209320">Cisco Wide Area Application Services (WAAS) 6.1.0</FullProductName>
-    <FullProductName ProductID="CVRFPID-209321">Cisco Wide Area Application Services (WAAS) 6.1.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-220920">Cisco Wide Area Application Services (WAAS) 6.2.1</FullProductName>
-    <FullProductName ProductID="CVRFPID-220921">Cisco Wide Area Application Services (WAAS) 6.2.1a</FullProductName>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Wide Area Application Services (WAAS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7367">Cisco Wide Area Application Services (WAAS) </FullProductName>
+      </Branch>
+    </Branch>
   </ProductTree>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Cisco Wide Area Application Services Central Manager Denial of Service Vulnerability</Title>
     <ID SystemName="Cisco Bug ID">CSCva03095</ID>
     <Notes>
@@ -78,32 +114,20 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
 
 
 The vulnerability is due to a lack of file size limitations for SSL system files stored on the disk. An attacker could exploit this vulnerability by sending a continuous stream of SSL traffic to the targeted device. An exploit could allow the attacker to cause a DoS condition due to the adverse impact on device performance.</Note>
-      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="3">CSCva03095</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCva03095</Note>
     </Notes>
     <CVE>CVE-2016-6437</CVE>
     <ProductStatuses>
       <Status Type="Known Affected">
-        <ProductID>CVRFPID-199519</ProductID>
-        <ProductID>CVRFPID-199520</ProductID>
-        <ProductID>CVRFPID-199521</ProductID>
-        <ProductID>CVRFPID-199522</ProductID>
-        <ProductID>CVRFPID-202808</ProductID>
-        <ProductID>CVRFPID-209320</ProductID>
-        <ProductID>CVRFPID-209321</ProductID>
-        <ProductID>CVRFPID-212229</ProductID>
-        <ProductID>CVRFPID-220920</ProductID>
-        <ProductID>CVRFPID-220921</ProductID>
-        <ProductID>CVRFPID-220922</ProductID>
-        <ProductID>CVRFPID-220923</ProductID>
-        <ProductID>CVRFPID-220924</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
       </Status>
     </ProductStatuses>
     <CVSSScoreSets>
-      <ScoreSet>
-        <BaseScore>4.3</BaseScore>
-        <TemporalScore>3.6</TemporalScore>
-        <Vector>AV:N/AC:M/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</Vector>
-      </ScoreSet>
+      <ScoreSetV2>
+        <BaseScoreV2>4.3</BaseScoreV2>
+        <TemporalScoreV2>3.6</TemporalScoreV2>
+        <VectorV2>AV:N/AC:M/Au:N/C:N/I:N/A:P/E:F/RL:OF/RC:C</VectorV2>
+      </ScoreSetV2>
     </CVSSScoreSets>
     <Remediations>
       <Remediation Type="Workaround">

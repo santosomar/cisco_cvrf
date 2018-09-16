@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.icasi.org/CVRF/schema/cvrf/1.1">
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
   <DocumentTitle>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: June 2016</DocumentTitle>
   <DocumentType>Cisco Security Advisory</DocumentType>
   <DocumentPublisher Type="Vendor">
@@ -72,7 +72,7 @@ More information can be found in Cisco Security Vulnerability Policy available a
     </Generator>
   </DocumentTracking>
   <DocumentNotes>
-    <Note Title="Summary" Type="General" Ordinal="1">Multiple Cisco products incorporate a version of the Network Time Protocol daemon (ntpd) package. Versions of this package are affected by one or more vulnerabilities that could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition or modify the time being advertised by a device acting as a Network Time Protocol (NTP) server.
+    <Note Title="Summary" Type="Summary" Ordinal="1">Multiple Cisco products incorporate a version of the Network Time Protocol daemon (ntpd) package. Versions of this package are affected by one or more vulnerabilities that could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition or modify the time being advertised by a device acting as a Network Time Protocol (NTP) server.
 
 
 
@@ -107,6 +107,972 @@ This advisory is available at the following link:
 
 http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160603-ntpd["http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20160603-ntpd"]
 </Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2">Cisco is currently investigating its product line to determine which products may be affected by these vulnerabilities and the impact on each affected product. As the investigation progresses, this document will be updated to include Cisco bug IDs for each affected product. The bugs will be accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"] and will contain additional platform-specific information, including workarounds (if available) and fixed software versions. 
+
+
+
+The following products are under active investigation to determine whether they are affected by the vulnerabilities that are described in this advisory. 
+
+
+
+Unified Computing
+
+
+    Cisco UCS E-Series Servers
+
+
+</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">The following table lists Cisco products that are affected by one or more vulnerabilities described in this advisory.
+
+
+
+
+
+
+
+    
+        
+            Product
+            Cisco Bug ID
+            Fixed Release Availability
+        
+        
+            Cable Modems
+        
+        
+            Cisco 3G Femtocell  Wireless
+            CSCuz92777["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92777"]
+            Affected systems will be updated (Aug. 2016)
+        
+        
+            Collaboration and Social Media
+        
+        
+            Cisco Unified MeetingPlace
+            CSCuz92799["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92799"]
+            No fix is expected as product is nearing EOL.
+        
+        
+            Cisco WebEx Meetings Server Release 1.x
+            CSCuz92638["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92638"]
+             
+        
+        
+            Cisco WebEx Meetings Server Release 2.x
+            CSCuz92638["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92638"]
+             
+        
+        
+            Cisco WebEx Node for MCS
+            CSCuz92637["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92637"]
+             
+        
+        
+            Endpoint Clients and Client Software
+        
+        
+            Cisco Jabber Guest 10.0(2)
+            CSCuz92797["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92797"]
+            10.6(11) (30-Sept-2016)
+        
+        
+            Cisco Virtualization Experience Media Engine
+            CSCuz92803["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92803"]
+            No fix is expected.
+        
+        
+            Network Application, Service, and Acceleration
+        
+        
+            Cisco Application Control Engine (ACE30/ ACE 4710)
+            CSCuz92646["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92646"]
+             
+        
+        
+            Cisco Application and Content Networking System (ACNS)
+            CSCuz92731["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92731"]
+             
+        
+        
+            Cisco Visual Quality Experience Server
+            CSCuz92725["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92725"]
+            No fix is expected.
+        
+        
+            Cisco Visual Quality Experience Tools Server
+            CSCuz92725["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92725"]
+            No fix is expected.
+        
+        
+            Cisco Wide Area Application Services (WAAS)
+            CSCuz92744["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92744"]
+             
+        
+        
+            Network and Content Security Devices
+        
+        
+            Cisco ASA CX and Cisco Prime Security Manager
+            CSCuz92747["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92747"]
+            9.3.4.6 (1-Aug-2016)
+        
+        
+            Cisco Clean Access Manager
+            CSCuz92732["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92732"]
+            Affected systems will be updated by (2-Jul-2016)
+        
+        
+            Cisco FireSIGHT System Software
+            CSCuz92632["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92632"]
+            Affected systems will be updated 2nd half of 2016.
+        
+        
+            Cisco Firepower 9000 Cisco Integrated Management Controller (CIMC)
+            CSCuz92742["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92742"]
+            Fix is dependent on Wind River
+        
+        
+            Cisco Identity Services Engine (ISE)
+            CSCuz92752["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92752"]
+            Affected systems will be updated (Oct. 2016)
+        
+        
+            Cisco Intrusion Prevention System Solutions (IPS)
+            CSCuz92762["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92762"]
+            No fix is expected.(EOSWM)
+        
+        
+            Cisco IronPort Encryption Appliance
+            CSCuz92631["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92631"]
+            5.0.0 (30-Jun-2016)
+        
+        
+            Cisco NAC Appliance - Clean Access Server
+            CSCuz92733["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92733"]
+            Affected systems will be updated by (2-Jul-2016)
+        
+        
+            Cisco NAC Guest Server
+            CSCuz92735["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92735"]
+            Affected systems will be updated by (2-Jul-2016)
+        
+        
+            Cisco NAC Server
+            CSCuz92734["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92734"]
+            Affected systems will be updated by (2-Jul-2016)
+        
+        
+            Cisco Physical Access Control Gateway
+            CSCuz92749["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92749"]
+             
+        
+        
+            Cisco Physical Access Manager
+            CSCuz92750["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92750"]
+             
+        
+        
+            Cisco Secure Access Control Server (ACS)
+            CSCuz92761["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92761"]
+             
+        
+        
+            Cisco Virtual Security Gateway for Microsoft Hyper-V
+            CSCuz92667["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92667"]
+            2.1.3.b (20-Aug-2016)
+        
+        
+            Network Management and Provisioning
+        
+        
+            Cisco Application Networking Manager
+            CSCuz92649["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92649"]
+             
+        
+        
+            Cisco Network Analysis Module
+            CSCuz92682["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92682"]
+            6.2.2 limited release (6-Jun-2016)
+        
+        
+            Cisco Policy Suite
+            CSCuz98063["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz98063"]
+            10.0 (9-Jul-2016)
+        
+        
+            Cisco Prime Collaboration Assurance
+            CSCuz92687["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92687"]
+            11.6 (Sept. 2016)
+        
+        
+            Cisco Prime Collaboration Provisioning
+            CSCuz92686["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92686"]
+             
+        
+        
+            Cisco Prime Infrastructure Plug and Play Standalone Gateway
+            CSCuz92683["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92683"]
+            No fix from Red Hat is expected.
+        
+        
+            Cisco Prime Infrastructure
+            CSCuz92684["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92684"]
+            No fix is expected.
+        
+        
+            Cisco Prime LAN Management Solution - Solaris
+            CSCuz92673["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92673"]
+             
+        
+        
+            Cisco Prime License Manager
+            CSCuz92705["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92705"]
+             
+        
+        
+            Cisco Prime Network Services Controller
+            CSCuz92688["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92688"]
+            No fix is expected.
+        
+        
+            Cisco Prime Service Catalog Virtual Appliance
+            CSCuz92712["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92712"]
+             
+        
+        
+            Cisco UCS Central Software
+            CSCuz92669["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92669"]
+            1.5 (1a) ) (July 2016)
+        
+        
+            Cisco Unified Communications Deployment Tools
+            CSCuz92627["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92627"]
+            Affected systems will be updated (31-Dec-2016)
+        
+        
+            Cisco Virtual Topology System (formerly Cisco Virtual Systems Operations Center)
+            CSCuz92689["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92689"]
+             
+        
+        
+            Feature Analytics Service
+            CSCuz92616["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92616"]
+             
+        
+        
+            Routing and Switching - Enterprise and Service Provider
+        
+        
+            Cisco Application Policy Infrastructure Controller (APIC)
+            CSCuz92658["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92658"]
+            Congo 2.0(1) (Aug. 2016)
+        
+        
+            Cisco Connected Grid Router
+            CSCuz92727["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92727"]
+            15.6(02)T  (3-Jul-2016)
+        
+        
+            Cisco Connected Grid Routers (CGR)
+            CSCuz92650["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92650"]
+            7.3(0)ZN(0.9)  (3-Jul-2016)
+        
+        
+            Cisco IOS XR Software
+            CSCuz92691["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92691"]
+             
+        
+        
+            Cisco IOS XR for Cisco Network Convergence System (NCS) 6000
+            CSCuz92694["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92694"]
+             
+        
+        
+            Cisco IOS and Cisco IOS XE Software
+            CSCuz92785["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92785"]
+             
+        
+        
+            Cisco MDS 9000 Series Multilayer Switches
+            CSCuz92661["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92661"]
+            N7K &amp; MDS (7.3.1.DX) (CCO Date TBD)
+
+            MDS 6.2.19 (CCO Date TBD)
+
+            N5K &amp; N6K (7.3.1.NX) (TBD)
+
+            N3K &amp; N9K (7.0.3.I3) (Aug. 2016)
+
+            N7K/MDS/N5K (8.0 Atherton) (Nov.2016)
+
+            
+        
+        
+            Cisco Metro Ethernet 1200 Series Access Devices
+            CSCuz92786["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92786"]
+            No fix is expected.
+        
+        
+            Cisco Nexus 1000V Series Switches
+            CSCuz92663["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92663"]
+             
+        
+        
+            Cisco Nexus 3000 Series Switches
+            CSCuz92661["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92661"]
+            N7K &amp; MDS (7.3.1.DX) (CCO Date TBD)
+
+            MDS 6.2.19 (CCO Date TBD)
+
+            N5K &amp; N6K (7.3.1.NX) (TBD)
+
+            N3K &amp; N9K (7.0.3.I3) (Aug. 2016)
+
+            N7K/MDS/N5K (8.0 Atherton) (Nov.2016)
+
+            
+        
+        
+            Cisco Nexus 3500 Series Switches
+            CSCuz92666["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92666"]
+             
+        
+        
+            Cisco Nexus 4000 Series Blade Switches
+            CSCuz92764["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92764"]
+            4.1(2)E1(1q) (Aug. 2016)
+        
+        
+            Cisco Nexus 5000 Series Switches
+            CSCuz92661["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92661"]
+            N7K &amp; MDS (7.3.1.DX) (CCO Date TBD)
+
+            MDS 6.2.19 (CCO Date TBD)
+
+            N5K &amp; N6K (7.3.1.NX) (TBD)
+
+            N3K &amp; N9K (7.0.3.I3) (Aug. 2016)
+
+            N7K/MDS/N5K (8.0 Atherton) (Nov.2016)
+
+            
+        
+        
+            Cisco Nexus 6000 Series Switches
+            CSCuz92661["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92661"]
+            N7K &amp; MDS (7.3.1.DX) (CCO Date TBD)
+
+            MDS 6.2.19 (CCO Date TBD)
+
+            N5K &amp; N6K (7.3.1.NX) (TBD)
+
+            N3K &amp; N9K (7.0.3.I3) (Aug. 2016)
+
+            N7K/MDS/N5K (8.0 Atherton) (Nov.2016)
+
+            
+        
+        
+            Cisco Nexus 7000 Series Switches
+            CSCuz92661["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92661"]
+            N7K &amp; MDS (7.3.1.DX) (CCO Date TBD)
+
+            MDS 6.2.19 (CCO Date TBD)
+
+            N5K &amp; N6K (7.3.1.NX) (TBD)
+
+            N3K &amp; N9K (7.0.3.I3) (Aug. 2016)
+
+            N7K/MDS/N5K (8.0 Atherton) (Nov.2016)
+
+            
+        
+        
+            Cisco Nexus 9000 Series Switches
+            CSCuz92661["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92661"]
+            N7K &amp; MDS (7.3.1.DX) (CCO Date TBD)
+
+            MDS 6.2.19 (CCO Date TBD)
+
+            N5K &amp; N6K (7.3.1.NX) (TBD)
+
+            N3K &amp; N9K (7.0.3.I3) (Aug. 2016)
+
+            N7K/MDS/N5K (8.0 Atherton) (Nov.2016)
+
+            
+        
+        
+            Cisco Service Control Operating System
+            CSCuz92788["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92788"]
+             
+        
+        
+            Cisco onePK All-in-One Virtual Machine
+            CSCuz92748["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92748"]
+            No fix is expected.
+        
+        
+            Routing and Switching - Small Business
+        
+        
+            Cisco DPH150 Series MicroCell Solution
+            CSCuz92773["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92773"]
+             
+        
+        
+            Unified Computing
+        
+        
+            Cisco Standalone rack server CIMC
+            CSCuz92670["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92670"]
+            3.0(x) (30-Sept-2016)
+        
+        
+            Cisco UCS 6200 Series Fabric Interconnects
+            CSCuz92668["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92668"]
+            3.1(2) (12-Jul-2016)
+        
+        
+            Cisco UCS ADA
+            CSCuz92628["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92628"]
+            No fix is expected
+        
+        
+            Cisco UCS Director
+            CSCuz92653["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92653"]
+            Fix is dependent on release from NTP.org
+        
+        
+            Cisco UCS Manager
+            CSCuz92668["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92668"]
+            3.1(2) (12-Jul-2016)
+        
+        
+            Voice and Unified Communications Devices
+        
+        
+            Cisco Emergency Responder
+            CSCuz92793["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92793"]
+            No fix is applicable.
+        
+        
+            Cisco Hosted Collaboration Mediation Fulfillment
+            CSCuz92795["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92795"]
+             
+        
+        
+            Cisco IP Interoperability and Collaboration System (IPICS)
+            CSCuz92715["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92715"]
+            5.0 (Aug. 2016)
+        
+        
+            Cisco Management Heartbeat Server
+            CSCuz92779["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92779"]
+            Affected systems will be updated mid-June.
+        
+        
+            Cisco MediaSense
+            CSCuz92800["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92800"]
+             
+        
+        
+            Cisco Paging Server (InformaCast)
+            CSCuz92796["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92796"]
+             
+        
+        
+            Cisco Paging Server
+            CSCuz92796["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92796"]
+             
+        
+        
+            Cisco Quantum Virtualized Packet Core
+            CSCuz92610["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92610"]
+            Affected systems will be update (Dec.2016)
+        
+        
+            Cisco Unified Communications Domain Manager
+            CSCuz92792["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92792"]
+             
+        
+        
+            Cisco Unified Communications Manager IM &amp; Presence Service (formerly CUPS)
+            CSCuz92794["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92794"]
+            No fix is expected.
+        
+        
+            Cisco Unified Communications Manager Session Management Edition
+            CSCuz92790["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92790"]
+             
+        
+        
+            Cisco Unified Communications Manager
+            CSCuz92790["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92790"]
+             
+        
+        
+            Cisco Unified SIP Proxy
+            CSCuz92609["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92609"]
+            CUSP 10.X (Sept. 2016)
+        
+        
+            Cisco Unity Connection
+            CSCuz92791["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92791"]
+             
+        
+        
+            Cisco Unity Express
+            CSCuz92606["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92606"]
+            10.0 (2-Jan-2017)
+        
+        
+            Video, Streaming, TelePresence, and Transcoding Devices
+        
+        
+            Cisco 910 Industrial Router
+            CSCuz92766["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92766"]
+            1.2.1rb4 (12-June-2016)
+        
+        
+            Cisco D9036 Modular Encoding Platform
+            CSCuz96408["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz96408"]
+            V02.04.90 (July 2016)
+        
+        
+            Cisco DCM Series D9900 Digital Content Manager
+            CSCuz92671["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92671"]
+            19.0(30-Sept-2016)
+        
+        
+            Cisco Digital Media Manager
+            CSCuz92699["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92699"]
+            5.3.6 (3-July-2016)
+
+            5.3.6(RB1) (3-July-2016)
+
+            5.3.6(RB2) (3-July-2016)
+
+            5.4 (3-July-2016)
+
+            5.4.1 (3-July-2016)
+
+            5.4.1(RB1) (3-July-2016)
+
+            5.4.1(RB2) (3-July-2016)
+
+            
+        
+        
+            Cisco Edge 300 Digital Media Player
+            CSCuz92769["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92769"]
+            1.6RB4_4(30-June-2016)
+        
+        
+            Cisco Edge 340 Digital Media Player
+            CSCuz92771["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92771"]
+            1.2.0.20 (3-July-2016)
+        
+        
+            Cisco Enterprise Content Delivery System (ECDS)
+            CSCuz92700["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92700"]
+            2.6.8 (30-Aug-2016)
+        
+        
+            Cisco Expressway Series
+            CSCuz92711["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92711"]
+            Affected systems will be updated (30-June-2016)
+        
+        
+            Cisco Media Experience Engines (MXE)
+            CSCuz92704["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92704"]
+            No fix is planned.
+        
+        
+            Cisco PowerVu D9190 Conditional Access Manager
+            CSCuz96410["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz96410"]
+            R2.0 (July 2016)
+        
+        
+            Cisco Show and Share
+            CSCuz92707["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92707"]
+             
+        
+        
+            Cisco TelePresence 1310
+            CSCuz92789["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92789"]
+            6.1.14 (31-Dec-2016)
+        
+        
+            Cisco TelePresence Conductor
+            CSCuz92697["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92697"]
+            Affected systems will be upgraded by (Aug. 2016)
+        
+        
+            Cisco TelePresence Exchange System (CTX)
+            CSCuz92698["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92698"]
+            Affected systems will be updated (Dec. 2016).
+        
+        
+            Cisco TelePresence ISDN Link
+            CSCuz92702["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92702"]
+            Affected systems will be updated by (Dec.2016)
+        
+        
+            Cisco TelePresence MX Series
+            CSCuz92709["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92709"]
+            8.2.0 (June 2016)
+
+            7.3.7 ( TBD)
+        
+        
+            Cisco TelePresence Profile Series
+            CSCuz92709["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92709"]
+            8.2.0 (June 2016)
+
+            7.3.7 ( TBD)
+        
+        
+            Cisco TelePresence SX Series
+            CSCuz92709["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92709"]
+            8.2.0 (June 2016)
+
+            7.3.7 ( TBD)
+        
+        
+            Cisco TelePresence Server 7010 and MSE 8710
+            CSCuz92710["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92710"]
+             
+        
+        
+            Cisco TelePresence Server on Multiparty Media 310 and 320
+            CSCuz92710["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92710"]
+             
+        
+        
+            Cisco TelePresence Server on Virtual Machine
+            CSCuz92710["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92710"]
+             
+        
+        
+            Cisco TelePresence System 1000
+            CSCuz92789["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92789"]
+            6.1.14 (31-Dec-2016)
+        
+        
+            Cisco TelePresence System 1100
+            CSCuz92789["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92789"]
+            6.1.14 (31-Dec-2016)
+        
+        
+            Cisco TelePresence System 1300
+            CSCuz92789["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92789"]
+            6.1.14 (31-Dec-2016)
+        
+        
+            Cisco TelePresence System 3000 Series
+            CSCuz92789["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92789"]
+            6.1.14 (31-Dec-2016)
+        
+        
+            Cisco TelePresence System 500-32
+            CSCuz92789["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92789"]
+            6.1.14 (31-Dec-2016)
+        
+        
+            Cisco TelePresence System 500-37
+            CSCuz92789["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92789"]
+            6.1.14 (31-Dec-2016)
+        
+        
+            Cisco TelePresence System EX Series
+            CSCuz92709["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92709"]
+            8.2.0 (June 2016)
+
+            7.3.7 ( TBD)
+        
+        
+            Cisco TelePresence TX 9000 Series
+            CSCuz92789["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92789"]
+            6.1.14 (31-Dec-2016)
+        
+        
+            Cisco TelePresence Video Communication Server (VCS)
+            CSCuz92711["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92711"]
+            Affected systems will be updated (30-June-2016)
+        
+        
+            Cisco Telepresence Integrator C Series
+            CSCuz92709["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92709"]
+            8.2.0 (June 2016)
+
+            7.3.7 ( TBD)
+        
+        
+            Cisco Video Delivery System Recorder
+            CSCuz92721["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92721"]
+             
+        
+        
+            Cisco Video Distribution Suite for Internet Streaming (VDS-IS/CDS-IS)
+            CSCuz92724["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92724"]
+            4.3.2 (30-Jun-2016)
+        
+        
+            Cisco Video Surveillance Media Server
+            CSCuz92751["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92751"]
+             
+        
+        
+            Cisco Videoscape Control Suite
+            CSCuz92716["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92716"]
+            No fix is expected.
+        
+        
+            Cisco Videoscape Distribution Suite Transparent Caching
+            CSCuz92781["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92781"]
+            No fix is expected.
+        
+        
+            Cloud Object Store (COS)
+            CSCuz92719["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92719"]
+            Affected systems will be updated (30-Jul-2016)
+        
+        
+            Wireless
+        
+        
+            Cisco Small Business 121 Series Wireless Access Points
+            CSCuz92759["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92759"]
+            Affected systems will be updated by (Nov. 2016)
+        
+        
+            Cisco Small Business 321 Series Wireless Access Points
+            CSCuz92759["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92759"]
+            Affected systems will be updated by (Nov. 2016)
+        
+        
+            Cisco Small Business 500 Series Wireless Access Points
+            CSCuz92756["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92756"]
+            Affected systems will be updated by (Dec. 2016)
+        
+        
+            Cisco WAP371 Wireless-AC/N Access Point
+            CSCuz92753["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92753"]
+            Affected systems will be updated by (Oct. 2016)
+        
+        
+            Cisco Hosted Services
+        
+        
+            Cisco Business Video Services Automation Software
+            CSCuz92613["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92613"]
+            11.x (31-Dec-2016)
+        
+        
+            Cisco Cloud Email Security
+            CSCuz92630["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92630"]
+            Affected systems will be updated July 2016
+        
+        
+            Cisco Cloud Services
+            CSCuz92696["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92696"]
+             
+        
+        
+            Cisco Cloud Web Security
+            CSCuz92763["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92763"]
+             
+        
+        
+            Cisco Connected Analytics For Collaboration
+            CSCuz92625["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92625"]
+             
+        
+        
+            Cisco Intelligent Automation for Cloud
+            CSCuz92714["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92714"]
+            IAC MA 5.0 (Oct.2016)
+        
+        
+            Cisco Network Device Security Assessment Service
+            CSCuz92621["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92621"]
+            TBD. Based on Red Hat
+        
+        
+            Cisco Partner Support Service 1.x
+            CSCuz92741["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92741"]
+             
+        
+        
+            Cisco Proactive Network Operations Center
+            CSCuz92624["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92624"]
+            No fix available yet. Pending Red Hat
+        
+        
+            Cisco Registered Envelope Service
+            CSCuz92629["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92629"]
+            No fix is expected.
+        
+        
+            Cisco Sentinel
+            CSCuz92626["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92626"]
+            3.4.1 (10-Jun-2016)
+        
+        
+            Cisco Services Provisioning Platform (SPP)
+            CSCuz92805["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92805"]
+            No fix is expected.
+        
+        
+            Cisco Smart Care
+            CSCuz92736["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92736"]
+             
+        
+        
+            Cisco Smart Net Total Care
+            CSCuz92729["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92729"]
+             
+        
+        
+            Cisco Universal Small Cell 5000 Series - Running Software Release 3.4.2.x
+            CSCuz92778["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92778"]
+            3.5.12.21 (30-Jun-2016)
+        
+        
+            Cisco Universal Small Cell 7000 Series - Running Software Release 3.4.2.x
+            CSCuz92778["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92778"]
+            3.5.12.21 (30-Jun-2016)
+        
+        
+            Cisco WebEx Messenger Service
+            CSCuz92639["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92639"]
+             
+        
+        
+            Cisco WebEx Node
+            CSCuz92798["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92798"]
+            No fix is expected from Red Hat.
+        
+        
+            Network Change and Configuration Management
+            CSCuz92620["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92620"]
+            3.0 (1-Aug-2016)
+        
+        
+            Network Health Framework
+            CSCuz92783["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92783"]
+             
+        
+        
+            Network Performance Analytics (NPA)
+            CSCuz92784["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92784"]
+             
+        
+        
+            Small Cell factory recovery root filesystem V2.99.4 or later
+            CSCuz92775["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuz92775"]
+             
+        
+    
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">
+
+Network Application, Service, and Acceleration
+
+
+    Cisco Adaptive Security Appliance (ASA) Software
+    Cisco Content Services Switch
+
+
+
+Network and Content Security Devices
+
+
+    Cisco Content Security Appliance Update Servers
+
+
+
+Network Management and Provisioning
+
+
+    Cisco Access Registrar Appliance
+    Cisco Insight Reporter
+    Cisco Prime Access Registrar Appliance
+    Cisco Prime Access Registrar
+    Cisco Prime Network Registrar IP Address Manager (IPAM)
+    Cisco Prime Network Registrar Virtual Appliance
+    Local Collector Appliance (LCA)
+
+
+
+Routing and Switching - Enterprise and Service Provider
+
+
+    CRS-CGSE-PLIM
+    CRS-CGSE-PLUS
+    Cisco ASR 9000 Series Integrated Service Module
+
+
+
+Unified Computing
+
+
+    Cisco Common Services Platform Collector
+
+
+
+Voice and Unified Communications Devices
+
+
+    Cisco Desktop Collaboration Experience DX70 and DX80
+    Cisco IP 8800 Series Phones - VPN feature
+
+
+
+Wireless
+
+
+    Cisco IOS Access Points
+
+
+
+Cisco Hosted Services
+
+
+    Cisco WebEx Meeting Center
+    Cisco WebEx11 Application Server
+    DCAF UCS Collector
+    MACD Process Controller (MPC)
+    One View
+    Support Central
+
+
+</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
+</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Information about fixed software will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
+
+
+
+When considering software upgrades, customers are advised to consult the Cisco Security Advisories and Responses archive at http://www.cisco.com/go/psirt["http://www.cisco.com/go/psirt"] and review subsequent advisories to determine exposure and a complete upgrade solution.
+
+
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.
+</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.
+</Note>
+    <Note Title="Source" Type="General" Ordinal="9">These vulnerabilities were discovered by researchers from Red Hat and Cisco.
+</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME. CISCO EXPECTS TO UPDATE THIS DOCUMENT AS NEW INFORMATION BECOMES AVAILABLE.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
   </DocumentNotes>
   <DocumentReferences>
     <Reference Type="Self">
@@ -114,19 +1080,277 @@ http://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20
       <Description>Multiple Vulnerabilities in Network Time Protocol Daemon Affecting Cisco Products: June 2016</Description>
     </Reference>
   </DocumentReferences>
-  <Vulnerability Ordinal="1" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Application and Content Networking System (ACNS) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-2054">Cisco Application and Content Networking System (ACNS) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Emergency Responder" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-4844">Cisco Emergency Responder </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IOS XR Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-5834">Cisco IOS XR Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unity Express" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-6046">Cisco Unity Express </FullProductName>
+      </Branch>
+      <Branch Name="Cisco NAC Appliance Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-6407">Cisco NAC Appliance Software </FullProductName>
+      </Branch>
+      <Branch Name="Intrusion Prevention System (IPS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-6439">Cisco Intrusion Prevention System (IPS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ACE Application Control Engine Module" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7365">Cisco ACE Application Control Engine Module </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Wide Area Application Services (WAAS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7367">Cisco Wide Area Application Services (WAAS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified MeetingPlace" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-7731">Cisco Unified MeetingPlace </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IP Interoperability and Collaboration System (IPICS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-8043">Cisco IP Interoperability and Collaboration System (IPICS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unity Connection" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-73608">Cisco Unity Connection </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-77997">Cisco TelePresence </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Physical Access Gateway " Type="Product Name">
+        <FullProductName ProductID="CVRFPID-92399">Cisco Physical Access Gateway  </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IOS XE Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-93036">Cisco IOS XE Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Video Surveillance Media Server Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-95900">Cisco Video Surveillance Media Server Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Digital Media Manager Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-95918">Cisco Digital Media Manager Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Network Analysis Module (NAM) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-96689">Cisco Network Analysis Module (NAM) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IronPort Encryption Appliance" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-96780">Cisco IronPort Encryption Appliance </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Network Admission Control Guest Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-99257">Cisco Network Admission Control Guest Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Show and Share" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-111580">Cisco Show and Share </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Identity Services Engine Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-111903">Cisco Identity Services Engine Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence Video Communication Server (VCS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-112250">Cisco TelePresence Video Communication Server (VCS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ASA CX Context-Aware Security Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-184512">Cisco ASA CX Context-Aware Security Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Security Manager (PRSM)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-184690">Cisco Prime Security Manager (PRSM) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Data Center Network Manager (DCNM)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-185359">Cisco Prime Data Center Network Manager (DCNM) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime LAN Management Solution (LMS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-188426">Cisco Prime LAN Management Solution (LMS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Communications Domain Manager" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-188989">Cisco Unified Communications Domain Manager </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Infrastructure" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190324">Cisco Prime Infrastructure </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Connected Grid Network Management System (CG-NMS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190474">Cisco Connected Grid Network Management System (CG-NMS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Meetings Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190702">Cisco WebEx Meetings Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco WebEx Node for MCS" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190707">Cisco WebEx Node for MCS </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Computing System Central Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-191687">Cisco Unified Computing System Central Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Enterprise Content Delivery System (ECDS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-192324">Cisco Enterprise Content Delivery System (ECDS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Virtualization Experience Media Engine" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-192775">Cisco Virtualization Experience Media Engine </FullProductName>
+      </Branch>
+      <Branch Name="Cisco MediaSense" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-194833">Cisco MediaSense </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified SIP Proxy" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-195223">Cisco Unified SIP Proxy </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Computing System Director" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-197112">Cisco Unified Computing System Director </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Videoscape Distribution Suite Transparent Caching (VDS TC) " Type="Product Name">
+        <FullProductName ProductID="CVRFPID-197592">Cisco Videoscape Distribution Suite Transparent Caching (VDS TC)  </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Digital Content Manager (DCM) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-197708">Cisco Digital Content Manager (DCM) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Service Catalog" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202401">Cisco Prime Service Catalog </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Nexus 1000V Switch " Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202532">Cisco Nexus 1000V Switch  </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Application Policy Infrastructure Controller (APIC)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202553">Cisco Application Policy Infrastructure Controller (APIC) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Expressway" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202683">Cisco Expressway </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Jabber Guest" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203403">Cisco Jabber Guest </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Visual Quality Experience" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203442">Cisco Visual Quality Experience </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime License Manager" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203607">Cisco Prime License Manager </FullProductName>
+      </Branch>
+      <Branch Name="Cisco onePK All-in-One Virtual Machine" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203731">Cisco onePK All-in-One Virtual Machine </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Network Services Controller" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203737">Cisco Prime Network Services Controller </FullProductName>
+      </Branch>
+      <Branch Name="Cisco TelePresence ISDN Link" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203746">Cisco TelePresence ISDN Link </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Telepresence Conductor" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203755">Cisco Telepresence Conductor </FullProductName>
+      </Branch>
+      <Branch Name="Cisco FireSIGHT System Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-205007">Cisco FireSIGHT System Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Collaboration Assurance" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-209582">Cisco Prime Collaboration Assurance </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Collaboration Provisioning" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-209583">Cisco Prime Collaboration Provisioning </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Paging Server" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210717">Cisco Paging Server </FullProductName>
+      </Branch>
+      <Branch Name="Cisco D9036 Modular Encoding Platform" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210844">Cisco D9036 Modular Encoding Platform </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Videoscape Control Suite" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210903">Cisco Videoscape Control Suite </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Virtual Topology System (VTS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-211903">Cisco Virtual Topology System (VTS) </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Nexus 3000 Series Switch" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-213561">Cisco Nexus 3000 Series Switch </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Policy Suite (CPS) Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-213864">Cisco Policy Suite (CPS) Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Hosted Collaboration Mediation Fulfillment" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-220254">Cisco Hosted Collaboration Mediation Fulfillment </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Cloud Services Platform 2100 " Type="Product Name">
+        <FullProductName ProductID="CVRFPID-220301">Cisco Cloud Services Platform 2100  </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Registered Envelope Service" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-225817">Cisco Registered Envelope Service </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Network Time Protocol CRYPTO-NAK Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz92731</ID>
     <Notes>
       <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to cause a reload of the affected ntpd process.
 
 
 
 The vulnerability is due to improper validation of packets from unknown peers. A successful exploit could allow a malicious unauthenticated peer to cause a reload of the affected ntpd process.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz92731,CSCuz92646,CSCuz92658,CSCuz92747,CSCuz92696,CSCuz92727,CSCuz92650,CSCuz96408,CSCuz92671,CSCuz92699,CSCuz92793,CSCuz92700,CSCuz92711,CSCuz92632,CSCuz92795,CSCuz92752,CSCuz92762,CSCuz92785,CSCuz92694,CSCuz92691,CSCuz92715,CSCuz92631,CSCuz92797,CSCuz92661,CSCuz92800,CSCuz92733,CSCuz92735,CSCuz92682,CSCuz92663,CSCuz92666,CSCuz92748,CSCuz92796,CSCuz92749,CSCuz98063,CSCuz92687,CSCuz92686,CSCuz92656,CSCuz92683,CSCuz92684,CSCuz92673,CSCuz92705,CSCuz92688,CSCuz92712,CSCuz92629,CSCuz92707,CSCuz92697,CSCuz92698,CSCuz92702,CSCuz92710,CSCuz92709,CSCuz92669,CSCuz92653,CSCuz92792,CSCuz92799,CSCuz92609,CSCuz92791,CSCuz92606,CSCuz92751,CSCuz92716,CSCuz92781,CSCuz92689,CSCuz92803,CSCuz92725,CSCuz92638,CSCuz92637,CSCuz92798,CSCuz92744</Note>
     </Notes>
     <CVE>CVE-2016-4957</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-188989</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-197112</ProductID>
+        <ProductID>CVRFPID-197592</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-202401</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202553</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210844</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211903</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-220301</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6407</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7731</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-93036</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
     <Remediations>
       <Remediation Type="Workaround">
-        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
 </Description>
       </Remediation>
     </Remediations>
@@ -137,20 +1361,88 @@ The vulnerability is due to improper validation of packets from unknown peers. A
       </Reference>
     </References>
   </Vulnerability>
-  <Vulnerability Ordinal="2" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="2" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Network Time Protocol Bad Authentication Demobilizes Ephemeral Associations Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz92731</ID>
     <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="3">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to cause a ephemeral association to demobilize.
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to cause a ephemeral association to demobilize.
 
 
 
 The vulnerability is due to improper validation of CRYPTO-NAK packets from ephemeral peers. A successful exploit could allow an unauthenticated, remote attacker to cause a ephemeral association to demobilize.
 </Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz92731,CSCuz92646,CSCuz92658,CSCuz92747,CSCuz92696,CSCuz92727,CSCuz92650,CSCuz96408,CSCuz92671,CSCuz92699,CSCuz92793,CSCuz92700,CSCuz92711,CSCuz92632,CSCuz92795,CSCuz92752,CSCuz92762,CSCuz92785,CSCuz92694,CSCuz92691,CSCuz92715,CSCuz92631,CSCuz92797,CSCuz92661,CSCuz92800,CSCuz92733,CSCuz92735,CSCuz92682,CSCuz92663,CSCuz92666,CSCuz92748,CSCuz92796,CSCuz92749,CSCuz98063,CSCuz92687,CSCuz92686,CSCuz92656,CSCuz92683,CSCuz92684,CSCuz92673,CSCuz92705,CSCuz92688,CSCuz92712,CSCuz92629,CSCuz92707,CSCuz92697,CSCuz92698,CSCuz92702,CSCuz92710,CSCuz92709,CSCuz92669,CSCuz92653,CSCuz92792,CSCuz92799,CSCuz92609,CSCuz92791,CSCuz92606,CSCuz92751,CSCuz92716,CSCuz92781,CSCuz92689,CSCuz92803,CSCuz92725,CSCuz92638,CSCuz92637,CSCuz92798,CSCuz92744</Note>
     </Notes>
     <CVE>CVE-2016-4953</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-188989</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-197112</ProductID>
+        <ProductID>CVRFPID-197592</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-202401</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202553</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210844</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211903</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-220301</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6407</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7731</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-93036</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
     <Remediations>
       <Remediation Type="Workaround">
-        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
 </Description>
       </Remediation>
     </Remediations>
@@ -161,20 +1453,88 @@ The vulnerability is due to improper validation of CRYPTO-NAK packets from ephem
       </Reference>
     </References>
   </Vulnerability>
-  <Vulnerability Ordinal="3" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="3" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Network Time Protocol Processing Spoofed Server Packets Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz92731</ID>
     <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="5">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to affect some peer variables.
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to affect some peer variables.
 
 
 
 The vulnerability is due to improper validation of packets from peers. A successful exploit could allow an unauthenticated, remote attacker to spoof valid peers and affect some peer variables and, for example, cause a false leap indication to be set.
 </Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz92731,CSCuz92646,CSCuz92658,CSCuz92747,CSCuz92696,CSCuz92727,CSCuz92650,CSCuz96408,CSCuz92671,CSCuz92699,CSCuz92793,CSCuz92700,CSCuz92711,CSCuz92632,CSCuz92795,CSCuz92752,CSCuz92762,CSCuz92785,CSCuz92694,CSCuz92691,CSCuz92715,CSCuz92631,CSCuz92797,CSCuz92661,CSCuz92800,CSCuz92733,CSCuz92735,CSCuz92682,CSCuz92663,CSCuz92666,CSCuz92748,CSCuz92796,CSCuz92749,CSCuz98063,CSCuz92687,CSCuz92686,CSCuz92656,CSCuz92683,CSCuz92684,CSCuz92673,CSCuz92705,CSCuz92688,CSCuz92712,CSCuz92629,CSCuz92707,CSCuz92697,CSCuz92698,CSCuz92702,CSCuz92710,CSCuz92709,CSCuz92669,CSCuz92653,CSCuz92792,CSCuz92799,CSCuz92609,CSCuz92791,CSCuz92606,CSCuz92751,CSCuz92716,CSCuz92781,CSCuz92689,CSCuz92803,CSCuz92725,CSCuz92638,CSCuz92637,CSCuz92798,CSCuz92744</Note>
     </Notes>
     <CVE>CVE-2016-4954</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-188989</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-197112</ProductID>
+        <ProductID>CVRFPID-197592</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-202401</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202553</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210844</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211903</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-220301</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6407</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7731</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-93036</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
     <Remediations>
       <Remediation Type="Workaround">
-        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
 </Description>
       </Remediation>
     </Remediations>
@@ -185,20 +1545,88 @@ The vulnerability is due to improper validation of packets from peers. A success
       </Reference>
     </References>
   </Vulnerability>
-  <Vulnerability Ordinal="4" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="4" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Network Time Protocol Autokey Association Reset Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz92731</ID>
     <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="7">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to affect peer associations.
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to affect peer associations.
 
 
 
 The vulnerability is due to improper validation of CRYPTO_NAK packets from peers. A successful exploit could allow an unauthenticated, remote attacker to clear the association's peer variables and prevent that association from working.
 </Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz92731,CSCuz92646,CSCuz92658,CSCuz92747,CSCuz92696,CSCuz92727,CSCuz92650,CSCuz96408,CSCuz92671,CSCuz92699,CSCuz92793,CSCuz92700,CSCuz92711,CSCuz92632,CSCuz92795,CSCuz92752,CSCuz92762,CSCuz92785,CSCuz92694,CSCuz92691,CSCuz92715,CSCuz92631,CSCuz92797,CSCuz92661,CSCuz92800,CSCuz92733,CSCuz92735,CSCuz92682,CSCuz92663,CSCuz92666,CSCuz92748,CSCuz92796,CSCuz92749,CSCuz98063,CSCuz92687,CSCuz92686,CSCuz92656,CSCuz92683,CSCuz92684,CSCuz92673,CSCuz92705,CSCuz92688,CSCuz92712,CSCuz92629,CSCuz92707,CSCuz92697,CSCuz92698,CSCuz92702,CSCuz92710,CSCuz92709,CSCuz92669,CSCuz92653,CSCuz92792,CSCuz92799,CSCuz92609,CSCuz92791,CSCuz92606,CSCuz92751,CSCuz92716,CSCuz92781,CSCuz92689,CSCuz92803,CSCuz92725,CSCuz92638,CSCuz92637,CSCuz92798,CSCuz92744</Note>
     </Notes>
     <CVE>CVE-2016-4955</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-188989</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-197112</ProductID>
+        <ProductID>CVRFPID-197592</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-202401</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202553</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210844</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211903</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-220301</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6407</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7731</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-93036</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
     <Remediations>
       <Remediation Type="Workaround">
-        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
 </Description>
       </Remediation>
     </Remediations>
@@ -209,19 +1637,87 @@ The vulnerability is due to improper validation of CRYPTO_NAK packets from peers
       </Reference>
     </References>
   </Vulnerability>
-  <Vulnerability Ordinal="5" xmlns="http://www.icasi.org/CVRF/schema/vuln/1.1">
+  <Vulnerability Ordinal="5" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
     <Title>Network Time Protocol Broadcast Interleave Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuz92731</ID>
     <Notes>
-      <Note Title="Summary" Type="Summary" Ordinal="9">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to change an existing broadcast client association to an interleaved symmetric mode, allowing malicious actor can then control the time or deny access to the legitimate server.
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Network Time Protocol (NTP) could allow an unauthenticated, remote attacker to change an existing broadcast client association to an interleaved symmetric mode, allowing malicious actor can then control the time or deny access to the legitimate server.
 
 
 
 The vulnerability is due to insufficient validation of the user supplied data. A successful exploit could allow an unauthenticated, remote attacker to change an existing broadcast client association to an interleaved symmetric mode, allowing malicious actor can then control the time or deny access to the legitimate server.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuz92731,CSCuz92646,CSCuz92658,CSCuz92747,CSCuz92696,CSCuz92727,CSCuz92650,CSCuz96408,CSCuz92671,CSCuz92699,CSCuz92793,CSCuz92700,CSCuz92711,CSCuz92632,CSCuz92795,CSCuz92752,CSCuz92762,CSCuz92785,CSCuz92694,CSCuz92691,CSCuz92715,CSCuz92631,CSCuz92797,CSCuz92661,CSCuz92800,CSCuz92733,CSCuz92735,CSCuz92682,CSCuz92663,CSCuz92666,CSCuz92748,CSCuz92796,CSCuz92749,CSCuz98063,CSCuz92687,CSCuz92686,CSCuz92656,CSCuz92683,CSCuz92684,CSCuz92673,CSCuz92705,CSCuz92688,CSCuz92712,CSCuz92629,CSCuz92707,CSCuz92697,CSCuz92698,CSCuz92702,CSCuz92710,CSCuz92709,CSCuz92669,CSCuz92653,CSCuz92792,CSCuz92799,CSCuz92609,CSCuz92791,CSCuz92606,CSCuz92751,CSCuz92716,CSCuz92781,CSCuz92689,CSCuz92803,CSCuz92725,CSCuz92638,CSCuz92637,CSCuz92798,CSCuz92744</Note>
     </Notes>
     <CVE>CVE-2016-4956</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111580</ProductID>
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-112250</ProductID>
+        <ProductID>CVRFPID-184512</ProductID>
+        <ProductID>CVRFPID-184690</ProductID>
+        <ProductID>CVRFPID-185359</ProductID>
+        <ProductID>CVRFPID-188426</ProductID>
+        <ProductID>CVRFPID-188989</ProductID>
+        <ProductID>CVRFPID-190324</ProductID>
+        <ProductID>CVRFPID-190474</ProductID>
+        <ProductID>CVRFPID-190702</ProductID>
+        <ProductID>CVRFPID-190707</ProductID>
+        <ProductID>CVRFPID-191687</ProductID>
+        <ProductID>CVRFPID-192324</ProductID>
+        <ProductID>CVRFPID-192775</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-197112</ProductID>
+        <ProductID>CVRFPID-197592</ProductID>
+        <ProductID>CVRFPID-197708</ProductID>
+        <ProductID>CVRFPID-202401</ProductID>
+        <ProductID>CVRFPID-202532</ProductID>
+        <ProductID>CVRFPID-202553</ProductID>
+        <ProductID>CVRFPID-202683</ProductID>
+        <ProductID>CVRFPID-203403</ProductID>
+        <ProductID>CVRFPID-203442</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-203731</ProductID>
+        <ProductID>CVRFPID-203737</ProductID>
+        <ProductID>CVRFPID-203746</ProductID>
+        <ProductID>CVRFPID-203755</ProductID>
+        <ProductID>CVRFPID-205007</ProductID>
+        <ProductID>CVRFPID-2054</ProductID>
+        <ProductID>CVRFPID-209582</ProductID>
+        <ProductID>CVRFPID-209583</ProductID>
+        <ProductID>CVRFPID-210717</ProductID>
+        <ProductID>CVRFPID-210844</ProductID>
+        <ProductID>CVRFPID-210903</ProductID>
+        <ProductID>CVRFPID-211903</ProductID>
+        <ProductID>CVRFPID-213561</ProductID>
+        <ProductID>CVRFPID-213864</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-220301</ProductID>
+        <ProductID>CVRFPID-225817</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-5834</ProductID>
+        <ProductID>CVRFPID-6046</ProductID>
+        <ProductID>CVRFPID-6407</ProductID>
+        <ProductID>CVRFPID-6439</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-7365</ProductID>
+        <ProductID>CVRFPID-7367</ProductID>
+        <ProductID>CVRFPID-7731</ProductID>
+        <ProductID>CVRFPID-77997</ProductID>
+        <ProductID>CVRFPID-8043</ProductID>
+        <ProductID>CVRFPID-92399</ProductID>
+        <ProductID>CVRFPID-93036</ProductID>
+        <ProductID>CVRFPID-95900</ProductID>
+        <ProductID>CVRFPID-95918</ProductID>
+        <ProductID>CVRFPID-96689</ProductID>
+        <ProductID>CVRFPID-96780</ProductID>
+        <ProductID>CVRFPID-99257</ProductID>
+      </Status>
+    </ProductStatuses>
     <Remediations>
       <Remediation Type="Workaround">
-        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://tools.cisco.com/bugsearch/bug/BUGID"].
+        <Description>Any workarounds that address one or more of these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
 </Description>
       </Remediation>
     </Remediations>
