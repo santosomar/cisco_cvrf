@@ -1,4 +1,4 @@
-# Cisco Common Vulnerability and Exposures (CVEs)
+# Cisco Common Vulnerability Reporting Framework (CVRF) Files
 This is a repository by [Omar Santos](https://omarsantos.io) that includes Cisco security vulnerabilities in [CVRF](http://csaf.io) format. The CVRF files in this repository were obtained automatically by custom scripts created by Omar using the [Cisco PSIRT openVuln API](https://developer.cisco.com/psirt/).
 
 ## What is Cisco PSIRT?
