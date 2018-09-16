@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Multiple Vulnerabilities in Cisco UCS Central Software</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20171129-ucs-central</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-11-28T18:28:58</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-11-29T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-11-28T18:28:58</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">Multiple vulnerabilities in the web-based management interface of Cisco UCS Central Software could allow a remote attacker to conduct a cross-site scripting (XSS) attack against a user of the affected interface or hijack a valid session ID from a user of the affected interface.
+
+For more information about these vulnerabilities, see the “Details” section of this security advisory.
+
+There are no workarounds that address these vulnerabilities.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171129-ucs-central ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171129-ucs-central"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">These vulnerabilities affect all releases of Cisco UCS Central Software prior to the first fixed release. For information about affected software releases, consult the Cisco bug IDs at the top of this advisory.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by these vulnerabilities.</Note>
+    <Note Title="Details" Type="General" Ordinal="4">Two vulnerabilities in the web-based management interface of Cisco UCS Central Software could allow a remote attacker to conduct a cross-site scripting (XSS) attack against a user of the affected interface or hijack a valid session ID from a user of the affected interface.
+
+The vulnerabilities are not dependent on one another; exploitation of one of the vulnerabilities is not required to exploit the other vulnerability. In addition, a software release that is affected by one of the vulnerabilities may not be affected by the other vulnerability.
+
+Details about the vulnerabilities are as follows.
+  Cisco UCS Central Software Cross-Site Scripting Vulnerability
+A vulnerability in the web-based management interface of Cisco UCS Central Software could allow an authenticated, remote attacker to conduct an XSS attack against a user of the web-based management interface of the affected software.
+
+The vulnerability is due to insufficient validation of user-supplied input by the web-based management interface of the affected software. An attacker could exploit this vulnerability by persuading a user of the affected interface to click a malicious link. A successful exploit could allow the attacker to execute arbitrary script code in the context of the interface or allow the attacker to access sensitive browser-based information on the user’s system.
+
+To exploit this vulnerability, the attacker must have valid user credentials for and authenticate to the affected software.
+
+This vulnerability cannot be exploited to run persistent scripts in the web-based management interface of the affected software and, therefore, cannot be leveraged to affect users other than the targeted user.
+
+The CVE ID for this vulnerability is: CVE-2017-12348
+
+The Security Impact Rating (SIR) for this vulnerability is: Medium
+  Cisco UCS Central Software Session Fixation Vulnerability
+A vulnerability in the session management functionality of the web-based management interface of Cisco UCS Central Software could allow an unauthenticated, remote attacker to hijack a valid session ID from a user of the web-based management interface of the affected software.
+
+The vulnerability exists because the affected software does not assign a new session ID to a user session when a user authenticates to the software. An attacker could exploit this vulnerability by using a hijacked session ID to connect to the affected software through the web-based management interface of the software. A successful exploit could allow the attacker to hijack an authenticated user’s browser session.
+
+The CVE ID for this vulnerability is: CVE-2017-12349
+
+The SIR for this vulnerability is: Medium</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">There are no workarounds that address these vulnerabilities.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">For information about fixed software releases, consult the Cisco bug IDs at the top of this advisory.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerabilities that are described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">Cisco would like to thank Application Security Consultant Indrajith.A.N for reporting these vulnerabilities.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171129-ucs-central</URL>
+      <Description>Multiple Vulnerabilities in Cisco UCS Central Software</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20060922-understanding-xss</URL>
+      <Description>Understanding Cross-Site Scripting (XSS) Threat Vectors</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/content/CiscoAppliedMitigationBulletin/cisco-amb-20060922-understanding-xss</URL>
+      <Description>Understanding Cross-Site Scripting (XSS) Threat Vectors</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Unified Computing System Central Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-191687">Cisco Unified Computing System Central Software </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco UCS Central Software Cross-Site Scripting Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvf71978</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the web-based management interface of Cisco UCS Central Software could allow an authenticated, remote attacker to conduct an XSS attack against a user of the web-based management interface of the affected software.
+
+
+
+The vulnerability is due to insufficient validation of user-supplied input by the web-based management interface of the affected software. An attacker could exploit this vulnerability by persuading a user of the affected interface to click a malicious link. A successful exploit could allow the attacker to execute arbitrary script code in the context of the interface or allow the attacker to access sensitive browser-based information on the user&amp;rsquo;s system.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvf71978</Note>
+    </Notes>
+    <CVE>CVE-2017-12348</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-191687</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>5.4</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address these vulnerabilities.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171129-ucs-central</URL>
+        <Description>Multiple Vulnerabilities in Cisco UCS Central Software</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco UCS Central Software Session Fixation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvf71986</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the session management functionality of the web-based management interface of Cisco UCS Central Software could allow an unauthenticated, remote attacker to hijack a valid session ID from a user of the web-based management interface of the affected software.
+
+
+
+The vulnerability exists because the affected software does not assign a new session ID to a user session when a user authenticates to the software. An attacker could exploit this vulnerability by using a hijacked session ID to connect to the affected software through the web-based management interface of the software. A successful exploit could allow the attacker to hijack an authenticated user&amp;rsquo;s browser session.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvf71986</Note>
+    </Notes>
+    <CVE>CVE-2017-12349</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-191687</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>5.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address these vulnerabilities.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171129-ucs-central</URL>
+        <Description>Multiple Vulnerabilities in Cisco UCS Central Software</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

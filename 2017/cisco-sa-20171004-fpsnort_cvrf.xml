@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco Firepower Detection Engine IPv6 Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20171004-fpsnort</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-10-04T15:21:41</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-10-04T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-10-04T15:21:41</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the detection engine parsing of IPv6 packets for Cisco Firepower System Software could allow an unauthenticated, remote attacker to cause high CPU utilization or to cause a denial of service (DoS) condition because the Snort process restarts unexpectedly.
+
+The vulnerability is due to improper input validation of the fields in the IPv6 extension header packet. An attacker could exploit this vulnerability by sending a malicious IPv6 packet to the detection engine on the targeted device. An exploit could allow the attacker to cause a DoS condition if the Snort process restarts and traffic inspection is bypassed or traffic is dropped. This vulnerability is specific to IPv6 traffic only.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171004-fpsnort ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171004-fpsnort"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco Firepower System Software Releases 6.0 and later when the software has one or more file action policies configured and is running on any of the following Cisco products:
+
+3000 Series Industrial Security Appliances (ISR)
+Adaptive Security Appliance (ASA) 5500-X Series with FirePOWER Services
+Adaptive Security Appliance (ASA) 5500-X Series Next-Generation Firewalls
+Advanced Malware Protection (AMP) for Networks, 7000 Series Appliances
+Advanced Malware Protection (AMP) for Networks, 8000 Series Appliances
+FirePOWER 7000 Series Appliances
+FirePOWER 8000 Series Appliances
+Firepower Threat Defense for Integrated Services Routers (ISRs)
+Firepower 2100 Series Security Appliances
+Firepower 4100 Series Security Appliances
+Firepower 9300 Series Security Appliances
+Virtual Next-Generation Intrusion Prevention System (NGIPSv) for VMware
+
+To determine whether any file action policies are configured in Cisco Firepower System Software, administrators can do the following in the Firepower System dashboard:
+
+Choose Policies &gt; Access Control &gt; Malware and File. The dashboard displays a list of file action policies that are configured for the system.
+Click the Report icon next to a policy to see details about the current saved configuration for the policy.
+
+Each file action policy specifies a set of rules and actions that defines how to handle files that meet specific criteria. If one or more policies specify a Block Files, Block Malware, or Detect Files action, the system is vulnerable.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect Cisco Firepower System Software Releases 5.3, 5.4.0, or 5.4.1.
+
+Cisco has confirmed that this vulnerability does not affect the following Cisco products:
+
+Adaptive Security Appliance (ASA) Software
+    Firepower Management Center
+    Intrusion Prevention System (IPS) Software
+    Meraki MX Security Appliances
+    Snort IPS for Integrated Services Routers (ISRs)
+    Sourcefire 3D System Appliances</Note>
+    <Note Title="Details" Type="General" Ordinal="4">This vulnerability can cause the Snort process to restart. While the Snort process is restarting, Snort detection could be bypassed or all network traffic inspection could fail. The behavior is platform and configuration dependent.
+
+Firepower Platforms
+
+Firepower platforms will exhibit the following behaviors:
+
+Passive and bypass interfaces will bypass Snort inspection and traffic will pass through the device.
+Routed, switched, and non-bypass interfaces will drop the traffic and it will not pass through the device.
+Firepower Threat Defense (FTD) will drop the traffic and it will not pass through the device.
+
+Adaptive Security Appliance (ASA) 5500-X Series with FirePOWER Services
+
+If the ASA release supports the CLI command sfr fail-open and this command is configured, traffic will bypass Snort and not be dropped.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:  https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC: https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+
+Fixed Releases
+
+Customers should upgrade to an appropriate release as indicated in the table in this section. To help ensure a complete upgrade solution, consider that this advisory is part of a collection that includes the following advisories:
+
+cisco-sa-20171004-fpsnort ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171004-fpsnort"]: Cisco Firepower Detection Engine IPv6 Denial of Service Vulnerability
+cisco-sa-20171004-ftd ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171004-ftd"]: Cisco Firepower Detection Engine SSL Decryption Memory Consumption Denial of Service Vulnerability
+
+In the following table, the left column lists major releases of Cisco software. The center column indicates whether a major release is affected by the vulnerability described in this advisory and the first minor release that includes the fix for this vulnerability. The right column indicates whether a major release is affected by all the vulnerabilities described in this collection of advisories and the current recommended release for those vulnerabilities.
+
+                                Cisco Firepower System Software                             First Fixed Release for              This Vulnerability                              Recommended Release for              This Vulnerability and All Vulnerabilities Described in the Collection of Advisories                                                 Prior to 6.0
+              Not vulnerable
+              N/A
+                                  6.0.1
+              6.0.1.4 (future release)
+              6.2.0.2
+                                  6.1.0              6.1.0.3              6.1.0.6 (future release) or 6.2.0.2                                   6.2.0              6.2.0.2              6.2.0.3                                   6.2.1              Vulnerable; migrate to 6.2.2
+              6.2.2                                  6.2.2              Not vulnerable
+              6.2.2
+To upgrade the Firepower System Software, use one of the following methods:
+
+When using Firepower Management Center (FMC) to upgrade the software, customers should install the fixed release of the software and reapply the access control policy after the installation. The Snort version installed is dependent on the FMC software release.
+When using Adaptive Security Device Manager (ASDM) or Firepower Device Manager (FDM) to upgrade the software, customers should upgrade to the fixed release of the software and reapply the access control policy after the installation.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was found during resolution of a Cisco TAC support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171004-fpsnort</URL>
+      <Description>Cisco Firepower Detection Engine IPv6 Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco FireSIGHT System Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-205007">Cisco FireSIGHT System Software </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco Firepower Detection Engine IPv6 Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvd34776</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the detection engine parsing of IPv6 packets for Cisco Firepower System Software could allow an unauthenticated, remote attacker to cause high CPU utilization or to cause a denial of service (DoS) condition because the Snort process restarts unexpectedly.
+
+The vulnerability is due to improper input validation of the fields in the IPv6 extension header packet. An attacker could exploit this vulnerability by sending a malicious IPv6 packet to the detection engine on the targeted device. An exploit could allow the attacker to cause a DoS condition if the Snort process restarts and traffic inspection is bypassed or traffic is dropped. This vulnerability is specific to IPv6 traffic only.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvd34776</Note>
+    </Notes>
+    <CVE>CVE-2017-12244</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-205007</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>8.6</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171004-fpsnort</URL>
+        <Description>Cisco Firepower Detection Engine IPv6 Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

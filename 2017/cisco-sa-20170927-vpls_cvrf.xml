@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco IOS Software for Cisco Catalyst 6800 Series Switches VPLS Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170927-vpls</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-09-27T14:55:34</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-09-27T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-09-27T14:55:34</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Virtual Private LAN Service (VPLS) code of Cisco IOS Software for Cisco Catalyst 6800 Series Switches could allow an unauthenticated, adjacent attacker to cause a C6800-16P10G or C6800-16P10G-XL type line card to crash, resulting in a denial of service (DoS) condition.
+
+The vulnerability is due to a memory management issue in the affected software. An attacker could exploit this vulnerability by creating a large number of VPLS-generated MAC entries in the MAC address table of an affected device. A successful exploit could allow the attacker to cause a C6800-16P10G or C6800-16P10G-XL type line card to crash, resulting in a DoS condition.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-vpls ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-vpls"]
+
+This advisory is part of the September 27, 2017, release of the Cisco IOS and IOS XE Software Security Advisory Bundled Publication, which includes 12 Cisco Security Advisories that describe 13 vulnerabilities. For a complete list of the advisories and links to them, see Cisco Event Response: September 2017 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication ["https://tools.cisco.com/security/center/viewErp.x?alertId=ERP-63410"].</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco Catalyst 6800 Series Switches that are running a vulnerable release of Cisco IOS Software and have a Cisco C6800-16P10G or C6800-16P10G-XL line card in use with Supervisor Engine 6T. To be vulnerable, the device must also be configured with VPLS and the C6800-16P10G or C6800-16P10G-XL line card needs to be the core-facing MPLS interfaces.
+
+For information about which Cisco IOS Software releases are vulnerable, see the Fixed Software ["#fixed"] section of this advisory.
+
+To determine whether a device is configured for VPLS, administrators can use the show vfi privileged EXEC command in the CLI. The following example shows the output of the command for a device that is configured with VPLS and has an active circuit, as indicated by the VFI state up value:
+
+
+VFI name: VPLS-2, state: up
+   VPN ID: 100     Local attachment circuits:       Vlan2     Neighbors connected via pseudowires:     Peer Address     VC ID     Split-horizon     10.1.1.1          2             Y
+
+A device that is not configured with VPLS will return different output.
+  Determining the Cisco IOS Software Release
+To determine which Cisco IOS Software release is running on a device, administrators can log in to the device, use the show version command in the CLI, and then refer to the system banner that appears. If the device is running Cisco IOS Software, the system banner displays text similar to Cisco Internetwork Operating System Software or Cisco IOS Software. The banner also displays the installed image name in parentheses, followed by the Cisco IOS Software release number and release name. Some Cisco devices do not support the show version command or may provide different output.
+
+The following example shows the output of the command for a device that is running Cisco IOS Software Release 15.5(2)T1 and has an installed image name of C2951-UNIVERSALK9-M:
+
+
+Router&gt; show version
+  Cisco IOS Software, C2951 Software (C2951-UNIVERSALK9-M), Version 15.5(2)T1, RELEASE SOFTWARE (fc1)  Technical Support: http://www.cisco.com/techsupport  Copyright (c) 1986-2015 by Cisco Systems, Inc.  Compiled Mon 22-Jun-15 09:32 by prod_rel_team  .  .  .
+
+For information about the naming and numbering conventions for Cisco IOS Software releases, see White Paper: Cisco IOS and NX-OS Software Reference Guide ["https://www.cisco.com/c/en/us/about/security-center/ios-nx-os-reference-guide.html"].</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect Cisco IOS XE Software, Cisco IOS XR Software, or Cisco NX-OS Software.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="4">Exploitation of this vulnerability could cause the line card to crash and generate the following error in the logs:
+
+
+%SYS-DFC1-6-STACKLOW: Stack for process earl_ntfy_dm_thread running low, 0/26000
+
+The crashinfo file, when comparing the earl_ntfy_dm_thread value and the output of the Current Process Stack, may indicate that the bytes used are equal to the bytes available. The following example shows a line card crashinfo file generated after exploitation of this vulnerability:
+
+
+513E.E.36-6800-3#$crashinfo_20120131-140600-UTC | begin "earl_ntfy_dm_thread
+Pid 375: Process "earl_ntfy_dm_thread "  stack 0x1CCCDA7C savedsp 0x121C8A34  Flags: analyze prefers_new process_arg_valid     &lt;output omitted&gt;         PC : 088827A8  MSR: 00029200     ---- Current Process Stack (0x6590 bytes used, out of 0x6590 available) ----</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+                        Cisco IOS Software
+To help customers determine their exposure to vulnerabilities in Cisco IOS Software, Cisco provides a tool, the Cisco IOS Software Checker ["https://tools.cisco.com/security/center/selectIOSVersion.x"], that identifies any Cisco Security Advisories that impact a specific Cisco IOS Software release and the earliest release that fixes the vulnerabilities described in each advisory (“First Fixed”). If applicable, the tool also returns the earliest release that fixes all the vulnerabilities described in all the advisories identified (“Combined First Fixed”).
+
+Customers can use this tool to perform the following tasks:
+
+Initiate a search by choosing one or more releases from a drop-down menu or uploading a file from a local system for the tool to parse
+Enter the output of the show version command for the tool to parse
+Create a custom search by including all previously published Cisco Security Advisories, a specific advisory, or all advisories in the most recent bundled publication
+
+To determine whether a release is affected by any published Cisco Security Advisory, use the Cisco IOS Software Checker ["https://tools.cisco.com/security/center/selectIOSVersion.x"] on Cisco.com or enter a Cisco IOS Software release—for example, 15.1(4)M2—in the following field:</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was found while handling customer support requests.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-vpls</URL>
+      <Description>Cisco IOS Software for Cisco Catalyst 6800 Series Switches VPLS Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20170927-bundle</URL>
+      <Description>Summary of the Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, September 27, 2017</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-63410</URL>
+      <Description>Cisco Event Response: September 2017 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+    <Reference>
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20170927-bundle</URL>
+      <Description>Summary of the Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, September 27, 2017</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-63410</URL>
+      <Description>Cisco Event Response: September 2017 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="IOS" Type="Product Name">
+        <Branch Name="15.1M" Type="Product Version">
+          <Branch Name="15.1(4)M12c" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-233143">Cisco IOS 15.1M 15.1(4)M12c</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SG" Type="Product Version">
+          <Branch Name="15.1(2)SG8a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-233796">Cisco IOS 15.1SG 15.1(2)SG8a</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SY" Type="Product Version">
+          <Branch Name="15.1(1)SY" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-112489">Cisco IOS 15.1SY 15.1(1)SY</FullProductName>
+          </Branch>
+          <Branch Name="15.1(1)SY1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-115285">Cisco IOS 15.1SY 15.1(1)SY1</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-184932">Cisco IOS 15.1SY 15.1(2)SY</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-188061">Cisco IOS 15.1SY 15.1(2)SY1</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-189219">Cisco IOS 15.1SY 15.1(2)SY2</FullProductName>
+          </Branch>
+          <Branch Name="15.1(1)SY2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-191635">Cisco IOS 15.1SY 15.1(1)SY2</FullProductName>
+          </Branch>
+          <Branch Name="15.1(1)SY3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-194944">Cisco IOS 15.1SY 15.1(1)SY3</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-198059">Cisco IOS 15.1SY 15.1(2)SY3</FullProductName>
+          </Branch>
+          <Branch Name="15.1(1)SY4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-198426">Cisco IOS 15.1SY 15.1(1)SY4</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-201019">Cisco IOS 15.1SY 15.1(2)SY4</FullProductName>
+          </Branch>
+          <Branch Name="15.1(1)SY5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204109">Cisco IOS 15.1SY 15.1(1)SY5</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204110">Cisco IOS 15.1SY 15.1(2)SY5</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY4a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204832">Cisco IOS 15.1SY 15.1(2)SY4a</FullProductName>
+          </Branch>
+          <Branch Name="15.1(1)SY6" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209043">Cisco IOS 15.1SY 15.1(1)SY6</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY6" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209044">Cisco IOS 15.1SY 15.1(2)SY6</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY7" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-210406">Cisco IOS 15.1SY 15.1(2)SY7</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY8" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214052">Cisco IOS 15.1SY 15.1(2)SY8</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY9" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220440">Cisco IOS 15.1SY 15.1(2)SY9</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)SY10" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222650">Cisco IOS 15.1SY 15.1(2)SY10</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="12.4JAN" Type="Product Version">
+          <Branch Name="12.4(25e)JAN2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-192702">Cisco IOS 12.4JAN 12.4(25e)JAN2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.2SY" Type="Product Version">
+          <Branch Name="15.2(1)SY" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-192726">Cisco IOS 15.2SY 15.2(1)SY</FullProductName>
+          </Branch>
+          <Branch Name="15.2(1)SY1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204828">Cisco IOS 15.2SY 15.2(1)SY1</FullProductName>
+          </Branch>
+          <Branch Name="15.2(1)SY0a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209063">Cisco IOS 15.2SY 15.2(1)SY0a</FullProductName>
+          </Branch>
+          <Branch Name="15.2(1)SY2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209064">Cisco IOS 15.2SY 15.2(1)SY2</FullProductName>
+          </Branch>
+          <Branch Name="15.2(2)SY" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209065">Cisco IOS 15.2SY 15.2(2)SY</FullProductName>
+          </Branch>
+          <Branch Name="15.2(1)SY1a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209439">Cisco IOS 15.2SY 15.2(1)SY1a</FullProductName>
+          </Branch>
+          <Branch Name="15.2(2)SY1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-211976">Cisco IOS 15.2SY 15.2(2)SY1</FullProductName>
+          </Branch>
+          <Branch Name="15.2(2)SY2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214053">Cisco IOS 15.2SY 15.2(2)SY2</FullProductName>
+          </Branch>
+          <Branch Name="15.2(1)SY3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-216259">Cisco IOS 15.2SY 15.2(1)SY3</FullProductName>
+          </Branch>
+          <Branch Name="15.2(1)SY4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222651">Cisco IOS 15.2SY 15.2(1)SY4</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVG" Type="Product Version">
+          <Branch Name="15.1(3)SVG3d" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232957">Cisco IOS 15.1SVG 15.1(3)SVG3d</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.0SQD" Type="Product Version">
+          <Branch Name="15.0(2)SQD8" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232850">Cisco IOS 15.0SQD 15.0(2)SQD8</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVI" Type="Product Version">
+          <Branch Name="15.1(3)SVI1b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-238577">Cisco IOS 15.1SVI 15.1(3)SVI1b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.3SY" Type="Product Version">
+          <Branch Name="15.3(1)SY" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209532">Cisco IOS 15.3SY 15.3(1)SY</FullProductName>
+          </Branch>
+          <Branch Name="15.3(0)SY" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212701">Cisco IOS 15.3SY 15.3(0)SY</FullProductName>
+          </Branch>
+          <Branch Name="15.3(1)SY1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-216258">Cisco IOS 15.3SY 15.3(1)SY1</FullProductName>
+          </Branch>
+          <Branch Name="15.3(1)SY2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220444">Cisco IOS 15.3SY 15.3(1)SY2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.6SP" Type="Product Version">
+          <Branch Name="15.6(2)SP3b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-231824">Cisco IOS 15.6SP 15.6(2)SP3b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.4SY" Type="Product Version">
+          <Branch Name="15.4(1)SY" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217807">Cisco IOS 15.4SY 15.4(1)SY</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVM" Type="Product Version">
+          <Branch Name="15.1(3)SVM3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-235859">Cisco IOS 15.1SVM 15.1(3)SVM3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVK" Type="Product Version">
+          <Branch Name="15.1(3)SVK4b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-236199">Cisco IOS 15.1SVK 15.1(3)SVK4b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVN" Type="Product Version">
+          <Branch Name="15.1(3)SVN2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-235860">Cisco IOS 15.1SVN 15.1(3)SVN2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVO" Type="Product Version">
+          <Branch Name="15.1(3)SVO1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-236836">Cisco IOS 15.1SVO 15.1(3)SVO1</FullProductName>
+          </Branch>
+        </Branch>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco IOS Software for Cisco Catalyst 6800 Series Switches VPLS Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCva61927</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Virtual Private LAN Service (VPLS) code of Cisco IOS Software for Cisco Catalyst 6800 Series Switches could allow an unauthenticated, adjacent attacker to cause a C6800-16P10G or C6800-16P10G-XL type line card to crash, resulting in a denial of service (DoS) condition.
+
+The vulnerability is due to a memory management issue in the affected software. An attacker could exploit this vulnerability by creating a large number of VPLS-generated MAC entries in the MAC address table of an affected device. A successful exploit could allow the attacker to cause a C6800-16P10G or C6800-16P10G-XL type line card to crash, resulting in a DoS condition.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCva61927</Note>
+    </Notes>
+    <CVE>CVE-2017-12238</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-112489</ProductID>
+        <ProductID>CVRFPID-115285</ProductID>
+        <ProductID>CVRFPID-184932</ProductID>
+        <ProductID>CVRFPID-188061</ProductID>
+        <ProductID>CVRFPID-189219</ProductID>
+        <ProductID>CVRFPID-191635</ProductID>
+        <ProductID>CVRFPID-192702</ProductID>
+        <ProductID>CVRFPID-192726</ProductID>
+        <ProductID>CVRFPID-194944</ProductID>
+        <ProductID>CVRFPID-198059</ProductID>
+        <ProductID>CVRFPID-198426</ProductID>
+        <ProductID>CVRFPID-201019</ProductID>
+        <ProductID>CVRFPID-204109</ProductID>
+        <ProductID>CVRFPID-204110</ProductID>
+        <ProductID>CVRFPID-204828</ProductID>
+        <ProductID>CVRFPID-204832</ProductID>
+        <ProductID>CVRFPID-209043</ProductID>
+        <ProductID>CVRFPID-209044</ProductID>
+        <ProductID>CVRFPID-209063</ProductID>
+        <ProductID>CVRFPID-209064</ProductID>
+        <ProductID>CVRFPID-209065</ProductID>
+        <ProductID>CVRFPID-209439</ProductID>
+        <ProductID>CVRFPID-209532</ProductID>
+        <ProductID>CVRFPID-210406</ProductID>
+        <ProductID>CVRFPID-211976</ProductID>
+        <ProductID>CVRFPID-212701</ProductID>
+        <ProductID>CVRFPID-214052</ProductID>
+        <ProductID>CVRFPID-214053</ProductID>
+        <ProductID>CVRFPID-216258</ProductID>
+        <ProductID>CVRFPID-216259</ProductID>
+        <ProductID>CVRFPID-217807</ProductID>
+        <ProductID>CVRFPID-220440</ProductID>
+        <ProductID>CVRFPID-220444</ProductID>
+        <ProductID>CVRFPID-222650</ProductID>
+        <ProductID>CVRFPID-222651</ProductID>
+        <ProductID>CVRFPID-231824</ProductID>
+        <ProductID>CVRFPID-232850</ProductID>
+        <ProductID>CVRFPID-232957</ProductID>
+        <ProductID>CVRFPID-233143</ProductID>
+        <ProductID>CVRFPID-233796</ProductID>
+        <ProductID>CVRFPID-235859</ProductID>
+        <ProductID>CVRFPID-235860</ProductID>
+        <ProductID>CVRFPID-236199</ProductID>
+        <ProductID>CVRFPID-236836</ProductID>
+        <ProductID>CVRFPID-238577</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>7.4</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-vpls</URL>
+        <Description>Cisco IOS Software for Cisco Catalyst 6800 Series Switches VPLS Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

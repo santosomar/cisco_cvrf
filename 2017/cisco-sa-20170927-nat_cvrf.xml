@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco IOS Software Network Address Translation Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170927-nat</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-09-27T14:39:02</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-09-27T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-09-27T14:39:02</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the implementation of Network Address Translation (NAT) functionality in Cisco IOS Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.
+
+The vulnerability is due to the improper translation of H.323 messages that use the Registration, Admission, and Status (RAS) protocol and are sent to an affected device via IPv4 packets. An attacker could exploit this vulnerability by sending a crafted H.323 RAS packet through an affected device. A successful exploit could allow the attacker to cause the affected device to crash and reload, resulting in a DoS condition.
+
+Cisco has released software updates that address this vulnerability. There is a workaround that addresses this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-nat ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-nat"]
+
+This advisory is part of the September 27, 2017, release of the Cisco IOS and IOS XE Software Security Advisory Bundled Publication, which includes 12 Cisco Security Advisories that describe 13 vulnerabilities. For a complete list of the advisories and links to them, see Cisco Event Response: September 2017 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication ["https://tools.cisco.com/security/center/viewErp.x?alertId=ERP-63410"].</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco devices that meet all the following criteria:
+
+The device is running a vulnerable release of Cisco IOS Software. For information about which Cisco IOS Software releases are vulnerable, see the Fixed Software ["#fixed"] section of this advisory.
+The device is configured to perform NAT.
+The device is configured to use an application layer gateway with NAT (NAT ALG) for H.323 RAS messages. By default, a NAT ALG is enabled for H.323 RAS messages.
+
+This vulnerability does not affect devices that are configured to perform NAT via the NAT Virtual Interface feature or the Cisco Easy VPN Remote client feature of Cisco IOS Software.
+  Assessing the NAT Configuration
+To assess whether a device is configured to perform NAT, administrators can determine whether NAT is active on the device (preferred) or NAT commands are present in the device configuration.
+
+To determine whether NAT is active on a device, administrators can log in to the device and issue the show ip nat statistics command in the CLI. If NAT is active, the Outside interfaces and Inside interfaces sections of the command output will include at least one interface.
+
+The following example shows the output of the show ip nat statistics command for a device where NAT is active:
+
+
+Router# show ip nat statistics
+  Total active translations: 0 (0 static, 0 dynamic; 0 extended)  Peak translations: 10, occurred 00:24:01 ago  Outside interfaces:    FastEthernet0/0  Inside interfaces:     FastEthernet0/1  Hits: 134280  Misses: 0  CEF Translated packets: 134270, CEF Punted packets: 10  Expired translations: 11  Dynamic mappings:  -- Inside Source  [Id: 1] access-list NET-192.168.20.0_24 pool POOL-NET-192.168.1.0_24 refcount 0   pool POOL-NET-192.168.1.0_24: netmask 255.255.255.0  start 192.168.1.120 end 192.168.1.128  type generic, total addresses 9, allocated 0 (0%), misses 0    Total doors: 0  Appl doors: 0  Normal doors: 0  Queued Packets: 0  Router#
+
+If the output of the show ip nat statistics command does not list any interfaces, NAT is not active on the device.
+
+Alternatively, administrators can determine whether NAT is active on a device by issuing the show running-config command in the CLI and assessing whether NAT commands are present in the device configuration. If NAT is active on the device, the output of the show running-config command will include the ip nat inside and ip nat outside interface commands.
+  Determining Whether a NAT ALG Is Enabled for H.323 RAS
+By default, a NAT ALG is enabled for H.323 RAS messages and the NAT ALG does not appear in the running configuration information for a device.
+
+To determine the status of the NAT ALG for H.323 RAS messages, administrators can log in to the device and issue the show running-config | include ip nat service ras command in the CLI, for example:
+
+
+Router# show running-config | include ip nat service ras
+  no ip nat service ras  Router#
+
+In the preceding example, the NAT ALG is disabled for H.323 RAS messages, as indicated by the no ip nat service ras output.
+
+If there is no output for the show running-config | include ip nat service ras command, the NAT ALG is enabled for H.323 RAS messages.
+  Determining the Cisco IOS Software Release
+To determine which Cisco IOS Software release is running on a device, administrators can log in to the device, use the show version command in the CLI, and then refer to the system banner that appears. If the device is running Cisco IOS Software, the system banner displays text similar to Cisco Internetwork Operating System Software or Cisco IOS Software. The banner also displays the installed image name in parentheses, followed by the Cisco IOS Software release number and release name. Some Cisco devices do not support the show version command or may provide different output.
+
+The following example shows the output of the command for a device that is running Cisco IOS Software Release 15.5(2)T1 and has an installed image name of C2951-UNIVERSALK9-M:
+
+
+Router&gt; show version
+  Cisco IOS Software, C2951 Software (C2951-UNIVERSALK9-M), Version 15.5(2)T1, RELEASE SOFTWARE (fc1)  Technical Support: http://www.cisco.com/techsupport  Copyright (c) 1986-2015 by Cisco Systems, Inc.  Compiled Mon 22-Jun-15 09:32 by prod_rel_team  .  .  .
+
+For information about the naming and numbering conventions for Cisco IOS Software releases, see White Paper: Cisco IOS and NX-OS Software Reference Guide ["https://www.cisco.com/c/en/us/about/security-center/ios-nx-os-reference-guide.html"].</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect devices that are running Cisco IOS Software and are configured to perform NAT via the NAT Virtual Interface feature or the Cisco Easy VPN Remote client feature.
+
+Cisco has also confirmed that this vulnerability does not affect Cisco IOS XE Software, Cisco IOS XR Software, or Cisco NX-OS Software.
+
+In addition, Cisco has confirmed that this vulnerability does not affect Cisco ASA 5500 Series Adaptive Security Appliances.</Note>
+    <Note Title="Details" Type="General" Ordinal="4">The vulnerability described in this advisory exists because the affected software does not properly translate H.323 messages that use the Registration, Admission, and Status (RAS) protocol, if the software is configured to both perform NAT and use a NAT ALG for H.323 RAS messages. An unauthenticated, remote attacker could exploit this vulnerability by sending a crafted H.323 RAS packet through an affected device, which could cause the device to crash and reload, resulting in a DoS condition.
+
+The vulnerability can be exploited only by traffic that is sent through an affected device via IPv4 packets. It cannot be exploited by traffic that terminates on an affected device. In addition, it cannot be exploited via IPv6 traffic.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">Administrators may mitigate this vulnerability by disabling the NAT ALG for H.323 RAS messages. However, disabling the NAT ALG may negatively impact normal operation of any device that sends or receives RAS traffic through the affected device and, consequently, may disrupt normal network operations. Administrators should verify that their network environment does not require use of a NAT ALG for H.323 RAS messages, before they disable this functionality. To disable use of the NAT ALG for H.323 RAS messages, administrators can use the no ip nat service ras command in global configuration mode.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+                        Cisco IOS Software
+To help customers determine their exposure to vulnerabilities in Cisco IOS Software, Cisco provides a tool, the Cisco IOS Software Checker ["https://tools.cisco.com/security/center/selectIOSVersion.x"], that identifies any Cisco Security Advisories that impact a specific Cisco IOS Software release and the earliest release that fixes the vulnerabilities described in each advisory (“First Fixed”). If applicable, the tool also returns the earliest release that fixes all the vulnerabilities described in all the advisories identified (“Combined First Fixed”).
+
+Customers can use this tool to perform the following tasks:
+
+Initiate a search by choosing one or more releases from a drop-down menu or uploading a file from a local system for the tool to parse
+Enter the output of the show version command for the tool to parse
+Create a custom search by including all previously published Cisco Security Advisories, a specific advisory, or all advisories in the most recent bundled publication
+
+To determine whether a release is affected by any published Cisco Security Advisory, use the Cisco IOS Software Checker ["https://tools.cisco.com/security/center/selectIOSVersion.x"] on Cisco.com or enter a Cisco IOS Software release—for example, 15.1(4)M2—in the following field:</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was reported to Cisco by Jason Fernandez.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-nat</URL>
+      <Description>Cisco IOS Software Network Address Translation Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20170927-bundle</URL>
+      <Description>Summary of the Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, September 27, 2017</Description>
+    </Reference>
+    <Reference>
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20170927-bundle</URL>
+      <Description>Summary of the Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, September 27, 2017</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-63410</URL>
+      <Description>Cisco Event Response: September 2017 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-63410</URL>
+      <Description>Cisco Event Response: September 2017 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="IOS" Type="Product Name">
+        <Branch Name="15.2S" Type="Product Version">
+          <Branch Name="15.2(4)S7" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209059">Cisco IOS 15.2S 15.2(4)S7</FullProductName>
+          </Branch>
+          <Branch Name="15.2(4)S8" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-210344">Cisco IOS 15.2S 15.2(4)S8</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1M" Type="Product Version">
+          <Branch Name="15.1(4)M12a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220640">Cisco IOS 15.1M 15.1(4)M12a</FullProductName>
+          </Branch>
+          <Branch Name="15.1(4)M12c" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-233143">Cisco IOS 15.1M 15.1(4)M12c</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SG" Type="Product Version">
+          <Branch Name="15.1(2)SG8a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-233796">Cisco IOS 15.1SG 15.1(2)SG8a</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.2M" Type="Product Version">
+          <Branch Name="15.2(4)M8" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-117800">Cisco IOS 15.2M 15.2(4)M8</FullProductName>
+          </Branch>
+          <Branch Name="15.2(4)M10" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-117801">Cisco IOS 15.2M 15.2(4)M10</FullProductName>
+          </Branch>
+          <Branch Name="15.2(4)M9" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-117804">Cisco IOS 15.2M 15.2(4)M9</FullProductName>
+          </Branch>
+          <Branch Name="15.2(4)M11" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-210407">Cisco IOS 15.2M 15.2(4)M11</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.3S" Type="Product Version">
+          <Branch Name="15.3(3)S6" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-193409">Cisco IOS 15.3S 15.3(3)S6</FullProductName>
+          </Branch>
+          <Branch Name="15.3(3)S7" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209093">Cisco IOS 15.3S 15.3(3)S7</FullProductName>
+          </Branch>
+          <Branch Name="15.3(3)S8" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209268">Cisco IOS 15.3S 15.3(3)S8</FullProductName>
+          </Branch>
+          <Branch Name="15.3(3)S6a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213023">Cisco IOS 15.3S 15.3(3)S6a</FullProductName>
+          </Branch>
+          <Branch Name="15.3(3)S9" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213032">Cisco IOS 15.3S 15.3(3)S9</FullProductName>
+          </Branch>
+          <Branch Name="15.3(3)S8a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220673">Cisco IOS 15.3S 15.3(3)S8a</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.4T" Type="Product Version">
+          <Branch Name="15.4(1)T4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204282">Cisco IOS 15.4T 15.4(1)T4</FullProductName>
+          </Branch>
+          <Branch Name="15.4(2)T4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209101">Cisco IOS 15.4T 15.4(2)T4</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="12.4JAN" Type="Product Version">
+          <Branch Name="12.4(25e)JAN2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-192702">Cisco IOS 12.4JAN 12.4(25e)JAN2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.2E" Type="Product Version">
+          <Branch Name="15.2(2)E3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-205672">Cisco IOS 15.2E 15.2(2)E3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.4S" Type="Product Version">
+          <Branch Name="15.4(3)S3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-205670">Cisco IOS 15.4S 15.4(3)S3</FullProductName>
+          </Branch>
+          <Branch Name="15.4(1)S4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209095">Cisco IOS 15.4S 15.4(1)S4</FullProductName>
+          </Branch>
+          <Branch Name="15.4(2)S4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209097">Cisco IOS 15.4S 15.4(2)S4</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)S4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209099">Cisco IOS 15.4S 15.4(3)S4</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)S5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-211297">Cisco IOS 15.4S 15.4(3)S5</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)S6" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213794">Cisco IOS 15.4S 15.4(3)S6</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)S7" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220445">Cisco IOS 15.4S 15.4(3)S7</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)S6a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220675">Cisco IOS 15.4S 15.4(3)S6a</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.3M" Type="Product Version">
+          <Branch Name="15.3(3)M6" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-198065">Cisco IOS 15.3M 15.3(3)M6</FullProductName>
+          </Branch>
+          <Branch Name="15.3(3)M7" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209091">Cisco IOS 15.3M 15.3(3)M7</FullProductName>
+          </Branch>
+          <Branch Name="15.3(3)M8" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209455">Cisco IOS 15.3M 15.3(3)M8</FullProductName>
+          </Branch>
+          <Branch Name="15.3(3)M8a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220650">Cisco IOS 15.3M 15.3(3)M8a</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.4M" Type="Product Version">
+          <Branch Name="15.4(3)M3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-205721">Cisco IOS 15.4M 15.4(3)M3</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209094">Cisco IOS 15.4M 15.4(3)M4</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-211618">Cisco IOS 15.4M 15.4(3)M5</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M6" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214166">Cisco IOS 15.4M 15.4(3)M6</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M6a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220674">Cisco IOS 15.4M 15.4(3)M6a</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M7a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-225668">Cisco IOS 15.4M 15.4(3)M7a</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.5S" Type="Product Version">
+          <Branch Name="15.5(2)S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-200487">Cisco IOS 15.5S 15.5(2)S</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204901">Cisco IOS 15.5S 15.5(3)S</FullProductName>
+          </Branch>
+          <Branch Name="15.5(1)S2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209102">Cisco IOS 15.5S 15.5(1)S2</FullProductName>
+          </Branch>
+          <Branch Name="15.5(1)S3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209103">Cisco IOS 15.5S 15.5(1)S3</FullProductName>
+          </Branch>
+          <Branch Name="15.5(2)S1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209104">Cisco IOS 15.5S 15.5(2)S1</FullProductName>
+          </Branch>
+          <Branch Name="15.5(2)S2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209105">Cisco IOS 15.5S 15.5(2)S2</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)S1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-210129">Cisco IOS 15.5S 15.5(3)S1</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)S1a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-211603">Cisco IOS 15.5S 15.5(3)S1a</FullProductName>
+          </Branch>
+          <Branch Name="15.5(2)S3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-211751">Cisco IOS 15.5S 15.5(2)S3</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)S2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212127">Cisco IOS 15.5S 15.5(3)S2</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)S0a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213000">Cisco IOS 15.5S 15.5(3)S0a</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)S3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213594">Cisco IOS 15.5S 15.5(3)S3</FullProductName>
+          </Branch>
+          <Branch Name="15.5(1)S4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214479">Cisco IOS 15.5S 15.5(1)S4</FullProductName>
+          </Branch>
+          <Branch Name="15.5(2)S4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-216577">Cisco IOS 15.5S 15.5(2)S4</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)S4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-218997">Cisco IOS 15.5S 15.5(3)S4</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)S5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-223085">Cisco IOS 15.5S 15.5(3)S5</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVG" Type="Product Version">
+          <Branch Name="15.1(3)SVG3d" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232957">Cisco IOS 15.1SVG 15.1(3)SVG3d</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.5T" Type="Product Version">
+          <Branch Name="15.5(2)T" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-205517">Cisco IOS 15.5T 15.5(2)T</FullProductName>
+          </Branch>
+          <Branch Name="15.5(1)T2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209109">Cisco IOS 15.5T 15.5(1)T2</FullProductName>
+          </Branch>
+          <Branch Name="15.5(1)T3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209110">Cisco IOS 15.5T 15.5(1)T3</FullProductName>
+          </Branch>
+          <Branch Name="15.5(2)T1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209111">Cisco IOS 15.5T 15.5(2)T1</FullProductName>
+          </Branch>
+          <Branch Name="15.5(2)T2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209112">Cisco IOS 15.5T 15.5(2)T2</FullProductName>
+          </Branch>
+          <Branch Name="15.5(2)T3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-211408">Cisco IOS 15.5T 15.5(2)T3</FullProductName>
+          </Branch>
+          <Branch Name="15.5(2)T4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213795">Cisco IOS 15.5T 15.5(2)T4</FullProductName>
+          </Branch>
+          <Branch Name="15.5(1)T4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214480">Cisco IOS 15.5T 15.5(1)T4</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.2EA" Type="Product Version">
+          <Branch Name="15.2(3)EA1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209052">Cisco IOS 15.2EA 15.2(3)EA1</FullProductName>
+          </Branch>
+          <Branch Name="15.2(4a)EA5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-224700">Cisco IOS 15.2EA 15.2(4a)EA5</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.5M" Type="Product Version">
+          <Branch Name="15.5(3)M" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-200509">Cisco IOS 15.5M 15.5(3)M</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)M1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209360">Cisco IOS 15.5M 15.5(3)M1</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)M0a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209936">Cisco IOS 15.5M 15.5(3)M0a</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)M2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-211825">Cisco IOS 15.5M 15.5(3)M2</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)M2a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213633">Cisco IOS 15.5M 15.5(3)M2a</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)M3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213789">Cisco IOS 15.5M 15.5(3)M3</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)M4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-218996">Cisco IOS 15.5M 15.5(3)M4</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)M4a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-221093">Cisco IOS 15.5M 15.5(3)M4a</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)M4b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222989">Cisco IOS 15.5M 15.5(3)M4b</FullProductName>
+          </Branch>
+          <Branch Name="15.5(3)M4c" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-223189">Cisco IOS 15.5M 15.5(3)M4c</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="12.4JAP" Type="Product Version">
+          <Branch Name="12.4(25e)JAP1n" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212115">Cisco IOS 12.4JAP 12.4(25e)JAP1n</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.0SQD" Type="Product Version">
+          <Branch Name="15.0(2)SQD7" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-227364">Cisco IOS 15.0SQD 15.0(2)SQD7</FullProductName>
+          </Branch>
+          <Branch Name="15.0(2)SQD8" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232850">Cisco IOS 15.0SQD 15.0(2)SQD8</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.6S" Type="Product Version">
+          <Branch Name="15.6(1)S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204822">Cisco IOS 15.6S 15.6(1)S</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209113">Cisco IOS 15.6S 15.6(2)S</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)S1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-211984">Cisco IOS 15.6S 15.6(2)S1</FullProductName>
+          </Branch>
+          <Branch Name="15.6(1)S1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212407">Cisco IOS 15.6S 15.6(1)S1</FullProductName>
+          </Branch>
+          <Branch Name="15.6(1)S2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214161">Cisco IOS 15.6S 15.6(1)S2</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)S2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-216961">Cisco IOS 15.6S 15.6(2)S2</FullProductName>
+          </Branch>
+          <Branch Name="15.6(1)S3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222931">Cisco IOS 15.6S 15.6(1)S3</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)S3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-226076">Cisco IOS 15.6S 15.6(2)S3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVI" Type="Product Version">
+          <Branch Name="15.1(3)SVI1b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-238577">Cisco IOS 15.1SVI 15.1(3)SVI1b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.6T" Type="Product Version">
+          <Branch Name="15.6(1)T" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-205516">Cisco IOS 15.6T 15.6(1)T</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)T" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209115">Cisco IOS 15.6T 15.6(2)T</FullProductName>
+          </Branch>
+          <Branch Name="15.6(1)T0a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212118">Cisco IOS 15.6T 15.6(1)T0a</FullProductName>
+          </Branch>
+          <Branch Name="15.6(1)T1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212445">Cisco IOS 15.6T 15.6(1)T1</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)T1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214938">Cisco IOS 15.6T 15.6(2)T1</FullProductName>
+          </Branch>
+          <Branch Name="15.6(1)T2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-216215">Cisco IOS 15.6T 15.6(1)T2</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)T0a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-216239">Cisco IOS 15.6T 15.6(2)T0a</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)T2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-216962">Cisco IOS 15.6T 15.6(2)T2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.3JBB" Type="Product Version">
+          <Branch Name="15.3(3)JBB6a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213770">Cisco IOS 15.3JBB 15.3(3)JBB6a</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.3JNC" Type="Product Version">
+          <Branch Name="15.3(3)JNC4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-225662">Cisco IOS 15.3JNC 15.3(3)JNC4</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.5XB" Type="Product Version">
+          <Branch Name="15.5(2)XB" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213002">Cisco IOS 15.5XB 15.5(2)XB</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.6SP" Type="Product Version">
+          <Branch Name="15.6(2)SP" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212321">Cisco IOS 15.6SP 15.6(2)SP</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)SP1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220521">Cisco IOS 15.6SP 15.6(2)SP1</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)SP2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-224566">Cisco IOS 15.6SP 15.6(2)SP2</FullProductName>
+          </Branch>
+          <Branch Name="15.6(2)SP3b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-231824">Cisco IOS 15.6SP 15.6(2)SP3b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.3JPB" Type="Product Version">
+          <Branch Name="15.3(3)JPB" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213843">Cisco IOS 15.3JPB 15.3(3)JPB</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.6M" Type="Product Version">
+          <Branch Name="15.6(3)M" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214074">Cisco IOS 15.6M 15.6(3)M</FullProductName>
+          </Branch>
+          <Branch Name="15.6(3)M1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220396">Cisco IOS 15.6M 15.6(3)M1</FullProductName>
+          </Branch>
+          <Branch Name="15.6(3)M0a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220522">Cisco IOS 15.6M 15.6(3)M0a</FullProductName>
+          </Branch>
+          <Branch Name="15.6(3)M1a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-224327">Cisco IOS 15.6M 15.6(3)M1a</FullProductName>
+          </Branch>
+          <Branch Name="15.6(3)M1b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-224443">Cisco IOS 15.6M 15.6(3)M1b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.3JPC" Type="Product Version">
+          <Branch Name="15.3(3)JPC3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-225167">Cisco IOS 15.3JPC 15.3(3)JPC3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.3JND" Type="Product Version">
+          <Branch Name="15.3(3)JND2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-226202">Cisco IOS 15.3JND 15.3(3)JND2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.3JCA" Type="Product Version">
+          <Branch Name="15.3(3)JCA7" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-227250">Cisco IOS 15.3JCA 15.3(3)JCA7</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVM" Type="Product Version">
+          <Branch Name="15.1(3)SVM3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-235859">Cisco IOS 15.1SVM 15.1(3)SVM3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVK" Type="Product Version">
+          <Branch Name="15.1(3)SVK4b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-236199">Cisco IOS 15.1SVK 15.1(3)SVK4b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVN" Type="Product Version">
+          <Branch Name="15.1(3)SVN2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-235860">Cisco IOS 15.1SVN 15.1(3)SVN2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.1SVO" Type="Product Version">
+          <Branch Name="15.1(3)SVO1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-236836">Cisco IOS 15.1SVO 15.1(3)SVO1</FullProductName>
+          </Branch>
+        </Branch>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco IOS Software Network Address Translation Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvc57217</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the implementation of Network Address Translation (NAT) functionality in Cisco IOS Software could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected device.
+
+The vulnerability is due to the improper translation of H.323 messages that use the Registration, Admission, and Status (RAS) protocol and are sent to an affected device via IPv4 packets. An attacker could exploit this vulnerability by sending a crafted H.323 RAS packet through an affected device. A successful exploit could allow the attacker to cause the affected device to crash and reload, resulting in a DoS condition.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvc57217</Note>
+    </Notes>
+    <CVE>CVE-2017-12231</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-117800</ProductID>
+        <ProductID>CVRFPID-117801</ProductID>
+        <ProductID>CVRFPID-117804</ProductID>
+        <ProductID>CVRFPID-192702</ProductID>
+        <ProductID>CVRFPID-193409</ProductID>
+        <ProductID>CVRFPID-198065</ProductID>
+        <ProductID>CVRFPID-200487</ProductID>
+        <ProductID>CVRFPID-200509</ProductID>
+        <ProductID>CVRFPID-204282</ProductID>
+        <ProductID>CVRFPID-204822</ProductID>
+        <ProductID>CVRFPID-204901</ProductID>
+        <ProductID>CVRFPID-205516</ProductID>
+        <ProductID>CVRFPID-205517</ProductID>
+        <ProductID>CVRFPID-205670</ProductID>
+        <ProductID>CVRFPID-205672</ProductID>
+        <ProductID>CVRFPID-205721</ProductID>
+        <ProductID>CVRFPID-209052</ProductID>
+        <ProductID>CVRFPID-209059</ProductID>
+        <ProductID>CVRFPID-209091</ProductID>
+        <ProductID>CVRFPID-209093</ProductID>
+        <ProductID>CVRFPID-209094</ProductID>
+        <ProductID>CVRFPID-209095</ProductID>
+        <ProductID>CVRFPID-209097</ProductID>
+        <ProductID>CVRFPID-209099</ProductID>
+        <ProductID>CVRFPID-209101</ProductID>
+        <ProductID>CVRFPID-209102</ProductID>
+        <ProductID>CVRFPID-209103</ProductID>
+        <ProductID>CVRFPID-209104</ProductID>
+        <ProductID>CVRFPID-209105</ProductID>
+        <ProductID>CVRFPID-209109</ProductID>
+        <ProductID>CVRFPID-209110</ProductID>
+        <ProductID>CVRFPID-209111</ProductID>
+        <ProductID>CVRFPID-209112</ProductID>
+        <ProductID>CVRFPID-209113</ProductID>
+        <ProductID>CVRFPID-209115</ProductID>
+        <ProductID>CVRFPID-209268</ProductID>
+        <ProductID>CVRFPID-209360</ProductID>
+        <ProductID>CVRFPID-209455</ProductID>
+        <ProductID>CVRFPID-209936</ProductID>
+        <ProductID>CVRFPID-210129</ProductID>
+        <ProductID>CVRFPID-210344</ProductID>
+        <ProductID>CVRFPID-210407</ProductID>
+        <ProductID>CVRFPID-211297</ProductID>
+        <ProductID>CVRFPID-211408</ProductID>
+        <ProductID>CVRFPID-211603</ProductID>
+        <ProductID>CVRFPID-211618</ProductID>
+        <ProductID>CVRFPID-211751</ProductID>
+        <ProductID>CVRFPID-211825</ProductID>
+        <ProductID>CVRFPID-211984</ProductID>
+        <ProductID>CVRFPID-212115</ProductID>
+        <ProductID>CVRFPID-212118</ProductID>
+        <ProductID>CVRFPID-212127</ProductID>
+        <ProductID>CVRFPID-212321</ProductID>
+        <ProductID>CVRFPID-212407</ProductID>
+        <ProductID>CVRFPID-212445</ProductID>
+        <ProductID>CVRFPID-213000</ProductID>
+        <ProductID>CVRFPID-213002</ProductID>
+        <ProductID>CVRFPID-213023</ProductID>
+        <ProductID>CVRFPID-213032</ProductID>
+        <ProductID>CVRFPID-213594</ProductID>
+        <ProductID>CVRFPID-213633</ProductID>
+        <ProductID>CVRFPID-213770</ProductID>
+        <ProductID>CVRFPID-213789</ProductID>
+        <ProductID>CVRFPID-213794</ProductID>
+        <ProductID>CVRFPID-213795</ProductID>
+        <ProductID>CVRFPID-213843</ProductID>
+        <ProductID>CVRFPID-214074</ProductID>
+        <ProductID>CVRFPID-214161</ProductID>
+        <ProductID>CVRFPID-214166</ProductID>
+        <ProductID>CVRFPID-214479</ProductID>
+        <ProductID>CVRFPID-214480</ProductID>
+        <ProductID>CVRFPID-214938</ProductID>
+        <ProductID>CVRFPID-216215</ProductID>
+        <ProductID>CVRFPID-216239</ProductID>
+        <ProductID>CVRFPID-216577</ProductID>
+        <ProductID>CVRFPID-216961</ProductID>
+        <ProductID>CVRFPID-216962</ProductID>
+        <ProductID>CVRFPID-218996</ProductID>
+        <ProductID>CVRFPID-218997</ProductID>
+        <ProductID>CVRFPID-220396</ProductID>
+        <ProductID>CVRFPID-220445</ProductID>
+        <ProductID>CVRFPID-220521</ProductID>
+        <ProductID>CVRFPID-220522</ProductID>
+        <ProductID>CVRFPID-220640</ProductID>
+        <ProductID>CVRFPID-220650</ProductID>
+        <ProductID>CVRFPID-220673</ProductID>
+        <ProductID>CVRFPID-220674</ProductID>
+        <ProductID>CVRFPID-220675</ProductID>
+        <ProductID>CVRFPID-221093</ProductID>
+        <ProductID>CVRFPID-222931</ProductID>
+        <ProductID>CVRFPID-222989</ProductID>
+        <ProductID>CVRFPID-223085</ProductID>
+        <ProductID>CVRFPID-223189</ProductID>
+        <ProductID>CVRFPID-224327</ProductID>
+        <ProductID>CVRFPID-224443</ProductID>
+        <ProductID>CVRFPID-224566</ProductID>
+        <ProductID>CVRFPID-224700</ProductID>
+        <ProductID>CVRFPID-225167</ProductID>
+        <ProductID>CVRFPID-225662</ProductID>
+        <ProductID>CVRFPID-225668</ProductID>
+        <ProductID>CVRFPID-226076</ProductID>
+        <ProductID>CVRFPID-226202</ProductID>
+        <ProductID>CVRFPID-227250</ProductID>
+        <ProductID>CVRFPID-227364</ProductID>
+        <ProductID>CVRFPID-231824</ProductID>
+        <ProductID>CVRFPID-232850</ProductID>
+        <ProductID>CVRFPID-232957</ProductID>
+        <ProductID>CVRFPID-233143</ProductID>
+        <ProductID>CVRFPID-233796</ProductID>
+        <ProductID>CVRFPID-235859</ProductID>
+        <ProductID>CVRFPID-235860</ProductID>
+        <ProductID>CVRFPID-236199</ProductID>
+        <ProductID>CVRFPID-236836</ProductID>
+        <ProductID>CVRFPID-238577</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>8.6</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Administrators may mitigate this vulnerability by disabling the NAT ALG for H.323 RAS messages. However, disabling the NAT ALG may negatively impact normal operation of any device that sends or receives RAS traffic through the affected device and, consequently, may disrupt normal network operations. Administrators should verify that their network environment does not require use of a NAT ALG for H.323 RAS messages, before they disable this functionality. To disable use of the NAT ALG for H.323 RAS messages, administrators can use the no ip nat service ras command in global configuration mode.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-nat</URL>
+        <Description>Cisco IOS Software Network Address Translation Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

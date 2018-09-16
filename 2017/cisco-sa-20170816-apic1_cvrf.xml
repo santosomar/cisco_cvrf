@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco Application Policy Infrastructure Controller SSH Privilege Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170816-apic1</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-08-16T14:00:43</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-08-16T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-08-16T14:00:43</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco Application Policy Infrastructure Controller (APIC) could allow an authenticated, remote attacker to gain higher privileges than the account is assigned. The attacker will be granted the privileges of the last user to log in, regardless of whether those privileges are higher or lower than what should have been granted. The attacker cannot gain root-level privileges.
+
+The vulnerability is due to a limitation with how Role-Based Access Control (RBAC) grants privileges to remotely authenticated users when login occurs via SSH directly to the local management interface of the APIC. An attacker could exploit this vulnerability by authenticating to the targeted device. The attacker's privilege level will be modified to match that of the last user to log in via SSH. An exploit could allow the attacker to gain elevated privileges and perform CLI commands that should be restricted by the attacker's configured role.
+
+Cisco has released software updates that address this vulnerability. There are workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170816-apic1 ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170816-apic1"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco APIC under the following conditions:
+
+The attacker uses SSH to connect to the local management interface of the APIC.
+The attacker uses a remote user credential, which means that the authentication is done by a remote authentication server (for example, TACACS or RADIUS).
+The attacker has valid user credentials for the remote user.
+  Cisco APIC is not vulnerable under these conditions:
+
+A locally configured user on the device is not vulnerable.
+If the remote connection to the APIC is done via the Representational State Transfer (REST) API or GUI, the device is not vulnerable. However, if the Launch SSH feature within the GUI is used, it could be vulnerable if remote authentication is used.
+  All software versions prior to the first fixed release are vulnerable. For information about fixed software releases, consult the Fixed Software ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170719-apic1#fixed"] section of this advisory.
+
+To determine which release of APIC is running on a device, administrators can use the CLI command show version. The following example shows the output of the command for a device running software release 1.2(3m):
+APIC# show version
+ Role        Id          Name                      Version
+----------  ----------  ------------------------  --------------------
+controller  1           APIC                      1.2(3m)
+.
+.
+.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect Cisco Application Policy Infrastructure Controller Enterprise Module (APIC-EM).</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are workarounds that address this vulnerability. On the remote authentication server, each remote user can be configured with a Cisco Attribute-Value (AV) Pair, which includes a unique UNIX User Identifier. If this AV Pair is not present, then all users are assigned the same default UNIX User Identifier, which results in the vulnerability. For additional information on this configuration, please refer to Externally Managed Authentication Server Users Cisco AV Pair Format ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/1-x/aci-fundamentals/b_ACI-Fundamentals/b_ACI-Fundamentals_chapter_01010.html#concept_78EBA92DE8D546F999226ABA6EBE3072"]. Please contact the Cisco TAC if additional assistance is needed with this configuration.
+
+In addition, while not workarounds, there are mitigations that can be used. This vulnerability only exists when SSH is used to connect to the local management interface of the APIC. If the connection uses the REST API or GUI interface, this vulnerability does not exist.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:  http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html ["http://www.cisco.com/c/en/us/td/docs/general/warranty/English/EU1KEN_.html"]
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC: http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html ["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+Fixed Releases
+
+Customers should upgrade to an appropriate release as indicated in the table in this section. To help ensure a complete upgrade solution, consider that this advisory is part of a collection that includes the following advisories:
+
+cisco-sa-20170816-apic1 ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170816-apic1"]: Cisco Application Policy Infrastructure Controller SSH Privilege Escalation Vulnerability
+cisco-sa-20170816-apic2 ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170816-apic2"]: Cisco Application Policy Infrastructure Controller Custom Binary Privilege Escalation Vulnerability
+  In the following table, the left column lists major releases of Cisco software. The center column indicates whether a major release is affected by the vulnerability described in this advisory and the first minor release that includes the fix for this vulnerability. The right column indicates whether a major release is affected by all the vulnerabilities described in this collection of advisories and the current recommended release for those vulnerabilities.
+                                Cisco Application Policy Infrastructure Controller                             First Fixed Release for This Vulnerability                            Recommended Release for This Vulnerability and All Vulnerabilities Described in the Collection of Advisories                                                 Prior to 2.0
+              Vulnerable; migrate to 2.2(2e)
+              2.2(2e)
+                                  2.0
+              Vulnerable; migrate to 2.2(2e)
+              2.2(2e)                                  2.1               Vulnerable; migrate to 2.2(2e)              2.2(2e)                                   2.2              2.2(2e)               2.2(2e)                                  2.3               2.3(1f)              2.3(1f)                                  3.0 (future release)
+              Not Vulnerable
+              Not Vulnerable
+
+The software updates can be downloaded from the Software Center ["https://software.cisco.com/download/navigator.html"] on Cisco.com by navigating to Products &gt; Cloud and Systems Management &gt; Policy and Automation Controllers &gt; Application Policy Infrastructure Controller (APIC).</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="8">This vulnerability was found during resolution of a Cisco TAC support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170816-apic1</URL>
+      <Description>Cisco Application Policy Infrastructure Controller SSH Privilege Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Application Policy Infrastructure Controller (APIC)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202553">Cisco Application Policy Infrastructure Controller (APIC) </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco Application Policy Infrastructure Controller Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvc34335</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in Cisco Application Policy Infrastructure Controller (APIC) could allow an authenticated, remote attacker to gain higher privileges than the account is assigned. The attacker will be granted the privileges of the last user to log in, regardless of whether those privileges are higher or lower than what should have been granted. The attacker cannot gain root-level privileges.
+
+
+
+The vulnerability is due to a limitation with how Role-Based Access Control (RBAC) grants privileges to remotely authenticated users when login occurs via SSH directly to the local management interface of the APIC. An attacker could exploit this vulnerability by authenticating to the targeted device. The attacker's privilege level will be modified to match that of the last user to log in via SSH. An exploit could allow the attacker to gain elevated privileges and perform CLI commands that should be restricted by the attacker's configured role.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvc34335</Note>
+    </Notes>
+    <CVE>CVE-2017-6767</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-202553</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>7.1</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are workarounds that address this vulnerability. On the remote authentication server, each remote user can be configured with a Cisco Attribute-Value (AV) Pair, which includes a unique UNIX User Identifier. If this AV Pair is not present, then all users are assigned the same default UNIX User Identifier, which results in the vulnerability. For additional information on this configuration, please refer to Externally Managed Authentication Server Users Cisco AV Pair Format ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/1-x/aci-fundamentals/b_ACI-Fundamentals/b_ACI-Fundamentals_chapter_01010.html#concept_78EBA92DE8D546F999226ABA6EBE3072"]. Please contact the Cisco TAC if additional assistance is needed with this configuration.
+
+In addition, while not workarounds, there are mitigations that can be used. This vulnerability only exists when SSH is used to connect to the local management interface of the APIC. If the connection uses the REST API or GUI interface, this vulnerability does not exist.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170816-apic1</URL>
+        <Description>Cisco Application Policy Infrastructure Controller SSH Privilege Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

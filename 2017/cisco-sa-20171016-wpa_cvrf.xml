@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20171016-wpa</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>2.9</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-10-16T14:03:20</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2017-10-16T21:36:43</Date>
+        <Description>Updated information for vulnerable and non-vulnerable products, and products under investigation.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2017-10-17T22:20:01</Date>
+        <Description>Updated information for vulnerable and non-vulnerable products, and products under investigation. Updated the Details and Fixed Software sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2017-10-18T22:07:57</Date>
+        <Description>Updated the Summary section.
+Updated information for vulnerable products. Added section to assess wireless deployments for CVE-2017-13082.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2017-10-19T20:27:04</Date>
+        <Description>Updated the non-vulnerable products with information about mesh networks and 12.4 IOS releases, updated Fixed Software section, Updated Vulnerable Products section with First Fixed Release information.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2017-10-19T21:05:27</Date>
+        <Description>Updated fix information for bug CSCvg10793.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.0</Number>
+        <Date>2017-10-20T20:39:50</Date>
+        <Description>Updated fix information for devices running Cisco IOS Software. Updated Vulnerable Products, Fixed Software and Summary.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.1</Number>
+        <Date>2017-10-23T21:14:38</Date>
+        <Description>Updated Fixed Software section based on additional software fixes now available for wireless access points. Updated Summary.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.2</Number>
+        <Date>2017-10-25T21:18:38</Date>
+        <Description>Added additional workarounds. Updated fixed software availability information, vulnerable and non-vulnerable product lists.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.3</Number>
+        <Date>2017-11-03T17:46:13</Date>
+        <Description>Updated information for vulnerable and non-vulnerable products, and products under investigation. Updated metadata.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.4</Number>
+        <Date>2017-11-14T20:05:08</Date>
+        <Description>Updated information for vulnerable and non-vulnerable products, and fixed software. Changed the advisory status to "Final."</Description>
+      </Revision>
+      <Revision>
+        <Number>2.5</Number>
+        <Date>2017-11-15T17:45:22</Date>
+        <Description>Updated the fixed release information for Autonomous Access Points.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.6</Number>
+        <Date>2017-11-20T21:08:00</Date>
+        <Description>Updated fix availability information for SMB products.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.7</Number>
+        <Date>2017-11-28T18:47:49</Date>
+        <Description>Updated list of products under investigation and vulnerable products.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.8</Number>
+        <Date>2017-12-14T21:19:14</Date>
+        <Description>Updated first fixed release information for multiple products.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.9</Number>
+        <Date>2018-01-02T17:35:41</Date>
+        <Description>Updated first fixed release information for multiple products.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-10-16T14:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-01-02T17:35:41</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">On October 16, 2017, a research paper with the title “Key Reinstallation Attacks: Forcing Nonce Reuse in WPA2” was made publicly available. This paper discusses seven vulnerabilities affecting session key negotiation in both the Wi-Fi Protected Access (WPA) and the Wi-Fi Protected Access II (WPA2) protocols. These vulnerabilities may allow the reinstallation of a pairwise transient key, a group key, or an integrity key on either a wireless client or a wireless access point. Additional research also led to the discovery of three additional vulnerabilities (not discussed in the original paper) affecting wireless supplicant supporting either the 802.11z (Extensions to Direct-Link Setup) standard or the 802.11v (Wireless Network Management) standard. The three additional vulnerabilities could also allow the reinstallation of a pairwise key, group key, or integrity group key.
+
+Among these ten vulnerabilities, only one (CVE-2017-13082) may affect components of the wireless infrastructure (for example, Access Points), while the other nine vulnerabilities may affect only client devices.
+
+Multiple Cisco wireless products are affected by these vulnerabilities.
+
+Cisco will release software updates that address these vulnerabilities. There are workarounds that addresses the vulnerabilities in CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, CVE-2017-13081, and CVE-2017-13082. There are no workarounds for CVE-2017-13086, CVE-2017-13087, and CVE-2017-13088.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2">Cisco is investigating its product line to determine which products may be affected by these vulnerabilities. As the investigation progresses, Cisco will update this advisory with information about affected products, including the ID of the Cisco bug for each affected product.
+
+For information about whether a product is affected by these vulnerabilities, refer to the Vulnerable Products ["#vulnerable"] and Products Confirmed Not Vulnerable ["#notvulnerable"] sections of this advisory. The Vulnerable Products ["#vulnerable"] section includes Cisco bug IDs for each affected product. The bugs are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"] and contain additional platform-specific information, including workarounds (if available) and fixed software releases.
+
+No Cisco products are affected by the vulnerability identified by CVE-2017-13084.
+Products Under Investigation  The following products are under active investigation to determine whether they are affected by the vulnerabilities that are described in this advisory.
+
+&lt;!----------------------------------------------------------&gt;  &lt;!----------------------------------------------------------&gt;  &lt;!----------------------------------------------------------&gt;  Video, Streaming, TelePresence, and Transcoding Devices
+
+GigaTV VGW10
+
+  &lt;!----------------------------------------------------------&gt;  &lt;!----------------------------------------------------------&gt;  &lt;!----------------------------------------------------------&gt;</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">The following table lists Cisco products that are affected by one or more vulnerabilities described in this advisory.
+
+&lt;!-- --------------------------------------------------&gt;  &lt;!-- ------ INSERT TABLE RIGHT HERE --------&gt;  &lt;!-- --------------------------------------------------&gt;                                Product              Cisco Bug ID              Fixed Release Availability                                  Endpoint Clients and Client Software                                  Cisco AnyConnect Secure Mobility Client - Network Access Manager              CSCvg35287 ["https://tools.cisco.com/bugsearch/bug/CSCvg35287"]              4.5.02036 and later                                  Routing and Switching - Enterprise and Service Provider                                  Cisco 1000 Series Connected Grid Routers              CSCvg67174 ["https://tools.cisco.com/bugsearch/bug/CSCvg67174"]              No fix information available at this time.                                  Routing and Switching - Small Business                                  Cisco Small Business CVR100W Wireless-N VPN Router              CSCvg03682 ["https://tools.cisco.com/bugsearch/bug/CSCvg03682"]              No fix will be provided for this product.                                  Cisco Small Business RV315W Wireless-N VPN Router              CSCvf96844 ["https://tools.cisco.com/bugsearch/bug/CSCvf96844"]              No fix will be provided for this product.                                  Voice and Unified Communications Devices                                  Cisco DX Series IP Phones (DX650, DX70 and DX80) running Android-based firmware.              CSCvg36461 ["https://tools.cisco.com/bugsearch/bug/CSCvg36461"]              No fix information available at this time.                                  Cisco DX Series IP Phones (DX70 and DX80) when running Collaboration Endpoint (CE) software              CSCvf71761 ["https://tools.cisco.com/bugsearch/bug/CSCvf71761"]              8.3.4 and later
+9.2.1 and later                                  Cisco IP Phone 8861-3PCC              CSCvg38265 ["https://tools.cisco.com/bugsearch/bug/CSCvg38265"]              11.0.1MSR1 for CP-8861-3PCC                                  Cisco IP Phone 8861              CSCvf71751 ["https://tools.cisco.com/bugsearch/bug/CSCvf71751"]              12.0.1SR1 and later                                  Cisco IP Phone 8865              CSCvf71751 ["https://tools.cisco.com/bugsearch/bug/CSCvf71751"]              12.0.1SR1 and later                                  Cisco Spark Board              CSCvg37142 ["https://tools.cisco.com/bugsearch/bug/CSCvg37142"]              No fix information available at this time.                                  Cisco Spark Room Series              CSCvf71761 ["https://tools.cisco.com/bugsearch/bug/CSCvf71761"]              8.3.4 and later
+9.2.1 and later                                  Cisco Wireless IP Phone 8821              CSCvf71749 ["https://tools.cisco.com/bugsearch/bug/CSCvf71749"]              11.0(3)SR5 and later                                  Wireless                                  Cisco 1100 Series Integrated Services Routers              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco 812 Series Integrated Services Routers              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco 819 Series Integrated Services Routers              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco 829 Industrial Integrated Services Routers              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco 860 Series Integrated Services Routers              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco 880 Series Integrated Services Routers              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco 890 Series Integrated Services Routers              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco AP541N Wireless Access Point              CSCvf96821 ["https://tools.cisco.com/bugsearch/bug/CSCvf96821"]              No fix will be provided for this product.
+                                  Cisco ASA 5506W-X w/ FirePOWER Services              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1040 Series Access Points              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1140 Series Access Points              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1250 Series Access Points              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1260 Series Access Points              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1520 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1530 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1540 Series Access Points              CSCvg10793 ["https://tools.cisco.com/bugsearch/bug/CSCvg10793"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1550 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1560 Series Access Points              CSCvg10793 ["https://tools.cisco.com/bugsearch/bug/CSCvg10793"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1570 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1600 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1700 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1810 Series OfficeExtend Access Points              CSCvg10793 ["https://tools.cisco.com/bugsearch/bug/CSCvg10793"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1810w Series Access Points              CSCvg10793 ["https://tools.cisco.com/bugsearch/bug/CSCvg10793"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1815 Series Access Points              CSCvg10793 ["https://tools.cisco.com/bugsearch/bug/CSCvg10793"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1830 Series Access Points              CSCvg10793 ["https://tools.cisco.com/bugsearch/bug/CSCvg10793"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 1850 Series Access Points              CSCvg10793 ["https://tools.cisco.com/bugsearch/bug/CSCvg10793"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 2600 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 2700 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 2800 Series Access Points              CSCvg10793 ["https://tools.cisco.com/bugsearch/bug/CSCvg10793"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 3500 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 3600 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 3700 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 3800 Series Access Points              CSCvg10793 ["https://tools.cisco.com/bugsearch/bug/CSCvg10793"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet 700 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet AP801 Access Point              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet AP802 Access Point              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet AP803 Access Point              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Aironet Access Points              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Industrial Wireless 3700 Series              CSCvg42682 ["https://tools.cisco.com/bugsearch/bug/CSCvg42682"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco Meraki MR11              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR12              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR14              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR16              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR18              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR24              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR26              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR30H              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24.x: affected - no fixes will be made available
+MR25 up to and including MR25.6: affected - first fixed in MR25.7
+                                  Cisco Meraki MR32              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR33              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24.x: affected - no fixes will be made available
+MR25 up to and including MR25.6: affected - first fixed in MR25.7
+                                  Cisco Meraki MR34              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR42              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR52              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR53              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR58              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR62              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR66              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR72              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Meraki MR74              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24.x: affected - no fixes will be made available
+MR25 up to and including MR25.6: affected - first fixed in MR25.7
+                                  Cisco Meraki MR84              N/A              MR20.x and previous releases: not affected
+MR21.x: affected - no fixes will be made available
+MR22.x: affected - no fixes will be made available
+MR23.x: affected - no fixes will be made available
+MR24 up to and including MR24.10: affected - first fixed in MR24.11
+MR25 up to and including MR25.6: affected - first fixed in MR25.7                                  Cisco Mobility Express              CSCvg10793 ["https://tools.cisco.com/bugsearch/bug/CSCvg10793"]              See the Fixed Software ["#fixed_software"] section of this advisory for fix availability depending on deployment scenario.                                  Cisco WAP121 Wireless-N Access Point with Single Point Setup              CSCvf96789 ["https://tools.cisco.com/bugsearch/bug/CSCvf96789"]              v1.0.6.6                                  Cisco WAP125 Wireless-AC Dual Band Desktop Access Point with PoE              CSCvf96792 ["https://tools.cisco.com/bugsearch/bug/CSCvf96792"]              v1.0.0.7                                  Cisco WAP131 Wireless-N Dual Radio Access Point with PoE              CSCvf96801 ["https://tools.cisco.com/bugsearch/bug/CSCvf96801"]              v1.0.2.15                                  Cisco WAP150 Wireless-AC/N Dual Radio Access Point with PoE              CSCvf96803 ["https://tools.cisco.com/bugsearch/bug/CSCvf96803"]              v1.1.0.9                                  Cisco WAP321 Wireless-N Access Point with Single Point Setup              CSCvf96789 ["https://tools.cisco.com/bugsearch/bug/CSCvf96789"]              v1.0.6.6                                  Cisco WAP351 Wireless-N Dual Radio Access Point with 5-Port Switch              CSCvf96801 ["https://tools.cisco.com/bugsearch/bug/CSCvf96801"]              v1.0.2.15                                  Cisco WAP361 Wireless-AC N Dual Radio Wall Plate Access Point with PoE              CSCvf96803 ["https://tools.cisco.com/bugsearch/bug/CSCvf96803"]              v1.1.0.9                                  Cisco WAP371 Wireless-AC N Access Point with Single Point Setup              CSCvf96814 ["https://tools.cisco.com/bugsearch/bug/CSCvf96814"]              v1.3.0.6                                  Cisco WAP551 Wireless-N Single Radio Selectable Band Access Point              CSCvf96818 ["https://tools.cisco.com/bugsearch/bug/CSCvf96818"]              v1.2.1.6                                  Cisco WAP561 Wireless-N Dual Radio Selectable Band Access Point              CSCvf96818 ["https://tools.cisco.com/bugsearch/bug/CSCvf96818"]              v1.2.1.6                                  Cisco WAP571 Wireless-AC N Premium Dual Radio Access Point with PoE              CSCvf96820 ["https://tools.cisco.com/bugsearch/bug/CSCvf96820"]              v1.0.1.11                                  Cisco WAP571E Wireless-AC N Premium Dual Radio Outdoor Access Point              CSCvf96820 ["https://tools.cisco.com/bugsearch/bug/CSCvf96820"]              v1.0.1.11                                  Cisco WAP581 Wireless-AC Dual Radio Wave 2 Access Point with 2.5GbE LAN              CSCvg07495 ["https://tools.cisco.com/bugsearch/bug/CSCvg07495"]              v1.0.0.7                    &lt;!-- --------------------------------------------------&gt;  &lt;!-- --------------------------------------------------&gt;  &lt;!-- --------------------------------------------------&gt;
+
+Assessing the Configuration of a Wireless Deployment for CVE-2017-13082
+The vulnerability identified by CVE ID CVE-2017-13082 may affect only deployments that support the fast BSS transition (FT) feature and have it enabled.
+  To determine whether the FT feature is enabled on a Wireless LAN Controller (WLC) device, administrators can log in to the device and use the show wlan command or the show wlan id command, depending on the device model.
+
+The following example shows the output of the show wlan id command for a Cisco 3500 Series Wireless Controllers device where FT is enabled on wlan 1:
+
+(w-3504-2)&gt; show wlan 1
+...  Security     802.11 Authentication:........................ Open System     FT Support.................................... Enabled    ...
+  The following example shows the output of the show wlan id 1 command for a Cisco 5760 Series Wireless LAN Controller device where FT is disabled on wlan 1:
+
+W-5760-2&gt; show wlan id 1 | include FT\ Support
+    FT Support                                 : Disabled
+    To determine whether the FT feature is enabled on a Standalone Access Point running Cisco IOS Software,  administrators can log in to the device and use the show running-config | include dot11r command and verify that the command returns output.
+
+The following example shows the output of the show running-config | include dot11r command for an access point that has FT enabled:
+
+AP# show running-config | include dot11r
+authentication key-management wpa version 2 dot11r
+
+    Please note that FT is not supported on deployments running a Wireless LAN Controller with AireOS version 7.0 and previous releases, hence such deployments are not affected by CVE-2017-13082.
+
+To determine which release of Cisco WLC Software is running on a device, administrators can use the web interface or the CLI.
+
+To use the web interface, log in to the web interface, click the Monitor tab, and then click Summary in the left pane. The Software Version field shows the release number of the software currently running on the device.
+
+To use the CLI, issue the show sysinfo command, and then refer to the value in the Product Version field of the command output. The following example shows the output of the command for a device running Cisco WLC Software Release 8.3.102.0:
+
+(5500-4) &gt;show sysinfo
+Manufacturer's Name.............................. Cisco Systems Inc.  Product Name..................................... Cisco Controller  Product Version.................................. 8.3.102.0  Bootloader Version............................... 1.0.1  Field Recovery Image Version..................... 6.0.182.0  Firmware Version................................. FPGA 1.3, Env 1.6, USB console 1.27  Build Type....................................... DATA + WPS  .  .  .</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">No other Cisco products are currently known to be affected by these vulnerabilities.
+
+Cisco wireless access points configured as part of a mesh network are not currently known to be affected by these vulnerabilities.
+
+Cisco wireless access points running any 12.4-based Cisco IOS Software releases are not affected by these vulnerabilities.
+
+Cisco has confirmed that these vulnerabilities do not affect the following products:
+
+&lt;!--------------------------------------------------------------------------------------------------&gt;  &lt;!--------------------------------------------------------------------------------------------------&gt;  &lt;!--------------------------------------------------------------------------------------------------&gt;  Routing and Switching - Small Business
+
+Cisco Small Business RV110W Wireless-N VPN Firewall
+Cisco Small Business RV120W Wireless-N VPN Firewall
+Cisco Small Business RV130W Wireless-N Multifunction VPN Router
+Cisco Small Business RV132W ADSL2+ Wireless-N VPN Router
+Cisco Small Business RV134W VDSL2 Wireless-AC VPN Router
+Cisco Small Business RV180W Wireless-N Multifunction VPN Router
+Cisco Small Business RV215W Wireless-N VPN Router
+Cisco Small Business RV220W Wireless Network Security Firewall
+Cisco Small Business RV340W Dual WAN Gigabit Wireless AC VPN Router
+Cisco WRP500 Wireless-AC Broadband Router
+Voice and Unified Communications Devices
+
+Cisco Unified IP Phone 9971
+Cisco Unified Wireless IP Phone 7925/7926
+Wireless
+
+Cisco Aironet 1130 Series Access Points running Cisco IOS Software
+Cisco Aironet 1240 Series Access Points running Cisco IOS Software
+Cisco Aironet 1310 series Access Points running Cisco IOS Software
+Cisco Aironet 600 Series OfficeExtend Access Point
+Cisco Aironet Access Points running Cisco IOS Software - Client/Supplicant/Workgroup bridge mode
+Cisco Wireless LAN Controller - Controller itself
+&lt;!--------------------------------------------------------------------------------------------------&gt;  &lt;!--------------------------------------------------------------------------------------------------&gt;  &lt;!--------------------------------------------------------------------------------------------------&gt;</Note>
+    <Note Title="Details" Type="General" Ordinal="5">The following vulnerabilities were disclosed in the paper:
+
+Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - pairwise key reinstallation during the 4-way handshake vulnerability
+
+A vulnerability in the processing of the 802.11i 4-way handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force a supplicant to reinstall a previously used pairwise key.
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between supplicant and authenticator and retransmitting previously used message exchanges between supplicant and authenticator.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-13077
+
+Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - group key reinstallation during the 4-way handshake vulnerability
+
+A vulnerability in the processing of the 802.11i 4-way handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force a supplicant to reinstall a previously used group key.
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between supplicant and authenticator and retransmitting previously used message exchanges between supplicant and authenticator.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-13078
+
+Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - integrity group key reinstallation during the 4-way handshake vulnerability
+
+A vulnerability in the processing of the 802.11i 4-way handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force a supplicant to reinstall a previously used integrity group key.
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between supplicant and authenticator and retransmitting previously used message exchanges between supplicant and authenticator.
+
+This vulnerability has been assigned the following CVE ID:  CVE-2017-13079
+
+Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - group key reinstallation during the group key handshake vulnerability
+
+A vulnerability in the processing of the 802.11i group key handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force a supplicant to reinstall a previously used group key.
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between supplicant and authenticator and retransmitting previously used message exchanges between supplicant and authenticator.
+
+This vulnerability has been assigned the following CVE ID:  CVE-2017-13080
+
+Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - integrity group key reinstallation during the group key handshake vulnerability
+
+A vulnerability in the processing of the 802.11i group key handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force a supplicant to reinstall a previously used integrity group key.
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between supplicant and authenticator and retransmitting previously used message exchanges between supplicant and authenticator.
+
+This vulnerability has been assigned the following CVE ID:  CVE-2017-13081
+
+Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - pairwise key reinstallation during the Fast BSS Transition (FT) handshake vulnerability
+
+A vulnerability in the processing of the 802.11r Fast BSS (Basic Service Set) Transition handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force an authenticator to reinstall a previously used pairwise key.
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by passively eavesdropping on an FT handshake, and then replaying the reassociation request from the supplicant to the authenticator.
+
+This vulnerability has been assigned the following CVE ID:  CVE-2017-13082
+
+Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - station-to-station link (STSL) Transient Key (STK) reinstallation during the PeerKey handshake vulnerability
+
+A vulnerability in the processing of the 802.11 PeerKey handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force an STSL to reinstall a previously used STK.
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between the stations and retransmitting previously used messages exchanges between stations.
+
+This vulnerability has been assigned the following CVE ID:  CVE-2017-13084
+
+The following vulnerabilities, while not disclosed in the paper, were also found during the same research cycle:
+
+Tunneled Direct-Link Setup (TDLS) PeerKey (TPK) key reinstallation in the TDLS handshake
+
+A vulnerability in the processing of the 802.11z (Extensions to Direct-Link Setup) TDLS handshake messages could allow an unauthenticated, adjacent attacker to force a supplicant that is compliant with the 802.11z standard to reinstall a previously used TPK key.
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by passively eavesdropping on a TDLS handshake and retransmitting previously used message exchanges between supplicant and authenticator.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-13086
+
+Group key (GTK) reinstallation when processing a Wireless Network Management (WNM) Sleep Mode Response frame
+
+A vulnerability in the processing of the 802.11v (Wireless Network Management) Sleep Mode Response frames could allow an unauthenticated, adjacent attacker to force a supplicant that is compliant with the 802.11v standard to reinstall a previously used group key.
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by passively eavesdropping and retransmitting previously used WNM Sleep Mode Response frames.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-13087
+
+Integrity group key (IGTK) reinstallation when processing a Wireless Network Management (WNM) Sleep Mode Response frame
+
+A vulnerability in the processing of the 802.11v (Wireless Network Management) Sleep Mode Response frames could allow an unauthenticated, adjacent attacker to force a supplicant that is compliant with the 802.11v standard to reinstall a previously used integrity group key.
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by passively eavesdropping and retransmitting previously used WNM Sleep Mode Response frames.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-13088
+
+Note: Fixes should be installed on both affected access points and wireless clients for a complete solution. Installing a fixed software release on an affected access point will fix that particular device, but will not prevent exploitation of any vulnerabilities affecting a wireless client. The converse is also true: installing a fix on a wireless client would fix that particular device, but would not prevent exploitation of any vulnerabilities affecting an access point. For a complete solution, both affected wireless access point and wireless clients should be updated, if vulnerable, to a fixed software release.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Updates for affected software releases will be published when they are available and information about those updates will be documented in Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
+When Cisco releases software updates that address these vulnerabilities, customers may only install and expect support for software versions and feature sets for which they have purchased a license.  By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html ["http://www.cisco.com/c/en/us/td/docs/general/warranty/English/EU1KEN_.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html ["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+  Fixed Software Availability for Cisco Wireless Access Points  Unified Wireless Networks using Cisco Wireless LAN Controllers (WLC) and wireless networks using Mobility Express
+
+First fixed release availability is as follows:
+
+                              CSCvg42682                            8.0.152.0: available now
+8.2.166.0: available now
+8.3.133.0: available now
+8.5.105.0: available now
+8.6.100.0: TBD                                                CSCvg10793              8.2.166.0: available now
+8.3.133.0: available now
+8.5.105.0: available now
+8.6.100.0: TBD
+
+Note: 8.0-based WLC software does not support the Cisco Wireless Access Points affected by CSCvg10793. Fixes for CSCvg10793 will not be included in 8.0-based software releases.
+
+Note: Previously published software Release 8.3.131.0 contains fixes for CSCvg10793 only and does not include fixes for CSCvg42682. Customers whose deployments are entirely composed of Wave 2 (AP-COS) wireless access points can download and deploy Release 8.3.131.0 or 8.3.132.0 (or later) to fix CVE-2017-13082. Customers whose deployments include a mix of devices, some affected by CSCvg42682 (i.e., running Cisco IOS Software) and some affected by CSCvg10793 (i.e., Wave 2/AP-COS devices), or customers whose deployments only include devices affected by CSCvg42682 should instead download and install Release 8.3.132.0 or later (if running an 8.3-based release) or any of the previously listed releases for a complete solution.
+
+Note: As of October 25, 2017, all published 8.3.13x.0 releases are impacted by Cisco bug ID CSCvf87731 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvf87731"]. Customers should work with their support provider to determine if this bug may impact their deployment and if they should postpone a software upgrade until a fix becomes available.
+
+Converged Wireless Networks using Cisco Catalyst 3650 Series Switches, Cisco Catalyst 3850 Series Switches, Cisco Catalyst 4500E Supervisor Engine 8E, or Cisco 5760 Wireless LAN Controller
+
+Releases 3.6.7bE and 16.3.5b
+
+Autonomous Access Points
+
+Releases 15.3(3)JC14 and later, 15.3(3)JD11 and later, and 15.3(3)JF1 and later.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerabilities that are described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">These vulnerabilities were reported to Cisco by Dr. Mathy Vanhoef, PhD. Cisco would like to thank Dr. Vanhoef and Prof. Frank Piessens, both from Katholieke Universiteit Leuven, for their continued help and support during the handling of these vulnerabilities.
+
+Cisco would also like to thank John Van Boxtel from Cypress Semiconductor Corp, who identified an additional attack vector into CVE-2017-13077.
+
+Cisco collaborated with The Industry Consortium for Advancement of Security on the Internet (ICASI) during the investigation and disclosure of these vulnerabilities. More information can be found at http://www.icasi.org/wi-fi-protected-access-wpa-vulnerabilities ["http://www.icasi.org/wi-fi-protected-access-wpa-vulnerabilities"].</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+      <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco AnyConnect Secure Mobility Client" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-109810">Cisco AnyConnect Secure Mobility Client </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Aironet Access Point Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-190024">Cisco Aironet Access Point Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco IP Phone 8800 Series Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-205455">Cisco IP Phone 8800 Series Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco ASA with FirePOWER Services" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-206520">Cisco ASA with FirePOWER Services </FullProductName>
+      </Branch>
+      <Branch Name="Cisco DX Series IP Phones" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-210710">Cisco DX Series IP Phones </FullProductName>
+      </Branch>
+      <Branch Name="Cisco FirePOWER Services Software for ASA" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-220207">Cisco FirePOWER Services Software for ASA </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Small Business 100 Series Wireless Access Point Firmware" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-230666">Cisco Small Business 100 Series Wireless Access Point Firmware </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Small Business 300 Series Wireless Access Point Firmware" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-230676">Cisco Small Business 300 Series Wireless Access Point Firmware </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Small Business 500 Series Wireless Access Point Firmware" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-230685">Cisco Small Business 500 Series Wireless Access Point Firmware </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - pairwise key reinstallation during the 4-way handshake vulnerability </Title>
+    <ID SystemName="Cisco Bug ID">CSCvg10793</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the processing of the 802.11i 4-way handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force a supplicant to reinstall a previously used pairwise key.
+
+
+
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between supplicant and authenticator and retransmitting previously used message exchanges between supplicant and authenticator.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg10793,CSCvg42682,CSCvf71749,CSCvf71751,CSCvf71754,CSCvf96789,CSCvf96818,CSCvf71761,CSCvg35287</Note>
+    </Notes>
+    <CVE>CVE-2017-13077</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-206520</ProductID>
+        <ProductID>CVRFPID-230666</ProductID>
+        <ProductID>CVRFPID-230676</ProductID>
+        <ProductID>CVRFPID-230685</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-220207</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+        <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - group key reinstallation during the 4-way handshake vulnerability </Title>
+    <ID SystemName="Cisco Bug ID">CSCvg10793</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the processing of the 802.11i 4-way handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force a supplicant to reinstall a previously used group key.
+
+
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between supplicant and authenticator and retransmitting previously used message exchanges between supplicant and authenticator.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg10793,CSCvf71749,CSCvf71751,CSCvf71754,CSCvg42682,CSCvf71761,CSCvf96818,CSCvf96789,CSCvf96814,CSCvg35287</Note>
+    </Notes>
+    <CVE>CVE-2017-13078</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-206520</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-230685</ProductID>
+        <ProductID>CVRFPID-230676</ProductID>
+        <ProductID>CVRFPID-230666</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-220207</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+        <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - integrity group key reinstallation during the 4-way handshake vulnerability </Title>
+    <ID SystemName="Cisco Bug ID">CSCvg10793</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the processing of the 802.11i 4-way handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force a supplicant to reinstall a previously used integrity group key.
+
+
+
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between supplicant and authenticator and retransmitting previously used message exchanges between supplicant and authenticator.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg10793,CSCvf71749,CSCvf71751,CSCvf71754,CSCvg42682,CSCvf71761,CSCvf96818,CSCvf96789,CSCvf96814,CSCvg35287</Note>
+    </Notes>
+    <CVE>CVE-2017-13079</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-206520</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-230685</ProductID>
+        <ProductID>CVRFPID-230676</ProductID>
+        <ProductID>CVRFPID-230666</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-220207</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+        <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="4" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - integrity group key reinstallation during the group key handshake vulnerability </Title>
+    <ID SystemName="Cisco Bug ID">CSCvg10793</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the processing of the 802.11i group key handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force a supplicant to reinstall a previously used integrity group key.
+
+
+
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between supplicant and authenticator and retransmitting previously used message exchanges between supplicant and authenticator.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg10793,CSCvf71749,CSCvf71751,CSCvf71754,CSCvg42682,CSCvf71761,CSCvf96818,CSCvf96789,CSCvf96814,CSCvg35287</Note>
+    </Notes>
+    <CVE>CVE-2017-13081</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-206520</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-230685</ProductID>
+        <ProductID>CVRFPID-230676</ProductID>
+        <ProductID>CVRFPID-230666</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-220207</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+        <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="5" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - group key reinstallation during the group key handshake vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvg10793</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the processing of the 802.11i group key handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force a supplicant to reinstall a previously used group key.
+
+
+
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between supplicant and authenticator and retransmitting previously used message exchanges between supplicant and authenticator.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg10793,CSCvf71749,CSCvf71751,CSCvf71754,CSCvg42682,CSCvf71761,CSCvf96818,CSCvf96789,CSCvf96814,CSCvg35287</Note>
+    </Notes>
+    <CVE>CVE-2017-13080</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-206520</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-230685</ProductID>
+        <ProductID>CVRFPID-230676</ProductID>
+        <ProductID>CVRFPID-230666</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-220207</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+        <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="6" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - pairwise key reinstallation during the Fast BSS Transition (FT) handshake vulnerability </Title>
+    <ID SystemName="Cisco Bug ID">CSCvg10793</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the processing of the 802.11r Fast BSS (Basic Service Set) Transition handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force an authenticator to reinstall a previously used pairwise key.
+
+
+
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by passively eavesdropping on an FT handshake, and then replaying the reassociation request from the supplicant to the authenticator.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg10793,CSCvf71749,CSCvf71751,CSCvf71754,CSCvg42682,CSCvf71761,CSCvf96818,CSCvf96789,CSCvf96814,CSCvg35287</Note>
+    </Notes>
+    <CVE>CVE-2017-13082</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-206520</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-230685</ProductID>
+        <ProductID>CVRFPID-230676</ProductID>
+        <ProductID>CVRFPID-230666</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-220207</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+        <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="7" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Wi-Fi Protected Access (WPA) and Wi-Fi Protected Access II (WPA2) protocols - station-to-station link (STSL) Transient Key (STK) reinstallation during the PeerKey handshake vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvg10793</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the processing of the 802.11 PeerKey handshake messages of the WPA and WPA2 protocols could allow an unauthenticated, adjacent attacker to force an STSL to reinstall a previously used STK.
+
+
+
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by establishing a man-in-the-middle position between the stations and retransmitting previously used messages exchanges between stations.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg10793,CSCvf71749,CSCvf71751,CSCvf71754,CSCvg42682,CSCvf71761,CSCvf96818,CSCvf96789,CSCvf96814,CSCvg35287</Note>
+    </Notes>
+    <CVE>CVE-2017-13084</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-206520</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-230685</ProductID>
+        <ProductID>CVRFPID-230676</ProductID>
+        <ProductID>CVRFPID-230666</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-220207</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+        <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="8" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Integrity group key (IGTK) reinstallation when processing a Wireless Network Management (WNM) Sleep Mode Response frame</Title>
+    <ID SystemName="Cisco Bug ID">CSCvg10793</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the processing of the 802.11v (Wireless Network Management) Sleep Mode Response frames could allow an unauthenticated, adjacent attacker to force a supplicant that is compliant with the 802.11v standard to reinstall a previously used integrity group key.
+
+
+
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by passively eavesdropping and retransmitting previously used WNM Sleep Mode Response frames.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg10793,CSCvf71749,CSCvf71751,CSCvf71754,CSCvg42682,CSCvf71761,CSCvf96818,CSCvf96789,CSCvf96814,CSCvg35287</Note>
+    </Notes>
+    <CVE>CVE-2017-13088</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-206520</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-230685</ProductID>
+        <ProductID>CVRFPID-230676</ProductID>
+        <ProductID>CVRFPID-230666</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-220207</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+        <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="9" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Group key (GTK) reinstallation when processing a Wireless Network Management (WNM) Sleep Mode Response frame</Title>
+    <ID SystemName="Cisco Bug ID">CSCvg10793</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the processing of the 802.11v (Wireless Network Management) Sleep Mode Response frames could allow an unauthenticated, adjacent attacker to force a supplicant that is compliant with the 802.11v standard to reinstall a previously used group key.
+
+
+
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by passively eavesdropping and retransmitting previously used WNM Sleep Mode Response frames.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg10793,CSCvf71749,CSCvf71751,CSCvf71754,CSCvg42682,CSCvf71761,CSCvf96818,CSCvf96789,CSCvf96814,CSCvg35287</Note>
+    </Notes>
+    <CVE>CVE-2017-13087</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-206520</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-230685</ProductID>
+        <ProductID>CVRFPID-230676</ProductID>
+        <ProductID>CVRFPID-230666</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-220207</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+        <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="10" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Tunneled Direct-Link Setup (TDLS) PeerKey (TPK) key reinstallation in the TDLS handshake</Title>
+    <ID SystemName="Cisco Bug ID">CSCvg10793</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the processing of the 802.11z (Extensions to Direct-Link Setup) TDLS handshake messages could allow an unauthenticated, adjacent attacker to force a supplicant that is compliant with the 802.11z standard to reinstall a previously used TPK key.
+
+
+
+
+The vulnerability is due to ambiguities in the processing of associated protocol messages. An attacker could exploit this vulnerability by passively eavesdropping on a TDLS handshake and retransmitting previously used message exchanges between supplicant and authenticator.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvg10793,CSCvf71749,CSCvf71751,CSCvf71754,CSCvg42682,CSCvf71761,CSCvf96818,CSCvf96789,CSCvf96814,CSCvg35287</Note>
+    </Notes>
+    <CVE>CVE-2017-13086</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-206520</ProductID>
+        <ProductID>CVRFPID-205455</ProductID>
+        <ProductID>CVRFPID-190024</ProductID>
+        <ProductID>CVRFPID-210710</ProductID>
+        <ProductID>CVRFPID-230685</ProductID>
+        <ProductID>CVRFPID-230676</ProductID>
+        <ProductID>CVRFPID-230666</ProductID>
+        <ProductID>CVRFPID-109810</ProductID>
+        <ProductID>CVRFPID-220207</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>4.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Workaround for CVE-2017-13077, CVE-2017-13078, CVE-2017-13079, CVE-2017-13080, and CVE-2017-13081  Limiting the maximum number of Extensible Authentication Protocol (EAP) over LAN (EAPoL) key retries to 0 has been determined to be a valid workaround for these vulnerabilities. Setting the EAPoL retries value to 0 means one message will be sent, there will be no retransmissions sent, and if the EAPoL timeout is exceeded the client will be removed.
+
+This workaround can be configured at the global level or at the individual wireless LAN (WLAN) level. Please note that the option to configure this workaround at the WLAN level is only available on Cisco WLC releases 7.6 and later. Previous releases only allow configuration at the global (all WLANs) level.
+
+In order to configure this workaround at the global level (for all WLANs), use the following command in the WLC CLI:
+config advanced eap eapol-key-retries 0
+
+    The command show advanced eap can be used to verify the configuration change is now active on the device (in bold on the following example output):
+
+(wlc-hostname)&gt; show advanced eap
+EAP-Identity-Request Timeout (seconds)........... 30  EAP-Identity-Request Max Retries................. 2  EAP Key-Index for Dynamic WEP.................... 0  EAP Max-Login Ignore Identity Response........... enable  EAP-Request Timeout (seconds).................... 30  EAP-Request Max Retries.......................... 2  EAPOL-Key Timeout (milliseconds)................. 1000  EAPOL-Key Max Retries............................ 0  EAP-Broadcast Key Interval....................... 120
+
+In order to configure this workaround for a specific WLAN, the following two commands should be entered in the WLC CLI:
+config wlan security eap-params enable WLAN-NUMBER
+config wlan security eap-params eapol-key-retries 0 WLAN-NUMBER
+    Both commands must be entered and WLAN-NUMBER should be replaced with the actual WLAN number. In the following example, the workaround is being implemented on WLAN number 24:
+config wlan security eap-params enable 24
+config wlan security eap-params eapol-key-retries 0 24
+
+The command show wlan WLAN-NUMBER (where WLAN-NUMBER is replaced with the appropriate WLAN number) can be used then to verify the configuration change is now active on the device (in bold on the following example output):
+(wlc-hostname)&gt; show wlan 24
+WLAN Identifier.................................. X  Profile Name..................................... ftpsk  Network Name (SSID).............................. ftpsk  .  .  .    Tkip MIC Countermeasure Hold-down Timer....... 60    Eap-params.................................... Enabled       EAP-Identity-Request Timeout (seconds)..... 30       EAP-Identity-Request Max Retries........... 2       EAP-Request Timeout (seconds).............. 30       EAP-Request Max Retries.................... 2       EAPOL-Key Timeout (milliseconds)........... 1000       EAPOL-Key Max Retries...................... 0
+
+Note: Implementing the previous workaround may have a negative impact on normal wireless client association to the access point in the following scenarios:
+
+Clients that are slow or may drop initial  processing of EAPoL message number 1 (M1). This is seen on some embedded/CPU-limited clients, which may receive the M1 and not be ready to process it after the 802.1x  authentication phase.
+Environments with RF (Radio Frequency) interference or a WAN connection between the access point (AP) and the WLC, which may result in packet drops at some point on transmission towards clients.
+  In either scenario the outcome would be an EAPoL exchange failure and the wireless client will lose its authentication, requiring it to restart the association/authentication processes.
+Workaround for CVE-2017-13082  For customers who are concerned about CVE-2017-13082 (Accepting a Retransmitted FT Reassociation Request and Reinstalling the Pairwise Key While Processing It), the workaround is as follows:
+
+If no interactive applications such as Voice over IP (VoIP) or video are being used on the network, you can disable 11r support on the access point.
+If VoIP applications are in use but the supplicants support CCKM (for example, Cisco Wireless Phones), you can disable 11r support and reconfigure the clients to use CCKM (Cisco Centralized Key Management), which should provide a similar roaming experience.
+  Note: Disabling 11r support may have negative performance and availability impact on the network. Customers should verify that disabling 11r would not negatively impact their environment before performing such configuration change on their infrastructure devices.
+
+No workarounds have been identified for CVE-2017-13086, CVE-2017-13087, or CVE-2017-13088. Any future workarounds that address these vulnerabilities will be documented in the respective Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171016-wpa</URL>
+        <Description>Multiple Vulnerabilities in Wi-Fi Protected Access and Wi-Fi Protected Access II</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

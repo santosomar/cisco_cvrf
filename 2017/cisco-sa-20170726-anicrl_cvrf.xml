@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco IOS XE Software Autonomic Networking Infrastructure Certificate Revocation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170726-anicrl</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-07-26T15:24:43</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2018-01-31T14:47:15</Date>
+        <Description>Metadata update.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-07-26T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-01-31T14:47:15</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Autonomic Networking feature of Cisco IOS XE Software could allow an unauthenticated, remote, autonomic node to access the Autonomic Networking infrastructure of an affected system, after the certificate for the autonomic node has been revoked.
+
+The vulnerability exists because the affected software does not transfer certificate revocation lists (CRLs) across Autonomic Control Plane (ACP) channels. An attacker could exploit this vulnerability by connecting an autonomic node, which has a known and revoked certificate, to the autonomic domain of an affected system. A successful exploit could allow the attacker to insert a previously trusted autonomic node into the autonomic domain of an affected system after the certificate for the node has been revoked.
+
+There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170726-anicrl ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170726-anicrl"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">At the time of publication, this vulnerability affected devices that are running Release 16.x of Cisco IOS XE Software and are configured to use Autonomic Networking. This vulnerability does not affect devices that are running an earlier release of Cisco IOS XE Software or devices that are not configured to use Autonomic Networking.
+
+For more information about which Cisco IOS XE Software releases are vulnerable, see the Fixed Software ["#fixed"] section of this advisory.
+  Assessing the Autonomic Networking Configuration
+To determine whether a device is configured to use Autonomic Networking, administrators can use the show running-config | include ^autonomic command in the CLI. The following example shows the output of the command for a device that is running Cisco IOS XE Software and is configured to use Autonomic Networking:
+
+
+Router# show running-config | include ^autonomic
+  autonomic  Router#
+
+If a device is not configured to use Autonomic Networking, the command will not return any output.
+  Determining the Cisco IOS XE Software Release
+To determine which Cisco IOS XE Software release is running on a device, administrators can log in to the device, use the show version command in the CLI, and then refer to the system banner that appears. If the device is running Cisco IOS XE Software, the system banner displays Cisco IOS Software, Cisco IOS XE Software, or similar text.
+
+The following example shows the output of the command for a device that is running Cisco IOS XE Software Release 16.2.1 and has an installed image name of CAT3K_CAA-UNIVERSALK9-M:
+
+
+ios-xe-device# show version
+  Cisco IOS Software, Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version Denali 16.2.1, RELEASE SOFTWARE (fc1)  Technical Support: http://www.cisco.com/techsupport  Copyright (c) 1986-2016 by Cisco Systems, Inc.  Compiled Sun 27-Mar-16 21:47 by mcpre  .  .  .
+
+For information about the naming and numbering conventions for Cisco IOS XE Software releases, see White Paper: Cisco IOS and NX-OS Software Reference Guide ["https://www.cisco.com/c/en/us/about/security-center/ios-nx-os-reference-guide.html"].</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect Cisco IOS Software, Cisco IOS XR Software, or Cisco NX-OS Software.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are no workarounds that address this vulnerability. However, administrators can mitigate this vulnerability by doing the following for autonomic nodes that were disconnected from the Autonomic Network domain:
+
+Ensure that the certificate and key information for the node is deleted properly
+Update the Autonomic Networking whitelist file on the registrar
+
+These actions will prevent the autonomic node from re-establishing connectivity to the Autonomic Network domain of an affected system.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco has not released software updates that address the vulnerability described in this advisory.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["http://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+  Fixed Releases
+To help ensure a complete upgrade solution, customers may consider that this advisory is part of a collection that includes the following advisories:
+
+cisco-sa-20170726-aniacp ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170726-aniacp"]: Cisco IOS and IOS XE Software Autonomic Control Plane Channel Information Disclosure Vulnerability
+cisco-sa-20170726-anicrl ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170726-anicrl"]: Cisco IOS XE Software Autonomic Networking Infrastructure Certificate Revocation Vulnerability
+cisco-sa-20170726-anidos ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170726-anidos"]: Cisco IOS and IOS XE Software Autonomic Networking Infrastructure Denial of Service Vulnerability
+
+To help customers determine their exposure to vulnerabilities in Cisco IOS and IOS XE Software, Cisco provides a tool, the Cisco IOS Software Checker ["http://tools.cisco.com/security/center/selectIOSVersion.x"], that identifies any Cisco Security Advisories that impact a specific software release and the earliest release that fixes the vulnerabilities described in each advisory (“First Fixed”). If applicable, the tool also returns the earliest release that fixes all the vulnerabilities described in all the advisories identified (“Combined First Fixed”).
+
+Customers can use this tool to perform the following tasks:
+
+Initiate a search by choosing one or more releases from a drop-down menu or uploading a file from a local system for the tool to parse
+Enter the output of the show version command for the tool to parse
+Create a custom search by including all previously published Cisco Security Advisories, a specific advisory, or all advisories in the most recent bundled publication
+
+To determine whether a release is affected by any published Cisco Security Advisory, use the Cisco IOS Software Checker ["http://tools.cisco.com/security/center/selectIOSVersion.x"] on Cisco.com or enter a Cisco IOS Software or Cisco IOS XE Software release—for example, 15.1(4)M2 or 3.1.4S—in the following field:</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any malicious use of the vulnerability that is described in this advisory. Omar Eissa of ERNW disclosed this vulnerability during the Black Hat USA 2017 conference.</Note>
+    <Note Title="Source" Type="General" Ordinal="8">This vulnerability was reported to Cisco by Omar Eissa of ERNW.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170726-anicrl</URL>
+      <Description>Cisco IOS XE Software Autonomic Networking Infrastructure Certificate Revocation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco IOS XE Software" Type="Product Name">
+        <Branch Name="3.5SQ" Type="Product Version">
+          <Branch Name="3.5.8SQ" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232851">Cisco IOS XE Software 3.5SQ 3.5.8SQ</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.1" Type="Product Version">
+          <Branch Name="16.1.2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213100">Cisco IOS XE Software 16.1 16.1.2</FullProductName>
+          </Branch>
+          <Branch Name="16.1.3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214993">Cisco IOS XE Software 16.1 16.1.3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.2" Type="Product Version">
+          <Branch Name="16.2.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213809">Cisco IOS XE Software 16.2 16.2.1</FullProductName>
+          </Branch>
+          <Branch Name="16.2.2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217253">Cisco IOS XE Software 16.2 16.2.2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.3" Type="Product Version">
+          <Branch Name="16.3.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213960">Cisco IOS XE Software 16.3 16.3.1</FullProductName>
+          </Branch>
+          <Branch Name="16.3.2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217255">Cisco IOS XE Software 16.3 16.3.2</FullProductName>
+          </Branch>
+          <Branch Name="16.3.3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217256">Cisco IOS XE Software 16.3 16.3.3</FullProductName>
+          </Branch>
+          <Branch Name="16.3.1a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220802">Cisco IOS XE Software 16.3 16.3.1a</FullProductName>
+          </Branch>
+          <Branch Name="16.3.4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222711">Cisco IOS XE Software 16.3 16.3.4</FullProductName>
+          </Branch>
+          <Branch Name="16.3.5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-229124">Cisco IOS XE Software 16.3 16.3.5</FullProductName>
+          </Branch>
+          <Branch Name="16.3.5b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-231187">Cisco IOS XE Software 16.3 16.3.5b</FullProductName>
+          </Branch>
+          <Branch Name="16.3.6" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-231667">Cisco IOS XE Software 16.3 16.3.6</FullProductName>
+          </Branch>
+          <Branch Name="16.3.7" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-239264">Cisco IOS XE Software 16.3 16.3.7</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.4" Type="Product Version">
+          <Branch Name="16.4.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214051">Cisco IOS XE Software 16.4 16.4.1</FullProductName>
+          </Branch>
+          <Branch Name="16.4.2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217257">Cisco IOS XE Software 16.4 16.4.2</FullProductName>
+          </Branch>
+          <Branch Name="16.4.3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-231390">Cisco IOS XE Software 16.4 16.4.3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.5" Type="Product Version">
+          <Branch Name="16.5.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217259">Cisco IOS XE Software 16.5 16.5.1</FullProductName>
+          </Branch>
+          <Branch Name="16.5.1a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-225784">Cisco IOS XE Software 16.5 16.5.1a</FullProductName>
+          </Branch>
+          <Branch Name="16.5.1b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-226330">Cisco IOS XE Software 16.5 16.5.1b</FullProductName>
+          </Branch>
+          <Branch Name="16.5.2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-229187">Cisco IOS XE Software 16.5 16.5.2</FullProductName>
+          </Branch>
+          <Branch Name="16.5.3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232461">Cisco IOS XE Software 16.5 16.5.3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="3.18SP" Type="Product Version">
+          <Branch Name="3.18.3bSP" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-231826">Cisco IOS XE Software 3.18SP 3.18.3bSP</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.6" Type="Product Version">
+          <Branch Name="16.6.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-218901">Cisco IOS XE Software 16.6 16.6.1</FullProductName>
+          </Branch>
+          <Branch Name="16.6.2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-228706">Cisco IOS XE Software 16.6 16.6.2</FullProductName>
+          </Branch>
+          <Branch Name="16.6.3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-231682">Cisco IOS XE Software 16.6 16.6.3</FullProductName>
+          </Branch>
+          <Branch Name="16.6.4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-233155">Cisco IOS XE Software 16.6 16.6.4</FullProductName>
+          </Branch>
+          <Branch Name="16.6.5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-241736">Cisco IOS XE Software 16.6 16.6.5</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.7" Type="Product Version">
+          <Branch Name="16.7.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-218903">Cisco IOS XE Software 16.7 16.7.1</FullProductName>
+          </Branch>
+          <Branch Name="16.7.1b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232767">Cisco IOS XE Software 16.7 16.7.1b</FullProductName>
+          </Branch>
+          <Branch Name="16.7.2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-236837">Cisco IOS XE Software 16.7 16.7.2</FullProductName>
+          </Branch>
+          <Branch Name="16.7.3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-244070">Cisco IOS XE Software 16.7 16.7.3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.8" Type="Product Version">
+          <Branch Name="16.8.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-218905">Cisco IOS XE Software 16.8 16.8.1</FullProductName>
+          </Branch>
+          <Branch Name="16.8.1a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-235307">Cisco IOS XE Software 16.8 16.8.1a</FullProductName>
+          </Branch>
+          <Branch Name="16.8.1b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-235858">Cisco IOS XE Software 16.8 16.8.1b</FullProductName>
+          </Branch>
+          <Branch Name="16.8.1s" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-236834">Cisco IOS XE Software 16.8 16.8.1s</FullProductName>
+          </Branch>
+          <Branch Name="16.8.1c" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-237460">Cisco IOS XE Software 16.8 16.8.1c</FullProductName>
+          </Branch>
+          <Branch Name="16.8.2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-244071">Cisco IOS XE Software 16.8 16.8.2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.9" Type="Product Version">
+          <Branch Name="16.9.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-225856">Cisco IOS XE Software 16.9 16.9.1</FullProductName>
+          </Branch>
+          <Branch Name="16.9.1a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-242308">Cisco IOS XE Software 16.9 16.9.1a</FullProductName>
+          </Branch>
+          <Branch Name="16.9.1s" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-244530">Cisco IOS XE Software 16.9 16.9.1s</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.11" Type="Product Version">
+          <Branch Name="16.11.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-227918">Cisco IOS XE Software 16.11 16.11.1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.12" Type="Product Version">
+          <Branch Name="16.12.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-227920">Cisco IOS XE Software 16.12 16.12.1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.13" Type="Product Version">
+          <Branch Name="16.13.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-239363">Cisco IOS XE Software 16.13 16.13.1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.14" Type="Product Version">
+          <Branch Name="16.14.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-239365">Cisco IOS XE Software 16.14 16.14.1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.15" Type="Product Version">
+          <Branch Name="16.15.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-239367">Cisco IOS XE Software 16.15 16.15.1</FullProductName>
+          </Branch>
+        </Branch>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco IOS XE Software Autonomic Networking Infrastructure Certificate Revocation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvd22328</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Autonomic Networking feature of Cisco IOS XE Software could allow an unauthenticated, remote, autonomic node to access the Autonomic Networking infrastructure of an affected system, after the certificate for the autonomic node has been revoked.
+
+
+
+The vulnerability exists because the affected software does not transfer certificate revocation lists (CRLs) across Autonomic Control Plane (ACP) channels. An attacker could exploit this vulnerability by connecting an autonomic node, which has a known and revoked certificate, to the autonomic domain of an affected system. A successful exploit could allow the attacker to insert a previously trusted autonomic node into the autonomic domain of an affected system after the certificate for the node has been revoked.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvd22328</Note>
+    </Notes>
+    <CVE>CVE-2017-6664</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-213100</ProductID>
+        <ProductID>CVRFPID-213809</ProductID>
+        <ProductID>CVRFPID-213960</ProductID>
+        <ProductID>CVRFPID-214051</ProductID>
+        <ProductID>CVRFPID-214993</ProductID>
+        <ProductID>CVRFPID-217253</ProductID>
+        <ProductID>CVRFPID-217255</ProductID>
+        <ProductID>CVRFPID-217256</ProductID>
+        <ProductID>CVRFPID-217257</ProductID>
+        <ProductID>CVRFPID-217259</ProductID>
+        <ProductID>CVRFPID-218901</ProductID>
+        <ProductID>CVRFPID-218903</ProductID>
+        <ProductID>CVRFPID-218905</ProductID>
+        <ProductID>CVRFPID-220802</ProductID>
+        <ProductID>CVRFPID-222711</ProductID>
+        <ProductID>CVRFPID-225784</ProductID>
+        <ProductID>CVRFPID-225856</ProductID>
+        <ProductID>CVRFPID-226330</ProductID>
+        <ProductID>CVRFPID-227918</ProductID>
+        <ProductID>CVRFPID-227920</ProductID>
+        <ProductID>CVRFPID-228706</ProductID>
+        <ProductID>CVRFPID-229124</ProductID>
+        <ProductID>CVRFPID-229187</ProductID>
+        <ProductID>CVRFPID-231187</ProductID>
+        <ProductID>CVRFPID-231390</ProductID>
+        <ProductID>CVRFPID-231667</ProductID>
+        <ProductID>CVRFPID-231682</ProductID>
+        <ProductID>CVRFPID-231826</ProductID>
+        <ProductID>CVRFPID-232461</ProductID>
+        <ProductID>CVRFPID-232767</ProductID>
+        <ProductID>CVRFPID-232851</ProductID>
+        <ProductID>CVRFPID-233155</ProductID>
+        <ProductID>CVRFPID-235307</ProductID>
+        <ProductID>CVRFPID-235858</ProductID>
+        <ProductID>CVRFPID-236834</ProductID>
+        <ProductID>CVRFPID-236837</ProductID>
+        <ProductID>CVRFPID-237460</ProductID>
+        <ProductID>CVRFPID-239264</ProductID>
+        <ProductID>CVRFPID-239363</ProductID>
+        <ProductID>CVRFPID-239365</ProductID>
+        <ProductID>CVRFPID-239367</ProductID>
+        <ProductID>CVRFPID-241736</ProductID>
+        <ProductID>CVRFPID-242308</ProductID>
+        <ProductID>CVRFPID-244070</ProductID>
+        <ProductID>CVRFPID-244071</ProductID>
+        <ProductID>CVRFPID-244530</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>6.5</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:H/A:N</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability. However, administrators can mitigate this vulnerability by doing the following for autonomic nodes that were disconnected from the Autonomic Network domain:
+
+Ensure that the certificate and key information for the node is deleted properly
+Update the Autonomic Networking whitelist file on the registrar
+
+These actions will prevent the autonomic node from re-establishing connectivity to the Autonomic Network domain of an affected system.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170726-anicrl</URL>
+        <Description>Cisco IOS XE Software Autonomic Networking Infrastructure Certificate Revocation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

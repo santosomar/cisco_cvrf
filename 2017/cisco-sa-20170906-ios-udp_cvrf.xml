@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco IOS and Cisco IOS XE Software UDP Packet Processing Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170906-ios-udp</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.1</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-09-06T16:35:50</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2017-09-07T13:35:32</Date>
+        <Description>Corrected the list of Cisco bug  IDs.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-09-06T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-09-07T13:35:32</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the UDP processing code of Cisco IOS and Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause the input queue of an affected system to hold UDP packets, causing an interface queue wedge and a denial of service (DoS) condition.
+
+The vulnerability is due to Cisco IOS Software application changes that create UDP sockets and leave the sockets idle without closing them. An attacker could exploit this vulnerability by sending UDP packets with a destination port of 0 to an affected device. A successful exploit could allow the attacker to cause UDP packets to be held in the input interfaces queue, resulting in a DoS condition. The input interface queue will stop holding UDP packets when it receives 250 packets.
+
+There are workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170906-ios-udp ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170906-ios-udp"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco IOS and Cisco IOS XE Software. For information about affected software releases, consult the Cisco bug ID(s) at the top of this advisory.</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">To work around this vulnerability, administrators can set a maximum hold queue value that is greater than 250 for all device interfaces. The following example shows how to set the value to 350 by using the hold queue in interface configuration command:
+Router# configure terminal
+Router(config)# interface gigabitEthernet 1  Router(config-if)# hold-queue 350 in
+    Administrators can also configure an access-control list (ACL) that blocks UDP packets with a destination port of 0 and apply the ACL to all device interfaces, for example:
+Extended IP access list 180
+    10 deny udp any any eq 0</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">For information about fixed software releases, consult the Cisco bug ID(s) at the top of this advisory.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="8">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170906-ios-udp</URL>
+      <Description>Cisco IOS and Cisco IOS XE Software UDP Packet Processing Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="IOS" Type="Product Name">
+        <Branch Name="15.1GC" Type="Product Version">
+          <Branch Name="15.1(2)GC" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-105759">Cisco IOS 15.1GC 15.1(2)GC</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)GC1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-108649">Cisco IOS 15.1GC 15.1(2)GC1</FullProductName>
+          </Branch>
+          <Branch Name="15.1(2)GC2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-114130">Cisco IOS 15.1GC 15.1(2)GC2</FullProductName>
+          </Branch>
+          <Branch Name="15.1(4)GC" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-185352">Cisco IOS 15.1GC 15.1(4)GC</FullProductName>
+          </Branch>
+          <Branch Name="15.1(4)GC1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-187826">Cisco IOS 15.1GC 15.1(4)GC1</FullProductName>
+          </Branch>
+          <Branch Name="15.1(4)GC2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-197489">Cisco IOS 15.1GC 15.1(4)GC2</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.2GC" Type="Product Version">
+          <Branch Name="15.2(1)GC" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-109702">Cisco IOS 15.2GC 15.2(1)GC</FullProductName>
+          </Branch>
+          <Branch Name="15.2(1)GC1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-113019">Cisco IOS 15.2GC 15.2(1)GC1</FullProductName>
+          </Branch>
+          <Branch Name="15.2(1)GC2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-113967">Cisco IOS 15.2GC 15.2(1)GC2</FullProductName>
+          </Branch>
+          <Branch Name="15.2(2)GC" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-116219">Cisco IOS 15.2GC 15.2(2)GC</FullProductName>
+          </Branch>
+          <Branch Name="15.2(3)GC" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-116726">Cisco IOS 15.2GC 15.2(3)GC</FullProductName>
+          </Branch>
+          <Branch Name="15.2(3)GC1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-189765">Cisco IOS 15.2GC 15.2(3)GC1</FullProductName>
+          </Branch>
+          <Branch Name="15.2(4)GC" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-193316">Cisco IOS 15.2GC 15.2(4)GC</FullProductName>
+          </Branch>
+          <Branch Name="15.2(4)GC1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-197495">Cisco IOS 15.2GC 15.2(4)GC1</FullProductName>
+          </Branch>
+          <Branch Name="15.2(4)GC2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-200634">Cisco IOS 15.2GC 15.2(4)GC2</FullProductName>
+          </Branch>
+          <Branch Name="15.2(4)GC3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-203066">Cisco IOS 15.2GC 15.2(4)GC3</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.4T" Type="Product Version">
+          <Branch Name="15.4(1)T" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-115981">Cisco IOS 15.4T 15.4(1)T</FullProductName>
+          </Branch>
+          <Branch Name="15.4(2)T" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-191997">Cisco IOS 15.4T 15.4(2)T</FullProductName>
+          </Branch>
+          <Branch Name="15.4(1)T2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-196114">Cisco IOS 15.4T 15.4(1)T2</FullProductName>
+          </Branch>
+          <Branch Name="15.4(1)T1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-196255">Cisco IOS 15.4T 15.4(1)T1</FullProductName>
+          </Branch>
+          <Branch Name="15.4(1)T3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-196256">Cisco IOS 15.4T 15.4(1)T3</FullProductName>
+          </Branch>
+          <Branch Name="15.4(2)T1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-201189">Cisco IOS 15.4T 15.4(2)T1</FullProductName>
+          </Branch>
+          <Branch Name="15.4(2)T2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204095">Cisco IOS 15.4T 15.4(2)T2</FullProductName>
+          </Branch>
+          <Branch Name="15.4(1)T4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204282">Cisco IOS 15.4T 15.4(1)T4</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.2GCA" Type="Product Version">
+          <Branch Name="15.2(3)GCA" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-188141">Cisco IOS 15.2GCA 15.2(3)GCA</FullProductName>
+          </Branch>
+          <Branch Name="15.2(3r)GCA" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-188142">Cisco IOS 15.2GCA 15.2(3r)GCA</FullProductName>
+          </Branch>
+          <Branch Name="15.2(3)GCA1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-192936">Cisco IOS 15.2GCA 15.2(3)GCA1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="15.4M" Type="Product Version">
+          <Branch Name="15.4(3)M" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-193350">Cisco IOS 15.4M 15.4(3)M</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-201713">Cisco IOS 15.4M 15.4(3)M1</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M2" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-204104">Cisco IOS 15.4M 15.4(3)M2</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M3" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-205721">Cisco IOS 15.4M 15.4(3)M3</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M4" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-209094">Cisco IOS 15.4M 15.4(3)M4</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M5" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-211618">Cisco IOS 15.4M 15.4(3)M5</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M6" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214166">Cisco IOS 15.4M 15.4(3)M6</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M7" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220443">Cisco IOS 15.4M 15.4(3)M7</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M6a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220674">Cisco IOS 15.4M 15.4(3)M6a</FullProductName>
+          </Branch>
+          <Branch Name="15.4(3)M7a" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-225668">Cisco IOS 15.4M 15.4(3)M7a</FullProductName>
+          </Branch>
+        </Branch>
+      </Branch>
+      <Branch Name="Cisco IOS XE Software" Type="Product Name">
+        <Branch Name="3.14S" Type="Product Version">
+          <Branch Name="3.14.0S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-206178">Cisco IOS XE Software 3.14S 3.14.0S</FullProductName>
+          </Branch>
+          <Branch Name="3.14.1S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-206181">Cisco IOS XE Software 3.14S 3.14.1S</FullProductName>
+          </Branch>
+          <Branch Name="3.14.2S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-206191">Cisco IOS XE Software 3.14S 3.14.2S</FullProductName>
+          </Branch>
+          <Branch Name="3.14.3S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-206192">Cisco IOS XE Software 3.14S 3.14.3S</FullProductName>
+          </Branch>
+          <Branch Name="3.14.4S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-206193">Cisco IOS XE Software 3.14S 3.14.4S</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="3.15S" Type="Product Version">
+          <Branch Name="3.15.0S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-206180">Cisco IOS XE Software 3.15S 3.15.0S</FullProductName>
+          </Branch>
+          <Branch Name="3.15.1S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-210079">Cisco IOS XE Software 3.15S 3.15.1S</FullProductName>
+          </Branch>
+          <Branch Name="3.15.2S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212268">Cisco IOS XE Software 3.15S 3.15.2S</FullProductName>
+          </Branch>
+          <Branch Name="3.15.1xbS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213662">Cisco IOS XE Software 3.15S 3.15.1xbS</FullProductName>
+          </Branch>
+          <Branch Name="3.15.1cS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213700">Cisco IOS XE Software 3.15S 3.15.1cS</FullProductName>
+          </Branch>
+          <Branch Name="3.15.2xbS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213701">Cisco IOS XE Software 3.15S 3.15.2xbS</FullProductName>
+          </Branch>
+          <Branch Name="3.15.3S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213776">Cisco IOS XE Software 3.15S 3.15.3S</FullProductName>
+          </Branch>
+          <Branch Name="3.15.4S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217264">Cisco IOS XE Software 3.15S 3.15.4S</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="3.16S" Type="Product Version">
+          <Branch Name="3.16.0S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-210081">Cisco IOS XE Software 3.16S 3.16.0S</FullProductName>
+          </Branch>
+          <Branch Name="3.16.1S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212408">Cisco IOS XE Software 3.16S 3.16.1S</FullProductName>
+          </Branch>
+          <Branch Name="3.16.0aS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213476">Cisco IOS XE Software 3.16S 3.16.0aS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.1aS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213477">Cisco IOS XE Software 3.16S 3.16.1aS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.2S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213478">Cisco IOS XE Software 3.16S 3.16.2S</FullProductName>
+          </Branch>
+          <Branch Name="3.16.2aS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213635">Cisco IOS XE Software 3.16S 3.16.2aS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.0bS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213777">Cisco IOS XE Software 3.16S 3.16.0bS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.0cS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213778">Cisco IOS XE Software 3.16S 3.16.0cS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.3S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-213779">Cisco IOS XE Software 3.16S 3.16.3S</FullProductName>
+          </Branch>
+          <Branch Name="3.16.2bS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217265">Cisco IOS XE Software 3.16S 3.16.2bS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.3aS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217266">Cisco IOS XE Software 3.16S 3.16.3aS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.4S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217267">Cisco IOS XE Software 3.16S 3.16.4S</FullProductName>
+          </Branch>
+          <Branch Name="3.16.4aS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-220993">Cisco IOS XE Software 3.16S 3.16.4aS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.4bS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222257">Cisco IOS XE Software 3.16S 3.16.4bS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.4gS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222693">Cisco IOS XE Software 3.16S 3.16.4gS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.5S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222694">Cisco IOS XE Software 3.16S 3.16.5S</FullProductName>
+          </Branch>
+          <Branch Name="3.16.4cS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222925">Cisco IOS XE Software 3.16S 3.16.4cS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.4dS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-223252">Cisco IOS XE Software 3.16S 3.16.4dS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.4eS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-224702">Cisco IOS XE Software 3.16S 3.16.4eS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.6S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-225099">Cisco IOS XE Software 3.16S 3.16.6S</FullProductName>
+          </Branch>
+          <Branch Name="3.16.5aS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-225466">Cisco IOS XE Software 3.16S 3.16.5aS</FullProductName>
+          </Branch>
+          <Branch Name="3.16.5bS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-225832">Cisco IOS XE Software 3.16S 3.16.5bS</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="3.17S" Type="Product Version">
+          <Branch Name="3.17.0S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212411">Cisco IOS XE Software 3.17S 3.17.0S</FullProductName>
+          </Branch>
+          <Branch Name="3.17.1S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-212412">Cisco IOS XE Software 3.17S 3.17.1S</FullProductName>
+          </Branch>
+          <Branch Name="3.17.2S " Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217234">Cisco IOS XE Software 3.17S 3.17.2S </FullProductName>
+          </Branch>
+          <Branch Name="3.17.1aS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217268">Cisco IOS XE Software 3.17S 3.17.1aS</FullProductName>
+          </Branch>
+          <Branch Name="3.17.3S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222942">Cisco IOS XE Software 3.17S 3.17.3S</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="3.18S" Type="Product Version">
+          <Branch Name="3.18.0aS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217270">Cisco IOS XE Software 3.18S 3.18.0aS</FullProductName>
+          </Branch>
+          <Branch Name="3.18.0S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217271">Cisco IOS XE Software 3.18S 3.18.0S</FullProductName>
+          </Branch>
+          <Branch Name="3.18.1S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217272">Cisco IOS XE Software 3.18S 3.18.1S</FullProductName>
+          </Branch>
+          <Branch Name="3.18.2S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217273">Cisco IOS XE Software 3.18S 3.18.2S</FullProductName>
+          </Branch>
+          <Branch Name="3.18.3vS" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-217274">Cisco IOS XE Software 3.18S 3.18.3vS</FullProductName>
+          </Branch>
+          <Branch Name="3.18.3S" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-226078">Cisco IOS XE Software 3.18S 3.18.3S</FullProductName>
+          </Branch>
+        </Branch>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco IOS and IOS XE Software UDP Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCup10024</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the UDP processing code of Cisco IOS and Cisco IOS XE Software could allow an unauthenticated, remote attacker to cause the input queue of an affected system to hold UDP packets, causing an interface queue wedge and a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to Cisco IOS Software application changes that create UDP sockets and leave the sockets idle without closing them. An attacker could exploit this vulnerability by sending UDP packets with a destination port of 0 to an affected device. A successful exploit could allow the attacker to cause UDP packets to be held in the input interfaces queue, resulting in a DoS condition. The input interface queue will stop holding UDP packets when it receives 250 packets.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCup10024,CSCva95506,CSCve64219</Note>
+    </Notes>
+    <CVE>CVE-2017-6627</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-105759</ProductID>
+        <ProductID>CVRFPID-108649</ProductID>
+        <ProductID>CVRFPID-109702</ProductID>
+        <ProductID>CVRFPID-113019</ProductID>
+        <ProductID>CVRFPID-113967</ProductID>
+        <ProductID>CVRFPID-114130</ProductID>
+        <ProductID>CVRFPID-115981</ProductID>
+        <ProductID>CVRFPID-116219</ProductID>
+        <ProductID>CVRFPID-116726</ProductID>
+        <ProductID>CVRFPID-185352</ProductID>
+        <ProductID>CVRFPID-187826</ProductID>
+        <ProductID>CVRFPID-188141</ProductID>
+        <ProductID>CVRFPID-188142</ProductID>
+        <ProductID>CVRFPID-189765</ProductID>
+        <ProductID>CVRFPID-191997</ProductID>
+        <ProductID>CVRFPID-192936</ProductID>
+        <ProductID>CVRFPID-193316</ProductID>
+        <ProductID>CVRFPID-193350</ProductID>
+        <ProductID>CVRFPID-196114</ProductID>
+        <ProductID>CVRFPID-196255</ProductID>
+        <ProductID>CVRFPID-196256</ProductID>
+        <ProductID>CVRFPID-197489</ProductID>
+        <ProductID>CVRFPID-197495</ProductID>
+        <ProductID>CVRFPID-200634</ProductID>
+        <ProductID>CVRFPID-201189</ProductID>
+        <ProductID>CVRFPID-201713</ProductID>
+        <ProductID>CVRFPID-203066</ProductID>
+        <ProductID>CVRFPID-204095</ProductID>
+        <ProductID>CVRFPID-204104</ProductID>
+        <ProductID>CVRFPID-204282</ProductID>
+        <ProductID>CVRFPID-205721</ProductID>
+        <ProductID>CVRFPID-209094</ProductID>
+        <ProductID>CVRFPID-211618</ProductID>
+        <ProductID>CVRFPID-214166</ProductID>
+        <ProductID>CVRFPID-220443</ProductID>
+        <ProductID>CVRFPID-220674</ProductID>
+        <ProductID>CVRFPID-225668</ProductID>
+        <ProductID>CVRFPID-206178</ProductID>
+        <ProductID>CVRFPID-206180</ProductID>
+        <ProductID>CVRFPID-206181</ProductID>
+        <ProductID>CVRFPID-206191</ProductID>
+        <ProductID>CVRFPID-206192</ProductID>
+        <ProductID>CVRFPID-206193</ProductID>
+        <ProductID>CVRFPID-210079</ProductID>
+        <ProductID>CVRFPID-210081</ProductID>
+        <ProductID>CVRFPID-212268</ProductID>
+        <ProductID>CVRFPID-212408</ProductID>
+        <ProductID>CVRFPID-212411</ProductID>
+        <ProductID>CVRFPID-212412</ProductID>
+        <ProductID>CVRFPID-213476</ProductID>
+        <ProductID>CVRFPID-213477</ProductID>
+        <ProductID>CVRFPID-213478</ProductID>
+        <ProductID>CVRFPID-213635</ProductID>
+        <ProductID>CVRFPID-213662</ProductID>
+        <ProductID>CVRFPID-213700</ProductID>
+        <ProductID>CVRFPID-213701</ProductID>
+        <ProductID>CVRFPID-213776</ProductID>
+        <ProductID>CVRFPID-213777</ProductID>
+        <ProductID>CVRFPID-213778</ProductID>
+        <ProductID>CVRFPID-213779</ProductID>
+        <ProductID>CVRFPID-217234</ProductID>
+        <ProductID>CVRFPID-217264</ProductID>
+        <ProductID>CVRFPID-217265</ProductID>
+        <ProductID>CVRFPID-217266</ProductID>
+        <ProductID>CVRFPID-217267</ProductID>
+        <ProductID>CVRFPID-217268</ProductID>
+        <ProductID>CVRFPID-217270</ProductID>
+        <ProductID>CVRFPID-217271</ProductID>
+        <ProductID>CVRFPID-217272</ProductID>
+        <ProductID>CVRFPID-217273</ProductID>
+        <ProductID>CVRFPID-217274</ProductID>
+        <ProductID>CVRFPID-220993</ProductID>
+        <ProductID>CVRFPID-222257</ProductID>
+        <ProductID>CVRFPID-222693</ProductID>
+        <ProductID>CVRFPID-222694</ProductID>
+        <ProductID>CVRFPID-222925</ProductID>
+        <ProductID>CVRFPID-222942</ProductID>
+        <ProductID>CVRFPID-223252</ProductID>
+        <ProductID>CVRFPID-224702</ProductID>
+        <ProductID>CVRFPID-225099</ProductID>
+        <ProductID>CVRFPID-225466</ProductID>
+        <ProductID>CVRFPID-225832</ProductID>
+        <ProductID>CVRFPID-226078</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>5.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>To work around this vulnerability, administrators can set a maximum hold queue value that is greater than 250 for all device interfaces. The following example shows how to set the value to 350 by using the hold queue in interface configuration command:
+Router# configure terminal
+Router(config)# interface gigabitEthernet 1  Router(config-if)# hold-queue 350 in
+    Administrators can also configure an access-control list (ACL) that blocks UDP packets with a destination port of 0 and apply the ACL to all device interfaces, for example:
+Extended IP access list 180
+    10 deny udp any any eq 0</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170906-ios-udp</URL>
+        <Description>Cisco IOS and Cisco IOS XE Software UDP Packet Processing Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

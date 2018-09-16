@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco IOS and IOS XE Software Autonomic Networking Infrastructure Registrar Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170320-ani</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-03-20T15:34:45</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-03-20T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-03-20T15:34:45</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Autonomic Networking Infrastructure (ANI) registrar feature of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, adjacent attacker to cause a denial of service (DoS) condition.
+
+The vulnerability is due to incomplete input validation on certain crafted packets. An attacker could exploit this vulnerability by sending a crafted autonomic network channel discovery packet to a device that has all the following characteristics:
+
+Running a Cisco IOS Software or Cisco IOS XE Software release that supports the ANI feature
+Configured as an autonomic registrar
+Has a whitelist configured
+An exploit could allow the attacker to cause the affected device to reload.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170320-ani ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170320-ani"]
+
+Note: Also see the companion advisory for affected devices that support Autonomic Networking: Cisco IOS and IOS XE Software IPv6 Denial of Service Vulnerability ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170320-aniipv6"].</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco IOS Software and Cisco IOS XE Software devices with all the following characteristics:
+
+Running a release of Cisco IOS Software or Cisco IOS XE Software that supports the ANI feature
+Configured as an autonomic registrar
+Has a configured whitelist
+  Note: Autonomic networking should be configured with a whitelist. Do not remove the whitelist as a workaround.
+For information about which Cisco IOS and IOS XE Software releases are vulnerable, see the Fixed Software ["#fixed"] section of this advisory.
+  Determining Whether a Device is Configured as an Autonomic Network Registrar
+Administrators can identify a device that is configured as an autonomic registrar by using the show autonomic device command in the CLI. The following example shows the output of the command on a device that is configured as an autonomic registrar:
+
+
+Device# show autonomic device
+                                                                                  	Status                         Enabled  	Type                                                    Autonomic Registrar  	UDI                            PID:ASR1002-X SN:FOX2005GAHG  	Device ID                      cc16.7ec4.2d00-1  	Domain ID                      cisco.com  	Domain Certificate             (sub:) ou=cisco.com+serialNumber=PID:ASR1002-X SN:FOX2005GAHG,cn=cc16.7ec4.2d00-1  	Certificate Serial Number      02  	Device Address                 FD08:2EEF:C2EE:0:CC16:7EC4:2D00:1  	Domain Cert is Valid                                                                                         Device#
+
+A device that is not configured as an autonomic registrar will indicate a Type of Autonomic Node or return different output.
+
+Administrators can determine whether an autonomic registrar is configured with a whitelist by using the show autonomic registrar command in the CLI. The registrar must have a whitelist configured to be vulnerable. If the whitelist is configured, the output shows the location of the whitelist file. A device configured as an autonomic registrar without a whitelist configuration will have a blank field next to the Whitelist output:
+
+
+Device# show autonomic registrar
+          Domain Name                   cisco          Whitelist                                             bootflash:whitelist.txt          Status                        ANR Live          Address                       FD7A:F78C:911D::D253:5185:5472          Certificate (sub:)            cn=ANRA-CS
+    Determining the Cisco IOS Software Release
+To determine which Cisco IOS Software release is running on a device, administrators can log in to the device, use the show version command in the CLI, and then refer to the system banner that appears. If the device is running Cisco IOS Software, the system banner displays text similar to Cisco Internetwork Operating System Software or Cisco IOS Software. The banner also displays the installed image name in parentheses, followed by the Cisco IOS Software release number and release name. Some Cisco devices do not support the show version command or may provide different output.
+
+The following example identifies a Cisco product that is running Cisco IOS Software Release 15.5(2)T1 with an installed image name of C2951-UNIVERSALK9-M:
+
+
+Router&gt; show version
+  Cisco IOS Software, C2951 Software (C2951-UNIVERSALK9-M), Version 15.5(2)T1, RELEASE SOFTWARE (fc1)  Technical Support: http://www.cisco.com/techsupport  Copyright (c) 1986-2015 by Cisco Systems, Inc.  Compiled Mon 22-Jun-15 09:32 by prod_rel_team  .  .  .
+
+For information about the naming and numbering conventions for Cisco IOS Software releases, see White Paper: Cisco IOS and NX-OS Software Reference Guide ["http://www.cisco.com/web/about/security/intelligence/ios-ref.html"].
+Determining the Cisco IOS XE Software Release
+To determine which Cisco IOS XE Software release is running on a device, administrators can log in to the device, use the show version command in the CLI, and then refer to the system banner that appears. If the device is running Cisco IOS XE Software, the system banner displays Cisco IOS XE Software or similar text.
+
+The following example shows the output of the show version command on a device that is running Cisco IOS XE Software Release 3.16.1aS:
+
+
+Router&gt; show version
+  Cisco IOS XE Software, Version 03.16.01a.S - Extended Support Release  Cisco IOS Software, ASR1000 Software (PPC_LINUX_IOSD-ADVENTERPRISEK9-M), Version 15.5(3)S1a, RELEASE SOFTWARE (fc1)  Technical Support: http://www.cisco.com/techsupport  Copyright (c) 1986-2015 by Cisco Systems, Inc.  Compiled Wed 04-Nov-15 17:40 by mcpre  .  .  .
+
+For information about the naming and numbering conventions for Cisco IOS XE Software releases, see White Paper: Cisco IOS and NX-OS Software Reference Guide ["http://www.cisco.com/c/en/us/about/security-center/ios-nx-os-reference-guide.html"].</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect Cisco IOS XR Software or Cisco NX-OS Software.</Note>
+    <Note Title="Details" Type="General" Ordinal="4">The frames that exploit this vulnerability are Layer 2 adjacent. An ANI proxy will forward the packets to the registrar. As a result, a new client that is multiple hops from the registrar could achieve this exploit. Therefore, the Cisco Product Security Incident Response Team (PSIRT) has published this vulnerability with a High Security Impact Rating.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="5">Exploitation of this vulnerability will cause an affected device to reload. Exploitation may be confirmed by decoding the stack trace for the device and determining whether the AN HELPER process crashed. If the process crashed, device logs will contain an error message similar to the following example:
+%LINK-3-UPDOWN: Interface ANI2, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface ANI2, changed state to up    Exception to IOS Thread:  Frame pointer 0x7F5EB1B173D0, PC = 0x557F33057009    UNIX-EXT-SIGNAL: Segmentation fault(11), Process = AN HELPER  .  .  .</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">There are no workarounds that address this vulnerability. Autonomic networking should be configured with a whitelist. Do not remove the whitelist as a workaround.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html ["http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["http://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html ["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+                        Cisco IOS and IOS XE Software
+To help customers determine their exposure to vulnerabilities in Cisco IOS and IOS XE Software, Cisco provides a tool, the Cisco IOS Software Checker ["http://tools.cisco.com/security/center/selectIOSVersion.x"], that identifies any Cisco Security Advisories that impact a specific software release and the earliest release that fixes the vulnerabilities described in each advisory (“First Fixed”). If applicable, the tool also returns the earliest release that fixes all the vulnerabilities described in all the advisories identified (“Combined First Fixed”).
+
+Customers can use this tool to perform the following tasks:
+
+Initiate a search by choosing one or more releases from a drop-down menu or uploading a file from a local system for the tool to parse
+Enter the output of the show version command for the tool to parse
+Create a custom search by including all previously published Cisco Security Advisories, a specific advisory, or all advisories in the most recent bundled publication
+
+To determine whether a release is affected by any published Cisco Security Advisory, use the Cisco IOS Software Checker ["http://tools.cisco.com/security/center/selectIOSVersion.x"] on Cisco.com or enter a Cisco IOS Software or Cisco IOS XE Software release—for example, 15.1(4)M2 or 3.1.4S—in the following field:
+
+
+
+
+
+For a mapping of Cisco IOS XE Software releases to Cisco IOS Software releases, refer to the Cisco IOS XE 2 Release Notes ["http://www.cisco.com/c/en/us/td/docs/ios/ios_xe/2/release/notes/rnasr21/rnasr21_gen.html#wp3000032"], Cisco IOS XE 3S Release Notes ["http://www.cisco.com/c/en/us/td/docs/ios/ios_xe/3/release/notes/asr1k_rn_3s_rel_notes/asr1k_rn_3s_sys_req.html#wp3069754"], or Cisco IOS XE 3SG Release Notes ["http://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst4500/release/note/OL_24726.html#pgfId-2570252"], depending on the Cisco IOS XE Software release.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of malicious use of the vulnerability that is described in this advisory. Omar Eissa of ERNW disclosed this vulnerability at the TROOPERS17 conference in Germany in March 2017.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was reported to Cisco by Omar Eissa of ERNW.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170320-ani</URL>
+      <Description>Cisco IOS and IOS XE Software Autonomic Networking Infrastructure Registrar Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170320-aniipv6</URL>
+      <Description>Cisco IOS and IOS XE Software IPv6 Denial of Service Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170320-aniipv6</URL>
+      <Description>Cisco IOS and IOS XE Software IPv6 Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco IOS and IOS XE Software Autonomic Networking Infrastructure Registrar Denial of Service Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Autonomic Networking Infrastructure (ANI) registrar feature of Cisco IOS Software and Cisco IOS XE Software could allow an unauthenticated, adjacent attacker to cause a denial of service (DoS) condition.
+
+
+
+The vulnerability is due to incomplete input validation on certain crafted packets. An attacker could exploit this vulnerability by sending a crafted autonomic network channel discovery packet to a device that has all the following characteristics:
+
+
+    Running a Cisco IOS Software or Cisco IOS XE Software release that supports the ANI feature
+    Configured as an autonomic registrar
+    Has a whitelist configured
+
+
+
+An exploit could allow the attacker to cause the affected device to reload.</Note>
+    </Notes>
+    <CVE>CVE-2017-3849</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability. Autonomic networking should be configured with a whitelist. Do not remove the whitelist as a workaround.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170320-ani</URL>
+        <Description>Cisco IOS and IOS XE Software Autonomic Networking Infrastructure Registrar Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

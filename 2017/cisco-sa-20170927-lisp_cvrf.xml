@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco IOS XE Software Locator/ID Separation Protocol Authentication Bypass Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170927-lisp</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-09-27T14:53:34</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-09-27T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-09-27T14:53:34</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the implementation of the Locator/ID Separation Protocol (LISP) in Cisco IOS XE Software could allow an unauthenticated, remote attacker using an x tunnel router to bypass authentication checks performed when registering an Endpoint Identifier (EID) to a Routing Locator (RLOC) in the map server/map resolver (MS/MR).
+
+The vulnerability is due to a logic error introduced via a code regression for the affected software. An attacker could exploit this vulnerability by sending specific valid map-registration requests, which will be accepted by the MS/MR even if the authentication keys do not match, to the affected software. A successful exploit could allow the attacker to inject invalid mappings of EIDs to RLOCs in the MS/MR of the affected software.
+
+Cisco has released software updates that address this vulnerability. There are no workarounds that address this vulnerability.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-lisp ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-lisp"]
+
+This advisory is part of the September 27, 2017, release of the Cisco IOS and IOS XE Software Security Advisory Bundled Publication, which includes 12 Cisco Security Advisories that describe 13 vulnerabilities. For a complete list of the advisories and links to them, see Cisco Event Response: September 2017 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication ["https://tools.cisco.com/security/center/viewErp.x?alertId=ERP-63410"].</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco devices that are running a vulnerable release of Cisco IOS XE Software and are configured with LISP acting as an IPv4 or IPv6 map server.
+
+This vulnerability affects Cisco IOS XE Software release trains 3.9E and Everest 16.4. For more information about which Cisco IOS XE Software releases are vulnerable, see the Fixed Software ["#fixed"] section of this advisory.
+
+To determine whether a device is configured as a LISP map server, administrators can use the show running-config | include map-server privileged EXEC command in the CLI. The following example shows the output of the command for a device that is running Cisco IOS XE Software and is configured as a LISP map server:
+
+
+MS/MR# show running-config | include map-server
+  ipv4 map-server  ipv6 map-server  MS/MR#
+
+This vulnerability does not affect devices that are configured with LISP performing as an egress tunnel router, ingress tunnel router, or purely as a map resolver.
+  Determining the Cisco IOS XE Software Release
+To determine which Cisco IOS XE Software release is running on a device, administrators can log in to the device, use the show version command in the CLI, and then refer to the system banner that appears. If the device is running Cisco IOS XE Software, the system banner displays Cisco IOS Software, Cisco IOS XE Software, or similar text.
+
+The following example shows the output of the command for a device that is running Cisco IOS XE Software Release 16.2.1 and has an installed image name of CAT3K_CAA-UNIVERSALK9-M:
+
+
+ios-xe-device# show version
+  Cisco IOS Software, Catalyst L3 Switch Software (CAT3K_CAA-UNIVERSALK9-M), Version Denali 16.2.1, RELEASE SOFTWARE (fc1)  Technical Support: http://www.cisco.com/techsupport  Copyright (c) 1986-2016 by Cisco Systems, Inc.  Compiled Sun 27-Mar-16 21:47 by mcpre  .  .  .
+
+For information about the naming and numbering conventions for Cisco IOS XE Software releases, see White Paper: Cisco IOS and NX-OS Software Reference Guide ["https://www.cisco.com/c/en/us/about/security-center/ios-nx-os-reference-guide.html"].</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect Cisco IOS Software, Cisco IOS XR Software, or Cisco NX-OS Software.</Note>
+    <Note Title="Details" Type="General" Ordinal="4">This vulnerability could be exploited over IPv4 or IPv6.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="5">Exploitation of this vulnerability will cause unknown IP addresses to appear in the Who Last Registered column of the output of the show lisp site command on the map server against sites that should be performing authentication.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">There are no workarounds that address this vulnerability.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+https://www.cisco.com/c/en/us/products/end-user-license-agreement.html ["https://www.cisco.com/c/en/us/products/end-user-license-agreement.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html ["https://www.cisco.com/c/en/us/support/web/tsd-cisco-worldwide-contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+                          Cisco IOS and IOS XE Software
+To help customers determine their exposure to vulnerabilities in Cisco IOS and IOS XE Software, Cisco provides a tool, the Cisco IOS Software Checker ["https://tools.cisco.com/security/center/selectIOSVersion.x"], that identifies any Cisco Security Advisories that impact a specific software release and the earliest release that fixes the vulnerabilities described in each advisory (“First Fixed”). If applicable, the tool also returns the earliest release that fixes all the vulnerabilities described in all the advisories identified (“Combined First Fixed”).
+
+Customers can use this tool to perform the following tasks:
+
+Initiate a search by choosing one or more releases from a drop-down menu or uploading a file from a local system for the tool to parse
+Enter the output of the show version command for the tool to parse
+Create a custom search by including all previously published Cisco Security Advisories, a specific advisory, or all advisories in the most recent bundled publication
+
+To determine whether a release is affected by any published Cisco Security Advisory, use the Cisco IOS Software Checker ["https://tools.cisco.com/security/center/selectIOSVersion.x"] on Cisco.com or enter a Cisco IOS Software or Cisco IOS XE Software release—for example, 15.1(4)M2 or 3.13.8S—in the following field:
+
+
+
+
+
+For a mapping of Cisco IOS XE Software releases to Cisco IOS Software releases, refer to the Cisco IOS XE 2 Release Notes ["https://www.cisco.com/c/en/us/td/docs/ios/ios_xe/2/release/notes/rnasr21/rnasr21_gen.html#wp3000032"], Cisco IOS XE 3S Release Notes ["https://www.cisco.com/c/en/us/td/docs/ios/ios_xe/3/release/notes/asr1k_rn_3s_rel_notes/asr1k_rn_3s_sys_req.html#wp3069754"], or Cisco IOS XE 3SG Release Notes ["https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst4500/release/note/OL_24726.html#pgfId-2570252"], depending on the Cisco IOS XE Software release.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was found during internal security testing.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-lisp</URL>
+      <Description>Cisco IOS XE Software Locator/ID Separation Protocol Authentication Bypass Vulnerability</Description>
+    </Reference>
+    <Reference>
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20170927-bundle</URL>
+      <Description>Summary of the Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, September 27, 2017</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-63410</URL>
+      <Description>Cisco Event Response: September 2017 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+    <Reference>
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityBundle/cisco-sa-20170927-bundle</URL>
+      <Description>Summary of the Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication, September 27, 2017</Description>
+    </Reference>
+    <Reference>
+      <URL>http://tools.cisco.com/security/center/viewErp.x?alertId=ERP-63410</URL>
+      <Description>Cisco Event Response: September 2017 Semiannual Cisco IOS and IOS XE Software Security Advisory Bundled Publication</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco IOS XE Software" Type="Product Name">
+        <Branch Name="3.5SQ" Type="Product Version">
+          <Branch Name="3.5.8SQ" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232851">Cisco IOS XE Software 3.5SQ 3.5.8SQ</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.4" Type="Product Version">
+          <Branch Name="16.4.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-214051">Cisco IOS XE Software 16.4 16.4.1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="3.18SP" Type="Product Version">
+          <Branch Name="3.18.3bSP" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-231826">Cisco IOS XE Software 3.18SP 3.18.3bSP</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="3.9E" Type="Product Version">
+          <Branch Name="3.9.1E" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-222483">Cisco IOS XE Software 3.9E 3.9.1E</FullProductName>
+          </Branch>
+          <Branch Name="3.9.2E" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-226158">Cisco IOS XE Software 3.9E 3.9.2E</FullProductName>
+          </Branch>
+          <Branch Name="3.9.2bE" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-227755">Cisco IOS XE Software 3.9E 3.9.2bE</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.7" Type="Product Version">
+          <Branch Name="16.7.1b" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-232767">Cisco IOS XE Software 16.7 16.7.1b</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.11" Type="Product Version">
+          <Branch Name="16.11.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-227918">Cisco IOS XE Software 16.11 16.11.1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.12" Type="Product Version">
+          <Branch Name="16.12.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-227920">Cisco IOS XE Software 16.12 16.12.1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.13" Type="Product Version">
+          <Branch Name="16.13.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-239363">Cisco IOS XE Software 16.13 16.13.1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.14" Type="Product Version">
+          <Branch Name="16.14.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-239365">Cisco IOS XE Software 16.14 16.14.1</FullProductName>
+          </Branch>
+        </Branch>
+        <Branch Name="16.15" Type="Product Version">
+          <Branch Name="16.15.1" Type="Service Pack">
+            <FullProductName ProductID="CVRFPID-239367">Cisco IOS XE Software 16.15 16.15.1</FullProductName>
+          </Branch>
+        </Branch>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco IOS Software Locator/ID Separation Protocol Authentication Bypass Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvc18008</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the implementation of the Locator/ID Separation Protocol (LISP) in Cisco IOS XE Software could allow an unauthenticated, remote attacker using an x tunnel router to bypass authentication checks performed when registering an Endpoint Identifier (EID) to a Routing Locator (RLOC) in the map server/map resolver (MS/MR).
+
+The vulnerability is due to a logic error introduced via a code regression for the affected software. An attacker could exploit this vulnerability by sending specific valid map-registration requests, which will be accepted by the MS/MR even if the authentication keys do not match, to the affected software. A successful exploit could allow the attacker to inject invalid mappings of EIDs to RLOCs in the MS/MR of the affected software.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvc18008</Note>
+    </Notes>
+    <CVE>CVE-2017-12236</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-214051</ProductID>
+        <ProductID>CVRFPID-222483</ProductID>
+        <ProductID>CVRFPID-226158</ProductID>
+        <ProductID>CVRFPID-227755</ProductID>
+        <ProductID>CVRFPID-227918</ProductID>
+        <ProductID>CVRFPID-227920</ProductID>
+        <ProductID>CVRFPID-231826</ProductID>
+        <ProductID>CVRFPID-232767</ProductID>
+        <ProductID>CVRFPID-232851</ProductID>
+        <ProductID>CVRFPID-239363</ProductID>
+        <ProductID>CVRFPID-239365</ProductID>
+        <ProductID>CVRFPID-239367</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>8.3</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170927-lisp</URL>
+        <Description>Cisco IOS XE Software Locator/ID Separation Protocol Authentication Bypass Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

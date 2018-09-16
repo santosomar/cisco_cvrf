@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco StarOS SSH Privilege Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170315-asr</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-03-15T15:31:57</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-03-15T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-03-15T15:31:57</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A privilege escalation vulnerability in the Secure Shell (SSH) subsystem in the StarOS operating system for Cisco ASR 5000 Series, ASR 5500 Series, ASR 5700 Series devices, and Cisco Virtualized Packet Core could allow an authenticated, remote attacker to gain unrestricted, root shell access.
+
+The vulnerability is due to missing input validation of parameters passed during SSH or SFTP login. An attacker could exploit this vulnerability by providing crafted user input to the SSH or SFTP command-line interface (CLI) during SSH or SFTP login. An exploit could allow an authenticated attacker to gain root privileges access on the router.
+
+Note: Only traffic directed to the affected system can be used to exploit this vulnerability. This vulnerability can be triggered via both IPv4 and IPv6 traffic. An established TCP connection toward port 22, the SSH default port, is needed to perform the attack. The attacker must have valid credentials to login to the system via SSH or SFTP.
+
+Cisco has released software updates that address this vulnerability. Workarounds that mitigate this vulnerability are not available.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170315-asr ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170315-asr"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">The following products have been confirmed to be vulnerable:
+
+Cisco ASR 5000/5500/5700 Series devices running StarOS after 17.7.0 and prior to 18.7.4, 19.5, and 20.2.3 with SSH configured are vulnerable.
+Cisco Virtualized Packet Core - Single Instance (VPC-SI) and Distributed Instance (VPC-DI) devices running StarOS prior to N4.2.7 (19.3.v7) and N4.7 (20.2.v0) with SSH configured are vulnerable.
+  To determine whether a vulnerable version of Cisco StarOS is running on ASR 5000/5500/5700 Series devices, administrators can issue the show version command from the CLI. The following output is an example of a router that is running StarOS version 19.2.1.
+[local]ASR-2# show version
+Friday August 12 13:17:31 AST 2016
+Active Software:
+  Image Version:                  19.2.1
+  Image Build Number:             62564
+  Image Description:              Deployment_Build
+  Image Date:                     Thu Dec 31 20:13:39 EST 2015
+  Boot Image:                     /flash/asr5500-19.2.1.bin
+Similarly, administrators can issue the show version command from the CLI to determine whether a vulnerable version of Cisco StarOS is running on a vPC-SI or vPC-DI instance. The following output is an example of a vPC instance that is running StarOS version N4.6 (20.1.v0):
+[local]vPC-DI# show version
+Active Software:
+ Image Version:                  20.1.v0
+ Image Build Number:             64657
+ Image Description:              Deployment_Build
+ Image Date:                     Wed Jul 27 18:46:53 EDT 2016
+ Boot Image:                     /flash/qvpc-di-20.1.v0.bin
+To determine whether SSH is configured on Cisco StarOS or Cisco vPC software, administrators can issue the show configuration | grep sshd command from the CLI. In the following example, the presence of the server sshd line shows that the SSH server is enabled:
+[local]ASR-2# show configuration | grep sshd
+    server sshd</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">Cisco has confirmed that this vulnerability does not affect the following products:
+
+Cisco Elastic Services Controller (ESC)
+Cisco Ultra Automation Services (UAS)
+  No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="4">Successful exploitation of this vulnerability causes CLI logs to show a CLI session starting for the compromised user and the same CLI session ending within a few milliseconds. Administrators can view CLI logs by using the show logs facility cli command. In the following example, the user inspector exploited this vulnerability.
+[local]ASR-2# show logs facility cli
+2017-Feb-01+13:33:08.477 [cli 30005 info] [6/0/14607 &lt;cli:6014607&gt; _commands_cli.c:1775] [software internal system syslog] CLI session ended for Inspector inspector on device
+2017-Feb-01+13:33:08.455 [cli 30004 info] [6/0/14607 &lt;cli:6014607&gt; cli_sess.c:127] [software internal system syslog] CLI session started for Inspector inspector on device  from 10.X.X.X
+.
+.
+.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="5">There are no workarounds that address this vulnerability.
+
+Administrators can restrict access to the management interface, (for example, by applying an access control list (ACL)), to limit the attack surface.</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="6">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html ["http://www.cisco.com/c/en/us/td/docs/general/warranty/English/EU1KEN_.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html ["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+Fixed Releases
+
+In the following tables, the left column lists major releases of Cisco StarOS and Cisco vPC software, respectively. The right column indicates whether a major release is affected by the vulnerability described in this advisory and the first release that includes the fix for this vulnerability.
+
+  StarOS for Cisco ASR 5000/5500/5700 Series Routers
+                                 Cisco StarOS Major Release
+               First Fixed Release
+                                               17.7 and earlier
+               Not affected
+                                   18.0               18.7.4                                   19.0               19.5                                   20.0               20.2.3                                   21.0               Not affected
+
+Cisco Virtualized Packet Core (vPC) Software
+                                 Cisco vPC Major Release
+              First Fixed Release
+                                               N4.0 (19.2)
+               Affected; migrate to N4.2.7 (19.3.v7) or later
+                                   N4.2 (19.3)
+               N4.2.7 (19.3.v7)
+                                   N4.5 (20.0)
+               Affected; migrate to N4.7 (20.2.v0) or later
+                                   N4.6 (20.1)
+               Affected; migrate to N4.7 (20.2.v0) or later
+                                   N4.7 (20.2)
+               Fixed
+                                   N5.0 (21.0)
+               Not affected</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="7">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="8">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="9">This vulnerability was found during internal security testing.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="10">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170315-asr</URL>
+      <Description>Cisco StarOS SSH Privilege Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco ASR 5000 Series Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-193199">Cisco ASR 5000 Series Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Virtualized Packet Core" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-217771">Cisco Virtualized Packet Core </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco StarOS SSH Privilege Escalation Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCva65853</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A privilege escalation vulnerability in the Secure Shell (SSH) subsystem in the StarOS operating system for Cisco ASR 5000 Series, ASR 5500 Series, ASR 5700 Series devices, and Cisco Virtualized Packet Core could allow an authenticated, remote attacker to gain unrestricted, root shell access.
+
+
+
+The vulnerability is due to missing input validation of parameters passed during SSH or SFTP login. An attacker could exploit this vulnerability by providing crafted user input to the SSH or SFTP command-line interface (CLI) during SSH or SFTP login. An exploit could allow an authenticated attacker to gain root privileges access on the router.
+
+
+
+Note: Only traffic directed to the affected system can be used to exploit this vulnerability. This vulnerability can be triggered via both IPv4 and IPv6 traffic. An established TCP connection toward port 22, the SSH default port, is needed to perform the attack. The attacker must have valid credentials to login to the system via SSH or SFTP.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCva65853</Note>
+    </Notes>
+    <CVE>CVE-2017-3819</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-193199</ProductID>
+        <ProductID>CVRFPID-217771</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>8.8</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability.
+
+Administrators can restrict access to the management interface, (for example, by applying an access control list (ACL)), to limit the attack surface.</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170315-asr</URL>
+        <Description>Cisco StarOS SSH Privilege Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

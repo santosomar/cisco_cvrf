@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco FXOS and NX-OS System Software Authentication, Authorization, and Accounting Denial of Service Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20171018-aaavty</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>2.4</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-10-18T13:51:57</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2017-10-18T20:37:21</Date>
+        <Description>Added information about the use of the CLI command to prevent the device from being vulnerable. Added a workaround for Cisco FXOS.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.0</Number>
+        <Date>2017-10-27T19:26:57</Date>
+        <Description>Added information about new bugs to track fixes to the login block-for command.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.1</Number>
+        <Date>2017-11-01T16:36:38</Date>
+        <Description>Added fixed software for N3K and N9K. Removed the fixed release tables for platforms without fixes.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.2</Number>
+        <Date>2017-11-03T16:49:54</Date>
+        <Description>Clarified further that the login block-for command is required to not be vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.3</Number>
+        <Date>2017-11-09T19:37:42</Date>
+        <Description>Added the 3600 platform to vulnerable products. Added target dates for some platforms that do not have current code fixes.</Description>
+      </Revision>
+      <Revision>
+        <Number>2.4</Number>
+        <Date>2018-05-08T13:55:13</Date>
+        <Description>Added CDETS CSCvf64888 for MDS. Changed the naming for the MDS product and updated the fixed releases for MDS.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-10-18T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2018-05-08T13:55:13</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the authentication, authorization, and accounting (AAA) implementation of Cisco Firepower Extensible Operating System (FXOS) and NX-OS System Software could allow an unauthenticated, remote attacker to cause an affected device to reload.
+
+The vulnerability occurs because AAA processes prevent the NX-OS System Manager from receiving keepalive messages when an affected device receives a high rate of login attempts, such as in a brute-force login attack. System memory can run low on the FXOS devices under the same conditions, which could cause the AAA process to unexpectedly restart or cause the device to reload.
+
+An attacker could exploit this vulnerability by performing a brute-force login attack against a device that is configured with AAA security services. A successful exploit could allow the attacker to cause the affected device to reload.
+
+Cisco has released software updates that address this vulnerability. There are workarounds that address this vulnerability.
+
+Note: Previous versions of this advisory recommended upgrading the Cisco NX-OS Software Release and configuring the login block-for CLI command to prevent this vulnerability. Cisco has since become aware that the login block-for CLI command may not function as desired in all cases. This does not apply to Cisco FXOS. Please refer to the Details ["#details"] section for additional information.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171018-aaavty ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171018-aaavty"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects the following Cisco products if they are running Cisco FXOS or NX-OS System Software that is configured for AAA services:
+Firepower 4100 Series Next-Generation Firewall
+Firepower 9300 Security Appliance
+MDS 9000 Series Multilayer Director Switches
+Nexus 1000V Series Switches
+Nexus 1100 Series Cloud Services Platforms
+Nexus 2000 Series Switches
+Nexus 3000 Series Switches
+Nexus 3500 Platform Switches
+Nexus 3600 Platform Switches
+Nexus 5000 Series Switches
+Nexus 5500 Platform Switches
+Nexus 5600 Platform Switches
+Nexus 6000 Series Switches
+Nexus 7000 Series Switches
+Nexus 7700 Series Switches
+Nexus 9000 Series Switches in NX-OS mode
+Nexus 9500 R-Series Line Cards and Fabric Modules
+Unified Computing System (UCS) 6100 Series Fabric Interconnects
+UCS 6200 Series Fabric Interconnects
+UCS 6300 Series Fabric Interconnects
+  Cisco NX-OS Software
+
+To determine whether a device that is running Cisco NX-OS System Software is configured for AAA, administrators can use the show running-config | include aaa command from the Cisco NX-OS CLI and verify that there are aaa commands configured on the device. The following example shows sample output from a typical NX-OS AAA configuration:
+nx-os-switch# show running-config | include aaa
+aaa group server tacacs+ &lt;group name&gt;
+aaa authentication login default group &lt;group name&gt;
+aaa authentication login console local
+aaa accounting default group &lt;group name&gt;
+To determine whether a device is running a vulnerable release of Cisco NX-OS System Software, administrators can use the show version command in the Cisco NX-OS CLI.  The following example shows the output of that command for a device that is running Cisco NX-OS System Software Release 6.2(10):
+nxos-switch# show version
+
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Documents:
+http://www.cisco.com/en/US/products/ps9372/tsd_products_support_series_home.
+html
+Copyright (c) 2002-2015, Cisco Systems, Inc. All rights reserved.
+The copyrights to certain works contained in this software are
+owned by other third parties and used and distributed under
+license. Certain components of this software are licensed under
+the GNU General Public License (GPL) version 2.0 or the GNU
+Lesser General Public License (LGPL) Version 2.1. A copy of each
+such license is available at
+http://www.opensource.org/licenses/gpl-2.0.php and
+http://www.opensource.org/licenses/lgpl-2.1.php
+
+Software
+BIOS:      version 2.12.0
+kickstart: version 6.2(10)
+system:    version 6.2(10)
+.
+.  .
+  Cisco FXOS
+
+In Cisco FXOS, AAA authentication is configured with the scope tacacs, scope radius, or scope ldap CLI commands. The presence of these commands in the device configuration indicates that the device is vulnerable. For additional information about AAA configuration for FXOS-based devices, refer to Cisco FXOS CLI Configuration Guide ["https://www.cisco.com/c/en/us/td/docs/security/firepower/fxos/fxos201/cli-config/b_CLI_ConfigGuide_FXOS_201/platform_settings.html#topic_105C66CC3C7F4D99B08A413FEF5BCEF4"].
+
+To determine whether a device is running a vulnerable release of Cisco FXOS, administrators can use the show version command in the Cisco FXOS CLI. The following example shows the output of that command for a device that is running Cisco FXOS Release 2.2(1.70) on the Firepower 4100 Series Next-Generation Firewall hardware platform:
+fp4100# show version
+FPRM:
+Running-Vers: 4.2(1.65)
+Package-Vers: 2.2(1.70)
+Activate-Status: Ready</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">No other Cisco products are currently known to be affected by this vulnerability.
+
+Cisco has confirmed that this vulnerability does not affect the following Cisco products:
+
+Firepower 2100 Series
+Nexus 4000 Series Switches
+Nexus 9000 Series Switches in Application Centric Infrastructure (ACI) mode
+  Note: The Nexus 4000 Series Switch has entered the end-of-life phase. Refer to End-of-Sale and End-of-Life Announcement for the Cisco Nexus 4000 Series Switch Modules for IBM BladeCenter ["https://www.cisco.com/c/en/us/products/collateral/switches/nexus-4000-series-switches/eos-eol-notice-c51-733205.html"] for additional information.</Note>
+    <Note Title="Details" Type="General" Ordinal="4">Cisco NX-OS System Software
+
+To prevent exploitation of this vulnerability, customers should upgrade to a release of Cisco NX-OS System Software that supports secure login enhancements and configure login parameters for the software by using the login block-for command in the Cisco NX-OS CLI. Customers who cannot upgrade to or access a Cisco NX-OS System Software image that supports secure login enhancements should implement the workarounds described in this advisory.
+
+The following example shows how to use the login block-for command to configure a device to go into quiet mode for 45 seconds if three failed interactive attempts are made within 60 seconds:
+login block-for 45 attempts 3 within 60
+  The system keyword is needed on the Cisco Nexus 3000 and 9000 Series Switches:
+
+system login block-for 45 attempts 3 within 60
+  For more information about configuring login parameters and the login block-for command, see the Cisco Nexus 7000 Series NX-OS Security Configuration Guide ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/6_x/nx-os/security/configuration/guide/b_Cisco_Nexus_7000_NX-OS_Security_Configuration_Guide__Release_6-x/b_Cisco_Nexus_7000_NX-OS_Security_Configuration_Guide__Release_6-x_chapter_0100.html#task_81E1559B0A0348D29A9FF0106AA2806E"] or Cisco Nexus 9000 Series NX-OS Security Configuration Guide ["https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/7-x/security/configuration/guide/b_Cisco_Nexus_9000_Series_NX-OS_Security_Configuration_Guide_7x/b_Cisco_Nexus_9000_Series_NX-OS_Security_Configuration_Guide_7x_chapter_011.html"].
+
+This vulnerability is prevented only by configuring the login block-for CLI command; otherwise, the device remains vulnerable regardless of the software release the Cisco NX-OS platform is running.
+
+Update: The login block-for CLI command may not function as desired on the following Cisco NX-OS platforms.
+
+Nexus 2000 Series Switches
+    Nexus 3500 Platform Switches
+    Nexus 5000 Series Switches
+    Nexus 5500 Platform Switches
+    Nexus 5600 Platform Switches
+    Nexus 6000 Series Switches
+    Nexus 7000 Series Switches
+    Nexus 7700 Series Switches
+  For these platforms, it is recommended to not configure the login block-for CLI command and instead refer to the Workarounds ["#workarounds"] section until fixed software becomes available.
+
+The login block-for command does work as expected on the following Cisco NX-OS platforms as of the first fixed release recommended in this advisory:
+
+MDS 9000 Series Multilayer Director Switches
+Nexus 3000 Series Switches
+Nexus 3600 Platform Switches
+Nexus 9000 Series Switches in NX-OS mode
+Nexus 9500 R-Series Line Cards and Fabric Modules
+Unified Computing System (UCS) 6100 Series Fabric Interconnects
+UCS 6200 Series Fabric Interconnects
+UCS 6300 Series Fabric Interconnects
+  Cisco FXOS
+
+On Cisco FXOS platforms, Firepower 4100 Series Next-Generation Firewall, and 9300 Security Appliance, the DoS condition was prevented by adding an internal throttling mechanism for the remote brute-force attack condition. This mechanism does not require users to configure it.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="5">On both Cisco FXOS and NX-OS System Software, the AAA-related processes could restart and generate a core file. This indicator will be accompanied by many failed login attempts, indicating that a brute-force attack may be underway. Contact the Cisco Technical Assistance Center (TAC) to review any AAA-related core and system log files to determine whether the device has been compromised by exploitation of this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">Cisco NX-OS System Software
+
+Configuring a vty Access Class
+
+On some platforms that are running Cisco NX-OS System Software, it is possible to limit exposure of an affected device by creating a vty access-control list (ACL) on the device and configuring the ACL to permit only known, trusted devices to connect to the device via Telnet and Secure Shell (SSH).
+
+Note:
+
+This workaround is not available on some platforms that are running Cisco NX-OS, and should be used only where applicable.
+There is no Cisco UCS workaround that addresses this vulnerability.
+The ACL in this example is for IPv4. This vulnerability can also be exploited against IPv6 interfaces. If the NX-OS device is configured for IPv6, the same ACL should be configured for the IPv6 address range.
+  The following example shows an ACL that permits access to vtys from the 192.168.1.0/24 netblock and the single IP address 172.16.1.2 while denying access from all other addresses:
+ip access-list vtyacl
+  10 permit tcp 192.168.1.0/24 172.16.1.2/32
+  line vty
+  access-class vtyacl in
+    For more information about restricting traffic to vtys, see the Cisco Nexus 7000 Series NX-OS Security Configuration Guide ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/6_x/nx-os/security/configuration/guide/b_Cisco_Nexus_7000_NX-OS_Security_Configuration_Guide__Release_6-x/b_Cisco_Nexus_7000_NX-OS_Security_Configuration_Guide__Release_6-x_chapter_01110.html#task_1452624"]. It is considered a best practice for an NX-OS device to have a vty ACL configured. Refer to Cisco Guide to Securing Cisco NX-OS Software Devices ["http://www.cisco.com/c/en/us/about/security-center/securing-nx-os.html"] for additional information about hardening Cisco NX-OS devices.
+
+Cisco FXOS
+
+On Cisco FXOS platforms, it is possible to limit the exposure of an affected device by using the ip-block command to permit only known, trusted hosts to connect to the device via SSH. The following example show only a subset of IPv4 and IPv6 hosts being permitted to connect via SSH.
+scope system
+  scope services
+    create ip-block 11.1.1.1 24 ssh
+    create ipv6-block 2014::10:76:78:107 64 ssh
+    commit-buffer
+For more information about configuring Cisco FXOS IP Access Lists see the "Configure the IP Access List" section of the Cisco FXOS CLI Configuration Guide ["https://www.cisco.com/c/en/us/td/docs/security/firepower/fxos/fxos211/cli-config/b_CLI_ConfigGuide_FXOS_211/security_certifications_compliance.html"].</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license: http://www.cisco.com/c/en/us/td/docs/general/warranty/English/EU1KEN_.html ["http://www.cisco.com/c/en/us/td/docs/general/warranty/English/EU1KEN_.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC: http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html ["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"].
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+Fixed Releases
+
+Customers should upgrade to an appropriate release as indicated in the following Cisco product tables.  Please note that on the Cisco NX-OS platforms, this vulnerability can still be exploited unless the CLI command login block-for is configured. The login block-for command should be configured only on the NX-OS platforms that have fixed software available in the following tables.
+
+Firepower 4100 Series Next-Generation Firewall: CSCve03660 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve03660"]
+
+                              Cisco FXOS Major Release - Firepower 4100
+              First Fixed Release                                  Prior to 2.3               Affected; migrate to 2.3.1                                  2.3               2.3.1 (future release)
+Firepower 9300 Security Appliance: CSCve03660 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCve03660"]
+
+                              Cisco FXOS Major Release - Firepower 9300
+              First Fixed Release                                  Prior to 2.3              Affected; migrate to 2.3.1                                  2.3              2.3.1 (future release)
+
+MDS 9000 Series Multilayer Director Switches: CSCvc33141 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvc33141"] and CSCvf64888 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvf64888"]
+
+                              Cisco NX-OS Software Major Release - MDS              First Fixed Release                                  5.2              Affected; migrate to 6.2(23)
+                                  6.2              6.2(23)                                  6.3              Affected; migrate to 7.3(1)DY(1)                                   7.3              7.3(1)DY(1)                                  8.1               Not vulnerable when the login block-for command is configured.
+                                  8.2              Not vulnerable when the login block-for command is configured.
+
+Nexus 1000V Series Switches and Nexus 1100 Series Cloud Services Platforms: CSCux54898 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCux54898"]
+
+                              Cisco NX-OS Software Major Release - Nexus 1000V Series Switches and Nexus 1100 Series Cloud Services Platforms              First Fixed Release                                  Prior to 4.2              No fix available                                  5.2              No fix available
+Nexus 3000 Series Switches: CSCus05214 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCus05214"] and CSCvb93995 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvb93995"]
+ ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCus05214"]
+                              Cisco NX-OS Software Major Release - Nexus 3000 Series Switches              First Fixed Release                                  Prior to 6.0              Affected; migrate to 7.0(3)I6(1) or later                                  6.0              7.0(3)I6(1) or later                                  7.0              7.0(3)I6(1) or later
+
+Nexus 3500 Platform Switches: CSCus05214 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCus05214"] and CSCvb93995 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvb93995"]
+
+                                Cisco NX-OS Software Major Release - Nexus 3500 Platform Switches              First Fixed Release                                  Prior to 6.0              Affected; migrate to 6.0(2)A8(8) or later                                  6.0              6.0(2)A8(8) [Target November 2017]
+Nexus 2000, 5000, 5500, 5600, and 6000 Series Switches: CSCuq71257 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuq71257"] and CSCvg41173 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvg41173"]
+
+                              Cisco NX-OS Software Major Release - Nexus 5000 Series Switches                            First Fixed Release                                                Prior to 5.2              No fix available                                  5.2
+              No fix available
+
+                              Cisco NX-OS Software Major Release - Nexus 2000, 5500, 5600, and 6000 Series Switches                            First Fixed Release                                                Prior to 5.2               Affected; migrate to 7.3(3)N1(1)
+                                  5.2
+              Affected; migrate to 7.3(3)N1(1)
+                                  6.0
+              Affected; migrate to 7.3(3)N1(1)
+                                  7.0               Affected; migrate to 7.3(3)N1(1)
+                                  7.1               Affected; migrate to 7.3(3)N1(1)
+                                  7.2               Affected; migrate to 7.3(3)N1(1)
+                                  7.3              7.3(3)N1(1) [Target April 2018]
+
+Nexus 7000 and 7700 Series Switches:  CSCuq58760  ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuq58760"]and CSCvb93995 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvb93995"]
+
+                              Cisco NX-OS Software Major Release - Nexus 7000 and 7700 Series Switches              First Fixed Release                                  Prior to 5.2              Affected; migrate to 6.2(20) or 7.3(2)D1(2)
+                                  5.2              Affected; migrate to 6.2(20) or 7.3(2)D1(2)
+                                  6.0              Affected; migrate to 6.2(20) or 7.3(2)D1(2)
+                                  6.1               Affected; migrate to 6.2(20) or 7.3(2)D1(2)
+                                  6.2               6.2(20) [Target November 2017]
+                                  7.2               Affected; migrate to 7.2(3)D1(1) [Target March 2018] or 7.3(2)D1(2)                                   7.3               7.3(2)D1(2) [Target November 2017]                                   8.0               8.0(2) [Target March 2018]                                  8.1               8.1(2) [Target January 2018]                                  8.2               8.2(2) [Target April 2018]
+
+
+Nexus 9000 Series Switches: CSCuq58760  ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuq58760"]and CSCvb93995 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvb93995"]
+
+                              Cisco NX-OS Software Major Release - Nexus 9000 Series Switches              First Fixed Release                                  6.1              Affected; migrate to 7.0(3)I6(1) or later                                  7.0              7.0(3)I6(1) or later
+Nexus 9500 R-Series Line Cards and Fabric Modules and Nexus 3600 Platform Switches: CSCuq58760 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCuq58760"]
+
+                              Cisco NX-OS Software Major Release - Nexus 9500 R-Series and Nexus 3600 Platform Switches
+              First Fixed Release                                  7.0              7.0(3)F3(1) or later
+UCS 6100, 6200, and 6300 Fabric Interconnects: CSCur97432 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCur97432"]1
+
+                              Cisco NX-OS Software Major Release - UCS              First Fixed Release                                  Prior to 2.2              Affected; migrate to 2.2(6c) or later                                  2.2              2.2(6c) or later
+                                  2.5               Not vulnerable when the login block-for command is configured.
+                                  3.0              Affected; migrate to 3.1(2b) or later                                  3.1              3.1(2b) or later                                  3.2               Not vulnerable when the login block-for command is configured.
+
+1The fix for Cisco bug ID CSCur97432 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCur97432"] for Cisco UCS 6100, 6200, and 6300 Fabric Interconnects implemented the login block-for command. This fix was found to be incomplete, and brute-force attacks that occur over many hours could still cause a device to reset. Cisco bug ID CSCvd36971 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd36971"] tracks this remaining vulnerability, and the full fix is targeted for future software release 3.2(3).
+
+Cisco NX-OS Release Recommendations
+
+For additional assistance in determining the best Cisco NX-OS System Software release for a Cisco Nexus Switch, refer to the recommended release document for the switch:
+
+Cisco Multilayer Director Switches ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/sw/b_MDS_NX-OS_Recommended_Releases.html"]
+Cisco Nexus 1000V for VMware Switches ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus1000/sw/recommended_releases/b_Cisco_N1KV_VMware_MinRecommendedReleases.html"]
+Cisco Nexus 3000 Series and 3500 Series Switches ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus3000/sw/recommended_release/b_Minimum_and_Recommended_Cisco_NX-OS_Releases_for_Cisco_Nexus_3000_Series_Switches.html"]
+Cisco Nexus 5000 Series Switches ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus5000/sw/release/recommended_releases/recommended_nx-os_releases.html"]
+Cisco Nexus 5500 Platform Switches ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus5500/sw/release/recommended_releases/n5500_recommended_nx-os_releases.html"]
+Cisco Nexus 6000 Series Switches ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus6000/sw/release/recommended_releases/recommended_nx-os_releases.html"]
+Cisco Nexus 7000 Series Switches ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/nx-os/recommended_releases/recommended_nx-os_releases.html"]
+Cisco Nexus 9000 Series Switches ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/recommended_release/b_Minimum_and_Recommended_Cisco_NX-OS_Releases_for_Cisco_Nexus_9000_Series_Switches.html"]
+  To determine the best Cisco NX-OS System Software release for Cisco UCS, refer to the Recommended Releases documents in the release notes for the device.</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">This vulnerability was found during resolution of a Cisco TAC support case.</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171018-aaavty</URL>
+      <Description>Cisco FXOS and NX-OS System Software Authentication, Authorization, and Accounting Denial of Service Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco MDS SAN-OS Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-5348">Cisco MDS SAN-OS Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco NX-OS Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-80720">Cisco NX-OS Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Firepower Extensible Operating System (FXOS)" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-225888">Cisco Firepower Extensible Operating System (FXOS) </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco FXOS and NX-OS Software Authentication, Authorization, and Accounting Denial of Service Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCuq71257</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the authentication, authorization, and accounting (AAA) implementation of Cisco Firepower Extensible Operating System (FXOS) and NX-OS System Software could allow an unauthenticated, remote attacker to cause an affected device to reload.
+
+
+
+The vulnerability occurs because AAA processes prevent the NX-OS System Manager from receiving keepalive messages when an affected device receives a high rate of login attempts, such as in a brute-force login attack. System memory can run low on the FXOS devices under the same conditions, which could cause the AAA process to unexpectedly restart or cause the device to reload.
+
+
+
+An attacker could exploit this vulnerability by performing a brute-force login attack against a device that is configured with AAA security services. A successful exploit could allow the attacker to cause the affected device to reload.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCuq71257,CSCuq58760,CSCur97432,CSCux54898,CSCus05214,CSCvd36971,CSCvb93995,CSCvg41173,CSCve03660,CSCvc33141,CSCvf64888</Note>
+    </Notes>
+    <CVE>CVE-2017-3883</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-80720</ProductID>
+        <ProductID>CVRFPID-225888</ProductID>
+        <ProductID>CVRFPID-5348</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>8.6</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:N/I:N/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Cisco NX-OS System Software
+
+Configuring a vty Access Class
+
+On some platforms that are running Cisco NX-OS System Software, it is possible to limit exposure of an affected device by creating a vty access-control list (ACL) on the device and configuring the ACL to permit only known, trusted devices to connect to the device via Telnet and Secure Shell (SSH).
+
+Note:
+
+This workaround is not available on some platforms that are running Cisco NX-OS, and should be used only where applicable.
+There is no Cisco UCS workaround that addresses this vulnerability.
+The ACL in this example is for IPv4. This vulnerability can also be exploited against IPv6 interfaces. If the NX-OS device is configured for IPv6, the same ACL should be configured for the IPv6 address range.
+  The following example shows an ACL that permits access to vtys from the 192.168.1.0/24 netblock and the single IP address 172.16.1.2 while denying access from all other addresses:
+ip access-list vtyacl
+  10 permit tcp 192.168.1.0/24 172.16.1.2/32
+  line vty
+  access-class vtyacl in
+    For more information about restricting traffic to vtys, see the Cisco Nexus 7000 Series NX-OS Security Configuration Guide ["http://www.cisco.com/c/en/us/td/docs/switches/datacenter/sw/6_x/nx-os/security/configuration/guide/b_Cisco_Nexus_7000_NX-OS_Security_Configuration_Guide__Release_6-x/b_Cisco_Nexus_7000_NX-OS_Security_Configuration_Guide__Release_6-x_chapter_01110.html#task_1452624"]. It is considered a best practice for an NX-OS device to have a vty ACL configured. Refer to Cisco Guide to Securing Cisco NX-OS Software Devices ["http://www.cisco.com/c/en/us/about/security-center/securing-nx-os.html"] for additional information about hardening Cisco NX-OS devices.
+
+Cisco FXOS
+
+On Cisco FXOS platforms, it is possible to limit the exposure of an affected device by using the ip-block command to permit only known, trusted hosts to connect to the device via SSH. The following example show only a subset of IPv4 and IPv6 hosts being permitted to connect via SSH.
+scope system
+  scope services
+    create ip-block 11.1.1.1 24 ssh
+    create ipv6-block 2014::10:76:78:107 64 ssh
+    commit-buffer
+For more information about configuring Cisco FXOS IP Access Lists see the "Configure the IP Access List" section of the Cisco FXOS CLI Configuration Guide ["https://www.cisco.com/c/en/us/td/docs/security/firepower/fxos/fxos211/cli-config/b_CLI_ConfigGuide_FXOS_211/security_certifications_compliance.html"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20171018-aaavty</URL>
+        <Description>Cisco FXOS and NX-OS System Software Authentication, Authorization, and Accounting Denial of Service Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

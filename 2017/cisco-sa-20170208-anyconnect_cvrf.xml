@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Cisco AnyConnect Secure Mobility Client for Windows SBL Privileges Escalation Vulnerability</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170208-anyconnect</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.0</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-02-08T15:22:30</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-02-08T16:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-02-08T15:22:30</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Start Before Logon (SBL) module of Cisco AnyConnect Secure Mobility Client Software for Windows could allow an unauthenticated, local attacker to open Internet Explorer with the privileges of the SYSTEM user.
+
+
+
+
+The vulnerability is due to insufficient implementation of the access controls. An attacker could exploit this vulnerability by opening the Internet Explorer browser. An exploit could allow the attacker to use Internet Explorer with the privileges of the SYSTEM user. This may allow the attacker to execute privileged commands on the targeted system.
+
+
+
+
+Cisco has released software updates that address this vulnerability. Workarounds that address this vulnerability are not available.
+This advisory is available at the following link:
+
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170208-anyconnect["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170208-anyconnect"]</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="2">This vulnerability affects Cisco AnyConnect Secure Mobility Client for Windows when configured for SBL. 
+
+
+
+To verify whether the SBL feature is configured and enabled, administrators should verify that:
+
+
+    The Cisco AnyConnect SBL is installed on the client machine.
+    The UseStartBeforeLogon option is set to true in the Cisco AnyConnect Secure Mobility Client profile. 
+
+
+
+To verify whether the Cisco AnyConnect SBL Module is installed on a machine, administrators can use the Add/Remove programs functionality in Windows and look for the presence of the Cisco AnyConnect Start Before Login Module.
+
+
+
+Note: Cisco uses the term "Start Before Logon" in the configuration and in documentation; however, the module that is installed on Windows is called the "Cisco AnyConnect Start Before Login Module." Note also that the Cisco AnyConnect Start Before Login Module is not installed by default. 
+
+
+
+To verify whether UseStartBeforeLogon is set to true in the Cisco AnyConnect Secure Mobility Client profile, administrators should inspect the Cisco AnyConnect Secure Mobility Client profile XML file.
+
+
+
+The Cisco AnyConnect Secure Mobility Client profile is usually located in the C:\ProgramData\Cisco\Cisco AnyConnect Secure Mobility Client\Profile folder. 
+
+
+
+The following example shows AnyConnect Mobile Client profile xml file with UseStartBeforeLogon set to true.
+
+.
+.
+.
+
+    
+        true
+    
+.
+.
+.
+
+
+Note: UseStartBeforeLogon is set to true by default.
+</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="3">This vulnerability does not affect Cisco AnyConnect Secure Mobility Client for Mac OS or for Linux. Additionally, this vulnerability does not affect Cisco AnyConnect Secure Mobility Client for mobile devices operating systems such as iOS, Android, and Windows Phone.
+
+
+
+No other Cisco products are currently known to be affected by this vulnerability.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="4">There are no workarounds that address this vulnerability</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="5">Cisco has released free software updates that address the vulnerability described in this advisory. Customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+
+
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html["http://www.cisco.com/c/en/us/td/docs/general/warranty/English/EU1KEN_.html"]
+
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to upgrade contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts 
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+Fixed Releases 
+
+This vulnerability has been resolved in Cisco AnyConnect Secure Mobility Client for Windows Software versions 4.4.00243 and later and 4.3.05017 and later.
+</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="6">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.
+</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="7">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of the vulnerability that is described in this advisory. 
+</Note>
+    <Note Title="Source" Type="General" Ordinal="8">This vulnerability was reported to Cisco by Thomas Toth.
+</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="9">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.
+</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170208-anyconnect</URL>
+      <Description>Cisco AnyConnect Secure Mobility Client for Windows SBL Privileges Escalation Vulnerability</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco AnyConnect Secure Mobility Client" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-109810">Cisco AnyConnect Secure Mobility Client </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Cisco Anyconnect Mobile Client for Windows SBL Privilege Escalation Vulneribility</Title>
+    <ID SystemName="Cisco Bug ID">CSCvc43976</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Start Before Logon (SBL) module of Cisco AnyConnect Secure Mobility Client Software for Windows could allow an unauthenticated, local attacker to open Internet Explorer with the privileges of the SYSTEM user.
+
+
+
+
+The vulnerability is due to insufficient implementation of the access controls. An attacker could exploit this vulnerability by opening the Internet Explorer browser. An exploit could allow the attacker to use Internet Explorer with the privileges of the SYSTEM user. This may allow the attacker to execute privileged commands on the targeted system.
+</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvc43976</Note>
+    </Notes>
+    <CVE>CVE-2017-3813</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-109810</ProductID>
+      </Status>
+    </ProductStatuses>
+    <CVSSScoreSets>
+      <ScoreSetV3>
+        <BaseScoreV3>8.4</BaseScoreV3>
+        <VectorV3>CVSS:3.0/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H</VectorV3>
+      </ScoreSetV3>
+    </CVSSScoreSets>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>There are no workarounds that address this vulnerability</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170208-anyconnect</URL>
+        <Description>Cisco AnyConnect Secure Mobility Client for Windows SBL Privileges Escalation Vulnerability</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

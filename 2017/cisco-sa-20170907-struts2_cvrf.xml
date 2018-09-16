@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Multiple Vulnerabilities in Apache Struts 2 Affecting Cisco Products: September 2017</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170907-struts2</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.12</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-09-07T21:20:08</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2017-09-08T20:12:43</Date>
+        <Description>Updated the lists of products for Vulnerable, Not Vulnerable, and Under Investigation sections. Added the SIR value for each vulnerability. Added information about public exploitation.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2017-09-11T19:33:57</Date>
+        <Description>Updated the lists of products for Vulnerable, Not Vulnerable, and Under Investigation sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2017-09-12T19:53:19</Date>
+        <Description>Updated the lists of products for Vulnerable, Not Vulnerable, and Under Investigation sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2017-09-13T18:37:39</Date>
+        <Description>Updated the lists of products for Vulnerable, Not Vulnerable, and Under Investigation sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2017-09-14T17:30:46</Date>
+        <Description>Updated the lists of products for Vulnerable, Not Vulnerable, and Under Investigation sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2017-09-15T18:27:38</Date>
+        <Description>Updated the lists of products for Vulnerable, Not Vulnerable, and Under Investigation sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.7</Number>
+        <Date>2017-09-18T18:10:53</Date>
+        <Description>Updated the lists of products for Vulnerable, Not Vulnerable, and Under Investigation sections. Under Affected Products added further clarification on products not listed.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.8</Number>
+        <Date>2017-09-21T15:51:56</Date>
+        <Description>Updated the lists of products for Vulnerable, Not Vulnerable, and Under Investigation sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2017-09-25T14:22:02</Date>
+        <Description>Updated the lists of products for Vulnerable, Not Vulnerable, and Under Investigation sections.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.10</Number>
+        <Date>2017-09-28T11:23:40</Date>
+        <Description>Updated the list of Products Confirmed Not Vulnerable.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.11</Number>
+        <Date>2017-10-03T19:43:29</Date>
+        <Description>Updated the Vulnerable Products table with information about fixes. Updated Summary, Affected Products, Vulnerable Products, and Fixed Software to "Final status" language.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.12</Number>
+        <Date>2017-10-23T20:27:39</Date>
+        <Description>Updated the list of Products Confirmed Not Vulnerable to add Cisco Umbrella.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-09-07T21:00:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-10-23T20:27:39</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">On September 5, 2017, the Apache Software Foundation released security bulletins that disclosed three vulnerabilities in the Apache Struts 2 package. Of these vulnerabilities, the Apache Software Foundation classifies one as Critical Severity, one as Medium Severity, and one as Low Severity. For more information about the vulnerabilities, refer to the Details ["#details"] section of this advisory.
+
+Multiple Cisco products incorporate a version of the Apache Struts 2 package that is affected by these vulnerabilities.
+
+The following Snort rule can be used to detect possible exploitation of this vulnerability: Snort SIDs 44315 and 44327 through 44330.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170907-struts2 ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170907-struts2"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2">For information about whether a product is affected by these vulnerabilities, refer to the Vulnerable Products ["#vuln_prods"] and Products Confirmed Not Vulnerable ["#prods_not_vuln"] sections of this advisory. The Vulnerable Products section includes Cisco bug IDs for each affected product. The bugs are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"] and contain additional platform-specific information, including any available workarounds and fixed software releases.
+
+Note: Only Cisco products that include Struts are listed in the "Vulnerable Products" or "Products Confirmed Not Vulnerable" sections. If a Cisco product is not listed, then it does not include Struts and is therefore not affected.</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">The following table lists Cisco products that are affected by the vulnerabilities described in this advisory. If an asterisk (*) appears after a product name, the product is affected by the critical severity vulnerability: CVE-2017-9805, Apache Struts REST plug-in XML processing arbitrary code execution vulnerability. At the time of publication, four Cisco products were known to be affected by CVE-2017-9805.
+
+Cisco documents detailed information about fixed software releases in the Cisco bugs listed in this table. The bugs are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"]. When planning a software upgrade, customers should review the bugs directly because the bugs will have the most current and up-to-date information.
+
+                              Product              Cisco Bug ID              Fixed Release Availability                                  Network Management and Provisioning                                  Cisco Digital Media Manager              CSCvf86117 ["https://tools.cisco.com/bugsearch/bug/CSCvf86117"]              No fix expected (EoSWM) (19-Aug-2016)                                  Cisco MXE 3500 Series Media Experience Engines (*)              CSCvf86119 ["https://tools.cisco.com/bugsearch/bug/CSCvf86119"]              No fix expected (EoSWM) (2-Jan-2017)                                  Voice and Unified Communications Devices                                  Cisco Hosted Collaboration Solution for Contact Center (*)              CSCvf86143 ["https://tools.cisco.com/bugsearch/bug/CSCvf86143"]                                                 Video, Streaming, TelePresence, and Transcoding Devices                                  Cisco Video Distribution Suite for Internet Streaming (VDS-IS) (*)              CSCvf86124 ["https://tools.cisco.com/bugsearch/bug/CSCvf86124"]              Product updated with Struts 2.3.34 (29-Sept-2017)                                  Cisco Hosted Services                                  Cisco Network Performance Analysis (*)              CSCvf86134 ["https://tools.cisco.com/bugsearch/bug/CSCvf86134"]              Product updated with Struts 2.3.34 (12-Sept-2017)</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Cisco has confirmed that the following products are not affected by the vulnerabilities described in this advisory.
+
+Collaboration and Social Media
+
+Cisco Unified MeetingPlace
+Cisco WebEx Meetings Server
+Endpoint Clients and Client Software
+
+Cisco WebEx Management - SuperAdmin Control Panel
+Network Application, Service, and Acceleration
+
+Cisco Data Center Network Manager
+Network and Content Security Devices
+
+Cisco Identity Services Engine (ISE)
+Cisco Secure Access Control System (ACS)
+Network Management and Provisioning
+
+Cisco Prime Access Registrar
+Cisco Prime Central for Service Providers
+Cisco Prime Collaboration Assurance
+Cisco Prime Collaboration Provisioning
+Cisco Prime Home
+Cisco Prime Infrastructure
+Cisco Prime LAN Management Solution - Solaris
+Cisco Prime License Manager
+Cisco Prime Network Registrar IP Address Manager (IPAM)
+Cisco Prime Network
+Cisco Security Manager
+Cisco Smart Net Total Care - Local Collector appliance
+Cisco Unified Intelligence Center
+Routing and Switching - Enterprise and Service Provider
+
+Cisco Broadband Access Center for Telco and Wireless
+Voice and Unified Communications Devices
+
+Cisco Business Edition 4000
+Cisco Emergency Responder
+Cisco Enterprise Chat and Email
+Cisco Finesse
+Cisco Hosted Collaboration Mediation Fulfillment
+Cisco MediaSense
+Cisco SocialMiner
+Cisco Unified Communications Manager IM &amp; Presence Service (formerly CUPS)
+Cisco Unified Communications Manager
+Cisco Unified Contact Center Enterprise - Live Data server
+Cisco Unified Contact Center Enterprise
+Cisco Unified Contact Center Express
+Cisco Unified Customer Voice Portal
+Cisco Unified E-Mail Interaction Manager
+Cisco Unified Intelligent Contact Management Enterprise
+Cisco Unified SIP Proxy Software
+Cisco Unified Survivable Remote Site Telephony Manager
+Cisco Unified Web Interaction Manager
+Cisco Unity Connection
+Cisco Unity Express
+Cisco Virtualized Voice Browser
+Video, Streaming, TelePresence, and Transcoding Devices
+
+Cisco Enterprise Content Delivery System (ECDS)
+Cisco Hosted Services
+
+Cisco Business Video Services Automation Software
+Cisco Cloud Email Security
+Cisco Cloud Web Security
+Cisco Context Service
+Cisco Deployment Automation Tool
+Cisco Network Device Security Assessment Service
+Cisco Partner Support Service 1.x
+Cisco Prime Service Catalog
+Cisco Services Provisioning Platform
+Cisco Smart Net Total Care - Contracts Information System Process Controller
+Cisco Smart Net Total Care
+Cisco Spark
+Cisco Tidal Performance Analyzer
+Cisco Umbrella
+Cisco Unified Service Delivery Platform
+Cisco WebEx Meeting Center - Windows
+Cisco WebEx Network-Based Recording (NBR) Management</Note>
+    <Note Title="Details" Type="General" Ordinal="5">Apache Struts REST Plug-In XML Processing Arbitrary Code Execution Vulnerability
+
+A vulnerability in the Representational State Transfer (REST) plug-in of Apache Struts could allow an unauthenticated, remote attacker to execute arbitrary code.
+
+The vulnerability is due to the improper deserialization of XML requests by the REST plug-in with the XStream handler of the affected software. An attacker could exploit this vulnerability by sending crafted XML content to a targeted system. A successful exploit could allow the attacker to execute arbitrary code on the system, which could result in a complete system compromise.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-9805
+
+The Security Impact Rating (SIR) of this vulnerability is Critical.
+
+Apache Struts REST Plug-In Denial of Service Vulnerability
+
+A vulnerability in the REST plug-in for Apache Struts could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on a targeted system.
+
+The vulnerability is due to insufficient validation of user-supplied input by the XStream library in the REST plug-in for the affected application. An attacker could submit crafted XML data to the affected system. A successful exploit could allow the attacker to cause a DoS condition on the targeted system.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-9793
+
+The SIR of this vulnerability is Medium.
+
+Apache Struts URLValidator Resource Exhaustion Denial of Service Vulnerability
+
+A vulnerability in the URLValidator feature of Apache Struts could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected system.
+
+The vulnerability is due to insufficient validation of user-supplied input when the affected software uses the URLValidator feature to validate URLs. An attacker could exploit this vulnerability by submitting a crafted URL in a form field of an application utilizing an affected version of Apache Struts. An exploit could trigger a condition in the regular expression (regex) processing by the URLValidator that would consume excessive amounts of CPU resources, resulting in a DoS condition.
+
+This vulnerability has been assigned the following CVE ID: CVE-2017-9804
+
+The SIR of this vulnerability is Low.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="6">Any workarounds that address these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="7">Updates for affected software releases will be published when they are available and information about those updates will be documented in Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].
+
+When Cisco releases software updates that address these vulnerabilities, customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+https://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html ["https://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+https://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html ["https://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+Fixed Releases
+
+To determine the affected and fixed releases for each vulnerable product, refer to the Cisco bug identified for the product in the Vulnerable Products ["#vuln_prods"] section of this advisory. Cisco bugs are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/"].</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="8">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="9">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any public announcements or malicious use of these vulnerabilities against Cisco products.
+
+For CVE-2017-9805, Apache Struts REST plug-in XML processing arbitrary code execution vulnerability, there are reports of active exploitation in the wild. At the time of publication, this exploitation appears to be primarily scanning activity that is being performed in attempts to identify potentially vulnerable systems.</Note>
+    <Note Title="Source" Type="General" Ordinal="10">On September 5, 2017, the Apache Software Foundation publicly disclosed these vulnerabilities in the following security bulletins:
+
+CVE-2017-9805: http://struts.apache.org/docs/s2-052.html ["http://struts.apache.org/docs/s2-052.html"]
+CVE-2017-9804: http://struts.apache.org/docs/s2-050.html ["http://struts.apache.org/docs/s2-050.html"]
+CVE-2017-9793: http://struts.apache.org/docs/s2-051.html ["http://struts.apache.org/docs/s2-051.html"]</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="11">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170907-struts2</URL>
+      <Description>Multiple Vulnerabilities in Apache Struts 2 Affecting Cisco Products: September 2017</Description>
+    </Reference>
+  </DocumentReferences>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Apache Struts REST Plugin Denial of Service Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the REST plug-in for Apache Struts could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on a targeted system.
+
+
+
+The vulnerability is due to insufficient validation of user-supplied input by the XStream library in the REST plug-in for the affected application. An attacker could submit crafted XML data to the affected system. A successful exploit could allow the attacker to cause a DoS condition on the targeted system.</Note>
+    </Notes>
+    <CVE>CVE-2017-9793</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170907-struts2</URL>
+        <Description>Multiple Vulnerabilities in Apache Struts 2 Affecting Cisco Products: September 2017</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="2" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Apache Struts URLValidator Resource Exhaustion Denial of Service Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the URLValidator feature of Apache Struts could allow an unauthenticated, remote attacker to cause a denial of service (DoS) condition on an affected system.
+
+
+
+The vulnerability is due to insufficient validation of user-supplied input when the affected software uses the URLValidator feature to validate URLs. An attacker could exploit this vulnerability by submitting a crafted URL in a form field of an application utilizing an affected version of Apache Struts. An exploit could trigger a condition in the regular expression (regex) processing by the URLValidator that would consume excessive amounts of CPU resources, resulting in a DoS condition.</Note>
+    </Notes>
+    <CVE>CVE-2017-9804</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170907-struts2</URL>
+        <Description>Multiple Vulnerabilities in Apache Struts 2 Affecting Cisco Products: September 2017</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+  <Vulnerability Ordinal="3" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Apache Struts REST Plug-in XML Processing Arbitrary Code Execution Vulnerability</Title>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Representational State Transfer (REST) plug-in of Apache Struts could allow an unauthenticated, remote attacker to execute arbitrary code.
+
+
+
+The vulnerability is due to the improper deserialization of XML requests by the REST plug-in with the XStream handler of the affected software. An attacker could exploit this vulnerability by sending crafted XML content to a targeted system. A successful exploit could allow the attacker to execute arbitrary code on the system, which could result in a complete system compromise.</Note>
+    </Notes>
+    <CVE>CVE-2017-9805</CVE>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds that address these vulnerabilities will be documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170907-struts2</URL>
+        <Description>Multiple Vulnerabilities in Apache Struts 2 Affecting Cisco Products: September 2017</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>

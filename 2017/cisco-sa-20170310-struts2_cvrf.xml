@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cvrfdoc xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/cvrf">
+  <DocumentTitle>Apache Struts2 Jakarta Multipart Parser File Upload Code Execution Vulnerability Affecting Cisco Products</DocumentTitle>
+  <DocumentType>Cisco Security Advisory</DocumentType>
+  <DocumentPublisher Type="Vendor">
+    <ContactDetails>Emergency Support:
++1 877 228 7302 (toll-free within North America)
++1 408 525 6532 (International direct-dial)
+Non-emergency Support:
+Email: psirt@cisco.com
+Support requests that are received via e-mail are typically acknowledged within 48 hours.</ContactDetails>
+    <IssuingAuthority>Cisco product security incident response is the responsibility of the Cisco Product Security Incident Response Team (PSIRT). The Cisco PSIRT is a dedicated, global team that manages the receipt, investigation, and public reporting of security vulnerability information that is related to Cisco products and networks. The on-call Cisco PSIRT works 24x7 with Cisco customers, independent security researchers, consultants, industry organizations, and other vendors to identify possible security issues with Cisco products and networks.
+More information can be found in Cisco Security Vulnerability Policy available at http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html</IssuingAuthority>
+  </DocumentPublisher>
+  <DocumentTracking>
+    <Identification>
+      <ID>cisco-sa-20170310-struts2</ID>
+    </Identification>
+    <Status>Final</Status>
+    <Version>1.12</Version>
+    <RevisionHistory>
+      <Revision>
+        <Number>1.0</Number>
+        <Date>2017-03-10T20:43:55</Date>
+        <Description>Initial public release.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.1</Number>
+        <Date>2017-03-11T23:37:26</Date>
+        <Description>Updated product lists.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.2</Number>
+        <Date>2017-03-13T00:06:20</Date>
+        <Description>Updated product lists.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.3</Number>
+        <Date>2017-03-13T22:24:49</Date>
+        <Description>Updated product lists.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.4</Number>
+        <Date>2017-03-14T21:03:12</Date>
+        <Description>Updated product lists.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.5</Number>
+        <Date>2017-03-15T18:09:11</Date>
+        <Description>Updated product lists.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.6</Number>
+        <Date>2017-03-17T19:12:26</Date>
+        <Description>Updated product lists.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.7</Number>
+        <Date>2017-03-21T19:03:50</Date>
+        <Description>Updated the product lists and Snort SID information.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.8</Number>
+        <Date>2017-03-23T17:25:24</Date>
+        <Description>Updated the product lists and summary and source information.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.9</Number>
+        <Date>2017-03-28T13:23:05</Date>
+        <Description>Updated product lists.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.10</Number>
+        <Date>2017-04-13T19:49:15</Date>
+        <Description>Updated product lists.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.11</Number>
+        <Date>2017-04-19T15:44:34</Date>
+        <Description>Updated product lists.</Description>
+      </Revision>
+      <Revision>
+        <Number>1.12</Number>
+        <Date>2017-05-05T17:02:20</Date>
+        <Description>Updated product lists.</Description>
+      </Revision>
+    </RevisionHistory>
+    <InitialReleaseDate>2017-03-10T19:30:00</InitialReleaseDate>
+    <CurrentReleaseDate>2017-05-05T17:02:20</CurrentReleaseDate>
+    <Generator>
+      <Engine>TVCE</Engine>
+    </Generator>
+  </DocumentTracking>
+  <DocumentNotes>
+    <Note Title="Summary" Type="Summary" Ordinal="1">On March 6, 2017, Apache disclosed a vulnerability in the Jakarta Multipart parser used in Apache Struts2 that could allow an attacker to execute commands remotely on a targeted system by using a crafted Content-Type, Content-Disposition, or Content-Length value.
+
+  This vulnerability has been assigned CVE-ID CVE-2017-5638.
+
+This advisory is available at the following link:
+https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170310-struts2 ["https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170310-struts2"]</Note>
+    <Note Title="Affected Products" Type="General" Ordinal="2">Cisco is investigating its product line to determine  which products may be affected by this vulnerability and the impact  on each affected product. Please refer to the Vulnerable Products ["#vulnerable"] and  Products Confirmed Not Vulnerable ["#notVulnerable"] sections of this advisory for  information about whether a product is affected.
+
+The Vulnerable Products ["#vulnerable"] section includes Cisco bug IDs for each affected product. The bugs are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"] and contain additional platform-specific information, including workarounds (if available) and fixed software releases.</Note>
+    <Note Title="Vulnerable Products" Type="General" Ordinal="3">The following table lists Cisco products that are affected by the vulnerability described in this advisory.
+
+Detailed information regarding specific fixed software versions will be documented in the Cisco bugs listed in the Vulnerable Products table in this section of the advisory. The bugs are accessible through the Cisco Bug Search Tool. When planning a software upgrade, be sure to review the bugs directly because they will have the most current and up-to-date information.
+
+                              Product              Cisco Bug ID              Fixed Release Availability                                  Collaboration and Social Media                                  Cisco SocialMiner              CSCvd63318 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd63318"]              11.5 SU1 (7-April-2017)                                  Network and Content Security Devices                                  Cisco Identity Services Engine (ISE)              CSCvd49829 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd49829"]              Patch available (24-March-2017)                                  Network Management and Provisioning                                  Cisco Prime License Manager              CSCvd51283 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd51283"]              11.5(1)SU1a (Available Now)                                  Cisco Unified Intelligence Center              CSCvd56191 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd56191"]              11.5(1) ES03 (30-March-2017)                                  Voice and Unified Communications Devices                                  Cisco Emergency Responder              CSCvd51442 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd51442"]              Patch for 11.5 (19-April-2017)                                  Cisco Finesse              CSCvd63325 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd63325"]              11.5 ES2 (7-April-2017)                                  Cisco Hosted Collaboration Mediation Fulfillment              CSCvd51443 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd51443"]              HCM-F 11.5.1 SU1 (7-April-2017)                                  Cisco Hosted Collaboration Solution for Contact Center              CSCvd56593 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd56593"]              10.5(3) Patch available
+11.0(2) (22-March-2017)
+11.5(1) (22-March-2017)
+10.0(2) (24-March-2017)                                  Cisco MediaSense              CSCvd63328 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd63328"]              11.5 (7-April-2017)                                  Cisco Packaged Contact Center Enterprise              CSCvd51212 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd51212"]
+                                  Cisco Unified Communications Manager IM &amp; Presence Service (formerly CUPS)              CSCvd49842 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd49842"]              Patch available (23-March-2017)                                  Cisco Unified Communications Manager Session Management Edition              CSCvd49840 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd49840"]              Patch available (31-March-2017)                                  Cisco Unified Communications Manager              CSCvd49840 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd49840"]              Patch available (31-March-2017)                                  Cisco Unified Contact Center Enterprise - Live Data server              CSCvd63365 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd63365"]              10.5(3) (Available)
+11.0 (2) (7-April-2017)
+11.5(1)  (7-April-2017)
+10.0(2) (Available)                                  Cisco Unified Contact Center Enterprise              CSCvd51210 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd51210"]              10.5(3) (Available)
+11.0 (2) (22-March-2017)
+11.5(1) (22-March-2017
+10.0(2) (24-March-2017)                                  Cisco Unified Contact Center Express              CSCvd63322 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd63322"]              11.5 SU1 (7-April-2017)                                  Cisco Unified Intelligent Contact Management Enterprise              CSCvd51210 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd51210"]              10.5(3) (Available)
+11.0 (2) (22-March-2017)
+11.5(1) (22-March-2017
+10.0(2) (24-Mar-2017)                                  Cisco Unified SIP Proxy Software              CSCvd49788 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd49788"]              10.1 (June 2017)                                  Cisco Unity Connection              CSCvd49841 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd49841"]              12.0 (27-Mar-2017)
+11.5 (10-Apr-2017)
+11.0 (10-Apr-2017)                                  Cisco Virtualized Voice Browser              CSCvd63333 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd63333"]              11.5 SU1 (7-April-2017)                                  Cisco Hosted Services                                  Cisco Prime Service Catalog Appliance and Virtual Appliance              CSCvd49817 ["https://bst.cloudapps.cisco.com/bugsearch/bug/CSCvd49817"]              PSC 12.0 Patch 1 (14-Mar-2017)</Note>
+    <Note Title="Products Confirmed Not Vulnerable" Type="General" Ordinal="4">Collaboration and Social Media
+
+Cisco Unified MeetingPlace
+Cisco WebEx Meetings Client - On-Premises
+Cisco WebEx Meetings Server
+Endpoint Clients and Client Software
+
+Cisco Agent for OpenFlow
+Cisco AnyConnect Secure Mobility Client for Android
+Cisco AnyConnect Secure Mobility Client for Linux
+Cisco AnyConnect Secure Mobility Client for Mac OS X
+Cisco AnyConnect Secure Mobility Client for Windows
+Cisco AnyConnect Secure Mobility Client for iOS
+Cisco Jabber Client Framework (JCF) Components
+Cisco Jabber Guest
+Cisco Jabber Software Development Kit
+Cisco Jabber for Android
+Cisco Jabber for Mac
+Cisco Jabber for Windows
+Cisco NAC Agent for Windows
+Cisco NAC Agent
+Cisco WebEx Meetings for Android
+Cisco WebEx Meetings for Windows Phone 8
+Network Application, Service, and Acceleration
+
+Cisco Network Device Security Assessment Service
+Cisco Visual Quality Experience Server
+Cisco Visual Quality Experience Tools Server
+Cisco Wide Area Application Services (WAAS)
+Network and Content Security Devices
+
+Cisco Adaptive Security Appliance (ASA)
+Cisco Content Security Appliance Update Servers
+Cisco Content Security Management Appliance (SMA)
+Cisco Email Security Appliance (ESA)
+Cisco FX-OS Software
+Cisco FireSIGHT System Software
+Cisco Secure Access Control System (ACS)
+Cisco Web Security Appliance (WSA)
+Lancope Stealthwatch Endpoint Concentrator
+Lancope Stealthwatch FlowCollector NetFlow
+Lancope Stealthwatch FlowCollector sFlow
+Lancope Stealthwatch FlowSensor
+Lancope Stealthwatch SMC
+Lancope Stealthwatch UDP Director
+Network Management and Provisioning
+
+Cisco Application Networking Manager
+Cisco Application Policy Infrastructure Controller (APIC)
+Cisco Cloupia Unified Infrastructure Controller
+Cisco Configuration Professional
+Cisco DCNM
+Cisco Digital Media Manager
+Cisco MATE Collector
+Cisco MATE Design
+Cisco MATE Live
+Cisco Management Appliance
+Cisco Meeting Server
+Cisco Multicast Manager
+Cisco NetFlow Generation Appliance
+Cisco Network Analysis Module
+Cisco Packet Tracer
+Cisco Policy Suite
+Cisco Prime Access Registrar
+Cisco Prime Central Fault Manager
+Cisco Prime Central
+Cisco Prime Collaboration Assurance
+Cisco Prime Collaboration Deployment
+Cisco Prime Collaboration Provisioning
+Cisco Prime Data Center Network Manager
+Cisco Prime Home
+Cisco Prime IP Express
+Cisco Prime Infrastructure
+Cisco Prime LAN Management Solution - Solaris
+Cisco Prime Network Change and Configuration Management
+Cisco Prime Network Registrar IP Address Manager (IPAM)
+Cisco Prime Network Registrar
+Cisco Prime Network Services Controller
+Cisco Prime Network
+Cisco Prime Optical for Service Providers
+Cisco Prime Performance Manager
+Cisco Prime Service Catalog
+Cisco Security Manager
+Cisco Smart Net Total Care - Local Collector appliance
+Cisco Tidal Performance Analyzer
+Cisco UCS Central Software
+Smart Connected Home
+Routing and Switching - Enterprise and Service Provider
+
+Cisco ASR 5000 Series
+Cisco Broadband Access Center for Telco and Wireless
+Cisco Connected Grid Routers
+Cisco IOS XR Software
+Cisco IOS and Cisco IOS XE Software
+Cisco MDS 9000 Series Multilayer Switches
+Cisco Nexus 1000V InterCloud
+Cisco Nexus 1000V Series Switches
+Cisco Nexus 1000V Switch for VMware vSphere
+Cisco Nexus 3000 Series Switches
+Cisco Nexus 4000 Series Blade Switches
+Cisco Nexus 5000 Series Switches
+Cisco Nexus 6000 Series Switches
+Cisco Nexus 7000 Series Switches
+Cisco Nexus 9000 Series Fabric Switches - ACI mode
+Cisco Nexus 9000 Series Switches - Standalone, NX-OS mode
+Cisco ONS 15454 Series Multiservice Provisioning Platforms
+Cisco Service Control Operating System
+Cisco Universal Small Cell 5000 Series Cisco Universal Small Cell 7000 Series
+Cisco Universal Small Cell Iuh
+Routing and Switching - Small Business
+
+Cisco 220 Series Smart Plus (Sx220) Switches
+Cisco 500 Series Stackable (Sx500) Managed Switches
+Cisco Small Business 300 Series (Sx300) Managed Switches
+Unified Computing
+
+Cisco Common Services Platform Collector
+Cisco UCS 6200 Series Fabric Interconnects
+Cisco UCS 6200 Series and 6300 Series Fabric Interconnects
+Cisco UCS B-Series Blade Servers
+Cisco UCS Director
+Cisco UCS Manager
+Cisco UCS Standalone C-Series Rack Server - Integrated Management Controller
+Cisco Virtual Security Gateway for Microsoft Hyper-V
+Cisco Virtual Security Gateway
+Voice and Unified Communications Devices
+
+Cisco ATA 190 Series Analog Terminal Adaptors
+Cisco Agent Desktop for Cisco Unified Contact Center Express
+Cisco Agent Desktop
+Cisco DX Series IP Phones
+Cisco Enterprise Chat and Email
+Cisco IP Interoperability and Collaboration System (IPICS)
+Cisco Jabber for iPhone and iPad
+Cisco Paging Server (InformaCast)
+Cisco Paging Server
+Cisco SPA112 2-Port Phone Adapter
+Cisco SPA122 Analog Telephone Adapter (ATA) with Router
+Cisco SPA232D Multi-Line DECT Analog Telephone Adapter (ATA)
+Cisco SPA51x IP Phones
+Cisco SPA525G 5-Line IP Phone
+Cisco Small Business SPA300 Series IP Phones
+Cisco Small Business SPA500 Series IP Phones
+Cisco UC Integration for Microsoft Lync
+Cisco Unified Attendant Console Advanced
+Cisco Unified Attendant Console Business Edition
+Cisco Unified Attendant Console Department Edition
+Cisco Unified Attendant Console Enterprise Edition
+Cisco Unified Attendant Console Premium Edition
+Cisco Unified Attendant Console Standard
+Cisco Unified Communications Domain Manager
+Cisco Unified Contact Center Domain Manager
+Cisco Unified Contact Center Management Portal
+Cisco Unified Customer Voice Portal
+Cisco Unified E-Mail Interaction Manager
+Cisco Unified IP 6945 Phone
+Cisco Unified IP 7937 Phone
+Cisco Unified IP 8831 Conference Phone for      Third-Party Call Control
+Cisco Unified Message Gateway
+Cisco Unified Survivable Remote Site Telephony Manager
+Cisco Unified Web Interaction Manager
+Cisco Unified Workforce Optimization - Quality Management Solution
+Cisco Unified Workforce Optimization
+Cisco Unity Express
+Cisco Virtualization Experience Media Edition
+Video, Streaming, TelePresence, and Transcoding Devices
+
+Cisco 4300 Series Digital Media Players
+Cisco 4400 Series Digital Media Players
+Cisco Cloud Object Storage
+Cisco DCM Series D990x Digital Content Manager
+Cisco Edge 300 Digital Media Player
+Cisco Edge 340 Digital Media Player
+Cisco Enterprise Content Delivery System (ECDS)
+Cisco Expressway Series
+Cisco MXE 3500
+Cisco TelePresence Conductor
+Cisco TelePresence Content Server
+Cisco TelePresence ISDN Gateway 3241
+Cisco TelePresence ISDN Gateway MSE 8321
+Cisco TelePresence ISDN Link
+Cisco TelePresence MCU 4200 Series, 4500 Series, 5300 Series, MSE 8420, and MSE 8510
+Cisco TelePresence MX Series
+Cisco TelePresence Profile Series
+Cisco TelePresence SX Series
+Cisco TelePresence Serial Gateway Series
+Cisco TelePresence Server 7010 and MSE 8710
+Cisco TelePresence Server on Multiparty Media 310 and 320
+Cisco TelePresence Server on Multiparty Media 820
+Cisco TelePresence Server on Virtual Machine
+Cisco TelePresence Supervisor MSE 8050
+Cisco TelePresence System 1000
+Cisco TelePresence System 1100
+Cisco TelePresence System 1300
+Cisco TelePresence System 3000 Series
+Cisco TelePresence System 500-32
+Cisco TelePresence System 500-37
+Cisco TelePresence System EX Series
+Cisco TelePresence System TX1310
+Cisco TelePresence TX9000 Series
+Cisco TelePresence Video Communication Server (VCS)
+Cisco Telepresence Integrator C Series
+Cisco VDS-IS
+Cisco Video Surveillance 3000 Series IP Cameras
+Cisco Video Surveillance 4000 Series High-Definition IP Cameras
+Cisco Video Surveillance 4300E and 4500E High-Definition IP Cameras
+Cisco Video Surveillance 6000 Series IP Cameras
+Cisco Video Surveillance 7000 Series IP Cameras
+Cisco Video Surveillance Media Server
+Cisco Video Surveillance PTZ IP Cameras
+Cisco Videoscape AnyRes Live
+Cisco Videoscape Voyager Vantage
+Tandberg Codian ISDN Gateway 3210, 3220, and 3240
+Tandberg Codian MSE 8320
+Wireless
+
+Cisco Aironet 1040 Series Access Points
+Cisco Aironet 1130 AG Series Access Points
+Cisco Aironet 1140 Series Access Points
+Cisco Aironet 1200 Series Access Points
+Cisco Aironet 1530 Series Access Points
+Cisco Aironet 1550 Series Access Points
+Cisco Aironet 1560 Series Access Points
+Cisco Aironet 1570 Series Access Points
+Cisco Aironet 1600 Series Access Points
+Cisco Aironet 1700 Series Access Points
+Cisco Aironet 1810 Series OfficeExtend Access Points
+Cisco Aironet 1810w Series Access Points
+Cisco Aironet 1815 Series Access Points
+Cisco Aironet 1830 Series Access Points
+Cisco Aironet 1850 Series Access Points
+Cisco Aironet 2600 Series Access Points
+Cisco Aironet 2700 Series Access Points
+Cisco Aironet 2800 Series Access Points
+Cisco Aironet 3500 Series Access Points
+Cisco Aironet 3600 Series Access Points
+Cisco Aironet 3700 Series Access Points
+Cisco Aironet 3800 Series Access Points
+Cisco Aironet 700 Series Access Points
+Cisco Aironet 700W Series Access Points
+Cisco Industrial Wireless 3700 Series Access Points
+Cisco Mobility Services Engine
+Cisco Wireless LAN Controller
+Cisco Hosted Services
+
+Cisco Business Video Services Automation Software
+Cisco Cloud Web Security
+Cisco Cloud and Systems Management
+Cisco Data Center Analytics Framework
+Cisco Deployment Automation Tool
+Cisco Network Health Framework
+Cisco Network Performance Analysis
+Cisco ONE Portal
+Cisco Partner Support Service 1.x
+Cisco Proactive Network Operations Center
+Cisco Registered Envelope Service
+Cisco Services Provisioning Platform
+Cisco Smart Care
+Cisco Smart Net Total Care - Contracts Information System Process Controller
+Cisco Smart Net Total Care - Smart Interactions
+Cisco Smart Net Total Care
+Cisco Unified Service Delivery Platform
+Cisco Universal Small Cell CloudBase Factory Recovery Root Filesystem
+Cisco WebEx Meeting Center
+Cisco WebEx Messenger Service
+Cisco WebEx Network Based Recording (NBR) Management
+OpenDNS
+SmartNet Total Care</Note>
+    <Note Title="Details" Type="General" Ordinal="5">A vulnerability in the Jakarta multipart parser of Apache Struts could allow an unauthenticated, remote attacker to execute arbitrary code on an affected system.
+
+The vulnerability is due to improper handling of the Content-Type header value when performing a file upload based on the Jakarta multipart parser of the affected software. An attacker could exploit this vulnerability by persuading a targeted user to upload a malicious file. Once the Jakarta multipart parser of the affected application uploads the file, the attacker could have the ability to execute arbitrary code.</Note>
+    <Note Title="Indicators of Compromise" Type="General" Ordinal="6">To help detect exploitation of this vulnerability, Cisco has released Cisco IPS Signature Sig-ID 7872-0 ["https://tools.cisco.com/security/center/viewIpsSignature.x?signatureId=7872&amp;signatureSubId=0&amp;softwareVersion=6.0&amp;releaseVersion=S969"] and Snort SIDs 41818, 41819, 41923, and 41922.</Note>
+    <Note Title="Workarounds" Type="General" Ordinal="7">Any workarounds, if available, are documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Note>
+    <Note Title="Fixed Software" Type="General" Ordinal="8">When Cisco releases free software updates, customers may only install and expect support for software versions and feature sets for which they have purchased a license. By installing, downloading, accessing, or otherwise using such software upgrades, customers agree to follow the terms of the Cisco software license:
+http://www.cisco.com/en/US/docs/general/warranty/English/EU1KEN_.html ["http://www.cisco.com/c/en/us/td/docs/general/warranty/English/EU1KEN_.html"]
+
+Additionally, customers may only download software for which they have a valid license, procured from Cisco directly, or through a Cisco authorized reseller or partner. In most cases this will be a maintenance upgrade to software that was previously purchased. Free security software updates do not entitle customers to a new software license, additional software feature sets, or major revision upgrades.
+
+When considering software upgrades, customers are advised to regularly consult the advisories for Cisco products, which are available from the Cisco Security Advisories and Alerts page ["https://www.cisco.com/go/psirt"], to determine exposure and a complete upgrade solution.
+
+In all cases, customers should ensure that the devices to be upgraded contain sufficient memory and confirm that current hardware and software configurations will continue to be supported properly by the new release. If the information is not clear, customers are advised to contact the Cisco Technical Assistance Center (TAC) or their contracted maintenance providers.
+
+Customers Without Service Contracts
+
+Customers who purchase directly from Cisco but do not hold a Cisco service contract and customers who make purchases through third-party vendors but are unsuccessful in obtaining fixed software through their point of sale should obtain upgrades by contacting the Cisco TAC:
+http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html ["http://www.cisco.com/en/US/support/tsd_cisco_worldwide_contacts.html"]
+
+Customers should have the product serial number available and be prepared to provide the URL of this advisory as evidence of entitlement to a free upgrade.
+
+Fixed Releases
+  To determine the affected and fixed releases for each vulnerable  product, refer to the Cisco bug identified for the product. These bugs will be listed in the  table in the Vulnerable Products ["#vulnerable"] section of this advisory. Cisco bugs are  accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Note>
+    <Note Title="Vulnerability Policy" Type="General" Ordinal="9">To learn about Cisco security vulnerability disclosure policies and publications, see the Security Vulnerability Policy ["http://www.cisco.com/web/about/security/psirt/security_vulnerability_policy.html"]. This document also contains instructions for obtaining fixed software and receiving security vulnerability information from Cisco.</Note>
+    <Note Title="Exploitation and Public Announcements" Type="General" Ordinal="10">The Cisco Product Security Incident Response Team (PSIRT) is not aware of any malicious use of the vulnerability that is described in this advisory against Cisco products.
+
+Public exploits are available for this vulnerability.</Note>
+    <Note Title="Source" Type="General" Ordinal="11">This vulnerability was disclosed by Apache in the following advisories: https://cwiki.apache.org/confluence/display/WW/S2-045 ["https://cwiki.apache.org/confluence/display/WW/S2-045"] and https://cwiki.apache.org/confluence/display/WW/S2-046 ["https://cwiki.apache.org/confluence/display/WW/S2-046"]</Note>
+    <Note Title="Legal Disclaimer" Type="Legal Disclaimer" Ordinal="12">THIS DOCUMENT IS PROVIDED ON AN "AS IS" BASIS AND DOES NOT IMPLY ANY KIND OF GUARANTEE OR WARRANTY, INCLUDING THE WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE. YOUR USE OF THE INFORMATION ON THE DOCUMENT OR MATERIALS LINKED FROM THE DOCUMENT IS AT YOUR OWN RISK. CISCO RESERVES THE RIGHT TO CHANGE OR UPDATE THIS DOCUMENT AT ANY TIME.
+
+A standalone copy or paraphrase of the text of this document that omits the distribution URL is an uncontrolled copy and may lack important information or contain factual errors. The information in this document is intended for end users of Cisco products.</Note>
+  </DocumentNotes>
+  <DocumentReferences>
+    <Reference Type="Self">
+      <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170310-struts2</URL>
+      <Description>Apache Struts2 Jakarta Multipart Parser File Upload Code Execution Vulnerability Affecting Cisco Products</Description>
+    </Reference>
+  </DocumentReferences>
+  <ProductTree xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/prod">
+    <Branch Name="Cisco" Type="Vendor">
+      <Branch Name="Cisco Emergency Responder" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-4844">Cisco Emergency Responder </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unity Connection" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-73608">Cisco Unity Connection </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Contact Center Express" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-92631">Cisco Unified Contact Center Express </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Identity Services Engine Software" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-111903">Cisco Identity Services Engine Software </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Hosted Collaboration Solution" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-188690">Cisco Hosted Collaboration Solution </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Finesse" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-193469">Cisco Finesse </FullProductName>
+      </Branch>
+      <Branch Name="Cisco SocialMiner" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-194456">Cisco SocialMiner </FullProductName>
+      </Branch>
+      <Branch Name="Cisco MediaSense" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-194833">Cisco MediaSense </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified SIP Proxy" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-195223">Cisco Unified SIP Proxy </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Unified Intelligence Center" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-198393">Cisco Unified Intelligence Center </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime Service Catalog" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-202401">Cisco Prime Service Catalog </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Prime License Manager" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-203607">Cisco Prime License Manager </FullProductName>
+      </Branch>
+      <Branch Name="Cisco Hosted Collaboration Mediation Fulfillment" Type="Product Name">
+        <FullProductName ProductID="CVRFPID-220254">Cisco Hosted Collaboration Mediation Fulfillment </FullProductName>
+      </Branch>
+    </Branch>
+  </ProductTree>
+  <Vulnerability Ordinal="1" xmlns="http://docs.oasis-open.org/csaf/ns/csaf-cvrf/v1.2/vuln">
+    <Title>Apache Struts Jakarta Multipart Parser File Upload Code Execution Vulnerability</Title>
+    <ID SystemName="Cisco Bug ID">CSCvd51442</ID>
+    <Notes>
+      <Note Title="Summary" Type="Summary" Ordinal="1">A vulnerability in the Jakarta multipart parser of Apache Struts could allow an unauthenticated, remote attacker to execute arbitrary code on an affected system.
+
+
+
+The vulnerability is due to improper handling of the Content-Type header value when performing a file upload based on the Jakarta multipart parser of the affected software. An attacker could exploit this vulnerability by persuading a targeted user to upload a malicious file. Once the Jakarta multipart parser of the affected application uploads the file, the attacker could have the ability to execute arbitrary code.</Note>
+      <Note Title="Cisco Bug IDs" Type="Other" Ordinal="2">CSCvd51442,CSCvd63325,CSCvd51443,CSCvd56593,CSCvd49829,CSCvd63328,CSCvd51283,CSCvd49817,CSCvd63318,CSCvd63322,CSCvd56191,CSCvd49788,CSCvd49841</Note>
+    </Notes>
+    <CVE>CVE-2017-5638</CVE>
+    <ProductStatuses>
+      <Status Type="Known Affected">
+        <ProductID>CVRFPID-111903</ProductID>
+        <ProductID>CVRFPID-188690</ProductID>
+        <ProductID>CVRFPID-193469</ProductID>
+        <ProductID>CVRFPID-194456</ProductID>
+        <ProductID>CVRFPID-194833</ProductID>
+        <ProductID>CVRFPID-195223</ProductID>
+        <ProductID>CVRFPID-198393</ProductID>
+        <ProductID>CVRFPID-202401</ProductID>
+        <ProductID>CVRFPID-203607</ProductID>
+        <ProductID>CVRFPID-220254</ProductID>
+        <ProductID>CVRFPID-4844</ProductID>
+        <ProductID>CVRFPID-73608</ProductID>
+        <ProductID>CVRFPID-92631</ProductID>
+      </Status>
+    </ProductStatuses>
+    <Remediations>
+      <Remediation Type="Workaround">
+        <Description>Any workarounds, if available, are documented in the Cisco bugs, which are accessible through the Cisco Bug Search Tool ["https://bst.cloudapps.cisco.com/bugsearch/bug/BUGID"].</Description>
+      </Remediation>
+    </Remediations>
+    <References>
+      <Reference Type="Self">
+        <URL>https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20170310-struts2</URL>
+        <Description>Apache Struts2 Jakarta Multipart Parser File Upload Code Execution Vulnerability Affecting Cisco Products</Description>
+      </Reference>
+    </References>
+  </Vulnerability>
+</cvrfdoc>
